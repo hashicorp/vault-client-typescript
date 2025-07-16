@@ -1,11 +1,11 @@
 {
   "name": "@hashicorp/vault-client-typescript",
   "version": "0.0.0",
-  "description": "OpenAPI client for @hashicorp/vault-client-typescript",
-  "author": "OpenAPI-Generator",
+  "description": "OpenAPI generated typescript client for the Vault API",
+  "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "https://github.com/hashicorp/vault-client-typescript"
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -13,9 +13,12 @@
   "sideEffects": false,
   "scripts": {
     "build": "tsc && tsc -p tsconfig.esm.json",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "gen-client": "openapi-generator-cli generate -i openapi.json -g typescript-fetch --skip-validate-spec --minimal-update --template-dir ./templates --name-mappings key-bits=keyBitsDashed --additional-properties npmName=@hashicorp/vault-client-typescript,prefixParameterInterfaces=true,supportsES6=true,typescriptThreePlus=true,useSingleRequestParameter=false,useSquareBracketsInArrayNames=true,stringEnums=true,enumPropertyNaming=UPPERCASE,modelPropertyNaming=original,paramNaming=original",
+    "gen-spec": "./scripts/gen-spec.sh"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.21.2",
     "typescript": "^4.0 || ^5.0"
   }
 }
