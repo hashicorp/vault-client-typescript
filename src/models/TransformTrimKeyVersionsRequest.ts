@@ -24,7 +24,7 @@ export interface TransformTrimKeyVersionsRequest {
      * @type {number}
      * @memberof TransformTrimKeyVersionsRequest
      */
-    minAvailableVersion?: number;
+    min_available_version?: number;
 }
 
 /**
@@ -44,7 +44,7 @@ export function TransformTrimKeyVersionsRequestFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'minAvailableVersion': json['min_available_version'] == null ? undefined : json['min_available_version'],
+        'min_available_version': json['min_available_version'] == null ? undefined : json['min_available_version'],
     };
 }
 
@@ -59,7 +59,7 @@ export function TransformTrimKeyVersionsRequestToJSONTyped(value?: TransformTrim
 
     return {
         
-        'min_available_version': value['minAvailableVersion'],
+        'min_available_version': value['min_available_version'],
     };
 }
 

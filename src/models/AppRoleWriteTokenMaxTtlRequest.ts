@@ -24,7 +24,7 @@ export interface AppRoleWriteTokenMaxTtlRequest {
      * @type {string}
      * @memberof AppRoleWriteTokenMaxTtlRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteTokenMaxTtlRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteTokenMaxTtlRequestToJSONTyped(value?: AppRoleWriteTo
 
     return {
         
-        'token_max_ttl': value['tokenMaxTtl'],
+        'token_max_ttl': value['token_max_ttl'],
     };
 }
 

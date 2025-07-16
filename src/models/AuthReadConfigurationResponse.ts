@@ -36,7 +36,7 @@ export interface AuthReadConfigurationResponse {
      * @type {string}
      * @memberof AuthReadConfigurationResponse
      */
-    deprecationStatus?: string;
+    deprecation_status?: string;
     /**
      * 
      * @type {string}
@@ -48,7 +48,7 @@ export interface AuthReadConfigurationResponse {
      * @type {boolean}
      * @memberof AuthReadConfigurationResponse
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * 
      * @type {boolean}
@@ -66,25 +66,25 @@ export interface AuthReadConfigurationResponse {
      * @type {string}
      * @memberof AuthReadConfigurationResponse
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof AuthReadConfigurationResponse
      */
-    runningPluginVersion?: string;
+    running_plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof AuthReadConfigurationResponse
      */
-    runningSha256?: string;
+    running_sha256?: string;
     /**
      * 
      * @type {boolean}
      * @memberof AuthReadConfigurationResponse
      */
-    sealWrap?: boolean;
+    seal_wrap?: boolean;
     /**
      * 
      * @type {string}
@@ -118,15 +118,15 @@ export function AuthReadConfigurationResponseFromJSONTyped(json: any, ignoreDisc
         
         'accessor': json['accessor'] == null ? undefined : json['accessor'],
         'config': json['config'] == null ? undefined : json['config'],
-        'deprecationStatus': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
+        'deprecation_status': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
         'local': json['local'] == null ? undefined : json['local'],
         'options': json['options'] == null ? undefined : json['options'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'runningPluginVersion': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
-        'runningSha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
-        'sealWrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'running_plugin_version': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
+        'running_sha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
+        'seal_wrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
         'type': json['type'] == null ? undefined : json['type'],
         'uuid': json['uuid'] == null ? undefined : json['uuid'],
     };
@@ -145,15 +145,15 @@ export function AuthReadConfigurationResponseToJSONTyped(value?: AuthReadConfigu
         
         'accessor': value['accessor'],
         'config': value['config'],
-        'deprecation_status': value['deprecationStatus'],
+        'deprecation_status': value['deprecation_status'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
+        'external_entropy_access': value['external_entropy_access'],
         'local': value['local'],
         'options': value['options'],
-        'plugin_version': value['pluginVersion'],
-        'running_plugin_version': value['runningPluginVersion'],
-        'running_sha256': value['runningSha256'],
-        'seal_wrap': value['sealWrap'],
+        'plugin_version': value['plugin_version'],
+        'running_plugin_version': value['running_plugin_version'],
+        'running_sha256': value['running_sha256'],
+        'seal_wrap': value['seal_wrap'],
         'type': value['type'],
         'uuid': value['uuid'],
     };

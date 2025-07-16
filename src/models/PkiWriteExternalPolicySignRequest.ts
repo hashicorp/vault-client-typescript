@@ -37,7 +37,7 @@ export interface PkiWriteExternalPolicySignRequest {
      * @type {boolean}
      * @memberof PkiWriteExternalPolicySignRequest
      */
-    removeRootsFromChain?: boolean;
+    remove_roots_from_chain?: boolean;
 }
 
 /**
@@ -72,7 +72,7 @@ export function PkiWriteExternalPolicySignRequestFromJSONTyped(json: any, ignore
             ...json,
         'csr': json['csr'],
         'format': json['format'] == null ? undefined : json['format'],
-        'removeRootsFromChain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
+        'remove_roots_from_chain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
     };
 }
 
@@ -90,7 +90,7 @@ export function PkiWriteExternalPolicySignRequestToJSONTyped(value?: PkiWriteExt
             ...value,
         'csr': value['csr'],
         'format': value['format'],
-        'remove_roots_from_chain': value['removeRootsFromChain'],
+        'remove_roots_from_chain': value['remove_roots_from_chain'],
     };
 }
 

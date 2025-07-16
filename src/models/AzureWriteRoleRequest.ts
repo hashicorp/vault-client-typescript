@@ -24,49 +24,49 @@ export interface AzureWriteRoleRequest {
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    applicationObjectId?: string;
+    application_object_id?: string;
     /**
      * JSON list of Azure groups to add the service principal to.
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    azureGroups?: string;
+    azure_groups?: string;
     /**
      * JSON list of Azure roles to assign.
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    azureRoles?: string;
+    azure_roles?: string;
     /**
      * Maximum lifetime of the lease and service principal. If not set or set to 0, will use the system default.
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    explicitMaxTtl?: string;
+    explicit_max_ttl?: string;
     /**
      * Maximum time a service principal. If not set or set to 0, will use system default.
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted.
      * @type {boolean}
      * @memberof AzureWriteRoleRequest
      */
-    permanentlyDelete?: boolean;
+    permanently_delete?: boolean;
     /**
      * Persist the app between generated credentials. Useful if the app needs to maintain owner ship of resources it creates
      * @type {boolean}
      * @memberof AzureWriteRoleRequest
      */
-    persistApp?: boolean;
+    persist_app?: boolean;
     /**
      * Specifies the security principal types that are allowed to sign in to the application. Valid values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount
      * @type {string}
      * @memberof AzureWriteRoleRequest
      */
-    signInAudience?: string;
+    sign_in_audience?: string;
     /**
      * Azure tags to attach to an application.
      * @type {Array<string>}
@@ -98,14 +98,14 @@ export function AzureWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'applicationObjectId': json['application_object_id'] == null ? undefined : json['application_object_id'],
-        'azureGroups': json['azure_groups'] == null ? undefined : json['azure_groups'],
-        'azureRoles': json['azure_roles'] == null ? undefined : json['azure_roles'],
-        'explicitMaxTtl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'permanentlyDelete': json['permanently_delete'] == null ? undefined : json['permanently_delete'],
-        'persistApp': json['persist_app'] == null ? undefined : json['persist_app'],
-        'signInAudience': json['sign_in_audience'] == null ? undefined : json['sign_in_audience'],
+        'application_object_id': json['application_object_id'] == null ? undefined : json['application_object_id'],
+        'azure_groups': json['azure_groups'] == null ? undefined : json['azure_groups'],
+        'azure_roles': json['azure_roles'] == null ? undefined : json['azure_roles'],
+        'explicit_max_ttl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'permanently_delete': json['permanently_delete'] == null ? undefined : json['permanently_delete'],
+        'persist_app': json['persist_app'] == null ? undefined : json['persist_app'],
+        'sign_in_audience': json['sign_in_audience'] == null ? undefined : json['sign_in_audience'],
         'tags': json['tags'] == null ? undefined : json['tags'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
@@ -122,14 +122,14 @@ export function AzureWriteRoleRequestToJSONTyped(value?: AzureWriteRoleRequest |
 
     return {
         
-        'application_object_id': value['applicationObjectId'],
-        'azure_groups': value['azureGroups'],
-        'azure_roles': value['azureRoles'],
-        'explicit_max_ttl': value['explicitMaxTtl'],
-        'max_ttl': value['maxTtl'],
-        'permanently_delete': value['permanentlyDelete'],
-        'persist_app': value['persistApp'],
-        'sign_in_audience': value['signInAudience'],
+        'application_object_id': value['application_object_id'],
+        'azure_groups': value['azure_groups'],
+        'azure_roles': value['azure_roles'],
+        'explicit_max_ttl': value['explicit_max_ttl'],
+        'max_ttl': value['max_ttl'],
+        'permanently_delete': value['permanently_delete'],
+        'persist_app': value['persist_app'],
+        'sign_in_audience': value['sign_in_audience'],
         'tags': value['tags'],
         'ttl': value['ttl'],
     };

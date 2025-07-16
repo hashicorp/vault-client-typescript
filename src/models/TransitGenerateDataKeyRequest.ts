@@ -36,7 +36,7 @@ export interface TransitGenerateDataKeyRequest {
      * @type {number}
      * @memberof TransitGenerateDataKeyRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * Nonce for when convergent encryption v1 is used (only in Vault 0.6.1)
      * @type {string}
@@ -48,7 +48,7 @@ export interface TransitGenerateDataKeyRequest {
      * @type {string}
      * @memberof TransitGenerateDataKeyRequest
      */
-    paddingScheme?: string;
+    padding_scheme?: string;
 }
 
 /**
@@ -70,9 +70,9 @@ export function TransitGenerateDataKeyRequestFromJSONTyped(json: any, ignoreDisc
         
         'bits': json['bits'] == null ? undefined : json['bits'],
         'context': json['context'] == null ? undefined : json['context'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'paddingScheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
+        'padding_scheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
     };
 }
 
@@ -89,9 +89,9 @@ export function TransitGenerateDataKeyRequestToJSONTyped(value?: TransitGenerate
         
         'bits': value['bits'],
         'context': value['context'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
         'nonce': value['nonce'],
-        'padding_scheme': value['paddingScheme'],
+        'padding_scheme': value['padding_scheme'],
     };
 }
 

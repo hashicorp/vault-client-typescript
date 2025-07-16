@@ -30,13 +30,13 @@ export interface TransitImportKeyVersionRequest {
      * @type {string}
      * @memberof TransitImportKeyVersionRequest
      */
-    hashFunction?: string;
+    hash_function?: string;
     /**
      * The plaintext public key to be imported. If "ciphertext" is set, this field is ignored.
      * @type {string}
      * @memberof TransitImportKeyVersionRequest
      */
-    publicKey?: string;
+    public_key?: string;
     /**
      * Key version to be updated, if left empty, a new version will be created unless a private key is specified and the 'Latest' key is missing a private key.
      * @type {number}
@@ -63,8 +63,8 @@ export function TransitImportKeyVersionRequestFromJSONTyped(json: any, ignoreDis
     return {
         
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'hashFunction': json['hash_function'] == null ? undefined : json['hash_function'],
-        'publicKey': json['public_key'] == null ? undefined : json['public_key'],
+        'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
+        'public_key': json['public_key'] == null ? undefined : json['public_key'],
         'version': json['version'] == null ? undefined : json['version'],
     };
 }
@@ -81,8 +81,8 @@ export function TransitImportKeyVersionRequestToJSONTyped(value?: TransitImportK
     return {
         
         'ciphertext': value['ciphertext'],
-        'hash_function': value['hashFunction'],
-        'public_key': value['publicKey'],
+        'hash_function': value['hash_function'],
+        'public_key': value['public_key'],
         'version': value['version'],
     };
 }

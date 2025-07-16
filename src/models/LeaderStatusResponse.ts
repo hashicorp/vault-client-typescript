@@ -24,61 +24,61 @@ export interface LeaderStatusResponse {
      * @type {Date}
      * @memberof LeaderStatusResponse
      */
-    activeTime?: Date;
+    active_time?: Date;
     /**
      * 
      * @type {boolean}
      * @memberof LeaderStatusResponse
      */
-    haEnabled?: boolean;
+    ha_enabled?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof LeaderStatusResponse
      */
-    isSelf?: boolean;
+    is_self?: boolean;
     /**
      * 
      * @type {number}
      * @memberof LeaderStatusResponse
      */
-    lastWal?: number;
+    last_wal?: number;
     /**
      * 
      * @type {string}
      * @memberof LeaderStatusResponse
      */
-    leaderAddress?: string;
+    leader_address?: string;
     /**
      * 
      * @type {string}
      * @memberof LeaderStatusResponse
      */
-    leaderClusterAddress?: string;
+    leader_cluster_address?: string;
     /**
      * 
      * @type {boolean}
      * @memberof LeaderStatusResponse
      */
-    performanceStandby?: boolean;
+    performance_standby?: boolean;
     /**
      * 
      * @type {number}
      * @memberof LeaderStatusResponse
      */
-    performanceStandbyLastRemoteWal?: number;
+    performance_standby_last_remote_wal?: number;
     /**
      * 
      * @type {number}
      * @memberof LeaderStatusResponse
      */
-    raftAppliedIndex?: number;
+    raft_applied_index?: number;
     /**
      * 
      * @type {number}
      * @memberof LeaderStatusResponse
      */
-    raftCommittedIndex?: number;
+    raft_committed_index?: number;
 }
 
 /**
@@ -98,16 +98,16 @@ export function LeaderStatusResponseFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'activeTime': json['active_time'] == null ? undefined : (new Date(json['active_time'])),
-        'haEnabled': json['ha_enabled'] == null ? undefined : json['ha_enabled'],
-        'isSelf': json['is_self'] == null ? undefined : json['is_self'],
-        'lastWal': json['last_wal'] == null ? undefined : json['last_wal'],
-        'leaderAddress': json['leader_address'] == null ? undefined : json['leader_address'],
-        'leaderClusterAddress': json['leader_cluster_address'] == null ? undefined : json['leader_cluster_address'],
-        'performanceStandby': json['performance_standby'] == null ? undefined : json['performance_standby'],
-        'performanceStandbyLastRemoteWal': json['performance_standby_last_remote_wal'] == null ? undefined : json['performance_standby_last_remote_wal'],
-        'raftAppliedIndex': json['raft_applied_index'] == null ? undefined : json['raft_applied_index'],
-        'raftCommittedIndex': json['raft_committed_index'] == null ? undefined : json['raft_committed_index'],
+        'active_time': json['active_time'] == null ? undefined : (new Date(json['active_time'])),
+        'ha_enabled': json['ha_enabled'] == null ? undefined : json['ha_enabled'],
+        'is_self': json['is_self'] == null ? undefined : json['is_self'],
+        'last_wal': json['last_wal'] == null ? undefined : json['last_wal'],
+        'leader_address': json['leader_address'] == null ? undefined : json['leader_address'],
+        'leader_cluster_address': json['leader_cluster_address'] == null ? undefined : json['leader_cluster_address'],
+        'performance_standby': json['performance_standby'] == null ? undefined : json['performance_standby'],
+        'performance_standby_last_remote_wal': json['performance_standby_last_remote_wal'] == null ? undefined : json['performance_standby_last_remote_wal'],
+        'raft_applied_index': json['raft_applied_index'] == null ? undefined : json['raft_applied_index'],
+        'raft_committed_index': json['raft_committed_index'] == null ? undefined : json['raft_committed_index'],
     };
 }
 
@@ -122,16 +122,16 @@ export function LeaderStatusResponseToJSONTyped(value?: LeaderStatusResponse | n
 
     return {
         
-        'active_time': value['activeTime'] == null ? undefined : ((value['activeTime']).toISOString()),
-        'ha_enabled': value['haEnabled'],
-        'is_self': value['isSelf'],
-        'last_wal': value['lastWal'],
-        'leader_address': value['leaderAddress'],
-        'leader_cluster_address': value['leaderClusterAddress'],
-        'performance_standby': value['performanceStandby'],
-        'performance_standby_last_remote_wal': value['performanceStandbyLastRemoteWal'],
-        'raft_applied_index': value['raftAppliedIndex'],
-        'raft_committed_index': value['raftCommittedIndex'],
+        'active_time': value['active_time'] == null ? undefined : ((value['active_time']).toISOString()),
+        'ha_enabled': value['ha_enabled'],
+        'is_self': value['is_self'],
+        'last_wal': value['last_wal'],
+        'leader_address': value['leader_address'],
+        'leader_cluster_address': value['leader_cluster_address'],
+        'performance_standby': value['performance_standby'],
+        'performance_standby_last_remote_wal': value['performance_standby_last_remote_wal'],
+        'raft_applied_index': value['raft_applied_index'],
+        'raft_committed_index': value['raft_committed_index'],
     };
 }
 

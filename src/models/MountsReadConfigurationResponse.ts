@@ -36,7 +36,7 @@ export interface MountsReadConfigurationResponse {
      * @type {string}
      * @memberof MountsReadConfigurationResponse
      */
-    deprecationStatus?: string;
+    deprecation_status?: string;
     /**
      * User-friendly description for this mount.
      * @type {string}
@@ -48,7 +48,7 @@ export interface MountsReadConfigurationResponse {
      * @type {boolean}
      * @memberof MountsReadConfigurationResponse
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * Mark the mount as a local mount, which is not replicated and is unaffected by replication.
      * @type {boolean}
@@ -66,25 +66,25 @@ export interface MountsReadConfigurationResponse {
      * @type {string}
      * @memberof MountsReadConfigurationResponse
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof MountsReadConfigurationResponse
      */
-    runningPluginVersion?: string;
+    running_plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof MountsReadConfigurationResponse
      */
-    runningSha256?: string;
+    running_sha256?: string;
     /**
      * Whether to turn on seal wrapping for the mount.
      * @type {boolean}
      * @memberof MountsReadConfigurationResponse
      */
-    sealWrap?: boolean;
+    seal_wrap?: boolean;
     /**
      * The type of the backend. Example: "passthrough"
      * @type {string}
@@ -118,15 +118,15 @@ export function MountsReadConfigurationResponseFromJSONTyped(json: any, ignoreDi
         
         'accessor': json['accessor'] == null ? undefined : json['accessor'],
         'config': json['config'] == null ? undefined : json['config'],
-        'deprecationStatus': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
+        'deprecation_status': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
         'local': json['local'] == null ? undefined : json['local'],
         'options': json['options'] == null ? undefined : json['options'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'runningPluginVersion': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
-        'runningSha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
-        'sealWrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'running_plugin_version': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
+        'running_sha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
+        'seal_wrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
         'type': json['type'] == null ? undefined : json['type'],
         'uuid': json['uuid'] == null ? undefined : json['uuid'],
     };
@@ -145,15 +145,15 @@ export function MountsReadConfigurationResponseToJSONTyped(value?: MountsReadCon
         
         'accessor': value['accessor'],
         'config': value['config'],
-        'deprecation_status': value['deprecationStatus'],
+        'deprecation_status': value['deprecation_status'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
+        'external_entropy_access': value['external_entropy_access'],
         'local': value['local'],
         'options': value['options'],
-        'plugin_version': value['pluginVersion'],
-        'running_plugin_version': value['runningPluginVersion'],
-        'running_sha256': value['runningSha256'],
-        'seal_wrap': value['sealWrap'],
+        'plugin_version': value['plugin_version'],
+        'running_plugin_version': value['running_plugin_version'],
+        'running_sha256': value['running_sha256'],
+        'seal_wrap': value['seal_wrap'],
         'type': value['type'],
         'uuid': value['uuid'],
     };

@@ -24,13 +24,13 @@ export interface RateLimitQuotasWriteRequest {
      * @type {string}
      * @memberof RateLimitQuotasWriteRequest
      */
-    blockInterval?: string;
+    block_interval?: string;
     /**
      * Attribute by which to group requests by. Valid group_by modes are: 1) "ip" that groups requests by their source IP address (group_by defaults to ip if unset); 2) "none" that groups all requests that match the rate limit quota rule together; 3) "entity_then_ip" that groups requests by their entity ID for authenticated requests that carry one, or by their IP for unauthenticated requests (or requests whose authentication is not connected to an entity); and 4) "entity_then_none" which also groups requests by their entity ID when available, but the rest is all grouped together (i.e. unauthenticated or with authentication not connected to an entity).
      * @type {string}
      * @memberof RateLimitQuotasWriteRequest
      */
-    groupBy?: string;
+    group_by?: string;
     /**
      * Whether all child namespaces can inherit this namespace quota.
      * @type {boolean}
@@ -66,7 +66,7 @@ export interface RateLimitQuotasWriteRequest {
      * @type {number}
      * @memberof RateLimitQuotasWriteRequest
      */
-    secondaryRate?: number;
+    secondary_rate?: number;
     /**
      * Type of the quota rule.
      * @type {string}
@@ -92,14 +92,14 @@ export function RateLimitQuotasWriteRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'blockInterval': json['block_interval'] == null ? undefined : json['block_interval'],
-        'groupBy': json['group_by'] == null ? undefined : json['group_by'],
+        'block_interval': json['block_interval'] == null ? undefined : json['block_interval'],
+        'group_by': json['group_by'] == null ? undefined : json['group_by'],
         'inheritable': json['inheritable'] == null ? undefined : json['inheritable'],
         'interval': json['interval'] == null ? undefined : json['interval'],
         'path': json['path'] == null ? undefined : json['path'],
         'rate': json['rate'] == null ? undefined : json['rate'],
         'role': json['role'] == null ? undefined : json['role'],
-        'secondaryRate': json['secondary_rate'] == null ? undefined : json['secondary_rate'],
+        'secondary_rate': json['secondary_rate'] == null ? undefined : json['secondary_rate'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -115,14 +115,14 @@ export function RateLimitQuotasWriteRequestToJSONTyped(value?: RateLimitQuotasWr
 
     return {
         
-        'block_interval': value['blockInterval'],
-        'group_by': value['groupBy'],
+        'block_interval': value['block_interval'],
+        'group_by': value['group_by'],
         'inheritable': value['inheritable'],
         'interval': value['interval'],
         'path': value['path'],
         'rate': value['rate'],
         'role': value['role'],
-        'secondary_rate': value['secondaryRate'],
+        'secondary_rate': value['secondary_rate'],
         'type': value['type'],
     };
 }

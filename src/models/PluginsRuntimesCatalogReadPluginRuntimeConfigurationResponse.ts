@@ -24,19 +24,19 @@ export interface PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse {
      * @type {string}
      * @memberof PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse
      */
-    cgroupParent?: string;
+    cgroup_parent?: string;
     /**
      * CPU limit to set per container in nanos. Defaults to no limit.
      * @type {number}
      * @memberof PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse
      */
-    cpuNanos?: number;
+    cpu_nanos?: number;
     /**
      * Memory limit to set per container in bytes. Defaults to no limit.
      * @type {number}
      * @memberof PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse
      */
-    memoryBytes?: number;
+    memory_bytes?: number;
     /**
      * The name of the plugin runtime
      * @type {string}
@@ -48,7 +48,7 @@ export interface PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse {
      * @type {string}
      * @memberof PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponse
      */
-    ociRuntime?: string;
+    oci_runtime?: string;
     /**
      * Whether the container runtime is run as a non-privileged (non-root) user.
      * @type {boolean}
@@ -80,11 +80,11 @@ export function PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponseFrom
     }
     return {
         
-        'cgroupParent': json['cgroup_parent'] == null ? undefined : json['cgroup_parent'],
-        'cpuNanos': json['cpu_nanos'] == null ? undefined : json['cpu_nanos'],
-        'memoryBytes': json['memory_bytes'] == null ? undefined : json['memory_bytes'],
+        'cgroup_parent': json['cgroup_parent'] == null ? undefined : json['cgroup_parent'],
+        'cpu_nanos': json['cpu_nanos'] == null ? undefined : json['cpu_nanos'],
+        'memory_bytes': json['memory_bytes'] == null ? undefined : json['memory_bytes'],
         'name': json['name'] == null ? undefined : json['name'],
-        'ociRuntime': json['oci_runtime'] == null ? undefined : json['oci_runtime'],
+        'oci_runtime': json['oci_runtime'] == null ? undefined : json['oci_runtime'],
         'rootless': json['rootless'] == null ? undefined : json['rootless'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -101,11 +101,11 @@ export function PluginsRuntimesCatalogReadPluginRuntimeConfigurationResponseToJS
 
     return {
         
-        'cgroup_parent': value['cgroupParent'],
-        'cpu_nanos': value['cpuNanos'],
-        'memory_bytes': value['memoryBytes'],
+        'cgroup_parent': value['cgroup_parent'],
+        'cpu_nanos': value['cpu_nanos'],
+        'memory_bytes': value['memory_bytes'],
         'name': value['name'],
-        'oci_runtime': value['ociRuntime'],
+        'oci_runtime': value['oci_runtime'],
         'rootless': value['rootless'],
         'type': value['type'],
     };

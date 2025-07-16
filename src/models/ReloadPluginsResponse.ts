@@ -24,7 +24,7 @@ export interface ReloadPluginsResponse {
      * @type {string}
      * @memberof ReloadPluginsResponse
      */
-    reloadId?: string;
+    reload_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function ReloadPluginsResponseFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'reloadId': json['reload_id'] == null ? undefined : json['reload_id'],
+        'reload_id': json['reload_id'] == null ? undefined : json['reload_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function ReloadPluginsResponseToJSONTyped(value?: ReloadPluginsResponse |
 
     return {
         
-        'reload_id': value['reloadId'],
+        'reload_id': value['reload_id'],
     };
 }
 

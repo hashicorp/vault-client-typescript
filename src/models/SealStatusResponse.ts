@@ -24,31 +24,31 @@ export interface SealStatusResponse {
      * @type {string}
      * @memberof SealStatusResponse
      */
-    buildDate?: string;
+    build_date?: string;
     /**
      * 
      * @type {string}
      * @memberof SealStatusResponse
      */
-    clusterId?: string;
+    cluster_id?: string;
     /**
      * 
      * @type {string}
      * @memberof SealStatusResponse
      */
-    clusterName?: string;
+    cluster_name?: string;
     /**
      * 
      * @type {string}
      * @memberof SealStatusResponse
      */
-    hcpLinkResourceID?: string;
+    hcp_link_resource_ID?: string;
     /**
      * 
      * @type {string}
      * @memberof SealStatusResponse
      */
-    hcpLinkStatus?: string;
+    hcp_link_status?: string;
     /**
      * 
      * @type {boolean}
@@ -84,7 +84,7 @@ export interface SealStatusResponse {
      * @type {boolean}
      * @memberof SealStatusResponse
      */
-    recoverySeal?: boolean;
+    recovery_seal?: boolean;
     /**
      * 
      * @type {boolean}
@@ -96,7 +96,7 @@ export interface SealStatusResponse {
      * @type {string}
      * @memberof SealStatusResponse
      */
-    storageType?: string;
+    storage_type?: string;
     /**
      * 
      * @type {number}
@@ -134,19 +134,19 @@ export function SealStatusResponseFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'buildDate': json['build_date'] == null ? undefined : json['build_date'],
-        'clusterId': json['cluster_id'] == null ? undefined : json['cluster_id'],
-        'clusterName': json['cluster_name'] == null ? undefined : json['cluster_name'],
-        'hcpLinkResourceID': json['hcp_link_resource_ID'] == null ? undefined : json['hcp_link_resource_ID'],
-        'hcpLinkStatus': json['hcp_link_status'] == null ? undefined : json['hcp_link_status'],
+        'build_date': json['build_date'] == null ? undefined : json['build_date'],
+        'cluster_id': json['cluster_id'] == null ? undefined : json['cluster_id'],
+        'cluster_name': json['cluster_name'] == null ? undefined : json['cluster_name'],
+        'hcp_link_resource_ID': json['hcp_link_resource_ID'] == null ? undefined : json['hcp_link_resource_ID'],
+        'hcp_link_status': json['hcp_link_status'] == null ? undefined : json['hcp_link_status'],
         'initialized': json['initialized'] == null ? undefined : json['initialized'],
         'migration': json['migration'] == null ? undefined : json['migration'],
         'n': json['n'] == null ? undefined : json['n'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'progress': json['progress'] == null ? undefined : json['progress'],
-        'recoverySeal': json['recovery_seal'] == null ? undefined : json['recovery_seal'],
+        'recovery_seal': json['recovery_seal'] == null ? undefined : json['recovery_seal'],
         'sealed': json['sealed'] == null ? undefined : json['sealed'],
-        'storageType': json['storage_type'] == null ? undefined : json['storage_type'],
+        'storage_type': json['storage_type'] == null ? undefined : json['storage_type'],
         't': json['t'] == null ? undefined : json['t'],
         'type': json['type'] == null ? undefined : json['type'],
         'version': json['version'] == null ? undefined : json['version'],
@@ -164,19 +164,19 @@ export function SealStatusResponseToJSONTyped(value?: SealStatusResponse | null,
 
     return {
         
-        'build_date': value['buildDate'],
-        'cluster_id': value['clusterId'],
-        'cluster_name': value['clusterName'],
-        'hcp_link_resource_ID': value['hcpLinkResourceID'],
-        'hcp_link_status': value['hcpLinkStatus'],
+        'build_date': value['build_date'],
+        'cluster_id': value['cluster_id'],
+        'cluster_name': value['cluster_name'],
+        'hcp_link_resource_ID': value['hcp_link_resource_ID'],
+        'hcp_link_status': value['hcp_link_status'],
         'initialized': value['initialized'],
         'migration': value['migration'],
         'n': value['n'],
         'nonce': value['nonce'],
         'progress': value['progress'],
-        'recovery_seal': value['recoverySeal'],
+        'recovery_seal': value['recovery_seal'],
         'sealed': value['sealed'],
-        'storage_type': value['storageType'],
+        'storage_type': value['storage_type'],
         't': value['t'],
         'type': value['type'],
         'version': value['version'],

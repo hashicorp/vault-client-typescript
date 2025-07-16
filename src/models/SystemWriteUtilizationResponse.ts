@@ -24,7 +24,7 @@ export interface SystemWriteUtilizationResponse {
      * @type {string}
      * @memberof SystemWriteUtilizationResponse
      */
-    utilizationBundle?: string;
+    utilization_bundle?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteUtilizationResponseFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'utilizationBundle': json['utilization_bundle'] == null ? undefined : json['utilization_bundle'],
+        'utilization_bundle': json['utilization_bundle'] == null ? undefined : json['utilization_bundle'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteUtilizationResponseToJSONTyped(value?: SystemWriteUti
 
     return {
         
-        'utilization_bundle': value['utilizationBundle'],
+        'utilization_bundle': value['utilization_bundle'],
     };
 }
 

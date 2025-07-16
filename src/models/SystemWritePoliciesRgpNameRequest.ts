@@ -24,7 +24,7 @@ export interface SystemWritePoliciesRgpNameRequest {
      * @type {string}
      * @memberof SystemWritePoliciesRgpNameRequest
      */
-    enforcementLevel?: string;
+    enforcement_level?: string;
     /**
      * The rules of the policy.
      * @type {string}
@@ -50,7 +50,7 @@ export function SystemWritePoliciesRgpNameRequestFromJSONTyped(json: any, ignore
     }
     return {
         
-        'enforcementLevel': json['enforcement_level'] == null ? undefined : json['enforcement_level'],
+        'enforcement_level': json['enforcement_level'] == null ? undefined : json['enforcement_level'],
         'policy': json['policy'] == null ? undefined : json['policy'],
     };
 }
@@ -66,7 +66,7 @@ export function SystemWritePoliciesRgpNameRequestToJSONTyped(value?: SystemWrite
 
     return {
         
-        'enforcement_level': value['enforcementLevel'],
+        'enforcement_level': value['enforcement_level'],
         'policy': value['policy'],
     };
 }

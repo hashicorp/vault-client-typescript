@@ -30,7 +30,7 @@ export interface TransitVerifyWithAlgorithmRequest {
      * @type {Array<object>}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The CMAC, including vault header/key version (Enterprise only)
      * @type {string}
@@ -48,7 +48,7 @@ export interface TransitVerifyWithAlgorithmRequest {
      * @type {string}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    hashAlgorithm?: string;
+    hash_algorithm?: string;
     /**
      * The HMAC, including vault header/key version
      * @type {string}
@@ -66,13 +66,13 @@ export interface TransitVerifyWithAlgorithmRequest {
      * @type {number}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    macLength?: number;
+    mac_length?: number;
     /**
      * The method by which to unmarshal the signature when verifying. The default is 'asn1' which is used by openssl and X.509; can also be set to 'jws' which is used for JWT signatures in which case the signature is also expected to be url-safe base64 encoding instead of standard base64 encoding. Currently only valid for ECDSA P-256 key types".
      * @type {string}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    marshalingAlgorithm?: string;
+    marshaling_algorithm?: string;
     /**
      * Set to 'true' when the input is already hashed. If the key type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used to hash the input should be indicated by the 'algorithm' parameter.
      * @type {boolean}
@@ -84,7 +84,7 @@ export interface TransitVerifyWithAlgorithmRequest {
      * @type {string}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    saltLength?: string;
+    salt_length?: string;
     /**
      * The signature, including vault header/key version
      * @type {string}
@@ -96,13 +96,13 @@ export interface TransitVerifyWithAlgorithmRequest {
      * @type {string}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    signatureAlgorithm?: string;
+    signature_algorithm?: string;
     /**
      * Base64 encoded context for Ed25519ph and Ed25519ctx signatures. Currently only available with Ed25519 keys. (Enterprise Only)
      * @type {string}
      * @memberof TransitVerifyWithAlgorithmRequest
      */
-    signatureContext?: string;
+    signature_context?: string;
 }
 
 /**
@@ -123,19 +123,19 @@ export function TransitVerifyWithAlgorithmRequestFromJSONTyped(json: any, ignore
     return {
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'cmac': json['cmac'] == null ? undefined : json['cmac'],
         'context': json['context'] == null ? undefined : json['context'],
-        'hashAlgorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
+        'hash_algorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
         'hmac': json['hmac'] == null ? undefined : json['hmac'],
         'input': json['input'] == null ? undefined : json['input'],
-        'macLength': json['mac_length'] == null ? undefined : json['mac_length'],
-        'marshalingAlgorithm': json['marshaling_algorithm'] == null ? undefined : json['marshaling_algorithm'],
+        'mac_length': json['mac_length'] == null ? undefined : json['mac_length'],
+        'marshaling_algorithm': json['marshaling_algorithm'] == null ? undefined : json['marshaling_algorithm'],
         'prehashed': json['prehashed'] == null ? undefined : json['prehashed'],
-        'saltLength': json['salt_length'] == null ? undefined : json['salt_length'],
+        'salt_length': json['salt_length'] == null ? undefined : json['salt_length'],
         'signature': json['signature'] == null ? undefined : json['signature'],
-        'signatureAlgorithm': json['signature_algorithm'] == null ? undefined : json['signature_algorithm'],
-        'signatureContext': json['signature_context'] == null ? undefined : json['signature_context'],
+        'signature_algorithm': json['signature_algorithm'] == null ? undefined : json['signature_algorithm'],
+        'signature_context': json['signature_context'] == null ? undefined : json['signature_context'],
     };
 }
 
@@ -151,19 +151,19 @@ export function TransitVerifyWithAlgorithmRequestToJSONTyped(value?: TransitVeri
     return {
         
         'algorithm': value['algorithm'],
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'cmac': value['cmac'],
         'context': value['context'],
-        'hash_algorithm': value['hashAlgorithm'],
+        'hash_algorithm': value['hash_algorithm'],
         'hmac': value['hmac'],
         'input': value['input'],
-        'mac_length': value['macLength'],
-        'marshaling_algorithm': value['marshalingAlgorithm'],
+        'mac_length': value['mac_length'],
+        'marshaling_algorithm': value['marshaling_algorithm'],
         'prehashed': value['prehashed'],
-        'salt_length': value['saltLength'],
+        'salt_length': value['salt_length'],
         'signature': value['signature'],
-        'signature_algorithm': value['signatureAlgorithm'],
-        'signature_context': value['signatureContext'],
+        'signature_algorithm': value['signature_algorithm'],
+        'signature_context': value['signature_context'],
     };
 }
 

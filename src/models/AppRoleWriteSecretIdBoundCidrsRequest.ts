@@ -24,7 +24,7 @@ export interface AppRoleWriteSecretIdBoundCidrsRequest {
      * @type {Array<string>}
      * @memberof AppRoleWriteSecretIdBoundCidrsRequest
      */
-    secretIdBoundCidrs?: Array<string>;
+    secret_id_bound_cidrs?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteSecretIdBoundCidrsRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'secretIdBoundCidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
+        'secret_id_bound_cidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteSecretIdBoundCidrsRequestToJSONTyped(value?: AppRole
 
     return {
         
-        'secret_id_bound_cidrs': value['secretIdBoundCidrs'],
+        'secret_id_bound_cidrs': value['secret_id_bound_cidrs'],
     };
 }
 

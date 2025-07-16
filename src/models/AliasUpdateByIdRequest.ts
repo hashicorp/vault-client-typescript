@@ -24,19 +24,19 @@ export interface AliasUpdateByIdRequest {
      * @type {string}
      * @memberof AliasUpdateByIdRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * Entity ID to which this alias should be tied to. This field is deprecated in favor of 'canonical_id'.
      * @type {string}
      * @memberof AliasUpdateByIdRequest
      */
-    entityId?: string;
+    entity_id?: string;
     /**
      * Mount accessor to which this alias belongs to
      * @type {string}
      * @memberof AliasUpdateByIdRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the alias
      * @type {string}
@@ -62,9 +62,9 @@ export function AliasUpdateByIdRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -80,9 +80,9 @@ export function AliasUpdateByIdRequestToJSONTyped(value?: AliasUpdateByIdRequest
 
     return {
         
-        'canonical_id': value['canonicalId'],
-        'entity_id': value['entityId'],
-        'mount_accessor': value['mountAccessor'],
+        'canonical_id': value['canonical_id'],
+        'entity_id': value['entity_id'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

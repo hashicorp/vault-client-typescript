@@ -24,43 +24,43 @@ export interface SystemWriteSyncDestinationsAwsSmNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    accessKeyId?: string;
+    access_key_id?: string;
     /**
      * Sets which IPv4 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * Custom tags to set on the secret managed at the destination. Custom tags are merged with system tags.
      * @type {object}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    customTags?: object;
+    custom_tags?: object;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * Unique string used as a condition for extra security when assuming the AWS IAM role. Optional. Ignored if the role ARN is not set.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    externalId?: string;
+    external_id?: string;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -84,25 +84,25 @@ export interface SystemWriteSyncDestinationsAwsSmNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    roleArn?: string;
+    role_arn?: string;
     /**
      * AWS secret access key to access the secrets manager.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    secretAccessKey?: string;
+    secret_access_key?: string;
     /**
      * Template describing how to generate external secret names. Supports a subset of the Go Template syntax.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
     /**
      * List of custom tags to remove for patch requests. This field is ignored on create and update requests.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAwsSmNameRequest
      */
-    tagsToRemove?: Array<string>;
+    tags_to_remove?: Array<string>;
 }
 
 /**
@@ -122,20 +122,20 @@ export function SystemWriteSyncDestinationsAwsSmNameRequestFromJSONTyped(json: a
     }
     return {
         
-        'accessKeyId': json['access_key_id'] == null ? undefined : json['access_key_id'],
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
-        'customTags': json['custom_tags'] == null ? undefined : json['custom_tags'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
-        'externalId': json['external_id'] == null ? undefined : json['external_id'],
+        'access_key_id': json['access_key_id'] == null ? undefined : json['access_key_id'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'custom_tags': json['custom_tags'] == null ? undefined : json['custom_tags'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'external_id': json['external_id'] == null ? undefined : json['external_id'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
         'purge': json['purge'] == null ? undefined : json['purge'],
         'region': json['region'] == null ? undefined : json['region'],
-        'roleArn': json['role_arn'] == null ? undefined : json['role_arn'],
-        'secretAccessKey': json['secret_access_key'] == null ? undefined : json['secret_access_key'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
-        'tagsToRemove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
+        'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
+        'secret_access_key': json['secret_access_key'] == null ? undefined : json['secret_access_key'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'tags_to_remove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
     };
 }
 
@@ -150,20 +150,20 @@ export function SystemWriteSyncDestinationsAwsSmNameRequestToJSONTyped(value?: S
 
     return {
         
-        'access_key_id': value['accessKeyId'],
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
-        'custom_tags': value['customTags'],
-        'disable_strict_networking': value['disableStrictNetworking'],
-        'external_id': value['externalId'],
+        'access_key_id': value['access_key_id'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
+        'custom_tags': value['custom_tags'],
+        'disable_strict_networking': value['disable_strict_networking'],
+        'external_id': value['external_id'],
         'granularity': value['granularity'],
         'purge': value['purge'],
         'region': value['region'],
-        'role_arn': value['roleArn'],
-        'secret_access_key': value['secretAccessKey'],
-        'secret_name_template': value['secretNameTemplate'],
-        'tags_to_remove': value['tagsToRemove'],
+        'role_arn': value['role_arn'],
+        'secret_access_key': value['secret_access_key'],
+        'secret_name_template': value['secret_name_template'],
+        'tags_to_remove': value['tags_to_remove'],
     };
 }
 

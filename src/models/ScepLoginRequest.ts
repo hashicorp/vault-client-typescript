@@ -24,13 +24,13 @@ export interface ScepLoginRequest {
      * @type {string}
      * @memberof ScepLoginRequest
      */
-    challengeType?: ScepLoginRequestChallengeTypeEnum;
+    challenge_type?: ScepLoginRequestChallengeTypeEnum;
     /**
      * When using InTune authentication, validate the PKI mount can solve the challenge/response
      * @type {string}
      * @memberof ScepLoginRequest
      */
-    challengeValue?: string;
+    challenge_value?: string;
     /**
      * CSR provided through the SCEP protocol.
      * @type {string}
@@ -38,7 +38,7 @@ export interface ScepLoginRequest {
      */
     csr: string;
     /**
-     * The name of the scep role to authenticate against.
+     * The name of the SCEP role to authenticate against.
      * @type {string}
      * @memberof ScepLoginRequest
      */
@@ -73,8 +73,8 @@ export function ScepLoginRequestFromJSONTyped(json: any, ignoreDiscriminator: bo
     }
     return {
         
-        'challengeType': json['challenge_type'] == null ? undefined : json['challenge_type'],
-        'challengeValue': json['challenge_value'] == null ? undefined : json['challenge_value'],
+        'challenge_type': json['challenge_type'] == null ? undefined : json['challenge_type'],
+        'challenge_value': json['challenge_value'] == null ? undefined : json['challenge_value'],
         'csr': json['csr'],
         'name': json['name'] == null ? undefined : json['name'],
     };
@@ -91,8 +91,8 @@ export function ScepLoginRequestToJSONTyped(value?: ScepLoginRequest | null, ign
 
     return {
         
-        'challenge_type': value['challengeType'],
-        'challenge_value': value['challengeValue'],
+        'challenge_type': value['challenge_type'],
+        'challenge_value': value['challenge_value'],
         'csr': value['csr'],
         'name': value['name'],
     };

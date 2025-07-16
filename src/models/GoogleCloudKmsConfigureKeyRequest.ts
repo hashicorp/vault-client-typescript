@@ -24,13 +24,13 @@ export interface GoogleCloudKmsConfigureKeyRequest {
      * @type {number}
      * @memberof GoogleCloudKmsConfigureKeyRequest
      */
-    maxVersion?: number;
+    max_version?: number;
     /**
      * Minimum allowed crypto key version. If set to a positive value, key versions less than the given value are not permitted to be used. If set to 0 or a negative value, there is no minimum key version. This value only affects encryption/re-encryption, not decryption. To restrict old values from being decrypted, increase this value and then perform a trim operation.
      * @type {number}
      * @memberof GoogleCloudKmsConfigureKeyRequest
      */
-    minVersion?: number;
+    min_version?: number;
 }
 
 /**
@@ -50,8 +50,8 @@ export function GoogleCloudKmsConfigureKeyRequestFromJSONTyped(json: any, ignore
     }
     return {
         
-        'maxVersion': json['max_version'] == null ? undefined : json['max_version'],
-        'minVersion': json['min_version'] == null ? undefined : json['min_version'],
+        'max_version': json['max_version'] == null ? undefined : json['max_version'],
+        'min_version': json['min_version'] == null ? undefined : json['min_version'],
     };
 }
 
@@ -66,8 +66,8 @@ export function GoogleCloudKmsConfigureKeyRequestToJSONTyped(value?: GoogleCloud
 
     return {
         
-        'max_version': value['maxVersion'],
-        'min_version': value['minVersion'],
+        'max_version': value['max_version'],
+        'min_version': value['min_version'],
     };
 }
 

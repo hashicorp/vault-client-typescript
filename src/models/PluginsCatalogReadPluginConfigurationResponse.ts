@@ -42,7 +42,7 @@ export interface PluginsCatalogReadPluginConfigurationResponse {
      * @type {string}
      * @memberof PluginsCatalogReadPluginConfigurationResponse
      */
-    deprecationStatus?: string;
+    deprecation_status?: string;
     /**
      * The name of the plugin
      * @type {string}
@@ -54,7 +54,7 @@ export interface PluginsCatalogReadPluginConfigurationResponse {
      * @type {string}
      * @memberof PluginsCatalogReadPluginConfigurationResponse
      */
-    ociImage?: string;
+    oci_image?: string;
     /**
      * The Vault plugin runtime to use when running the plugin.
      * @type {string}
@@ -95,9 +95,9 @@ export function PluginsCatalogReadPluginConfigurationResponseFromJSONTyped(json:
         'args': json['args'] == null ? undefined : json['args'],
         'builtin': json['builtin'] == null ? undefined : json['builtin'],
         'command': json['command'] == null ? undefined : json['command'],
-        'deprecationStatus': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
+        'deprecation_status': json['deprecation_status'] == null ? undefined : json['deprecation_status'],
         'name': json['name'] == null ? undefined : json['name'],
-        'ociImage': json['oci_image'] == null ? undefined : json['oci_image'],
+        'oci_image': json['oci_image'] == null ? undefined : json['oci_image'],
         'runtime': json['runtime'] == null ? undefined : json['runtime'],
         'sha256': json['sha256'] == null ? undefined : json['sha256'],
         'version': json['version'] == null ? undefined : json['version'],
@@ -118,9 +118,9 @@ export function PluginsCatalogReadPluginConfigurationResponseToJSONTyped(value?:
         'args': value['args'],
         'builtin': value['builtin'],
         'command': value['command'],
-        'deprecation_status': value['deprecationStatus'],
+        'deprecation_status': value['deprecation_status'],
         'name': value['name'],
-        'oci_image': value['ociImage'],
+        'oci_image': value['oci_image'],
         'runtime': value['runtime'],
         'sha256': value['sha256'],
         'version': value['version'],

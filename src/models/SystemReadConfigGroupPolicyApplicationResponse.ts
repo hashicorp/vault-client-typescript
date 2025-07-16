@@ -24,7 +24,7 @@ export interface SystemReadConfigGroupPolicyApplicationResponse {
      * @type {string}
      * @memberof SystemReadConfigGroupPolicyApplicationResponse
      */
-    groupPolicyApplicationMode?: string;
+    group_policy_application_mode?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemReadConfigGroupPolicyApplicationResponseFromJSONTyped(json
     }
     return {
         
-        'groupPolicyApplicationMode': json['group_policy_application_mode'] == null ? undefined : json['group_policy_application_mode'],
+        'group_policy_application_mode': json['group_policy_application_mode'] == null ? undefined : json['group_policy_application_mode'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemReadConfigGroupPolicyApplicationResponseToJSONTyped(value?
 
     return {
         
-        'group_policy_application_mode': value['groupPolicyApplicationMode'],
+        'group_policy_application_mode': value['group_policy_application_mode'],
     };
 }
 

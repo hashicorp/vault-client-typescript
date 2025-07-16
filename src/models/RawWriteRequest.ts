@@ -30,7 +30,7 @@ export interface RawWriteRequest {
      * @type {string}
      * @memberof RawWriteRequest
      */
-    compressionType?: string;
+    compression_type?: string;
     /**
      * 
      * @type {string}
@@ -63,7 +63,7 @@ export function RawWriteRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     return {
         
         'compressed': json['compressed'] == null ? undefined : json['compressed'],
-        'compressionType': json['compression_type'] == null ? undefined : json['compression_type'],
+        'compression_type': json['compression_type'] == null ? undefined : json['compression_type'],
         'encoding': json['encoding'] == null ? undefined : json['encoding'],
         'value': json['value'] == null ? undefined : json['value'],
     };
@@ -81,7 +81,7 @@ export function RawWriteRequestToJSONTyped(value?: RawWriteRequest | null, ignor
     return {
         
         'compressed': value['compressed'],
-        'compression_type': value['compressionType'],
+        'compression_type': value['compression_type'],
         'encoding': value['encoding'],
         'value': value['value'],
     };

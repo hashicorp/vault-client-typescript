@@ -30,13 +30,13 @@ export interface PkiRevokeWithKeyRequest {
      * @type {string}
      * @memberof PkiRevokeWithKeyRequest
      */
-    privateKey?: string;
+    private_key?: string;
     /**
      * Certificate serial number, in colon- or hyphen-separated octal
      * @type {string}
      * @memberof PkiRevokeWithKeyRequest
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -57,8 +57,8 @@ export function PkiRevokeWithKeyRequestFromJSONTyped(json: any, ignoreDiscrimina
     return {
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -74,8 +74,8 @@ export function PkiRevokeWithKeyRequestToJSONTyped(value?: PkiRevokeWithKeyReque
     return {
         
         'certificate': value['certificate'],
-        'private_key': value['privateKey'],
-        'serial_number': value['serialNumber'],
+        'private_key': value['private_key'],
+        'serial_number': value['serial_number'],
     };
 }
 

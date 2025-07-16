@@ -30,7 +30,7 @@ export interface EntitiesCreateDuplicatesRequest {
      * @type {boolean}
      * @memberof EntitiesCreateDuplicatesRequest
      */
-    differentCase?: boolean;
+    different_case?: boolean;
     /**
      * Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
      * @type {object}
@@ -48,7 +48,7 @@ export interface EntitiesCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntitiesCreateDuplicatesRequest
      */
-    namespaceId?: string;
+    namespace_id?: string;
     /**
      * Policies to be tied to the entity.
      * @type {Array<string>}
@@ -75,10 +75,10 @@ export function EntitiesCreateDuplicatesRequestFromJSONTyped(json: any, ignoreDi
     return {
         
         'count': json['count'] == null ? undefined : json['count'],
-        'differentCase': json['different_case'] == null ? undefined : json['different_case'],
+        'different_case': json['different_case'] == null ? undefined : json['different_case'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
         'name': json['name'] == null ? undefined : json['name'],
-        'namespaceId': json['namespace_id'] == null ? undefined : json['namespace_id'],
+        'namespace_id': json['namespace_id'] == null ? undefined : json['namespace_id'],
         'policies': json['policies'] == null ? undefined : json['policies'],
     };
 }
@@ -95,10 +95,10 @@ export function EntitiesCreateDuplicatesRequestToJSONTyped(value?: EntitiesCreat
     return {
         
         'count': value['count'],
-        'different_case': value['differentCase'],
+        'different_case': value['different_case'],
         'metadata': value['metadata'],
         'name': value['name'],
-        'namespace_id': value['namespaceId'],
+        'namespace_id': value['namespace_id'],
         'policies': value['policies'],
     };
 }

@@ -24,13 +24,13 @@ export interface KeyManagementUpdateKeyRequest {
      * @type {boolean}
      * @memberof KeyManagementUpdateKeyRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * Specifies the minimum version of the key that is enabled. All versions less than the specified value will be disabled. If set to zero, all versions of the key will be enabled. This parameter can only be specified during an update operation.
      * @type {number}
      * @memberof KeyManagementUpdateKeyRequest
      */
-    minEnabledVersion?: number;
+    min_enabled_version?: number;
     /**
      * Specifies the type of key to create. Currently, "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), and "aes256-gcm96" (symmetric) are supported. The default is "rsa-2048". This parameter cannot be modified by an update operation after creation.
      * @type {string}
@@ -71,8 +71,8 @@ export function KeyManagementUpdateKeyRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
-        'minEnabledVersion': json['min_enabled_version'] == null ? undefined : json['min_enabled_version'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'min_enabled_version': json['min_enabled_version'] == null ? undefined : json['min_enabled_version'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -88,8 +88,8 @@ export function KeyManagementUpdateKeyRequestToJSONTyped(value?: KeyManagementUp
 
     return {
         
-        'deletion_allowed': value['deletionAllowed'],
-        'min_enabled_version': value['minEnabledVersion'],
+        'deletion_allowed': value['deletion_allowed'],
+        'min_enabled_version': value['min_enabled_version'],
         'type': value['type'],
     };
 }

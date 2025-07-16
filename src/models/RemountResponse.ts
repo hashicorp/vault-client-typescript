@@ -24,7 +24,7 @@ export interface RemountResponse {
      * @type {string}
      * @memberof RemountResponse
      */
-    migrationId?: string;
+    migration_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function RemountResponseFromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         
-        'migrationId': json['migration_id'] == null ? undefined : json['migration_id'],
+        'migration_id': json['migration_id'] == null ? undefined : json['migration_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function RemountResponseToJSONTyped(value?: RemountResponse | null, ignor
 
     return {
         
-        'migration_id': value['migrationId'],
+        'migration_id': value['migration_id'],
     };
 }
 

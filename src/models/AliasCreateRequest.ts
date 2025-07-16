@@ -24,13 +24,13 @@ export interface AliasCreateRequest {
      * @type {string}
      * @memberof AliasCreateRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * Entity ID to which this alias belongs to. This field is deprecated in favor of 'canonical_id'.
      * @type {string}
      * @memberof AliasCreateRequest
      */
-    entityId?: string;
+    entity_id?: string;
     /**
      * ID of the alias
      * @type {string}
@@ -42,7 +42,7 @@ export interface AliasCreateRequest {
      * @type {string}
      * @memberof AliasCreateRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the alias
      * @type {string}
@@ -68,10 +68,10 @@ export function AliasCreateRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -87,10 +87,10 @@ export function AliasCreateRequestToJSONTyped(value?: AliasCreateRequest | null,
 
     return {
         
-        'canonical_id': value['canonicalId'],
-        'entity_id': value['entityId'],
+        'canonical_id': value['canonical_id'],
+        'entity_id': value['entity_id'],
         'id': value['id'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

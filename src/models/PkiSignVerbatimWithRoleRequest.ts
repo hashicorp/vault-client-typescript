@@ -24,19 +24,19 @@ export interface PkiSignVerbatimWithRoleRequest {
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    altNames?: string;
+    alt_names?: string;
     /**
      * User supplied metadata to store associated with this certificate's serial number, base64 encoded
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    certMetadata?: string;
+    cert_metadata?: string;
     /**
      * The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    commonName?: string;
+    common_name?: string;
     /**
      * PEM-format CSR to be signed. Values will be taken verbatim from the CSR, except for basic constraints.
      * @type {string}
@@ -48,19 +48,19 @@ export interface PkiSignVerbatimWithRoleRequest {
      * @type {boolean}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    excludeCnFromSans?: boolean;
+    exclude_cn_from_sans?: boolean;
     /**
      * A comma-separated string or list of extended key usages. Valid values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage -- simply drop the "ExtKeyUsage" part of the name. To remove all key usages from being set, set this value to an empty list.
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    extKeyUsage?: Array<string>;
+    ext_key_usage?: Array<string>;
     /**
      * A comma-separated string or list of extended key usage oids.
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    extKeyUsageOids?: Array<string>;
+    ext_key_usage_oids?: Array<string>;
     /**
      * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
@@ -72,55 +72,55 @@ export interface PkiSignVerbatimWithRoleRequest {
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    ipSans?: Array<string>;
+    ip_sans?: Array<string>;
     /**
      * Reference to a existing issuer; either "default" for the configured default issuer, an identifier or the name assigned to the issuer.
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    issuerRef?: string;
+    issuer_ref?: string;
     /**
      * A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the "KeyUsage" part of the name. To remove all key usages from being set, set this value to an empty list.
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    keyUsage?: Array<string>;
+    key_usage?: Array<string>;
     /**
      * Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    notAfter?: string;
+    not_after?: string;
     /**
      * Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    otherSans?: Array<string>;
+    other_sans?: Array<string>;
     /**
      * Format for the returned private key. Generally the default will be controlled by the "format" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to "der".
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    privateKeyFormat?: PkiSignVerbatimWithRoleRequestPrivateKeyFormatEnum;
+    private_key_format?: PkiSignVerbatimWithRoleRequestPrivateKeyFormatEnum;
     /**
      * Whether or not to remove self-signed CA certificates in the output of the ca_chain field.
      * @type {boolean}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    removeRootsFromChain?: boolean;
+    remove_roots_from_chain?: boolean;
     /**
      * The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
      * @type {string}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    serialNumber?: string;
+    serial_number?: string;
     /**
      * The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
      * @type {number}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    signatureBits?: number;
+    signature_bits?: number;
     /**
      * The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
      * @type {string}
@@ -132,19 +132,19 @@ export interface PkiSignVerbatimWithRoleRequest {
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    uriSans?: Array<string>;
+    uri_sans?: Array<string>;
     /**
      * Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
      * @type {boolean}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    usePss?: boolean;
+    use_pss?: boolean;
     /**
      * The requested user_ids value to place in the subject, if any, in a comma-delimited list. Restricted by allowed_user_ids. Any values are added with OID 0.9.2342.19200300.100.1.1.
      * @type {Array<string>}
      * @memberof PkiSignVerbatimWithRoleRequest
      */
-    userIds?: Array<string>;
+    user_ids?: Array<string>;
 }
 
 /**
@@ -185,27 +185,27 @@ export function PkiSignVerbatimWithRoleRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'altNames': json['alt_names'] == null ? undefined : json['alt_names'],
-        'certMetadata': json['cert_metadata'] == null ? undefined : json['cert_metadata'],
-        'commonName': json['common_name'] == null ? undefined : json['common_name'],
+        'alt_names': json['alt_names'] == null ? undefined : json['alt_names'],
+        'cert_metadata': json['cert_metadata'] == null ? undefined : json['cert_metadata'],
+        'common_name': json['common_name'] == null ? undefined : json['common_name'],
         'csr': json['csr'] == null ? undefined : json['csr'],
-        'excludeCnFromSans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
-        'extKeyUsage': json['ext_key_usage'] == null ? undefined : json['ext_key_usage'],
-        'extKeyUsageOids': json['ext_key_usage_oids'] == null ? undefined : json['ext_key_usage_oids'],
+        'exclude_cn_from_sans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
+        'ext_key_usage': json['ext_key_usage'] == null ? undefined : json['ext_key_usage'],
+        'ext_key_usage_oids': json['ext_key_usage_oids'] == null ? undefined : json['ext_key_usage_oids'],
         'format': json['format'] == null ? undefined : json['format'],
-        'ipSans': json['ip_sans'] == null ? undefined : json['ip_sans'],
-        'issuerRef': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
-        'keyUsage': json['key_usage'] == null ? undefined : json['key_usage'],
-        'notAfter': json['not_after'] == null ? undefined : json['not_after'],
-        'otherSans': json['other_sans'] == null ? undefined : json['other_sans'],
-        'privateKeyFormat': json['private_key_format'] == null ? undefined : json['private_key_format'],
-        'removeRootsFromChain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
-        'signatureBits': json['signature_bits'] == null ? undefined : json['signature_bits'],
+        'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
+        'issuer_ref': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
+        'key_usage': json['key_usage'] == null ? undefined : json['key_usage'],
+        'not_after': json['not_after'] == null ? undefined : json['not_after'],
+        'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
+        'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
+        'remove_roots_from_chain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
+        'signature_bits': json['signature_bits'] == null ? undefined : json['signature_bits'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'uriSans': json['uri_sans'] == null ? undefined : json['uri_sans'],
-        'usePss': json['use_pss'] == null ? undefined : json['use_pss'],
-        'userIds': json['user_ids'] == null ? undefined : json['user_ids'],
+        'uri_sans': json['uri_sans'] == null ? undefined : json['uri_sans'],
+        'use_pss': json['use_pss'] == null ? undefined : json['use_pss'],
+        'user_ids': json['user_ids'] == null ? undefined : json['user_ids'],
     };
 }
 
@@ -220,27 +220,27 @@ export function PkiSignVerbatimWithRoleRequestToJSONTyped(value?: PkiSignVerbati
 
     return {
         
-        'alt_names': value['altNames'],
-        'cert_metadata': value['certMetadata'],
-        'common_name': value['commonName'],
+        'alt_names': value['alt_names'],
+        'cert_metadata': value['cert_metadata'],
+        'common_name': value['common_name'],
         'csr': value['csr'],
-        'exclude_cn_from_sans': value['excludeCnFromSans'],
-        'ext_key_usage': value['extKeyUsage'],
-        'ext_key_usage_oids': value['extKeyUsageOids'],
+        'exclude_cn_from_sans': value['exclude_cn_from_sans'],
+        'ext_key_usage': value['ext_key_usage'],
+        'ext_key_usage_oids': value['ext_key_usage_oids'],
         'format': value['format'],
-        'ip_sans': value['ipSans'],
-        'issuer_ref': value['issuerRef'],
-        'key_usage': value['keyUsage'],
-        'not_after': value['notAfter'],
-        'other_sans': value['otherSans'],
-        'private_key_format': value['privateKeyFormat'],
-        'remove_roots_from_chain': value['removeRootsFromChain'],
-        'serial_number': value['serialNumber'],
-        'signature_bits': value['signatureBits'],
+        'ip_sans': value['ip_sans'],
+        'issuer_ref': value['issuer_ref'],
+        'key_usage': value['key_usage'],
+        'not_after': value['not_after'],
+        'other_sans': value['other_sans'],
+        'private_key_format': value['private_key_format'],
+        'remove_roots_from_chain': value['remove_roots_from_chain'],
+        'serial_number': value['serial_number'],
+        'signature_bits': value['signature_bits'],
         'ttl': value['ttl'],
-        'uri_sans': value['uriSans'],
-        'use_pss': value['usePss'],
-        'user_ids': value['userIds'],
+        'uri_sans': value['uri_sans'],
+        'use_pss': value['use_pss'],
+        'user_ids': value['user_ids'],
     };
 }
 

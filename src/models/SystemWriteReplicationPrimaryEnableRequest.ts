@@ -24,7 +24,7 @@ export interface SystemWriteReplicationPrimaryEnableRequest {
      * @type {string}
      * @memberof SystemWriteReplicationPrimaryEnableRequest
      */
-    primaryClusterAddr?: string;
+    primary_cluster_addr?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteReplicationPrimaryEnableRequestFromJSONTyped(json: an
     }
     return {
         
-        'primaryClusterAddr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
+        'primary_cluster_addr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteReplicationPrimaryEnableRequestToJSONTyped(value?: Sy
 
     return {
         
-        'primary_cluster_addr': value['primaryClusterAddr'],
+        'primary_cluster_addr': value['primary_cluster_addr'],
     };
 }
 

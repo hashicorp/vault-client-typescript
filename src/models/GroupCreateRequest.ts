@@ -30,13 +30,13 @@ export interface GroupCreateRequest {
      * @type {Array<string>}
      * @memberof GroupCreateRequest
      */
-    memberEntityIds?: Array<string>;
+    member_entity_ids?: Array<string>;
     /**
      * Group IDs to be assigned as group members.
      * @type {Array<string>}
      * @memberof GroupCreateRequest
      */
-    memberGroupIds?: Array<string>;
+    member_group_ids?: Array<string>;
     /**
      * Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
      * @type {object}
@@ -81,8 +81,8 @@ export function GroupCreateRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'memberEntityIds': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
-        'memberGroupIds': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
+        'member_entity_ids': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
+        'member_group_ids': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
         'name': json['name'] == null ? undefined : json['name'],
         'policies': json['policies'] == null ? undefined : json['policies'],
@@ -102,8 +102,8 @@ export function GroupCreateRequestToJSONTyped(value?: GroupCreateRequest | null,
     return {
         
         'id': value['id'],
-        'member_entity_ids': value['memberEntityIds'],
-        'member_group_ids': value['memberGroupIds'],
+        'member_entity_ids': value['member_entity_ids'],
+        'member_group_ids': value['member_group_ids'],
         'metadata': value['metadata'],
         'name': value['name'],
         'policies': value['policies'],

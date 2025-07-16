@@ -24,7 +24,7 @@ export interface OidcIntrospectRequest {
      * @type {string}
      * @memberof OidcIntrospectRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * Token to verify
      * @type {string}
@@ -50,7 +50,7 @@ export function OidcIntrospectRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
         'token': json['token'] == null ? undefined : json['token'],
     };
 }
@@ -66,7 +66,7 @@ export function OidcIntrospectRequestToJSONTyped(value?: OidcIntrospectRequest |
 
     return {
         
-        'client_id': value['clientId'],
+        'client_id': value['client_id'],
         'token': value['token'],
     };
 }

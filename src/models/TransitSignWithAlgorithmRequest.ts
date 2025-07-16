@@ -30,7 +30,7 @@ export interface TransitSignWithAlgorithmRequest {
      * @type {Array<object>}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
      * @type {string}
@@ -42,7 +42,7 @@ export interface TransitSignWithAlgorithmRequest {
      * @type {string}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    hashAlgorithm?: string;
+    hash_algorithm?: string;
     /**
      * The base64-encoded input data
      * @type {string}
@@ -54,13 +54,13 @@ export interface TransitSignWithAlgorithmRequest {
      * @type {number}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * The method by which to marshal the signature. The default is 'asn1' which is used by openssl and X.509. It can also be set to 'jws' which is used for JWT signatures; setting it to this will also cause the encoding of the signature to be url-safe base64 instead of using standard base64 encoding. Currently only valid for ECDSA P-256 key types".
      * @type {string}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    marshalingAlgorithm?: string;
+    marshaling_algorithm?: string;
     /**
      * Set to 'true' when the input is already hashed. If the key type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used to hash the input should be indicated by the 'algorithm' parameter.
      * @type {boolean}
@@ -72,19 +72,19 @@ export interface TransitSignWithAlgorithmRequest {
      * @type {string}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    saltLength?: string;
+    salt_length?: string;
     /**
      * The signature algorithm to use for signing. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'
      * @type {string}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    signatureAlgorithm?: string;
+    signature_algorithm?: string;
     /**
      * Base64 encoded context for Ed25519ph and Ed25519ctx signatures. Currently only available with Ed25519 keys. (Enterprise Only)
      * @type {string}
      * @memberof TransitSignWithAlgorithmRequest
      */
-    signatureContext?: string;
+    signature_context?: string;
 }
 
 /**
@@ -105,16 +105,16 @@ export function TransitSignWithAlgorithmRequestFromJSONTyped(json: any, ignoreDi
     return {
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'context': json['context'] == null ? undefined : json['context'],
-        'hashAlgorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
+        'hash_algorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
         'input': json['input'] == null ? undefined : json['input'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
-        'marshalingAlgorithm': json['marshaling_algorithm'] == null ? undefined : json['marshaling_algorithm'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
+        'marshaling_algorithm': json['marshaling_algorithm'] == null ? undefined : json['marshaling_algorithm'],
         'prehashed': json['prehashed'] == null ? undefined : json['prehashed'],
-        'saltLength': json['salt_length'] == null ? undefined : json['salt_length'],
-        'signatureAlgorithm': json['signature_algorithm'] == null ? undefined : json['signature_algorithm'],
-        'signatureContext': json['signature_context'] == null ? undefined : json['signature_context'],
+        'salt_length': json['salt_length'] == null ? undefined : json['salt_length'],
+        'signature_algorithm': json['signature_algorithm'] == null ? undefined : json['signature_algorithm'],
+        'signature_context': json['signature_context'] == null ? undefined : json['signature_context'],
     };
 }
 
@@ -130,16 +130,16 @@ export function TransitSignWithAlgorithmRequestToJSONTyped(value?: TransitSignWi
     return {
         
         'algorithm': value['algorithm'],
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'context': value['context'],
-        'hash_algorithm': value['hashAlgorithm'],
+        'hash_algorithm': value['hash_algorithm'],
         'input': value['input'],
-        'key_version': value['keyVersion'],
-        'marshaling_algorithm': value['marshalingAlgorithm'],
+        'key_version': value['key_version'],
+        'marshaling_algorithm': value['marshaling_algorithm'],
         'prehashed': value['prehashed'],
-        'salt_length': value['saltLength'],
-        'signature_algorithm': value['signatureAlgorithm'],
-        'signature_context': value['signatureContext'],
+        'salt_length': value['salt_length'],
+        'signature_algorithm': value['signature_algorithm'],
+        'signature_context': value['signature_context'],
     };
 }
 

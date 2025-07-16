@@ -24,13 +24,13 @@ export interface GoogleCloudWriteImpersonatedAccountRequest {
      * @type {string}
      * @memberof GoogleCloudWriteImpersonatedAccountRequest
      */
-    serviceAccountEmail?: string;
+    service_account_email?: string;
     /**
      * List of OAuth scopes to assign to access tokens generated under this account.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteImpersonatedAccountRequest
      */
-    tokenScopes?: Array<string>;
+    token_scopes?: Array<string>;
     /**
      * Lifetime of the token for the impersonated account.
      * @type {string}
@@ -56,8 +56,8 @@ export function GoogleCloudWriteImpersonatedAccountRequestFromJSONTyped(json: an
     }
     return {
         
-        'serviceAccountEmail': json['service_account_email'] == null ? undefined : json['service_account_email'],
-        'tokenScopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
+        'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
+        'token_scopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -73,8 +73,8 @@ export function GoogleCloudWriteImpersonatedAccountRequestToJSONTyped(value?: Go
 
     return {
         
-        'service_account_email': value['serviceAccountEmail'],
-        'token_scopes': value['tokenScopes'],
+        'service_account_email': value['service_account_email'],
+        'token_scopes': value['token_scopes'],
         'ttl': value['ttl'],
     };
 }

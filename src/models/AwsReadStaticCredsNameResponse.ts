@@ -24,13 +24,13 @@ export interface AwsReadStaticCredsNameResponse {
      * @type {string}
      * @memberof AwsReadStaticCredsNameResponse
      */
-    accessKey?: string;
+    access_key?: string;
     /**
      * The secret key of the AWS Credential
      * @type {string}
      * @memberof AwsReadStaticCredsNameResponse
      */
-    secretKey?: string;
+    secret_key?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function AwsReadStaticCredsNameResponseFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'accessKey': json['access_key'] == null ? undefined : json['access_key'],
-        'secretKey': json['secret_key'] == null ? undefined : json['secret_key'],
+        'access_key': json['access_key'] == null ? undefined : json['access_key'],
+        'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
     };
 }
 
@@ -66,8 +66,8 @@ export function AwsReadStaticCredsNameResponseToJSONTyped(value?: AwsReadStaticC
 
     return {
         
-        'access_key': value['accessKey'],
-        'secret_key': value['secretKey'],
+        'access_key': value['access_key'],
+        'secret_key': value['secret_key'],
     };
 }
 

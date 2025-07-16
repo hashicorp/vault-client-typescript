@@ -24,19 +24,19 @@ export interface EntityCreateAliasRequest {
      * @type {string}
      * @memberof EntityCreateAliasRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * User provided key-value pairs
      * @type {object}
      * @memberof EntityCreateAliasRequest
      */
-    customMetadata?: object;
+    custom_metadata?: object;
     /**
      * Entity ID to which this alias belongs. This field is deprecated, use canonical_id.
      * @type {string}
      * @memberof EntityCreateAliasRequest
      */
-    entityId?: string;
+    entity_id?: string;
     /**
      * ID of the entity alias. If set, updates the corresponding entity alias.
      * @type {string}
@@ -48,7 +48,7 @@ export interface EntityCreateAliasRequest {
      * @type {string}
      * @memberof EntityCreateAliasRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the alias; unused for a modify
      * @type {string}
@@ -74,11 +74,11 @@ export function EntityCreateAliasRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
-        'customMetadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -94,11 +94,11 @@ export function EntityCreateAliasRequestToJSONTyped(value?: EntityCreateAliasReq
 
     return {
         
-        'canonical_id': value['canonicalId'],
-        'custom_metadata': value['customMetadata'],
-        'entity_id': value['entityId'],
+        'canonical_id': value['canonical_id'],
+        'custom_metadata': value['custom_metadata'],
+        'entity_id': value['entity_id'],
         'id': value['id'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

@@ -30,7 +30,7 @@ export interface CreateCustomMessageRequest {
      * @type {Date}
      * @memberof CreateCustomMessageRequest
      */
-    endTime?: Date;
+    end_time?: Date;
     /**
      * 
      * @type {object}
@@ -54,7 +54,7 @@ export interface CreateCustomMessageRequest {
      * @type {Date}
      * @memberof CreateCustomMessageRequest
      */
-    startTime: Date;
+    start_time: Date;
     /**
      * 
      * @type {string}
@@ -74,7 +74,7 @@ export interface CreateCustomMessageRequest {
  */
 export function instanceOfCreateCustomMessageRequest(value: object): value is CreateCustomMessageRequest {
     if (!('message' in value) || value['message'] === undefined) return false;
-    if (!('startTime' in value) || value['startTime'] === undefined) return false;
+    if (!('start_time' in value) || value['start_time'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     return true;
 }
@@ -90,11 +90,11 @@ export function CreateCustomMessageRequestFromJSONTyped(json: any, ignoreDiscrim
     return {
         
         'authenticated': json['authenticated'] == null ? undefined : json['authenticated'],
-        'endTime': json['end_time'] == null ? undefined : (new Date(json['end_time'])),
+        'end_time': json['end_time'] == null ? undefined : (new Date(json['end_time'])),
         'link': json['link'] == null ? undefined : json['link'],
         'message': json['message'],
         'options': json['options'] == null ? undefined : json['options'],
-        'startTime': (new Date(json['start_time'])),
+        'start_time': (new Date(json['start_time'])),
         'title': json['title'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -112,11 +112,11 @@ export function CreateCustomMessageRequestToJSONTyped(value?: CreateCustomMessag
     return {
         
         'authenticated': value['authenticated'],
-        'end_time': value['endTime'] == null ? undefined : ((value['endTime']).toISOString()),
+        'end_time': value['end_time'] == null ? undefined : ((value['end_time']).toISOString()),
         'link': value['link'],
         'message': value['message'],
         'options': value['options'],
-        'start_time': ((value['startTime']).toISOString()),
+        'start_time': ((value['start_time']).toISOString()),
         'title': value['title'],
         'type': value['type'],
     };

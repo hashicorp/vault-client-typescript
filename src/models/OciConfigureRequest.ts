@@ -24,7 +24,7 @@ export interface OciConfigureRequest {
      * @type {string}
      * @memberof OciConfigureRequest
      */
-    homeTenancyId?: string;
+    home_tenancy_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function OciConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'homeTenancyId': json['home_tenancy_id'] == null ? undefined : json['home_tenancy_id'],
+        'home_tenancy_id': json['home_tenancy_id'] == null ? undefined : json['home_tenancy_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function OciConfigureRequestToJSONTyped(value?: OciConfigureRequest | nul
 
     return {
         
-        'home_tenancy_id': value['homeTenancyId'],
+        'home_tenancy_id': value['home_tenancy_id'],
     };
 }
 

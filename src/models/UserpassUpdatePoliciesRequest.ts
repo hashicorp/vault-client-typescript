@@ -31,7 +31,7 @@ export interface UserpassUpdatePoliciesRequest {
      * @type {Array<string>}
      * @memberof UserpassUpdatePoliciesRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function UserpassUpdatePoliciesRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
     };
 }
 
@@ -68,7 +68,7 @@ export function UserpassUpdatePoliciesRequestToJSONTyped(value?: UserpassUpdateP
     return {
         
         'policies': value['policies'],
-        'token_policies': value['tokenPolicies'],
+        'token_policies': value['token_policies'],
     };
 }
 

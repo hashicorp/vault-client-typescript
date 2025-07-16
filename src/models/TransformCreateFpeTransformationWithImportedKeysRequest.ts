@@ -24,7 +24,7 @@ export interface TransformCreateFpeTransformationWithImportedKeysRequest {
      * @type {Array<string>}
      * @memberof TransformCreateFpeTransformationWithImportedKeysRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
      * @type {string}
@@ -36,7 +36,7 @@ export interface TransformCreateFpeTransformationWithImportedKeysRequest {
      * @type {string}
      * @memberof TransformCreateFpeTransformationWithImportedKeysRequest
      */
-    hashFunction?: string;
+    hash_function?: string;
     /**
      * The name of the template to use.
      * @type {string}
@@ -48,7 +48,7 @@ export interface TransformCreateFpeTransformationWithImportedKeysRequest {
      * @type {string}
      * @memberof TransformCreateFpeTransformationWithImportedKeysRequest
      */
-    tweakSource?: string;
+    tweak_source?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function TransformCreateFpeTransformationWithImportedKeysRequestFromJSONT
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'hashFunction': json['hash_function'] == null ? undefined : json['hash_function'],
+        'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
         'template': json['template'] == null ? undefined : json['template'],
-        'tweakSource': json['tweak_source'] == null ? undefined : json['tweak_source'],
+        'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
     };
 }
 
@@ -87,11 +87,11 @@ export function TransformCreateFpeTransformationWithImportedKeysRequestToJSONTyp
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
+        'allowed_roles': value['allowed_roles'],
         'ciphertext': value['ciphertext'],
-        'hash_function': value['hashFunction'],
+        'hash_function': value['hash_function'],
         'template': value['template'],
-        'tweak_source': value['tweakSource'],
+        'tweak_source': value['tweak_source'],
     };
 }
 

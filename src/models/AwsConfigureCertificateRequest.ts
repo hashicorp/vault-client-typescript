@@ -24,7 +24,7 @@ export interface AwsConfigureCertificateRequest {
      * @type {string}
      * @memberof AwsConfigureCertificateRequest
      */
-    awsPublicCert?: string;
+    aws_public_cert?: string;
     /**
      * Takes the value of either "pkcs7" or "identity", indicating the type of document which can be verified using the given certificate. The reason is that the PKCS#7 document will have a DSA digest and the identity signature will have an RSA signature, and accordingly the public certificates to verify those also vary. Defaults to "pkcs7".
      * @type {string}
@@ -50,7 +50,7 @@ export function AwsConfigureCertificateRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'awsPublicCert': json['aws_public_cert'] == null ? undefined : json['aws_public_cert'],
+        'aws_public_cert': json['aws_public_cert'] == null ? undefined : json['aws_public_cert'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -66,7 +66,7 @@ export function AwsConfigureCertificateRequestToJSONTyped(value?: AwsConfigureCe
 
     return {
         
-        'aws_public_cert': value['awsPublicCert'],
+        'aws_public_cert': value['aws_public_cert'],
         'type': value['type'],
     };
 }

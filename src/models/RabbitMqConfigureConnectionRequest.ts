@@ -24,7 +24,7 @@ export interface RabbitMqConfigureConnectionRequest {
      * @type {string}
      * @memberof RabbitMqConfigureConnectionRequest
      */
-    connectionUri?: string;
+    connection_uri?: string;
     /**
      * Password of the provided RabbitMQ management user
      * @type {string}
@@ -36,7 +36,7 @@ export interface RabbitMqConfigureConnectionRequest {
      * @type {string}
      * @memberof RabbitMqConfigureConnectionRequest
      */
-    passwordPolicy?: string;
+    password_policy?: string;
     /**
      * Username of a RabbitMQ management administrator
      * @type {string}
@@ -48,13 +48,13 @@ export interface RabbitMqConfigureConnectionRequest {
      * @type {string}
      * @memberof RabbitMqConfigureConnectionRequest
      */
-    usernameTemplate?: string;
+    username_template?: string;
     /**
      * If set, connection_uri is verified by actually connecting to the RabbitMQ management API
      * @type {boolean}
      * @memberof RabbitMqConfigureConnectionRequest
      */
-    verifyConnection?: boolean;
+    verify_connection?: boolean;
 }
 
 /**
@@ -74,12 +74,12 @@ export function RabbitMqConfigureConnectionRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'connectionUri': json['connection_uri'] == null ? undefined : json['connection_uri'],
+        'connection_uri': json['connection_uri'] == null ? undefined : json['connection_uri'],
         'password': json['password'] == null ? undefined : json['password'],
-        'passwordPolicy': json['password_policy'] == null ? undefined : json['password_policy'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
         'username': json['username'] == null ? undefined : json['username'],
-        'usernameTemplate': json['username_template'] == null ? undefined : json['username_template'],
-        'verifyConnection': json['verify_connection'] == null ? undefined : json['verify_connection'],
+        'username_template': json['username_template'] == null ? undefined : json['username_template'],
+        'verify_connection': json['verify_connection'] == null ? undefined : json['verify_connection'],
     };
 }
 
@@ -94,12 +94,12 @@ export function RabbitMqConfigureConnectionRequestToJSONTyped(value?: RabbitMqCo
 
     return {
         
-        'connection_uri': value['connectionUri'],
+        'connection_uri': value['connection_uri'],
         'password': value['password'],
-        'password_policy': value['passwordPolicy'],
+        'password_policy': value['password_policy'],
         'username': value['username'],
-        'username_template': value['usernameTemplate'],
-        'verify_connection': value['verifyConnection'],
+        'username_template': value['username_template'],
+        'verify_connection': value['verify_connection'],
     };
 }
 

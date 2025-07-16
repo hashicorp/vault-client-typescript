@@ -24,25 +24,25 @@ export interface KvV2WriteMetadataRequest {
      * @type {boolean}
      * @memberof KvV2WriteMetadataRequest
      */
-    casRequired?: boolean;
+    cas_required?: boolean;
     /**
      * User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.
      * @type {object}
      * @memberof KvV2WriteMetadataRequest
      */
-    customMetadata?: object;
+    custom_metadata?: object;
     /**
      * The length of time before a version is deleted. If not set, the backend's configured delete_version_after is used. Cannot be greater than the backend's delete_version_after. A zero duration clears the current setting. A negative duration will cause an error.
      * @type {string}
      * @memberof KvV2WriteMetadataRequest
      */
-    deleteVersionAfter?: string;
+    delete_version_after?: string;
     /**
      * The number of versions to keep. If not set, the backend’s configured max version is used.
      * @type {number}
      * @memberof KvV2WriteMetadataRequest
      */
-    maxVersions?: number;
+    max_versions?: number;
 }
 
 /**
@@ -62,10 +62,10 @@ export function KvV2WriteMetadataRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'casRequired': json['cas_required'] == null ? undefined : json['cas_required'],
-        'customMetadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
-        'deleteVersionAfter': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
-        'maxVersions': json['max_versions'] == null ? undefined : json['max_versions'],
+        'cas_required': json['cas_required'] == null ? undefined : json['cas_required'],
+        'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
+        'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
     };
 }
 
@@ -80,10 +80,10 @@ export function KvV2WriteMetadataRequestToJSONTyped(value?: KvV2WriteMetadataReq
 
     return {
         
-        'cas_required': value['casRequired'],
-        'custom_metadata': value['customMetadata'],
-        'delete_version_after': value['deleteVersionAfter'],
-        'max_versions': value['maxVersions'],
+        'cas_required': value['cas_required'],
+        'custom_metadata': value['custom_metadata'],
+        'delete_version_after': value['delete_version_after'],
+        'max_versions': value['max_versions'],
     };
 }
 

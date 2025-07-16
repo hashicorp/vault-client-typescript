@@ -30,7 +30,7 @@ export interface SystemDeleteSyncConfigResponse {
      * @type {number}
      * @memberof SystemDeleteSyncConfigResponse
      */
-    queueCapacity?: number;
+    queue_capacity?: number;
 }
 
 /**
@@ -51,7 +51,7 @@ export function SystemDeleteSyncConfigResponseFromJSONTyped(json: any, ignoreDis
     return {
         
         'disabled': json['disabled'] == null ? undefined : json['disabled'],
-        'queueCapacity': json['queue_capacity'] == null ? undefined : json['queue_capacity'],
+        'queue_capacity': json['queue_capacity'] == null ? undefined : json['queue_capacity'],
     };
 }
 
@@ -67,7 +67,7 @@ export function SystemDeleteSyncConfigResponseToJSONTyped(value?: SystemDeleteSy
     return {
         
         'disabled': value['disabled'],
-        'queue_capacity': value['queueCapacity'],
+        'queue_capacity': value['queue_capacity'],
     };
 }
 

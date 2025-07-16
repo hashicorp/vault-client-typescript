@@ -36,43 +36,43 @@ export interface PkiIssuersGenerateRootResponse {
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    issuerId?: string;
+    issuer_id?: string;
     /**
      * The name of the issuer.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    issuerName?: string;
+    issuer_name?: string;
     /**
      * The issuing certificate authority.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    issuingCa?: string;
+    issuing_ca?: string;
     /**
      * The ID of the key.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * The key name if given.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * The private key if exported was specified.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    privateKey?: string;
+    private_key?: string;
     /**
      * The requested Subject's named serial number.
      * @type {string}
      * @memberof PkiIssuersGenerateRootResponse
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -94,13 +94,13 @@ export function PkiIssuersGenerateRootResponseFromJSONTyped(json: any, ignoreDis
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'issuerId': json['issuer_id'] == null ? undefined : json['issuer_id'],
-        'issuerName': json['issuer_name'] == null ? undefined : json['issuer_name'],
-        'issuingCa': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'issuing_ca': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -117,13 +117,13 @@ export function PkiIssuersGenerateRootResponseToJSONTyped(value?: PkiIssuersGene
         
         'certificate': value['certificate'],
         'expiration': value['expiration'],
-        'issuer_id': value['issuerId'],
-        'issuer_name': value['issuerName'],
-        'issuing_ca': value['issuingCa'],
-        'key_id': value['keyId'],
-        'key_name': value['keyName'],
-        'private_key': value['privateKey'],
-        'serial_number': value['serialNumber'],
+        'issuer_id': value['issuer_id'],
+        'issuer_name': value['issuer_name'],
+        'issuing_ca': value['issuing_ca'],
+        'key_id': value['key_id'],
+        'key_name': value['key_name'],
+        'private_key': value['private_key'],
+        'serial_number': value['serial_number'],
     };
 }
 

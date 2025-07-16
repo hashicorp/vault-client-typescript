@@ -24,7 +24,7 @@ export interface TransitGenerateCmacRequest {
      * @type {Array<object>}
      * @memberof TransitGenerateCmacRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The base64-encoded input data
      * @type {string}
@@ -36,13 +36,13 @@ export interface TransitGenerateCmacRequest {
      * @type {number}
      * @memberof TransitGenerateCmacRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * MAC length to use (POST body parameter). This must be greater than 0, and no larger than the cipher-block size.
      * @type {number}
      * @memberof TransitGenerateCmacRequest
      */
-    macLength?: number;
+    mac_length?: number;
 }
 
 /**
@@ -62,10 +62,10 @@ export function TransitGenerateCmacRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'input': json['input'] == null ? undefined : json['input'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
-        'macLength': json['mac_length'] == null ? undefined : json['mac_length'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
+        'mac_length': json['mac_length'] == null ? undefined : json['mac_length'],
     };
 }
 
@@ -80,10 +80,10 @@ export function TransitGenerateCmacRequestToJSONTyped(value?: TransitGenerateCma
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'input': value['input'],
-        'key_version': value['keyVersion'],
-        'mac_length': value['macLength'],
+        'key_version': value['key_version'],
+        'mac_length': value['mac_length'],
     };
 }
 

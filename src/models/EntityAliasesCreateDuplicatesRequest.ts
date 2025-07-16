@@ -30,7 +30,7 @@ export interface EntityAliasesCreateDuplicatesRequest {
      * @type {boolean}
      * @memberof EntityAliasesCreateDuplicatesRequest
      */
-    differentCase?: boolean;
+    different_case?: boolean;
     /**
      * Local alias toggle
      * @type {boolean}
@@ -48,7 +48,7 @@ export interface EntityAliasesCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntityAliasesCreateDuplicatesRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the entities to create
      * @type {string}
@@ -60,7 +60,7 @@ export interface EntityAliasesCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntityAliasesCreateDuplicatesRequest
      */
-    namespaceId?: string;
+    namespace_id?: string;
 }
 
 /**
@@ -81,12 +81,12 @@ export function EntityAliasesCreateDuplicatesRequestFromJSONTyped(json: any, ign
     return {
         
         'count': json['count'] == null ? undefined : json['count'],
-        'differentCase': json['different_case'] == null ? undefined : json['different_case'],
+        'different_case': json['different_case'] == null ? undefined : json['different_case'],
         'local': json['local'] == null ? undefined : json['local'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
-        'namespaceId': json['namespace_id'] == null ? undefined : json['namespace_id'],
+        'namespace_id': json['namespace_id'] == null ? undefined : json['namespace_id'],
     };
 }
 
@@ -102,12 +102,12 @@ export function EntityAliasesCreateDuplicatesRequestToJSONTyped(value?: EntityAl
     return {
         
         'count': value['count'],
-        'different_case': value['differentCase'],
+        'different_case': value['different_case'],
         'local': value['local'],
         'metadata': value['metadata'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
-        'namespace_id': value['namespaceId'],
+        'namespace_id': value['namespace_id'],
     };
 }
 

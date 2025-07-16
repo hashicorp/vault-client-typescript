@@ -24,7 +24,7 @@ export interface SystemListSyncDestinationsResponse {
      * @type {object}
      * @memberof SystemListSyncDestinationsResponse
      */
-    keyInfo?: object;
+    key_info?: object;
     /**
      * List of destination types with at least one destination.
      * @type {Array<string>}
@@ -36,7 +36,7 @@ export interface SystemListSyncDestinationsResponse {
      * @type {number}
      * @memberof SystemListSyncDestinationsResponse
      */
-    totalDestinations?: number;
+    total_destinations?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function SystemListSyncDestinationsResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
-        'totalDestinations': json['total_destinations'] == null ? undefined : json['total_destinations'],
+        'total_destinations': json['total_destinations'] == null ? undefined : json['total_destinations'],
     };
 }
 
@@ -73,9 +73,9 @@ export function SystemListSyncDestinationsResponseToJSONTyped(value?: SystemList
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
-        'total_destinations': value['totalDestinations'],
+        'total_destinations': value['total_destinations'],
     };
 }
 

@@ -24,61 +24,61 @@ export interface PkiTidyStatusResponse {
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    acmeAccountDeletedCount?: number;
+    acme_account_deleted_count?: number;
     /**
      * The number of unused acme accounts revoked
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    acmeAccountRevokedCount?: number;
+    acme_account_revoked_count?: number;
     /**
      * Safety buffer after creation after which accounts lacking orders are revoked
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    acmeAccountSafetyBuffer?: number;
+    acme_account_safety_buffer?: number;
     /**
      * The number of expired, unused acme orders removed
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    acmeOrdersDeletedCount?: number;
+    acme_orders_deleted_count?: number;
     /**
      * The number of metadata entries removed
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    certMetadataDeletedCount?: number;
+    cert_metadata_deleted_count?: number;
     /**
      * The number of certificate storage entries deleted
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    certStoreDeletedCount?: number;
+    cert_store_deleted_count?: number;
     /**
      * The number of CMPv2 nonces removed
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    cmpv2NonceDeletedCount?: number;
+    cmpv2_nonce_deleted_count?: number;
     /**
      * 
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    crossRevokedCertDeletedCount?: number;
+    cross_revoked_cert_deleted_count?: number;
     /**
      * The number of revoked certificate entries deleted
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    currentCertStoreCount?: number;
+    current_cert_store_count?: number;
     /**
      * The number of revoked certificate entries deleted
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    currentRevokedCertCount?: number;
+    current_revoked_cert_count?: number;
     /**
      * The error message
      * @type {string}
@@ -90,19 +90,19 @@ export interface PkiTidyStatusResponse {
      * @type {string}
      * @memberof PkiTidyStatusResponse
      */
-    internalBackendUuid?: string;
+    internal_backend_uuid?: string;
     /**
      * Issuer safety buffer
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    issuerSafetyBuffer?: number;
+    issuer_safety_buffer?: number;
     /**
      * Time the last auto-tidy operation finished
      * @type {string}
      * @memberof PkiTidyStatusResponse
      */
-    lastAutoTidyFinished?: string;
+    last_auto_tidy_finished?: string;
     /**
      * Message of the operation
      * @type {string}
@@ -114,37 +114,37 @@ export interface PkiTidyStatusResponse {
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    missingIssuerCertCount?: number;
+    missing_issuer_cert_count?: number;
     /**
      * Duration to pause between tidying certificates
      * @type {string}
      * @memberof PkiTidyStatusResponse
      */
-    pauseDuration?: string;
+    pause_duration?: string;
     /**
      * 
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    revocationQueueDeletedCount?: number;
+    revocation_queue_deleted_count?: number;
     /**
      * Revocation queue safety buffer
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    revocationQueueSafetyBuffer?: number;
+    revocation_queue_safety_buffer?: number;
     /**
      * The number of revoked certificate entries deleted
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    revokedCertDeletedCount?: number;
+    revoked_cert_deleted_count?: number;
     /**
      * Safety buffer time duration
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    safetyBuffer?: number;
+    safety_buffer?: number;
     /**
      * One of Inactive, Running, Finished, or Error
      * @type {string}
@@ -156,79 +156,79 @@ export interface PkiTidyStatusResponse {
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyAcme?: boolean;
+    tidy_acme?: boolean;
     /**
      * Tidy cert metadata
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyCertMetadata?: boolean;
+    tidy_cert_metadata?: boolean;
     /**
      * Tidy certificate store
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyCertStore?: boolean;
+    tidy_cert_store?: boolean;
     /**
      * Tidy CMPv2 nonce store
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyCmpv2NonceStore?: boolean;
+    tidy_cmpv2_nonce_store?: boolean;
     /**
      * Tidy the cross-cluster revoked certificate store
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyCrossClusterRevokedCerts?: boolean;
+    tidy_cross_cluster_revoked_certs?: boolean;
     /**
      * Tidy expired issuers
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyExpiredIssuers?: boolean;
+    tidy_expired_issuers?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyMoveLegacyCaBundle?: boolean;
+    tidy_move_legacy_ca_bundle?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyRevocationQueue?: boolean;
+    tidy_revocation_queue?: boolean;
     /**
      * Tidy revoked certificate issuer associations
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyRevokedCertIssuerAssociations?: boolean;
+    tidy_revoked_cert_issuer_associations?: boolean;
     /**
      * Tidy revoked certificates
      * @type {boolean}
      * @memberof PkiTidyStatusResponse
      */
-    tidyRevokedCerts?: boolean;
+    tidy_revoked_certs?: boolean;
     /**
      * Time the operation finished
      * @type {string}
      * @memberof PkiTidyStatusResponse
      */
-    timeFinished?: string;
+    time_finished?: string;
     /**
      * Time the operation started
      * @type {string}
      * @memberof PkiTidyStatusResponse
      */
-    timeStarted?: string;
+    time_started?: string;
     /**
      * Total number of acme accounts iterated over
      * @type {number}
      * @memberof PkiTidyStatusResponse
      */
-    totalAcmeAccountCount?: number;
+    total_acme_account_count?: number;
 }
 
 /**
@@ -248,41 +248,41 @@ export function PkiTidyStatusResponseFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'acmeAccountDeletedCount': json['acme_account_deleted_count'] == null ? undefined : json['acme_account_deleted_count'],
-        'acmeAccountRevokedCount': json['acme_account_revoked_count'] == null ? undefined : json['acme_account_revoked_count'],
-        'acmeAccountSafetyBuffer': json['acme_account_safety_buffer'] == null ? undefined : json['acme_account_safety_buffer'],
-        'acmeOrdersDeletedCount': json['acme_orders_deleted_count'] == null ? undefined : json['acme_orders_deleted_count'],
-        'certMetadataDeletedCount': json['cert_metadata_deleted_count'] == null ? undefined : json['cert_metadata_deleted_count'],
-        'certStoreDeletedCount': json['cert_store_deleted_count'] == null ? undefined : json['cert_store_deleted_count'],
-        'cmpv2NonceDeletedCount': json['cmpv2_nonce_deleted_count'] == null ? undefined : json['cmpv2_nonce_deleted_count'],
-        'crossRevokedCertDeletedCount': json['cross_revoked_cert_deleted_count'] == null ? undefined : json['cross_revoked_cert_deleted_count'],
-        'currentCertStoreCount': json['current_cert_store_count'] == null ? undefined : json['current_cert_store_count'],
-        'currentRevokedCertCount': json['current_revoked_cert_count'] == null ? undefined : json['current_revoked_cert_count'],
+        'acme_account_deleted_count': json['acme_account_deleted_count'] == null ? undefined : json['acme_account_deleted_count'],
+        'acme_account_revoked_count': json['acme_account_revoked_count'] == null ? undefined : json['acme_account_revoked_count'],
+        'acme_account_safety_buffer': json['acme_account_safety_buffer'] == null ? undefined : json['acme_account_safety_buffer'],
+        'acme_orders_deleted_count': json['acme_orders_deleted_count'] == null ? undefined : json['acme_orders_deleted_count'],
+        'cert_metadata_deleted_count': json['cert_metadata_deleted_count'] == null ? undefined : json['cert_metadata_deleted_count'],
+        'cert_store_deleted_count': json['cert_store_deleted_count'] == null ? undefined : json['cert_store_deleted_count'],
+        'cmpv2_nonce_deleted_count': json['cmpv2_nonce_deleted_count'] == null ? undefined : json['cmpv2_nonce_deleted_count'],
+        'cross_revoked_cert_deleted_count': json['cross_revoked_cert_deleted_count'] == null ? undefined : json['cross_revoked_cert_deleted_count'],
+        'current_cert_store_count': json['current_cert_store_count'] == null ? undefined : json['current_cert_store_count'],
+        'current_revoked_cert_count': json['current_revoked_cert_count'] == null ? undefined : json['current_revoked_cert_count'],
         'error': json['error'] == null ? undefined : json['error'],
-        'internalBackendUuid': json['internal_backend_uuid'] == null ? undefined : json['internal_backend_uuid'],
-        'issuerSafetyBuffer': json['issuer_safety_buffer'] == null ? undefined : json['issuer_safety_buffer'],
-        'lastAutoTidyFinished': json['last_auto_tidy_finished'] == null ? undefined : json['last_auto_tidy_finished'],
+        'internal_backend_uuid': json['internal_backend_uuid'] == null ? undefined : json['internal_backend_uuid'],
+        'issuer_safety_buffer': json['issuer_safety_buffer'] == null ? undefined : json['issuer_safety_buffer'],
+        'last_auto_tidy_finished': json['last_auto_tidy_finished'] == null ? undefined : json['last_auto_tidy_finished'],
         'message': json['message'] == null ? undefined : json['message'],
-        'missingIssuerCertCount': json['missing_issuer_cert_count'] == null ? undefined : json['missing_issuer_cert_count'],
-        'pauseDuration': json['pause_duration'] == null ? undefined : json['pause_duration'],
-        'revocationQueueDeletedCount': json['revocation_queue_deleted_count'] == null ? undefined : json['revocation_queue_deleted_count'],
-        'revocationQueueSafetyBuffer': json['revocation_queue_safety_buffer'] == null ? undefined : json['revocation_queue_safety_buffer'],
-        'revokedCertDeletedCount': json['revoked_cert_deleted_count'] == null ? undefined : json['revoked_cert_deleted_count'],
-        'safetyBuffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
+        'missing_issuer_cert_count': json['missing_issuer_cert_count'] == null ? undefined : json['missing_issuer_cert_count'],
+        'pause_duration': json['pause_duration'] == null ? undefined : json['pause_duration'],
+        'revocation_queue_deleted_count': json['revocation_queue_deleted_count'] == null ? undefined : json['revocation_queue_deleted_count'],
+        'revocation_queue_safety_buffer': json['revocation_queue_safety_buffer'] == null ? undefined : json['revocation_queue_safety_buffer'],
+        'revoked_cert_deleted_count': json['revoked_cert_deleted_count'] == null ? undefined : json['revoked_cert_deleted_count'],
+        'safety_buffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
         'state': json['state'] == null ? undefined : json['state'],
-        'tidyAcme': json['tidy_acme'] == null ? undefined : json['tidy_acme'],
-        'tidyCertMetadata': json['tidy_cert_metadata'] == null ? undefined : json['tidy_cert_metadata'],
-        'tidyCertStore': json['tidy_cert_store'] == null ? undefined : json['tidy_cert_store'],
-        'tidyCmpv2NonceStore': json['tidy_cmpv2_nonce_store'] == null ? undefined : json['tidy_cmpv2_nonce_store'],
-        'tidyCrossClusterRevokedCerts': json['tidy_cross_cluster_revoked_certs'] == null ? undefined : json['tidy_cross_cluster_revoked_certs'],
-        'tidyExpiredIssuers': json['tidy_expired_issuers'] == null ? undefined : json['tidy_expired_issuers'],
-        'tidyMoveLegacyCaBundle': json['tidy_move_legacy_ca_bundle'] == null ? undefined : json['tidy_move_legacy_ca_bundle'],
-        'tidyRevocationQueue': json['tidy_revocation_queue'] == null ? undefined : json['tidy_revocation_queue'],
-        'tidyRevokedCertIssuerAssociations': json['tidy_revoked_cert_issuer_associations'] == null ? undefined : json['tidy_revoked_cert_issuer_associations'],
-        'tidyRevokedCerts': json['tidy_revoked_certs'] == null ? undefined : json['tidy_revoked_certs'],
-        'timeFinished': json['time_finished'] == null ? undefined : json['time_finished'],
-        'timeStarted': json['time_started'] == null ? undefined : json['time_started'],
-        'totalAcmeAccountCount': json['total_acme_account_count'] == null ? undefined : json['total_acme_account_count'],
+        'tidy_acme': json['tidy_acme'] == null ? undefined : json['tidy_acme'],
+        'tidy_cert_metadata': json['tidy_cert_metadata'] == null ? undefined : json['tidy_cert_metadata'],
+        'tidy_cert_store': json['tidy_cert_store'] == null ? undefined : json['tidy_cert_store'],
+        'tidy_cmpv2_nonce_store': json['tidy_cmpv2_nonce_store'] == null ? undefined : json['tidy_cmpv2_nonce_store'],
+        'tidy_cross_cluster_revoked_certs': json['tidy_cross_cluster_revoked_certs'] == null ? undefined : json['tidy_cross_cluster_revoked_certs'],
+        'tidy_expired_issuers': json['tidy_expired_issuers'] == null ? undefined : json['tidy_expired_issuers'],
+        'tidy_move_legacy_ca_bundle': json['tidy_move_legacy_ca_bundle'] == null ? undefined : json['tidy_move_legacy_ca_bundle'],
+        'tidy_revocation_queue': json['tidy_revocation_queue'] == null ? undefined : json['tidy_revocation_queue'],
+        'tidy_revoked_cert_issuer_associations': json['tidy_revoked_cert_issuer_associations'] == null ? undefined : json['tidy_revoked_cert_issuer_associations'],
+        'tidy_revoked_certs': json['tidy_revoked_certs'] == null ? undefined : json['tidy_revoked_certs'],
+        'time_finished': json['time_finished'] == null ? undefined : json['time_finished'],
+        'time_started': json['time_started'] == null ? undefined : json['time_started'],
+        'total_acme_account_count': json['total_acme_account_count'] == null ? undefined : json['total_acme_account_count'],
     };
 }
 
@@ -297,41 +297,41 @@ export function PkiTidyStatusResponseToJSONTyped(value?: PkiTidyStatusResponse |
 
     return {
         
-        'acme_account_deleted_count': value['acmeAccountDeletedCount'],
-        'acme_account_revoked_count': value['acmeAccountRevokedCount'],
-        'acme_account_safety_buffer': value['acmeAccountSafetyBuffer'],
-        'acme_orders_deleted_count': value['acmeOrdersDeletedCount'],
-        'cert_metadata_deleted_count': value['certMetadataDeletedCount'],
-        'cert_store_deleted_count': value['certStoreDeletedCount'],
-        'cmpv2_nonce_deleted_count': value['cmpv2NonceDeletedCount'],
-        'cross_revoked_cert_deleted_count': value['crossRevokedCertDeletedCount'],
-        'current_cert_store_count': value['currentCertStoreCount'],
-        'current_revoked_cert_count': value['currentRevokedCertCount'],
+        'acme_account_deleted_count': value['acme_account_deleted_count'],
+        'acme_account_revoked_count': value['acme_account_revoked_count'],
+        'acme_account_safety_buffer': value['acme_account_safety_buffer'],
+        'acme_orders_deleted_count': value['acme_orders_deleted_count'],
+        'cert_metadata_deleted_count': value['cert_metadata_deleted_count'],
+        'cert_store_deleted_count': value['cert_store_deleted_count'],
+        'cmpv2_nonce_deleted_count': value['cmpv2_nonce_deleted_count'],
+        'cross_revoked_cert_deleted_count': value['cross_revoked_cert_deleted_count'],
+        'current_cert_store_count': value['current_cert_store_count'],
+        'current_revoked_cert_count': value['current_revoked_cert_count'],
         'error': value['error'],
-        'internal_backend_uuid': value['internalBackendUuid'],
-        'issuer_safety_buffer': value['issuerSafetyBuffer'],
-        'last_auto_tidy_finished': value['lastAutoTidyFinished'],
+        'internal_backend_uuid': value['internal_backend_uuid'],
+        'issuer_safety_buffer': value['issuer_safety_buffer'],
+        'last_auto_tidy_finished': value['last_auto_tidy_finished'],
         'message': value['message'],
-        'missing_issuer_cert_count': value['missingIssuerCertCount'],
-        'pause_duration': value['pauseDuration'],
-        'revocation_queue_deleted_count': value['revocationQueueDeletedCount'],
-        'revocation_queue_safety_buffer': value['revocationQueueSafetyBuffer'],
-        'revoked_cert_deleted_count': value['revokedCertDeletedCount'],
-        'safety_buffer': value['safetyBuffer'],
+        'missing_issuer_cert_count': value['missing_issuer_cert_count'],
+        'pause_duration': value['pause_duration'],
+        'revocation_queue_deleted_count': value['revocation_queue_deleted_count'],
+        'revocation_queue_safety_buffer': value['revocation_queue_safety_buffer'],
+        'revoked_cert_deleted_count': value['revoked_cert_deleted_count'],
+        'safety_buffer': value['safety_buffer'],
         'state': value['state'],
-        'tidy_acme': value['tidyAcme'],
-        'tidy_cert_metadata': value['tidyCertMetadata'],
-        'tidy_cert_store': value['tidyCertStore'],
-        'tidy_cmpv2_nonce_store': value['tidyCmpv2NonceStore'],
-        'tidy_cross_cluster_revoked_certs': value['tidyCrossClusterRevokedCerts'],
-        'tidy_expired_issuers': value['tidyExpiredIssuers'],
-        'tidy_move_legacy_ca_bundle': value['tidyMoveLegacyCaBundle'],
-        'tidy_revocation_queue': value['tidyRevocationQueue'],
-        'tidy_revoked_cert_issuer_associations': value['tidyRevokedCertIssuerAssociations'],
-        'tidy_revoked_certs': value['tidyRevokedCerts'],
-        'time_finished': value['timeFinished'],
-        'time_started': value['timeStarted'],
-        'total_acme_account_count': value['totalAcmeAccountCount'],
+        'tidy_acme': value['tidy_acme'],
+        'tidy_cert_metadata': value['tidy_cert_metadata'],
+        'tidy_cert_store': value['tidy_cert_store'],
+        'tidy_cmpv2_nonce_store': value['tidy_cmpv2_nonce_store'],
+        'tidy_cross_cluster_revoked_certs': value['tidy_cross_cluster_revoked_certs'],
+        'tidy_expired_issuers': value['tidy_expired_issuers'],
+        'tidy_move_legacy_ca_bundle': value['tidy_move_legacy_ca_bundle'],
+        'tidy_revocation_queue': value['tidy_revocation_queue'],
+        'tidy_revoked_cert_issuer_associations': value['tidy_revoked_cert_issuer_associations'],
+        'tidy_revoked_certs': value['tidy_revoked_certs'],
+        'time_finished': value['time_finished'],
+        'time_started': value['time_started'],
+        'total_acme_account_count': value['total_acme_account_count'],
     };
 }
 

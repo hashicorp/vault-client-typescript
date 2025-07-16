@@ -24,7 +24,7 @@ export interface EntityMergeRequest {
      * @type {Array<string>}
      * @memberof EntityMergeRequest
      */
-    conflictingAliasIdsToKeep?: Array<string>;
+    conflicting_alias_ids_to_keep?: Array<string>;
     /**
      * Setting this will follow the 'mine' strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts.
      * @type {boolean}
@@ -36,13 +36,13 @@ export interface EntityMergeRequest {
      * @type {Array<string>}
      * @memberof EntityMergeRequest
      */
-    fromEntityIds?: Array<string>;
+    from_entity_ids?: Array<string>;
     /**
      * Entity ID into which all the other entities need to get merged
      * @type {string}
      * @memberof EntityMergeRequest
      */
-    toEntityId?: string;
+    to_entity_id?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function EntityMergeRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'conflictingAliasIdsToKeep': json['conflicting_alias_ids_to_keep'] == null ? undefined : json['conflicting_alias_ids_to_keep'],
+        'conflicting_alias_ids_to_keep': json['conflicting_alias_ids_to_keep'] == null ? undefined : json['conflicting_alias_ids_to_keep'],
         'force': json['force'] == null ? undefined : json['force'],
-        'fromEntityIds': json['from_entity_ids'] == null ? undefined : json['from_entity_ids'],
-        'toEntityId': json['to_entity_id'] == null ? undefined : json['to_entity_id'],
+        'from_entity_ids': json['from_entity_ids'] == null ? undefined : json['from_entity_ids'],
+        'to_entity_id': json['to_entity_id'] == null ? undefined : json['to_entity_id'],
     };
 }
 
@@ -80,10 +80,10 @@ export function EntityMergeRequestToJSONTyped(value?: EntityMergeRequest | null,
 
     return {
         
-        'conflicting_alias_ids_to_keep': value['conflictingAliasIdsToKeep'],
+        'conflicting_alias_ids_to_keep': value['conflicting_alias_ids_to_keep'],
         'force': value['force'],
-        'from_entity_ids': value['fromEntityIds'],
-        'to_entity_id': value['toEntityId'],
+        'from_entity_ids': value['from_entity_ids'],
+        'to_entity_id': value['to_entity_id'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface AppRoleWriteBindSecretIdRequest {
      * @type {boolean}
      * @memberof AppRoleWriteBindSecretIdRequest
      */
-    bindSecretId?: boolean;
+    bind_secret_id?: boolean;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteBindSecretIdRequestFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'bindSecretId': json['bind_secret_id'] == null ? undefined : json['bind_secret_id'],
+        'bind_secret_id': json['bind_secret_id'] == null ? undefined : json['bind_secret_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteBindSecretIdRequestToJSONTyped(value?: AppRoleWriteB
 
     return {
         
-        'bind_secret_id': value['bindSecretId'],
+        'bind_secret_id': value['bind_secret_id'],
     };
 }
 

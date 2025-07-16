@@ -24,49 +24,49 @@ export interface KvV2ReadMetadataResponse {
      * @type {boolean}
      * @memberof KvV2ReadMetadataResponse
      */
-    casRequired?: boolean;
+    cas_required?: boolean;
     /**
      * 
      * @type {Date}
      * @memberof KvV2ReadMetadataResponse
      */
-    createdTime?: Date;
+    created_time?: Date;
     /**
      * 
      * @type {number}
      * @memberof KvV2ReadMetadataResponse
      */
-    currentVersion?: number;
+    current_version?: number;
     /**
      * User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.
      * @type {object}
      * @memberof KvV2ReadMetadataResponse
      */
-    customMetadata?: object;
+    custom_metadata?: object;
     /**
      * The length of time before a version is deleted.
      * @type {string}
      * @memberof KvV2ReadMetadataResponse
      */
-    deleteVersionAfter?: string;
+    delete_version_after?: string;
     /**
      * The number of versions to keep
      * @type {number}
      * @memberof KvV2ReadMetadataResponse
      */
-    maxVersions?: number;
+    max_versions?: number;
     /**
      * 
      * @type {number}
      * @memberof KvV2ReadMetadataResponse
      */
-    oldestVersion?: number;
+    oldest_version?: number;
     /**
      * 
      * @type {Date}
      * @memberof KvV2ReadMetadataResponse
      */
-    updatedTime?: Date;
+    updated_time?: Date;
     /**
      * 
      * @type {object}
@@ -92,14 +92,14 @@ export function KvV2ReadMetadataResponseFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'casRequired': json['cas_required'] == null ? undefined : json['cas_required'],
-        'createdTime': json['created_time'] == null ? undefined : (new Date(json['created_time'])),
-        'currentVersion': json['current_version'] == null ? undefined : json['current_version'],
-        'customMetadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
-        'deleteVersionAfter': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
-        'maxVersions': json['max_versions'] == null ? undefined : json['max_versions'],
-        'oldestVersion': json['oldest_version'] == null ? undefined : json['oldest_version'],
-        'updatedTime': json['updated_time'] == null ? undefined : (new Date(json['updated_time'])),
+        'cas_required': json['cas_required'] == null ? undefined : json['cas_required'],
+        'created_time': json['created_time'] == null ? undefined : (new Date(json['created_time'])),
+        'current_version': json['current_version'] == null ? undefined : json['current_version'],
+        'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
+        'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
+        'oldest_version': json['oldest_version'] == null ? undefined : json['oldest_version'],
+        'updated_time': json['updated_time'] == null ? undefined : (new Date(json['updated_time'])),
         'versions': json['versions'] == null ? undefined : json['versions'],
     };
 }
@@ -115,14 +115,14 @@ export function KvV2ReadMetadataResponseToJSONTyped(value?: KvV2ReadMetadataResp
 
     return {
         
-        'cas_required': value['casRequired'],
-        'created_time': value['createdTime'] == null ? undefined : ((value['createdTime']).toISOString()),
-        'current_version': value['currentVersion'],
-        'custom_metadata': value['customMetadata'],
-        'delete_version_after': value['deleteVersionAfter'],
-        'max_versions': value['maxVersions'],
-        'oldest_version': value['oldestVersion'],
-        'updated_time': value['updatedTime'] == null ? undefined : ((value['updatedTime']).toISOString()),
+        'cas_required': value['cas_required'],
+        'created_time': value['created_time'] == null ? undefined : ((value['created_time']).toISOString()),
+        'current_version': value['current_version'],
+        'custom_metadata': value['custom_metadata'],
+        'delete_version_after': value['delete_version_after'],
+        'max_versions': value['max_versions'],
+        'oldest_version': value['oldest_version'],
+        'updated_time': value['updated_time'] == null ? undefined : ((value['updated_time']).toISOString()),
         'versions': value['versions'],
     };
 }

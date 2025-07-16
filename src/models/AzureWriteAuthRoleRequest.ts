@@ -24,51 +24,51 @@ export interface AzureWriteAuthRoleRequest {
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundGroupIds?: Array<string>;
+    bound_group_ids?: Array<string>;
     /**
      * Comma-separated list of locations that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundLocations?: Array<string>;
+    bound_locations?: Array<string>;
     /**
      * Comma-separated list of resource groups that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundResourceGroups?: Array<string>;
+    bound_resource_groups?: Array<string>;
     /**
      * Comma-separated list of scale sets that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundScaleSets?: Array<string>;
+    bound_scale_sets?: Array<string>;
     /**
      * Comma-separated list of service principal ids that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundServicePrincipalIds?: Array<string>;
+    bound_service_principal_ids?: Array<string>;
     /**
      * Comma-separated list of subscription ids that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    boundSubscriptionIds?: Array<string>;
+    bound_subscription_ids?: Array<string>;
     /**
      * Use "token_max_ttl" instead. If this and "token_max_ttl" are both specified, only "token_max_ttl" will be used.
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Use "token_num_uses" instead. If this and "token_num_uses" are both specified, only "token_num_uses" will be used.
      * @type {number}
      * @memberof AzureWriteAuthRoleRequest
      * @deprecated
      */
-    numUses?: number;
+    num_uses?: number;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -88,55 +88,55 @@ export interface AzureWriteAuthRoleRequest {
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof AzureWriteAuthRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -163,25 +163,25 @@ export function AzureWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'boundGroupIds': json['bound_group_ids'] == null ? undefined : json['bound_group_ids'],
-        'boundLocations': json['bound_locations'] == null ? undefined : json['bound_locations'],
-        'boundResourceGroups': json['bound_resource_groups'] == null ? undefined : json['bound_resource_groups'],
-        'boundScaleSets': json['bound_scale_sets'] == null ? undefined : json['bound_scale_sets'],
-        'boundServicePrincipalIds': json['bound_service_principal_ids'] == null ? undefined : json['bound_service_principal_ids'],
-        'boundSubscriptionIds': json['bound_subscription_ids'] == null ? undefined : json['bound_subscription_ids'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'numUses': json['num_uses'] == null ? undefined : json['num_uses'],
+        'bound_group_ids': json['bound_group_ids'] == null ? undefined : json['bound_group_ids'],
+        'bound_locations': json['bound_locations'] == null ? undefined : json['bound_locations'],
+        'bound_resource_groups': json['bound_resource_groups'] == null ? undefined : json['bound_resource_groups'],
+        'bound_scale_sets': json['bound_scale_sets'] == null ? undefined : json['bound_scale_sets'],
+        'bound_service_principal_ids': json['bound_service_principal_ids'] == null ? undefined : json['bound_service_principal_ids'],
+        'bound_subscription_ids': json['bound_subscription_ids'] == null ? undefined : json['bound_subscription_ids'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -197,25 +197,25 @@ export function AzureWriteAuthRoleRequestToJSONTyped(value?: AzureWriteAuthRoleR
 
     return {
         
-        'bound_group_ids': value['boundGroupIds'],
-        'bound_locations': value['boundLocations'],
-        'bound_resource_groups': value['boundResourceGroups'],
-        'bound_scale_sets': value['boundScaleSets'],
-        'bound_service_principal_ids': value['boundServicePrincipalIds'],
-        'bound_subscription_ids': value['boundSubscriptionIds'],
-        'max_ttl': value['maxTtl'],
-        'num_uses': value['numUses'],
+        'bound_group_ids': value['bound_group_ids'],
+        'bound_locations': value['bound_locations'],
+        'bound_resource_groups': value['bound_resource_groups'],
+        'bound_scale_sets': value['bound_scale_sets'],
+        'bound_service_principal_ids': value['bound_service_principal_ids'],
+        'bound_subscription_ids': value['bound_subscription_ids'],
+        'max_ttl': value['max_ttl'],
+        'num_uses': value['num_uses'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
     };
 }

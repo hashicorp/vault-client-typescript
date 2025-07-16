@@ -30,7 +30,7 @@ export interface PkiIssuerSignSelfIssuedResponse {
      * @type {string}
      * @memberof PkiIssuerSignSelfIssuedResponse
      */
-    issuingCa?: string;
+    issuing_ca?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function PkiIssuerSignSelfIssuedResponseFromJSONTyped(json: any, ignoreDi
     return {
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'issuingCa': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
+        'issuing_ca': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
     };
 }
 
@@ -67,7 +67,7 @@ export function PkiIssuerSignSelfIssuedResponseToJSONTyped(value?: PkiIssuerSign
     return {
         
         'certificate': value['certificate'],
-        'issuing_ca': value['issuingCa'],
+        'issuing_ca': value['issuing_ca'],
     };
 }
 

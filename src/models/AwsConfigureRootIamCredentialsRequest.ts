@@ -24,37 +24,37 @@ export interface AwsConfigureRootIamCredentialsRequest {
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    accessKey?: string;
+    access_key?: string;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * Endpoint to custom IAM server URL
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    iamEndpoint?: string;
+    iam_endpoint?: string;
     /**
      * Audience of plugin identity tokens
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    identityTokenAudience?: string;
+    identity_token_audience?: string;
     /**
      * Time-to-live of plugin identity tokens
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    identityTokenTtl?: string;
+    identity_token_ttl?: string;
     /**
      * Maximum number of retries for recoverable exceptions of AWS APIs
      * @type {number}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    maxRetries?: number;
+    max_retries?: number;
     /**
      * Region for API calls.
      * @type {string}
@@ -66,61 +66,61 @@ export interface AwsConfigureRootIamCredentialsRequest {
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    roleArn?: string;
+    role_arn?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * Secret key with permission to create new keys.
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    secretKey?: string;
+    secret_key?: string;
     /**
      * Endpoint to custom STS server URL
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    stsEndpoint?: string;
+    sts_endpoint?: string;
     /**
      * Fallback endpoints if sts_endpoint is unreachable
      * @type {Array<string>}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    stsFallbackEndpoints?: Array<string>;
+    sts_fallback_endpoints?: Array<string>;
     /**
      * Fallback regions if sts_region is unreachable
      * @type {Array<string>}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    stsFallbackRegions?: Array<string>;
+    sts_fallback_regions?: Array<string>;
     /**
      * Specific region for STS API calls.
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    stsRegion?: string;
+    sts_region?: string;
     /**
      * Template to generate custom IAM usernames
      * @type {string}
      * @memberof AwsConfigureRootIamCredentialsRequest
      */
-    usernameTemplate?: string;
+    username_template?: string;
 }
 
 /**
@@ -140,23 +140,23 @@ export function AwsConfigureRootIamCredentialsRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'accessKey': json['access_key'] == null ? undefined : json['access_key'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
-        'iamEndpoint': json['iam_endpoint'] == null ? undefined : json['iam_endpoint'],
-        'identityTokenAudience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
-        'identityTokenTtl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
-        'maxRetries': json['max_retries'] == null ? undefined : json['max_retries'],
+        'access_key': json['access_key'] == null ? undefined : json['access_key'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'iam_endpoint': json['iam_endpoint'] == null ? undefined : json['iam_endpoint'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
+        'max_retries': json['max_retries'] == null ? undefined : json['max_retries'],
         'region': json['region'] == null ? undefined : json['region'],
-        'roleArn': json['role_arn'] == null ? undefined : json['role_arn'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'secretKey': json['secret_key'] == null ? undefined : json['secret_key'],
-        'stsEndpoint': json['sts_endpoint'] == null ? undefined : json['sts_endpoint'],
-        'stsFallbackEndpoints': json['sts_fallback_endpoints'] == null ? undefined : json['sts_fallback_endpoints'],
-        'stsFallbackRegions': json['sts_fallback_regions'] == null ? undefined : json['sts_fallback_regions'],
-        'stsRegion': json['sts_region'] == null ? undefined : json['sts_region'],
-        'usernameTemplate': json['username_template'] == null ? undefined : json['username_template'],
+        'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
+        'sts_endpoint': json['sts_endpoint'] == null ? undefined : json['sts_endpoint'],
+        'sts_fallback_endpoints': json['sts_fallback_endpoints'] == null ? undefined : json['sts_fallback_endpoints'],
+        'sts_fallback_regions': json['sts_fallback_regions'] == null ? undefined : json['sts_fallback_regions'],
+        'sts_region': json['sts_region'] == null ? undefined : json['sts_region'],
+        'username_template': json['username_template'] == null ? undefined : json['username_template'],
     };
 }
 
@@ -171,23 +171,23 @@ export function AwsConfigureRootIamCredentialsRequestToJSONTyped(value?: AwsConf
 
     return {
         
-        'access_key': value['accessKey'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
-        'iam_endpoint': value['iamEndpoint'],
-        'identity_token_audience': value['identityTokenAudience'],
-        'identity_token_ttl': value['identityTokenTtl'],
-        'max_retries': value['maxRetries'],
+        'access_key': value['access_key'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
+        'iam_endpoint': value['iam_endpoint'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_ttl': value['identity_token_ttl'],
+        'max_retries': value['max_retries'],
         'region': value['region'],
-        'role_arn': value['roleArn'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
-        'secret_key': value['secretKey'],
-        'sts_endpoint': value['stsEndpoint'],
-        'sts_fallback_endpoints': value['stsFallbackEndpoints'],
-        'sts_fallback_regions': value['stsFallbackRegions'],
-        'sts_region': value['stsRegion'],
-        'username_template': value['usernameTemplate'],
+        'role_arn': value['role_arn'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
+        'secret_key': value['secret_key'],
+        'sts_endpoint': value['sts_endpoint'],
+        'sts_fallback_endpoints': value['sts_fallback_endpoints'],
+        'sts_fallback_regions': value['sts_fallback_regions'],
+        'sts_region': value['sts_region'],
+        'username_template': value['username_template'],
     };
 }
 

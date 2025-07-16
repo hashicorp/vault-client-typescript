@@ -24,7 +24,7 @@ export interface SystemWriteSyncGithubAppsNameResponse {
      * @type {number}
      * @memberof SystemWriteSyncGithubAppsNameResponse
      */
-    appId?: number;
+    app_id?: number;
     /**
      * The name of the GitHub app. Used to identify the application when configuring the GitHub destination
      * @type {string}
@@ -50,7 +50,7 @@ export function SystemWriteSyncGithubAppsNameResponseFromJSONTyped(json: any, ig
     }
     return {
         
-        'appId': json['app_id'] == null ? undefined : json['app_id'],
+        'app_id': json['app_id'] == null ? undefined : json['app_id'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -66,7 +66,7 @@ export function SystemWriteSyncGithubAppsNameResponseToJSONTyped(value?: SystemW
 
     return {
         
-        'app_id': value['appId'],
+        'app_id': value['app_id'],
         'name': value['name'],
     };
 }

@@ -24,7 +24,7 @@ export interface TransitRewrapRequest {
      * @type {Array<object>}
      * @memberof TransitRewrapRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * Ciphertext value to rewrap
      * @type {string}
@@ -42,19 +42,19 @@ export interface TransitRewrapRequest {
      * @type {string}
      * @memberof TransitRewrapRequest
      */
-    decryptPaddingScheme?: string;
+    decrypt_padding_scheme?: string;
     /**
      * The padding scheme to use for rewrap's encrypt step. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'
      * @type {string}
      * @memberof TransitRewrapRequest
      */
-    encryptPaddingScheme?: string;
+    encrypt_padding_scheme?: string;
     /**
      * The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
      * @type {number}
      * @memberof TransitRewrapRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * Nonce for when convergent encryption is used
      * @type {string}
@@ -80,12 +80,12 @@ export function TransitRewrapRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'context': json['context'] == null ? undefined : json['context'],
-        'decryptPaddingScheme': json['decrypt_padding_scheme'] == null ? undefined : json['decrypt_padding_scheme'],
-        'encryptPaddingScheme': json['encrypt_padding_scheme'] == null ? undefined : json['encrypt_padding_scheme'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'decrypt_padding_scheme': json['decrypt_padding_scheme'] == null ? undefined : json['decrypt_padding_scheme'],
+        'encrypt_padding_scheme': json['encrypt_padding_scheme'] == null ? undefined : json['encrypt_padding_scheme'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
     };
 }
@@ -101,12 +101,12 @@ export function TransitRewrapRequestToJSONTyped(value?: TransitRewrapRequest | n
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'ciphertext': value['ciphertext'],
         'context': value['context'],
-        'decrypt_padding_scheme': value['decryptPaddingScheme'],
-        'encrypt_padding_scheme': value['encryptPaddingScheme'],
-        'key_version': value['keyVersion'],
+        'decrypt_padding_scheme': value['decrypt_padding_scheme'],
+        'encrypt_padding_scheme': value['encrypt_padding_scheme'],
+        'key_version': value['key_version'],
         'nonce': value['nonce'],
     };
 }

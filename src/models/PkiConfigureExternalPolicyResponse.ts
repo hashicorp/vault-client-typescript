@@ -30,37 +30,37 @@ export interface PkiConfigureExternalPolicyResponse {
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    entityJmespath?: string;
+    entity_jmespath?: string;
     /**
      * Timestamp of the last update of the external policy engine configuration, (empty if never configured)
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    externalServiceLastUpdated?: string;
+    external_service_last_updated?: string;
     /**
      * The URL where the external policy service is accessible to vault
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    externalServiceUrl?: string;
+    external_service_url?: string;
     /**
      * Has the current user configuration been successfully used since the last update
      * @type {boolean}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    externalServiceValidated?: boolean;
+    external_service_validated?: boolean;
     /**
      * A JMESPath search string that will extract the entity group information to be sent to the CIEPS service. If blank, none of the group entity metadata will be sent to the service.
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    groupJmespath?: string;
+    group_jmespath?: string;
     /**
      * Timestamp of the last successful request with the policy engine (empty if no request has succeeded on this mount)
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    lastSuccessfulRequest?: string;
+    last_successful_request?: string;
     /**
      * This is how long any particular request should wait for a timeout
      * @type {string}
@@ -72,19 +72,19 @@ export interface PkiConfigureExternalPolicyResponse {
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    trustedCa?: string;
+    trusted_ca?: string;
     /**
      * This is the PEM of the leaf certificate(s) that vault will expect to do certificate pinning
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    trustedLeafCertificateBundle?: string;
+    trusted_leaf_certificate_bundle?: string;
     /**
      * The vault client certificate used to authenticate vault to the external policy engine
      * @type {string}
      * @memberof PkiConfigureExternalPolicyResponse
      */
-    vaultClientCertBundleNoKeys?: string;
+    vault_client_cert_bundle_no_keys?: string;
 }
 
 /**
@@ -105,16 +105,16 @@ export function PkiConfigureExternalPolicyResponseFromJSONTyped(json: any, ignor
     return {
         
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'entityJmespath': json['entity_jmespath'] == null ? undefined : json['entity_jmespath'],
-        'externalServiceLastUpdated': json['external_service_last_updated'] == null ? undefined : json['external_service_last_updated'],
-        'externalServiceUrl': json['external_service_url'] == null ? undefined : json['external_service_url'],
-        'externalServiceValidated': json['external_service_validated'] == null ? undefined : json['external_service_validated'],
-        'groupJmespath': json['group_jmespath'] == null ? undefined : json['group_jmespath'],
-        'lastSuccessfulRequest': json['last_successful_request'] == null ? undefined : json['last_successful_request'],
+        'entity_jmespath': json['entity_jmespath'] == null ? undefined : json['entity_jmespath'],
+        'external_service_last_updated': json['external_service_last_updated'] == null ? undefined : json['external_service_last_updated'],
+        'external_service_url': json['external_service_url'] == null ? undefined : json['external_service_url'],
+        'external_service_validated': json['external_service_validated'] == null ? undefined : json['external_service_validated'],
+        'group_jmespath': json['group_jmespath'] == null ? undefined : json['group_jmespath'],
+        'last_successful_request': json['last_successful_request'] == null ? undefined : json['last_successful_request'],
         'timeout': json['timeout'] == null ? undefined : json['timeout'],
-        'trustedCa': json['trusted_ca'] == null ? undefined : json['trusted_ca'],
-        'trustedLeafCertificateBundle': json['trusted_leaf_certificate_bundle'] == null ? undefined : json['trusted_leaf_certificate_bundle'],
-        'vaultClientCertBundleNoKeys': json['vault_client_cert_bundle_no_keys'] == null ? undefined : json['vault_client_cert_bundle_no_keys'],
+        'trusted_ca': json['trusted_ca'] == null ? undefined : json['trusted_ca'],
+        'trusted_leaf_certificate_bundle': json['trusted_leaf_certificate_bundle'] == null ? undefined : json['trusted_leaf_certificate_bundle'],
+        'vault_client_cert_bundle_no_keys': json['vault_client_cert_bundle_no_keys'] == null ? undefined : json['vault_client_cert_bundle_no_keys'],
     };
 }
 
@@ -130,16 +130,16 @@ export function PkiConfigureExternalPolicyResponseToJSONTyped(value?: PkiConfigu
     return {
         
         'enabled': value['enabled'],
-        'entity_jmespath': value['entityJmespath'],
-        'external_service_last_updated': value['externalServiceLastUpdated'],
-        'external_service_url': value['externalServiceUrl'],
-        'external_service_validated': value['externalServiceValidated'],
-        'group_jmespath': value['groupJmespath'],
-        'last_successful_request': value['lastSuccessfulRequest'],
+        'entity_jmespath': value['entity_jmespath'],
+        'external_service_last_updated': value['external_service_last_updated'],
+        'external_service_url': value['external_service_url'],
+        'external_service_validated': value['external_service_validated'],
+        'group_jmespath': value['group_jmespath'],
+        'last_successful_request': value['last_successful_request'],
         'timeout': value['timeout'],
-        'trusted_ca': value['trustedCa'],
-        'trusted_leaf_certificate_bundle': value['trustedLeafCertificateBundle'],
-        'vault_client_cert_bundle_no_keys': value['vaultClientCertBundleNoKeys'],
+        'trusted_ca': value['trusted_ca'],
+        'trusted_leaf_certificate_bundle': value['trusted_leaf_certificate_bundle'],
+        'vault_client_cert_bundle_no_keys': value['vault_client_cert_bundle_no_keys'],
     };
 }
 

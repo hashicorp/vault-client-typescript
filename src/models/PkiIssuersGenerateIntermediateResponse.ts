@@ -30,19 +30,19 @@ export interface PkiIssuersGenerateIntermediateResponse {
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Generated private key.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateResponse
      */
-    privateKey?: string;
+    private_key?: string;
     /**
      * Specifies the format used for marshaling the private key.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateResponse
      */
-    privateKeyType?: string;
+    private_key_type?: string;
 }
 
 /**
@@ -63,9 +63,9 @@ export function PkiIssuersGenerateIntermediateResponseFromJSONTyped(json: any, i
     return {
         
         'csr': json['csr'] == null ? undefined : json['csr'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
-        'privateKeyType': json['private_key_type'] == null ? undefined : json['private_key_type'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
+        'private_key_type': json['private_key_type'] == null ? undefined : json['private_key_type'],
     };
 }
 
@@ -81,9 +81,9 @@ export function PkiIssuersGenerateIntermediateResponseToJSONTyped(value?: PkiIss
     return {
         
         'csr': value['csr'],
-        'key_id': value['keyId'],
-        'private_key': value['privateKey'],
-        'private_key_type': value['privateKeyType'],
+        'key_id': value['key_id'],
+        'private_key': value['private_key'],
+        'private_key_type': value['private_key_type'],
     };
 }
 

@@ -31,14 +31,14 @@ export interface AliCloudWriteAuthRoleRequest {
      * @memberof AliCloudWriteAuthRoleRequest
      * @deprecated
      */
-    boundCidrs?: Array<string>;
+    bound_cidrs?: Array<string>;
     /**
      * Use "token_max_ttl" instead. If this and "token_max_ttl" are both specified, only "token_max_ttl" will be used.
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -58,55 +58,55 @@ export interface AliCloudWriteAuthRoleRequest {
      * @type {Array<string>}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -134,19 +134,19 @@ export function AliCloudWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDiscr
     return {
         
         'arn': json['arn'] == null ? undefined : json['arn'],
-        'boundCidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -163,19 +163,19 @@ export function AliCloudWriteAuthRoleRequestToJSONTyped(value?: AliCloudWriteAut
     return {
         
         'arn': value['arn'],
-        'bound_cidrs': value['boundCidrs'],
-        'max_ttl': value['maxTtl'],
+        'bound_cidrs': value['bound_cidrs'],
+        'max_ttl': value['max_ttl'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
     };
 }

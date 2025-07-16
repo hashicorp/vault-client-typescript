@@ -42,7 +42,7 @@ export interface RekeyAttemptUpdateResponse {
      * @type {Array<string>}
      * @memberof RekeyAttemptUpdateResponse
      */
-    keysBase64?: Array<string>;
+    keys_base64?: Array<string>;
     /**
      * 
      * @type {number}
@@ -60,7 +60,7 @@ export interface RekeyAttemptUpdateResponse {
      * @type {Array<string>}
      * @memberof RekeyAttemptUpdateResponse
      */
-    pgpFingerprints?: Array<string>;
+    pgp_fingerprints?: Array<string>;
     /**
      * 
      * @type {number}
@@ -90,13 +90,13 @@ export interface RekeyAttemptUpdateResponse {
      * @type {string}
      * @memberof RekeyAttemptUpdateResponse
      */
-    verificationNonce?: string;
+    verification_nonce?: string;
     /**
      * 
      * @type {boolean}
      * @memberof RekeyAttemptUpdateResponse
      */
-    verificationRequired?: boolean;
+    verification_required?: boolean;
 }
 
 /**
@@ -119,16 +119,16 @@ export function RekeyAttemptUpdateResponseFromJSONTyped(json: any, ignoreDiscrim
         'backup': json['backup'] == null ? undefined : json['backup'],
         'complete': json['complete'] == null ? undefined : json['complete'],
         'keys': json['keys'] == null ? undefined : json['keys'],
-        'keysBase64': json['keys_base64'] == null ? undefined : json['keys_base64'],
+        'keys_base64': json['keys_base64'] == null ? undefined : json['keys_base64'],
         'n': json['n'] == null ? undefined : json['n'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'pgpFingerprints': json['pgp_fingerprints'] == null ? undefined : json['pgp_fingerprints'],
+        'pgp_fingerprints': json['pgp_fingerprints'] == null ? undefined : json['pgp_fingerprints'],
         'progress': json['progress'] == null ? undefined : json['progress'],
         'required': json['required'] == null ? undefined : json['required'],
         'started': json['started'] == null ? undefined : json['started'],
         't': json['t'] == null ? undefined : json['t'],
-        'verificationNonce': json['verification_nonce'] == null ? undefined : json['verification_nonce'],
-        'verificationRequired': json['verification_required'] == null ? undefined : json['verification_required'],
+        'verification_nonce': json['verification_nonce'] == null ? undefined : json['verification_nonce'],
+        'verification_required': json['verification_required'] == null ? undefined : json['verification_required'],
     };
 }
 
@@ -146,16 +146,16 @@ export function RekeyAttemptUpdateResponseToJSONTyped(value?: RekeyAttemptUpdate
         'backup': value['backup'],
         'complete': value['complete'],
         'keys': value['keys'],
-        'keys_base64': value['keysBase64'],
+        'keys_base64': value['keys_base64'],
         'n': value['n'],
         'nonce': value['nonce'],
-        'pgp_fingerprints': value['pgpFingerprints'],
+        'pgp_fingerprints': value['pgp_fingerprints'],
         'progress': value['progress'],
         'required': value['required'],
         'started': value['started'],
         't': value['t'],
-        'verification_nonce': value['verificationNonce'],
-        'verification_required': value['verificationRequired'],
+        'verification_nonce': value['verification_nonce'],
+        'verification_required': value['verification_required'],
     };
 }
 

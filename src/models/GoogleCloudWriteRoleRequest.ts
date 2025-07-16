@@ -24,80 +24,80 @@ export interface GoogleCloudWriteRoleRequest {
      * @type {boolean}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    addGroupAliases?: boolean;
+    add_group_aliases?: boolean;
     /**
      * 'iam' roles only. If false, Vault will not not allow GCE instances to login in against this role
      * @type {boolean}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    allowGceInference?: boolean;
+    allow_gce_inference?: boolean;
     /**
      * Deprecated: use "bound_instance_groups" instead.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundInstanceGroup?: string;
+    bound_instance_group?: string;
     /**
      * Comma-separated list of permitted instance groups to which the GCE instance must belong. This option only applies to "gce" roles.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundInstanceGroups?: Array<string>;
+    bound_instance_groups?: Array<string>;
     /**
      * Comma-separated list of GCP labels formatted as"key:value" strings that must be present on the GCE instance in order to authenticate. This option only applies to "gce" roles.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundLabels?: Array<string>;
+    bound_labels?: Array<string>;
     /**
      * GCP Projects that authenticating entities must belong to.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundProjects?: Array<string>;
+    bound_projects?: Array<string>;
     /**
      * Deprecated: use "bound_regions" instead.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundRegion?: string;
+    bound_region?: string;
     /**
      * Comma-separated list of permitted regions to which the GCE instance must belong. If a group is provided, it is assumed to be a regional group. If "zone" is provided, this option is ignored. This can be a self-link or region name. This option only applies to "gce" roles.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundRegions?: Array<string>;
+    bound_regions?: Array<string>;
     /**
      * Can be set for both 'iam' and 'gce' roles (required for 'iam'). A comma-seperated list of authorized service accounts. If the single value "*" is given, this is assumed to be all service accounts under the role's project. If this is set on a GCE role, the inferred service account from the instance metadata token will be used.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundServiceAccounts?: Array<string>;
+    bound_service_accounts?: Array<string>;
     /**
      * Deprecated: use "bound_zones" instead.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundZone?: string;
+    bound_zone?: string;
     /**
      * Comma-separated list of permitted zones to which the GCE instance must belong. If a group is provided, it is assumed to be a zonal group. This can be a self-link or zone name. This option only applies to "gce" roles.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    boundZones?: Array<string>;
+    bound_zones?: Array<string>;
     /**
      * Currently enabled for 'iam' only. Duration in seconds from time of validation that a JWT must expire within.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    maxJwtExp?: string;
+    max_jwt_exp?: string;
     /**
      * Use "token_max_ttl" instead. If this and "token_max_ttl" are both specified, only "token_max_ttl" will be used.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -117,67 +117,67 @@ export interface GoogleCloudWriteRoleRequest {
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    projectId?: string;
+    project_id?: string;
     /**
      * Deprecated: use "bound_service_accounts" instead.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    serviceAccounts?: Array<string>;
+    service_accounts?: Array<string>;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof GoogleCloudWriteRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -210,32 +210,32 @@ export function GoogleCloudWriteRoleRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'addGroupAliases': json['add_group_aliases'] == null ? undefined : json['add_group_aliases'],
-        'allowGceInference': json['allow_gce_inference'] == null ? undefined : json['allow_gce_inference'],
-        'boundInstanceGroup': json['bound_instance_group'] == null ? undefined : json['bound_instance_group'],
-        'boundInstanceGroups': json['bound_instance_groups'] == null ? undefined : json['bound_instance_groups'],
-        'boundLabels': json['bound_labels'] == null ? undefined : json['bound_labels'],
-        'boundProjects': json['bound_projects'] == null ? undefined : json['bound_projects'],
-        'boundRegion': json['bound_region'] == null ? undefined : json['bound_region'],
-        'boundRegions': json['bound_regions'] == null ? undefined : json['bound_regions'],
-        'boundServiceAccounts': json['bound_service_accounts'] == null ? undefined : json['bound_service_accounts'],
-        'boundZone': json['bound_zone'] == null ? undefined : json['bound_zone'],
-        'boundZones': json['bound_zones'] == null ? undefined : json['bound_zones'],
-        'maxJwtExp': json['max_jwt_exp'] == null ? undefined : json['max_jwt_exp'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'add_group_aliases': json['add_group_aliases'] == null ? undefined : json['add_group_aliases'],
+        'allow_gce_inference': json['allow_gce_inference'] == null ? undefined : json['allow_gce_inference'],
+        'bound_instance_group': json['bound_instance_group'] == null ? undefined : json['bound_instance_group'],
+        'bound_instance_groups': json['bound_instance_groups'] == null ? undefined : json['bound_instance_groups'],
+        'bound_labels': json['bound_labels'] == null ? undefined : json['bound_labels'],
+        'bound_projects': json['bound_projects'] == null ? undefined : json['bound_projects'],
+        'bound_region': json['bound_region'] == null ? undefined : json['bound_region'],
+        'bound_regions': json['bound_regions'] == null ? undefined : json['bound_regions'],
+        'bound_service_accounts': json['bound_service_accounts'] == null ? undefined : json['bound_service_accounts'],
+        'bound_zone': json['bound_zone'] == null ? undefined : json['bound_zone'],
+        'bound_zones': json['bound_zones'] == null ? undefined : json['bound_zones'],
+        'max_jwt_exp': json['max_jwt_exp'] == null ? undefined : json['max_jwt_exp'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'projectId': json['project_id'] == null ? undefined : json['project_id'],
-        'serviceAccounts': json['service_accounts'] == null ? undefined : json['service_accounts'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'project_id': json['project_id'] == null ? undefined : json['project_id'],
+        'service_accounts': json['service_accounts'] == null ? undefined : json['service_accounts'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -252,32 +252,32 @@ export function GoogleCloudWriteRoleRequestToJSONTyped(value?: GoogleCloudWriteR
 
     return {
         
-        'add_group_aliases': value['addGroupAliases'],
-        'allow_gce_inference': value['allowGceInference'],
-        'bound_instance_group': value['boundInstanceGroup'],
-        'bound_instance_groups': value['boundInstanceGroups'],
-        'bound_labels': value['boundLabels'],
-        'bound_projects': value['boundProjects'],
-        'bound_region': value['boundRegion'],
-        'bound_regions': value['boundRegions'],
-        'bound_service_accounts': value['boundServiceAccounts'],
-        'bound_zone': value['boundZone'],
-        'bound_zones': value['boundZones'],
-        'max_jwt_exp': value['maxJwtExp'],
-        'max_ttl': value['maxTtl'],
+        'add_group_aliases': value['add_group_aliases'],
+        'allow_gce_inference': value['allow_gce_inference'],
+        'bound_instance_group': value['bound_instance_group'],
+        'bound_instance_groups': value['bound_instance_groups'],
+        'bound_labels': value['bound_labels'],
+        'bound_projects': value['bound_projects'],
+        'bound_region': value['bound_region'],
+        'bound_regions': value['bound_regions'],
+        'bound_service_accounts': value['bound_service_accounts'],
+        'bound_zone': value['bound_zone'],
+        'bound_zones': value['bound_zones'],
+        'max_jwt_exp': value['max_jwt_exp'],
+        'max_ttl': value['max_ttl'],
         'period': value['period'],
         'policies': value['policies'],
-        'project_id': value['projectId'],
-        'service_accounts': value['serviceAccounts'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'project_id': value['project_id'],
+        'service_accounts': value['service_accounts'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
         'type': value['type'],
     };

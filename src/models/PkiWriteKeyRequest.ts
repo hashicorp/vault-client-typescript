@@ -24,7 +24,7 @@ export interface PkiWriteKeyRequest {
      * @type {string}
      * @memberof PkiWriteKeyRequest
      */
-    keyName?: string;
+    key_name?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function PkiWriteKeyRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
     };
 }
 
@@ -59,7 +59,7 @@ export function PkiWriteKeyRequestToJSONTyped(value?: PkiWriteKeyRequest | null,
 
     return {
         
-        'key_name': value['keyName'],
+        'key_name': value['key_name'],
     };
 }
 

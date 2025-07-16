@@ -24,7 +24,7 @@ export interface TransformWriteTokenizationTransformationRequest {
      * @type {Array<string>}
      * @memberof TransformWriteTokenizationTransformationRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * Specifies whether to use convergent tokenization, which produces consistent tokens given consistent plaintext and expiration inputs.
      * @type {boolean}
@@ -36,19 +36,19 @@ export interface TransformWriteTokenizationTransformationRequest {
      * @type {boolean}
      * @memberof TransformWriteTokenizationTransformationRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * Specifies the mapping mode for stored tokenization values. 'default', the default is strongly recommended for high security. 'exportable' allows for all plaintexts to be decoded simultaneously in an emergency.
      * @type {string}
      * @memberof TransformWriteTokenizationTransformationRequest
      */
-    mappingMode?: string;
+    mapping_mode?: string;
     /**
      * The maximum TTL of a token. If 0 or unspecified, tokens may have no expiration.
      * @type {string}
      * @memberof TransformWriteTokenizationTransformationRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * The store or stores which will contain tokenized state.
      * @type {Array<string>}
@@ -80,11 +80,11 @@ export function TransformWriteTokenizationTransformationRequestFromJSONTyped(jso
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'convergent': json['convergent'] == null ? undefined : json['convergent'],
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
-        'mappingMode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'mapping_mode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'stores': json['stores'] == null ? undefined : json['stores'],
         'template': json['template'] == null ? undefined : json['template'],
     };
@@ -101,11 +101,11 @@ export function TransformWriteTokenizationTransformationRequestToJSONTyped(value
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
+        'allowed_roles': value['allowed_roles'],
         'convergent': value['convergent'],
-        'deletion_allowed': value['deletionAllowed'],
-        'mapping_mode': value['mappingMode'],
-        'max_ttl': value['maxTtl'],
+        'deletion_allowed': value['deletion_allowed'],
+        'mapping_mode': value['mapping_mode'],
+        'max_ttl': value['max_ttl'],
         'stores': value['stores'],
         'template': value['template'],
     };

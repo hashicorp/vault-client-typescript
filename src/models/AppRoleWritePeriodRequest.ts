@@ -31,7 +31,7 @@ export interface AppRoleWritePeriodRequest {
      * @type {string}
      * @memberof AppRoleWritePeriodRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
 }
 
 /**
@@ -52,7 +52,7 @@ export function AppRoleWritePeriodRequestFromJSONTyped(json: any, ignoreDiscrimi
     return {
         
         'period': json['period'] == null ? undefined : json['period'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
     };
 }
 
@@ -68,7 +68,7 @@ export function AppRoleWritePeriodRequestToJSONTyped(value?: AppRoleWritePeriodR
     return {
         
         'period': value['period'],
-        'token_period': value['tokenPeriod'],
+        'token_period': value['token_period'],
     };
 }
 

@@ -31,7 +31,7 @@ export interface AppRoleWritePoliciesRequest {
      * @type {Array<string>}
      * @memberof AppRoleWritePoliciesRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function AppRoleWritePoliciesRequestFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
     };
 }
 
@@ -68,7 +68,7 @@ export function AppRoleWritePoliciesRequestToJSONTyped(value?: AppRoleWritePolic
     return {
         
         'policies': value['policies'],
-        'token_policies': value['tokenPolicies'],
+        'token_policies': value['token_policies'],
     };
 }
 

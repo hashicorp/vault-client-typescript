@@ -24,49 +24,49 @@ export interface InitializeRequest {
      * @type {Array<string>}
      * @memberof InitializeRequest
      */
-    pgpKeys?: Array<string>;
+    pgp_keys?: Array<string>;
     /**
      * Specifies an array of PGP public keys used to encrypt the output recovery keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as `recovery_shares`.
      * @type {Array<string>}
      * @memberof InitializeRequest
      */
-    recoveryPgpKeys?: Array<string>;
+    recovery_pgp_keys?: Array<string>;
     /**
      * Specifies the number of shares to split the recovery key into.
      * @type {number}
      * @memberof InitializeRequest
      */
-    recoveryShares?: number;
+    recovery_shares?: number;
     /**
      * Specifies the number of shares required to reconstruct the recovery key. This must be less than or equal to `recovery_shares`.
      * @type {number}
      * @memberof InitializeRequest
      */
-    recoveryThreshold?: number;
+    recovery_threshold?: number;
     /**
      * Specifies a PGP public key used to encrypt the initial root token. The key must be base64-encoded from its original binary representation.
      * @type {string}
      * @memberof InitializeRequest
      */
-    rootTokenPgpKey?: string;
+    root_token_pgp_key?: string;
     /**
      * Specifies the number of shares to split the unseal key into.
      * @type {number}
      * @memberof InitializeRequest
      */
-    secretShares?: number;
+    secret_shares?: number;
     /**
      * Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as `secret_shares`.
      * @type {number}
      * @memberof InitializeRequest
      */
-    secretThreshold?: number;
+    secret_threshold?: number;
     /**
      * Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as `secret_shares`.
      * @type {number}
      * @memberof InitializeRequest
      */
-    storedShares?: number;
+    stored_shares?: number;
 }
 
 /**
@@ -86,14 +86,14 @@ export function InitializeRequestFromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         
-        'pgpKeys': json['pgp_keys'] == null ? undefined : json['pgp_keys'],
-        'recoveryPgpKeys': json['recovery_pgp_keys'] == null ? undefined : json['recovery_pgp_keys'],
-        'recoveryShares': json['recovery_shares'] == null ? undefined : json['recovery_shares'],
-        'recoveryThreshold': json['recovery_threshold'] == null ? undefined : json['recovery_threshold'],
-        'rootTokenPgpKey': json['root_token_pgp_key'] == null ? undefined : json['root_token_pgp_key'],
-        'secretShares': json['secret_shares'] == null ? undefined : json['secret_shares'],
-        'secretThreshold': json['secret_threshold'] == null ? undefined : json['secret_threshold'],
-        'storedShares': json['stored_shares'] == null ? undefined : json['stored_shares'],
+        'pgp_keys': json['pgp_keys'] == null ? undefined : json['pgp_keys'],
+        'recovery_pgp_keys': json['recovery_pgp_keys'] == null ? undefined : json['recovery_pgp_keys'],
+        'recovery_shares': json['recovery_shares'] == null ? undefined : json['recovery_shares'],
+        'recovery_threshold': json['recovery_threshold'] == null ? undefined : json['recovery_threshold'],
+        'root_token_pgp_key': json['root_token_pgp_key'] == null ? undefined : json['root_token_pgp_key'],
+        'secret_shares': json['secret_shares'] == null ? undefined : json['secret_shares'],
+        'secret_threshold': json['secret_threshold'] == null ? undefined : json['secret_threshold'],
+        'stored_shares': json['stored_shares'] == null ? undefined : json['stored_shares'],
     };
 }
 
@@ -108,14 +108,14 @@ export function InitializeRequestToJSONTyped(value?: InitializeRequest | null, i
 
     return {
         
-        'pgp_keys': value['pgpKeys'],
-        'recovery_pgp_keys': value['recoveryPgpKeys'],
-        'recovery_shares': value['recoveryShares'],
-        'recovery_threshold': value['recoveryThreshold'],
-        'root_token_pgp_key': value['rootTokenPgpKey'],
-        'secret_shares': value['secretShares'],
-        'secret_threshold': value['secretThreshold'],
-        'stored_shares': value['storedShares'],
+        'pgp_keys': value['pgp_keys'],
+        'recovery_pgp_keys': value['recovery_pgp_keys'],
+        'recovery_shares': value['recovery_shares'],
+        'recovery_threshold': value['recovery_threshold'],
+        'root_token_pgp_key': value['root_token_pgp_key'],
+        'secret_shares': value['secret_shares'],
+        'secret_threshold': value['secret_threshold'],
+        'stored_shares': value['stored_shares'],
     };
 }
 

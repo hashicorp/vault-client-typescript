@@ -24,7 +24,7 @@ export interface SystemWriteSyncDestinationsTypeNameAssociationsSetResponse {
      * @type {object}
      * @memberof SystemWriteSyncDestinationsTypeNameAssociationsSetResponse
      */
-    associatedSecrets?: object;
+    associated_secrets?: object;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsSetResponseFromJS
     }
     return {
         
-        'associatedSecrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
+        'associated_secrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsSetResponseToJSON
 
     return {
         
-        'associated_secrets': value['associatedSecrets'],
+        'associated_secrets': value['associated_secrets'],
     };
 }
 

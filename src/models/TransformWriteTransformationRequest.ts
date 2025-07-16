@@ -24,7 +24,7 @@ export interface TransformWriteTransformationRequest {
      * @type {Array<string>}
      * @memberof TransformWriteTransformationRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * Specifies whether to use convergent tokenization, which produces consistent tokens given consistent plaintext and expiration inputs.
      * @type {boolean}
@@ -36,19 +36,19 @@ export interface TransformWriteTransformationRequest {
      * @type {boolean}
      * @memberof TransformWriteTransformationRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * Specifies the mapping mode for stored tokenization values. 'default', the default is strongly recommended for high security. 'exportable' allows for all plaintexts to be decoded simultaneously in an emergency.
      * @type {string}
      * @memberof TransformWriteTransformationRequest
      */
-    mappingMode?: string;
+    mapping_mode?: string;
     /**
      * The character used to replace data when in masking mode
      * @type {string}
      * @memberof TransformWriteTransformationRequest
      */
-    maskingCharacter?: string;
+    masking_character?: string;
     /**
      * The store or stores which will contain tokenized state.
      * @type {Array<string>}
@@ -66,7 +66,7 @@ export interface TransformWriteTransformationRequest {
      * @type {string}
      * @memberof TransformWriteTransformationRequest
      */
-    tweakSource?: string;
+    tweak_source?: string;
     /**
      * The type of transformation to perform.
      * @type {string}
@@ -92,14 +92,14 @@ export function TransformWriteTransformationRequestFromJSONTyped(json: any, igno
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'convergent': json['convergent'] == null ? undefined : json['convergent'],
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
-        'mappingMode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
-        'maskingCharacter': json['masking_character'] == null ? undefined : json['masking_character'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'mapping_mode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
+        'masking_character': json['masking_character'] == null ? undefined : json['masking_character'],
         'stores': json['stores'] == null ? undefined : json['stores'],
         'template': json['template'] == null ? undefined : json['template'],
-        'tweakSource': json['tweak_source'] == null ? undefined : json['tweak_source'],
+        'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -115,14 +115,14 @@ export function TransformWriteTransformationRequestToJSONTyped(value?: Transform
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
+        'allowed_roles': value['allowed_roles'],
         'convergent': value['convergent'],
-        'deletion_allowed': value['deletionAllowed'],
-        'mapping_mode': value['mappingMode'],
-        'masking_character': value['maskingCharacter'],
+        'deletion_allowed': value['deletion_allowed'],
+        'mapping_mode': value['mapping_mode'],
+        'masking_character': value['masking_character'],
         'stores': value['stores'],
         'template': value['template'],
-        'tweak_source': value['tweakSource'],
+        'tweak_source': value['tweak_source'],
         'type': value['type'],
     };
 }

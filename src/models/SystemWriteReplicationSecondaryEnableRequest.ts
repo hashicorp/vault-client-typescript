@@ -24,31 +24,31 @@ export interface SystemWriteReplicationSecondaryEnableRequest {
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryEnableRequest
      */
-    caFile?: string;
+    ca_file?: string;
     /**
      * A path to a directory containing PEM-encoded CA certificates to verify the call against the primary's API address
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryEnableRequest
      */
-    caPath?: string;
+    ca_path?: string;
     /**
      * The client certificate to use for authentication, in PEM format. Note: client authentication for this operation will always use TLS 1.2 or higher.
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryEnableRequest
      */
-    clientCertPem?: string;
+    client_cert_pem?: string;
     /**
      * The client key to use for authentication, in PEM format.
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryEnableRequest
      */
-    clientKeyPem?: string;
+    client_key_pem?: string;
     /**
      * The API address of the primary. If not set, the value the primary supplies in the token will be used, which is the primary's redirect address.
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryEnableRequest
      */
-    primaryApiAddr?: string;
+    primary_api_addr?: string;
     /**
      * The token given by the primary to activate secondary status for this cluster.
      * @type {string}
@@ -74,11 +74,11 @@ export function SystemWriteReplicationSecondaryEnableRequestFromJSONTyped(json: 
     }
     return {
         
-        'caFile': json['ca_file'] == null ? undefined : json['ca_file'],
-        'caPath': json['ca_path'] == null ? undefined : json['ca_path'],
-        'clientCertPem': json['client_cert_pem'] == null ? undefined : json['client_cert_pem'],
-        'clientKeyPem': json['client_key_pem'] == null ? undefined : json['client_key_pem'],
-        'primaryApiAddr': json['primary_api_addr'] == null ? undefined : json['primary_api_addr'],
+        'ca_file': json['ca_file'] == null ? undefined : json['ca_file'],
+        'ca_path': json['ca_path'] == null ? undefined : json['ca_path'],
+        'client_cert_pem': json['client_cert_pem'] == null ? undefined : json['client_cert_pem'],
+        'client_key_pem': json['client_key_pem'] == null ? undefined : json['client_key_pem'],
+        'primary_api_addr': json['primary_api_addr'] == null ? undefined : json['primary_api_addr'],
         'token': json['token'] == null ? undefined : json['token'],
     };
 }
@@ -94,11 +94,11 @@ export function SystemWriteReplicationSecondaryEnableRequestToJSONTyped(value?: 
 
     return {
         
-        'ca_file': value['caFile'],
-        'ca_path': value['caPath'],
-        'client_cert_pem': value['clientCertPem'],
-        'client_key_pem': value['clientKeyPem'],
-        'primary_api_addr': value['primaryApiAddr'],
+        'ca_file': value['ca_file'],
+        'ca_path': value['ca_path'],
+        'client_cert_pem': value['client_cert_pem'],
+        'client_key_pem': value['client_key_pem'],
+        'primary_api_addr': value['primary_api_addr'],
         'token': value['token'],
     };
 }

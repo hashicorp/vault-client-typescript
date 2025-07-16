@@ -30,7 +30,7 @@ export interface KeyManagementWriteKmsProviderRequest {
      * @type {string}
      * @memberof KeyManagementWriteKmsProviderRequest
      */
-    keyCollection: string;
+    key_collection: string;
     /**
      * The name of the provider. Currently, "azurekeyvault", "awskms", and "gcpckms" are supported. This parameter cannot be modified by an update operation after creation.
      * @type {string}
@@ -54,7 +54,7 @@ export enum KeyManagementWriteKmsProviderRequestProviderEnum {
  * Check if a given object implements the KeyManagementWriteKmsProviderRequest interface.
  */
 export function instanceOfKeyManagementWriteKmsProviderRequest(value: object): value is KeyManagementWriteKmsProviderRequest {
-    if (!('keyCollection' in value) || value['keyCollection'] === undefined) return false;
+    if (!('key_collection' in value) || value['key_collection'] === undefined) return false;
     if (!('provider' in value) || value['provider'] === undefined) return false;
     return true;
 }
@@ -70,7 +70,7 @@ export function KeyManagementWriteKmsProviderRequestFromJSONTyped(json: any, ign
     return {
         
         'credentials': json['credentials'] == null ? undefined : json['credentials'],
-        'keyCollection': json['key_collection'],
+        'key_collection': json['key_collection'],
         'provider': json['provider'],
     };
 }
@@ -87,7 +87,7 @@ export function KeyManagementWriteKmsProviderRequestToJSONTyped(value?: KeyManag
     return {
         
         'credentials': value['credentials'],
-        'key_collection': value['keyCollection'],
+        'key_collection': value['key_collection'],
         'provider': value['provider'],
     };
 }

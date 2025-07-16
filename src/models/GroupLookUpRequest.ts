@@ -24,19 +24,19 @@ export interface GroupLookUpRequest {
      * @type {string}
      * @memberof GroupLookUpRequest
      */
-    aliasId?: string;
+    alias_id?: string;
     /**
      * Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with 'alias_name'.
      * @type {string}
      * @memberof GroupLookUpRequest
      */
-    aliasMountAccessor?: string;
+    alias_mount_accessor?: string;
     /**
      * Name of the alias. This should be supplied in conjunction with 'alias_mount_accessor'.
      * @type {string}
      * @memberof GroupLookUpRequest
      */
-    aliasName?: string;
+    alias_name?: string;
     /**
      * ID of the group.
      * @type {string}
@@ -68,9 +68,9 @@ export function GroupLookUpRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'aliasId': json['alias_id'] == null ? undefined : json['alias_id'],
-        'aliasMountAccessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
-        'aliasName': json['alias_name'] == null ? undefined : json['alias_name'],
+        'alias_id': json['alias_id'] == null ? undefined : json['alias_id'],
+        'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
+        'alias_name': json['alias_name'] == null ? undefined : json['alias_name'],
         'id': json['id'] == null ? undefined : json['id'],
         'name': json['name'] == null ? undefined : json['name'],
     };
@@ -87,9 +87,9 @@ export function GroupLookUpRequestToJSONTyped(value?: GroupLookUpRequest | null,
 
     return {
         
-        'alias_id': value['aliasId'],
-        'alias_mount_accessor': value['aliasMountAccessor'],
-        'alias_name': value['aliasName'],
+        'alias_id': value['alias_id'],
+        'alias_mount_accessor': value['alias_mount_accessor'],
+        'alias_name': value['alias_name'],
         'id': value['id'],
         'name': value['name'],
     };

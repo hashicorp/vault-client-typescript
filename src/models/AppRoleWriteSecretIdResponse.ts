@@ -24,25 +24,25 @@ export interface AppRoleWriteSecretIdResponse {
      * @type {string}
      * @memberof AppRoleWriteSecretIdResponse
      */
-    secretId?: string;
+    secret_id?: string;
     /**
      * Accessor of the secret ID
      * @type {string}
      * @memberof AppRoleWriteSecretIdResponse
      */
-    secretIdAccessor?: string;
+    secret_id_accessor?: string;
     /**
      * Number of times a secret ID can access the role, after which the secret ID will expire.
      * @type {number}
      * @memberof AppRoleWriteSecretIdResponse
      */
-    secretIdNumUses?: number;
+    secret_id_num_uses?: number;
     /**
      * Duration in seconds after which the issued secret ID expires.
      * @type {number}
      * @memberof AppRoleWriteSecretIdResponse
      */
-    secretIdTtl?: number;
+    secret_id_ttl?: number;
 }
 
 /**
@@ -62,10 +62,10 @@ export function AppRoleWriteSecretIdResponseFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'secretId': json['secret_id'] == null ? undefined : json['secret_id'],
-        'secretIdAccessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
-        'secretIdNumUses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
-        'secretIdTtl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'secret_id': json['secret_id'] == null ? undefined : json['secret_id'],
+        'secret_id_accessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
+        'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
+        'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
     };
 }
 
@@ -80,10 +80,10 @@ export function AppRoleWriteSecretIdResponseToJSONTyped(value?: AppRoleWriteSecr
 
     return {
         
-        'secret_id': value['secretId'],
-        'secret_id_accessor': value['secretIdAccessor'],
-        'secret_id_num_uses': value['secretIdNumUses'],
-        'secret_id_ttl': value['secretIdTtl'],
+        'secret_id': value['secret_id'],
+        'secret_id_accessor': value['secret_id_accessor'],
+        'secret_id_num_uses': value['secret_id_num_uses'],
+        'secret_id_ttl': value['secret_id_ttl'],
     };
 }
 

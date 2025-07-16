@@ -24,7 +24,7 @@ export interface TransitConfigureKeysRequest {
      * @type {boolean}
      * @memberof TransitConfigureKeysRequest
      */
-    disableUpsert?: boolean;
+    disable_upsert?: boolean;
 }
 
 /**
@@ -44,7 +44,7 @@ export function TransitConfigureKeysRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'disableUpsert': json['disable_upsert'] == null ? undefined : json['disable_upsert'],
+        'disable_upsert': json['disable_upsert'] == null ? undefined : json['disable_upsert'],
     };
 }
 
@@ -59,7 +59,7 @@ export function TransitConfigureKeysRequestToJSONTyped(value?: TransitConfigureK
 
     return {
         
-        'disable_upsert': value['disableUpsert'],
+        'disable_upsert': value['disable_upsert'],
     };
 }
 

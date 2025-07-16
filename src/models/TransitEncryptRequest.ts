@@ -24,13 +24,13 @@ export interface TransitEncryptRequest {
      * @type {string}
      * @memberof TransitEncryptRequest
      */
-    associatedData?: string;
+    associated_data?: string;
     /**
      * Specifies a list of items to be encrypted in a single batch. When this parameter is set, if the parameters 'plaintext', 'context' and 'nonce' are also set, they will be ignored. Any batch output will preserve the order of the batch input.
      * @type {Array<object>}
      * @memberof TransitEncryptRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * Base64 encoded context for key derivation. Required if key derivation is enabled
      * @type {string}
@@ -42,13 +42,13 @@ export interface TransitEncryptRequest {
      * @type {boolean}
      * @memberof TransitEncryptRequest
      */
-    convergentEncryption?: boolean;
+    convergent_encryption?: boolean;
     /**
      * The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
      * @type {number}
      * @memberof TransitEncryptRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * Base64 encoded nonce value. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+. The value must be exactly 96 bits (12 bytes) long and the user must ensure that for any given context (and thus, any given encryption key) this nonce value is **never reused**.
      * @type {string}
@@ -60,13 +60,13 @@ export interface TransitEncryptRequest {
      * @type {string}
      * @memberof TransitEncryptRequest
      */
-    paddingScheme?: string;
+    padding_scheme?: string;
     /**
      * Ordinarily, if a batch item fails to encrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned.
      * @type {number}
      * @memberof TransitEncryptRequest
      */
-    partialFailureResponseCode?: number;
+    partial_failure_response_code?: number;
     /**
      * Base64 encoded plaintext value to be encrypted
      * @type {string}
@@ -98,14 +98,14 @@ export function TransitEncryptRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'associatedData': json['associated_data'] == null ? undefined : json['associated_data'],
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'associated_data': json['associated_data'] == null ? undefined : json['associated_data'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'context': json['context'] == null ? undefined : json['context'],
-        'convergentEncryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'convergent_encryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'paddingScheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
-        'partialFailureResponseCode': json['partial_failure_response_code'] == null ? undefined : json['partial_failure_response_code'],
+        'padding_scheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
+        'partial_failure_response_code': json['partial_failure_response_code'] == null ? undefined : json['partial_failure_response_code'],
         'plaintext': json['plaintext'] == null ? undefined : json['plaintext'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -122,14 +122,14 @@ export function TransitEncryptRequestToJSONTyped(value?: TransitEncryptRequest |
 
     return {
         
-        'associated_data': value['associatedData'],
-        'batch_input': value['batchInput'],
+        'associated_data': value['associated_data'],
+        'batch_input': value['batch_input'],
         'context': value['context'],
-        'convergent_encryption': value['convergentEncryption'],
-        'key_version': value['keyVersion'],
+        'convergent_encryption': value['convergent_encryption'],
+        'key_version': value['key_version'],
         'nonce': value['nonce'],
-        'padding_scheme': value['paddingScheme'],
-        'partial_failure_response_code': value['partialFailureResponseCode'],
+        'padding_scheme': value['padding_scheme'],
+        'partial_failure_response_code': value['partial_failure_response_code'],
         'plaintext': value['plaintext'],
         'type': value['type'],
     };

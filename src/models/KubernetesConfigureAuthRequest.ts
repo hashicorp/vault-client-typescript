@@ -25,13 +25,13 @@ export interface KubernetesConfigureAuthRequest {
      * @memberof KubernetesConfigureAuthRequest
      * @deprecated
      */
-    disableIssValidation?: boolean;
+    disable_iss_validation?: boolean;
     /**
      * Disable defaulting to the local CA cert and service account JWT when running in a Kubernetes pod
      * @type {boolean}
      * @memberof KubernetesConfigureAuthRequest
      */
-    disableLocalCaJwt?: boolean;
+    disable_local_ca_jwt?: boolean;
     /**
      * Optional JWT issuer. If no issuer is specified, then this plugin will use kubernetes.io/serviceaccount as the default issuer. (Deprecated, will be removed in a future release)
      * @type {string}
@@ -44,31 +44,31 @@ export interface KubernetesConfigureAuthRequest {
      * @type {string}
      * @memberof KubernetesConfigureAuthRequest
      */
-    kubernetesCaCert?: string;
+    kubernetes_ca_cert?: string;
     /**
      * Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server.
      * @type {string}
      * @memberof KubernetesConfigureAuthRequest
      */
-    kubernetesHost?: string;
+    kubernetes_host?: string;
     /**
      * Optional list of PEM-formated public keys or certificates used to verify the signatures of kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys.
      * @type {Array<string>}
      * @memberof KubernetesConfigureAuthRequest
      */
-    pemKeys?: Array<string>;
+    pem_keys?: Array<string>;
     /**
      * A service account JWT (or other token) used as a bearer token to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API.
      * @type {string}
      * @memberof KubernetesConfigureAuthRequest
      */
-    tokenReviewerJwt?: string;
+    token_reviewer_jwt?: string;
     /**
      * Use annotations from the client token's associated service account as alias metadata for the Vault entity. Only annotations with the prefix "vault.hashicorp.com/alias-metadata-" will be used. Note that Vault will need permission to read service accounts from the Kubernetes API.
      * @type {boolean}
      * @memberof KubernetesConfigureAuthRequest
      */
-    useAnnotationsAsAliasMetadata?: boolean;
+    use_annotations_as_alias_metadata?: boolean;
 }
 
 /**
@@ -88,14 +88,14 @@ export function KubernetesConfigureAuthRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'disableIssValidation': json['disable_iss_validation'] == null ? undefined : json['disable_iss_validation'],
-        'disableLocalCaJwt': json['disable_local_ca_jwt'] == null ? undefined : json['disable_local_ca_jwt'],
+        'disable_iss_validation': json['disable_iss_validation'] == null ? undefined : json['disable_iss_validation'],
+        'disable_local_ca_jwt': json['disable_local_ca_jwt'] == null ? undefined : json['disable_local_ca_jwt'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
-        'kubernetesCaCert': json['kubernetes_ca_cert'] == null ? undefined : json['kubernetes_ca_cert'],
-        'kubernetesHost': json['kubernetes_host'] == null ? undefined : json['kubernetes_host'],
-        'pemKeys': json['pem_keys'] == null ? undefined : json['pem_keys'],
-        'tokenReviewerJwt': json['token_reviewer_jwt'] == null ? undefined : json['token_reviewer_jwt'],
-        'useAnnotationsAsAliasMetadata': json['use_annotations_as_alias_metadata'] == null ? undefined : json['use_annotations_as_alias_metadata'],
+        'kubernetes_ca_cert': json['kubernetes_ca_cert'] == null ? undefined : json['kubernetes_ca_cert'],
+        'kubernetes_host': json['kubernetes_host'] == null ? undefined : json['kubernetes_host'],
+        'pem_keys': json['pem_keys'] == null ? undefined : json['pem_keys'],
+        'token_reviewer_jwt': json['token_reviewer_jwt'] == null ? undefined : json['token_reviewer_jwt'],
+        'use_annotations_as_alias_metadata': json['use_annotations_as_alias_metadata'] == null ? undefined : json['use_annotations_as_alias_metadata'],
     };
 }
 
@@ -110,14 +110,14 @@ export function KubernetesConfigureAuthRequestToJSONTyped(value?: KubernetesConf
 
     return {
         
-        'disable_iss_validation': value['disableIssValidation'],
-        'disable_local_ca_jwt': value['disableLocalCaJwt'],
+        'disable_iss_validation': value['disable_iss_validation'],
+        'disable_local_ca_jwt': value['disable_local_ca_jwt'],
         'issuer': value['issuer'],
-        'kubernetes_ca_cert': value['kubernetesCaCert'],
-        'kubernetes_host': value['kubernetesHost'],
-        'pem_keys': value['pemKeys'],
-        'token_reviewer_jwt': value['tokenReviewerJwt'],
-        'use_annotations_as_alias_metadata': value['useAnnotationsAsAliasMetadata'],
+        'kubernetes_ca_cert': value['kubernetes_ca_cert'],
+        'kubernetes_host': value['kubernetes_host'],
+        'pem_keys': value['pem_keys'],
+        'token_reviewer_jwt': value['token_reviewer_jwt'],
+        'use_annotations_as_alias_metadata': value['use_annotations_as_alias_metadata'],
     };
 }
 

@@ -24,25 +24,25 @@ export interface SystemWriteSyncDestinationsInMemNameRequest {
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsInMemNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsInMemNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsInMemNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemWriteSyncDestinationsInMemNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -60,7 +60,7 @@ export interface SystemWriteSyncDestinationsInMemNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsInMemNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function SystemWriteSyncDestinationsInMemNameRequestFromJSONTyped(json: a
     }
     return {
         
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
     };
 }
 
@@ -101,13 +101,13 @@ export function SystemWriteSyncDestinationsInMemNameRequestToJSONTyped(value?: S
 
     return {
         
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
-        'disable_strict_networking': value['disableStrictNetworking'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
+        'disable_strict_networking': value['disable_strict_networking'],
         'granularity': value['granularity'],
         'purge': value['purge'],
-        'secret_name_template': value['secretNameTemplate'],
+        'secret_name_template': value['secret_name_template'],
     };
 }
 

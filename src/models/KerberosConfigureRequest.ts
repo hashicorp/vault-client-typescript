@@ -24,7 +24,7 @@ export interface KerberosConfigureRequest {
      * @type {boolean}
      * @memberof KerberosConfigureRequest
      */
-    addGroupAliases?: boolean;
+    add_group_aliases?: boolean;
     /**
      * Base64 encoded keytab
      * @type {string}
@@ -36,13 +36,13 @@ export interface KerberosConfigureRequest {
      * @type {boolean}
      * @memberof KerberosConfigureRequest
      */
-    removeInstanceName?: boolean;
+    remove_instance_name?: boolean;
     /**
      * Service Account
      * @type {string}
      * @memberof KerberosConfigureRequest
      */
-    serviceAccount?: string;
+    service_account?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function KerberosConfigureRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'addGroupAliases': json['add_group_aliases'] == null ? undefined : json['add_group_aliases'],
+        'add_group_aliases': json['add_group_aliases'] == null ? undefined : json['add_group_aliases'],
         'keytab': json['keytab'] == null ? undefined : json['keytab'],
-        'removeInstanceName': json['remove_instance_name'] == null ? undefined : json['remove_instance_name'],
-        'serviceAccount': json['service_account'] == null ? undefined : json['service_account'],
+        'remove_instance_name': json['remove_instance_name'] == null ? undefined : json['remove_instance_name'],
+        'service_account': json['service_account'] == null ? undefined : json['service_account'],
     };
 }
 
@@ -80,10 +80,10 @@ export function KerberosConfigureRequestToJSONTyped(value?: KerberosConfigureReq
 
     return {
         
-        'add_group_aliases': value['addGroupAliases'],
+        'add_group_aliases': value['add_group_aliases'],
         'keytab': value['keytab'],
-        'remove_instance_name': value['removeInstanceName'],
-        'service_account': value['serviceAccount'],
+        'remove_instance_name': value['remove_instance_name'],
+        'service_account': value['service_account'],
     };
 }
 

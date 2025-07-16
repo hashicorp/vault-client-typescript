@@ -24,7 +24,7 @@ export interface TransformWriteStoreRequest {
      * @type {string}
      * @memberof TransformWriteStoreRequest
      */
-    connectionString?: string;
+    connection_string?: string;
     /**
      * For the `sql` store type, the database driver (database type) to use.
      * @type {string}
@@ -36,19 +36,19 @@ export interface TransformWriteStoreRequest {
      * @type {number}
      * @memberof TransformWriteStoreRequest
      */
-    maxConnectionLifetime?: number;
+    max_connection_lifetime?: number;
     /**
      * For the `sql` store type, the maximum number of idle connections allowed to the database, 0 for default.
      * @type {number}
      * @memberof TransformWriteStoreRequest
      */
-    maxIdleConnections?: number;
+    max_idle_connections?: number;
     /**
      * For the `sql` store type, the maximum number of open connections allowed to the database, 0 for default.
      * @type {number}
      * @memberof TransformWriteStoreRequest
      */
-    maxOpenConnections?: number;
+    max_open_connections?: number;
     /**
      * For the `sql` store type, the password to use in populating the connection string.
      * @type {string}
@@ -66,7 +66,7 @@ export interface TransformWriteStoreRequest {
      * @type {Array<string>}
      * @memberof TransformWriteStoreRequest
      */
-    supportedTransformations?: Array<string>;
+    supported_transformations?: Array<string>;
     /**
      * Specifies the type of the store.
      * @type {string}
@@ -98,14 +98,14 @@ export function TransformWriteStoreRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'connectionString': json['connection_string'] == null ? undefined : json['connection_string'],
+        'connection_string': json['connection_string'] == null ? undefined : json['connection_string'],
         'driver': json['driver'] == null ? undefined : json['driver'],
-        'maxConnectionLifetime': json['max_connection_lifetime'] == null ? undefined : json['max_connection_lifetime'],
-        'maxIdleConnections': json['max_idle_connections'] == null ? undefined : json['max_idle_connections'],
-        'maxOpenConnections': json['max_open_connections'] == null ? undefined : json['max_open_connections'],
+        'max_connection_lifetime': json['max_connection_lifetime'] == null ? undefined : json['max_connection_lifetime'],
+        'max_idle_connections': json['max_idle_connections'] == null ? undefined : json['max_idle_connections'],
+        'max_open_connections': json['max_open_connections'] == null ? undefined : json['max_open_connections'],
         'password': json['password'] == null ? undefined : json['password'],
         'schema': json['schema'] == null ? undefined : json['schema'],
-        'supportedTransformations': json['supported_transformations'] == null ? undefined : json['supported_transformations'],
+        'supported_transformations': json['supported_transformations'] == null ? undefined : json['supported_transformations'],
         'type': json['type'] == null ? undefined : json['type'],
         'username': json['username'] == null ? undefined : json['username'],
     };
@@ -122,14 +122,14 @@ export function TransformWriteStoreRequestToJSONTyped(value?: TransformWriteStor
 
     return {
         
-        'connection_string': value['connectionString'],
+        'connection_string': value['connection_string'],
         'driver': value['driver'],
-        'max_connection_lifetime': value['maxConnectionLifetime'],
-        'max_idle_connections': value['maxIdleConnections'],
-        'max_open_connections': value['maxOpenConnections'],
+        'max_connection_lifetime': value['max_connection_lifetime'],
+        'max_idle_connections': value['max_idle_connections'],
+        'max_open_connections': value['max_open_connections'],
         'password': value['password'],
         'schema': value['schema'],
-        'supported_transformations': value['supportedTransformations'],
+        'supported_transformations': value['supported_transformations'],
         'type': value['type'],
         'username': value['username'],
     };

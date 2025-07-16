@@ -30,7 +30,7 @@ export interface CollectHostInformationResponse {
      * @type {Array<object>}
      * @memberof CollectHostInformationResponse
      */
-    cpuTimes?: Array<object>;
+    cpu_times?: Array<object>;
     /**
      * 
      * @type {Array<object>}
@@ -75,7 +75,7 @@ export function CollectHostInformationResponseFromJSONTyped(json: any, ignoreDis
     return {
         
         'cpu': json['cpu'] == null ? undefined : json['cpu'],
-        'cpuTimes': json['cpu_times'] == null ? undefined : json['cpu_times'],
+        'cpu_times': json['cpu_times'] == null ? undefined : json['cpu_times'],
         'disk': json['disk'] == null ? undefined : json['disk'],
         'host': json['host'] == null ? undefined : json['host'],
         'memory': json['memory'] == null ? undefined : json['memory'],
@@ -95,7 +95,7 @@ export function CollectHostInformationResponseToJSONTyped(value?: CollectHostInf
     return {
         
         'cpu': value['cpu'],
-        'cpu_times': value['cpuTimes'],
+        'cpu_times': value['cpu_times'],
         'disk': value['disk'],
         'host': value['host'],
         'memory': value['memory'],

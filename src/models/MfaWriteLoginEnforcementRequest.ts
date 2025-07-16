@@ -24,38 +24,38 @@ export interface MfaWriteLoginEnforcementRequest {
      * @type {Array<string>}
      * @memberof MfaWriteLoginEnforcementRequest
      */
-    authMethodAccessors?: Array<string>;
+    auth_method_accessors?: Array<string>;
     /**
      * Array of auth mount types
      * @type {Array<string>}
      * @memberof MfaWriteLoginEnforcementRequest
      */
-    authMethodTypes?: Array<string>;
+    auth_method_types?: Array<string>;
     /**
      * Array of identity entity IDs
      * @type {Array<string>}
      * @memberof MfaWriteLoginEnforcementRequest
      */
-    identityEntityIds?: Array<string>;
+    identity_entity_ids?: Array<string>;
     /**
      * Array of identity group IDs
      * @type {Array<string>}
      * @memberof MfaWriteLoginEnforcementRequest
      */
-    identityGroupIds?: Array<string>;
+    identity_group_ids?: Array<string>;
     /**
      * Array of Method IDs that determine what methods will be enforced
      * @type {Array<string>}
      * @memberof MfaWriteLoginEnforcementRequest
      */
-    mfaMethodIds: Array<string>;
+    mfa_method_ids: Array<string>;
 }
 
 /**
  * Check if a given object implements the MfaWriteLoginEnforcementRequest interface.
  */
 export function instanceOfMfaWriteLoginEnforcementRequest(value: object): value is MfaWriteLoginEnforcementRequest {
-    if (!('mfaMethodIds' in value) || value['mfaMethodIds'] === undefined) return false;
+    if (!('mfa_method_ids' in value) || value['mfa_method_ids'] === undefined) return false;
     return true;
 }
 
@@ -69,11 +69,11 @@ export function MfaWriteLoginEnforcementRequestFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'authMethodAccessors': json['auth_method_accessors'] == null ? undefined : json['auth_method_accessors'],
-        'authMethodTypes': json['auth_method_types'] == null ? undefined : json['auth_method_types'],
-        'identityEntityIds': json['identity_entity_ids'] == null ? undefined : json['identity_entity_ids'],
-        'identityGroupIds': json['identity_group_ids'] == null ? undefined : json['identity_group_ids'],
-        'mfaMethodIds': json['mfa_method_ids'],
+        'auth_method_accessors': json['auth_method_accessors'] == null ? undefined : json['auth_method_accessors'],
+        'auth_method_types': json['auth_method_types'] == null ? undefined : json['auth_method_types'],
+        'identity_entity_ids': json['identity_entity_ids'] == null ? undefined : json['identity_entity_ids'],
+        'identity_group_ids': json['identity_group_ids'] == null ? undefined : json['identity_group_ids'],
+        'mfa_method_ids': json['mfa_method_ids'],
     };
 }
 
@@ -88,11 +88,11 @@ export function MfaWriteLoginEnforcementRequestToJSONTyped(value?: MfaWriteLogin
 
     return {
         
-        'auth_method_accessors': value['authMethodAccessors'],
-        'auth_method_types': value['authMethodTypes'],
-        'identity_entity_ids': value['identityEntityIds'],
-        'identity_group_ids': value['identityGroupIds'],
-        'mfa_method_ids': value['mfaMethodIds'],
+        'auth_method_accessors': value['auth_method_accessors'],
+        'auth_method_types': value['auth_method_types'],
+        'identity_entity_ids': value['identity_entity_ids'],
+        'identity_group_ids': value['identity_group_ids'],
+        'mfa_method_ids': value['mfa_method_ids'],
     };
 }
 

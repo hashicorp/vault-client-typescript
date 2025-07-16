@@ -36,7 +36,7 @@ export interface UiConfigUpdateCustomMessageResponse {
      * @type {Date}
      * @memberof UiConfigUpdateCustomMessageResponse
      */
-    endTime?: Date;
+    end_time?: Date;
     /**
      * 
      * @type {string}
@@ -66,7 +66,7 @@ export interface UiConfigUpdateCustomMessageResponse {
      * @type {Date}
      * @memberof UiConfigUpdateCustomMessageResponse
      */
-    startTime?: Date;
+    start_time?: Date;
     /**
      * 
      * @type {string}
@@ -100,12 +100,12 @@ export function UiConfigUpdateCustomMessageResponseFromJSONTyped(json: any, igno
         
         'active': json['active'] == null ? undefined : json['active'],
         'authenticated': json['authenticated'] == null ? undefined : json['authenticated'],
-        'endTime': json['end_time'] == null ? undefined : (new Date(json['end_time'])),
+        'end_time': json['end_time'] == null ? undefined : (new Date(json['end_time'])),
         'id': json['id'] == null ? undefined : json['id'],
         'link': json['link'] == null ? undefined : json['link'],
         'message': json['message'] == null ? undefined : json['message'],
         'options': json['options'] == null ? undefined : json['options'],
-        'startTime': json['start_time'] == null ? undefined : (new Date(json['start_time'])),
+        'start_time': json['start_time'] == null ? undefined : (new Date(json['start_time'])),
         'title': json['title'] == null ? undefined : json['title'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -124,12 +124,12 @@ export function UiConfigUpdateCustomMessageResponseToJSONTyped(value?: UiConfigU
         
         'active': value['active'],
         'authenticated': value['authenticated'],
-        'end_time': value['endTime'] == null ? undefined : ((value['endTime']).toISOString()),
+        'end_time': value['end_time'] == null ? undefined : ((value['end_time']).toISOString()),
         'id': value['id'],
         'link': value['link'],
         'message': value['message'],
         'options': value['options'],
-        'start_time': value['startTime'] == null ? undefined : ((value['startTime']).toISOString()),
+        'start_time': value['start_time'] == null ? undefined : ((value['start_time']).toISOString()),
         'title': value['title'],
         'type': value['type'],
     };

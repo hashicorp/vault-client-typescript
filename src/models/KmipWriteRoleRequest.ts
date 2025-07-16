@@ -24,187 +24,187 @@ export interface KmipWriteRoleRequest {
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationActivate?: boolean;
+    operation_activate?: boolean;
     /**
      * Allow the "Add Attribute" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationAddAttribute?: boolean;
+    operation_add_attribute?: boolean;
     /**
      * Allow ALL operations to be performed by this role. This can be overridden if other allowed operations are set to false within the same request.
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationAll?: boolean;
+    operation_all?: boolean;
     /**
      * Allow the "Create" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationCreate?: boolean;
+    operation_create?: boolean;
     /**
      * Allow the "Create Key Pair" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationCreateKeyPair?: boolean;
+    operation_create_key_pair?: boolean;
     /**
      * Allow the "Decrypt" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationDecrypt?: boolean;
+    operation_decrypt?: boolean;
     /**
      * Allow the "Delete Attribute" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationDeleteAttribute?: boolean;
+    operation_delete_attribute?: boolean;
     /**
      * Allow the "Destroy" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationDestroy?: boolean;
+    operation_destroy?: boolean;
     /**
      * Allow the "Discover Versions" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationDiscoverVersions?: boolean;
+    operation_discover_versions?: boolean;
     /**
      * Allow the "Encrypt" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationEncrypt?: boolean;
+    operation_encrypt?: boolean;
     /**
      * Allow the "Get" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationGet?: boolean;
+    operation_get?: boolean;
     /**
      * Allow the "Get Attribute List" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationGetAttributeList?: boolean;
+    operation_get_attribute_list?: boolean;
     /**
      * Allow the "Get Attributes" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationGetAttributes?: boolean;
+    operation_get_attributes?: boolean;
     /**
      * Allow the "Import" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationImport?: boolean;
+    operation_import?: boolean;
     /**
      * Allow the "Locate" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationLocate?: boolean;
+    operation_locate?: boolean;
     /**
      * Allow the "Mac" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationMac?: boolean;
+    operation_mac?: boolean;
     /**
      * Allow the "Mac Verify" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationMacVerify?: boolean;
+    operation_mac_verify?: boolean;
     /**
      * Allow the "Modify Attribute" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationModifyAttribute?: boolean;
+    operation_modify_attribute?: boolean;
     /**
      * Allow NO operations to be performed by this role. This can be overridden if other allowed operations are set to true within the same request.
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationNone?: boolean;
+    operation_none?: boolean;
     /**
      * Allow the "Query" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationQuery?: boolean;
+    operation_query?: boolean;
     /**
      * Allow the "Register" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRegister?: boolean;
+    operation_register?: boolean;
     /**
      * Allow the "Rekey" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRekey?: boolean;
+    operation_rekey?: boolean;
     /**
      * Allow the "Rekey Key Pair" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRekeyKeyPair?: boolean;
+    operation_rekey_key_pair?: boolean;
     /**
      * Allow the "Revoke" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRevoke?: boolean;
+    operation_revoke?: boolean;
     /**
      * Allow the "Rng Retrieve" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRngRetrieve?: boolean;
+    operation_rng_retrieve?: boolean;
     /**
      * Allow the "Rng Seed" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationRngSeed?: boolean;
+    operation_rng_seed?: boolean;
     /**
      * Allow the "Sign" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationSign?: boolean;
+    operation_sign?: boolean;
     /**
      * Allow the "Signature Verify" operation to be performed by this role
      * @type {boolean}
      * @memberof KmipWriteRoleRequest
      */
-    operationSignatureVerify?: boolean;
+    operation_signature_verify?: boolean;
     /**
      * Client certificate key bits, valid values depend on key type
      * @type {number}
      * @memberof KmipWriteRoleRequest
      */
-    tlsClientKeyBits?: number;
+    tls_client_key_bits?: number;
     /**
      * Client certificate key type, rsa or ec
      * @type {string}
      * @memberof KmipWriteRoleRequest
      */
-    tlsClientKeyType?: KmipWriteRoleRequestTlsClientKeyTypeEnum;
+    tls_client_key_type?: KmipWriteRoleRequestTlsClientKeyTypeEnum;
     /**
      * Client certificate TTL in either an integer number of seconds (10) or an integer time unit (10s)
      * @type {string}
      * @memberof KmipWriteRoleRequest
      */
-    tlsClientTtl?: string;
+    tls_client_ttl?: string;
 }
 
 /**
@@ -234,37 +234,37 @@ export function KmipWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'operationActivate': json['operation_activate'] == null ? undefined : json['operation_activate'],
-        'operationAddAttribute': json['operation_add_attribute'] == null ? undefined : json['operation_add_attribute'],
-        'operationAll': json['operation_all'] == null ? undefined : json['operation_all'],
-        'operationCreate': json['operation_create'] == null ? undefined : json['operation_create'],
-        'operationCreateKeyPair': json['operation_create_key_pair'] == null ? undefined : json['operation_create_key_pair'],
-        'operationDecrypt': json['operation_decrypt'] == null ? undefined : json['operation_decrypt'],
-        'operationDeleteAttribute': json['operation_delete_attribute'] == null ? undefined : json['operation_delete_attribute'],
-        'operationDestroy': json['operation_destroy'] == null ? undefined : json['operation_destroy'],
-        'operationDiscoverVersions': json['operation_discover_versions'] == null ? undefined : json['operation_discover_versions'],
-        'operationEncrypt': json['operation_encrypt'] == null ? undefined : json['operation_encrypt'],
-        'operationGet': json['operation_get'] == null ? undefined : json['operation_get'],
-        'operationGetAttributeList': json['operation_get_attribute_list'] == null ? undefined : json['operation_get_attribute_list'],
-        'operationGetAttributes': json['operation_get_attributes'] == null ? undefined : json['operation_get_attributes'],
-        'operationImport': json['operation_import'] == null ? undefined : json['operation_import'],
-        'operationLocate': json['operation_locate'] == null ? undefined : json['operation_locate'],
-        'operationMac': json['operation_mac'] == null ? undefined : json['operation_mac'],
-        'operationMacVerify': json['operation_mac_verify'] == null ? undefined : json['operation_mac_verify'],
-        'operationModifyAttribute': json['operation_modify_attribute'] == null ? undefined : json['operation_modify_attribute'],
-        'operationNone': json['operation_none'] == null ? undefined : json['operation_none'],
-        'operationQuery': json['operation_query'] == null ? undefined : json['operation_query'],
-        'operationRegister': json['operation_register'] == null ? undefined : json['operation_register'],
-        'operationRekey': json['operation_rekey'] == null ? undefined : json['operation_rekey'],
-        'operationRekeyKeyPair': json['operation_rekey_key_pair'] == null ? undefined : json['operation_rekey_key_pair'],
-        'operationRevoke': json['operation_revoke'] == null ? undefined : json['operation_revoke'],
-        'operationRngRetrieve': json['operation_rng_retrieve'] == null ? undefined : json['operation_rng_retrieve'],
-        'operationRngSeed': json['operation_rng_seed'] == null ? undefined : json['operation_rng_seed'],
-        'operationSign': json['operation_sign'] == null ? undefined : json['operation_sign'],
-        'operationSignatureVerify': json['operation_signature_verify'] == null ? undefined : json['operation_signature_verify'],
-        'tlsClientKeyBits': json['tls_client_key_bits'] == null ? undefined : json['tls_client_key_bits'],
-        'tlsClientKeyType': json['tls_client_key_type'] == null ? undefined : json['tls_client_key_type'],
-        'tlsClientTtl': json['tls_client_ttl'] == null ? undefined : json['tls_client_ttl'],
+        'operation_activate': json['operation_activate'] == null ? undefined : json['operation_activate'],
+        'operation_add_attribute': json['operation_add_attribute'] == null ? undefined : json['operation_add_attribute'],
+        'operation_all': json['operation_all'] == null ? undefined : json['operation_all'],
+        'operation_create': json['operation_create'] == null ? undefined : json['operation_create'],
+        'operation_create_key_pair': json['operation_create_key_pair'] == null ? undefined : json['operation_create_key_pair'],
+        'operation_decrypt': json['operation_decrypt'] == null ? undefined : json['operation_decrypt'],
+        'operation_delete_attribute': json['operation_delete_attribute'] == null ? undefined : json['operation_delete_attribute'],
+        'operation_destroy': json['operation_destroy'] == null ? undefined : json['operation_destroy'],
+        'operation_discover_versions': json['operation_discover_versions'] == null ? undefined : json['operation_discover_versions'],
+        'operation_encrypt': json['operation_encrypt'] == null ? undefined : json['operation_encrypt'],
+        'operation_get': json['operation_get'] == null ? undefined : json['operation_get'],
+        'operation_get_attribute_list': json['operation_get_attribute_list'] == null ? undefined : json['operation_get_attribute_list'],
+        'operation_get_attributes': json['operation_get_attributes'] == null ? undefined : json['operation_get_attributes'],
+        'operation_import': json['operation_import'] == null ? undefined : json['operation_import'],
+        'operation_locate': json['operation_locate'] == null ? undefined : json['operation_locate'],
+        'operation_mac': json['operation_mac'] == null ? undefined : json['operation_mac'],
+        'operation_mac_verify': json['operation_mac_verify'] == null ? undefined : json['operation_mac_verify'],
+        'operation_modify_attribute': json['operation_modify_attribute'] == null ? undefined : json['operation_modify_attribute'],
+        'operation_none': json['operation_none'] == null ? undefined : json['operation_none'],
+        'operation_query': json['operation_query'] == null ? undefined : json['operation_query'],
+        'operation_register': json['operation_register'] == null ? undefined : json['operation_register'],
+        'operation_rekey': json['operation_rekey'] == null ? undefined : json['operation_rekey'],
+        'operation_rekey_key_pair': json['operation_rekey_key_pair'] == null ? undefined : json['operation_rekey_key_pair'],
+        'operation_revoke': json['operation_revoke'] == null ? undefined : json['operation_revoke'],
+        'operation_rng_retrieve': json['operation_rng_retrieve'] == null ? undefined : json['operation_rng_retrieve'],
+        'operation_rng_seed': json['operation_rng_seed'] == null ? undefined : json['operation_rng_seed'],
+        'operation_sign': json['operation_sign'] == null ? undefined : json['operation_sign'],
+        'operation_signature_verify': json['operation_signature_verify'] == null ? undefined : json['operation_signature_verify'],
+        'tls_client_key_bits': json['tls_client_key_bits'] == null ? undefined : json['tls_client_key_bits'],
+        'tls_client_key_type': json['tls_client_key_type'] == null ? undefined : json['tls_client_key_type'],
+        'tls_client_ttl': json['tls_client_ttl'] == null ? undefined : json['tls_client_ttl'],
     };
 }
 
@@ -279,37 +279,37 @@ export function KmipWriteRoleRequestToJSONTyped(value?: KmipWriteRoleRequest | n
 
     return {
         
-        'operation_activate': value['operationActivate'],
-        'operation_add_attribute': value['operationAddAttribute'],
-        'operation_all': value['operationAll'],
-        'operation_create': value['operationCreate'],
-        'operation_create_key_pair': value['operationCreateKeyPair'],
-        'operation_decrypt': value['operationDecrypt'],
-        'operation_delete_attribute': value['operationDeleteAttribute'],
-        'operation_destroy': value['operationDestroy'],
-        'operation_discover_versions': value['operationDiscoverVersions'],
-        'operation_encrypt': value['operationEncrypt'],
-        'operation_get': value['operationGet'],
-        'operation_get_attribute_list': value['operationGetAttributeList'],
-        'operation_get_attributes': value['operationGetAttributes'],
-        'operation_import': value['operationImport'],
-        'operation_locate': value['operationLocate'],
-        'operation_mac': value['operationMac'],
-        'operation_mac_verify': value['operationMacVerify'],
-        'operation_modify_attribute': value['operationModifyAttribute'],
-        'operation_none': value['operationNone'],
-        'operation_query': value['operationQuery'],
-        'operation_register': value['operationRegister'],
-        'operation_rekey': value['operationRekey'],
-        'operation_rekey_key_pair': value['operationRekeyKeyPair'],
-        'operation_revoke': value['operationRevoke'],
-        'operation_rng_retrieve': value['operationRngRetrieve'],
-        'operation_rng_seed': value['operationRngSeed'],
-        'operation_sign': value['operationSign'],
-        'operation_signature_verify': value['operationSignatureVerify'],
-        'tls_client_key_bits': value['tlsClientKeyBits'],
-        'tls_client_key_type': value['tlsClientKeyType'],
-        'tls_client_ttl': value['tlsClientTtl'],
+        'operation_activate': value['operation_activate'],
+        'operation_add_attribute': value['operation_add_attribute'],
+        'operation_all': value['operation_all'],
+        'operation_create': value['operation_create'],
+        'operation_create_key_pair': value['operation_create_key_pair'],
+        'operation_decrypt': value['operation_decrypt'],
+        'operation_delete_attribute': value['operation_delete_attribute'],
+        'operation_destroy': value['operation_destroy'],
+        'operation_discover_versions': value['operation_discover_versions'],
+        'operation_encrypt': value['operation_encrypt'],
+        'operation_get': value['operation_get'],
+        'operation_get_attribute_list': value['operation_get_attribute_list'],
+        'operation_get_attributes': value['operation_get_attributes'],
+        'operation_import': value['operation_import'],
+        'operation_locate': value['operation_locate'],
+        'operation_mac': value['operation_mac'],
+        'operation_mac_verify': value['operation_mac_verify'],
+        'operation_modify_attribute': value['operation_modify_attribute'],
+        'operation_none': value['operation_none'],
+        'operation_query': value['operation_query'],
+        'operation_register': value['operation_register'],
+        'operation_rekey': value['operation_rekey'],
+        'operation_rekey_key_pair': value['operation_rekey_key_pair'],
+        'operation_revoke': value['operation_revoke'],
+        'operation_rng_retrieve': value['operation_rng_retrieve'],
+        'operation_rng_seed': value['operation_rng_seed'],
+        'operation_sign': value['operation_sign'],
+        'operation_signature_verify': value['operation_signature_verify'],
+        'tls_client_key_bits': value['tls_client_key_bits'],
+        'tls_client_key_type': value['tls_client_key_type'],
+        'tls_client_ttl': value['tls_client_ttl'],
     };
 }
 

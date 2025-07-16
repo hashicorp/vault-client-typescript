@@ -24,43 +24,43 @@ export interface SystemWriteMfaMethodDuoNameRequest {
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    apiHostname?: string;
+    api_hostname?: string;
     /**
      * Integration key for Duo.
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    integrationKey?: string;
+    integration_key?: string;
     /**
      * The mount to tie this method to for use in automatic mappings. The mapping will use the Name field of Aliases associated with this mount as the username in the mapping.
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Push information for Duo.
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    pushInfo?: string;
+    push_info?: string;
     /**
      * Secret key for Duo.
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    secretKey?: string;
+    secret_key?: string;
     /**
      * If true, the user is reminded to use the passcode upon MFA validation. This option does not enforce using the passcode. Defaults to false.
      * @type {boolean}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    usePasscode?: boolean;
+    use_passcode?: boolean;
     /**
      * A format string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, "{{alias.name}}@example.com". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
      * @type {string}
      * @memberof SystemWriteMfaMethodDuoNameRequest
      */
-    usernameFormat?: string;
+    username_format?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function SystemWriteMfaMethodDuoNameRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'apiHostname': json['api_hostname'] == null ? undefined : json['api_hostname'],
-        'integrationKey': json['integration_key'] == null ? undefined : json['integration_key'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
-        'pushInfo': json['push_info'] == null ? undefined : json['push_info'],
-        'secretKey': json['secret_key'] == null ? undefined : json['secret_key'],
-        'usePasscode': json['use_passcode'] == null ? undefined : json['use_passcode'],
-        'usernameFormat': json['username_format'] == null ? undefined : json['username_format'],
+        'api_hostname': json['api_hostname'] == null ? undefined : json['api_hostname'],
+        'integration_key': json['integration_key'] == null ? undefined : json['integration_key'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'push_info': json['push_info'] == null ? undefined : json['push_info'],
+        'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
+        'use_passcode': json['use_passcode'] == null ? undefined : json['use_passcode'],
+        'username_format': json['username_format'] == null ? undefined : json['username_format'],
     };
 }
 
@@ -101,13 +101,13 @@ export function SystemWriteMfaMethodDuoNameRequestToJSONTyped(value?: SystemWrit
 
     return {
         
-        'api_hostname': value['apiHostname'],
-        'integration_key': value['integrationKey'],
-        'mount_accessor': value['mountAccessor'],
-        'push_info': value['pushInfo'],
-        'secret_key': value['secretKey'],
-        'use_passcode': value['usePasscode'],
-        'username_format': value['usernameFormat'],
+        'api_hostname': value['api_hostname'],
+        'integration_key': value['integration_key'],
+        'mount_accessor': value['mount_accessor'],
+        'push_info': value['push_info'],
+        'secret_key': value['secret_key'],
+        'use_passcode': value['use_passcode'],
+        'username_format': value['username_format'],
     };
 }
 

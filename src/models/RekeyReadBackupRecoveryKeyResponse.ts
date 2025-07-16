@@ -30,7 +30,7 @@ export interface RekeyReadBackupRecoveryKeyResponse {
      * @type {object}
      * @memberof RekeyReadBackupRecoveryKeyResponse
      */
-    keysBase64?: object;
+    keys_base64?: object;
     /**
      * 
      * @type {string}
@@ -57,7 +57,7 @@ export function RekeyReadBackupRecoveryKeyResponseFromJSONTyped(json: any, ignor
     return {
         
         'keys': json['keys'] == null ? undefined : json['keys'],
-        'keysBase64': json['keys_base64'] == null ? undefined : json['keys_base64'],
+        'keys_base64': json['keys_base64'] == null ? undefined : json['keys_base64'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
     };
 }
@@ -74,7 +74,7 @@ export function RekeyReadBackupRecoveryKeyResponseToJSONTyped(value?: RekeyReadB
     return {
         
         'keys': value['keys'],
-        'keys_base64': value['keysBase64'],
+        'keys_base64': value['keys_base64'],
         'nonce': value['nonce'],
     };
 }

@@ -25,7 +25,7 @@ export interface AppRoleReadBoundCidrListResponse {
      * @memberof AppRoleReadBoundCidrListResponse
      * @deprecated
      */
-    boundCidrList?: Array<string>;
+    bound_cidr_list?: Array<string>;
 }
 
 /**
@@ -45,7 +45,7 @@ export function AppRoleReadBoundCidrListResponseFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'boundCidrList': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
+        'bound_cidr_list': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
     };
 }
 
@@ -60,7 +60,7 @@ export function AppRoleReadBoundCidrListResponseToJSONTyped(value?: AppRoleReadB
 
     return {
         
-        'bound_cidr_list': value['boundCidrList'],
+        'bound_cidr_list': value['bound_cidr_list'],
     };
 }
 

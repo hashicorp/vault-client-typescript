@@ -24,13 +24,13 @@ export interface PkiIssuerSignRevocationListRequest {
      * @type {number}
      * @memberof PkiIssuerSignRevocationListRequest
      */
-    crlNumber?: number;
+    crl_number?: number;
     /**
      * Using a zero or greater value specifies the base CRL revision number to encode within a Delta CRL indicator extension, otherwise the extension will not be added.
      * @type {number}
      * @memberof PkiIssuerSignRevocationListRequest
      */
-    deltaCrlBaseNumber?: number;
+    delta_crl_base_number?: number;
     /**
      * A list of maps containing extensions with keys id (string), critical (bool), value (string)
      * @type {Array<object>}
@@ -48,13 +48,13 @@ export interface PkiIssuerSignRevocationListRequest {
      * @type {string}
      * @memberof PkiIssuerSignRevocationListRequest
      */
-    nextUpdate?: string;
+    next_update?: string;
     /**
      * A list of maps containing the keys serial_number (string), revocation_time (string), and extensions (map with keys id (string), critical (bool), value (string))
      * @type {Array<object>}
      * @memberof PkiIssuerSignRevocationListRequest
      */
-    revokedCerts?: Array<object>;
+    revoked_certs?: Array<object>;
 }
 
 /**
@@ -74,12 +74,12 @@ export function PkiIssuerSignRevocationListRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'crlNumber': json['crl_number'] == null ? undefined : json['crl_number'],
-        'deltaCrlBaseNumber': json['delta_crl_base_number'] == null ? undefined : json['delta_crl_base_number'],
+        'crl_number': json['crl_number'] == null ? undefined : json['crl_number'],
+        'delta_crl_base_number': json['delta_crl_base_number'] == null ? undefined : json['delta_crl_base_number'],
         'extensions': json['extensions'] == null ? undefined : json['extensions'],
         'format': json['format'] == null ? undefined : json['format'],
-        'nextUpdate': json['next_update'] == null ? undefined : json['next_update'],
-        'revokedCerts': json['revoked_certs'] == null ? undefined : json['revoked_certs'],
+        'next_update': json['next_update'] == null ? undefined : json['next_update'],
+        'revoked_certs': json['revoked_certs'] == null ? undefined : json['revoked_certs'],
     };
 }
 
@@ -94,12 +94,12 @@ export function PkiIssuerSignRevocationListRequestToJSONTyped(value?: PkiIssuerS
 
     return {
         
-        'crl_number': value['crlNumber'],
-        'delta_crl_base_number': value['deltaCrlBaseNumber'],
+        'crl_number': value['crl_number'],
+        'delta_crl_base_number': value['delta_crl_base_number'],
         'extensions': value['extensions'],
         'format': value['format'],
-        'next_update': value['nextUpdate'],
-        'revoked_certs': value['revokedCerts'],
+        'next_update': value['next_update'],
+        'revoked_certs': value['revoked_certs'],
     };
 }
 

@@ -24,31 +24,31 @@ export interface GenerateUtilizationReportResponse {
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    authMethods?: object;
+    auth_methods?: object;
     /**
      * Number of KVv1 secrets across all mounts and namespaces.
      * @type {number}
      * @memberof GenerateUtilizationReportResponse
      */
-    kvv1Secrets?: number;
+    kvv1_secrets?: number;
     /**
      * Number of KVv2 secrets across all mounts and namespaces.
      * @type {number}
      * @memberof GenerateUtilizationReportResponse
      */
-    kvv2Secrets?: number;
+    kvv2_secrets?: number;
     /**
      * A map containing details of lease count quotas, if in use, including total quotas and the status of the global lease count quota, if one is configured.
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    leaseCountQuotas?: object;
+    lease_count_quotas?: object;
     /**
      * A map of all auth methods, by type, to the number of active leases created by auth mounts of that type across all namespaces.
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    leasesByAuthMethod?: object;
+    leases_by_auth_method?: object;
     /**
      * Number of namespaces.
      * @type {number}
@@ -66,19 +66,19 @@ export interface GenerateUtilizationReportResponse {
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    replicationStatus?: object;
+    replication_status?: object;
     /**
      * A map of secret engines, by type, to the number of mounts of that type across all namespaces.
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    secretEngines?: object;
+    secret_engines?: object;
     /**
      * A map containing 'total_sources' and 'total_destinations' for secret syncs, if configured.
      * @type {object}
      * @memberof GenerateUtilizationReportResponse
      */
-    secretSync?: object;
+    secret_sync?: object;
 }
 
 /**
@@ -98,16 +98,16 @@ export function GenerateUtilizationReportResponseFromJSONTyped(json: any, ignore
     }
     return {
         
-        'authMethods': json['auth_methods'] == null ? undefined : json['auth_methods'],
-        'kvv1Secrets': json['kvv1_secrets'] == null ? undefined : json['kvv1_secrets'],
-        'kvv2Secrets': json['kvv2_secrets'] == null ? undefined : json['kvv2_secrets'],
-        'leaseCountQuotas': json['lease_count_quotas'] == null ? undefined : json['lease_count_quotas'],
-        'leasesByAuthMethod': json['leases_by_auth_method'] == null ? undefined : json['leases_by_auth_method'],
+        'auth_methods': json['auth_methods'] == null ? undefined : json['auth_methods'],
+        'kvv1_secrets': json['kvv1_secrets'] == null ? undefined : json['kvv1_secrets'],
+        'kvv2_secrets': json['kvv2_secrets'] == null ? undefined : json['kvv2_secrets'],
+        'lease_count_quotas': json['lease_count_quotas'] == null ? undefined : json['lease_count_quotas'],
+        'leases_by_auth_method': json['leases_by_auth_method'] == null ? undefined : json['leases_by_auth_method'],
         'namespaces': json['namespaces'] == null ? undefined : json['namespaces'],
         'pki': json['pki'] == null ? undefined : json['pki'],
-        'replicationStatus': json['replication_status'] == null ? undefined : json['replication_status'],
-        'secretEngines': json['secret_engines'] == null ? undefined : json['secret_engines'],
-        'secretSync': json['secret_sync'] == null ? undefined : json['secret_sync'],
+        'replication_status': json['replication_status'] == null ? undefined : json['replication_status'],
+        'secret_engines': json['secret_engines'] == null ? undefined : json['secret_engines'],
+        'secret_sync': json['secret_sync'] == null ? undefined : json['secret_sync'],
     };
 }
 
@@ -122,16 +122,16 @@ export function GenerateUtilizationReportResponseToJSONTyped(value?: GenerateUti
 
     return {
         
-        'auth_methods': value['authMethods'],
-        'kvv1_secrets': value['kvv1Secrets'],
-        'kvv2_secrets': value['kvv2Secrets'],
-        'lease_count_quotas': value['leaseCountQuotas'],
-        'leases_by_auth_method': value['leasesByAuthMethod'],
+        'auth_methods': value['auth_methods'],
+        'kvv1_secrets': value['kvv1_secrets'],
+        'kvv2_secrets': value['kvv2_secrets'],
+        'lease_count_quotas': value['lease_count_quotas'],
+        'leases_by_auth_method': value['leases_by_auth_method'],
         'namespaces': value['namespaces'],
         'pki': value['pki'],
-        'replication_status': value['replicationStatus'],
-        'secret_engines': value['secretEngines'],
-        'secret_sync': value['secretSync'],
+        'replication_status': value['replication_status'],
+        'secret_engines': value['secret_engines'],
+        'secret_sync': value['secret_sync'],
     };
 }
 

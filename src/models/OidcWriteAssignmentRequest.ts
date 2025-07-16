@@ -24,13 +24,13 @@ export interface OidcWriteAssignmentRequest {
      * @type {Array<string>}
      * @memberof OidcWriteAssignmentRequest
      */
-    entityIds?: Array<string>;
+    entity_ids?: Array<string>;
     /**
      * Comma separated string or array of identity group IDs
      * @type {Array<string>}
      * @memberof OidcWriteAssignmentRequest
      */
-    groupIds?: Array<string>;
+    group_ids?: Array<string>;
 }
 
 /**
@@ -50,8 +50,8 @@ export function OidcWriteAssignmentRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'entityIds': json['entity_ids'] == null ? undefined : json['entity_ids'],
-        'groupIds': json['group_ids'] == null ? undefined : json['group_ids'],
+        'entity_ids': json['entity_ids'] == null ? undefined : json['entity_ids'],
+        'group_ids': json['group_ids'] == null ? undefined : json['group_ids'],
     };
 }
 
@@ -66,8 +66,8 @@ export function OidcWriteAssignmentRequestToJSONTyped(value?: OidcWriteAssignmen
 
     return {
         
-        'entity_ids': value['entityIds'],
-        'group_ids': value['groupIds'],
+        'entity_ids': value['entity_ids'],
+        'group_ids': value['group_ids'],
     };
 }
 

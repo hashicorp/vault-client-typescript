@@ -30,7 +30,7 @@ export interface SystemWriteUtilizationRequest {
      * @type {boolean}
      * @memberof SystemWriteUtilizationRequest
      */
-    todayOnly?: boolean;
+    today_only?: boolean;
 }
 
 /**
@@ -51,7 +51,7 @@ export function SystemWriteUtilizationRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'message': json['message'] == null ? undefined : json['message'],
-        'todayOnly': json['today_only'] == null ? undefined : json['today_only'],
+        'today_only': json['today_only'] == null ? undefined : json['today_only'],
     };
 }
 
@@ -67,7 +67,7 @@ export function SystemWriteUtilizationRequestToJSONTyped(value?: SystemWriteUtil
     return {
         
         'message': value['message'],
-        'today_only': value['todayOnly'],
+        'today_only': value['today_only'],
     };
 }
 

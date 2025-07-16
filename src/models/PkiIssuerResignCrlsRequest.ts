@@ -24,7 +24,7 @@ export interface PkiIssuerResignCrlsRequest {
      * @type {number}
      * @memberof PkiIssuerResignCrlsRequest
      */
-    crlNumber?: number;
+    crl_number?: number;
     /**
      * A list of PEM encoded CRLs to combine, originally signed by the requested issuer.
      * @type {Array<string>}
@@ -36,7 +36,7 @@ export interface PkiIssuerResignCrlsRequest {
      * @type {number}
      * @memberof PkiIssuerResignCrlsRequest
      */
-    deltaCrlBaseNumber?: number;
+    delta_crl_base_number?: number;
     /**
      * The format of the combined CRL, can be "pem" or "der". If "der", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
@@ -48,7 +48,7 @@ export interface PkiIssuerResignCrlsRequest {
      * @type {string}
      * @memberof PkiIssuerResignCrlsRequest
      */
-    nextUpdate?: string;
+    next_update?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiIssuerResignCrlsRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'crlNumber': json['crl_number'] == null ? undefined : json['crl_number'],
+        'crl_number': json['crl_number'] == null ? undefined : json['crl_number'],
         'crls': json['crls'] == null ? undefined : json['crls'],
-        'deltaCrlBaseNumber': json['delta_crl_base_number'] == null ? undefined : json['delta_crl_base_number'],
+        'delta_crl_base_number': json['delta_crl_base_number'] == null ? undefined : json['delta_crl_base_number'],
         'format': json['format'] == null ? undefined : json['format'],
-        'nextUpdate': json['next_update'] == null ? undefined : json['next_update'],
+        'next_update': json['next_update'] == null ? undefined : json['next_update'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiIssuerResignCrlsRequestToJSONTyped(value?: PkiIssuerResignCrl
 
     return {
         
-        'crl_number': value['crlNumber'],
+        'crl_number': value['crl_number'],
         'crls': value['crls'],
-        'delta_crl_base_number': value['deltaCrlBaseNumber'],
+        'delta_crl_base_number': value['delta_crl_base_number'],
         'format': value['format'],
-        'next_update': value['nextUpdate'],
+        'next_update': value['next_update'],
     };
 }
 

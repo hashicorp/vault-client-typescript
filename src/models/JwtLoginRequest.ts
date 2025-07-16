@@ -24,7 +24,7 @@ export interface JwtLoginRequest {
      * @type {string}
      * @memberof JwtLoginRequest
      */
-    distributedClaimAccessToken?: string;
+    distributed_claim_access_token?: string;
     /**
      * The signed JWT to validate.
      * @type {string}
@@ -56,7 +56,7 @@ export function JwtLoginRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         
-        'distributedClaimAccessToken': json['distributed_claim_access_token'] == null ? undefined : json['distributed_claim_access_token'],
+        'distributed_claim_access_token': json['distributed_claim_access_token'] == null ? undefined : json['distributed_claim_access_token'],
         'jwt': json['jwt'] == null ? undefined : json['jwt'],
         'role': json['role'] == null ? undefined : json['role'],
     };
@@ -73,7 +73,7 @@ export function JwtLoginRequestToJSONTyped(value?: JwtLoginRequest | null, ignor
 
     return {
         
-        'distributed_claim_access_token': value['distributedClaimAccessToken'],
+        'distributed_claim_access_token': value['distributed_claim_access_token'],
         'jwt': value['jwt'],
         'role': value['role'],
     };

@@ -24,7 +24,7 @@ export interface PluginsCatalogPinsListPinnedVersionsResponse {
      * @type {object}
      * @memberof PluginsCatalogPinsListPinnedVersionsResponse
      */
-    pinnedVersions?: object;
+    pinned_versions?: object;
 }
 
 /**
@@ -44,7 +44,7 @@ export function PluginsCatalogPinsListPinnedVersionsResponseFromJSONTyped(json: 
     }
     return {
         
-        'pinnedVersions': json['pinned_versions'] == null ? undefined : json['pinned_versions'],
+        'pinned_versions': json['pinned_versions'] == null ? undefined : json['pinned_versions'],
     };
 }
 
@@ -59,7 +59,7 @@ export function PluginsCatalogPinsListPinnedVersionsResponseToJSONTyped(value?: 
 
     return {
         
-        'pinned_versions': value['pinnedVersions'],
+        'pinned_versions': value['pinned_versions'],
     };
 }
 

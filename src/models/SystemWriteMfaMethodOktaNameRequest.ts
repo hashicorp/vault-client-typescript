@@ -24,31 +24,31 @@ export interface SystemWriteMfaMethodOktaNameRequest {
      * @type {string}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    apiToken?: string;
+    api_token?: string;
     /**
      * The base domain to use for the Okta API. When not specified in the configuration, "okta.com" is used.
      * @type {string}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    baseUrl?: string;
+    base_url?: string;
     /**
      * The mount to tie this method to for use in automatic mappings. The mapping will use the Name field of Aliases associated with this mount as the username in the mapping.
      * @type {string}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the organization to be used in the Okta API.
      * @type {string}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    orgName?: string;
+    org_name?: string;
     /**
      * If true, the username will only match the primary email for the account. Defaults to false.
      * @type {boolean}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    primaryEmail?: boolean;
+    primary_email?: boolean;
     /**
      * (DEPRECATED) Use base_url instead.
      * @type {boolean}
@@ -60,7 +60,7 @@ export interface SystemWriteMfaMethodOktaNameRequest {
      * @type {string}
      * @memberof SystemWriteMfaMethodOktaNameRequest
      */
-    usernameFormat?: string;
+    username_format?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function SystemWriteMfaMethodOktaNameRequestFromJSONTyped(json: any, igno
     }
     return {
         
-        'apiToken': json['api_token'] == null ? undefined : json['api_token'],
-        'baseUrl': json['base_url'] == null ? undefined : json['base_url'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
-        'orgName': json['org_name'] == null ? undefined : json['org_name'],
-        'primaryEmail': json['primary_email'] == null ? undefined : json['primary_email'],
+        'api_token': json['api_token'] == null ? undefined : json['api_token'],
+        'base_url': json['base_url'] == null ? undefined : json['base_url'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'org_name': json['org_name'] == null ? undefined : json['org_name'],
+        'primary_email': json['primary_email'] == null ? undefined : json['primary_email'],
         'production': json['production'] == null ? undefined : json['production'],
-        'usernameFormat': json['username_format'] == null ? undefined : json['username_format'],
+        'username_format': json['username_format'] == null ? undefined : json['username_format'],
     };
 }
 
@@ -101,13 +101,13 @@ export function SystemWriteMfaMethodOktaNameRequestToJSONTyped(value?: SystemWri
 
     return {
         
-        'api_token': value['apiToken'],
-        'base_url': value['baseUrl'],
-        'mount_accessor': value['mountAccessor'],
-        'org_name': value['orgName'],
-        'primary_email': value['primaryEmail'],
+        'api_token': value['api_token'],
+        'base_url': value['base_url'],
+        'mount_accessor': value['mount_accessor'],
+        'org_name': value['org_name'],
+        'primary_email': value['primary_email'],
         'production': value['production'],
-        'username_format': value['usernameFormat'],
+        'username_format': value['username_format'],
     };
 }
 

@@ -24,19 +24,19 @@ export interface LdapLibraryConfigureRequest {
      * @type {boolean}
      * @memberof LdapLibraryConfigureRequest
      */
-    disableCheckInEnforcement?: boolean;
+    disable_check_in_enforcement?: boolean;
     /**
      * In seconds, the max amount of time a check-out's renewals should last. Defaults to 24 hours.
      * @type {string}
      * @memberof LdapLibraryConfigureRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * The username/logon name for the service accounts with which this set will be associated.
      * @type {Array<string>}
      * @memberof LdapLibraryConfigureRequest
      */
-    serviceAccountNames?: Array<string>;
+    service_account_names?: Array<string>;
     /**
      * In seconds, the amount of time a check-out should last. Defaults to 24 hours.
      * @type {string}
@@ -62,9 +62,9 @@ export function LdapLibraryConfigureRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'disableCheckInEnforcement': json['disable_check_in_enforcement'] == null ? undefined : json['disable_check_in_enforcement'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'serviceAccountNames': json['service_account_names'] == null ? undefined : json['service_account_names'],
+        'disable_check_in_enforcement': json['disable_check_in_enforcement'] == null ? undefined : json['disable_check_in_enforcement'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'service_account_names': json['service_account_names'] == null ? undefined : json['service_account_names'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -80,9 +80,9 @@ export function LdapLibraryConfigureRequestToJSONTyped(value?: LdapLibraryConfig
 
     return {
         
-        'disable_check_in_enforcement': value['disableCheckInEnforcement'],
-        'max_ttl': value['maxTtl'],
-        'service_account_names': value['serviceAccountNames'],
+        'disable_check_in_enforcement': value['disable_check_in_enforcement'],
+        'max_ttl': value['max_ttl'],
+        'service_account_names': value['service_account_names'],
         'ttl': value['ttl'],
     };
 }

@@ -24,13 +24,13 @@ export interface RateLimitQuotasReadResponse {
      * @type {number}
      * @memberof RateLimitQuotasReadResponse
      */
-    blockInterval?: number;
+    block_interval?: number;
     /**
      * 
      * @type {string}
      * @memberof RateLimitQuotasReadResponse
      */
-    groupBy?: string;
+    group_by?: string;
     /**
      * 
      * @type {boolean}
@@ -72,7 +72,7 @@ export interface RateLimitQuotasReadResponse {
      * @type {number}
      * @memberof RateLimitQuotasReadResponse
      */
-    secondaryRate?: number;
+    secondary_rate?: number;
     /**
      * 
      * @type {string}
@@ -98,15 +98,15 @@ export function RateLimitQuotasReadResponseFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'blockInterval': json['block_interval'] == null ? undefined : json['block_interval'],
-        'groupBy': json['group_by'] == null ? undefined : json['group_by'],
+        'block_interval': json['block_interval'] == null ? undefined : json['block_interval'],
+        'group_by': json['group_by'] == null ? undefined : json['group_by'],
         'inheritable': json['inheritable'] == null ? undefined : json['inheritable'],
         'interval': json['interval'] == null ? undefined : json['interval'],
         'name': json['name'] == null ? undefined : json['name'],
         'path': json['path'] == null ? undefined : json['path'],
         'rate': json['rate'] == null ? undefined : json['rate'],
         'role': json['role'] == null ? undefined : json['role'],
-        'secondaryRate': json['secondary_rate'] == null ? undefined : json['secondary_rate'],
+        'secondary_rate': json['secondary_rate'] == null ? undefined : json['secondary_rate'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -122,15 +122,15 @@ export function RateLimitQuotasReadResponseToJSONTyped(value?: RateLimitQuotasRe
 
     return {
         
-        'block_interval': value['blockInterval'],
-        'group_by': value['groupBy'],
+        'block_interval': value['block_interval'],
+        'group_by': value['group_by'],
         'inheritable': value['inheritable'],
         'interval': value['interval'],
         'name': value['name'],
         'path': value['path'],
         'rate': value['rate'],
         'role': value['role'],
-        'secondary_rate': value['secondaryRate'],
+        'secondary_rate': value['secondary_rate'],
         'type': value['type'],
     };
 }

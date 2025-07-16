@@ -24,7 +24,7 @@ export interface InternalUiListEnabledFeatureFlagsResponse {
      * @type {Array<string>}
      * @memberof InternalUiListEnabledFeatureFlagsResponse
      */
-    featureFlags?: Array<string>;
+    feature_flags?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function InternalUiListEnabledFeatureFlagsResponseFromJSONTyped(json: any
     }
     return {
         
-        'featureFlags': json['feature_flags'] == null ? undefined : json['feature_flags'],
+        'feature_flags': json['feature_flags'] == null ? undefined : json['feature_flags'],
     };
 }
 
@@ -59,7 +59,7 @@ export function InternalUiListEnabledFeatureFlagsResponseToJSONTyped(value?: Int
 
     return {
         
-        'feature_flags': value['featureFlags'],
+        'feature_flags': value['feature_flags'],
     };
 }
 

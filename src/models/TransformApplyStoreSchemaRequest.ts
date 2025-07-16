@@ -30,7 +30,7 @@ export interface TransformApplyStoreSchemaRequest {
      * @type {string}
      * @memberof TransformApplyStoreSchemaRequest
      */
-    transformationType?: string;
+    transformation_type?: string;
     /**
      * For the `sql` store type, the username to use in populating the connection string for this operation.
      * @type {string}
@@ -57,7 +57,7 @@ export function TransformApplyStoreSchemaRequestFromJSONTyped(json: any, ignoreD
     return {
         
         'password': json['password'] == null ? undefined : json['password'],
-        'transformationType': json['transformation_type'] == null ? undefined : json['transformation_type'],
+        'transformation_type': json['transformation_type'] == null ? undefined : json['transformation_type'],
         'username': json['username'] == null ? undefined : json['username'],
     };
 }
@@ -74,7 +74,7 @@ export function TransformApplyStoreSchemaRequestToJSONTyped(value?: TransformApp
     return {
         
         'password': value['password'],
-        'transformation_type': value['transformationType'],
+        'transformation_type': value['transformation_type'],
         'username': value['username'],
     };
 }

@@ -32,7 +32,7 @@ export interface PluginsCatalogRegisterPluginWithTypeRequest {
      */
     command?: string;
     /**
-     * 
+     * Automatically downloads official HashiCorp plugins from releases.hashicorp.com (beta)
      * @type {boolean}
      * @memberof PluginsCatalogRegisterPluginWithTypeRequest
      */
@@ -48,7 +48,7 @@ export interface PluginsCatalogRegisterPluginWithTypeRequest {
      * @type {string}
      * @memberof PluginsCatalogRegisterPluginWithTypeRequest
      */
-    ociImage?: string;
+    oci_image?: string;
     /**
      * The Vault plugin runtime to use when running the plugin.
      * @type {string}
@@ -90,7 +90,7 @@ export function PluginsCatalogRegisterPluginWithTypeRequestFromJSONTyped(json: a
         'command': json['command'] == null ? undefined : json['command'],
         'download': json['download'] == null ? undefined : json['download'],
         'env': json['env'] == null ? undefined : json['env'],
-        'ociImage': json['oci_image'] == null ? undefined : json['oci_image'],
+        'oci_image': json['oci_image'] == null ? undefined : json['oci_image'],
         'runtime': json['runtime'] == null ? undefined : json['runtime'],
         'sha256': json['sha256'] == null ? undefined : json['sha256'],
         'version': json['version'] == null ? undefined : json['version'],
@@ -112,7 +112,7 @@ export function PluginsCatalogRegisterPluginWithTypeRequestToJSONTyped(value?: P
         'command': value['command'],
         'download': value['download'],
         'env': value['env'],
-        'oci_image': value['ociImage'],
+        'oci_image': value['oci_image'],
         'runtime': value['runtime'],
         'sha256': value['sha256'],
         'version': value['version'],

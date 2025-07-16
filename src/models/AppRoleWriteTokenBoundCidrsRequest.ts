@@ -24,7 +24,7 @@ export interface AppRoleWriteTokenBoundCidrsRequest {
      * @type {Array<string>}
      * @memberof AppRoleWriteTokenBoundCidrsRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteTokenBoundCidrsRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteTokenBoundCidrsRequestToJSONTyped(value?: AppRoleWri
 
     return {
         
-        'token_bound_cidrs': value['tokenBoundCidrs'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
     };
 }
 

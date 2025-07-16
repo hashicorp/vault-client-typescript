@@ -24,33 +24,33 @@ export interface UiLoginDefaultAuthConfigureRequest {
      * @type {Array<string>}
      * @memberof UiLoginDefaultAuthConfigureRequest
      */
-    backupAuthTypes?: Array<string>;
+    backup_auth_types?: Array<string>;
     /**
      * Preferred Auth method type for UI Login form.
      * @type {string}
      * @memberof UiLoginDefaultAuthConfigureRequest
      */
-    defaultAuthType: string;
+    default_auth_type: string;
     /**
      * Disable child namespaces from inheriting default auth type.
      * @type {boolean}
      * @memberof UiLoginDefaultAuthConfigureRequest
      */
-    disableInheritance?: boolean;
+    disable_inheritance?: boolean;
     /**
      * Namespace to apply default Auth method to.
      * @type {string}
      * @memberof UiLoginDefaultAuthConfigureRequest
      */
-    namespacePath: string;
+    namespace_path: string;
 }
 
 /**
  * Check if a given object implements the UiLoginDefaultAuthConfigureRequest interface.
  */
 export function instanceOfUiLoginDefaultAuthConfigureRequest(value: object): value is UiLoginDefaultAuthConfigureRequest {
-    if (!('defaultAuthType' in value) || value['defaultAuthType'] === undefined) return false;
-    if (!('namespacePath' in value) || value['namespacePath'] === undefined) return false;
+    if (!('default_auth_type' in value) || value['default_auth_type'] === undefined) return false;
+    if (!('namespace_path' in value) || value['namespace_path'] === undefined) return false;
     return true;
 }
 
@@ -64,10 +64,10 @@ export function UiLoginDefaultAuthConfigureRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'backupAuthTypes': json['backup_auth_types'] == null ? undefined : json['backup_auth_types'],
-        'defaultAuthType': json['default_auth_type'],
-        'disableInheritance': json['disable_inheritance'] == null ? undefined : json['disable_inheritance'],
-        'namespacePath': json['namespace_path'],
+        'backup_auth_types': json['backup_auth_types'] == null ? undefined : json['backup_auth_types'],
+        'default_auth_type': json['default_auth_type'],
+        'disable_inheritance': json['disable_inheritance'] == null ? undefined : json['disable_inheritance'],
+        'namespace_path': json['namespace_path'],
     };
 }
 
@@ -82,10 +82,10 @@ export function UiLoginDefaultAuthConfigureRequestToJSONTyped(value?: UiLoginDef
 
     return {
         
-        'backup_auth_types': value['backupAuthTypes'],
-        'default_auth_type': value['defaultAuthType'],
-        'disable_inheritance': value['disableInheritance'],
-        'namespace_path': value['namespacePath'],
+        'backup_auth_types': value['backup_auth_types'],
+        'default_auth_type': value['default_auth_type'],
+        'disable_inheritance': value['disable_inheritance'],
+        'namespace_path': value['namespace_path'],
     };
 }
 

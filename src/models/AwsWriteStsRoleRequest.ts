@@ -24,13 +24,13 @@ export interface AwsWriteStsRoleRequest {
      * @type {string}
      * @memberof AwsWriteStsRoleRequest
      */
-    externalId?: string;
+    external_id?: string;
     /**
      * AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role.
      * @type {string}
      * @memberof AwsWriteStsRoleRequest
      */
-    stsRole?: string;
+    sts_role?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function AwsWriteStsRoleRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'externalId': json['external_id'] == null ? undefined : json['external_id'],
-        'stsRole': json['sts_role'] == null ? undefined : json['sts_role'],
+        'external_id': json['external_id'] == null ? undefined : json['external_id'],
+        'sts_role': json['sts_role'] == null ? undefined : json['sts_role'],
     };
 }
 
@@ -66,8 +66,8 @@ export function AwsWriteStsRoleRequestToJSONTyped(value?: AwsWriteStsRoleRequest
 
     return {
         
-        'external_id': value['externalId'],
-        'sts_role': value['stsRole'],
+        'external_id': value['external_id'],
+        'sts_role': value['sts_role'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface TotpCreateKeyRequest {
      * @type {string}
      * @memberof TotpCreateKeyRequest
      */
-    accountName?: string;
+    account_name?: string;
     /**
      * The hashing algorithm used to generate the TOTP token. Options include SHA1, SHA256 and SHA512.
      * @type {string}
@@ -66,7 +66,7 @@ export interface TotpCreateKeyRequest {
      * @type {number}
      * @memberof TotpCreateKeyRequest
      */
-    keySize?: number;
+    key_size?: number;
     /**
      * The length of time used to generate a counter for the TOTP token calculation.
      * @type {string}
@@ -78,7 +78,7 @@ export interface TotpCreateKeyRequest {
      * @type {number}
      * @memberof TotpCreateKeyRequest
      */
-    qrSize?: number;
+    qr_size?: number;
     /**
      * The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. Only used if generate is true.
      * @type {number}
@@ -110,16 +110,16 @@ export function TotpCreateKeyRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'accountName': json['account_name'] == null ? undefined : json['account_name'],
+        'account_name': json['account_name'] == null ? undefined : json['account_name'],
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
         'digits': json['digits'] == null ? undefined : json['digits'],
         'exported': json['exported'] == null ? undefined : json['exported'],
         'generate': json['generate'] == null ? undefined : json['generate'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
         'key': json['key'] == null ? undefined : json['key'],
-        'keySize': json['key_size'] == null ? undefined : json['key_size'],
+        'key_size': json['key_size'] == null ? undefined : json['key_size'],
         'period': json['period'] == null ? undefined : json['period'],
-        'qrSize': json['qr_size'] == null ? undefined : json['qr_size'],
+        'qr_size': json['qr_size'] == null ? undefined : json['qr_size'],
         'skew': json['skew'] == null ? undefined : json['skew'],
         'url': json['url'] == null ? undefined : json['url'],
     };
@@ -136,16 +136,16 @@ export function TotpCreateKeyRequestToJSONTyped(value?: TotpCreateKeyRequest | n
 
     return {
         
-        'account_name': value['accountName'],
+        'account_name': value['account_name'],
         'algorithm': value['algorithm'],
         'digits': value['digits'],
         'exported': value['exported'],
         'generate': value['generate'],
         'issuer': value['issuer'],
         'key': value['key'],
-        'key_size': value['keySize'],
+        'key_size': value['key_size'],
         'period': value['period'],
-        'qr_size': value['qrSize'],
+        'qr_size': value['qr_size'],
         'skew': value['skew'],
         'url': value['url'],
     };

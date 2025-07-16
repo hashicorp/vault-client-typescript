@@ -24,7 +24,7 @@ export interface LeasesReadLeaseRequest {
      * @type {string}
      * @memberof LeasesReadLeaseRequest
      */
-    leaseId?: string;
+    lease_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function LeasesReadLeaseRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'leaseId': json['lease_id'] == null ? undefined : json['lease_id'],
+        'lease_id': json['lease_id'] == null ? undefined : json['lease_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function LeasesReadLeaseRequestToJSONTyped(value?: LeasesReadLeaseRequest
 
     return {
         
-        'lease_id': value['leaseId'],
+        'lease_id': value['lease_id'],
     };
 }
 

@@ -24,43 +24,43 @@ export interface SystemWriteSyncDestinationsGhNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    accessToken?: string;
+    access_token?: string;
     /**
      * Sets which IPv4 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * The user defined name of the GitHub App configuration.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    appName?: string;
+    app_name?: string;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * The name of the repository environment that the secrets in GitHub will be available for. Only valid when the 'secrets_location' field is set to 'repository'.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    environmentName?: string;
+    environment_name?: string;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -72,19 +72,19 @@ export interface SystemWriteSyncDestinationsGhNameRequest {
      * @type {number}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    installationId?: number;
+    installation_id?: number;
     /**
      * The name of the GitHub organization to target which owns the repositories the secrets will be available for. Only valid when 'secrets_location' is set to 'organization'.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    organizationName?: string;
+    organization_name?: string;
     /**
      * The type of repositories in a GitHub organization to grant visibility to the secrets, between 'all', 'private', or 'selected'. If using 'selected', you must also specify the 'selected_repository_names' field. Only valid when 'secrets_location' is set to 'organization'.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    organizationVisibility?: string;
+    organization_visibility?: string;
     /**
      * Asynchronously unsyncs all associated secrets with the destination then deletes the destination config.
      * @type {boolean}
@@ -96,31 +96,31 @@ export interface SystemWriteSyncDestinationsGhNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    repositoryName?: string;
+    repository_name?: string;
     /**
      * Organization name or username the repository belongs to. For example for 'git clone github.com/acme/my-repo' the owner is acme.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    repositoryOwner?: string;
+    repository_owner?: string;
     /**
      * Template describing how to generate external secret names. Supports a subset of the Go Template syntax.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
     /**
      * The scope of access that the secrets in GitHub will be available for, between 'organization' or 'repository'. Repository secrets are only visible on the given repository while Organization secrets are visible to as many repositories within the organization as determined by the 'organization_visibility' field. Defaults to 'repository'.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    secretsLocation?: string;
+    secrets_location?: string;
     /**
      * The list of names of all repositories within a GitHub organization to grant access to the secrets when 'organization_visibility' is set to 'selected'.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
      */
-    selectedRepositoryNames?: Array<string>;
+    selected_repository_names?: Array<string>;
 }
 
 /**
@@ -140,23 +140,23 @@ export function SystemWriteSyncDestinationsGhNameRequestFromJSONTyped(json: any,
     }
     return {
         
-        'accessToken': json['access_token'] == null ? undefined : json['access_token'],
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
-        'appName': json['app_name'] == null ? undefined : json['app_name'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
-        'environmentName': json['environment_name'] == null ? undefined : json['environment_name'],
+        'access_token': json['access_token'] == null ? undefined : json['access_token'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'app_name': json['app_name'] == null ? undefined : json['app_name'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'environment_name': json['environment_name'] == null ? undefined : json['environment_name'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
-        'installationId': json['installation_id'] == null ? undefined : json['installation_id'],
-        'organizationName': json['organization_name'] == null ? undefined : json['organization_name'],
-        'organizationVisibility': json['organization_visibility'] == null ? undefined : json['organization_visibility'],
+        'installation_id': json['installation_id'] == null ? undefined : json['installation_id'],
+        'organization_name': json['organization_name'] == null ? undefined : json['organization_name'],
+        'organization_visibility': json['organization_visibility'] == null ? undefined : json['organization_visibility'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'repositoryName': json['repository_name'] == null ? undefined : json['repository_name'],
-        'repositoryOwner': json['repository_owner'] == null ? undefined : json['repository_owner'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
-        'secretsLocation': json['secrets_location'] == null ? undefined : json['secrets_location'],
-        'selectedRepositoryNames': json['selected_repository_names'] == null ? undefined : json['selected_repository_names'],
+        'repository_name': json['repository_name'] == null ? undefined : json['repository_name'],
+        'repository_owner': json['repository_owner'] == null ? undefined : json['repository_owner'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'secrets_location': json['secrets_location'] == null ? undefined : json['secrets_location'],
+        'selected_repository_names': json['selected_repository_names'] == null ? undefined : json['selected_repository_names'],
     };
 }
 
@@ -171,23 +171,23 @@ export function SystemWriteSyncDestinationsGhNameRequestToJSONTyped(value?: Syst
 
     return {
         
-        'access_token': value['accessToken'],
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
-        'app_name': value['appName'],
-        'disable_strict_networking': value['disableStrictNetworking'],
-        'environment_name': value['environmentName'],
+        'access_token': value['access_token'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
+        'app_name': value['app_name'],
+        'disable_strict_networking': value['disable_strict_networking'],
+        'environment_name': value['environment_name'],
         'granularity': value['granularity'],
-        'installation_id': value['installationId'],
-        'organization_name': value['organizationName'],
-        'organization_visibility': value['organizationVisibility'],
+        'installation_id': value['installation_id'],
+        'organization_name': value['organization_name'],
+        'organization_visibility': value['organization_visibility'],
         'purge': value['purge'],
-        'repository_name': value['repositoryName'],
-        'repository_owner': value['repositoryOwner'],
-        'secret_name_template': value['secretNameTemplate'],
-        'secrets_location': value['secretsLocation'],
-        'selected_repository_names': value['selectedRepositoryNames'],
+        'repository_name': value['repository_name'],
+        'repository_owner': value['repository_owner'],
+        'secret_name_template': value['secret_name_template'],
+        'secrets_location': value['secrets_location'],
+        'selected_repository_names': value['selected_repository_names'],
     };
 }
 

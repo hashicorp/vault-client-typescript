@@ -24,13 +24,13 @@ export interface SystemWriteManagedKeysTypeNameTestSignRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameTestSignRequest
      */
-    hashAlgorithm?: string;
+    hash_algorithm?: string;
     /**
      * For RSA backed managed keys attempt to sign with PSS
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameTestSignRequest
      */
-    usePss?: boolean;
+    use_pss?: boolean;
 }
 
 /**
@@ -50,8 +50,8 @@ export function SystemWriteManagedKeysTypeNameTestSignRequestFromJSONTyped(json:
     }
     return {
         
-        'hashAlgorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
-        'usePss': json['use_pss'] == null ? undefined : json['use_pss'],
+        'hash_algorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
+        'use_pss': json['use_pss'] == null ? undefined : json['use_pss'],
     };
 }
 
@@ -66,8 +66,8 @@ export function SystemWriteManagedKeysTypeNameTestSignRequestToJSONTyped(value?:
 
     return {
         
-        'hash_algorithm': value['hashAlgorithm'],
-        'use_pss': value['usePss'],
+        'hash_algorithm': value['hash_algorithm'],
+        'use_pss': value['use_pss'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface VersionHistoryResponse {
      * @type {object}
      * @memberof VersionHistoryResponse
      */
-    keyInfo?: object;
+    key_info?: object;
     /**
      * 
      * @type {Array<string>}
@@ -50,7 +50,7 @@ export function VersionHistoryResponseFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
     };
 }
@@ -66,7 +66,7 @@ export function VersionHistoryResponseToJSONTyped(value?: VersionHistoryResponse
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
     };
 }

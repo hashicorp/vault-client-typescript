@@ -24,19 +24,19 @@ export interface ReadWrappingProperties2Response {
      * @type {string}
      * @memberof ReadWrappingProperties2Response
      */
-    creationPath?: string;
+    creation_path?: string;
     /**
      * 
      * @type {Date}
      * @memberof ReadWrappingProperties2Response
      */
-    creationTime?: Date;
+    creation_time?: Date;
     /**
      * 
      * @type {string}
      * @memberof ReadWrappingProperties2Response
      */
-    creationTtl?: string;
+    creation_ttl?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function ReadWrappingProperties2ResponseFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'creationPath': json['creation_path'] == null ? undefined : json['creation_path'],
-        'creationTime': json['creation_time'] == null ? undefined : (new Date(json['creation_time'])),
-        'creationTtl': json['creation_ttl'] == null ? undefined : json['creation_ttl'],
+        'creation_path': json['creation_path'] == null ? undefined : json['creation_path'],
+        'creation_time': json['creation_time'] == null ? undefined : (new Date(json['creation_time'])),
+        'creation_ttl': json['creation_ttl'] == null ? undefined : json['creation_ttl'],
     };
 }
 
@@ -73,9 +73,9 @@ export function ReadWrappingProperties2ResponseToJSONTyped(value?: ReadWrappingP
 
     return {
         
-        'creation_path': value['creationPath'],
-        'creation_time': value['creationTime'] == null ? undefined : ((value['creationTime']).toISOString()),
-        'creation_ttl': value['creationTtl'],
+        'creation_path': value['creation_path'],
+        'creation_time': value['creation_time'] == null ? undefined : ((value['creation_time']).toISOString()),
+        'creation_ttl': value['creation_ttl'],
     };
 }
 

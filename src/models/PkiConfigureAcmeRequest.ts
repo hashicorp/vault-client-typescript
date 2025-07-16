@@ -24,37 +24,37 @@ export interface PkiConfigureAcmeRequest {
      * @type {boolean}
      * @memberof PkiConfigureAcmeRequest
      */
-    allowRoleExtKeyUsage?: boolean;
+    allow_role_ext_key_usage?: boolean;
     /**
      * which issuers are allowed for use with ACME; by default, this will only be the primary (default) issuer
      * @type {Array<string>}
      * @memberof PkiConfigureAcmeRequest
      */
-    allowedIssuers?: Array<string>;
+    allowed_issuers?: Array<string>;
     /**
      * which roles are allowed for use with ACME; by default via '*', these will be all roles including sign-verbatim; when concrete role names are specified, any default_directory_policy role must be included to allow usage of the default acme directories under /pki/acme/directory and /pki/issuer/:issuer_id/acme/directory.
      * @type {Array<string>}
      * @memberof PkiConfigureAcmeRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * the policy to be used for non-role-qualified ACME requests; by default ACME issuance will be otherwise unrestricted, equivalent to the sign-verbatim endpoint; one may also specify a role to use as this policy, as "role:<role_name>", the specified role must be allowed by allowed_roles
      * @type {string}
      * @memberof PkiConfigureAcmeRequest
      */
-    defaultDirectoryPolicy?: string;
+    default_directory_policy?: string;
     /**
      * DNS resolver to use for domain resolution on this mount. Defaults to using the default system resolver. Must be in the format <host>:<port>, with both parts mandatory.
      * @type {string}
      * @memberof PkiConfigureAcmeRequest
      */
-    dnsResolver?: string;
+    dns_resolver?: string;
     /**
      * Specify the policy to use for external account binding behaviour, 'not-required', 'new-account-required' or 'always-required'
      * @type {string}
      * @memberof PkiConfigureAcmeRequest
      */
-    eabPolicy?: string;
+    eab_policy?: string;
     /**
      * whether ACME is enabled, defaults to false meaning that clusters will by default not get ACME support
      * @type {boolean}
@@ -66,7 +66,7 @@ export interface PkiConfigureAcmeRequest {
      * @type {string}
      * @memberof PkiConfigureAcmeRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
 }
 
 /**
@@ -86,14 +86,14 @@ export function PkiConfigureAcmeRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'allowRoleExtKeyUsage': json['allow_role_ext_key_usage'] == null ? undefined : json['allow_role_ext_key_usage'],
-        'allowedIssuers': json['allowed_issuers'] == null ? undefined : json['allowed_issuers'],
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
-        'defaultDirectoryPolicy': json['default_directory_policy'] == null ? undefined : json['default_directory_policy'],
-        'dnsResolver': json['dns_resolver'] == null ? undefined : json['dns_resolver'],
-        'eabPolicy': json['eab_policy'] == null ? undefined : json['eab_policy'],
+        'allow_role_ext_key_usage': json['allow_role_ext_key_usage'] == null ? undefined : json['allow_role_ext_key_usage'],
+        'allowed_issuers': json['allowed_issuers'] == null ? undefined : json['allowed_issuers'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'default_directory_policy': json['default_directory_policy'] == null ? undefined : json['default_directory_policy'],
+        'dns_resolver': json['dns_resolver'] == null ? undefined : json['dns_resolver'],
+        'eab_policy': json['eab_policy'] == null ? undefined : json['eab_policy'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
     };
 }
 
@@ -108,14 +108,14 @@ export function PkiConfigureAcmeRequestToJSONTyped(value?: PkiConfigureAcmeReque
 
     return {
         
-        'allow_role_ext_key_usage': value['allowRoleExtKeyUsage'],
-        'allowed_issuers': value['allowedIssuers'],
-        'allowed_roles': value['allowedRoles'],
-        'default_directory_policy': value['defaultDirectoryPolicy'],
-        'dns_resolver': value['dnsResolver'],
-        'eab_policy': value['eabPolicy'],
+        'allow_role_ext_key_usage': value['allow_role_ext_key_usage'],
+        'allowed_issuers': value['allowed_issuers'],
+        'allowed_roles': value['allowed_roles'],
+        'default_directory_policy': value['default_directory_policy'],
+        'dns_resolver': value['dns_resolver'],
+        'eab_policy': value['eab_policy'],
         'enabled': value['enabled'],
-        'max_ttl': value['maxTtl'],
+        'max_ttl': value['max_ttl'],
     };
 }
 

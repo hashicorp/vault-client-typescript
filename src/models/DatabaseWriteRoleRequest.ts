@@ -24,55 +24,55 @@ export interface DatabaseWriteRoleRequest {
      * @type {Array<string>}
      * @memberof DatabaseWriteRoleRequest
      */
-    creationStatements?: Array<string>;
+    creation_statements?: Array<string>;
     /**
      * The configuration for the given credential_type.
      * @type {object}
      * @memberof DatabaseWriteRoleRequest
      */
-    credentialConfig?: object;
+    credential_config?: object;
     /**
      * The type of credential to manage. Options include: 'password', 'rsa_private_key'. Defaults to 'password'.
      * @type {string}
      * @memberof DatabaseWriteRoleRequest
      */
-    credentialType?: string;
+    credential_type?: string;
     /**
      * Name of the database this role acts on.
      * @type {string}
      * @memberof DatabaseWriteRoleRequest
      */
-    dbName?: string;
+    db_name?: string;
     /**
      * Default ttl for role.
      * @type {string}
      * @memberof DatabaseWriteRoleRequest
      */
-    defaultTtl?: string;
+    default_ttl?: string;
     /**
      * Maximum time a credential is valid for
      * @type {string}
      * @memberof DatabaseWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Specifies the database statements to be executed to renew a user. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
      * @type {Array<string>}
      * @memberof DatabaseWriteRoleRequest
      */
-    renewStatements?: Array<string>;
+    renew_statements?: Array<string>;
     /**
      * Specifies the database statements to be executed to revoke a user. See the plugin's API page for more information on support and formatting for this parameter.
      * @type {Array<string>}
      * @memberof DatabaseWriteRoleRequest
      */
-    revocationStatements?: Array<string>;
+    revocation_statements?: Array<string>;
     /**
      * Specifies the database statements to be executed rollback a create operation in the event of an error. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
      * @type {Array<string>}
      * @memberof DatabaseWriteRoleRequest
      */
-    rollbackStatements?: Array<string>;
+    rollback_statements?: Array<string>;
 }
 
 /**
@@ -92,15 +92,15 @@ export function DatabaseWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'creationStatements': json['creation_statements'] == null ? undefined : json['creation_statements'],
-        'credentialConfig': json['credential_config'] == null ? undefined : json['credential_config'],
-        'credentialType': json['credential_type'] == null ? undefined : json['credential_type'],
-        'dbName': json['db_name'] == null ? undefined : json['db_name'],
-        'defaultTtl': json['default_ttl'] == null ? undefined : json['default_ttl'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'renewStatements': json['renew_statements'] == null ? undefined : json['renew_statements'],
-        'revocationStatements': json['revocation_statements'] == null ? undefined : json['revocation_statements'],
-        'rollbackStatements': json['rollback_statements'] == null ? undefined : json['rollback_statements'],
+        'creation_statements': json['creation_statements'] == null ? undefined : json['creation_statements'],
+        'credential_config': json['credential_config'] == null ? undefined : json['credential_config'],
+        'credential_type': json['credential_type'] == null ? undefined : json['credential_type'],
+        'db_name': json['db_name'] == null ? undefined : json['db_name'],
+        'default_ttl': json['default_ttl'] == null ? undefined : json['default_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'renew_statements': json['renew_statements'] == null ? undefined : json['renew_statements'],
+        'revocation_statements': json['revocation_statements'] == null ? undefined : json['revocation_statements'],
+        'rollback_statements': json['rollback_statements'] == null ? undefined : json['rollback_statements'],
     };
 }
 
@@ -115,15 +115,15 @@ export function DatabaseWriteRoleRequestToJSONTyped(value?: DatabaseWriteRoleReq
 
     return {
         
-        'creation_statements': value['creationStatements'],
-        'credential_config': value['credentialConfig'],
-        'credential_type': value['credentialType'],
-        'db_name': value['dbName'],
-        'default_ttl': value['defaultTtl'],
-        'max_ttl': value['maxTtl'],
-        'renew_statements': value['renewStatements'],
-        'revocation_statements': value['revocationStatements'],
-        'rollback_statements': value['rollbackStatements'],
+        'creation_statements': value['creation_statements'],
+        'credential_config': value['credential_config'],
+        'credential_type': value['credential_type'],
+        'db_name': value['db_name'],
+        'default_ttl': value['default_ttl'],
+        'max_ttl': value['max_ttl'],
+        'renew_statements': value['renew_statements'],
+        'revocation_statements': value['revocation_statements'],
+        'rollback_statements': value['rollback_statements'],
     };
 }
 

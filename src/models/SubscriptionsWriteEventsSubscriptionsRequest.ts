@@ -30,7 +30,7 @@ export interface SubscriptionsWriteEventsSubscriptionsRequest {
      * @type {string}
      * @memberof SubscriptionsWriteEventsSubscriptionsRequest
      */
-    eventType?: string;
+    event_type?: string;
     /**
      * 
      * @type {string}
@@ -69,7 +69,7 @@ export function SubscriptionsWriteEventsSubscriptionsRequestFromJSONTyped(json: 
     return {
         
         'config': json['config'] == null ? undefined : json['config'],
-        'eventType': json['event_type'] == null ? undefined : json['event_type'],
+        'event_type': json['event_type'] == null ? undefined : json['event_type'],
         'filter': json['filter'] == null ? undefined : json['filter'],
         'list': json['list'] == null ? undefined : json['list'],
         'plugin': json['plugin'] == null ? undefined : json['plugin'],
@@ -88,7 +88,7 @@ export function SubscriptionsWriteEventsSubscriptionsRequestToJSONTyped(value?: 
     return {
         
         'config': value['config'],
-        'event_type': value['eventType'],
+        'event_type': value['event_type'],
         'filter': value['filter'],
         'list': value['list'],
         'plugin': value['plugin'],

@@ -24,7 +24,7 @@ export interface AppRoleDestroySecretIdByAccessorRequest {
      * @type {string}
      * @memberof AppRoleDestroySecretIdByAccessorRequest
      */
-    secretIdAccessor?: string;
+    secret_id_accessor?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleDestroySecretIdByAccessorRequestFromJSONTyped(json: any, 
     }
     return {
         
-        'secretIdAccessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
+        'secret_id_accessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleDestroySecretIdByAccessorRequestToJSONTyped(value?: AppRo
 
     return {
         
-        'secret_id_accessor': value['secretIdAccessor'],
+        'secret_id_accessor': value['secret_id_accessor'],
     };
 }
 

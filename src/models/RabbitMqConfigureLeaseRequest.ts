@@ -24,7 +24,7 @@ export interface RabbitMqConfigureLeaseRequest {
      * @type {string}
      * @memberof RabbitMqConfigureLeaseRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Duration before which the issued credentials needs renewal
      * @type {string}
@@ -50,7 +50,7 @@ export function RabbitMqConfigureLeaseRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -66,7 +66,7 @@ export function RabbitMqConfigureLeaseRequestToJSONTyped(value?: RabbitMqConfigu
 
     return {
         
-        'max_ttl': value['maxTtl'],
+        'max_ttl': value['max_ttl'],
         'ttl': value['ttl'],
     };
 }

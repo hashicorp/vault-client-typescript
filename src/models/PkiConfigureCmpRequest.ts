@@ -24,7 +24,7 @@ export interface PkiConfigureCmpRequest {
      * @type {Array<string>}
      * @memberof PkiConfigureCmpRequest
      */
-    auditFields?: Array<string>;
+    audit_fields?: Array<string>;
     /**
      * A map of authentication type to authentication parameters
      * @type {object}
@@ -36,19 +36,19 @@ export interface PkiConfigureCmpRequest {
      * @type {string}
      * @memberof PkiConfigureCmpRequest
      */
-    defaultPathPolicy?: string;
+    default_path_policy?: string;
     /**
      * A comma-separated list of validations not to perform on CMPv2 messages. Possible entries are DisableCertTimeValidation and DisableMatchingKeyIdValidation.
      * @type {Array<string>}
      * @memberof PkiConfigureCmpRequest
      */
-    disabledValidations?: Array<string>;
+    disabled_validations?: Array<string>;
     /**
      * Parse CSR to that its fields can be used by sentinel policies.
      * @type {boolean}
      * @memberof PkiConfigureCmpRequest
      */
-    enableSentinelParsing?: boolean;
+    enable_sentinel_parsing?: boolean;
     /**
      * whether CMPv2 is enabled, defaults to false
      * @type {boolean}
@@ -74,11 +74,11 @@ export function PkiConfigureCmpRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'auditFields': json['audit_fields'] == null ? undefined : json['audit_fields'],
+        'audit_fields': json['audit_fields'] == null ? undefined : json['audit_fields'],
         'authenticators': json['authenticators'] == null ? undefined : json['authenticators'],
-        'defaultPathPolicy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
-        'disabledValidations': json['disabled_validations'] == null ? undefined : json['disabled_validations'],
-        'enableSentinelParsing': json['enable_sentinel_parsing'] == null ? undefined : json['enable_sentinel_parsing'],
+        'default_path_policy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
+        'disabled_validations': json['disabled_validations'] == null ? undefined : json['disabled_validations'],
+        'enable_sentinel_parsing': json['enable_sentinel_parsing'] == null ? undefined : json['enable_sentinel_parsing'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
     };
 }
@@ -94,11 +94,11 @@ export function PkiConfigureCmpRequestToJSONTyped(value?: PkiConfigureCmpRequest
 
     return {
         
-        'audit_fields': value['auditFields'],
+        'audit_fields': value['audit_fields'],
         'authenticators': value['authenticators'],
-        'default_path_policy': value['defaultPathPolicy'],
-        'disabled_validations': value['disabledValidations'],
-        'enable_sentinel_parsing': value['enableSentinelParsing'],
+        'default_path_policy': value['default_path_policy'],
+        'disabled_validations': value['disabled_validations'],
+        'enable_sentinel_parsing': value['enable_sentinel_parsing'],
         'enabled': value['enabled'],
     };
 }

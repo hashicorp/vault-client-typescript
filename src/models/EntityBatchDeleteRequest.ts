@@ -24,7 +24,7 @@ export interface EntityBatchDeleteRequest {
      * @type {Array<string>}
      * @memberof EntityBatchDeleteRequest
      */
-    entityIds?: Array<string>;
+    entity_ids?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function EntityBatchDeleteRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'entityIds': json['entity_ids'] == null ? undefined : json['entity_ids'],
+        'entity_ids': json['entity_ids'] == null ? undefined : json['entity_ids'],
     };
 }
 
@@ -59,7 +59,7 @@ export function EntityBatchDeleteRequestToJSONTyped(value?: EntityBatchDeleteReq
 
     return {
         
-        'entity_ids': value['entityIds'],
+        'entity_ids': value['entity_ids'],
     };
 }
 

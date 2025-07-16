@@ -24,7 +24,7 @@ export interface GenerateRandomWithBytesResponse {
      * @type {string}
      * @memberof GenerateRandomWithBytesResponse
      */
-    randomBytes?: string;
+    random_bytes?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function GenerateRandomWithBytesResponseFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'randomBytes': json['random_bytes'] == null ? undefined : json['random_bytes'],
+        'random_bytes': json['random_bytes'] == null ? undefined : json['random_bytes'],
     };
 }
 
@@ -59,7 +59,7 @@ export function GenerateRandomWithBytesResponseToJSONTyped(value?: GenerateRando
 
     return {
         
-        'random_bytes': value['randomBytes'],
+        'random_bytes': value['random_bytes'],
     };
 }
 

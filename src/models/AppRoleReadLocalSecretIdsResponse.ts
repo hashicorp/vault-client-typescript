@@ -24,7 +24,7 @@ export interface AppRoleReadLocalSecretIdsResponse {
      * @type {boolean}
      * @memberof AppRoleReadLocalSecretIdsResponse
      */
-    localSecretIds?: boolean;
+    local_secret_ids?: boolean;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleReadLocalSecretIdsResponseFromJSONTyped(json: any, ignore
     }
     return {
         
-        'localSecretIds': json['local_secret_ids'] == null ? undefined : json['local_secret_ids'],
+        'local_secret_ids': json['local_secret_ids'] == null ? undefined : json['local_secret_ids'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleReadLocalSecretIdsResponseToJSONTyped(value?: AppRoleRead
 
     return {
         
-        'local_secret_ids': value['localSecretIds'],
+        'local_secret_ids': value['local_secret_ids'],
     };
 }
 

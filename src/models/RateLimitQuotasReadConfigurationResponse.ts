@@ -24,25 +24,25 @@ export interface RateLimitQuotasReadConfigurationResponse {
      * @type {Array<string>}
      * @memberof RateLimitQuotasReadConfigurationResponse
      */
-    absoluteRateLimitExemptPaths?: Array<string>;
+    absolute_rate_limit_exempt_paths?: Array<string>;
     /**
      * 
      * @type {boolean}
      * @memberof RateLimitQuotasReadConfigurationResponse
      */
-    enableRateLimitAuditLogging?: boolean;
+    enable_rate_limit_audit_logging?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof RateLimitQuotasReadConfigurationResponse
      */
-    enableRateLimitResponseHeaders?: boolean;
+    enable_rate_limit_response_headers?: boolean;
     /**
      * 
      * @type {Array<string>}
      * @memberof RateLimitQuotasReadConfigurationResponse
      */
-    rateLimitExemptPaths?: Array<string>;
+    rate_limit_exempt_paths?: Array<string>;
 }
 
 /**
@@ -62,10 +62,10 @@ export function RateLimitQuotasReadConfigurationResponseFromJSONTyped(json: any,
     }
     return {
         
-        'absoluteRateLimitExemptPaths': json['absolute_rate_limit_exempt_paths'] == null ? undefined : json['absolute_rate_limit_exempt_paths'],
-        'enableRateLimitAuditLogging': json['enable_rate_limit_audit_logging'] == null ? undefined : json['enable_rate_limit_audit_logging'],
-        'enableRateLimitResponseHeaders': json['enable_rate_limit_response_headers'] == null ? undefined : json['enable_rate_limit_response_headers'],
-        'rateLimitExemptPaths': json['rate_limit_exempt_paths'] == null ? undefined : json['rate_limit_exempt_paths'],
+        'absolute_rate_limit_exempt_paths': json['absolute_rate_limit_exempt_paths'] == null ? undefined : json['absolute_rate_limit_exempt_paths'],
+        'enable_rate_limit_audit_logging': json['enable_rate_limit_audit_logging'] == null ? undefined : json['enable_rate_limit_audit_logging'],
+        'enable_rate_limit_response_headers': json['enable_rate_limit_response_headers'] == null ? undefined : json['enable_rate_limit_response_headers'],
+        'rate_limit_exempt_paths': json['rate_limit_exempt_paths'] == null ? undefined : json['rate_limit_exempt_paths'],
     };
 }
 
@@ -80,10 +80,10 @@ export function RateLimitQuotasReadConfigurationResponseToJSONTyped(value?: Rate
 
     return {
         
-        'absolute_rate_limit_exempt_paths': value['absoluteRateLimitExemptPaths'],
-        'enable_rate_limit_audit_logging': value['enableRateLimitAuditLogging'],
-        'enable_rate_limit_response_headers': value['enableRateLimitResponseHeaders'],
-        'rate_limit_exempt_paths': value['rateLimitExemptPaths'],
+        'absolute_rate_limit_exempt_paths': value['absolute_rate_limit_exempt_paths'],
+        'enable_rate_limit_audit_logging': value['enable_rate_limit_audit_logging'],
+        'enable_rate_limit_response_headers': value['enable_rate_limit_response_headers'],
+        'rate_limit_exempt_paths': value['rate_limit_exempt_paths'],
     };
 }
 

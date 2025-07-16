@@ -24,7 +24,7 @@ export interface OidcWriteClientRequest {
      * @type {string}
      * @memberof OidcWriteClientRequest
      */
-    accessTokenTtl?: string;
+    access_token_ttl?: string;
     /**
      * Comma separated string or array of assignment resources.
      * @type {Array<string>}
@@ -36,13 +36,13 @@ export interface OidcWriteClientRequest {
      * @type {string}
      * @memberof OidcWriteClientRequest
      */
-    clientType?: string;
+    client_type?: string;
     /**
      * The time-to-live for ID tokens obtained by the client.
      * @type {string}
      * @memberof OidcWriteClientRequest
      */
-    idTokenTtl?: string;
+    id_token_ttl?: string;
     /**
      * A reference to a named key resource. Cannot be modified after creation. Defaults to the 'default' key.
      * @type {string}
@@ -54,7 +54,7 @@ export interface OidcWriteClientRequest {
      * @type {Array<string>}
      * @memberof OidcWriteClientRequest
      */
-    redirectUris?: Array<string>;
+    redirect_uris?: Array<string>;
 }
 
 /**
@@ -74,12 +74,12 @@ export function OidcWriteClientRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'accessTokenTtl': json['access_token_ttl'] == null ? undefined : json['access_token_ttl'],
+        'access_token_ttl': json['access_token_ttl'] == null ? undefined : json['access_token_ttl'],
         'assignments': json['assignments'] == null ? undefined : json['assignments'],
-        'clientType': json['client_type'] == null ? undefined : json['client_type'],
-        'idTokenTtl': json['id_token_ttl'] == null ? undefined : json['id_token_ttl'],
+        'client_type': json['client_type'] == null ? undefined : json['client_type'],
+        'id_token_ttl': json['id_token_ttl'] == null ? undefined : json['id_token_ttl'],
         'key': json['key'] == null ? undefined : json['key'],
-        'redirectUris': json['redirect_uris'] == null ? undefined : json['redirect_uris'],
+        'redirect_uris': json['redirect_uris'] == null ? undefined : json['redirect_uris'],
     };
 }
 
@@ -94,12 +94,12 @@ export function OidcWriteClientRequestToJSONTyped(value?: OidcWriteClientRequest
 
     return {
         
-        'access_token_ttl': value['accessTokenTtl'],
+        'access_token_ttl': value['access_token_ttl'],
         'assignments': value['assignments'],
-        'client_type': value['clientType'],
-        'id_token_ttl': value['idTokenTtl'],
+        'client_type': value['client_type'],
+        'id_token_ttl': value['id_token_ttl'],
         'key': value['key'],
-        'redirect_uris': value['redirectUris'],
+        'redirect_uris': value['redirect_uris'],
     };
 }
 

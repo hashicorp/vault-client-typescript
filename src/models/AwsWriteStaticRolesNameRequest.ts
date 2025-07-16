@@ -24,25 +24,25 @@ export interface AwsWriteStaticRolesNameRequest {
      * @type {string}
      * @memberof AwsWriteStaticRolesNameRequest
      */
-    assumeRoleArn?: string;
+    assume_role_arn?: string;
     /**
      * An identifier for the assumed role session.
      * @type {string}
      * @memberof AwsWriteStaticRolesNameRequest
      */
-    assumeRoleSessionName?: string;
+    assume_role_session_name?: string;
     /**
      * An external ID to be passed to the assumed role session.
      * @type {string}
      * @memberof AwsWriteStaticRolesNameRequest
      */
-    externalId?: string;
+    external_id?: string;
     /**
      * Period by which to rotate the backing credential of the adopted user. This can be a Go duration (e.g, '1m', 24h'), or an integer number of seconds.
      * @type {string}
      * @memberof AwsWriteStaticRolesNameRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * The IAM user to adopt as a static role.
      * @type {string}
@@ -68,10 +68,10 @@ export function AwsWriteStaticRolesNameRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'assumeRoleArn': json['assume_role_arn'] == null ? undefined : json['assume_role_arn'],
-        'assumeRoleSessionName': json['assume_role_session_name'] == null ? undefined : json['assume_role_session_name'],
-        'externalId': json['external_id'] == null ? undefined : json['external_id'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'assume_role_arn': json['assume_role_arn'] == null ? undefined : json['assume_role_arn'],
+        'assume_role_session_name': json['assume_role_session_name'] == null ? undefined : json['assume_role_session_name'],
+        'external_id': json['external_id'] == null ? undefined : json['external_id'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
         'username': json['username'] == null ? undefined : json['username'],
     };
 }
@@ -87,10 +87,10 @@ export function AwsWriteStaticRolesNameRequestToJSONTyped(value?: AwsWriteStatic
 
     return {
         
-        'assume_role_arn': value['assumeRoleArn'],
-        'assume_role_session_name': value['assumeRoleSessionName'],
-        'external_id': value['externalId'],
-        'rotation_period': value['rotationPeriod'],
+        'assume_role_arn': value['assume_role_arn'],
+        'assume_role_session_name': value['assume_role_session_name'],
+        'external_id': value['external_id'],
+        'rotation_period': value['rotation_period'],
         'username': value['username'],
     };
 }

@@ -24,31 +24,31 @@ export interface MfaUpdateOktaMethodRequest {
      * @type {string}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    apiToken?: string;
+    api_token?: string;
     /**
      * The base domain to use for the Okta API. When not specified in the configuration, "okta.com" is used.
      * @type {string}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    baseUrl?: string;
+    base_url?: string;
     /**
      * The unique name identifier for this MFA method.
      * @type {string}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    methodName?: string;
+    method_name?: string;
     /**
      * Name of the organization to be used in the Okta API.
      * @type {string}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    orgName?: string;
+    org_name?: string;
     /**
      * If true, the username will only match the primary email for the account. Defaults to false.
      * @type {boolean}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    primaryEmail?: boolean;
+    primary_email?: boolean;
     /**
      * (DEPRECATED) Use base_url instead.
      * @type {boolean}
@@ -60,7 +60,7 @@ export interface MfaUpdateOktaMethodRequest {
      * @type {string}
      * @memberof MfaUpdateOktaMethodRequest
      */
-    usernameFormat?: string;
+    username_format?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function MfaUpdateOktaMethodRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'apiToken': json['api_token'] == null ? undefined : json['api_token'],
-        'baseUrl': json['base_url'] == null ? undefined : json['base_url'],
-        'methodName': json['method_name'] == null ? undefined : json['method_name'],
-        'orgName': json['org_name'] == null ? undefined : json['org_name'],
-        'primaryEmail': json['primary_email'] == null ? undefined : json['primary_email'],
+        'api_token': json['api_token'] == null ? undefined : json['api_token'],
+        'base_url': json['base_url'] == null ? undefined : json['base_url'],
+        'method_name': json['method_name'] == null ? undefined : json['method_name'],
+        'org_name': json['org_name'] == null ? undefined : json['org_name'],
+        'primary_email': json['primary_email'] == null ? undefined : json['primary_email'],
         'production': json['production'] == null ? undefined : json['production'],
-        'usernameFormat': json['username_format'] == null ? undefined : json['username_format'],
+        'username_format': json['username_format'] == null ? undefined : json['username_format'],
     };
 }
 
@@ -101,13 +101,13 @@ export function MfaUpdateOktaMethodRequestToJSONTyped(value?: MfaUpdateOktaMetho
 
     return {
         
-        'api_token': value['apiToken'],
-        'base_url': value['baseUrl'],
-        'method_name': value['methodName'],
-        'org_name': value['orgName'],
-        'primary_email': value['primaryEmail'],
+        'api_token': value['api_token'],
+        'base_url': value['base_url'],
+        'method_name': value['method_name'],
+        'org_name': value['org_name'],
+        'primary_email': value['primary_email'],
         'production': value['production'],
-        'username_format': value['usernameFormat'],
+        'username_format': value['username_format'],
     };
 }
 

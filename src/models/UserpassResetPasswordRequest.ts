@@ -30,7 +30,7 @@ export interface UserpassResetPasswordRequest {
      * @type {string}
      * @memberof UserpassResetPasswordRequest
      */
-    passwordHash?: string;
+    password_hash?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function UserpassResetPasswordRequestFromJSONTyped(json: any, ignoreDiscr
     return {
         
         'password': json['password'] == null ? undefined : json['password'],
-        'passwordHash': json['password_hash'] == null ? undefined : json['password_hash'],
+        'password_hash': json['password_hash'] == null ? undefined : json['password_hash'],
     };
 }
 
@@ -67,7 +67,7 @@ export function UserpassResetPasswordRequestToJSONTyped(value?: UserpassResetPas
     return {
         
         'password': value['password'],
-        'password_hash': value['passwordHash'],
+        'password_hash': value['password_hash'],
     };
 }
 

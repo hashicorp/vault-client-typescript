@@ -36,7 +36,7 @@ export interface SystemWriteReplicationReindexRequest {
      * @type {boolean}
      * @memberof SystemWriteReplicationReindexRequest
      */
-    skipFlush?: boolean;
+    skip_flush?: boolean;
 }
 
 /**
@@ -58,7 +58,7 @@ export function SystemWriteReplicationReindexRequestFromJSONTyped(json: any, ign
         
         'diff': json['diff'] == null ? undefined : json['diff'],
         'force': json['force'] == null ? undefined : json['force'],
-        'skipFlush': json['skip_flush'] == null ? undefined : json['skip_flush'],
+        'skip_flush': json['skip_flush'] == null ? undefined : json['skip_flush'],
     };
 }
 
@@ -75,7 +75,7 @@ export function SystemWriteReplicationReindexRequestToJSONTyped(value?: SystemWr
         
         'diff': value['diff'],
         'force': value['force'],
-        'skip_flush': value['skipFlush'],
+        'skip_flush': value['skip_flush'],
     };
 }
 

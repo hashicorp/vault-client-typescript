@@ -30,7 +30,7 @@ export interface GoogleCloudKmsSignRequest {
      * @type {number}
      * @memberof GoogleCloudKmsSignRequest
      */
-    keyVersion?: number;
+    key_version?: number;
 }
 
 /**
@@ -51,7 +51,7 @@ export function GoogleCloudKmsSignRequestFromJSONTyped(json: any, ignoreDiscrimi
     return {
         
         'digest': json['digest'] == null ? undefined : json['digest'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
     };
 }
 
@@ -67,7 +67,7 @@ export function GoogleCloudKmsSignRequestToJSONTyped(value?: GoogleCloudKmsSignR
     return {
         
         'digest': value['digest'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
     };
 }
 

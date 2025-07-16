@@ -24,7 +24,7 @@ export interface OidcWriteRoleRequest {
      * @type {string}
      * @memberof OidcWriteRoleRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * The OIDC key to use for generating tokens. The specified key must already exist.
      * @type {string}
@@ -63,7 +63,7 @@ export function OidcWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
         'key': json['key'],
         'template': json['template'] == null ? undefined : json['template'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -81,7 +81,7 @@ export function OidcWriteRoleRequestToJSONTyped(value?: OidcWriteRoleRequest | n
 
     return {
         
-        'client_id': value['clientId'],
+        'client_id': value['client_id'],
         'key': value['key'],
         'template': value['template'],
         'ttl': value['ttl'],

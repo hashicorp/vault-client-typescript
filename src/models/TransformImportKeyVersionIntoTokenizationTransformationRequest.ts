@@ -30,7 +30,7 @@ export interface TransformImportKeyVersionIntoTokenizationTransformationRequest 
      * @type {string}
      * @memberof TransformImportKeyVersionIntoTokenizationTransformationRequest
      */
-    hashFunction?: string;
+    hash_function?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function TransformImportKeyVersionIntoTokenizationTransformationRequestFr
     return {
         
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'hashFunction': json['hash_function'] == null ? undefined : json['hash_function'],
+        'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
     };
 }
 
@@ -67,7 +67,7 @@ export function TransformImportKeyVersionIntoTokenizationTransformationRequestTo
     return {
         
         'ciphertext': value['ciphertext'],
-        'hash_function': value['hashFunction'],
+        'hash_function': value['hash_function'],
     };
 }
 

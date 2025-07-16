@@ -24,13 +24,13 @@ export interface GoogleCloudKmsEncryptRequest {
      * @type {string}
      * @memberof GoogleCloudKmsEncryptRequest
      */
-    additionalAuthenticatedData?: string;
+    additional_authenticated_data?: string;
     /**
      * Integer version of the crypto key version to use for encryption. If unspecified, this defaults to the latest active crypto key version.
      * @type {number}
      * @memberof GoogleCloudKmsEncryptRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types.
      * @type {string}
@@ -56,8 +56,8 @@ export function GoogleCloudKmsEncryptRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'additionalAuthenticatedData': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'additional_authenticated_data': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'plaintext': json['plaintext'] == null ? undefined : json['plaintext'],
     };
 }
@@ -73,8 +73,8 @@ export function GoogleCloudKmsEncryptRequestToJSONTyped(value?: GoogleCloudKmsEn
 
     return {
         
-        'additional_authenticated_data': value['additionalAuthenticatedData'],
-        'key_version': value['keyVersion'],
+        'additional_authenticated_data': value['additional_authenticated_data'],
+        'key_version': value['key_version'],
         'plaintext': value['plaintext'],
     };
 }

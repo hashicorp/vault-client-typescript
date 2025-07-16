@@ -24,7 +24,7 @@ export interface PkiListUnifiedRevokedCertsResponse {
      * @type {string}
      * @memberof PkiListUnifiedRevokedCertsResponse
      */
-    keyInfo?: string;
+    key_info?: string;
     /**
      * List of Keys
      * @type {Array<string>}
@@ -50,7 +50,7 @@ export function PkiListUnifiedRevokedCertsResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
     };
 }
@@ -66,7 +66,7 @@ export function PkiListUnifiedRevokedCertsResponseToJSONTyped(value?: PkiListUni
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
     };
 }

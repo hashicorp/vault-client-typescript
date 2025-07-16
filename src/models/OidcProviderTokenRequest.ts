@@ -24,13 +24,13 @@ export interface OidcProviderTokenRequest {
      * @type {string}
      * @memberof OidcProviderTokenRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * The secret of the requesting client.
      * @type {string}
      * @memberof OidcProviderTokenRequest
      */
-    clientSecret?: string;
+    client_secret?: string;
     /**
      * The authorization code received from the provider's authorization endpoint.
      * @type {string}
@@ -42,19 +42,19 @@ export interface OidcProviderTokenRequest {
      * @type {string}
      * @memberof OidcProviderTokenRequest
      */
-    codeVerifier?: string;
+    code_verifier?: string;
     /**
      * The authorization grant type. The following grant types are supported: 'authorization_code'.
      * @type {string}
      * @memberof OidcProviderTokenRequest
      */
-    grantType: string;
+    grant_type: string;
     /**
      * The callback location where the authentication response was sent.
      * @type {string}
      * @memberof OidcProviderTokenRequest
      */
-    redirectUri: string;
+    redirect_uri: string;
 }
 
 /**
@@ -62,8 +62,8 @@ export interface OidcProviderTokenRequest {
  */
 export function instanceOfOidcProviderTokenRequest(value: object): value is OidcProviderTokenRequest {
     if (!('code' in value) || value['code'] === undefined) return false;
-    if (!('grantType' in value) || value['grantType'] === undefined) return false;
-    if (!('redirectUri' in value) || value['redirectUri'] === undefined) return false;
+    if (!('grant_type' in value) || value['grant_type'] === undefined) return false;
+    if (!('redirect_uri' in value) || value['redirect_uri'] === undefined) return false;
     return true;
 }
 
@@ -77,12 +77,12 @@ export function OidcProviderTokenRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
-        'clientSecret': json['client_secret'] == null ? undefined : json['client_secret'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
+        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'code': json['code'],
-        'codeVerifier': json['code_verifier'] == null ? undefined : json['code_verifier'],
-        'grantType': json['grant_type'],
-        'redirectUri': json['redirect_uri'],
+        'code_verifier': json['code_verifier'] == null ? undefined : json['code_verifier'],
+        'grant_type': json['grant_type'],
+        'redirect_uri': json['redirect_uri'],
     };
 }
 
@@ -97,12 +97,12 @@ export function OidcProviderTokenRequestToJSONTyped(value?: OidcProviderTokenReq
 
     return {
         
-        'client_id': value['clientId'],
-        'client_secret': value['clientSecret'],
+        'client_id': value['client_id'],
+        'client_secret': value['client_secret'],
         'code': value['code'],
-        'code_verifier': value['codeVerifier'],
-        'grant_type': value['grantType'],
-        'redirect_uri': value['redirectUri'],
+        'code_verifier': value['code_verifier'],
+        'grant_type': value['grant_type'],
+        'redirect_uri': value['redirect_uri'],
     };
 }
 

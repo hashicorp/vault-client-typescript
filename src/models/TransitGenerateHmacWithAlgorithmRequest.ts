@@ -30,7 +30,7 @@ export interface TransitGenerateHmacWithAlgorithmRequest {
      * @type {Array<object>}
      * @memberof TransitGenerateHmacWithAlgorithmRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The base64-encoded input data
      * @type {string}
@@ -42,7 +42,7 @@ export interface TransitGenerateHmacWithAlgorithmRequest {
      * @type {number}
      * @memberof TransitGenerateHmacWithAlgorithmRequest
      */
-    keyVersion?: number;
+    key_version?: number;
 }
 
 /**
@@ -63,9 +63,9 @@ export function TransitGenerateHmacWithAlgorithmRequestFromJSONTyped(json: any, 
     return {
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'input': json['input'] == null ? undefined : json['input'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
     };
 }
 
@@ -81,9 +81,9 @@ export function TransitGenerateHmacWithAlgorithmRequestToJSONTyped(value?: Trans
     return {
         
         'algorithm': value['algorithm'],
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'input': value['input'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
     };
 }
 

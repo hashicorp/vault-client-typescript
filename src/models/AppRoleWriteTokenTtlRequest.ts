@@ -24,7 +24,7 @@ export interface AppRoleWriteTokenTtlRequest {
      * @type {string}
      * @memberof AppRoleWriteTokenTtlRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteTokenTtlRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteTokenTtlRequestToJSONTyped(value?: AppRoleWriteToken
 
     return {
         
-        'token_ttl': value['tokenTtl'],
+        'token_ttl': value['token_ttl'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface SystemWriteReplicationDrSecondaryPromoteRequest {
      * @type {string}
      * @memberof SystemWriteReplicationDrSecondaryPromoteRequest
      */
-    drOperationToken?: string;
+    dr_operation_token?: string;
     /**
      * Set to true if the cluster should be promoted despite replication being in an error state. This could mean some data was not replicated to the secondary
      * @type {boolean}
@@ -36,7 +36,7 @@ export interface SystemWriteReplicationDrSecondaryPromoteRequest {
      * @type {string}
      * @memberof SystemWriteReplicationDrSecondaryPromoteRequest
      */
-    primaryClusterAddr?: string;
+    primary_cluster_addr?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function SystemWriteReplicationDrSecondaryPromoteRequestFromJSONTyped(jso
     }
     return {
         
-        'drOperationToken': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
+        'dr_operation_token': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
         'force': json['force'] == null ? undefined : json['force'],
-        'primaryClusterAddr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
+        'primary_cluster_addr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
     };
 }
 
@@ -73,9 +73,9 @@ export function SystemWriteReplicationDrSecondaryPromoteRequestToJSONTyped(value
 
     return {
         
-        'dr_operation_token': value['drOperationToken'],
+        'dr_operation_token': value['dr_operation_token'],
         'force': value['force'],
-        'primary_cluster_addr': value['primaryClusterAddr'],
+        'primary_cluster_addr': value['primary_cluster_addr'],
     };
 }
 

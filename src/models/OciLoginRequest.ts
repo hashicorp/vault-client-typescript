@@ -24,7 +24,7 @@ export interface OciLoginRequest {
      * @type {string}
      * @memberof OciLoginRequest
      */
-    requestHeaders?: string;
+    request_headers?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function OciLoginRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         
-        'requestHeaders': json['request_headers'] == null ? undefined : json['request_headers'],
+        'request_headers': json['request_headers'] == null ? undefined : json['request_headers'],
     };
 }
 
@@ -59,7 +59,7 @@ export function OciLoginRequestToJSONTyped(value?: OciLoginRequest | null, ignor
 
     return {
         
-        'request_headers': value['requestHeaders'],
+        'request_headers': value['request_headers'],
     };
 }
 

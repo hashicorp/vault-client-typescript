@@ -24,7 +24,7 @@ export interface PkiReadIssuerJsonResponse {
      * @type {Array<string>}
      * @memberof PkiReadIssuerJsonResponse
      */
-    caChain?: Array<string>;
+    ca_chain?: Array<string>;
     /**
      * Certificate
      * @type {string}
@@ -36,13 +36,13 @@ export interface PkiReadIssuerJsonResponse {
      * @type {string}
      * @memberof PkiReadIssuerJsonResponse
      */
-    issuerId?: string;
+    issuer_id?: string;
     /**
      * Issuer Name
      * @type {string}
      * @memberof PkiReadIssuerJsonResponse
      */
-    issuerName?: string;
+    issuer_name?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function PkiReadIssuerJsonResponseFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'caChain': json['ca_chain'] == null ? undefined : json['ca_chain'],
+        'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'issuerId': json['issuer_id'] == null ? undefined : json['issuer_id'],
-        'issuerName': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
     };
 }
 
@@ -80,10 +80,10 @@ export function PkiReadIssuerJsonResponseToJSONTyped(value?: PkiReadIssuerJsonRe
 
     return {
         
-        'ca_chain': value['caChain'],
+        'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
-        'issuer_id': value['issuerId'],
-        'issuer_name': value['issuerName'],
+        'issuer_id': value['issuer_id'],
+        'issuer_name': value['issuer_name'],
     };
 }
 

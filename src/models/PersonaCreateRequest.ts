@@ -24,7 +24,7 @@ export interface PersonaCreateRequest {
      * @type {string}
      * @memberof PersonaCreateRequest
      */
-    entityId?: string;
+    entity_id?: string;
     /**
      * ID of the persona
      * @type {string}
@@ -42,7 +42,7 @@ export interface PersonaCreateRequest {
      * @type {string}
      * @memberof PersonaCreateRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the persona
      * @type {string}
@@ -68,10 +68,10 @@ export function PersonaCreateRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -87,10 +87,10 @@ export function PersonaCreateRequestToJSONTyped(value?: PersonaCreateRequest | n
 
     return {
         
-        'entity_id': value['entityId'],
+        'entity_id': value['entity_id'],
         'id': value['id'],
         'metadata': value['metadata'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

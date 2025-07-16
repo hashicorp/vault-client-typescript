@@ -24,7 +24,7 @@ export interface AppRoleReadSecretIdNumUsesResponse {
      * @type {number}
      * @memberof AppRoleReadSecretIdNumUsesResponse
      */
-    secretIdNumUses?: number;
+    secret_id_num_uses?: number;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleReadSecretIdNumUsesResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'secretIdNumUses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
+        'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleReadSecretIdNumUsesResponseToJSONTyped(value?: AppRoleRea
 
     return {
         
-        'secret_id_num_uses': value['secretIdNumUses'],
+        'secret_id_num_uses': value['secret_id_num_uses'],
     };
 }
 

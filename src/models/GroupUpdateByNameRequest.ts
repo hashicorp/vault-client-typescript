@@ -30,13 +30,13 @@ export interface GroupUpdateByNameRequest {
      * @type {Array<string>}
      * @memberof GroupUpdateByNameRequest
      */
-    memberEntityIds?: Array<string>;
+    member_entity_ids?: Array<string>;
     /**
      * Group IDs to be assigned as group members.
      * @type {Array<string>}
      * @memberof GroupUpdateByNameRequest
      */
-    memberGroupIds?: Array<string>;
+    member_group_ids?: Array<string>;
     /**
      * Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
      * @type {object}
@@ -75,8 +75,8 @@ export function GroupUpdateByNameRequestFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'memberEntityIds': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
-        'memberGroupIds': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
+        'member_entity_ids': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
+        'member_group_ids': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'type': json['type'] == null ? undefined : json['type'],
@@ -95,8 +95,8 @@ export function GroupUpdateByNameRequestToJSONTyped(value?: GroupUpdateByNameReq
     return {
         
         'id': value['id'],
-        'member_entity_ids': value['memberEntityIds'],
-        'member_group_ids': value['memberGroupIds'],
+        'member_entity_ids': value['member_entity_ids'],
+        'member_group_ids': value['member_group_ids'],
         'metadata': value['metadata'],
         'policies': value['policies'],
         'type': value['type'],

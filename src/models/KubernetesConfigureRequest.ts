@@ -24,25 +24,25 @@ export interface KubernetesConfigureRequest {
      * @type {boolean}
      * @memberof KubernetesConfigureRequest
      */
-    disableLocalCaJwt?: boolean;
+    disable_local_ca_jwt?: boolean;
     /**
      * PEM encoded CA certificate to use to verify the Kubernetes API server certificate. Defaults to the local pod's CA if found.
      * @type {string}
      * @memberof KubernetesConfigureRequest
      */
-    kubernetesCaCert?: string;
+    kubernetes_ca_cert?: string;
     /**
      * Kubernetes API URL to connect to. Defaults to https://$KUBERNETES_SERVICE_HOST:KUBERNETES_SERVICE_PORT if those environment variables are set.
      * @type {string}
      * @memberof KubernetesConfigureRequest
      */
-    kubernetesHost?: string;
+    kubernetes_host?: string;
     /**
      * The JSON web token of the service account used by the secret engine to manage Kubernetes credentials. Defaults to the local pod's JWT if found.
      * @type {string}
      * @memberof KubernetesConfigureRequest
      */
-    serviceAccountJwt?: string;
+    service_account_jwt?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function KubernetesConfigureRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'disableLocalCaJwt': json['disable_local_ca_jwt'] == null ? undefined : json['disable_local_ca_jwt'],
-        'kubernetesCaCert': json['kubernetes_ca_cert'] == null ? undefined : json['kubernetes_ca_cert'],
-        'kubernetesHost': json['kubernetes_host'] == null ? undefined : json['kubernetes_host'],
-        'serviceAccountJwt': json['service_account_jwt'] == null ? undefined : json['service_account_jwt'],
+        'disable_local_ca_jwt': json['disable_local_ca_jwt'] == null ? undefined : json['disable_local_ca_jwt'],
+        'kubernetes_ca_cert': json['kubernetes_ca_cert'] == null ? undefined : json['kubernetes_ca_cert'],
+        'kubernetes_host': json['kubernetes_host'] == null ? undefined : json['kubernetes_host'],
+        'service_account_jwt': json['service_account_jwt'] == null ? undefined : json['service_account_jwt'],
     };
 }
 
@@ -80,10 +80,10 @@ export function KubernetesConfigureRequestToJSONTyped(value?: KubernetesConfigur
 
     return {
         
-        'disable_local_ca_jwt': value['disableLocalCaJwt'],
-        'kubernetes_ca_cert': value['kubernetesCaCert'],
-        'kubernetes_host': value['kubernetesHost'],
-        'service_account_jwt': value['serviceAccountJwt'],
+        'disable_local_ca_jwt': value['disable_local_ca_jwt'],
+        'kubernetes_ca_cert': value['kubernetes_ca_cert'],
+        'kubernetes_host': value['kubernetes_host'],
+        'service_account_jwt': value['service_account_jwt'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface PkiWriteIssuerResponse {
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    caChain?: Array<string>;
+    ca_chain?: Array<string>;
     /**
      * Certificate
      * @type {string}
@@ -36,103 +36,103 @@ export interface PkiWriteIssuerResponse {
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    crlDistributionPoints?: Array<string>;
+    crl_distribution_points?: Array<string>;
     /**
      * Delta CRL Distribution Points
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    deltaCrlDistributionPoints?: Array<string>;
+    delta_crl_distribution_points?: Array<string>;
     /**
      * Whether critical extension checks should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiWriteIssuerResponse
      */
-    disableCriticalExtensionChecks?: boolean;
+    disable_critical_extension_checks?: boolean;
     /**
      * Whether the issuer name check should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiWriteIssuerResponse
      */
-    disableNameChecks?: boolean;
+    disable_name_checks?: boolean;
     /**
      * Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiWriteIssuerResponse
      */
-    disableNameConstraintChecks?: boolean;
+    disable_name_constraint_checks?: boolean;
     /**
      * Whether max path length checks should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiWriteIssuerResponse
      */
-    disablePathLengthChecks?: boolean;
+    disable_path_length_checks?: boolean;
     /**
      * Whether or not templating is enabled for AIA fields
      * @type {boolean}
      * @memberof PkiWriteIssuerResponse
      */
-    enableAiaUrlTemplating?: boolean;
+    enable_aia_url_templating?: boolean;
     /**
      * Issuer Id
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    issuerId?: string;
+    issuer_id?: string;
     /**
      * Issuer Name
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    issuerName?: string;
+    issuer_name?: string;
     /**
      * Issuing Certificates
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    issuingCertificates?: Array<string>;
+    issuing_certificates?: Array<string>;
     /**
      * Key Id
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Leaf Not After Behavior
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    leafNotAfterBehavior?: string;
+    leaf_not_after_behavior?: string;
     /**
      * Manual Chain
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    manualChain?: Array<string>;
+    manual_chain?: Array<string>;
     /**
      * OCSP Servers
      * @type {Array<string>}
      * @memberof PkiWriteIssuerResponse
      */
-    ocspServers?: Array<string>;
+    ocsp_servers?: Array<string>;
     /**
      * Revocation Signature Alogrithm
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    revocationSignatureAlgorithm?: string;
+    revocation_signature_algorithm?: string;
     /**
      * Revocation time
      * @type {number}
      * @memberof PkiWriteIssuerResponse
      */
-    revocationTime?: number;
+    revocation_time?: number;
     /**
      * Revocation time RFC 3339 formatted
      * @type {string}
      * @memberof PkiWriteIssuerResponse
      */
-    revocationTimeRfc3339?: string;
+    revocation_time_rfc3339?: string;
     /**
      * Revoked
      * @type {boolean}
@@ -164,25 +164,25 @@ export function PkiWriteIssuerResponseFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'caChain': json['ca_chain'] == null ? undefined : json['ca_chain'],
+        'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'crlDistributionPoints': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
-        'deltaCrlDistributionPoints': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
-        'disableCriticalExtensionChecks': json['disable_critical_extension_checks'] == null ? undefined : json['disable_critical_extension_checks'],
-        'disableNameChecks': json['disable_name_checks'] == null ? undefined : json['disable_name_checks'],
-        'disableNameConstraintChecks': json['disable_name_constraint_checks'] == null ? undefined : json['disable_name_constraint_checks'],
-        'disablePathLengthChecks': json['disable_path_length_checks'] == null ? undefined : json['disable_path_length_checks'],
-        'enableAiaUrlTemplating': json['enable_aia_url_templating'] == null ? undefined : json['enable_aia_url_templating'],
-        'issuerId': json['issuer_id'] == null ? undefined : json['issuer_id'],
-        'issuerName': json['issuer_name'] == null ? undefined : json['issuer_name'],
-        'issuingCertificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'leafNotAfterBehavior': json['leaf_not_after_behavior'] == null ? undefined : json['leaf_not_after_behavior'],
-        'manualChain': json['manual_chain'] == null ? undefined : json['manual_chain'],
-        'ocspServers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
-        'revocationSignatureAlgorithm': json['revocation_signature_algorithm'] == null ? undefined : json['revocation_signature_algorithm'],
-        'revocationTime': json['revocation_time'] == null ? undefined : json['revocation_time'],
-        'revocationTimeRfc3339': json['revocation_time_rfc3339'] == null ? undefined : json['revocation_time_rfc3339'],
+        'crl_distribution_points': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
+        'delta_crl_distribution_points': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
+        'disable_critical_extension_checks': json['disable_critical_extension_checks'] == null ? undefined : json['disable_critical_extension_checks'],
+        'disable_name_checks': json['disable_name_checks'] == null ? undefined : json['disable_name_checks'],
+        'disable_name_constraint_checks': json['disable_name_constraint_checks'] == null ? undefined : json['disable_name_constraint_checks'],
+        'disable_path_length_checks': json['disable_path_length_checks'] == null ? undefined : json['disable_path_length_checks'],
+        'enable_aia_url_templating': json['enable_aia_url_templating'] == null ? undefined : json['enable_aia_url_templating'],
+        'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'issuing_certificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'leaf_not_after_behavior': json['leaf_not_after_behavior'] == null ? undefined : json['leaf_not_after_behavior'],
+        'manual_chain': json['manual_chain'] == null ? undefined : json['manual_chain'],
+        'ocsp_servers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
+        'revocation_signature_algorithm': json['revocation_signature_algorithm'] == null ? undefined : json['revocation_signature_algorithm'],
+        'revocation_time': json['revocation_time'] == null ? undefined : json['revocation_time'],
+        'revocation_time_rfc3339': json['revocation_time_rfc3339'] == null ? undefined : json['revocation_time_rfc3339'],
         'revoked': json['revoked'] == null ? undefined : json['revoked'],
         'usage': json['usage'] == null ? undefined : json['usage'],
     };
@@ -199,25 +199,25 @@ export function PkiWriteIssuerResponseToJSONTyped(value?: PkiWriteIssuerResponse
 
     return {
         
-        'ca_chain': value['caChain'],
+        'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
-        'crl_distribution_points': value['crlDistributionPoints'],
-        'delta_crl_distribution_points': value['deltaCrlDistributionPoints'],
-        'disable_critical_extension_checks': value['disableCriticalExtensionChecks'],
-        'disable_name_checks': value['disableNameChecks'],
-        'disable_name_constraint_checks': value['disableNameConstraintChecks'],
-        'disable_path_length_checks': value['disablePathLengthChecks'],
-        'enable_aia_url_templating': value['enableAiaUrlTemplating'],
-        'issuer_id': value['issuerId'],
-        'issuer_name': value['issuerName'],
-        'issuing_certificates': value['issuingCertificates'],
-        'key_id': value['keyId'],
-        'leaf_not_after_behavior': value['leafNotAfterBehavior'],
-        'manual_chain': value['manualChain'],
-        'ocsp_servers': value['ocspServers'],
-        'revocation_signature_algorithm': value['revocationSignatureAlgorithm'],
-        'revocation_time': value['revocationTime'],
-        'revocation_time_rfc3339': value['revocationTimeRfc3339'],
+        'crl_distribution_points': value['crl_distribution_points'],
+        'delta_crl_distribution_points': value['delta_crl_distribution_points'],
+        'disable_critical_extension_checks': value['disable_critical_extension_checks'],
+        'disable_name_checks': value['disable_name_checks'],
+        'disable_name_constraint_checks': value['disable_name_constraint_checks'],
+        'disable_path_length_checks': value['disable_path_length_checks'],
+        'enable_aia_url_templating': value['enable_aia_url_templating'],
+        'issuer_id': value['issuer_id'],
+        'issuer_name': value['issuer_name'],
+        'issuing_certificates': value['issuing_certificates'],
+        'key_id': value['key_id'],
+        'leaf_not_after_behavior': value['leaf_not_after_behavior'],
+        'manual_chain': value['manual_chain'],
+        'ocsp_servers': value['ocsp_servers'],
+        'revocation_signature_algorithm': value['revocation_signature_algorithm'],
+        'revocation_time': value['revocation_time'],
+        'revocation_time_rfc3339': value['revocation_time_rfc3339'],
         'revoked': value['revoked'],
         'usage': value['usage'],
     };

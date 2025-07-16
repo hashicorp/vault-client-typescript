@@ -24,21 +24,21 @@ export interface SamlWriteCallbackRequest {
      * @type {string}
      * @memberof SamlWriteCallbackRequest
      */
-    relayState: string;
+    RelayState: string;
     /**
      * The SAML response from the Identity Provider.
      * @type {string}
      * @memberof SamlWriteCallbackRequest
      */
-    sAMLResponse: string;
+    SAMLResponse: string;
 }
 
 /**
  * Check if a given object implements the SamlWriteCallbackRequest interface.
  */
 export function instanceOfSamlWriteCallbackRequest(value: object): value is SamlWriteCallbackRequest {
-    if (!('relayState' in value) || value['relayState'] === undefined) return false;
-    if (!('sAMLResponse' in value) || value['sAMLResponse'] === undefined) return false;
+    if (!('RelayState' in value) || value['RelayState'] === undefined) return false;
+    if (!('SAMLResponse' in value) || value['SAMLResponse'] === undefined) return false;
     return true;
 }
 
@@ -52,8 +52,8 @@ export function SamlWriteCallbackRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'relayState': json['RelayState'],
-        'sAMLResponse': json['SAMLResponse'],
+        'RelayState': json['RelayState'],
+        'SAMLResponse': json['SAMLResponse'],
     };
 }
 
@@ -68,8 +68,8 @@ export function SamlWriteCallbackRequestToJSONTyped(value?: SamlWriteCallbackReq
 
     return {
         
-        'RelayState': value['relayState'],
-        'SAMLResponse': value['sAMLResponse'],
+        'RelayState': value['RelayState'],
+        'SAMLResponse': value['SAMLResponse'],
     };
 }
 

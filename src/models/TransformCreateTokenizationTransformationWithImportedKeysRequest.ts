@@ -24,13 +24,13 @@ export interface TransformCreateTokenizationTransformationWithImportedKeysReques
      * @type {boolean}
      * @memberof TransformCreateTokenizationTransformationWithImportedKeysRequest
      */
-    allowRotation?: boolean;
+    allow_rotation?: boolean;
     /**
      * Specifies a list of allowed roles that this transformation can be assigned to. A role using this transformation must exist in this list in order for encode and decode operations to properly function.
      * @type {Array<string>}
      * @memberof TransformCreateTokenizationTransformationWithImportedKeysRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
      * @type {string}
@@ -42,19 +42,19 @@ export interface TransformCreateTokenizationTransformationWithImportedKeysReques
      * @type {string}
      * @memberof TransformCreateTokenizationTransformationWithImportedKeysRequest
      */
-    hashFunction?: string;
+    hash_function?: string;
     /**
      * Specifies the mapping mode for stored tokenization values. 'default', the default is strongly recommended for high security. 'exportable' allows for all plaintexts to be decoded simultaneously in an emergency.
      * @type {string}
      * @memberof TransformCreateTokenizationTransformationWithImportedKeysRequest
      */
-    mappingMode?: string;
+    mapping_mode?: string;
     /**
      * The maximum TTL of a token. If 0 or unspecified, tokens may have no expiration.
      * @type {string}
      * @memberof TransformCreateTokenizationTransformationWithImportedKeysRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * The store or stores which will contain tokenized state.
      * @type {Array<string>}
@@ -86,12 +86,12 @@ export function TransformCreateTokenizationTransformationWithImportedKeysRequest
     }
     return {
         
-        'allowRotation': json['allow_rotation'] == null ? undefined : json['allow_rotation'],
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'allow_rotation': json['allow_rotation'] == null ? undefined : json['allow_rotation'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'hashFunction': json['hash_function'] == null ? undefined : json['hash_function'],
-        'mappingMode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
+        'mapping_mode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'stores': json['stores'] == null ? undefined : json['stores'],
         'template': json['template'] == null ? undefined : json['template'],
     };
@@ -108,12 +108,12 @@ export function TransformCreateTokenizationTransformationWithImportedKeysRequest
 
     return {
         
-        'allow_rotation': value['allowRotation'],
-        'allowed_roles': value['allowedRoles'],
+        'allow_rotation': value['allow_rotation'],
+        'allowed_roles': value['allowed_roles'],
         'ciphertext': value['ciphertext'],
-        'hash_function': value['hashFunction'],
-        'mapping_mode': value['mappingMode'],
-        'max_ttl': value['maxTtl'],
+        'hash_function': value['hash_function'],
+        'mapping_mode': value['mapping_mode'],
+        'max_ttl': value['max_ttl'],
         'stores': value['stores'],
         'template': value['template'],
     };

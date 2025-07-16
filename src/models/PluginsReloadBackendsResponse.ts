@@ -24,7 +24,7 @@ export interface PluginsReloadBackendsResponse {
      * @type {string}
      * @memberof PluginsReloadBackendsResponse
      */
-    reloadId?: string;
+    reload_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function PluginsReloadBackendsResponseFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'reloadId': json['reload_id'] == null ? undefined : json['reload_id'],
+        'reload_id': json['reload_id'] == null ? undefined : json['reload_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function PluginsReloadBackendsResponseToJSONTyped(value?: PluginsReloadBa
 
     return {
         
-        'reload_id': value['reloadId'],
+        'reload_id': value['reload_id'],
     };
 }
 

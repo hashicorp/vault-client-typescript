@@ -24,21 +24,21 @@ export interface MfaAdminGenerateTotpSecretRequest {
      * @type {string}
      * @memberof MfaAdminGenerateTotpSecretRequest
      */
-    entityId: string;
+    entity_id: string;
     /**
      * The unique identifier for this MFA method.
      * @type {string}
      * @memberof MfaAdminGenerateTotpSecretRequest
      */
-    methodId: string;
+    method_id: string;
 }
 
 /**
  * Check if a given object implements the MfaAdminGenerateTotpSecretRequest interface.
  */
 export function instanceOfMfaAdminGenerateTotpSecretRequest(value: object): value is MfaAdminGenerateTotpSecretRequest {
-    if (!('entityId' in value) || value['entityId'] === undefined) return false;
-    if (!('methodId' in value) || value['methodId'] === undefined) return false;
+    if (!('entity_id' in value) || value['entity_id'] === undefined) return false;
+    if (!('method_id' in value) || value['method_id'] === undefined) return false;
     return true;
 }
 
@@ -52,8 +52,8 @@ export function MfaAdminGenerateTotpSecretRequestFromJSONTyped(json: any, ignore
     }
     return {
         
-        'entityId': json['entity_id'],
-        'methodId': json['method_id'],
+        'entity_id': json['entity_id'],
+        'method_id': json['method_id'],
     };
 }
 
@@ -68,8 +68,8 @@ export function MfaAdminGenerateTotpSecretRequestToJSONTyped(value?: MfaAdminGen
 
     return {
         
-        'entity_id': value['entityId'],
-        'method_id': value['methodId'],
+        'entity_id': value['entity_id'],
+        'method_id': value['method_id'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponse {
      * @type {object}
      * @memberof SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponse
      */
-    associatedSecrets?: object;
+    associated_secrets?: object;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponseFro
     }
     return {
         
-        'associatedSecrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
+        'associated_secrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponseToJ
 
     return {
         
-        'associated_secrets': value['associatedSecrets'],
+        'associated_secrets': value['associated_secrets'],
     };
 }
 

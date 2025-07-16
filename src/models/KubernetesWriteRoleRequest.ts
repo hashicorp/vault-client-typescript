@@ -24,73 +24,73 @@ export interface KubernetesWriteRoleRequest {
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    allowedKubernetesNamespaceSelector?: string;
+    allowed_kubernetes_namespace_selector?: string;
     /**
      * A list of the Kubernetes namespaces in which credentials can be generated. If set to "*" all namespaces are allowed.
      * @type {Array<string>}
      * @memberof KubernetesWriteRoleRequest
      */
-    allowedKubernetesNamespaces?: Array<string>;
+    allowed_kubernetes_namespaces?: Array<string>;
     /**
      * Additional annotations to apply to all generated Kubernetes objects.
      * @type {object}
      * @memberof KubernetesWriteRoleRequest
      */
-    extraAnnotations?: object;
+    extra_annotations?: object;
     /**
      * Additional labels to apply to all generated Kubernetes objects.
      * @type {object}
      * @memberof KubernetesWriteRoleRequest
      */
-    extraLabels?: object;
+    extra_labels?: object;
     /**
      * The Role or ClusterRole rules to use when generating a role. Accepts either a JSON or YAML object. If set, the entire chain of Kubernetes objects will be generated.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    generatedRoleRules?: string;
+    generated_role_rules?: string;
     /**
      * The pre-existing Role or ClusterRole to bind a generated service account to. If set, Kubernetes token, service account, and role binding objects will be created.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    kubernetesRoleName?: string;
+    kubernetes_role_name?: string;
     /**
      * Specifies whether the Kubernetes role is a Role or ClusterRole.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    kubernetesRoleType?: string;
+    kubernetes_role_type?: string;
     /**
      * The name template to use when generating service accounts, roles and role bindings. If unset, a default template is used.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    nameTemplate?: string;
+    name_template?: string;
     /**
      * The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    serviceAccountName?: string;
+    service_account_name?: string;
     /**
      * The default audiences for generated Kubernetes service account tokens. If not set or set to "", will use k8s cluster default.
      * @type {Array<string>}
      * @memberof KubernetesWriteRoleRequest
      */
-    tokenDefaultAudiences?: Array<string>;
+    token_default_audiences?: Array<string>;
     /**
      * The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    tokenDefaultTtl?: string;
+    token_default_ttl?: string;
     /**
      * The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
 }
 
 /**
@@ -110,18 +110,18 @@ export function KubernetesWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'allowedKubernetesNamespaceSelector': json['allowed_kubernetes_namespace_selector'] == null ? undefined : json['allowed_kubernetes_namespace_selector'],
-        'allowedKubernetesNamespaces': json['allowed_kubernetes_namespaces'] == null ? undefined : json['allowed_kubernetes_namespaces'],
-        'extraAnnotations': json['extra_annotations'] == null ? undefined : json['extra_annotations'],
-        'extraLabels': json['extra_labels'] == null ? undefined : json['extra_labels'],
-        'generatedRoleRules': json['generated_role_rules'] == null ? undefined : json['generated_role_rules'],
-        'kubernetesRoleName': json['kubernetes_role_name'] == null ? undefined : json['kubernetes_role_name'],
-        'kubernetesRoleType': json['kubernetes_role_type'] == null ? undefined : json['kubernetes_role_type'],
-        'nameTemplate': json['name_template'] == null ? undefined : json['name_template'],
-        'serviceAccountName': json['service_account_name'] == null ? undefined : json['service_account_name'],
-        'tokenDefaultAudiences': json['token_default_audiences'] == null ? undefined : json['token_default_audiences'],
-        'tokenDefaultTtl': json['token_default_ttl'] == null ? undefined : json['token_default_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'allowed_kubernetes_namespace_selector': json['allowed_kubernetes_namespace_selector'] == null ? undefined : json['allowed_kubernetes_namespace_selector'],
+        'allowed_kubernetes_namespaces': json['allowed_kubernetes_namespaces'] == null ? undefined : json['allowed_kubernetes_namespaces'],
+        'extra_annotations': json['extra_annotations'] == null ? undefined : json['extra_annotations'],
+        'extra_labels': json['extra_labels'] == null ? undefined : json['extra_labels'],
+        'generated_role_rules': json['generated_role_rules'] == null ? undefined : json['generated_role_rules'],
+        'kubernetes_role_name': json['kubernetes_role_name'] == null ? undefined : json['kubernetes_role_name'],
+        'kubernetes_role_type': json['kubernetes_role_type'] == null ? undefined : json['kubernetes_role_type'],
+        'name_template': json['name_template'] == null ? undefined : json['name_template'],
+        'service_account_name': json['service_account_name'] == null ? undefined : json['service_account_name'],
+        'token_default_audiences': json['token_default_audiences'] == null ? undefined : json['token_default_audiences'],
+        'token_default_ttl': json['token_default_ttl'] == null ? undefined : json['token_default_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
     };
 }
 
@@ -136,18 +136,18 @@ export function KubernetesWriteRoleRequestToJSONTyped(value?: KubernetesWriteRol
 
     return {
         
-        'allowed_kubernetes_namespace_selector': value['allowedKubernetesNamespaceSelector'],
-        'allowed_kubernetes_namespaces': value['allowedKubernetesNamespaces'],
-        'extra_annotations': value['extraAnnotations'],
-        'extra_labels': value['extraLabels'],
-        'generated_role_rules': value['generatedRoleRules'],
-        'kubernetes_role_name': value['kubernetesRoleName'],
-        'kubernetes_role_type': value['kubernetesRoleType'],
-        'name_template': value['nameTemplate'],
-        'service_account_name': value['serviceAccountName'],
-        'token_default_audiences': value['tokenDefaultAudiences'],
-        'token_default_ttl': value['tokenDefaultTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
+        'allowed_kubernetes_namespace_selector': value['allowed_kubernetes_namespace_selector'],
+        'allowed_kubernetes_namespaces': value['allowed_kubernetes_namespaces'],
+        'extra_annotations': value['extra_annotations'],
+        'extra_labels': value['extra_labels'],
+        'generated_role_rules': value['generated_role_rules'],
+        'kubernetes_role_name': value['kubernetes_role_name'],
+        'kubernetes_role_type': value['kubernetes_role_type'],
+        'name_template': value['name_template'],
+        'service_account_name': value['service_account_name'],
+        'token_default_audiences': value['token_default_audiences'],
+        'token_default_ttl': value['token_default_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
     };
 }
 

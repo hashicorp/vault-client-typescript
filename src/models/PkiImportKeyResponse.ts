@@ -24,19 +24,19 @@ export interface PkiImportKeyResponse {
      * @type {string}
      * @memberof PkiImportKeyResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Name assigned to this key.
      * @type {string}
      * @memberof PkiImportKeyResponse
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiImportKeyResponse
      */
-    keyType?: string;
+    key_type?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function PkiImportKeyResponseFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
     };
 }
 
@@ -73,9 +73,9 @@ export function PkiImportKeyResponseToJSONTyped(value?: PkiImportKeyResponse | n
 
     return {
         
-        'key_id': value['keyId'],
-        'key_name': value['keyName'],
-        'key_type': value['keyType'],
+        'key_id': value['key_id'],
+        'key_name': value['key_name'],
+        'key_type': value['key_type'],
     };
 }
 

@@ -24,19 +24,19 @@ export interface TokenCreateOrphanRequest {
      * @type {string}
      * @memberof TokenCreateOrphanRequest
      */
-    displayName?: string;
+    display_name?: string;
     /**
      * Name of the entity alias to associate with this token
      * @type {string}
      * @memberof TokenCreateOrphanRequest
      */
-    entityAlias?: string;
+    entity_alias?: string;
     /**
      * Explicit Max TTL of this token
      * @type {string}
      * @memberof TokenCreateOrphanRequest
      */
-    explicitMaxTtl?: string;
+    explicit_max_ttl?: string;
     /**
      * Value for the token
      * @type {string}
@@ -61,19 +61,19 @@ export interface TokenCreateOrphanRequest {
      * @type {boolean}
      * @memberof TokenCreateOrphanRequest
      */
-    noDefaultPolicy?: boolean;
+    no_default_policy?: boolean;
     /**
      * Create the token with no parent
      * @type {boolean}
      * @memberof TokenCreateOrphanRequest
      */
-    noParent?: boolean;
+    no_parent?: boolean;
     /**
      * Max number of uses for this token
      * @type {number}
      * @memberof TokenCreateOrphanRequest
      */
-    numUses?: number;
+    num_uses?: number;
     /**
      * Renew period
      * @type {string}
@@ -123,15 +123,15 @@ export function TokenCreateOrphanRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'displayName': json['display_name'] == null ? undefined : json['display_name'],
-        'entityAlias': json['entity_alias'] == null ? undefined : json['entity_alias'],
-        'explicitMaxTtl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
+        'display_name': json['display_name'] == null ? undefined : json['display_name'],
+        'entity_alias': json['entity_alias'] == null ? undefined : json['entity_alias'],
+        'explicit_max_ttl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
         'id': json['id'] == null ? undefined : json['id'],
         'lease': json['lease'] == null ? undefined : json['lease'],
         'meta': json['meta'] == null ? undefined : json['meta'],
-        'noDefaultPolicy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
-        'noParent': json['no_parent'] == null ? undefined : json['no_parent'],
-        'numUses': json['num_uses'] == null ? undefined : json['num_uses'],
+        'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
+        'no_parent': json['no_parent'] == null ? undefined : json['no_parent'],
+        'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'renewable': json['renewable'] == null ? undefined : json['renewable'],
@@ -151,15 +151,15 @@ export function TokenCreateOrphanRequestToJSONTyped(value?: TokenCreateOrphanReq
 
     return {
         
-        'display_name': value['displayName'],
-        'entity_alias': value['entityAlias'],
-        'explicit_max_ttl': value['explicitMaxTtl'],
+        'display_name': value['display_name'],
+        'entity_alias': value['entity_alias'],
+        'explicit_max_ttl': value['explicit_max_ttl'],
         'id': value['id'],
         'lease': value['lease'],
         'meta': value['meta'],
-        'no_default_policy': value['noDefaultPolicy'],
-        'no_parent': value['noParent'],
-        'num_uses': value['numUses'],
+        'no_default_policy': value['no_default_policy'],
+        'no_parent': value['no_parent'],
+        'num_uses': value['num_uses'],
         'period': value['period'],
         'policies': value['policies'],
         'renewable': value['renewable'],

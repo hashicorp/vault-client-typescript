@@ -24,7 +24,7 @@ export interface GoogleCloudKmsDecryptRequest {
      * @type {string}
      * @memberof GoogleCloudKmsDecryptRequest
      */
-    additionalAuthenticatedData?: string;
+    additional_authenticated_data?: string;
     /**
      * Ciphertext to decrypt as previously returned from an encrypt operation. This must be base64-encoded ciphertext as previously returned from an encrypt operation.
      * @type {string}
@@ -36,7 +36,7 @@ export interface GoogleCloudKmsDecryptRequest {
      * @type {number}
      * @memberof GoogleCloudKmsDecryptRequest
      */
-    keyVersion?: number;
+    key_version?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function GoogleCloudKmsDecryptRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'additionalAuthenticatedData': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
+        'additional_authenticated_data': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
     };
 }
 
@@ -73,9 +73,9 @@ export function GoogleCloudKmsDecryptRequestToJSONTyped(value?: GoogleCloudKmsDe
 
     return {
         
-        'additional_authenticated_data': value['additionalAuthenticatedData'],
+        'additional_authenticated_data': value['additional_authenticated_data'],
         'ciphertext': value['ciphertext'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
     };
 }
 

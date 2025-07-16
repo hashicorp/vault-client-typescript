@@ -30,7 +30,7 @@ export interface SystemWriteReplicationPrimarySecondaryTokenRequest {
      * @type {string}
      * @memberof SystemWriteReplicationPrimarySecondaryTokenRequest
      */
-    secondaryPublicKey?: string;
+    secondary_public_key?: string;
     /**
      * The TTL to use for the secondary activation token. Defaults to 30 minutes.
      * @type {string}
@@ -57,7 +57,7 @@ export function SystemWriteReplicationPrimarySecondaryTokenRequestFromJSONTyped(
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'secondaryPublicKey': json['secondary_public_key'] == null ? undefined : json['secondary_public_key'],
+        'secondary_public_key': json['secondary_public_key'] == null ? undefined : json['secondary_public_key'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -74,7 +74,7 @@ export function SystemWriteReplicationPrimarySecondaryTokenRequestToJSONTyped(va
     return {
         
         'id': value['id'],
-        'secondary_public_key': value['secondaryPublicKey'],
+        'secondary_public_key': value['secondary_public_key'],
         'ttl': value['ttl'],
     };
 }

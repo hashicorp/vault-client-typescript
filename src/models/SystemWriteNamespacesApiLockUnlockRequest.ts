@@ -24,7 +24,7 @@ export interface SystemWriteNamespacesApiLockUnlockRequest {
      * @type {string}
      * @memberof SystemWriteNamespacesApiLockUnlockRequest
      */
-    unlockKey?: string;
+    unlock_key?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteNamespacesApiLockUnlockRequestFromJSONTyped(json: any
     }
     return {
         
-        'unlockKey': json['unlock_key'] == null ? undefined : json['unlock_key'],
+        'unlock_key': json['unlock_key'] == null ? undefined : json['unlock_key'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteNamespacesApiLockUnlockRequestToJSONTyped(value?: Sys
 
     return {
         
-        'unlock_key': value['unlockKey'],
+        'unlock_key': value['unlock_key'],
     };
 }
 

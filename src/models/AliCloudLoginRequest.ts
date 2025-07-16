@@ -24,13 +24,13 @@ export interface AliCloudLoginRequest {
      * @type {string}
      * @memberof AliCloudLoginRequest
      */
-    identityRequestHeaders?: string;
+    identity_request_headers?: string;
     /**
      * Base64-encoded full URL against which to make the AliCloud request.
      * @type {string}
      * @memberof AliCloudLoginRequest
      */
-    identityRequestUrl?: string;
+    identity_request_url?: string;
     /**
      * Name of the role against which the login is being attempted. If a matching role is not found, login fails.
      * @type {string}
@@ -57,8 +57,8 @@ export function AliCloudLoginRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'identityRequestHeaders': json['identity_request_headers'] == null ? undefined : json['identity_request_headers'],
-        'identityRequestUrl': json['identity_request_url'] == null ? undefined : json['identity_request_url'],
+        'identity_request_headers': json['identity_request_headers'] == null ? undefined : json['identity_request_headers'],
+        'identity_request_url': json['identity_request_url'] == null ? undefined : json['identity_request_url'],
         'role': json['role'],
     };
 }
@@ -74,8 +74,8 @@ export function AliCloudLoginRequestToJSONTyped(value?: AliCloudLoginRequest | n
 
     return {
         
-        'identity_request_headers': value['identityRequestHeaders'],
-        'identity_request_url': value['identityRequestUrl'],
+        'identity_request_headers': value['identity_request_headers'],
+        'identity_request_url': value['identity_request_url'],
         'role': value['role'],
     };
 }

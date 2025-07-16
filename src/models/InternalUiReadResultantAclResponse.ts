@@ -24,19 +24,19 @@ export interface InternalUiReadResultantAclResponse {
      * @type {string}
      * @memberof InternalUiReadResultantAclResponse
      */
-    chrootNamespace?: string;
+    chroot_namespace?: string;
     /**
      * 
      * @type {object}
      * @memberof InternalUiReadResultantAclResponse
      */
-    exactPaths?: object;
+    exact_paths?: object;
     /**
      * 
      * @type {object}
      * @memberof InternalUiReadResultantAclResponse
      */
-    globPaths?: object;
+    glob_paths?: object;
     /**
      * 
      * @type {boolean}
@@ -62,9 +62,9 @@ export function InternalUiReadResultantAclResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'chrootNamespace': json['chroot_namespace'] == null ? undefined : json['chroot_namespace'],
-        'exactPaths': json['exact_paths'] == null ? undefined : json['exact_paths'],
-        'globPaths': json['glob_paths'] == null ? undefined : json['glob_paths'],
+        'chroot_namespace': json['chroot_namespace'] == null ? undefined : json['chroot_namespace'],
+        'exact_paths': json['exact_paths'] == null ? undefined : json['exact_paths'],
+        'glob_paths': json['glob_paths'] == null ? undefined : json['glob_paths'],
         'root': json['root'] == null ? undefined : json['root'],
     };
 }
@@ -80,9 +80,9 @@ export function InternalUiReadResultantAclResponseToJSONTyped(value?: InternalUi
 
     return {
         
-        'chroot_namespace': value['chrootNamespace'],
-        'exact_paths': value['exactPaths'],
-        'glob_paths': value['globPaths'],
+        'chroot_namespace': value['chroot_namespace'],
+        'exact_paths': value['exact_paths'],
+        'glob_paths': value['glob_paths'],
         'root': value['root'],
     };
 }

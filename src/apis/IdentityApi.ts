@@ -158,7 +158,7 @@ import {
 } from '../models/index';
 
 export interface IdentityApiAliasCreateOperationRequest {
-    aliasCreateRequest: AliasCreateRequest;
+    AliasCreateRequest: AliasCreateRequest;
 }
 
 export interface IdentityApiAliasDeleteByIdRequest {
@@ -175,31 +175,31 @@ export interface IdentityApiAliasReadByIdRequest {
 
 export interface IdentityApiAliasUpdateByIdOperationRequest {
     id: string;
-    aliasUpdateByIdRequest: AliasUpdateByIdRequest;
+    AliasUpdateByIdRequest: AliasUpdateByIdRequest;
 }
 
 export interface IdentityApiEntitiesCreateDuplicatesOperationRequest {
-    entitiesCreateDuplicatesRequest: EntitiesCreateDuplicatesRequest;
+    EntitiesCreateDuplicatesRequest: EntitiesCreateDuplicatesRequest;
 }
 
 export interface IdentityApiEntityAliasCreateDuplicatesOperationRequest {
-    entityAliasCreateDuplicatesRequest: EntityAliasCreateDuplicatesRequest;
+    EntityAliasCreateDuplicatesRequest: EntityAliasCreateDuplicatesRequest;
 }
 
 export interface IdentityApiEntityAliasesCreateDuplicatesOperationRequest {
-    entityAliasesCreateDuplicatesRequest: EntityAliasesCreateDuplicatesRequest;
+    EntityAliasesCreateDuplicatesRequest: EntityAliasesCreateDuplicatesRequest;
 }
 
 export interface IdentityApiEntityBatchDeleteOperationRequest {
-    entityBatchDeleteRequest: EntityBatchDeleteRequest;
+    EntityBatchDeleteRequest: EntityBatchDeleteRequest;
 }
 
 export interface IdentityApiEntityCreateOperationRequest {
-    entityCreateRequest: EntityCreateRequest;
+    EntityCreateRequest: EntityCreateRequest;
 }
 
 export interface IdentityApiEntityCreateAliasOperationRequest {
-    entityCreateAliasRequest: EntityCreateAliasRequest;
+    EntityCreateAliasRequest: EntityCreateAliasRequest;
 }
 
 export interface IdentityApiEntityDeleteAliasByIdRequest {
@@ -231,11 +231,11 @@ export interface IdentityApiEntityListFromStorageRequest {
 }
 
 export interface IdentityApiEntityLookUpOperationRequest {
-    entityLookUpRequest: EntityLookUpRequest;
+    EntityLookUpRequest: EntityLookUpRequest;
 }
 
 export interface IdentityApiEntityMergeOperationRequest {
-    entityMergeRequest: EntityMergeRequest;
+    EntityMergeRequest: EntityMergeRequest;
 }
 
 export interface IdentityApiEntityReadAliasByIdRequest {
@@ -252,25 +252,25 @@ export interface IdentityApiEntityReadByNameRequest {
 
 export interface IdentityApiEntityUpdateAliasByIdOperationRequest {
     id: string;
-    entityUpdateAliasByIdRequest: EntityUpdateAliasByIdRequest;
+    EntityUpdateAliasByIdRequest: EntityUpdateAliasByIdRequest;
 }
 
 export interface IdentityApiEntityUpdateByIdOperationRequest {
     id: string;
-    entityUpdateByIdRequest: EntityUpdateByIdRequest;
+    EntityUpdateByIdRequest: EntityUpdateByIdRequest;
 }
 
 export interface IdentityApiEntityUpdateByNameOperationRequest {
     name: string;
-    entityUpdateByNameRequest: EntityUpdateByNameRequest;
+    EntityUpdateByNameRequest: EntityUpdateByNameRequest;
 }
 
 export interface IdentityApiGroupCreateOperationRequest {
-    groupCreateRequest: GroupCreateRequest;
+    GroupCreateRequest: GroupCreateRequest;
 }
 
 export interface IdentityApiGroupCreateAliasOperationRequest {
-    groupCreateAliasRequest: GroupCreateAliasRequest;
+    GroupCreateAliasRequest: GroupCreateAliasRequest;
 }
 
 export interface IdentityApiGroupDeleteAliasByIdRequest {
@@ -302,7 +302,7 @@ export interface IdentityApiGroupListFromStorageRequest {
 }
 
 export interface IdentityApiGroupLookUpOperationRequest {
-    groupLookUpRequest: GroupLookUpRequest;
+    GroupLookUpRequest: GroupLookUpRequest;
 }
 
 export interface IdentityApiGroupReadAliasByIdRequest {
@@ -319,49 +319,49 @@ export interface IdentityApiGroupReadByNameRequest {
 
 export interface IdentityApiGroupUpdateAliasByIdOperationRequest {
     id: string;
-    groupUpdateAliasByIdRequest: GroupUpdateAliasByIdRequest;
+    GroupUpdateAliasByIdRequest: GroupUpdateAliasByIdRequest;
 }
 
 export interface IdentityApiGroupUpdateByIdOperationRequest {
     id: string;
-    groupUpdateByIdRequest: GroupUpdateByIdRequest;
+    GroupUpdateByIdRequest: GroupUpdateByIdRequest;
 }
 
 export interface IdentityApiGroupUpdateByNameOperationRequest {
     name: string;
-    groupUpdateByNameRequest: GroupUpdateByNameRequest;
+    GroupUpdateByNameRequest: GroupUpdateByNameRequest;
 }
 
 export interface IdentityApiGroupsCreateDuplicatesOperationRequest {
-    groupsCreateDuplicatesRequest: GroupsCreateDuplicatesRequest;
+    GroupsCreateDuplicatesRequest: GroupsCreateDuplicatesRequest;
 }
 
 export interface IdentityApiMfaAdminDestroyTotpSecretOperationRequest {
-    mfaAdminDestroyTotpSecretRequest: MfaAdminDestroyTotpSecretRequest;
+    MfaAdminDestroyTotpSecretRequest: MfaAdminDestroyTotpSecretRequest;
 }
 
 export interface IdentityApiMfaAdminGenerateTotpSecretOperationRequest {
-    mfaAdminGenerateTotpSecretRequest: MfaAdminGenerateTotpSecretRequest;
+    MfaAdminGenerateTotpSecretRequest: MfaAdminGenerateTotpSecretRequest;
 }
 
 export interface IdentityApiMfaCreateDuoMethodOperationRequest {
-    mfaCreateDuoMethodRequest: MfaCreateDuoMethodRequest;
+    MfaCreateDuoMethodRequest: MfaCreateDuoMethodRequest;
 }
 
 export interface IdentityApiMfaCreateOktaMethodOperationRequest {
-    mfaCreateOktaMethodRequest: MfaCreateOktaMethodRequest;
+    MfaCreateOktaMethodRequest: MfaCreateOktaMethodRequest;
 }
 
 export interface IdentityApiMfaCreatePingIdMethodOperationRequest {
-    mfaCreatePingIdMethodRequest: MfaCreatePingIdMethodRequest;
+    MfaCreatePingIdMethodRequest: MfaCreatePingIdMethodRequest;
 }
 
 export interface IdentityApiMfaCreateTotpMethodOperationRequest {
-    mfaCreateTotpMethodRequest: MfaCreateTotpMethodRequest;
+    MfaCreateTotpMethodRequest: MfaCreateTotpMethodRequest;
 }
 
 export interface IdentityApiMfaDeleteDuoMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaDeleteLoginEnforcementRequest {
@@ -369,19 +369,19 @@ export interface IdentityApiMfaDeleteLoginEnforcementRequest {
 }
 
 export interface IdentityApiMfaDeleteOktaMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaDeletePingIdMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaDeleteTotpMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaGenerateTotpSecretOperationRequest {
-    mfaGenerateTotpSecretRequest: MfaGenerateTotpSecretRequest;
+    MfaGenerateTotpSecretRequest: MfaGenerateTotpSecretRequest;
 }
 
 export interface IdentityApiMfaListDuoMethodsRequest {
@@ -409,7 +409,7 @@ export interface IdentityApiMfaListTotpMethodsRequest {
 }
 
 export interface IdentityApiMfaReadDuoMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaReadLoginEnforcementRequest {
@@ -417,48 +417,48 @@ export interface IdentityApiMfaReadLoginEnforcementRequest {
 }
 
 export interface IdentityApiMfaReadMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaReadOktaMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaReadPingIdMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaReadTotpMethodRequest {
-    methodId: string;
+    method_id: string;
 }
 
 export interface IdentityApiMfaUpdateDuoMethodOperationRequest {
-    methodId: string;
-    mfaUpdateDuoMethodRequest: MfaUpdateDuoMethodRequest;
+    method_id: string;
+    MfaUpdateDuoMethodRequest: MfaUpdateDuoMethodRequest;
 }
 
 export interface IdentityApiMfaUpdateOktaMethodOperationRequest {
-    methodId: string;
-    mfaUpdateOktaMethodRequest: MfaUpdateOktaMethodRequest;
+    method_id: string;
+    MfaUpdateOktaMethodRequest: MfaUpdateOktaMethodRequest;
 }
 
 export interface IdentityApiMfaUpdatePingIdMethodOperationRequest {
-    methodId: string;
-    mfaUpdatePingIdMethodRequest: MfaUpdatePingIdMethodRequest;
+    method_id: string;
+    MfaUpdatePingIdMethodRequest: MfaUpdatePingIdMethodRequest;
 }
 
 export interface IdentityApiMfaUpdateTotpMethodOperationRequest {
-    methodId: string;
-    mfaUpdateTotpMethodRequest: MfaUpdateTotpMethodRequest;
+    method_id: string;
+    MfaUpdateTotpMethodRequest: MfaUpdateTotpMethodRequest;
 }
 
 export interface IdentityApiMfaWriteLoginEnforcementOperationRequest {
     name: string;
-    mfaWriteLoginEnforcementRequest: MfaWriteLoginEnforcementRequest;
+    MfaWriteLoginEnforcementRequest: MfaWriteLoginEnforcementRequest;
 }
 
 export interface IdentityApiOidcConfigureOperationRequest {
-    oidcConfigureRequest: OidcConfigureRequest;
+    OidcConfigureRequest: OidcConfigureRequest;
 }
 
 export interface IdentityApiOidcDeleteAssignmentRequest {
@@ -490,7 +490,7 @@ export interface IdentityApiOidcGenerateTokenRequest {
 }
 
 export interface IdentityApiOidcIntrospectOperationRequest {
-    oidcIntrospectRequest: OidcIntrospectRequest;
+    OidcIntrospectRequest: OidcIntrospectRequest;
 }
 
 export interface IdentityApiOidcListAssignmentsRequest {
@@ -507,7 +507,7 @@ export interface IdentityApiOidcListKeysRequest {
 
 export interface IdentityApiOidcListProvidersRequest {
     list: OidcListProvidersListEnum;
-    allowedClientId?: string;
+    allowed_client_id?: string;
 }
 
 export interface IdentityApiOidcListRolesRequest {
@@ -520,25 +520,25 @@ export interface IdentityApiOidcListScopesRequest {
 
 export interface IdentityApiOidcProviderAuthorizeRequest {
     name: string;
-    clientId?: string;
-    codeChallenge?: string;
-    codeChallengeMethod?: string;
-    maxAge?: number;
+    client_id?: string;
+    code_challenge?: string;
+    code_challenge_method?: string;
+    max_age?: number;
     nonce?: string;
-    redirectUri?: string;
-    responseType?: string;
+    redirect_uri?: string;
+    response_type?: string;
     scope?: string;
     state?: string;
 }
 
 export interface IdentityApiOidcProviderAuthorizeWithParametersOperationRequest {
     name: string;
-    oidcProviderAuthorizeWithParametersRequest: OidcProviderAuthorizeWithParametersRequest;
+    OidcProviderAuthorizeWithParametersRequest: OidcProviderAuthorizeWithParametersRequest;
 }
 
 export interface IdentityApiOidcProviderTokenOperationRequest {
     name: string;
-    oidcProviderTokenRequest: OidcProviderTokenRequest;
+    OidcProviderTokenRequest: OidcProviderTokenRequest;
 }
 
 export interface IdentityApiOidcProviderUserInfoRequest {
@@ -591,41 +591,41 @@ export interface IdentityApiOidcReadScopeRequest {
 
 export interface IdentityApiOidcRotateKeyOperationRequest {
     name: string;
-    oidcRotateKeyRequest: OidcRotateKeyRequest;
+    OidcRotateKeyRequest: OidcRotateKeyRequest;
 }
 
 export interface IdentityApiOidcWriteAssignmentOperationRequest {
     name: string;
-    oidcWriteAssignmentRequest: OidcWriteAssignmentRequest;
+    OidcWriteAssignmentRequest: OidcWriteAssignmentRequest;
 }
 
 export interface IdentityApiOidcWriteClientOperationRequest {
     name: string;
-    oidcWriteClientRequest: OidcWriteClientRequest;
+    OidcWriteClientRequest: OidcWriteClientRequest;
 }
 
 export interface IdentityApiOidcWriteKeyOperationRequest {
     name: string;
-    oidcWriteKeyRequest: OidcWriteKeyRequest;
+    OidcWriteKeyRequest: OidcWriteKeyRequest;
 }
 
 export interface IdentityApiOidcWriteProviderOperationRequest {
     name: string;
-    oidcWriteProviderRequest: OidcWriteProviderRequest;
+    OidcWriteProviderRequest: OidcWriteProviderRequest;
 }
 
 export interface IdentityApiOidcWriteRoleOperationRequest {
     name: string;
-    oidcWriteRoleRequest: OidcWriteRoleRequest;
+    OidcWriteRoleRequest: OidcWriteRoleRequest;
 }
 
 export interface IdentityApiOidcWriteScopeOperationRequest {
     name: string;
-    oidcWriteScopeRequest: OidcWriteScopeRequest;
+    OidcWriteScopeRequest: OidcWriteScopeRequest;
 }
 
 export interface IdentityApiPersonaCreateOperationRequest {
-    personaCreateRequest: PersonaCreateRequest;
+    PersonaCreateRequest: PersonaCreateRequest;
 }
 
 export interface IdentityApiPersonaDeleteByIdRequest {
@@ -642,7 +642,7 @@ export interface IdentityApiPersonaReadByIdRequest {
 
 export interface IdentityApiPersonaUpdateByIdOperationRequest {
     id: string;
-    personaUpdateByIdRequest: PersonaUpdateByIdRequest;
+    PersonaUpdateByIdRequest: PersonaUpdateByIdRequest;
 }
 
 /**
@@ -654,10 +654,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create a new alias.
      */
     async aliasCreateRaw(requestParameters: IdentityApiAliasCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['aliasCreateRequest'] == null) {
+        if (requestParameters['AliasCreateRequest'] == null) {
             throw new runtime.RequiredError(
-                'aliasCreateRequest',
-                'Required parameter "aliasCreateRequest" was null or undefined when calling aliasCreate().'
+                'AliasCreateRequest',
+                'Required parameter "AliasCreateRequest" was null or undefined when calling aliasCreate().'
             );
         }
 
@@ -672,7 +672,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AliasCreateRequestToJSON(requestParameters['aliasCreateRequest']),
+            body: AliasCreateRequestToJSON(requestParameters['AliasCreateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -681,8 +681,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create a new alias.
      */
-    async aliasCreate(aliasCreateRequest: AliasCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliasCreateRaw({ aliasCreateRequest: aliasCreateRequest }, initOverrides);
+    async aliasCreate(AliasCreateRequest: AliasCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliasCreateRaw({ AliasCreateRequest: AliasCreateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -795,10 +795,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['aliasUpdateByIdRequest'] == null) {
+        if (requestParameters['AliasUpdateByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'aliasUpdateByIdRequest',
-                'Required parameter "aliasUpdateByIdRequest" was null or undefined when calling aliasUpdateById().'
+                'AliasUpdateByIdRequest',
+                'Required parameter "AliasUpdateByIdRequest" was null or undefined when calling aliasUpdateById().'
             );
         }
 
@@ -813,7 +813,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AliasUpdateByIdRequestToJSON(requestParameters['aliasUpdateByIdRequest']),
+            body: AliasUpdateByIdRequestToJSON(requestParameters['AliasUpdateByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -821,18 +821,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async aliasUpdateById(id: string, aliasUpdateByIdRequest: AliasUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliasUpdateByIdRaw({ id: id, aliasUpdateByIdRequest: aliasUpdateByIdRequest }, initOverrides);
+    async aliasUpdateById(id: string, AliasUpdateByIdRequest: AliasUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliasUpdateByIdRaw({ id: id, AliasUpdateByIdRequest: AliasUpdateByIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entitiesCreateDuplicatesRaw(requestParameters: IdentityApiEntitiesCreateDuplicatesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entitiesCreateDuplicatesRequest'] == null) {
+        if (requestParameters['EntitiesCreateDuplicatesRequest'] == null) {
             throw new runtime.RequiredError(
-                'entitiesCreateDuplicatesRequest',
-                'Required parameter "entitiesCreateDuplicatesRequest" was null or undefined when calling entitiesCreateDuplicates().'
+                'EntitiesCreateDuplicatesRequest',
+                'Required parameter "EntitiesCreateDuplicatesRequest" was null or undefined when calling entitiesCreateDuplicates().'
             );
         }
 
@@ -847,7 +847,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntitiesCreateDuplicatesRequestToJSON(requestParameters['entitiesCreateDuplicatesRequest']),
+            body: EntitiesCreateDuplicatesRequestToJSON(requestParameters['EntitiesCreateDuplicatesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -855,18 +855,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entitiesCreateDuplicates(entitiesCreateDuplicatesRequest: EntitiesCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entitiesCreateDuplicatesRaw({ entitiesCreateDuplicatesRequest: entitiesCreateDuplicatesRequest }, initOverrides);
+    async entitiesCreateDuplicates(EntitiesCreateDuplicatesRequest: EntitiesCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entitiesCreateDuplicatesRaw({ EntitiesCreateDuplicatesRequest: EntitiesCreateDuplicatesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entityAliasCreateDuplicatesRaw(requestParameters: IdentityApiEntityAliasCreateDuplicatesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityAliasCreateDuplicatesRequest'] == null) {
+        if (requestParameters['EntityAliasCreateDuplicatesRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityAliasCreateDuplicatesRequest',
-                'Required parameter "entityAliasCreateDuplicatesRequest" was null or undefined when calling entityAliasCreateDuplicates().'
+                'EntityAliasCreateDuplicatesRequest',
+                'Required parameter "EntityAliasCreateDuplicatesRequest" was null or undefined when calling entityAliasCreateDuplicates().'
             );
         }
 
@@ -881,7 +881,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityAliasCreateDuplicatesRequestToJSON(requestParameters['entityAliasCreateDuplicatesRequest']),
+            body: EntityAliasCreateDuplicatesRequestToJSON(requestParameters['EntityAliasCreateDuplicatesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -889,18 +889,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityAliasCreateDuplicates(entityAliasCreateDuplicatesRequest: EntityAliasCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityAliasCreateDuplicatesRaw({ entityAliasCreateDuplicatesRequest: entityAliasCreateDuplicatesRequest }, initOverrides);
+    async entityAliasCreateDuplicates(EntityAliasCreateDuplicatesRequest: EntityAliasCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityAliasCreateDuplicatesRaw({ EntityAliasCreateDuplicatesRequest: EntityAliasCreateDuplicatesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entityAliasesCreateDuplicatesRaw(requestParameters: IdentityApiEntityAliasesCreateDuplicatesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityAliasesCreateDuplicatesRequest'] == null) {
+        if (requestParameters['EntityAliasesCreateDuplicatesRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityAliasesCreateDuplicatesRequest',
-                'Required parameter "entityAliasesCreateDuplicatesRequest" was null or undefined when calling entityAliasesCreateDuplicates().'
+                'EntityAliasesCreateDuplicatesRequest',
+                'Required parameter "EntityAliasesCreateDuplicatesRequest" was null or undefined when calling entityAliasesCreateDuplicates().'
             );
         }
 
@@ -915,7 +915,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityAliasesCreateDuplicatesRequestToJSON(requestParameters['entityAliasesCreateDuplicatesRequest']),
+            body: EntityAliasesCreateDuplicatesRequestToJSON(requestParameters['EntityAliasesCreateDuplicatesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -923,18 +923,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityAliasesCreateDuplicates(entityAliasesCreateDuplicatesRequest: EntityAliasesCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityAliasesCreateDuplicatesRaw({ entityAliasesCreateDuplicatesRequest: entityAliasesCreateDuplicatesRequest }, initOverrides);
+    async entityAliasesCreateDuplicates(EntityAliasesCreateDuplicatesRequest: EntityAliasesCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityAliasesCreateDuplicatesRaw({ EntityAliasesCreateDuplicatesRequest: EntityAliasesCreateDuplicatesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entityBatchDeleteRaw(requestParameters: IdentityApiEntityBatchDeleteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityBatchDeleteRequest'] == null) {
+        if (requestParameters['EntityBatchDeleteRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityBatchDeleteRequest',
-                'Required parameter "entityBatchDeleteRequest" was null or undefined when calling entityBatchDelete().'
+                'EntityBatchDeleteRequest',
+                'Required parameter "EntityBatchDeleteRequest" was null or undefined when calling entityBatchDelete().'
             );
         }
 
@@ -949,7 +949,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityBatchDeleteRequestToJSON(requestParameters['entityBatchDeleteRequest']),
+            body: EntityBatchDeleteRequestToJSON(requestParameters['EntityBatchDeleteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -957,18 +957,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityBatchDelete(entityBatchDeleteRequest: EntityBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityBatchDeleteRaw({ entityBatchDeleteRequest: entityBatchDeleteRequest }, initOverrides);
+    async entityBatchDelete(EntityBatchDeleteRequest: EntityBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityBatchDeleteRaw({ EntityBatchDeleteRequest: EntityBatchDeleteRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entityCreateRaw(requestParameters: IdentityApiEntityCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityCreateRequest'] == null) {
+        if (requestParameters['EntityCreateRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityCreateRequest',
-                'Required parameter "entityCreateRequest" was null or undefined when calling entityCreate().'
+                'EntityCreateRequest',
+                'Required parameter "EntityCreateRequest" was null or undefined when calling entityCreate().'
             );
         }
 
@@ -983,7 +983,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityCreateRequestToJSON(requestParameters['entityCreateRequest']),
+            body: EntityCreateRequestToJSON(requestParameters['EntityCreateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -991,8 +991,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityCreate(entityCreateRequest: EntityCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityCreateRaw({ entityCreateRequest: entityCreateRequest }, initOverrides);
+    async entityCreate(EntityCreateRequest: EntityCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityCreateRaw({ EntityCreateRequest: EntityCreateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1000,10 +1000,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create a new alias.
      */
     async entityCreateAliasRaw(requestParameters: IdentityApiEntityCreateAliasOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityCreateAliasRequest'] == null) {
+        if (requestParameters['EntityCreateAliasRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityCreateAliasRequest',
-                'Required parameter "entityCreateAliasRequest" was null or undefined when calling entityCreateAlias().'
+                'EntityCreateAliasRequest',
+                'Required parameter "EntityCreateAliasRequest" was null or undefined when calling entityCreateAlias().'
             );
         }
 
@@ -1018,7 +1018,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityCreateAliasRequestToJSON(requestParameters['entityCreateAliasRequest']),
+            body: EntityCreateAliasRequestToJSON(requestParameters['EntityCreateAliasRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1027,8 +1027,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create a new alias.
      */
-    async entityCreateAlias(entityCreateAliasRequest: EntityCreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityCreateAliasRaw({ entityCreateAliasRequest: entityCreateAliasRequest }, initOverrides);
+    async entityCreateAlias(EntityCreateAliasRequest: EntityCreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityCreateAliasRaw({ EntityCreateAliasRequest: EntityCreateAliasRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1271,10 +1271,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Query entities based on various properties.
      */
     async entityLookUpRaw(requestParameters: IdentityApiEntityLookUpOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityLookUpRequest'] == null) {
+        if (requestParameters['EntityLookUpRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityLookUpRequest',
-                'Required parameter "entityLookUpRequest" was null or undefined when calling entityLookUp().'
+                'EntityLookUpRequest',
+                'Required parameter "EntityLookUpRequest" was null or undefined when calling entityLookUp().'
             );
         }
 
@@ -1289,7 +1289,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityLookUpRequestToJSON(requestParameters['entityLookUpRequest']),
+            body: EntityLookUpRequestToJSON(requestParameters['EntityLookUpRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1298,18 +1298,18 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Query entities based on various properties.
      */
-    async entityLookUp(entityLookUpRequest: EntityLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityLookUpRaw({ entityLookUpRequest: entityLookUpRequest }, initOverrides);
+    async entityLookUp(EntityLookUpRequest: EntityLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityLookUpRaw({ EntityLookUpRequest: EntityLookUpRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async entityMergeRaw(requestParameters: IdentityApiEntityMergeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['entityMergeRequest'] == null) {
+        if (requestParameters['EntityMergeRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityMergeRequest',
-                'Required parameter "entityMergeRequest" was null or undefined when calling entityMerge().'
+                'EntityMergeRequest',
+                'Required parameter "EntityMergeRequest" was null or undefined when calling entityMerge().'
             );
         }
 
@@ -1324,7 +1324,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityMergeRequestToJSON(requestParameters['entityMergeRequest']),
+            body: EntityMergeRequestToJSON(requestParameters['EntityMergeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1332,8 +1332,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityMerge(entityMergeRequest: EntityMergeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityMergeRaw({ entityMergeRequest: entityMergeRequest }, initOverrides);
+    async entityMerge(EntityMergeRequest: EntityMergeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityMergeRaw({ EntityMergeRequest: EntityMergeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1440,10 +1440,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['entityUpdateAliasByIdRequest'] == null) {
+        if (requestParameters['EntityUpdateAliasByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityUpdateAliasByIdRequest',
-                'Required parameter "entityUpdateAliasByIdRequest" was null or undefined when calling entityUpdateAliasById().'
+                'EntityUpdateAliasByIdRequest',
+                'Required parameter "EntityUpdateAliasByIdRequest" was null or undefined when calling entityUpdateAliasById().'
             );
         }
 
@@ -1458,7 +1458,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityUpdateAliasByIdRequestToJSON(requestParameters['entityUpdateAliasByIdRequest']),
+            body: EntityUpdateAliasByIdRequestToJSON(requestParameters['EntityUpdateAliasByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1466,8 +1466,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityUpdateAliasById(id: string, entityUpdateAliasByIdRequest: EntityUpdateAliasByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityUpdateAliasByIdRaw({ id: id, entityUpdateAliasByIdRequest: entityUpdateAliasByIdRequest }, initOverrides);
+    async entityUpdateAliasById(id: string, EntityUpdateAliasByIdRequest: EntityUpdateAliasByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityUpdateAliasByIdRaw({ id: id, EntityUpdateAliasByIdRequest: EntityUpdateAliasByIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1481,10 +1481,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['entityUpdateByIdRequest'] == null) {
+        if (requestParameters['EntityUpdateByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityUpdateByIdRequest',
-                'Required parameter "entityUpdateByIdRequest" was null or undefined when calling entityUpdateById().'
+                'EntityUpdateByIdRequest',
+                'Required parameter "EntityUpdateByIdRequest" was null or undefined when calling entityUpdateById().'
             );
         }
 
@@ -1499,7 +1499,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityUpdateByIdRequestToJSON(requestParameters['entityUpdateByIdRequest']),
+            body: EntityUpdateByIdRequestToJSON(requestParameters['EntityUpdateByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1507,8 +1507,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityUpdateById(id: string, entityUpdateByIdRequest: EntityUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityUpdateByIdRaw({ id: id, entityUpdateByIdRequest: entityUpdateByIdRequest }, initOverrides);
+    async entityUpdateById(id: string, EntityUpdateByIdRequest: EntityUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityUpdateByIdRaw({ id: id, EntityUpdateByIdRequest: EntityUpdateByIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1522,10 +1522,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['entityUpdateByNameRequest'] == null) {
+        if (requestParameters['EntityUpdateByNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'entityUpdateByNameRequest',
-                'Required parameter "entityUpdateByNameRequest" was null or undefined when calling entityUpdateByName().'
+                'EntityUpdateByNameRequest',
+                'Required parameter "EntityUpdateByNameRequest" was null or undefined when calling entityUpdateByName().'
             );
         }
 
@@ -1540,7 +1540,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityUpdateByNameRequestToJSON(requestParameters['entityUpdateByNameRequest']),
+            body: EntityUpdateByNameRequestToJSON(requestParameters['EntityUpdateByNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1548,18 +1548,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityUpdateByName(name: string, entityUpdateByNameRequest: EntityUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.entityUpdateByNameRaw({ name: name, entityUpdateByNameRequest: entityUpdateByNameRequest }, initOverrides);
+    async entityUpdateByName(name: string, EntityUpdateByNameRequest: EntityUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.entityUpdateByNameRaw({ name: name, EntityUpdateByNameRequest: EntityUpdateByNameRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async groupCreateRaw(requestParameters: IdentityApiGroupCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['groupCreateRequest'] == null) {
+        if (requestParameters['GroupCreateRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupCreateRequest',
-                'Required parameter "groupCreateRequest" was null or undefined when calling groupCreate().'
+                'GroupCreateRequest',
+                'Required parameter "GroupCreateRequest" was null or undefined when calling groupCreate().'
             );
         }
 
@@ -1574,7 +1574,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupCreateRequestToJSON(requestParameters['groupCreateRequest']),
+            body: GroupCreateRequestToJSON(requestParameters['GroupCreateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1582,18 +1582,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupCreate(groupCreateRequest: GroupCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupCreateRaw({ groupCreateRequest: groupCreateRequest }, initOverrides);
+    async groupCreate(GroupCreateRequest: GroupCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupCreateRaw({ GroupCreateRequest: GroupCreateRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async groupCreateAliasRaw(requestParameters: IdentityApiGroupCreateAliasOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['groupCreateAliasRequest'] == null) {
+        if (requestParameters['GroupCreateAliasRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupCreateAliasRequest',
-                'Required parameter "groupCreateAliasRequest" was null or undefined when calling groupCreateAlias().'
+                'GroupCreateAliasRequest',
+                'Required parameter "GroupCreateAliasRequest" was null or undefined when calling groupCreateAlias().'
             );
         }
 
@@ -1608,7 +1608,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupCreateAliasRequestToJSON(requestParameters['groupCreateAliasRequest']),
+            body: GroupCreateAliasRequestToJSON(requestParameters['GroupCreateAliasRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1616,8 +1616,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupCreateAlias(groupCreateAliasRequest: GroupCreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupCreateAliasRaw({ groupCreateAliasRequest: groupCreateAliasRequest }, initOverrides);
+    async groupCreateAlias(GroupCreateAliasRequest: GroupCreateAliasRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupCreateAliasRaw({ GroupCreateAliasRequest: GroupCreateAliasRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1862,10 +1862,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Query groups based on various properties.
      */
     async groupLookUpRaw(requestParameters: IdentityApiGroupLookUpOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['groupLookUpRequest'] == null) {
+        if (requestParameters['GroupLookUpRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupLookUpRequest',
-                'Required parameter "groupLookUpRequest" was null or undefined when calling groupLookUp().'
+                'GroupLookUpRequest',
+                'Required parameter "GroupLookUpRequest" was null or undefined when calling groupLookUp().'
             );
         }
 
@@ -1880,7 +1880,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupLookUpRequestToJSON(requestParameters['groupLookUpRequest']),
+            body: GroupLookUpRequestToJSON(requestParameters['GroupLookUpRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1889,8 +1889,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Query groups based on various properties.
      */
-    async groupLookUp(groupLookUpRequest: GroupLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupLookUpRaw({ groupLookUpRequest: groupLookUpRequest }, initOverrides);
+    async groupLookUp(GroupLookUpRequest: GroupLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupLookUpRaw({ GroupLookUpRequest: GroupLookUpRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1997,10 +1997,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['groupUpdateAliasByIdRequest'] == null) {
+        if (requestParameters['GroupUpdateAliasByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupUpdateAliasByIdRequest',
-                'Required parameter "groupUpdateAliasByIdRequest" was null or undefined when calling groupUpdateAliasById().'
+                'GroupUpdateAliasByIdRequest',
+                'Required parameter "GroupUpdateAliasByIdRequest" was null or undefined when calling groupUpdateAliasById().'
             );
         }
 
@@ -2015,7 +2015,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupUpdateAliasByIdRequestToJSON(requestParameters['groupUpdateAliasByIdRequest']),
+            body: GroupUpdateAliasByIdRequestToJSON(requestParameters['GroupUpdateAliasByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2023,8 +2023,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupUpdateAliasById(id: string, groupUpdateAliasByIdRequest: GroupUpdateAliasByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupUpdateAliasByIdRaw({ id: id, groupUpdateAliasByIdRequest: groupUpdateAliasByIdRequest }, initOverrides);
+    async groupUpdateAliasById(id: string, GroupUpdateAliasByIdRequest: GroupUpdateAliasByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupUpdateAliasByIdRaw({ id: id, GroupUpdateAliasByIdRequest: GroupUpdateAliasByIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2038,10 +2038,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['groupUpdateByIdRequest'] == null) {
+        if (requestParameters['GroupUpdateByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupUpdateByIdRequest',
-                'Required parameter "groupUpdateByIdRequest" was null or undefined when calling groupUpdateById().'
+                'GroupUpdateByIdRequest',
+                'Required parameter "GroupUpdateByIdRequest" was null or undefined when calling groupUpdateById().'
             );
         }
 
@@ -2056,7 +2056,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupUpdateByIdRequestToJSON(requestParameters['groupUpdateByIdRequest']),
+            body: GroupUpdateByIdRequestToJSON(requestParameters['GroupUpdateByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2064,8 +2064,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupUpdateById(id: string, groupUpdateByIdRequest: GroupUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupUpdateByIdRaw({ id: id, groupUpdateByIdRequest: groupUpdateByIdRequest }, initOverrides);
+    async groupUpdateById(id: string, GroupUpdateByIdRequest: GroupUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupUpdateByIdRaw({ id: id, GroupUpdateByIdRequest: GroupUpdateByIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2079,10 +2079,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['groupUpdateByNameRequest'] == null) {
+        if (requestParameters['GroupUpdateByNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupUpdateByNameRequest',
-                'Required parameter "groupUpdateByNameRequest" was null or undefined when calling groupUpdateByName().'
+                'GroupUpdateByNameRequest',
+                'Required parameter "GroupUpdateByNameRequest" was null or undefined when calling groupUpdateByName().'
             );
         }
 
@@ -2097,7 +2097,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupUpdateByNameRequestToJSON(requestParameters['groupUpdateByNameRequest']),
+            body: GroupUpdateByNameRequestToJSON(requestParameters['GroupUpdateByNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2105,18 +2105,18 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupUpdateByName(name: string, groupUpdateByNameRequest: GroupUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupUpdateByNameRaw({ name: name, groupUpdateByNameRequest: groupUpdateByNameRequest }, initOverrides);
+    async groupUpdateByName(name: string, GroupUpdateByNameRequest: GroupUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupUpdateByNameRaw({ name: name, GroupUpdateByNameRequest: GroupUpdateByNameRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async groupsCreateDuplicatesRaw(requestParameters: IdentityApiGroupsCreateDuplicatesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['groupsCreateDuplicatesRequest'] == null) {
+        if (requestParameters['GroupsCreateDuplicatesRequest'] == null) {
             throw new runtime.RequiredError(
-                'groupsCreateDuplicatesRequest',
-                'Required parameter "groupsCreateDuplicatesRequest" was null or undefined when calling groupsCreateDuplicates().'
+                'GroupsCreateDuplicatesRequest',
+                'Required parameter "GroupsCreateDuplicatesRequest" was null or undefined when calling groupsCreateDuplicates().'
             );
         }
 
@@ -2131,7 +2131,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GroupsCreateDuplicatesRequestToJSON(requestParameters['groupsCreateDuplicatesRequest']),
+            body: GroupsCreateDuplicatesRequestToJSON(requestParameters['GroupsCreateDuplicatesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2139,8 +2139,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupsCreateDuplicates(groupsCreateDuplicatesRequest: GroupsCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.groupsCreateDuplicatesRaw({ groupsCreateDuplicatesRequest: groupsCreateDuplicatesRequest }, initOverrides);
+    async groupsCreateDuplicates(GroupsCreateDuplicatesRequest: GroupsCreateDuplicatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.groupsCreateDuplicatesRaw({ GroupsCreateDuplicatesRequest: GroupsCreateDuplicatesRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2148,10 +2148,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Destroys a TOTP secret for the given MFA method ID on the given entity
      */
     async mfaAdminDestroyTotpSecretRaw(requestParameters: IdentityApiMfaAdminDestroyTotpSecretOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaAdminDestroyTotpSecretRequest'] == null) {
+        if (requestParameters['MfaAdminDestroyTotpSecretRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaAdminDestroyTotpSecretRequest',
-                'Required parameter "mfaAdminDestroyTotpSecretRequest" was null or undefined when calling mfaAdminDestroyTotpSecret().'
+                'MfaAdminDestroyTotpSecretRequest',
+                'Required parameter "MfaAdminDestroyTotpSecretRequest" was null or undefined when calling mfaAdminDestroyTotpSecret().'
             );
         }
 
@@ -2166,7 +2166,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaAdminDestroyTotpSecretRequestToJSON(requestParameters['mfaAdminDestroyTotpSecretRequest']),
+            body: MfaAdminDestroyTotpSecretRequestToJSON(requestParameters['MfaAdminDestroyTotpSecretRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2175,8 +2175,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Destroys a TOTP secret for the given MFA method ID on the given entity
      */
-    async mfaAdminDestroyTotpSecret(mfaAdminDestroyTotpSecretRequest: MfaAdminDestroyTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaAdminDestroyTotpSecretRaw({ mfaAdminDestroyTotpSecretRequest: mfaAdminDestroyTotpSecretRequest }, initOverrides);
+    async mfaAdminDestroyTotpSecret(MfaAdminDestroyTotpSecretRequest: MfaAdminDestroyTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaAdminDestroyTotpSecretRaw({ MfaAdminDestroyTotpSecretRequest: MfaAdminDestroyTotpSecretRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2184,10 +2184,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update or create TOTP secret for the given method ID on the given entity.
      */
     async mfaAdminGenerateTotpSecretRaw(requestParameters: IdentityApiMfaAdminGenerateTotpSecretOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaAdminGenerateTotpSecretRequest'] == null) {
+        if (requestParameters['MfaAdminGenerateTotpSecretRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaAdminGenerateTotpSecretRequest',
-                'Required parameter "mfaAdminGenerateTotpSecretRequest" was null or undefined when calling mfaAdminGenerateTotpSecret().'
+                'MfaAdminGenerateTotpSecretRequest',
+                'Required parameter "MfaAdminGenerateTotpSecretRequest" was null or undefined when calling mfaAdminGenerateTotpSecret().'
             );
         }
 
@@ -2202,7 +2202,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaAdminGenerateTotpSecretRequestToJSON(requestParameters['mfaAdminGenerateTotpSecretRequest']),
+            body: MfaAdminGenerateTotpSecretRequestToJSON(requestParameters['MfaAdminGenerateTotpSecretRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2211,8 +2211,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update or create TOTP secret for the given method ID on the given entity.
      */
-    async mfaAdminGenerateTotpSecret(mfaAdminGenerateTotpSecretRequest: MfaAdminGenerateTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaAdminGenerateTotpSecretRaw({ mfaAdminGenerateTotpSecretRequest: mfaAdminGenerateTotpSecretRequest }, initOverrides);
+    async mfaAdminGenerateTotpSecret(MfaAdminGenerateTotpSecretRequest: MfaAdminGenerateTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaAdminGenerateTotpSecretRaw({ MfaAdminGenerateTotpSecretRequest: MfaAdminGenerateTotpSecretRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2220,10 +2220,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create the given MFA method
      */
     async mfaCreateDuoMethodRaw(requestParameters: IdentityApiMfaCreateDuoMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaCreateDuoMethodRequest'] == null) {
+        if (requestParameters['MfaCreateDuoMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaCreateDuoMethodRequest',
-                'Required parameter "mfaCreateDuoMethodRequest" was null or undefined when calling mfaCreateDuoMethod().'
+                'MfaCreateDuoMethodRequest',
+                'Required parameter "MfaCreateDuoMethodRequest" was null or undefined when calling mfaCreateDuoMethod().'
             );
         }
 
@@ -2238,7 +2238,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaCreateDuoMethodRequestToJSON(requestParameters['mfaCreateDuoMethodRequest']),
+            body: MfaCreateDuoMethodRequestToJSON(requestParameters['MfaCreateDuoMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2247,8 +2247,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create the given MFA method
      */
-    async mfaCreateDuoMethod(mfaCreateDuoMethodRequest: MfaCreateDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaCreateDuoMethodRaw({ mfaCreateDuoMethodRequest: mfaCreateDuoMethodRequest }, initOverrides);
+    async mfaCreateDuoMethod(MfaCreateDuoMethodRequest: MfaCreateDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaCreateDuoMethodRaw({ MfaCreateDuoMethodRequest: MfaCreateDuoMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2256,10 +2256,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create the given MFA method
      */
     async mfaCreateOktaMethodRaw(requestParameters: IdentityApiMfaCreateOktaMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaCreateOktaMethodRequest'] == null) {
+        if (requestParameters['MfaCreateOktaMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaCreateOktaMethodRequest',
-                'Required parameter "mfaCreateOktaMethodRequest" was null or undefined when calling mfaCreateOktaMethod().'
+                'MfaCreateOktaMethodRequest',
+                'Required parameter "MfaCreateOktaMethodRequest" was null or undefined when calling mfaCreateOktaMethod().'
             );
         }
 
@@ -2274,7 +2274,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaCreateOktaMethodRequestToJSON(requestParameters['mfaCreateOktaMethodRequest']),
+            body: MfaCreateOktaMethodRequestToJSON(requestParameters['MfaCreateOktaMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2283,8 +2283,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create the given MFA method
      */
-    async mfaCreateOktaMethod(mfaCreateOktaMethodRequest: MfaCreateOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaCreateOktaMethodRaw({ mfaCreateOktaMethodRequest: mfaCreateOktaMethodRequest }, initOverrides);
+    async mfaCreateOktaMethod(MfaCreateOktaMethodRequest: MfaCreateOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaCreateOktaMethodRaw({ MfaCreateOktaMethodRequest: MfaCreateOktaMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2292,10 +2292,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create the given MFA method
      */
     async mfaCreatePingIdMethodRaw(requestParameters: IdentityApiMfaCreatePingIdMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaCreatePingIdMethodRequest'] == null) {
+        if (requestParameters['MfaCreatePingIdMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaCreatePingIdMethodRequest',
-                'Required parameter "mfaCreatePingIdMethodRequest" was null or undefined when calling mfaCreatePingIdMethod().'
+                'MfaCreatePingIdMethodRequest',
+                'Required parameter "MfaCreatePingIdMethodRequest" was null or undefined when calling mfaCreatePingIdMethod().'
             );
         }
 
@@ -2310,7 +2310,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaCreatePingIdMethodRequestToJSON(requestParameters['mfaCreatePingIdMethodRequest']),
+            body: MfaCreatePingIdMethodRequestToJSON(requestParameters['MfaCreatePingIdMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2319,8 +2319,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create the given MFA method
      */
-    async mfaCreatePingIdMethod(mfaCreatePingIdMethodRequest: MfaCreatePingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaCreatePingIdMethodRaw({ mfaCreatePingIdMethodRequest: mfaCreatePingIdMethodRequest }, initOverrides);
+    async mfaCreatePingIdMethod(MfaCreatePingIdMethodRequest: MfaCreatePingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaCreatePingIdMethodRaw({ MfaCreatePingIdMethodRequest: MfaCreatePingIdMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2328,10 +2328,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create the given MFA method
      */
     async mfaCreateTotpMethodRaw(requestParameters: IdentityApiMfaCreateTotpMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaCreateTotpMethodRequest'] == null) {
+        if (requestParameters['MfaCreateTotpMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaCreateTotpMethodRequest',
-                'Required parameter "mfaCreateTotpMethodRequest" was null or undefined when calling mfaCreateTotpMethod().'
+                'MfaCreateTotpMethodRequest',
+                'Required parameter "MfaCreateTotpMethodRequest" was null or undefined when calling mfaCreateTotpMethod().'
             );
         }
 
@@ -2346,7 +2346,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaCreateTotpMethodRequestToJSON(requestParameters['mfaCreateTotpMethodRequest']),
+            body: MfaCreateTotpMethodRequestToJSON(requestParameters['MfaCreateTotpMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2355,8 +2355,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create the given MFA method
      */
-    async mfaCreateTotpMethod(mfaCreateTotpMethodRequest: MfaCreateTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaCreateTotpMethodRaw({ mfaCreateTotpMethodRequest: mfaCreateTotpMethodRequest }, initOverrides);
+    async mfaCreateTotpMethod(MfaCreateTotpMethodRequest: MfaCreateTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaCreateTotpMethodRaw({ MfaCreateTotpMethodRequest: MfaCreateTotpMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2364,10 +2364,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Delete the given MFA method
      */
     async mfaDeleteDuoMethodRaw(requestParameters: IdentityApiMfaDeleteDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaDeleteDuoMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaDeleteDuoMethod().'
             );
         }
 
@@ -2376,7 +2376,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2388,8 +2388,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Delete the given MFA method
      */
-    async mfaDeleteDuoMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaDeleteDuoMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaDeleteDuoMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaDeleteDuoMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2430,10 +2430,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Delete the given MFA method
      */
     async mfaDeleteOktaMethodRaw(requestParameters: IdentityApiMfaDeleteOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaDeleteOktaMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaDeleteOktaMethod().'
             );
         }
 
@@ -2442,7 +2442,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2454,8 +2454,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Delete the given MFA method
      */
-    async mfaDeleteOktaMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaDeleteOktaMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaDeleteOktaMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaDeleteOktaMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2463,10 +2463,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Delete the given MFA method
      */
     async mfaDeletePingIdMethodRaw(requestParameters: IdentityApiMfaDeletePingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaDeletePingIdMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaDeletePingIdMethod().'
             );
         }
 
@@ -2475,7 +2475,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2487,8 +2487,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Delete the given MFA method
      */
-    async mfaDeletePingIdMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaDeletePingIdMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaDeletePingIdMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaDeletePingIdMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2496,10 +2496,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Delete the given MFA method
      */
     async mfaDeleteTotpMethodRaw(requestParameters: IdentityApiMfaDeleteTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaDeleteTotpMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaDeleteTotpMethod().'
             );
         }
 
@@ -2508,7 +2508,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2520,8 +2520,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Delete the given MFA method
      */
-    async mfaDeleteTotpMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaDeleteTotpMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaDeleteTotpMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaDeleteTotpMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2529,10 +2529,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update or create TOTP secret for the given method ID on the given entity.
      */
     async mfaGenerateTotpSecretRaw(requestParameters: IdentityApiMfaGenerateTotpSecretOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaGenerateTotpSecretRequest'] == null) {
+        if (requestParameters['MfaGenerateTotpSecretRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaGenerateTotpSecretRequest',
-                'Required parameter "mfaGenerateTotpSecretRequest" was null or undefined when calling mfaGenerateTotpSecret().'
+                'MfaGenerateTotpSecretRequest',
+                'Required parameter "MfaGenerateTotpSecretRequest" was null or undefined when calling mfaGenerateTotpSecret().'
             );
         }
 
@@ -2547,7 +2547,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaGenerateTotpSecretRequestToJSON(requestParameters['mfaGenerateTotpSecretRequest']),
+            body: MfaGenerateTotpSecretRequestToJSON(requestParameters['MfaGenerateTotpSecretRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2556,8 +2556,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update or create TOTP secret for the given method ID on the given entity.
      */
-    async mfaGenerateTotpSecret(mfaGenerateTotpSecretRequest: MfaGenerateTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaGenerateTotpSecretRaw({ mfaGenerateTotpSecretRequest: mfaGenerateTotpSecretRequest }, initOverrides);
+    async mfaGenerateTotpSecret(MfaGenerateTotpSecretRequest: MfaGenerateTotpSecretRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaGenerateTotpSecretRaw({ MfaGenerateTotpSecretRequest: MfaGenerateTotpSecretRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2787,10 +2787,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Read the current configuration for the given MFA method
      */
     async mfaReadDuoMethodRaw(requestParameters: IdentityApiMfaReadDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaReadDuoMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaReadDuoMethod().'
             );
         }
 
@@ -2799,7 +2799,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2811,8 +2811,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Read the current configuration for the given MFA method
      */
-    async mfaReadDuoMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaReadDuoMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaReadDuoMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaReadDuoMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2853,10 +2853,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Read the current configuration for the given ID regardless of the MFA method type
      */
     async mfaReadMethodRaw(requestParameters: IdentityApiMfaReadMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaReadMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaReadMethod().'
             );
         }
 
@@ -2865,7 +2865,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2877,8 +2877,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Read the current configuration for the given ID regardless of the MFA method type
      */
-    async mfaReadMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaReadMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaReadMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaReadMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2886,10 +2886,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Read the current configuration for the given MFA method
      */
     async mfaReadOktaMethodRaw(requestParameters: IdentityApiMfaReadOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaReadOktaMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaReadOktaMethod().'
             );
         }
 
@@ -2898,7 +2898,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2910,8 +2910,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Read the current configuration for the given MFA method
      */
-    async mfaReadOktaMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaReadOktaMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaReadOktaMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaReadOktaMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2919,10 +2919,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Read the current configuration for the given MFA method
      */
     async mfaReadPingIdMethodRaw(requestParameters: IdentityApiMfaReadPingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaReadPingIdMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaReadPingIdMethod().'
             );
         }
 
@@ -2931,7 +2931,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2943,8 +2943,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Read the current configuration for the given MFA method
      */
-    async mfaReadPingIdMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaReadPingIdMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaReadPingIdMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaReadPingIdMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2952,10 +2952,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Read the current configuration for the given MFA method
      */
     async mfaReadTotpMethodRaw(requestParameters: IdentityApiMfaReadTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaReadTotpMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaReadTotpMethod().'
             );
         }
 
@@ -2964,7 +2964,7 @@ export class IdentityApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2976,8 +2976,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Read the current configuration for the given MFA method
      */
-    async mfaReadTotpMethod(methodId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaReadTotpMethodRaw({ methodId: methodId }, initOverrides);
+    async mfaReadTotpMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaReadTotpMethodRaw({ method_id: method_id }, initOverrides);
         return await response.value();
     }
 
@@ -2985,17 +2985,17 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update the configuration for the given MFA method
      */
     async mfaUpdateDuoMethodRaw(requestParameters: IdentityApiMfaUpdateDuoMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaUpdateDuoMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaUpdateDuoMethod().'
             );
         }
 
-        if (requestParameters['mfaUpdateDuoMethodRequest'] == null) {
+        if (requestParameters['MfaUpdateDuoMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaUpdateDuoMethodRequest',
-                'Required parameter "mfaUpdateDuoMethodRequest" was null or undefined when calling mfaUpdateDuoMethod().'
+                'MfaUpdateDuoMethodRequest',
+                'Required parameter "MfaUpdateDuoMethodRequest" was null or undefined when calling mfaUpdateDuoMethod().'
             );
         }
 
@@ -3006,11 +3006,11 @@ export class IdentityApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaUpdateDuoMethodRequestToJSON(requestParameters['mfaUpdateDuoMethodRequest']),
+            body: MfaUpdateDuoMethodRequestToJSON(requestParameters['MfaUpdateDuoMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3019,8 +3019,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update the configuration for the given MFA method
      */
-    async mfaUpdateDuoMethod(methodId: string, mfaUpdateDuoMethodRequest: MfaUpdateDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaUpdateDuoMethodRaw({ methodId: methodId, mfaUpdateDuoMethodRequest: mfaUpdateDuoMethodRequest }, initOverrides);
+    async mfaUpdateDuoMethod(method_id: string, MfaUpdateDuoMethodRequest: MfaUpdateDuoMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaUpdateDuoMethodRaw({ method_id: method_id, MfaUpdateDuoMethodRequest: MfaUpdateDuoMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3028,17 +3028,17 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update the configuration for the given MFA method
      */
     async mfaUpdateOktaMethodRaw(requestParameters: IdentityApiMfaUpdateOktaMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaUpdateOktaMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaUpdateOktaMethod().'
             );
         }
 
-        if (requestParameters['mfaUpdateOktaMethodRequest'] == null) {
+        if (requestParameters['MfaUpdateOktaMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaUpdateOktaMethodRequest',
-                'Required parameter "mfaUpdateOktaMethodRequest" was null or undefined when calling mfaUpdateOktaMethod().'
+                'MfaUpdateOktaMethodRequest',
+                'Required parameter "MfaUpdateOktaMethodRequest" was null or undefined when calling mfaUpdateOktaMethod().'
             );
         }
 
@@ -3049,11 +3049,11 @@ export class IdentityApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaUpdateOktaMethodRequestToJSON(requestParameters['mfaUpdateOktaMethodRequest']),
+            body: MfaUpdateOktaMethodRequestToJSON(requestParameters['MfaUpdateOktaMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3062,8 +3062,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update the configuration for the given MFA method
      */
-    async mfaUpdateOktaMethod(methodId: string, mfaUpdateOktaMethodRequest: MfaUpdateOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaUpdateOktaMethodRaw({ methodId: methodId, mfaUpdateOktaMethodRequest: mfaUpdateOktaMethodRequest }, initOverrides);
+    async mfaUpdateOktaMethod(method_id: string, MfaUpdateOktaMethodRequest: MfaUpdateOktaMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaUpdateOktaMethodRaw({ method_id: method_id, MfaUpdateOktaMethodRequest: MfaUpdateOktaMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3071,17 +3071,17 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update the configuration for the given MFA method
      */
     async mfaUpdatePingIdMethodRaw(requestParameters: IdentityApiMfaUpdatePingIdMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaUpdatePingIdMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaUpdatePingIdMethod().'
             );
         }
 
-        if (requestParameters['mfaUpdatePingIdMethodRequest'] == null) {
+        if (requestParameters['MfaUpdatePingIdMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaUpdatePingIdMethodRequest',
-                'Required parameter "mfaUpdatePingIdMethodRequest" was null or undefined when calling mfaUpdatePingIdMethod().'
+                'MfaUpdatePingIdMethodRequest',
+                'Required parameter "MfaUpdatePingIdMethodRequest" was null or undefined when calling mfaUpdatePingIdMethod().'
             );
         }
 
@@ -3092,11 +3092,11 @@ export class IdentityApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaUpdatePingIdMethodRequestToJSON(requestParameters['mfaUpdatePingIdMethodRequest']),
+            body: MfaUpdatePingIdMethodRequestToJSON(requestParameters['MfaUpdatePingIdMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3105,8 +3105,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update the configuration for the given MFA method
      */
-    async mfaUpdatePingIdMethod(methodId: string, mfaUpdatePingIdMethodRequest: MfaUpdatePingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaUpdatePingIdMethodRaw({ methodId: methodId, mfaUpdatePingIdMethodRequest: mfaUpdatePingIdMethodRequest }, initOverrides);
+    async mfaUpdatePingIdMethod(method_id: string, MfaUpdatePingIdMethodRequest: MfaUpdatePingIdMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaUpdatePingIdMethodRaw({ method_id: method_id, MfaUpdatePingIdMethodRequest: MfaUpdatePingIdMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3114,17 +3114,17 @@ export class IdentityApi extends runtime.BaseAPI {
      * Update the configuration for the given MFA method
      */
     async mfaUpdateTotpMethodRaw(requestParameters: IdentityApiMfaUpdateTotpMethodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['methodId'] == null) {
+        if (requestParameters['method_id'] == null) {
             throw new runtime.RequiredError(
-                'methodId',
-                'Required parameter "methodId" was null or undefined when calling mfaUpdateTotpMethod().'
+                'method_id',
+                'Required parameter "method_id" was null or undefined when calling mfaUpdateTotpMethod().'
             );
         }
 
-        if (requestParameters['mfaUpdateTotpMethodRequest'] == null) {
+        if (requestParameters['MfaUpdateTotpMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaUpdateTotpMethodRequest',
-                'Required parameter "mfaUpdateTotpMethodRequest" was null or undefined when calling mfaUpdateTotpMethod().'
+                'MfaUpdateTotpMethodRequest',
+                'Required parameter "MfaUpdateTotpMethodRequest" was null or undefined when calling mfaUpdateTotpMethod().'
             );
         }
 
@@ -3135,11 +3135,11 @@ export class IdentityApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['methodId']))),
+            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaUpdateTotpMethodRequestToJSON(requestParameters['mfaUpdateTotpMethodRequest']),
+            body: MfaUpdateTotpMethodRequestToJSON(requestParameters['MfaUpdateTotpMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3148,8 +3148,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Update the configuration for the given MFA method
      */
-    async mfaUpdateTotpMethod(methodId: string, mfaUpdateTotpMethodRequest: MfaUpdateTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaUpdateTotpMethodRaw({ methodId: methodId, mfaUpdateTotpMethodRequest: mfaUpdateTotpMethodRequest }, initOverrides);
+    async mfaUpdateTotpMethod(method_id: string, MfaUpdateTotpMethodRequest: MfaUpdateTotpMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaUpdateTotpMethodRaw({ method_id: method_id, MfaUpdateTotpMethodRequest: MfaUpdateTotpMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3164,10 +3164,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['mfaWriteLoginEnforcementRequest'] == null) {
+        if (requestParameters['MfaWriteLoginEnforcementRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaWriteLoginEnforcementRequest',
-                'Required parameter "mfaWriteLoginEnforcementRequest" was null or undefined when calling mfaWriteLoginEnforcement().'
+                'MfaWriteLoginEnforcementRequest',
+                'Required parameter "MfaWriteLoginEnforcementRequest" was null or undefined when calling mfaWriteLoginEnforcement().'
             );
         }
 
@@ -3182,7 +3182,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaWriteLoginEnforcementRequestToJSON(requestParameters['mfaWriteLoginEnforcementRequest']),
+            body: MfaWriteLoginEnforcementRequestToJSON(requestParameters['MfaWriteLoginEnforcementRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3191,18 +3191,18 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create or update a login enforcement
      */
-    async mfaWriteLoginEnforcement(name: string, mfaWriteLoginEnforcementRequest: MfaWriteLoginEnforcementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaWriteLoginEnforcementRaw({ name: name, mfaWriteLoginEnforcementRequest: mfaWriteLoginEnforcementRequest }, initOverrides);
+    async mfaWriteLoginEnforcement(name: string, MfaWriteLoginEnforcementRequest: MfaWriteLoginEnforcementRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaWriteLoginEnforcementRaw({ name: name, MfaWriteLoginEnforcementRequest: MfaWriteLoginEnforcementRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async oidcConfigureRaw(requestParameters: IdentityApiOidcConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['oidcConfigureRequest'] == null) {
+        if (requestParameters['OidcConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcConfigureRequest',
-                'Required parameter "oidcConfigureRequest" was null or undefined when calling oidcConfigure().'
+                'OidcConfigureRequest',
+                'Required parameter "OidcConfigureRequest" was null or undefined when calling oidcConfigure().'
             );
         }
 
@@ -3217,7 +3217,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcConfigureRequestToJSON(requestParameters['oidcConfigureRequest']),
+            body: OidcConfigureRequestToJSON(requestParameters['OidcConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3225,8 +3225,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcConfigure(oidcConfigureRequest: OidcConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcConfigureRaw({ oidcConfigureRequest: oidcConfigureRequest }, initOverrides);
+    async oidcConfigure(OidcConfigureRequest: OidcConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcConfigureRaw({ OidcConfigureRequest: OidcConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3457,10 +3457,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Verify the authenticity of an OIDC token
      */
     async oidcIntrospectRaw(requestParameters: IdentityApiOidcIntrospectOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['oidcIntrospectRequest'] == null) {
+        if (requestParameters['OidcIntrospectRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcIntrospectRequest',
-                'Required parameter "oidcIntrospectRequest" was null or undefined when calling oidcIntrospect().'
+                'OidcIntrospectRequest',
+                'Required parameter "OidcIntrospectRequest" was null or undefined when calling oidcIntrospect().'
             );
         }
 
@@ -3475,7 +3475,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcIntrospectRequestToJSON(requestParameters['oidcIntrospectRequest']),
+            body: OidcIntrospectRequestToJSON(requestParameters['OidcIntrospectRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3484,8 +3484,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Verify the authenticity of an OIDC token
      */
-    async oidcIntrospect(oidcIntrospectRequest: OidcIntrospectRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcIntrospectRaw({ oidcIntrospectRequest: oidcIntrospectRequest }, initOverrides);
+    async oidcIntrospect(OidcIntrospectRequest: OidcIntrospectRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcIntrospectRaw({ OidcIntrospectRequest: OidcIntrospectRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3608,8 +3608,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
-        if (requestParameters['allowedClientId'] != null) {
-            queryParameters['allowed_client_id'] = requestParameters['allowedClientId'];
+        if (requestParameters['allowed_client_id'] != null) {
+            queryParameters['allowed_client_id'] = requestParameters['allowed_client_id'];
         }
 
         if (requestParameters['list'] != null) {
@@ -3630,8 +3630,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListProviders(list: OidcListProvidersListEnum, allowedClientId?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.oidcListProvidersRaw({ list: list, allowedClientId: allowedClientId }, initOverrides);
+    async oidcListProviders(list: OidcListProvidersListEnum, allowed_client_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.oidcListProvidersRaw({ list: list, allowed_client_id: allowed_client_id }, initOverrides);
         return await response.value();
     }
 
@@ -3719,32 +3719,32 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
-        if (requestParameters['clientId'] != null) {
-            queryParameters['client_id'] = requestParameters['clientId'];
+        if (requestParameters['client_id'] != null) {
+            queryParameters['client_id'] = requestParameters['client_id'];
         }
 
-        if (requestParameters['codeChallenge'] != null) {
-            queryParameters['code_challenge'] = requestParameters['codeChallenge'];
+        if (requestParameters['code_challenge'] != null) {
+            queryParameters['code_challenge'] = requestParameters['code_challenge'];
         }
 
-        if (requestParameters['codeChallengeMethod'] != null) {
-            queryParameters['code_challenge_method'] = requestParameters['codeChallengeMethod'];
+        if (requestParameters['code_challenge_method'] != null) {
+            queryParameters['code_challenge_method'] = requestParameters['code_challenge_method'];
         }
 
-        if (requestParameters['maxAge'] != null) {
-            queryParameters['max_age'] = requestParameters['maxAge'];
+        if (requestParameters['max_age'] != null) {
+            queryParameters['max_age'] = requestParameters['max_age'];
         }
 
         if (requestParameters['nonce'] != null) {
             queryParameters['nonce'] = requestParameters['nonce'];
         }
 
-        if (requestParameters['redirectUri'] != null) {
-            queryParameters['redirect_uri'] = requestParameters['redirectUri'];
+        if (requestParameters['redirect_uri'] != null) {
+            queryParameters['redirect_uri'] = requestParameters['redirect_uri'];
         }
 
-        if (requestParameters['responseType'] != null) {
-            queryParameters['response_type'] = requestParameters['responseType'];
+        if (requestParameters['response_type'] != null) {
+            queryParameters['response_type'] = requestParameters['response_type'];
         }
 
         if (requestParameters['scope'] != null) {
@@ -3769,8 +3769,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcProviderAuthorize(name: string, clientId?: string, codeChallenge?: string, codeChallengeMethod?: string, maxAge?: number, nonce?: string, redirectUri?: string, responseType?: string, scope?: string, state?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcProviderAuthorizeRaw({ name: name, clientId: clientId, codeChallenge: codeChallenge, codeChallengeMethod: codeChallengeMethod, maxAge: maxAge, nonce: nonce, redirectUri: redirectUri, responseType: responseType, scope: scope, state: state }, initOverrides);
+    async oidcProviderAuthorize(name: string, client_id?: string, code_challenge?: string, code_challenge_method?: string, max_age?: number, nonce?: string, redirect_uri?: string, response_type?: string, scope?: string, state?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcProviderAuthorizeRaw({ name: name, client_id: client_id, code_challenge: code_challenge, code_challenge_method: code_challenge_method, max_age: max_age, nonce: nonce, redirect_uri: redirect_uri, response_type: response_type, scope: scope, state: state }, initOverrides);
         return await response.value();
     }
 
@@ -3784,10 +3784,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcProviderAuthorizeWithParametersRequest'] == null) {
+        if (requestParameters['OidcProviderAuthorizeWithParametersRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcProviderAuthorizeWithParametersRequest',
-                'Required parameter "oidcProviderAuthorizeWithParametersRequest" was null or undefined when calling oidcProviderAuthorizeWithParameters().'
+                'OidcProviderAuthorizeWithParametersRequest',
+                'Required parameter "OidcProviderAuthorizeWithParametersRequest" was null or undefined when calling oidcProviderAuthorizeWithParameters().'
             );
         }
 
@@ -3802,7 +3802,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcProviderAuthorizeWithParametersRequestToJSON(requestParameters['oidcProviderAuthorizeWithParametersRequest']),
+            body: OidcProviderAuthorizeWithParametersRequestToJSON(requestParameters['OidcProviderAuthorizeWithParametersRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3810,8 +3810,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcProviderAuthorizeWithParameters(name: string, oidcProviderAuthorizeWithParametersRequest: OidcProviderAuthorizeWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcProviderAuthorizeWithParametersRaw({ name: name, oidcProviderAuthorizeWithParametersRequest: oidcProviderAuthorizeWithParametersRequest }, initOverrides);
+    async oidcProviderAuthorizeWithParameters(name: string, OidcProviderAuthorizeWithParametersRequest: OidcProviderAuthorizeWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcProviderAuthorizeWithParametersRaw({ name: name, OidcProviderAuthorizeWithParametersRequest: OidcProviderAuthorizeWithParametersRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3825,10 +3825,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcProviderTokenRequest'] == null) {
+        if (requestParameters['OidcProviderTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcProviderTokenRequest',
-                'Required parameter "oidcProviderTokenRequest" was null or undefined when calling oidcProviderToken().'
+                'OidcProviderTokenRequest',
+                'Required parameter "OidcProviderTokenRequest" was null or undefined when calling oidcProviderToken().'
             );
         }
 
@@ -3843,7 +3843,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcProviderTokenRequestToJSON(requestParameters['oidcProviderTokenRequest']),
+            body: OidcProviderTokenRequestToJSON(requestParameters['OidcProviderTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3851,8 +3851,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcProviderToken(name: string, oidcProviderTokenRequest: OidcProviderTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcProviderTokenRaw({ name: name, oidcProviderTokenRequest: oidcProviderTokenRequest }, initOverrides);
+    async oidcProviderToken(name: string, OidcProviderTokenRequest: OidcProviderTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcProviderTokenRaw({ name: name, OidcProviderTokenRequest: OidcProviderTokenRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4323,10 +4323,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcRotateKeyRequest'] == null) {
+        if (requestParameters['OidcRotateKeyRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcRotateKeyRequest',
-                'Required parameter "oidcRotateKeyRequest" was null or undefined when calling oidcRotateKey().'
+                'OidcRotateKeyRequest',
+                'Required parameter "OidcRotateKeyRequest" was null or undefined when calling oidcRotateKey().'
             );
         }
 
@@ -4341,7 +4341,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcRotateKeyRequestToJSON(requestParameters['oidcRotateKeyRequest']),
+            body: OidcRotateKeyRequestToJSON(requestParameters['OidcRotateKeyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4350,8 +4350,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Rotate a named OIDC key.
      */
-    async oidcRotateKey(name: string, oidcRotateKeyRequest: OidcRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcRotateKeyRaw({ name: name, oidcRotateKeyRequest: oidcRotateKeyRequest }, initOverrides);
+    async oidcRotateKey(name: string, OidcRotateKeyRequest: OidcRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcRotateKeyRaw({ name: name, OidcRotateKeyRequest: OidcRotateKeyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4365,10 +4365,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteAssignmentRequest'] == null) {
+        if (requestParameters['OidcWriteAssignmentRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteAssignmentRequest',
-                'Required parameter "oidcWriteAssignmentRequest" was null or undefined when calling oidcWriteAssignment().'
+                'OidcWriteAssignmentRequest',
+                'Required parameter "OidcWriteAssignmentRequest" was null or undefined when calling oidcWriteAssignment().'
             );
         }
 
@@ -4383,7 +4383,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteAssignmentRequestToJSON(requestParameters['oidcWriteAssignmentRequest']),
+            body: OidcWriteAssignmentRequestToJSON(requestParameters['OidcWriteAssignmentRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4391,8 +4391,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcWriteAssignment(name: string, oidcWriteAssignmentRequest: OidcWriteAssignmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteAssignmentRaw({ name: name, oidcWriteAssignmentRequest: oidcWriteAssignmentRequest }, initOverrides);
+    async oidcWriteAssignment(name: string, OidcWriteAssignmentRequest: OidcWriteAssignmentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteAssignmentRaw({ name: name, OidcWriteAssignmentRequest: OidcWriteAssignmentRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4406,10 +4406,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteClientRequest'] == null) {
+        if (requestParameters['OidcWriteClientRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteClientRequest',
-                'Required parameter "oidcWriteClientRequest" was null or undefined when calling oidcWriteClient().'
+                'OidcWriteClientRequest',
+                'Required parameter "OidcWriteClientRequest" was null or undefined when calling oidcWriteClient().'
             );
         }
 
@@ -4424,7 +4424,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteClientRequestToJSON(requestParameters['oidcWriteClientRequest']),
+            body: OidcWriteClientRequestToJSON(requestParameters['OidcWriteClientRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4432,8 +4432,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcWriteClient(name: string, oidcWriteClientRequest: OidcWriteClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteClientRaw({ name: name, oidcWriteClientRequest: oidcWriteClientRequest }, initOverrides);
+    async oidcWriteClient(name: string, OidcWriteClientRequest: OidcWriteClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteClientRaw({ name: name, OidcWriteClientRequest: OidcWriteClientRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4448,10 +4448,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteKeyRequest'] == null) {
+        if (requestParameters['OidcWriteKeyRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteKeyRequest',
-                'Required parameter "oidcWriteKeyRequest" was null or undefined when calling oidcWriteKey().'
+                'OidcWriteKeyRequest',
+                'Required parameter "OidcWriteKeyRequest" was null or undefined when calling oidcWriteKey().'
             );
         }
 
@@ -4466,7 +4466,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteKeyRequestToJSON(requestParameters['oidcWriteKeyRequest']),
+            body: OidcWriteKeyRequestToJSON(requestParameters['OidcWriteKeyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4475,8 +4475,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * CRUD operations for OIDC keys.
      */
-    async oidcWriteKey(name: string, oidcWriteKeyRequest: OidcWriteKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteKeyRaw({ name: name, oidcWriteKeyRequest: oidcWriteKeyRequest }, initOverrides);
+    async oidcWriteKey(name: string, OidcWriteKeyRequest: OidcWriteKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteKeyRaw({ name: name, OidcWriteKeyRequest: OidcWriteKeyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4490,10 +4490,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteProviderRequest'] == null) {
+        if (requestParameters['OidcWriteProviderRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteProviderRequest',
-                'Required parameter "oidcWriteProviderRequest" was null or undefined when calling oidcWriteProvider().'
+                'OidcWriteProviderRequest',
+                'Required parameter "OidcWriteProviderRequest" was null or undefined when calling oidcWriteProvider().'
             );
         }
 
@@ -4508,7 +4508,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteProviderRequestToJSON(requestParameters['oidcWriteProviderRequest']),
+            body: OidcWriteProviderRequestToJSON(requestParameters['OidcWriteProviderRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4516,8 +4516,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcWriteProvider(name: string, oidcWriteProviderRequest: OidcWriteProviderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteProviderRaw({ name: name, oidcWriteProviderRequest: oidcWriteProviderRequest }, initOverrides);
+    async oidcWriteProvider(name: string, OidcWriteProviderRequest: OidcWriteProviderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteProviderRaw({ name: name, OidcWriteProviderRequest: OidcWriteProviderRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4532,10 +4532,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteRoleRequest'] == null) {
+        if (requestParameters['OidcWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteRoleRequest',
-                'Required parameter "oidcWriteRoleRequest" was null or undefined when calling oidcWriteRole().'
+                'OidcWriteRoleRequest',
+                'Required parameter "OidcWriteRoleRequest" was null or undefined when calling oidcWriteRole().'
             );
         }
 
@@ -4550,7 +4550,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteRoleRequestToJSON(requestParameters['oidcWriteRoleRequest']),
+            body: OidcWriteRoleRequestToJSON(requestParameters['OidcWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4559,8 +4559,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * CRUD operations on OIDC Roles
      */
-    async oidcWriteRole(name: string, oidcWriteRoleRequest: OidcWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteRoleRaw({ name: name, oidcWriteRoleRequest: oidcWriteRoleRequest }, initOverrides);
+    async oidcWriteRole(name: string, OidcWriteRoleRequest: OidcWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteRoleRaw({ name: name, OidcWriteRoleRequest: OidcWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4574,10 +4574,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oidcWriteScopeRequest'] == null) {
+        if (requestParameters['OidcWriteScopeRequest'] == null) {
             throw new runtime.RequiredError(
-                'oidcWriteScopeRequest',
-                'Required parameter "oidcWriteScopeRequest" was null or undefined when calling oidcWriteScope().'
+                'OidcWriteScopeRequest',
+                'Required parameter "OidcWriteScopeRequest" was null or undefined when calling oidcWriteScope().'
             );
         }
 
@@ -4592,7 +4592,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OidcWriteScopeRequestToJSON(requestParameters['oidcWriteScopeRequest']),
+            body: OidcWriteScopeRequestToJSON(requestParameters['OidcWriteScopeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4600,8 +4600,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcWriteScope(name: string, oidcWriteScopeRequest: OidcWriteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oidcWriteScopeRaw({ name: name, oidcWriteScopeRequest: oidcWriteScopeRequest }, initOverrides);
+    async oidcWriteScope(name: string, OidcWriteScopeRequest: OidcWriteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oidcWriteScopeRaw({ name: name, OidcWriteScopeRequest: OidcWriteScopeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4609,10 +4609,10 @@ export class IdentityApi extends runtime.BaseAPI {
      * Create a new alias.
      */
     async personaCreateRaw(requestParameters: IdentityApiPersonaCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['personaCreateRequest'] == null) {
+        if (requestParameters['PersonaCreateRequest'] == null) {
             throw new runtime.RequiredError(
-                'personaCreateRequest',
-                'Required parameter "personaCreateRequest" was null or undefined when calling personaCreate().'
+                'PersonaCreateRequest',
+                'Required parameter "PersonaCreateRequest" was null or undefined when calling personaCreate().'
             );
         }
 
@@ -4627,7 +4627,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PersonaCreateRequestToJSON(requestParameters['personaCreateRequest']),
+            body: PersonaCreateRequestToJSON(requestParameters['PersonaCreateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4636,8 +4636,8 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * Create a new alias.
      */
-    async personaCreate(personaCreateRequest: PersonaCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.personaCreateRaw({ personaCreateRequest: personaCreateRequest }, initOverrides);
+    async personaCreate(PersonaCreateRequest: PersonaCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.personaCreateRaw({ PersonaCreateRequest: PersonaCreateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4750,10 +4750,10 @@ export class IdentityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['personaUpdateByIdRequest'] == null) {
+        if (requestParameters['PersonaUpdateByIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'personaUpdateByIdRequest',
-                'Required parameter "personaUpdateByIdRequest" was null or undefined when calling personaUpdateById().'
+                'PersonaUpdateByIdRequest',
+                'Required parameter "PersonaUpdateByIdRequest" was null or undefined when calling personaUpdateById().'
             );
         }
 
@@ -4768,7 +4768,7 @@ export class IdentityApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PersonaUpdateByIdRequestToJSON(requestParameters['personaUpdateByIdRequest']),
+            body: PersonaUpdateByIdRequestToJSON(requestParameters['PersonaUpdateByIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4776,8 +4776,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async personaUpdateById(id: string, personaUpdateByIdRequest: PersonaUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.personaUpdateByIdRaw({ id: id, personaUpdateByIdRequest: personaUpdateByIdRequest }, initOverrides);
+    async personaUpdateById(id: string, PersonaUpdateByIdRequest: PersonaUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.personaUpdateByIdRaw({ id: id, PersonaUpdateByIdRequest: PersonaUpdateByIdRequest }, initOverrides);
         return await response.value();
     }
 

@@ -36,7 +36,7 @@ export interface MountsEnableSecretsEngineRequest {
      * @type {boolean}
      * @memberof MountsEnableSecretsEngineRequest
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * Mark the mount as a local mount, which is not replicated and is unaffected by replication.
      * @type {boolean}
@@ -54,19 +54,19 @@ export interface MountsEnableSecretsEngineRequest {
      * @type {string}
      * @memberof MountsEnableSecretsEngineRequest
      */
-    pluginName?: string;
+    plugin_name?: string;
     /**
      * The semantic version of the plugin to use, or image tag if oci_image is provided.
      * @type {string}
      * @memberof MountsEnableSecretsEngineRequest
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * Whether to turn on seal wrapping for the mount.
      * @type {boolean}
      * @memberof MountsEnableSecretsEngineRequest
      */
-    sealWrap?: boolean;
+    seal_wrap?: boolean;
     /**
      * The type of the backend. Example: "passthrough"
      * @type {string}
@@ -94,12 +94,12 @@ export function MountsEnableSecretsEngineRequestFromJSONTyped(json: any, ignoreD
         
         'config': json['config'] == null ? undefined : json['config'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
         'local': json['local'] == null ? undefined : json['local'],
         'options': json['options'] == null ? undefined : json['options'],
-        'pluginName': json['plugin_name'] == null ? undefined : json['plugin_name'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'sealWrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
+        'plugin_name': json['plugin_name'] == null ? undefined : json['plugin_name'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'seal_wrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -117,12 +117,12 @@ export function MountsEnableSecretsEngineRequestToJSONTyped(value?: MountsEnable
         
         'config': value['config'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
+        'external_entropy_access': value['external_entropy_access'],
         'local': value['local'],
         'options': value['options'],
-        'plugin_name': value['pluginName'],
-        'plugin_version': value['pluginVersion'],
-        'seal_wrap': value['sealWrap'],
+        'plugin_name': value['plugin_name'],
+        'plugin_version': value['plugin_version'],
+        'seal_wrap': value['seal_wrap'],
         'type': value['type'],
     };
 }

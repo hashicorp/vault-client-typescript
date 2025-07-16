@@ -30,13 +30,13 @@ export interface GoogleCloudKmsWriteKeyRequest {
      * @type {string}
      * @memberof GoogleCloudKmsWriteKeyRequest
      */
-    cryptoKey?: string;
+    crypto_key?: string;
     /**
      * Full Google Cloud resource ID of the key ring with the project and location (e.g. projects/my-project/locations/global/keyRings/my-keyring). If the given key ring does not exist, Vault will try to create it during a create operation.
      * @type {string}
      * @memberof GoogleCloudKmsWriteKeyRequest
      */
-    keyRing?: string;
+    key_ring?: string;
     /**
      * Arbitrary key=value label to apply to the crypto key. To specify multiple labels, specify this argument multiple times (e.g. labels="a=b" labels="c=d").
      * @type {object}
@@ -48,7 +48,7 @@ export interface GoogleCloudKmsWriteKeyRequest {
      * @type {string}
      * @memberof GoogleCloudKmsWriteKeyRequest
      */
-    protectionLevel?: string;
+    protection_level?: string;
     /**
      * Purpose of the key. Valid options are "asymmetric_decrypt", "asymmetric_sign", and "encrypt_decrypt". The default value is "encrypt_decrypt". The value cannot be changed after creation.
      * @type {string}
@@ -60,7 +60,7 @@ export interface GoogleCloudKmsWriteKeyRequest {
      * @type {string}
      * @memberof GoogleCloudKmsWriteKeyRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
 }
 
 /**
@@ -81,12 +81,12 @@ export function GoogleCloudKmsWriteKeyRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'cryptoKey': json['crypto_key'] == null ? undefined : json['crypto_key'],
-        'keyRing': json['key_ring'] == null ? undefined : json['key_ring'],
+        'crypto_key': json['crypto_key'] == null ? undefined : json['crypto_key'],
+        'key_ring': json['key_ring'] == null ? undefined : json['key_ring'],
         'labels': json['labels'] == null ? undefined : json['labels'],
-        'protectionLevel': json['protection_level'] == null ? undefined : json['protection_level'],
+        'protection_level': json['protection_level'] == null ? undefined : json['protection_level'],
         'purpose': json['purpose'] == null ? undefined : json['purpose'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
     };
 }
 
@@ -102,12 +102,12 @@ export function GoogleCloudKmsWriteKeyRequestToJSONTyped(value?: GoogleCloudKmsW
     return {
         
         'algorithm': value['algorithm'],
-        'crypto_key': value['cryptoKey'],
-        'key_ring': value['keyRing'],
+        'crypto_key': value['crypto_key'],
+        'key_ring': value['key_ring'],
         'labels': value['labels'],
-        'protection_level': value['protectionLevel'],
+        'protection_level': value['protection_level'],
         'purpose': value['purpose'],
-        'rotation_period': value['rotationPeriod'],
+        'rotation_period': value['rotation_period'],
     };
 }
 

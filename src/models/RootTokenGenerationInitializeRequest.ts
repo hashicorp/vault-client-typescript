@@ -24,7 +24,7 @@ export interface RootTokenGenerationInitializeRequest {
      * @type {string}
      * @memberof RootTokenGenerationInitializeRequest
      */
-    pgpKey?: string;
+    pgp_key?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function RootTokenGenerationInitializeRequestFromJSONTyped(json: any, ign
     }
     return {
         
-        'pgpKey': json['pgp_key'] == null ? undefined : json['pgp_key'],
+        'pgp_key': json['pgp_key'] == null ? undefined : json['pgp_key'],
     };
 }
 
@@ -59,7 +59,7 @@ export function RootTokenGenerationInitializeRequestToJSONTyped(value?: RootToke
 
     return {
         
-        'pgp_key': value['pgpKey'],
+        'pgp_key': value['pgp_key'],
     };
 }
 

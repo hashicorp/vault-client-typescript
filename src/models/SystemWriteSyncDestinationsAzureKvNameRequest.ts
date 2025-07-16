@@ -24,31 +24,31 @@ export interface SystemWriteSyncDestinationsAzureKvNameRequest {
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * OAuth2 client id of an Azure app registration with access to the key vault.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * OAuth2 client secret of an Azure app registration with access to the key vault.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    clientSecret?: string;
+    client_secret?: string;
     /**
      * Azure environment name. If not provided, AzurePublicCloud is used.
      * @type {string}
@@ -60,13 +60,13 @@ export interface SystemWriteSyncDestinationsAzureKvNameRequest {
      * @type {object}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    customTags?: object;
+    custom_tags?: object;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -78,7 +78,7 @@ export interface SystemWriteSyncDestinationsAzureKvNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    keyVaultUri?: string;
+    key_vault_uri?: string;
     /**
      * Asynchronously unsyncs all associated secrets with the destination then deletes the destination config.
      * @type {boolean}
@@ -90,19 +90,19 @@ export interface SystemWriteSyncDestinationsAzureKvNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
     /**
      * List of custom tags to remove for patch requests. This field is ignored on create and update requests.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    tagsToRemove?: Array<string>;
+    tags_to_remove?: Array<string>;
     /**
      * Tenant id for the Azure Active Directory.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
      */
-    tenantId?: string;
+    tenant_id?: string;
 }
 
 /**
@@ -122,20 +122,20 @@ export function SystemWriteSyncDestinationsAzureKvNameRequestFromJSONTyped(json:
     }
     return {
         
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
-        'clientSecret': json['client_secret'] == null ? undefined : json['client_secret'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
+        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'cloud': json['cloud'] == null ? undefined : json['cloud'],
-        'customTags': json['custom_tags'] == null ? undefined : json['custom_tags'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'custom_tags': json['custom_tags'] == null ? undefined : json['custom_tags'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
-        'keyVaultUri': json['key_vault_uri'] == null ? undefined : json['key_vault_uri'],
+        'key_vault_uri': json['key_vault_uri'] == null ? undefined : json['key_vault_uri'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
-        'tagsToRemove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
-        'tenantId': json['tenant_id'] == null ? undefined : json['tenant_id'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'tags_to_remove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
+        'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
     };
 }
 
@@ -150,20 +150,20 @@ export function SystemWriteSyncDestinationsAzureKvNameRequestToJSONTyped(value?:
 
     return {
         
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
-        'client_id': value['clientId'],
-        'client_secret': value['clientSecret'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
+        'client_id': value['client_id'],
+        'client_secret': value['client_secret'],
         'cloud': value['cloud'],
-        'custom_tags': value['customTags'],
-        'disable_strict_networking': value['disableStrictNetworking'],
+        'custom_tags': value['custom_tags'],
+        'disable_strict_networking': value['disable_strict_networking'],
         'granularity': value['granularity'],
-        'key_vault_uri': value['keyVaultUri'],
+        'key_vault_uri': value['key_vault_uri'],
         'purge': value['purge'],
-        'secret_name_template': value['secretNameTemplate'],
-        'tags_to_remove': value['tagsToRemove'],
-        'tenant_id': value['tenantId'],
+        'secret_name_template': value['secret_name_template'],
+        'tags_to_remove': value['tags_to_remove'],
+        'tenant_id': value['tenant_id'],
     };
 }
 

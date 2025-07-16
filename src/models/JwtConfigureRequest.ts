@@ -24,97 +24,97 @@ export interface JwtConfigureRequest {
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    boundIssuer?: string;
+    bound_issuer?: string;
     /**
      * The default role to use if none is provided during login. If not set, a role is required during login.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    defaultRole?: string;
+    default_role?: string;
     /**
      * The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    jwksCaPem?: string;
+    jwks_ca_pem?: string;
     /**
      * Set of JWKS Url and CA certificate (or chain of certificates) pairs. CA certificates must be in PEM format. Cannot be used with "jwks_url" or "jwks_ca_pem".
      * @type {Array<object>}
      * @memberof JwtConfigureRequest
      */
-    jwksPairs?: Array<object>;
+    jwks_pairs?: Array<object>;
     /**
      * JWKS URL to use to authenticate signatures. Cannot be used with "oidc_discovery_url" or "jwt_validation_pubkeys".
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    jwksUrl?: string;
+    jwks_url?: string;
     /**
      * A list of supported signing algorithms. Defaults to RS256.
      * @type {Array<string>}
      * @memberof JwtConfigureRequest
      */
-    jwtSupportedAlgs?: Array<string>;
+    jwt_supported_algs?: Array<string>;
     /**
      * A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used with "jwks_url" or "oidc_discovery_url".
      * @type {Array<string>}
      * @memberof JwtConfigureRequest
      */
-    jwtValidationPubkeys?: Array<string>;
+    jwt_validation_pubkeys?: Array<string>;
     /**
      * Pass namespace in the OIDC state parameter instead of as a separate query parameter. With this setting, the allowed redirect URL(s) in Vault and on the provider side should not contain a namespace query parameter. This means only one redirect URL entry needs to be maintained on the provider side for all vault namespaces that will be authenticating against it. Defaults to true for new configs.
      * @type {boolean}
      * @memberof JwtConfigureRequest
      */
-    namespaceInState?: boolean;
+    namespace_in_state?: boolean;
     /**
      * The OAuth Client ID configured with your OIDC provider.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    oidcClientId?: string;
+    oidc_client_id?: string;
     /**
      * The OAuth Client Secret configured with your OIDC provider.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    oidcClientSecret?: string;
+    oidc_client_secret?: string;
     /**
      * The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    oidcDiscoveryCaPem?: string;
+    oidc_discovery_ca_pem?: string;
     /**
      * OIDC Discovery URL, without any .well-known component (base path). Cannot be used with "jwks_url" or "jwt_validation_pubkeys".
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    oidcDiscoveryUrl?: string;
+    oidc_discovery_url?: string;
     /**
      * The response mode to be used in the OAuth2 request. Allowed values are 'query' and 'form_post'.
      * @type {string}
      * @memberof JwtConfigureRequest
      */
-    oidcResponseMode?: string;
+    oidc_response_mode?: string;
     /**
      * The response types to request. Allowed values are 'code' and 'id_token'. Defaults to 'code'.
      * @type {Array<string>}
      * @memberof JwtConfigureRequest
      */
-    oidcResponseTypes?: Array<string>;
+    oidc_response_types?: Array<string>;
     /**
      * Provider-specific configuration. Optional.
      * @type {object}
      * @memberof JwtConfigureRequest
      */
-    providerConfig?: object;
+    provider_config?: object;
     /**
      * A list of ASN1 OIDs of certificate extensions marked Critical that are unsupported by Vault and should be ignored. This option should very rarely be needed except in specialized PKI environments.
      * @type {Array<string>}
      * @memberof JwtConfigureRequest
      */
-    unsupportedCriticalCertExtensions?: Array<string>;
+    unsupported_critical_cert_extensions?: Array<string>;
 }
 
 /**
@@ -134,22 +134,22 @@ export function JwtConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'boundIssuer': json['bound_issuer'] == null ? undefined : json['bound_issuer'],
-        'defaultRole': json['default_role'] == null ? undefined : json['default_role'],
-        'jwksCaPem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
-        'jwksPairs': json['jwks_pairs'] == null ? undefined : json['jwks_pairs'],
-        'jwksUrl': json['jwks_url'] == null ? undefined : json['jwks_url'],
-        'jwtSupportedAlgs': json['jwt_supported_algs'] == null ? undefined : json['jwt_supported_algs'],
-        'jwtValidationPubkeys': json['jwt_validation_pubkeys'] == null ? undefined : json['jwt_validation_pubkeys'],
-        'namespaceInState': json['namespace_in_state'] == null ? undefined : json['namespace_in_state'],
-        'oidcClientId': json['oidc_client_id'] == null ? undefined : json['oidc_client_id'],
-        'oidcClientSecret': json['oidc_client_secret'] == null ? undefined : json['oidc_client_secret'],
-        'oidcDiscoveryCaPem': json['oidc_discovery_ca_pem'] == null ? undefined : json['oidc_discovery_ca_pem'],
-        'oidcDiscoveryUrl': json['oidc_discovery_url'] == null ? undefined : json['oidc_discovery_url'],
-        'oidcResponseMode': json['oidc_response_mode'] == null ? undefined : json['oidc_response_mode'],
-        'oidcResponseTypes': json['oidc_response_types'] == null ? undefined : json['oidc_response_types'],
-        'providerConfig': json['provider_config'] == null ? undefined : json['provider_config'],
-        'unsupportedCriticalCertExtensions': json['unsupported_critical_cert_extensions'] == null ? undefined : json['unsupported_critical_cert_extensions'],
+        'bound_issuer': json['bound_issuer'] == null ? undefined : json['bound_issuer'],
+        'default_role': json['default_role'] == null ? undefined : json['default_role'],
+        'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
+        'jwks_pairs': json['jwks_pairs'] == null ? undefined : json['jwks_pairs'],
+        'jwks_url': json['jwks_url'] == null ? undefined : json['jwks_url'],
+        'jwt_supported_algs': json['jwt_supported_algs'] == null ? undefined : json['jwt_supported_algs'],
+        'jwt_validation_pubkeys': json['jwt_validation_pubkeys'] == null ? undefined : json['jwt_validation_pubkeys'],
+        'namespace_in_state': json['namespace_in_state'] == null ? undefined : json['namespace_in_state'],
+        'oidc_client_id': json['oidc_client_id'] == null ? undefined : json['oidc_client_id'],
+        'oidc_client_secret': json['oidc_client_secret'] == null ? undefined : json['oidc_client_secret'],
+        'oidc_discovery_ca_pem': json['oidc_discovery_ca_pem'] == null ? undefined : json['oidc_discovery_ca_pem'],
+        'oidc_discovery_url': json['oidc_discovery_url'] == null ? undefined : json['oidc_discovery_url'],
+        'oidc_response_mode': json['oidc_response_mode'] == null ? undefined : json['oidc_response_mode'],
+        'oidc_response_types': json['oidc_response_types'] == null ? undefined : json['oidc_response_types'],
+        'provider_config': json['provider_config'] == null ? undefined : json['provider_config'],
+        'unsupported_critical_cert_extensions': json['unsupported_critical_cert_extensions'] == null ? undefined : json['unsupported_critical_cert_extensions'],
     };
 }
 
@@ -164,22 +164,22 @@ export function JwtConfigureRequestToJSONTyped(value?: JwtConfigureRequest | nul
 
     return {
         
-        'bound_issuer': value['boundIssuer'],
-        'default_role': value['defaultRole'],
-        'jwks_ca_pem': value['jwksCaPem'],
-        'jwks_pairs': value['jwksPairs'],
-        'jwks_url': value['jwksUrl'],
-        'jwt_supported_algs': value['jwtSupportedAlgs'],
-        'jwt_validation_pubkeys': value['jwtValidationPubkeys'],
-        'namespace_in_state': value['namespaceInState'],
-        'oidc_client_id': value['oidcClientId'],
-        'oidc_client_secret': value['oidcClientSecret'],
-        'oidc_discovery_ca_pem': value['oidcDiscoveryCaPem'],
-        'oidc_discovery_url': value['oidcDiscoveryUrl'],
-        'oidc_response_mode': value['oidcResponseMode'],
-        'oidc_response_types': value['oidcResponseTypes'],
-        'provider_config': value['providerConfig'],
-        'unsupported_critical_cert_extensions': value['unsupportedCriticalCertExtensions'],
+        'bound_issuer': value['bound_issuer'],
+        'default_role': value['default_role'],
+        'jwks_ca_pem': value['jwks_ca_pem'],
+        'jwks_pairs': value['jwks_pairs'],
+        'jwks_url': value['jwks_url'],
+        'jwt_supported_algs': value['jwt_supported_algs'],
+        'jwt_validation_pubkeys': value['jwt_validation_pubkeys'],
+        'namespace_in_state': value['namespace_in_state'],
+        'oidc_client_id': value['oidc_client_id'],
+        'oidc_client_secret': value['oidc_client_secret'],
+        'oidc_discovery_ca_pem': value['oidc_discovery_ca_pem'],
+        'oidc_discovery_url': value['oidc_discovery_url'],
+        'oidc_response_mode': value['oidc_response_mode'],
+        'oidc_response_types': value['oidc_response_types'],
+        'provider_config': value['provider_config'],
+        'unsupported_critical_cert_extensions': value['unsupported_critical_cert_extensions'],
     };
 }
 

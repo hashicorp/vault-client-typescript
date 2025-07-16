@@ -30,13 +30,13 @@ export interface AzureLoginRequest {
      * @type {string}
      * @memberof AzureLoginRequest
      */
-    resourceGroupName?: string;
+    resource_group_name?: string;
     /**
      * The fully qualified ID of the resource, includingthe resource name and resource type. Use the format, /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}. This value is ignored if vm_name or vmss_name is specified.
      * @type {string}
      * @memberof AzureLoginRequest
      */
-    resourceId?: string;
+    resource_id?: string;
     /**
      * The token role.
      * @type {string}
@@ -48,19 +48,19 @@ export interface AzureLoginRequest {
      * @type {string}
      * @memberof AzureLoginRequest
      */
-    subscriptionId?: string;
+    subscription_id?: string;
     /**
      * The name of the virtual machine. This value is ignored if vmss_name is specified.
      * @type {string}
      * @memberof AzureLoginRequest
      */
-    vmName?: string;
+    vm_name?: string;
     /**
      * The name of the virtual machine scale set the instance is in.
      * @type {string}
      * @memberof AzureLoginRequest
      */
-    vmssName?: string;
+    vmss_name?: string;
 }
 
 /**
@@ -81,12 +81,12 @@ export function AzureLoginRequestFromJSONTyped(json: any, ignoreDiscriminator: b
     return {
         
         'jwt': json['jwt'] == null ? undefined : json['jwt'],
-        'resourceGroupName': json['resource_group_name'] == null ? undefined : json['resource_group_name'],
-        'resourceId': json['resource_id'] == null ? undefined : json['resource_id'],
+        'resource_group_name': json['resource_group_name'] == null ? undefined : json['resource_group_name'],
+        'resource_id': json['resource_id'] == null ? undefined : json['resource_id'],
         'role': json['role'] == null ? undefined : json['role'],
-        'subscriptionId': json['subscription_id'] == null ? undefined : json['subscription_id'],
-        'vmName': json['vm_name'] == null ? undefined : json['vm_name'],
-        'vmssName': json['vmss_name'] == null ? undefined : json['vmss_name'],
+        'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
+        'vm_name': json['vm_name'] == null ? undefined : json['vm_name'],
+        'vmss_name': json['vmss_name'] == null ? undefined : json['vmss_name'],
     };
 }
 
@@ -102,12 +102,12 @@ export function AzureLoginRequestToJSONTyped(value?: AzureLoginRequest | null, i
     return {
         
         'jwt': value['jwt'],
-        'resource_group_name': value['resourceGroupName'],
-        'resource_id': value['resourceId'],
+        'resource_group_name': value['resource_group_name'],
+        'resource_id': value['resource_id'],
         'role': value['role'],
-        'subscription_id': value['subscriptionId'],
-        'vm_name': value['vmName'],
-        'vmss_name': value['vmssName'],
+        'subscription_id': value['subscription_id'],
+        'vm_name': value['vm_name'],
+        'vmss_name': value['vmss_name'],
     };
 }
 

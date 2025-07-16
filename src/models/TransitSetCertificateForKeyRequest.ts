@@ -24,7 +24,7 @@ export interface TransitSetCertificateForKeyRequest {
      * @type {string}
      * @memberof TransitSetCertificateForKeyRequest
      */
-    certificateChain: string;
+    certificate_chain: string;
     /**
      * Optional version of key, 'latest' if not set
      * @type {number}
@@ -37,7 +37,7 @@ export interface TransitSetCertificateForKeyRequest {
  * Check if a given object implements the TransitSetCertificateForKeyRequest interface.
  */
 export function instanceOfTransitSetCertificateForKeyRequest(value: object): value is TransitSetCertificateForKeyRequest {
-    if (!('certificateChain' in value) || value['certificateChain'] === undefined) return false;
+    if (!('certificate_chain' in value) || value['certificate_chain'] === undefined) return false;
     return true;
 }
 
@@ -51,7 +51,7 @@ export function TransitSetCertificateForKeyRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'certificateChain': json['certificate_chain'],
+        'certificate_chain': json['certificate_chain'],
         'version': json['version'] == null ? undefined : json['version'],
     };
 }
@@ -67,7 +67,7 @@ export function TransitSetCertificateForKeyRequestToJSONTyped(value?: TransitSet
 
     return {
         
-        'certificate_chain': value['certificateChain'],
+        'certificate_chain': value['certificate_chain'],
         'version': value['version'],
     };
 }

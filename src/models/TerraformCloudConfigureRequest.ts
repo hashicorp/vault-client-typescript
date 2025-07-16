@@ -30,7 +30,7 @@ export interface TerraformCloudConfigureRequest {
      * @type {string}
      * @memberof TerraformCloudConfigureRequest
      */
-    basePath?: string;
+    base_path?: string;
     /**
      * The token to access Terraform Cloud
      * @type {string}
@@ -58,7 +58,7 @@ export function TerraformCloudConfigureRequestFromJSONTyped(json: any, ignoreDis
     return {
         
         'address': json['address'] == null ? undefined : json['address'],
-        'basePath': json['base_path'] == null ? undefined : json['base_path'],
+        'base_path': json['base_path'] == null ? undefined : json['base_path'],
         'token': json['token'],
     };
 }
@@ -75,7 +75,7 @@ export function TerraformCloudConfigureRequestToJSONTyped(value?: TerraformCloud
     return {
         
         'address': value['address'],
-        'base_path': value['basePath'],
+        'base_path': value['base_path'],
         'token': value['token'],
     };
 }

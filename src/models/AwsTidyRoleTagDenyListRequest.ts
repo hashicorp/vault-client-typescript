@@ -24,7 +24,7 @@ export interface AwsTidyRoleTagDenyListRequest {
      * @type {string}
      * @memberof AwsTidyRoleTagDenyListRequest
      */
-    safetyBuffer?: string;
+    safety_buffer?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AwsTidyRoleTagDenyListRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'safetyBuffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
+        'safety_buffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AwsTidyRoleTagDenyListRequestToJSONTyped(value?: AwsTidyRoleTagD
 
     return {
         
-        'safety_buffer': value['safetyBuffer'],
+        'safety_buffer': value['safety_buffer'],
     };
 }
 

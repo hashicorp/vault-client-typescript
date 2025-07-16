@@ -31,25 +31,25 @@ export interface PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequest {
      * @type {number}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequest
      */
-    keyType?: PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestKeyTypeEnum;
+    key_type?: PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestKeyTypeEnum;
     /**
      * Format for the returned private key. Generally the default will be controlled by the "format" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to "der".
      * @type {string}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequest
      */
-    privateKeyFormat?: PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestPrivateKeyFormatEnum;
+    private_key_format?: PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestPrivateKeyFormatEnum;
     /**
      * Whether or not to remove self-signed CA certificates in the output of the ca_chain field.
      * @type {boolean}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequest
      */
-    removeRootsFromChain?: boolean;
+    remove_roots_from_chain?: boolean;
 }
 
 /**
@@ -100,10 +100,10 @@ export function PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestFromJSONT
         
             ...json,
         'format': json['format'] == null ? undefined : json['format'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'privateKeyFormat': json['private_key_format'] == null ? undefined : json['private_key_format'],
-        'removeRootsFromChain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
+        'remove_roots_from_chain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
     };
 }
 
@@ -120,10 +120,10 @@ export function PkiWriteIssuerIssuerRefExternalPolicyIssuePolicyRequestToJSONTyp
         
             ...value,
         'format': value['format'],
-        'key_bits': value['keyBits'],
-        'key_type': value['keyType'],
-        'private_key_format': value['privateKeyFormat'],
-        'remove_roots_from_chain': value['removeRootsFromChain'],
+        'key_bits': value['key_bits'],
+        'key_type': value['key_type'],
+        'private_key_format': value['private_key_format'],
+        'remove_roots_from_chain': value['remove_roots_from_chain'],
     };
 }
 

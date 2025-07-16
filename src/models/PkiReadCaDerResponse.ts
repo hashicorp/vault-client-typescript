@@ -24,7 +24,7 @@ export interface PkiReadCaDerResponse {
      * @type {string}
      * @memberof PkiReadCaDerResponse
      */
-    caChain?: string;
+    ca_chain?: string;
     /**
      * Certificate
      * @type {string}
@@ -36,19 +36,19 @@ export interface PkiReadCaDerResponse {
      * @type {string}
      * @memberof PkiReadCaDerResponse
      */
-    issuerId?: string;
+    issuer_id?: string;
     /**
      * Revocation time
      * @type {number}
      * @memberof PkiReadCaDerResponse
      */
-    revocationTime?: number;
+    revocation_time?: number;
     /**
      * Revocation time RFC 3339 formatted
      * @type {string}
      * @memberof PkiReadCaDerResponse
      */
-    revocationTimeRfc3339?: string;
+    revocation_time_rfc3339?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiReadCaDerResponseFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'caChain': json['ca_chain'] == null ? undefined : json['ca_chain'],
+        'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'issuerId': json['issuer_id'] == null ? undefined : json['issuer_id'],
-        'revocationTime': json['revocation_time'] == null ? undefined : json['revocation_time'],
-        'revocationTimeRfc3339': json['revocation_time_rfc3339'] == null ? undefined : json['revocation_time_rfc3339'],
+        'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'revocation_time': json['revocation_time'] == null ? undefined : json['revocation_time'],
+        'revocation_time_rfc3339': json['revocation_time_rfc3339'] == null ? undefined : json['revocation_time_rfc3339'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiReadCaDerResponseToJSONTyped(value?: PkiReadCaDerResponse | n
 
     return {
         
-        'ca_chain': value['caChain'],
+        'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
-        'issuer_id': value['issuerId'],
-        'revocation_time': value['revocationTime'],
-        'revocation_time_rfc3339': value['revocationTimeRfc3339'],
+        'issuer_id': value['issuer_id'],
+        'revocation_time': value['revocation_time'],
+        'revocation_time_rfc3339': value['revocation_time_rfc3339'],
     };
 }
 

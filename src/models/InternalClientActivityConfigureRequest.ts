@@ -25,7 +25,7 @@ export interface InternalClientActivityConfigureRequest {
      * @memberof InternalClientActivityConfigureRequest
      * @deprecated
      */
-    defaultReportMonths?: number;
+    default_report_months?: number;
     /**
      * Enable or disable collection of client count: enable, disable, or default.
      * @type {string}
@@ -37,7 +37,7 @@ export interface InternalClientActivityConfigureRequest {
      * @type {number}
      * @memberof InternalClientActivityConfigureRequest
      */
-    retentionMonths?: number;
+    retention_months?: number;
 }
 
 /**
@@ -57,9 +57,9 @@ export function InternalClientActivityConfigureRequestFromJSONTyped(json: any, i
     }
     return {
         
-        'defaultReportMonths': json['default_report_months'] == null ? undefined : json['default_report_months'],
+        'default_report_months': json['default_report_months'] == null ? undefined : json['default_report_months'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'retentionMonths': json['retention_months'] == null ? undefined : json['retention_months'],
+        'retention_months': json['retention_months'] == null ? undefined : json['retention_months'],
     };
 }
 
@@ -74,9 +74,9 @@ export function InternalClientActivityConfigureRequestToJSONTyped(value?: Intern
 
     return {
         
-        'default_report_months': value['defaultReportMonths'],
+        'default_report_months': value['default_report_months'],
         'enabled': value['enabled'],
-        'retention_months': value['retentionMonths'],
+        'retention_months': value['retention_months'],
     };
 }
 

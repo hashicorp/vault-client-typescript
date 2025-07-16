@@ -30,49 +30,49 @@ export interface GoogleCloudConfigureRequest {
      * @type {boolean}
      * @memberof GoogleCloudConfigureRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * Audience of plugin identity tokens
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    identityTokenAudience?: string;
+    identity_token_audience?: string;
     /**
      * Time-to-live of plugin identity tokens
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    identityTokenTtl?: string;
+    identity_token_ttl?: string;
     /**
      * Maximum time a service account key is valid for. If <= 0, will use system default.
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * Email ID for the Service Account to impersonate for Workload Identity Federation.
      * @type {string}
      * @memberof GoogleCloudConfigureRequest
      */
-    serviceAccountEmail?: string;
+    service_account_email?: string;
     /**
      * Default lease for generated keys. If <= 0, will use system default.
      * @type {string}
@@ -99,14 +99,14 @@ export function GoogleCloudConfigureRequestFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'credentials': json['credentials'] == null ? undefined : json['credentials'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
-        'identityTokenAudience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
-        'identityTokenTtl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'serviceAccountEmail': json['service_account_email'] == null ? undefined : json['service_account_email'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -123,14 +123,14 @@ export function GoogleCloudConfigureRequestToJSONTyped(value?: GoogleCloudConfig
     return {
         
         'credentials': value['credentials'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
-        'identity_token_audience': value['identityTokenAudience'],
-        'identity_token_ttl': value['identityTokenTtl'],
-        'max_ttl': value['maxTtl'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
-        'service_account_email': value['serviceAccountEmail'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_ttl': value['identity_token_ttl'],
+        'max_ttl': value['max_ttl'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
+        'service_account_email': value['service_account_email'],
         'ttl': value['ttl'],
     };
 }
