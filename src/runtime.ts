@@ -423,6 +423,7 @@ export class JSONApiResponse<T> {
     constructor(public raw: Response, private transformer: ResponseTransformer<T> = (jsonValue: any) => jsonValue) {}
 
     async value(): Promise<T> {
+        const response = await this.raw.json();
         return this.transformer(response.data);
     }
 }
