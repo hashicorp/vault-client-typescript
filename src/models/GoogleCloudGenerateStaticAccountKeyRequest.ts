@@ -24,13 +24,13 @@ export interface GoogleCloudGenerateStaticAccountKeyRequest {
      * @type {string}
      * @memberof GoogleCloudGenerateStaticAccountKeyRequest
      */
-    keyAlgorithm?: string;
+    key_algorithm?: string;
     /**
      * Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE."
      * @type {string}
      * @memberof GoogleCloudGenerateStaticAccountKeyRequest
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * Lifetime of the service account key
      * @type {string}
@@ -56,8 +56,8 @@ export function GoogleCloudGenerateStaticAccountKeyRequestFromJSONTyped(json: an
     }
     return {
         
-        'keyAlgorithm': json['key_algorithm'] == null ? undefined : json['key_algorithm'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
+        'key_algorithm': json['key_algorithm'] == null ? undefined : json['key_algorithm'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -73,8 +73,8 @@ export function GoogleCloudGenerateStaticAccountKeyRequestToJSONTyped(value?: Go
 
     return {
         
-        'key_algorithm': value['keyAlgorithm'],
-        'key_type': value['keyType'],
+        'key_algorithm': value['key_algorithm'],
+        'key_type': value['key_type'],
         'ttl': value['ttl'],
     };
 }

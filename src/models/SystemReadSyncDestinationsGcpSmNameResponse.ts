@@ -24,7 +24,7 @@ export interface SystemReadSyncDestinationsGcpSmNameResponse {
      * @type {object}
      * @memberof SystemReadSyncDestinationsGcpSmNameResponse
      */
-    connectionDetails?: object;
+    connection_details?: object;
     /**
      * Name of this secrets store.
      * @type {string}
@@ -42,13 +42,13 @@ export interface SystemReadSyncDestinationsGcpSmNameResponse {
      * @type {string}
      * @memberof SystemReadSyncDestinationsGcpSmNameResponse
      */
-    purgeError?: string;
+    purge_error?: string;
     /**
      * Timestamp of when a purge job was initiated when deleting a destination.
      * @type {Date}
      * @memberof SystemReadSyncDestinationsGcpSmNameResponse
      */
-    purgeInitiatedAt?: Date;
+    purge_initiated_at?: Date;
     /**
      * Type of this secrets store.
      * @type {string}
@@ -74,11 +74,11 @@ export function SystemReadSyncDestinationsGcpSmNameResponseFromJSONTyped(json: a
     }
     return {
         
-        'connectionDetails': json['connection_details'] == null ? undefined : json['connection_details'],
+        'connection_details': json['connection_details'] == null ? undefined : json['connection_details'],
         'name': json['name'] == null ? undefined : json['name'],
         'options': json['options'] == null ? undefined : json['options'],
-        'purgeError': json['purge_error'] == null ? undefined : json['purge_error'],
-        'purgeInitiatedAt': json['purge_initiated_at'] == null ? undefined : (new Date(json['purge_initiated_at'])),
+        'purge_error': json['purge_error'] == null ? undefined : json['purge_error'],
+        'purge_initiated_at': json['purge_initiated_at'] == null ? undefined : (new Date(json['purge_initiated_at'])),
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -94,11 +94,11 @@ export function SystemReadSyncDestinationsGcpSmNameResponseToJSONTyped(value?: S
 
     return {
         
-        'connection_details': value['connectionDetails'],
+        'connection_details': value['connection_details'],
         'name': value['name'],
         'options': value['options'],
-        'purge_error': value['purgeError'],
-        'purge_initiated_at': value['purgeInitiatedAt'] == null ? undefined : ((value['purgeInitiatedAt']).toISOString()),
+        'purge_error': value['purge_error'],
+        'purge_initiated_at': value['purge_initiated_at'] == null ? undefined : ((value['purge_initiated_at']).toISOString()),
         'type': value['type'],
     };
 }

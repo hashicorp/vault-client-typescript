@@ -24,13 +24,13 @@ export interface PkiImportKeyRequest {
      * @type {string}
      * @memberof PkiImportKeyRequest
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * PEM-format, unencrypted secret key
      * @type {string}
      * @memberof PkiImportKeyRequest
      */
-    pemBundle?: string;
+    pem_bundle?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function PkiImportKeyRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'pemBundle': json['pem_bundle'] == null ? undefined : json['pem_bundle'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'pem_bundle': json['pem_bundle'] == null ? undefined : json['pem_bundle'],
     };
 }
 
@@ -66,8 +66,8 @@ export function PkiImportKeyRequestToJSONTyped(value?: PkiImportKeyRequest | nul
 
     return {
         
-        'key_name': value['keyName'],
-        'pem_bundle': value['pemBundle'],
+        'key_name': value['key_name'],
+        'pem_bundle': value['pem_bundle'],
     };
 }
 

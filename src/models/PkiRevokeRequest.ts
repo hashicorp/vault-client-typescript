@@ -30,7 +30,7 @@ export interface PkiRevokeRequest {
      * @type {string}
      * @memberof PkiRevokeRequest
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function PkiRevokeRequestFromJSONTyped(json: any, ignoreDiscriminator: bo
     return {
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -67,7 +67,7 @@ export function PkiRevokeRequestToJSONTyped(value?: PkiRevokeRequest | null, ign
     return {
         
         'certificate': value['certificate'],
-        'serial_number': value['serialNumber'],
+        'serial_number': value['serial_number'],
     };
 }
 

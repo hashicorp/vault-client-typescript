@@ -24,7 +24,7 @@ export interface LdapLibraryForceCheckInRequest {
      * @type {Array<string>}
      * @memberof LdapLibraryForceCheckInRequest
      */
-    serviceAccountNames?: Array<string>;
+    service_account_names?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function LdapLibraryForceCheckInRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'serviceAccountNames': json['service_account_names'] == null ? undefined : json['service_account_names'],
+        'service_account_names': json['service_account_names'] == null ? undefined : json['service_account_names'],
     };
 }
 
@@ -59,7 +59,7 @@ export function LdapLibraryForceCheckInRequestToJSONTyped(value?: LdapLibraryFor
 
     return {
         
-        'service_account_names': value['serviceAccountNames'],
+        'service_account_names': value['service_account_names'],
     };
 }
 

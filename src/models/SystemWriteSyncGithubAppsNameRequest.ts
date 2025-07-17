@@ -24,13 +24,13 @@ export interface SystemWriteSyncGithubAppsNameRequest {
      * @type {number}
      * @memberof SystemWriteSyncGithubAppsNameRequest
      */
-    appId?: number;
+    app_id?: number;
     /**
      * Private key of the GitHub App.
      * @type {string}
      * @memberof SystemWriteSyncGithubAppsNameRequest
      */
-    privateKey?: string;
+    private_key?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function SystemWriteSyncGithubAppsNameRequestFromJSONTyped(json: any, ign
     }
     return {
         
-        'appId': json['app_id'] == null ? undefined : json['app_id'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
+        'app_id': json['app_id'] == null ? undefined : json['app_id'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
     };
 }
 
@@ -66,8 +66,8 @@ export function SystemWriteSyncGithubAppsNameRequestToJSONTyped(value?: SystemWr
 
     return {
         
-        'app_id': value['appId'],
-        'private_key': value['privateKey'],
+        'app_id': value['app_id'],
+        'private_key': value['private_key'],
     };
 }
 

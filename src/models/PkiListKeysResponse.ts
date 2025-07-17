@@ -24,7 +24,7 @@ export interface PkiListKeysResponse {
      * @type {object}
      * @memberof PkiListKeysResponse
      */
-    keyInfo?: object;
+    key_info?: object;
     /**
      * A list of keys
      * @type {Array<string>}
@@ -50,7 +50,7 @@ export function PkiListKeysResponseFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
     };
 }
@@ -66,7 +66,7 @@ export function PkiListKeysResponseToJSONTyped(value?: PkiListKeysResponse | nul
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
     };
 }

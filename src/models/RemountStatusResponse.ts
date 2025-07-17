@@ -24,13 +24,13 @@ export interface RemountStatusResponse {
      * @type {string}
      * @memberof RemountStatusResponse
      */
-    migrationId?: string;
+    migration_id?: string;
     /**
      * 
      * @type {object}
      * @memberof RemountStatusResponse
      */
-    migrationInfo?: object;
+    migration_info?: object;
 }
 
 /**
@@ -50,8 +50,8 @@ export function RemountStatusResponseFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'migrationId': json['migration_id'] == null ? undefined : json['migration_id'],
-        'migrationInfo': json['migration_info'] == null ? undefined : json['migration_info'],
+        'migration_id': json['migration_id'] == null ? undefined : json['migration_id'],
+        'migration_info': json['migration_info'] == null ? undefined : json['migration_info'],
     };
 }
 
@@ -66,8 +66,8 @@ export function RemountStatusResponseToJSONTyped(value?: RemountStatusResponse |
 
     return {
         
-        'migration_id': value['migrationId'],
-        'migration_info': value['migrationInfo'],
+        'migration_id': value['migration_id'],
+        'migration_info': value['migration_info'],
     };
 }
 

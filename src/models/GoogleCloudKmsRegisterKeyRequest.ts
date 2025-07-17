@@ -24,7 +24,7 @@ export interface GoogleCloudKmsRegisterKeyRequest {
      * @type {string}
      * @memberof GoogleCloudKmsRegisterKeyRequest
      */
-    cryptoKey?: string;
+    crypto_key?: string;
     /**
      * Verify that the given Google Cloud KMS crypto key exists and is accessible before creating the storage entry in Vault. Set this to "false" if the key will not exist at creation time.
      * @type {boolean}
@@ -50,7 +50,7 @@ export function GoogleCloudKmsRegisterKeyRequestFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'cryptoKey': json['crypto_key'] == null ? undefined : json['crypto_key'],
+        'crypto_key': json['crypto_key'] == null ? undefined : json['crypto_key'],
         'verify': json['verify'] == null ? undefined : json['verify'],
     };
 }
@@ -66,7 +66,7 @@ export function GoogleCloudKmsRegisterKeyRequestToJSONTyped(value?: GoogleCloudK
 
     return {
         
-        'crypto_key': value['cryptoKey'],
+        'crypto_key': value['crypto_key'],
         'verify': value['verify'],
     };
 }

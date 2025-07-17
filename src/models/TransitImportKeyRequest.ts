@@ -24,19 +24,19 @@ export interface TransitImportKeyRequest {
      * @type {boolean}
      * @memberof TransitImportKeyRequest
      */
-    allowPlaintextBackup?: boolean;
+    allow_plaintext_backup?: boolean;
     /**
      * True if the imported key may be rotated within Vault; false otherwise.
      * @type {boolean}
      * @memberof TransitImportKeyRequest
      */
-    allowRotation?: boolean;
+    allow_rotation?: boolean;
     /**
      * Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
      * @type {string}
      * @memberof TransitImportKeyRequest
      */
-    autoRotatePeriod?: string;
+    auto_rotate_period?: string;
     /**
      * The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
      * @type {string}
@@ -66,13 +66,13 @@ export interface TransitImportKeyRequest {
      * @type {string}
      * @memberof TransitImportKeyRequest
      */
-    hashFunction?: string;
+    hash_function?: string;
     /**
      * The plaintext PEM public key to be imported. If "ciphertext" is set, this field is ignored.
      * @type {string}
      * @memberof TransitImportKeyRequest
      */
-    publicKey?: string;
+    public_key?: string;
     /**
      * The type of key being imported. Currently, "aes128-gcm96" (symmetric), "aes256-gcm96" (symmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), "ed25519" (asymmetric), "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ml-dsa-44 (asymmetric)", "ml-dsa-65 (asymmetric)", "ml-dsa-87 (asymmetric)", "hmac", "aes128-cmac", "aes192-cmac", aes256-cmac" are supported. Defaults to "aes256-gcm96".
      * @type {string}
@@ -98,15 +98,15 @@ export function TransitImportKeyRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'allowPlaintextBackup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
-        'allowRotation': json['allow_rotation'] == null ? undefined : json['allow_rotation'],
-        'autoRotatePeriod': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
+        'allow_plaintext_backup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
+        'allow_rotation': json['allow_rotation'] == null ? undefined : json['allow_rotation'],
+        'auto_rotate_period': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'context': json['context'] == null ? undefined : json['context'],
         'derived': json['derived'] == null ? undefined : json['derived'],
         'exportable': json['exportable'] == null ? undefined : json['exportable'],
-        'hashFunction': json['hash_function'] == null ? undefined : json['hash_function'],
-        'publicKey': json['public_key'] == null ? undefined : json['public_key'],
+        'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
+        'public_key': json['public_key'] == null ? undefined : json['public_key'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -122,15 +122,15 @@ export function TransitImportKeyRequestToJSONTyped(value?: TransitImportKeyReque
 
     return {
         
-        'allow_plaintext_backup': value['allowPlaintextBackup'],
-        'allow_rotation': value['allowRotation'],
-        'auto_rotate_period': value['autoRotatePeriod'],
+        'allow_plaintext_backup': value['allow_plaintext_backup'],
+        'allow_rotation': value['allow_rotation'],
+        'auto_rotate_period': value['auto_rotate_period'],
         'ciphertext': value['ciphertext'],
         'context': value['context'],
         'derived': value['derived'],
         'exportable': value['exportable'],
-        'hash_function': value['hashFunction'],
-        'public_key': value['publicKey'],
+        'hash_function': value['hash_function'],
+        'public_key': value['public_key'],
         'type': value['type'],
     };
 }

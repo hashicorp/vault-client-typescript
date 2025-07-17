@@ -399,1241 +399,1241 @@ import {
 
 export interface AuthApiAliCloudDeleteAuthRoleRequest {
     role: string;
-    alicloudMountPath: string;
+    alicloud_mount_path: string;
 }
 
 export interface AuthApiAliCloudListAuthRolesRequest {
-    alicloudMountPath: string;
+    alicloud_mount_path: string;
     list: AliCloudListAuthRolesListEnum;
 }
 
 export interface AuthApiAliCloudListAuthRoles2Request {
-    alicloudMountPath: string;
+    alicloud_mount_path: string;
     list: AliCloudListAuthRoles2ListEnum;
 }
 
 export interface AuthApiAliCloudLoginOperationRequest {
-    alicloudMountPath: string;
-    aliCloudLoginRequest: AliCloudLoginRequest;
+    alicloud_mount_path: string;
+    AliCloudLoginRequest: AliCloudLoginRequest;
 }
 
 export interface AuthApiAliCloudReadAuthRoleRequest {
     role: string;
-    alicloudMountPath: string;
+    alicloud_mount_path: string;
 }
 
 export interface AuthApiAliCloudWriteAuthRoleOperationRequest {
     role: string;
-    alicloudMountPath: string;
-    aliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest;
+    alicloud_mount_path: string;
+    AliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest;
 }
 
 export interface AuthApiAppRoleDeleteBindSecretIdRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteBoundCidrListRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeletePeriodRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeletePoliciesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteRoleRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteSecretIdBoundCidrsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteSecretIdNumUsesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteSecretIdTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteTokenBoundCidrsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteTokenMaxTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteTokenNumUsesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDeleteTokenTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleDestroySecretIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleDestroySecretIdRequest: AppRoleDestroySecretIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleDestroySecretIdRequest: AppRoleDestroySecretIdRequest;
 }
 
 export interface AuthApiAppRoleDestroySecretId2Request {
-    roleName: string;
-    approleMountPath: string;
-    secretId?: string;
+    role_name: string;
+    approle_mount_path: string;
+    secret_id?: string;
 }
 
 export interface AuthApiAppRoleDestroySecretIdByAccessorOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleDestroySecretIdByAccessorRequest: AppRoleDestroySecretIdByAccessorRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleDestroySecretIdByAccessorRequest: AppRoleDestroySecretIdByAccessorRequest;
 }
 
 export interface AuthApiAppRoleDestroySecretIdByAccessor2Request {
-    roleName: string;
-    approleMountPath: string;
-    secretIdAccessor?: string;
+    role_name: string;
+    approle_mount_path: string;
+    secret_id_accessor?: string;
 }
 
 export interface AuthApiAppRoleListRolesRequest {
-    approleMountPath: string;
+    approle_mount_path: string;
     list: AppRoleListRolesListEnum;
 }
 
 export interface AuthApiAppRoleListSecretIdsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
     list: AppRoleListSecretIdsListEnum;
 }
 
 export interface AuthApiAppRoleLoginOperationRequest {
-    approleMountPath: string;
-    appRoleLoginRequest: AppRoleLoginRequest;
+    approle_mount_path: string;
+    AppRoleLoginRequest: AppRoleLoginRequest;
 }
 
 export interface AuthApiAppRoleLookUpSecretIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleLookUpSecretIdRequest: AppRoleLookUpSecretIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleLookUpSecretIdRequest: AppRoleLookUpSecretIdRequest;
 }
 
 export interface AuthApiAppRoleLookUpSecretIdByAccessorOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleLookUpSecretIdByAccessorRequest: AppRoleLookUpSecretIdByAccessorRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleLookUpSecretIdByAccessorRequest: AppRoleLookUpSecretIdByAccessorRequest;
 }
 
 export interface AuthApiAppRoleReadBindSecretIdRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadBoundCidrListRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadLocalSecretIdsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadPeriodRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadPoliciesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadRoleRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadRoleIdRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadSecretIdBoundCidrsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadSecretIdNumUsesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadSecretIdTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadTokenBoundCidrsRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadTokenMaxTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadTokenNumUsesRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleReadTokenTtlRequest {
-    roleName: string;
-    approleMountPath: string;
+    role_name: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleTidySecretIdRequest {
-    approleMountPath: string;
+    approle_mount_path: string;
 }
 
 export interface AuthApiAppRoleWriteBindSecretIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteBindSecretIdRequest: AppRoleWriteBindSecretIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteBindSecretIdRequest: AppRoleWriteBindSecretIdRequest;
 }
 
 export interface AuthApiAppRoleWriteBoundCidrListOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteBoundCidrListRequest: AppRoleWriteBoundCidrListRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteBoundCidrListRequest: AppRoleWriteBoundCidrListRequest;
 }
 
 export interface AuthApiAppRoleWriteCustomSecretIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteCustomSecretIdRequest: AppRoleWriteCustomSecretIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteCustomSecretIdRequest: AppRoleWriteCustomSecretIdRequest;
 }
 
 export interface AuthApiAppRoleWritePeriodOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWritePeriodRequest: AppRoleWritePeriodRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWritePeriodRequest: AppRoleWritePeriodRequest;
 }
 
 export interface AuthApiAppRoleWritePoliciesOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWritePoliciesRequest: AppRoleWritePoliciesRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWritePoliciesRequest: AppRoleWritePoliciesRequest;
 }
 
 export interface AuthApiAppRoleWriteRoleOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteRoleRequest: AppRoleWriteRoleRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteRoleRequest: AppRoleWriteRoleRequest;
 }
 
 export interface AuthApiAppRoleWriteRoleIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteRoleIdRequest: AppRoleWriteRoleIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteRoleIdRequest: AppRoleWriteRoleIdRequest;
 }
 
 export interface AuthApiAppRoleWriteSecretIdOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteSecretIdRequest: AppRoleWriteSecretIdRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteSecretIdRequest: AppRoleWriteSecretIdRequest;
 }
 
 export interface AuthApiAppRoleWriteSecretIdBoundCidrsOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteSecretIdBoundCidrsRequest: AppRoleWriteSecretIdBoundCidrsRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteSecretIdBoundCidrsRequest: AppRoleWriteSecretIdBoundCidrsRequest;
 }
 
 export interface AuthApiAppRoleWriteSecretIdNumUsesOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteSecretIdNumUsesRequest: AppRoleWriteSecretIdNumUsesRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteSecretIdNumUsesRequest: AppRoleWriteSecretIdNumUsesRequest;
 }
 
 export interface AuthApiAppRoleWriteSecretIdTtlOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteSecretIdTtlRequest: AppRoleWriteSecretIdTtlRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteSecretIdTtlRequest: AppRoleWriteSecretIdTtlRequest;
 }
 
 export interface AuthApiAppRoleWriteTokenBoundCidrsOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteTokenBoundCidrsRequest: AppRoleWriteTokenBoundCidrsRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteTokenBoundCidrsRequest: AppRoleWriteTokenBoundCidrsRequest;
 }
 
 export interface AuthApiAppRoleWriteTokenMaxTtlOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteTokenMaxTtlRequest: AppRoleWriteTokenMaxTtlRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteTokenMaxTtlRequest: AppRoleWriteTokenMaxTtlRequest;
 }
 
 export interface AuthApiAppRoleWriteTokenNumUsesOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteTokenNumUsesRequest: AppRoleWriteTokenNumUsesRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteTokenNumUsesRequest: AppRoleWriteTokenNumUsesRequest;
 }
 
 export interface AuthApiAppRoleWriteTokenTtlOperationRequest {
-    roleName: string;
-    approleMountPath: string;
-    appRoleWriteTokenTtlRequest: AppRoleWriteTokenTtlRequest;
+    role_name: string;
+    approle_mount_path: string;
+    AppRoleWriteTokenTtlRequest: AppRoleWriteTokenTtlRequest;
 }
 
 export interface AuthApiAwsConfigureCertificateOperationRequest {
-    certName: string;
-    awsMountPath: string;
-    awsConfigureCertificateRequest: AwsConfigureCertificateRequest;
+    cert_name: string;
+    aws_mount_path: string;
+    AwsConfigureCertificateRequest: AwsConfigureCertificateRequest;
 }
 
 export interface AuthApiAwsConfigureClientOperationRequest {
-    awsMountPath: string;
-    awsConfigureClientRequest: AwsConfigureClientRequest;
+    aws_mount_path: string;
+    AwsConfigureClientRequest: AwsConfigureClientRequest;
 }
 
 export interface AuthApiAwsConfigureIdentityAccessListTidyOperationOperationRequest {
-    awsMountPath: string;
-    awsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest;
+    aws_mount_path: string;
+    AwsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest;
 }
 
 export interface AuthApiAwsConfigureIdentityIntegrationOperationRequest {
-    awsMountPath: string;
-    awsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest;
+    aws_mount_path: string;
+    AwsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest;
 }
 
 export interface AuthApiAwsConfigureIdentityWhitelistTidyOperationOperationRequest {
-    awsMountPath: string;
-    awsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest;
+    aws_mount_path: string;
+    AwsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest;
 }
 
 export interface AuthApiAwsConfigureRoleTagBlacklistTidyOperationOperationRequest {
-    awsMountPath: string;
-    awsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest;
+    aws_mount_path: string;
+    AwsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest;
 }
 
 export interface AuthApiAwsConfigureRoleTagDenyListTidyOperationOperationRequest {
-    awsMountPath: string;
-    awsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest;
+    aws_mount_path: string;
+    AwsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest;
 }
 
 export interface AuthApiAwsDeleteAuthRoleRequest {
     role: string;
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteCertificateConfigurationRequest {
-    certName: string;
-    awsMountPath: string;
+    cert_name: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteClientConfigurationRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteIdentityAccessListRequest {
-    instanceId: string;
-    awsMountPath: string;
+    instance_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteIdentityAccessListTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteIdentityWhitelistRequest {
-    instanceId: string;
-    awsMountPath: string;
+    instance_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteIdentityWhitelistTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteRoleTagBlacklistRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteRoleTagBlacklistTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteRoleTagDenyListRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteRoleTagDenyListTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsDeleteStsRoleRequest {
-    accountId: string;
-    awsMountPath: string;
+    account_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsListAuthRolesRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListAuthRolesListEnum;
 }
 
 export interface AuthApiAwsListAuthRoles2Request {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListAuthRoles2ListEnum;
 }
 
 export interface AuthApiAwsListCertificateConfigurationsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListCertificateConfigurationsListEnum;
 }
 
 export interface AuthApiAwsListIdentityAccessListRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListIdentityAccessListListEnum;
 }
 
 export interface AuthApiAwsListIdentityWhitelistRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListIdentityWhitelistListEnum;
 }
 
 export interface AuthApiAwsListRoleTagBlacklistsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListRoleTagBlacklistsListEnum;
 }
 
 export interface AuthApiAwsListRoleTagDenyListsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListRoleTagDenyListsListEnum;
 }
 
 export interface AuthApiAwsListStsRoleRelationshipsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
     list: AwsListStsRoleRelationshipsListEnum;
 }
 
 export interface AuthApiAwsLoginOperationRequest {
-    awsMountPath: string;
-    awsLoginRequest: AwsLoginRequest;
+    aws_mount_path: string;
+    AwsLoginRequest: AwsLoginRequest;
 }
 
 export interface AuthApiAwsReadAuthRoleRequest {
     role: string;
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadCertificateConfigurationRequest {
-    certName: string;
-    awsMountPath: string;
+    cert_name: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadClientConfigurationRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadIdentityAccessListRequest {
-    instanceId: string;
-    awsMountPath: string;
+    instance_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadIdentityAccessListTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadIdentityIntegrationConfigurationRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadIdentityWhitelistRequest {
-    instanceId: string;
-    awsMountPath: string;
+    instance_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadIdentityWhitelistTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadRoleTagBlacklistRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadRoleTagBlacklistTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadRoleTagDenyListRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadRoleTagDenyListTidySettingsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsReadStsRoleRequest {
-    accountId: string;
-    awsMountPath: string;
+    account_id: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsRotateRootCredentialsRequest {
-    awsMountPath: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsTidyIdentityAccessListOperationRequest {
-    awsMountPath: string;
-    awsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest;
+    aws_mount_path: string;
+    AwsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest;
 }
 
 export interface AuthApiAwsTidyIdentityWhitelistOperationRequest {
-    awsMountPath: string;
-    awsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest;
+    aws_mount_path: string;
+    AwsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest;
 }
 
 export interface AuthApiAwsTidyRoleTagBlacklistOperationRequest {
-    awsMountPath: string;
-    awsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest;
+    aws_mount_path: string;
+    AwsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest;
 }
 
 export interface AuthApiAwsTidyRoleTagDenyListOperationRequest {
-    awsMountPath: string;
-    awsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest;
+    aws_mount_path: string;
+    AwsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest;
 }
 
 export interface AuthApiAwsWriteAuthRoleOperationRequest {
     role: string;
-    awsMountPath: string;
-    awsWriteAuthRoleRequest: AwsWriteAuthRoleRequest;
+    aws_mount_path: string;
+    AwsWriteAuthRoleRequest: AwsWriteAuthRoleRequest;
 }
 
 export interface AuthApiAwsWriteRoleTagOperationRequest {
     role: string;
-    awsMountPath: string;
-    awsWriteRoleTagRequest: AwsWriteRoleTagRequest;
+    aws_mount_path: string;
+    AwsWriteRoleTagRequest: AwsWriteRoleTagRequest;
 }
 
 export interface AuthApiAwsWriteRoleTagBlacklistRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsWriteRoleTagDenyListRequest {
-    roleTag: string;
-    awsMountPath: string;
+    role_tag: string;
+    aws_mount_path: string;
 }
 
 export interface AuthApiAwsWriteStsRoleOperationRequest {
-    accountId: string;
-    awsMountPath: string;
-    awsWriteStsRoleRequest: AwsWriteStsRoleRequest;
+    account_id: string;
+    aws_mount_path: string;
+    AwsWriteStsRoleRequest: AwsWriteStsRoleRequest;
 }
 
 export interface AuthApiAzureConfigureAuthOperationRequest {
-    azureMountPath: string;
-    azureConfigureAuthRequest: AzureConfigureAuthRequest;
+    azure_mount_path: string;
+    AzureConfigureAuthRequest: AzureConfigureAuthRequest;
 }
 
 export interface AuthApiAzureDeleteAuthConfigurationRequest {
-    azureMountPath: string;
+    azure_mount_path: string;
 }
 
 export interface AuthApiAzureDeleteAuthRoleRequest {
     name: string;
-    azureMountPath: string;
+    azure_mount_path: string;
 }
 
 export interface AuthApiAzureListAuthRolesRequest {
-    azureMountPath: string;
+    azure_mount_path: string;
     list: AzureListAuthRolesListEnum;
 }
 
 export interface AuthApiAzureLoginOperationRequest {
-    azureMountPath: string;
-    azureLoginRequest: AzureLoginRequest;
+    azure_mount_path: string;
+    AzureLoginRequest: AzureLoginRequest;
 }
 
 export interface AuthApiAzureReadAuthConfigurationRequest {
-    azureMountPath: string;
+    azure_mount_path: string;
 }
 
 export interface AuthApiAzureReadAuthRoleRequest {
     name: string;
-    azureMountPath: string;
+    azure_mount_path: string;
 }
 
 export interface AuthApiAzureRotateRootCredentialsRequest {
-    azureMountPath: string;
+    azure_mount_path: string;
 }
 
 export interface AuthApiAzureWriteAuthRoleOperationRequest {
     name: string;
-    azureMountPath: string;
-    azureWriteAuthRoleRequest: AzureWriteAuthRoleRequest;
+    azure_mount_path: string;
+    AzureWriteAuthRoleRequest: AzureWriteAuthRoleRequest;
 }
 
 export interface AuthApiCertConfigureOperationRequest {
-    certMountPath: string;
-    certConfigureRequest: CertConfigureRequest;
+    cert_mount_path: string;
+    CertConfigureRequest: CertConfigureRequest;
 }
 
 export interface AuthApiCertDeleteCertificateRequest {
     name: string;
-    certMountPath: string;
+    cert_mount_path: string;
 }
 
 export interface AuthApiCertDeleteCrlRequest {
     name: string;
-    certMountPath: string;
+    cert_mount_path: string;
 }
 
 export interface AuthApiCertListCertificatesRequest {
-    certMountPath: string;
+    cert_mount_path: string;
     list: CertListCertificatesListEnum;
 }
 
 export interface AuthApiCertListCrlsRequest {
-    certMountPath: string;
+    cert_mount_path: string;
     list: CertListCrlsListEnum;
 }
 
 export interface AuthApiCertLoginOperationRequest {
-    certMountPath: string;
-    certLoginRequest: CertLoginRequest;
+    cert_mount_path: string;
+    CertLoginRequest: CertLoginRequest;
 }
 
 export interface AuthApiCertReadCertificateRequest {
     name: string;
-    certMountPath: string;
+    cert_mount_path: string;
 }
 
 export interface AuthApiCertReadConfigurationRequest {
-    certMountPath: string;
+    cert_mount_path: string;
 }
 
 export interface AuthApiCertReadCrlRequest {
     name: string;
-    certMountPath: string;
+    cert_mount_path: string;
 }
 
 export interface AuthApiCertWriteCertificateOperationRequest {
     name: string;
-    certMountPath: string;
-    certWriteCertificateRequest: CertWriteCertificateRequest;
+    cert_mount_path: string;
+    CertWriteCertificateRequest: CertWriteCertificateRequest;
 }
 
 export interface AuthApiCertWriteCrlOperationRequest {
     name: string;
-    certMountPath: string;
-    certWriteCrlRequest: CertWriteCrlRequest;
+    cert_mount_path: string;
+    CertWriteCrlRequest: CertWriteCrlRequest;
 }
 
 export interface AuthApiCloudFoundryConfigureOperationRequest {
-    cfMountPath: string;
-    cloudFoundryConfigureRequest: CloudFoundryConfigureRequest;
+    cf_mount_path: string;
+    CloudFoundryConfigureRequest: CloudFoundryConfigureRequest;
 }
 
 export interface AuthApiCloudFoundryDeleteConfigurationRequest {
-    cfMountPath: string;
+    cf_mount_path: string;
 }
 
 export interface AuthApiCloudFoundryDeleteRoleRequest {
     role: string;
-    cfMountPath: string;
+    cf_mount_path: string;
 }
 
 export interface AuthApiCloudFoundryListRolesRequest {
-    cfMountPath: string;
+    cf_mount_path: string;
     list: CloudFoundryListRolesListEnum;
 }
 
 export interface AuthApiCloudFoundryLoginOperationRequest {
-    cfMountPath: string;
-    cloudFoundryLoginRequest: CloudFoundryLoginRequest;
+    cf_mount_path: string;
+    CloudFoundryLoginRequest: CloudFoundryLoginRequest;
 }
 
 export interface AuthApiCloudFoundryReadConfigurationRequest {
-    cfMountPath: string;
+    cf_mount_path: string;
 }
 
 export interface AuthApiCloudFoundryReadRoleRequest {
     role: string;
-    cfMountPath: string;
+    cf_mount_path: string;
 }
 
 export interface AuthApiCloudFoundryWriteRoleOperationRequest {
     role: string;
-    cfMountPath: string;
-    cloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest;
+    cf_mount_path: string;
+    CloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest;
 }
 
 export interface AuthApiGithubConfigureOperationRequest {
-    githubMountPath: string;
-    githubConfigureRequest: GithubConfigureRequest;
+    github_mount_path: string;
+    GithubConfigureRequest: GithubConfigureRequest;
 }
 
 export interface AuthApiGithubDeleteTeamMappingRequest {
     key: string;
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubDeleteUserMappingRequest {
     key: string;
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubListTeamsRequest {
-    githubMountPath: string;
+    github_mount_path: string;
     list: GithubListTeamsListEnum;
 }
 
 export interface AuthApiGithubListTeams2Request {
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubListUsersRequest {
-    githubMountPath: string;
+    github_mount_path: string;
     list: GithubListUsersListEnum;
 }
 
 export interface AuthApiGithubListUsers2Request {
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubLoginOperationRequest {
-    githubMountPath: string;
-    githubLoginRequest: GithubLoginRequest;
+    github_mount_path: string;
+    GithubLoginRequest: GithubLoginRequest;
 }
 
 export interface AuthApiGithubReadConfigurationRequest {
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubReadTeamMappingRequest {
     key: string;
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubReadUserMappingRequest {
     key: string;
-    githubMountPath: string;
+    github_mount_path: string;
 }
 
 export interface AuthApiGithubWriteTeamMappingOperationRequest {
     key: string;
-    githubMountPath: string;
-    githubWriteTeamMappingRequest: GithubWriteTeamMappingRequest;
+    github_mount_path: string;
+    GithubWriteTeamMappingRequest: GithubWriteTeamMappingRequest;
 }
 
 export interface AuthApiGithubWriteUserMappingOperationRequest {
     key: string;
-    githubMountPath: string;
-    githubWriteUserMappingRequest: GithubWriteUserMappingRequest;
+    github_mount_path: string;
+    GithubWriteUserMappingRequest: GithubWriteUserMappingRequest;
 }
 
 export interface AuthApiGoogleCloudConfigureAuthOperationRequest {
-    gcpMountPath: string;
-    googleCloudConfigureAuthRequest: GoogleCloudConfigureAuthRequest;
+    gcp_mount_path: string;
+    GoogleCloudConfigureAuthRequest: GoogleCloudConfigureAuthRequest;
 }
 
 export interface AuthApiGoogleCloudDeleteRoleRequest {
     name: string;
-    gcpMountPath: string;
+    gcp_mount_path: string;
 }
 
 export interface AuthApiGoogleCloudEditLabelsForRoleOperationRequest {
     name: string;
-    gcpMountPath: string;
-    googleCloudEditLabelsForRoleRequest: GoogleCloudEditLabelsForRoleRequest;
+    gcp_mount_path: string;
+    GoogleCloudEditLabelsForRoleRequest: GoogleCloudEditLabelsForRoleRequest;
 }
 
 export interface AuthApiGoogleCloudEditServiceAccountsForRoleOperationRequest {
     name: string;
-    gcpMountPath: string;
-    googleCloudEditServiceAccountsForRoleRequest: GoogleCloudEditServiceAccountsForRoleRequest;
+    gcp_mount_path: string;
+    GoogleCloudEditServiceAccountsForRoleRequest: GoogleCloudEditServiceAccountsForRoleRequest;
 }
 
 export interface AuthApiGoogleCloudListRolesRequest {
-    gcpMountPath: string;
+    gcp_mount_path: string;
     list: GoogleCloudListRolesListEnum;
 }
 
 export interface AuthApiGoogleCloudListRoles2Request {
-    gcpMountPath: string;
+    gcp_mount_path: string;
     list: GoogleCloudListRoles2ListEnum;
 }
 
 export interface AuthApiGoogleCloudLoginOperationRequest {
-    gcpMountPath: string;
-    googleCloudLoginRequest: GoogleCloudLoginRequest;
+    gcp_mount_path: string;
+    GoogleCloudLoginRequest: GoogleCloudLoginRequest;
 }
 
 export interface AuthApiGoogleCloudReadAuthConfigurationRequest {
-    gcpMountPath: string;
+    gcp_mount_path: string;
 }
 
 export interface AuthApiGoogleCloudReadRoleRequest {
     name: string;
-    gcpMountPath: string;
+    gcp_mount_path: string;
 }
 
 export interface AuthApiGoogleCloudRotateRootCredentialsRequest {
-    gcpMountPath: string;
+    gcp_mount_path: string;
 }
 
 export interface AuthApiGoogleCloudWriteRoleOperationRequest {
     name: string;
-    gcpMountPath: string;
-    googleCloudWriteRoleRequest: GoogleCloudWriteRoleRequest;
+    gcp_mount_path: string;
+    GoogleCloudWriteRoleRequest: GoogleCloudWriteRoleRequest;
 }
 
 export interface AuthApiJwtConfigureOperationRequest {
-    jwtMountPath: string;
-    jwtConfigureRequest: JwtConfigureRequest;
+    jwt_mount_path: string;
+    JwtConfigureRequest: JwtConfigureRequest;
 }
 
 export interface AuthApiJwtDeleteRoleRequest {
     name: string;
-    jwtMountPath: string;
+    jwt_mount_path: string;
 }
 
 export interface AuthApiJwtListRolesRequest {
-    jwtMountPath: string;
+    jwt_mount_path: string;
     list: JwtListRolesListEnum;
 }
 
 export interface AuthApiJwtLoginOperationRequest {
-    jwtMountPath: string;
-    jwtLoginRequest: JwtLoginRequest;
+    jwt_mount_path: string;
+    JwtLoginRequest: JwtLoginRequest;
 }
 
 export interface AuthApiJwtOidcCallbackRequest {
-    jwtMountPath: string;
-    clientNonce?: string;
+    jwt_mount_path: string;
+    client_nonce?: string;
     code?: string;
     state?: string;
 }
 
 export interface AuthApiJwtOidcCallbackFormPostOperationRequest {
-    jwtMountPath: string;
-    jwtOidcCallbackFormPostRequest: JwtOidcCallbackFormPostRequest;
+    jwt_mount_path: string;
+    JwtOidcCallbackFormPostRequest: JwtOidcCallbackFormPostRequest;
 }
 
 export interface AuthApiJwtOidcRequestAuthorizationUrlOperationRequest {
-    jwtMountPath: string;
-    jwtOidcRequestAuthorizationUrlRequest: JwtOidcRequestAuthorizationUrlRequest;
+    jwt_mount_path: string;
+    JwtOidcRequestAuthorizationUrlRequest: JwtOidcRequestAuthorizationUrlRequest;
 }
 
 export interface AuthApiJwtReadConfigurationRequest {
-    jwtMountPath: string;
+    jwt_mount_path: string;
 }
 
 export interface AuthApiJwtReadRoleRequest {
     name: string;
-    jwtMountPath: string;
+    jwt_mount_path: string;
 }
 
 export interface AuthApiJwtWriteRoleOperationRequest {
     name: string;
-    jwtMountPath: string;
-    jwtWriteRoleRequest: JwtWriteRoleRequest;
+    jwt_mount_path: string;
+    JwtWriteRoleRequest: JwtWriteRoleRequest;
 }
 
 export interface AuthApiKerberosConfigureOperationRequest {
-    kerberosMountPath: string;
-    kerberosConfigureRequest: KerberosConfigureRequest;
+    kerberos_mount_path: string;
+    KerberosConfigureRequest: KerberosConfigureRequest;
 }
 
 export interface AuthApiKerberosConfigureLdapOperationRequest {
-    kerberosMountPath: string;
-    kerberosConfigureLdapRequest: KerberosConfigureLdapRequest;
+    kerberos_mount_path: string;
+    KerberosConfigureLdapRequest: KerberosConfigureLdapRequest;
 }
 
 export interface AuthApiKerberosDeleteGroupRequest {
     name: string;
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
 }
 
 export interface AuthApiKerberosListGroupsRequest {
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
     list: KerberosListGroupsListEnum;
 }
 
 export interface AuthApiKerberosLoginOperationRequest {
-    kerberosMountPath: string;
-    kerberosLoginRequest: KerberosLoginRequest;
+    kerberos_mount_path: string;
+    KerberosLoginRequest: KerberosLoginRequest;
 }
 
 export interface AuthApiKerberosLogin2Request {
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
 }
 
 export interface AuthApiKerberosReadConfigurationRequest {
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
 }
 
 export interface AuthApiKerberosReadGroupRequest {
     name: string;
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
 }
 
 export interface AuthApiKerberosReadLdapConfigurationRequest {
-    kerberosMountPath: string;
+    kerberos_mount_path: string;
 }
 
 export interface AuthApiKerberosWriteGroupOperationRequest {
     name: string;
-    kerberosMountPath: string;
-    kerberosWriteGroupRequest: KerberosWriteGroupRequest;
+    kerberos_mount_path: string;
+    KerberosWriteGroupRequest: KerberosWriteGroupRequest;
 }
 
 export interface AuthApiKubernetesConfigureAuthOperationRequest {
-    kubernetesMountPath: string;
-    kubernetesConfigureAuthRequest: KubernetesConfigureAuthRequest;
+    kubernetes_mount_path: string;
+    KubernetesConfigureAuthRequest: KubernetesConfigureAuthRequest;
 }
 
 export interface AuthApiKubernetesDeleteAuthRoleRequest {
     name: string;
-    kubernetesMountPath: string;
+    kubernetes_mount_path: string;
 }
 
 export interface AuthApiKubernetesListAuthRolesRequest {
-    kubernetesMountPath: string;
+    kubernetes_mount_path: string;
     list: KubernetesListAuthRolesListEnum;
 }
 
 export interface AuthApiKubernetesLoginOperationRequest {
-    kubernetesMountPath: string;
-    kubernetesLoginRequest: KubernetesLoginRequest;
+    kubernetes_mount_path: string;
+    KubernetesLoginRequest: KubernetesLoginRequest;
 }
 
 export interface AuthApiKubernetesReadAuthConfigurationRequest {
-    kubernetesMountPath: string;
+    kubernetes_mount_path: string;
 }
 
 export interface AuthApiKubernetesReadAuthRoleRequest {
     name: string;
-    kubernetesMountPath: string;
+    kubernetes_mount_path: string;
 }
 
 export interface AuthApiKubernetesWriteAuthRoleOperationRequest {
     name: string;
-    kubernetesMountPath: string;
-    kubernetesWriteAuthRoleRequest: KubernetesWriteAuthRoleRequest;
+    kubernetes_mount_path: string;
+    KubernetesWriteAuthRoleRequest: KubernetesWriteAuthRoleRequest;
 }
 
 export interface AuthApiLdapConfigureAuthOperationRequest {
-    ldapMountPath: string;
-    ldapConfigureAuthRequest: LdapConfigureAuthRequest;
+    ldap_mount_path: string;
+    LdapConfigureAuthRequest: LdapConfigureAuthRequest;
 }
 
 export interface AuthApiLdapDeleteGroupRequest {
     name: string;
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapDeleteUserRequest {
     name: string;
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapListGroupsRequest {
-    ldapMountPath: string;
+    ldap_mount_path: string;
     list: LdapListGroupsListEnum;
 }
 
 export interface AuthApiLdapListUsersRequest {
-    ldapMountPath: string;
+    ldap_mount_path: string;
     list: LdapListUsersListEnum;
 }
 
 export interface AuthApiLdapLoginOperationRequest {
     username: string;
-    ldapMountPath: string;
-    ldapLoginRequest: LdapLoginRequest;
+    ldap_mount_path: string;
+    LdapLoginRequest: LdapLoginRequest;
 }
 
 export interface AuthApiLdapReadAuthConfigurationRequest {
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapReadGroupRequest {
     name: string;
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapReadUserRequest {
     name: string;
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapRotateRootCredentialsRequest {
-    ldapMountPath: string;
+    ldap_mount_path: string;
 }
 
 export interface AuthApiLdapWriteGroupOperationRequest {
     name: string;
-    ldapMountPath: string;
-    ldapWriteGroupRequest: LdapWriteGroupRequest;
+    ldap_mount_path: string;
+    LdapWriteGroupRequest: LdapWriteGroupRequest;
 }
 
 export interface AuthApiLdapWriteUserOperationRequest {
     name: string;
-    ldapMountPath: string;
-    ldapWriteUserRequest: LdapWriteUserRequest;
+    ldap_mount_path: string;
+    LdapWriteUserRequest: LdapWriteUserRequest;
 }
 
 export interface AuthApiOciConfigureOperationRequest {
-    ociMountPath: string;
-    ociConfigureRequest: OciConfigureRequest;
+    oci_mount_path: string;
+    OciConfigureRequest: OciConfigureRequest;
 }
 
 export interface AuthApiOciDeleteConfigurationRequest {
-    ociMountPath: string;
+    oci_mount_path: string;
 }
 
 export interface AuthApiOciDeleteRoleRequest {
     role: string;
-    ociMountPath: string;
+    oci_mount_path: string;
 }
 
 export interface AuthApiOciListRolesRequest {
-    ociMountPath: string;
+    oci_mount_path: string;
     list: OciListRolesListEnum;
 }
 
 export interface AuthApiOciLoginOperationRequest {
     role: string;
-    ociMountPath: string;
-    ociLoginRequest: OciLoginRequest;
+    oci_mount_path: string;
+    OciLoginRequest: OciLoginRequest;
 }
 
 export interface AuthApiOciReadConfigurationRequest {
-    ociMountPath: string;
+    oci_mount_path: string;
 }
 
 export interface AuthApiOciReadRoleRequest {
     role: string;
-    ociMountPath: string;
+    oci_mount_path: string;
 }
 
 export interface AuthApiOciWriteRoleOperationRequest {
     role: string;
-    ociMountPath: string;
-    ociWriteRoleRequest: OciWriteRoleRequest;
+    oci_mount_path: string;
+    OciWriteRoleRequest: OciWriteRoleRequest;
 }
 
 export interface AuthApiOktaConfigureOperationRequest {
-    oktaMountPath: string;
-    oktaConfigureRequest: OktaConfigureRequest;
+    okta_mount_path: string;
+    OktaConfigureRequest: OktaConfigureRequest;
 }
 
 export interface AuthApiOktaDeleteGroupRequest {
     name: string;
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaDeleteUserRequest {
     name: string;
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaListGroupsRequest {
-    oktaMountPath: string;
+    okta_mount_path: string;
     list: OktaListGroupsListEnum;
 }
 
 export interface AuthApiOktaListUsersRequest {
-    oktaMountPath: string;
+    okta_mount_path: string;
     list: OktaListUsersListEnum;
 }
 
 export interface AuthApiOktaLoginOperationRequest {
     username: string;
-    oktaMountPath: string;
-    oktaLoginRequest: OktaLoginRequest;
+    okta_mount_path: string;
+    OktaLoginRequest: OktaLoginRequest;
 }
 
 export interface AuthApiOktaReadConfigurationRequest {
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaReadGroupRequest {
     name: string;
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaReadUserRequest {
     name: string;
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaVerifyRequest {
     nonce: string;
-    oktaMountPath: string;
+    okta_mount_path: string;
 }
 
 export interface AuthApiOktaWriteGroupOperationRequest {
     name: string;
-    oktaMountPath: string;
-    oktaWriteGroupRequest: OktaWriteGroupRequest;
+    okta_mount_path: string;
+    OktaWriteGroupRequest: OktaWriteGroupRequest;
 }
 
 export interface AuthApiOktaWriteUserOperationRequest {
     name: string;
-    oktaMountPath: string;
-    oktaWriteUserRequest: OktaWriteUserRequest;
+    okta_mount_path: string;
+    OktaWriteUserRequest: OktaWriteUserRequest;
 }
 
 export interface AuthApiRadiusConfigureOperationRequest {
-    radiusMountPath: string;
-    radiusConfigureRequest: RadiusConfigureRequest;
+    radius_mount_path: string;
+    RadiusConfigureRequest: RadiusConfigureRequest;
 }
 
 export interface AuthApiRadiusDeleteUserRequest {
     name: string;
-    radiusMountPath: string;
+    radius_mount_path: string;
 }
 
 export interface AuthApiRadiusListUsersRequest {
-    radiusMountPath: string;
+    radius_mount_path: string;
     list: RadiusListUsersListEnum;
 }
 
 export interface AuthApiRadiusLoginOperationRequest {
-    radiusMountPath: string;
-    radiusLoginRequest: RadiusLoginRequest;
+    radius_mount_path: string;
+    RadiusLoginRequest: RadiusLoginRequest;
 }
 
 export interface AuthApiRadiusLoginWithUsernameOperationRequest {
     urlusername: string;
-    radiusMountPath: string;
-    radiusLoginWithUsernameRequest: RadiusLoginWithUsernameRequest;
+    radius_mount_path: string;
+    RadiusLoginWithUsernameRequest: RadiusLoginWithUsernameRequest;
 }
 
 export interface AuthApiRadiusReadConfigurationRequest {
-    radiusMountPath: string;
+    radius_mount_path: string;
 }
 
 export interface AuthApiRadiusReadUserRequest {
     name: string;
-    radiusMountPath: string;
+    radius_mount_path: string;
 }
 
 export interface AuthApiRadiusWriteUserOperationRequest {
     name: string;
-    radiusMountPath: string;
-    radiusWriteUserRequest: RadiusWriteUserRequest;
+    radius_mount_path: string;
+    RadiusWriteUserRequest: RadiusWriteUserRequest;
 }
 
 export interface AuthApiSamlDeleteRoleNameRequest {
     name: string;
-    samlMountPath: string;
+    saml_mount_path: string;
 }
 
 export interface AuthApiSamlListRoleRequest {
-    samlMountPath: string;
+    saml_mount_path: string;
     list: SamlListRoleListEnum;
 }
 
 export interface AuthApiSamlReadConfigRequest {
-    samlMountPath: string;
+    saml_mount_path: string;
 }
 
 export interface AuthApiSamlReadRoleNameRequest {
     name: string;
-    samlMountPath: string;
+    saml_mount_path: string;
 }
 
 export interface AuthApiSamlWriteCallbackOperationRequest {
-    samlMountPath: string;
-    samlWriteCallbackRequest: SamlWriteCallbackRequest;
+    saml_mount_path: string;
+    SamlWriteCallbackRequest: SamlWriteCallbackRequest;
 }
 
 export interface AuthApiSamlWriteConfigOperationRequest {
-    samlMountPath: string;
-    samlWriteConfigRequest: SamlWriteConfigRequest;
+    saml_mount_path: string;
+    SamlWriteConfigRequest: SamlWriteConfigRequest;
 }
 
 export interface AuthApiSamlWriteRoleNameOperationRequest {
     name: string;
-    samlMountPath: string;
-    samlWriteRoleNameRequest: SamlWriteRoleNameRequest;
+    saml_mount_path: string;
+    SamlWriteRoleNameRequest: SamlWriteRoleNameRequest;
 }
 
 export interface AuthApiSamlWriteSsoServiceUrlOperationRequest {
-    samlMountPath: string;
-    samlWriteSsoServiceUrlRequest: SamlWriteSsoServiceUrlRequest;
+    saml_mount_path: string;
+    SamlWriteSsoServiceUrlRequest: SamlWriteSsoServiceUrlRequest;
 }
 
 export interface AuthApiSamlWriteTokenOperationRequest {
-    samlMountPath: string;
-    samlWriteTokenRequest: SamlWriteTokenRequest;
+    saml_mount_path: string;
+    SamlWriteTokenRequest: SamlWriteTokenRequest;
 }
 
 export interface AuthApiScepDeleteRoleRoleRequest {
     role: string;
-    scepMountPath: string;
+    scep_mount_path: string;
 }
 
 export interface AuthApiScepListAuthRolesRequest {
-    scepMountPath: string;
+    scep_mount_path: string;
     list: ScepListAuthRolesListEnum;
 }
 
 export interface AuthApiScepLoginOperationRequest {
-    scepMountPath: string;
-    scepLoginRequest: ScepLoginRequest;
+    scep_mount_path: string;
+    ScepLoginRequest: ScepLoginRequest;
 }
 
 export interface AuthApiScepReadRoleRoleRequest {
     role: string;
-    scepMountPath: string;
+    scep_mount_path: string;
 }
 
 export interface AuthApiScepWriteRoleRoleOperationRequest {
     role: string;
-    scepMountPath: string;
-    scepWriteRoleRoleRequest: ScepWriteRoleRoleRequest;
+    scep_mount_path: string;
+    ScepWriteRoleRoleRequest: ScepWriteRoleRoleRequest;
 }
 
 export interface AuthApiTokenCreateOperationRequest {
-    tokenCreateRequest: TokenCreateRequest;
+    TokenCreateRequest: TokenCreateRequest;
 }
 
 export interface AuthApiTokenCreateAgainstRoleOperationRequest {
-    roleName: string;
-    tokenCreateAgainstRoleRequest: TokenCreateAgainstRoleRequest;
+    role_name: string;
+    TokenCreateAgainstRoleRequest: TokenCreateAgainstRoleRequest;
 }
 
 export interface AuthApiTokenCreateOrphanOperationRequest {
-    tokenCreateOrphanRequest: TokenCreateOrphanRequest;
+    TokenCreateOrphanRequest: TokenCreateOrphanRequest;
 }
 
 export interface AuthApiTokenDeleteRoleRequest {
-    roleName: string;
+    role_name: string;
 }
 
 export interface AuthApiTokenListAccessorsRequest {
@@ -1645,7 +1645,7 @@ export interface AuthApiTokenListRolesRequest {
 }
 
 export interface AuthApiTokenLookUpOperationRequest {
-    tokenLookUpRequest: TokenLookUpRequest;
+    TokenLookUpRequest: TokenLookUpRequest;
 }
 
 export interface AuthApiTokenLookUp2Request {
@@ -1653,83 +1653,83 @@ export interface AuthApiTokenLookUp2Request {
 }
 
 export interface AuthApiTokenLookUpAccessorOperationRequest {
-    tokenLookUpAccessorRequest: TokenLookUpAccessorRequest;
+    TokenLookUpAccessorRequest: TokenLookUpAccessorRequest;
 }
 
 export interface AuthApiTokenLookUpSelf2OperationRequest {
-    tokenLookUpSelf2Request: TokenLookUpSelf2Request;
+    TokenLookUpSelf2Request: TokenLookUpSelf2Request;
 }
 
 export interface AuthApiTokenReadRoleRequest {
-    roleName: string;
+    role_name: string;
 }
 
 export interface AuthApiTokenRenewOperationRequest {
-    tokenRenewRequest: TokenRenewRequest;
+    TokenRenewRequest: TokenRenewRequest;
 }
 
 export interface AuthApiTokenRenewAccessorOperationRequest {
-    tokenRenewAccessorRequest: TokenRenewAccessorRequest;
+    TokenRenewAccessorRequest: TokenRenewAccessorRequest;
 }
 
 export interface AuthApiTokenRenewSelfOperationRequest {
-    tokenRenewSelfRequest: TokenRenewSelfRequest;
+    TokenRenewSelfRequest: TokenRenewSelfRequest;
 }
 
 export interface AuthApiTokenRevokeOperationRequest {
-    tokenRevokeRequest: TokenRevokeRequest;
+    TokenRevokeRequest: TokenRevokeRequest;
 }
 
 export interface AuthApiTokenRevokeAccessorOperationRequest {
-    tokenRevokeAccessorRequest: TokenRevokeAccessorRequest;
+    TokenRevokeAccessorRequest: TokenRevokeAccessorRequest;
 }
 
 export interface AuthApiTokenRevokeOrphanOperationRequest {
-    tokenRevokeOrphanRequest: TokenRevokeOrphanRequest;
+    TokenRevokeOrphanRequest: TokenRevokeOrphanRequest;
 }
 
 export interface AuthApiTokenWriteRoleOperationRequest {
-    roleName: string;
-    tokenWriteRoleRequest: TokenWriteRoleRequest;
+    role_name: string;
+    TokenWriteRoleRequest: TokenWriteRoleRequest;
 }
 
 export interface AuthApiUserpassDeleteUserRequest {
     username: string;
-    userpassMountPath: string;
+    userpass_mount_path: string;
 }
 
 export interface AuthApiUserpassListUsersRequest {
-    userpassMountPath: string;
+    userpass_mount_path: string;
     list: UserpassListUsersListEnum;
 }
 
 export interface AuthApiUserpassLoginOperationRequest {
     username: string;
-    userpassMountPath: string;
-    userpassLoginRequest: UserpassLoginRequest;
+    userpass_mount_path: string;
+    UserpassLoginRequest: UserpassLoginRequest;
 }
 
 export interface AuthApiUserpassReadUserRequest {
     username: string;
-    userpassMountPath: string;
+    userpass_mount_path: string;
 }
 
 export interface AuthApiUserpassResetPasswordOperationRequest {
     username: string;
-    userpassMountPath: string;
-    userpassResetPasswordRequest: UserpassResetPasswordRequest;
+    userpass_mount_path: string;
+    UserpassResetPasswordRequest: UserpassResetPasswordRequest;
 }
 
 export interface AuthApiUserpassUpdatePoliciesOperationRequest {
     username: string;
-    userpassMountPath: string;
-    userpassUpdatePoliciesRequest: UserpassUpdatePoliciesRequest;
+    userpass_mount_path: string;
+    UserpassUpdatePoliciesRequest: UserpassUpdatePoliciesRequest;
 }
 
 export interface AuthApiUserpassWriteUserOperationRequest {
     username: string;
-    userpassMountPath: string;
-    userpassWriteUserRequest: UserpassWriteUserRequest;
+    userpass_mount_path: string;
+    UserpassWriteUserRequest: UserpassWriteUserRequest;
 }
 
 /**
@@ -1748,10 +1748,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudDeleteAuthRole().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudDeleteAuthRole().'
             );
         }
 
@@ -1760,7 +1760,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1772,8 +1772,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async aliCloudDeleteAuthRole(role: string, alicloudMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliCloudDeleteAuthRoleRaw({ role: role, alicloudMountPath: alicloudMountPath }, initOverrides);
+    async aliCloudDeleteAuthRole(role: string, alicloud_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliCloudDeleteAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -1781,10 +1781,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles that are registered with Vault.
      */
     async aliCloudListAuthRolesRaw(requestParameters: AuthApiAliCloudListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudListAuthRoles().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudListAuthRoles().'
             );
         }
 
@@ -1804,7 +1804,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1816,8 +1816,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async aliCloudListAuthRoles(alicloudMountPath: string, list: AliCloudListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.aliCloudListAuthRolesRaw({ alicloudMountPath: alicloudMountPath, list: list }, initOverrides);
+    async aliCloudListAuthRoles(alicloud_mount_path: string, list: AliCloudListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.aliCloudListAuthRolesRaw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -1825,10 +1825,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles that are registered with Vault.
      */
     async aliCloudListAuthRoles2Raw(requestParameters: AuthApiAliCloudListAuthRoles2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudListAuthRoles2().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudListAuthRoles2().'
             );
         }
 
@@ -1848,7 +1848,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/roles/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/roles/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1860,8 +1860,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async aliCloudListAuthRoles2(alicloudMountPath: string, list: AliCloudListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.aliCloudListAuthRoles2Raw({ alicloudMountPath: alicloudMountPath, list: list }, initOverrides);
+    async aliCloudListAuthRoles2(alicloud_mount_path: string, list: AliCloudListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.aliCloudListAuthRoles2Raw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -1869,17 +1869,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Authenticates an RAM entity with Vault.
      */
     async aliCloudLoginRaw(requestParameters: AuthApiAliCloudLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudLogin().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudLogin().'
             );
         }
 
-        if (requestParameters['aliCloudLoginRequest'] == null) {
+        if (requestParameters['AliCloudLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'aliCloudLoginRequest',
-                'Required parameter "aliCloudLoginRequest" was null or undefined when calling aliCloudLogin().'
+                'AliCloudLoginRequest',
+                'Required parameter "AliCloudLoginRequest" was null or undefined when calling aliCloudLogin().'
             );
         }
 
@@ -1890,11 +1890,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/login`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/login`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AliCloudLoginRequestToJSON(requestParameters['aliCloudLoginRequest']),
+            body: AliCloudLoginRequestToJSON(requestParameters['AliCloudLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1903,8 +1903,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Authenticates an RAM entity with Vault.
      */
-    async aliCloudLogin(alicloudMountPath: string, aliCloudLoginRequest: AliCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliCloudLoginRaw({ alicloudMountPath: alicloudMountPath, aliCloudLoginRequest: aliCloudLoginRequest }, initOverrides);
+    async aliCloudLogin(alicloud_mount_path: string, AliCloudLoginRequest: AliCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliCloudLoginRaw({ alicloud_mount_path: alicloud_mount_path, AliCloudLoginRequest: AliCloudLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -1919,10 +1919,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudReadAuthRole().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudReadAuthRole().'
             );
         }
 
@@ -1931,7 +1931,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1943,8 +1943,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async aliCloudReadAuthRole(role: string, alicloudMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliCloudReadAuthRoleRaw({ role: role, alicloudMountPath: alicloudMountPath }, initOverrides);
+    async aliCloudReadAuthRole(role: string, alicloud_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliCloudReadAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -1959,17 +1959,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['alicloudMountPath'] == null) {
+        if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'alicloudMountPath',
-                'Required parameter "alicloudMountPath" was null or undefined when calling aliCloudWriteAuthRole().'
+                'alicloud_mount_path',
+                'Required parameter "alicloud_mount_path" was null or undefined when calling aliCloudWriteAuthRole().'
             );
         }
 
-        if (requestParameters['aliCloudWriteAuthRoleRequest'] == null) {
+        if (requestParameters['AliCloudWriteAuthRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'aliCloudWriteAuthRoleRequest',
-                'Required parameter "aliCloudWriteAuthRoleRequest" was null or undefined when calling aliCloudWriteAuthRole().'
+                'AliCloudWriteAuthRoleRequest',
+                'Required parameter "AliCloudWriteAuthRoleRequest" was null or undefined when calling aliCloudWriteAuthRole().'
             );
         }
 
@@ -1980,11 +1980,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloudMountPath']))),
+            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AliCloudWriteAuthRoleRequestToJSON(requestParameters['aliCloudWriteAuthRoleRequest']),
+            body: AliCloudWriteAuthRoleRequestToJSON(requestParameters['AliCloudWriteAuthRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -1993,25 +1993,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async aliCloudWriteAuthRole(role: string, alicloudMountPath: string, aliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.aliCloudWriteAuthRoleRaw({ role: role, alicloudMountPath: alicloudMountPath, aliCloudWriteAuthRoleRequest: aliCloudWriteAuthRoleRequest }, initOverrides);
+    async aliCloudWriteAuthRole(role: string, alicloud_mount_path: string, AliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.aliCloudWriteAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path, AliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteBindSecretIdRaw(requestParameters: AuthApiAppRoleDeleteBindSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteBindSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteBindSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteBindSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteBindSecretId().'
             );
         }
 
@@ -2020,7 +2020,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2031,25 +2031,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteBindSecretId(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteBindSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteBindSecretId(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteBindSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteBoundCidrListRaw(requestParameters: AuthApiAppRoleDeleteBoundCidrListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteBoundCidrList().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteBoundCidrList().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteBoundCidrList().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteBoundCidrList().'
             );
         }
 
@@ -2058,7 +2058,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2069,25 +2069,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteBoundCidrList(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteBoundCidrListRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteBoundCidrList(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteBoundCidrListRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeletePeriodRaw(requestParameters: AuthApiAppRoleDeletePeriodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeletePeriod().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeletePeriod().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeletePeriod().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeletePeriod().'
             );
         }
 
@@ -2096,7 +2096,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2107,25 +2107,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeletePeriod(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeletePeriodRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeletePeriod(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeletePeriodRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeletePoliciesRaw(requestParameters: AuthApiAppRoleDeletePoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeletePolicies().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeletePolicies().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeletePolicies().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeletePolicies().'
             );
         }
 
@@ -2134,7 +2134,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2145,25 +2145,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeletePolicies(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeletePoliciesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeletePolicies(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeletePoliciesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteRoleRaw(requestParameters: AuthApiAppRoleDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteRole().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteRole().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteRole().'
             );
         }
 
@@ -2172,7 +2172,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2183,25 +2183,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteRole(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteRoleRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteRole(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteRoleRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteSecretIdBoundCidrsRaw(requestParameters: AuthApiAppRoleDeleteSecretIdBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteSecretIdBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteSecretIdBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteSecretIdBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteSecretIdBoundCidrs().'
             );
         }
 
@@ -2210,7 +2210,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2221,25 +2221,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteSecretIdBoundCidrs(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteSecretIdBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteSecretIdBoundCidrs(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteSecretIdBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteSecretIdNumUsesRaw(requestParameters: AuthApiAppRoleDeleteSecretIdNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteSecretIdNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteSecretIdNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteSecretIdNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteSecretIdNumUses().'
             );
         }
 
@@ -2248,7 +2248,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2259,25 +2259,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteSecretIdNumUses(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteSecretIdNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteSecretIdNumUses(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteSecretIdNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteSecretIdTtlRaw(requestParameters: AuthApiAppRoleDeleteSecretIdTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteSecretIdTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteSecretIdTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteSecretIdTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteSecretIdTtl().'
             );
         }
 
@@ -2286,7 +2286,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2297,25 +2297,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteSecretIdTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteSecretIdTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteSecretIdTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteSecretIdTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteTokenBoundCidrsRaw(requestParameters: AuthApiAppRoleDeleteTokenBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteTokenBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteTokenBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteTokenBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteTokenBoundCidrs().'
             );
         }
 
@@ -2324,7 +2324,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2335,25 +2335,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteTokenBoundCidrs(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteTokenBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteTokenBoundCidrs(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteTokenBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteTokenMaxTtlRaw(requestParameters: AuthApiAppRoleDeleteTokenMaxTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteTokenMaxTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteTokenMaxTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteTokenMaxTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteTokenMaxTtl().'
             );
         }
 
@@ -2362,7 +2362,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2373,25 +2373,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteTokenMaxTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteTokenMaxTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteTokenMaxTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteTokenMaxTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteTokenNumUsesRaw(requestParameters: AuthApiAppRoleDeleteTokenNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteTokenNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteTokenNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteTokenNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteTokenNumUses().'
             );
         }
 
@@ -2400,7 +2400,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2411,25 +2411,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteTokenNumUses(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteTokenNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteTokenNumUses(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteTokenNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDeleteTokenTtlRaw(requestParameters: AuthApiAppRoleDeleteTokenTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDeleteTokenTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDeleteTokenTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDeleteTokenTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDeleteTokenTtl().'
             );
         }
 
@@ -2438,7 +2438,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2449,32 +2449,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDeleteTokenTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDeleteTokenTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleDeleteTokenTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDeleteTokenTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDestroySecretIdRaw(requestParameters: AuthApiAppRoleDestroySecretIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDestroySecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDestroySecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDestroySecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDestroySecretId().'
             );
         }
 
-        if (requestParameters['appRoleDestroySecretIdRequest'] == null) {
+        if (requestParameters['AppRoleDestroySecretIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleDestroySecretIdRequest',
-                'Required parameter "appRoleDestroySecretIdRequest" was null or undefined when calling appRoleDestroySecretId().'
+                'AppRoleDestroySecretIdRequest',
+                'Required parameter "AppRoleDestroySecretIdRequest" was null or undefined when calling appRoleDestroySecretId().'
             );
         }
 
@@ -2485,11 +2485,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleDestroySecretIdRequestToJSON(requestParameters['appRoleDestroySecretIdRequest']),
+            body: AppRoleDestroySecretIdRequestToJSON(requestParameters['AppRoleDestroySecretIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2497,38 +2497,38 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDestroySecretId(roleName: string, approleMountPath: string, appRoleDestroySecretIdRequest: AppRoleDestroySecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDestroySecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleDestroySecretIdRequest: appRoleDestroySecretIdRequest }, initOverrides);
+    async appRoleDestroySecretId(role_name: string, approle_mount_path: string, AppRoleDestroySecretIdRequest: AppRoleDestroySecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDestroySecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleDestroySecretIdRequest: AppRoleDestroySecretIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDestroySecretId2Raw(requestParameters: AuthApiAppRoleDestroySecretId2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDestroySecretId2().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDestroySecretId2().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDestroySecretId2().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDestroySecretId2().'
             );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters['secretId'] != null) {
-            queryParameters['secret_id'] = requestParameters['secretId'];
+        if (requestParameters['secret_id'] != null) {
+            queryParameters['secret_id'] = requestParameters['secret_id'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2539,32 +2539,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDestroySecretId2(roleName: string, approleMountPath: string, secretId?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDestroySecretId2Raw({ roleName: roleName, approleMountPath: approleMountPath, secretId: secretId }, initOverrides);
+    async appRoleDestroySecretId2(role_name: string, approle_mount_path: string, secret_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDestroySecretId2Raw({ role_name: role_name, approle_mount_path: approle_mount_path, secret_id: secret_id }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDestroySecretIdByAccessorRaw(requestParameters: AuthApiAppRoleDestroySecretIdByAccessorOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
             );
         }
 
-        if (requestParameters['appRoleDestroySecretIdByAccessorRequest'] == null) {
+        if (requestParameters['AppRoleDestroySecretIdByAccessorRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleDestroySecretIdByAccessorRequest',
-                'Required parameter "appRoleDestroySecretIdByAccessorRequest" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
+                'AppRoleDestroySecretIdByAccessorRequest',
+                'Required parameter "AppRoleDestroySecretIdByAccessorRequest" was null or undefined when calling appRoleDestroySecretIdByAccessor().'
             );
         }
 
@@ -2575,11 +2575,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleDestroySecretIdByAccessorRequestToJSON(requestParameters['appRoleDestroySecretIdByAccessorRequest']),
+            body: AppRoleDestroySecretIdByAccessorRequestToJSON(requestParameters['AppRoleDestroySecretIdByAccessorRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2587,38 +2587,38 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDestroySecretIdByAccessor(roleName: string, approleMountPath: string, appRoleDestroySecretIdByAccessorRequest: AppRoleDestroySecretIdByAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDestroySecretIdByAccessorRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleDestroySecretIdByAccessorRequest: appRoleDestroySecretIdByAccessorRequest }, initOverrides);
+    async appRoleDestroySecretIdByAccessor(role_name: string, approle_mount_path: string, AppRoleDestroySecretIdByAccessorRequest: AppRoleDestroySecretIdByAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDestroySecretIdByAccessorRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleDestroySecretIdByAccessorRequest: AppRoleDestroySecretIdByAccessorRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleDestroySecretIdByAccessor2Raw(requestParameters: AuthApiAppRoleDestroySecretIdByAccessor2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleDestroySecretIdByAccessor2().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleDestroySecretIdByAccessor2().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleDestroySecretIdByAccessor2().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleDestroySecretIdByAccessor2().'
             );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters['secretIdAccessor'] != null) {
-            queryParameters['secret_id_accessor'] = requestParameters['secretIdAccessor'];
+        if (requestParameters['secret_id_accessor'] != null) {
+            queryParameters['secret_id_accessor'] = requestParameters['secret_id_accessor'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2629,18 +2629,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleDestroySecretIdByAccessor2(roleName: string, approleMountPath: string, secretIdAccessor?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleDestroySecretIdByAccessor2Raw({ roleName: roleName, approleMountPath: approleMountPath, secretIdAccessor: secretIdAccessor }, initOverrides);
+    async appRoleDestroySecretIdByAccessor2(role_name: string, approle_mount_path: string, secret_id_accessor?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleDestroySecretIdByAccessor2Raw({ role_name: role_name, approle_mount_path: approle_mount_path, secret_id_accessor: secret_id_accessor }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleListRolesRaw(requestParameters: AuthApiAppRoleListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleListRoles().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleListRoles().'
             );
         }
 
@@ -2660,7 +2660,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2671,25 +2671,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleListRoles(approleMountPath: string, list: AppRoleListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.appRoleListRolesRaw({ approleMountPath: approleMountPath, list: list }, initOverrides);
+    async appRoleListRoles(approle_mount_path: string, list: AppRoleListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.appRoleListRolesRaw({ approle_mount_path: approle_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleListSecretIdsRaw(requestParameters: AuthApiAppRoleListSecretIdsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleListSecretIds().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleListSecretIds().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleListSecretIds().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleListSecretIds().'
             );
         }
 
@@ -2709,7 +2709,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2720,25 +2720,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleListSecretIds(roleName: string, approleMountPath: string, list: AppRoleListSecretIdsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.appRoleListSecretIdsRaw({ roleName: roleName, approleMountPath: approleMountPath, list: list }, initOverrides);
+    async appRoleListSecretIds(role_name: string, approle_mount_path: string, list: AppRoleListSecretIdsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.appRoleListSecretIdsRaw({ role_name: role_name, approle_mount_path: approle_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleLoginRaw(requestParameters: AuthApiAppRoleLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleLogin().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleLogin().'
             );
         }
 
-        if (requestParameters['appRoleLoginRequest'] == null) {
+        if (requestParameters['AppRoleLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleLoginRequest',
-                'Required parameter "appRoleLoginRequest" was null or undefined when calling appRoleLogin().'
+                'AppRoleLoginRequest',
+                'Required parameter "AppRoleLoginRequest" was null or undefined when calling appRoleLogin().'
             );
         }
 
@@ -2749,11 +2749,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/login`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/login`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleLoginRequestToJSON(requestParameters['appRoleLoginRequest']),
+            body: AppRoleLoginRequestToJSON(requestParameters['AppRoleLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2761,32 +2761,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleLogin(approleMountPath: string, appRoleLoginRequest: AppRoleLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleLoginRaw({ approleMountPath: approleMountPath, appRoleLoginRequest: appRoleLoginRequest }, initOverrides);
+    async appRoleLogin(approle_mount_path: string, AppRoleLoginRequest: AppRoleLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleLoginRaw({ approle_mount_path: approle_mount_path, AppRoleLoginRequest: AppRoleLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleLookUpSecretIdRaw(requestParameters: AuthApiAppRoleLookUpSecretIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleLookUpSecretIdResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleLookUpSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleLookUpSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleLookUpSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleLookUpSecretId().'
             );
         }
 
-        if (requestParameters['appRoleLookUpSecretIdRequest'] == null) {
+        if (requestParameters['AppRoleLookUpSecretIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleLookUpSecretIdRequest',
-                'Required parameter "appRoleLookUpSecretIdRequest" was null or undefined when calling appRoleLookUpSecretId().'
+                'AppRoleLookUpSecretIdRequest',
+                'Required parameter "AppRoleLookUpSecretIdRequest" was null or undefined when calling appRoleLookUpSecretId().'
             );
         }
 
@@ -2797,11 +2797,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleLookUpSecretIdRequestToJSON(requestParameters['appRoleLookUpSecretIdRequest']),
+            body: AppRoleLookUpSecretIdRequestToJSON(requestParameters['AppRoleLookUpSecretIdRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AppRoleLookUpSecretIdResponseFromJSON(jsonValue));
@@ -2809,32 +2809,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleLookUpSecretId(roleName: string, approleMountPath: string, appRoleLookUpSecretIdRequest: AppRoleLookUpSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleLookUpSecretIdResponse> {
-        const response = await this.appRoleLookUpSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleLookUpSecretIdRequest: appRoleLookUpSecretIdRequest }, initOverrides);
+    async appRoleLookUpSecretId(role_name: string, approle_mount_path: string, AppRoleLookUpSecretIdRequest: AppRoleLookUpSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleLookUpSecretIdResponse> {
+        const response = await this.appRoleLookUpSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleLookUpSecretIdRequest: AppRoleLookUpSecretIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleLookUpSecretIdByAccessorRaw(requestParameters: AuthApiAppRoleLookUpSecretIdByAccessorOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleLookUpSecretIdByAccessorResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
             );
         }
 
-        if (requestParameters['appRoleLookUpSecretIdByAccessorRequest'] == null) {
+        if (requestParameters['AppRoleLookUpSecretIdByAccessorRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleLookUpSecretIdByAccessorRequest',
-                'Required parameter "appRoleLookUpSecretIdByAccessorRequest" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
+                'AppRoleLookUpSecretIdByAccessorRequest',
+                'Required parameter "AppRoleLookUpSecretIdByAccessorRequest" was null or undefined when calling appRoleLookUpSecretIdByAccessor().'
             );
         }
 
@@ -2845,11 +2845,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleLookUpSecretIdByAccessorRequestToJSON(requestParameters['appRoleLookUpSecretIdByAccessorRequest']),
+            body: AppRoleLookUpSecretIdByAccessorRequestToJSON(requestParameters['AppRoleLookUpSecretIdByAccessorRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AppRoleLookUpSecretIdByAccessorResponseFromJSON(jsonValue));
@@ -2857,25 +2857,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleLookUpSecretIdByAccessor(roleName: string, approleMountPath: string, appRoleLookUpSecretIdByAccessorRequest: AppRoleLookUpSecretIdByAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleLookUpSecretIdByAccessorResponse> {
-        const response = await this.appRoleLookUpSecretIdByAccessorRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleLookUpSecretIdByAccessorRequest: appRoleLookUpSecretIdByAccessorRequest }, initOverrides);
+    async appRoleLookUpSecretIdByAccessor(role_name: string, approle_mount_path: string, AppRoleLookUpSecretIdByAccessorRequest: AppRoleLookUpSecretIdByAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleLookUpSecretIdByAccessorResponse> {
+        const response = await this.appRoleLookUpSecretIdByAccessorRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleLookUpSecretIdByAccessorRequest: AppRoleLookUpSecretIdByAccessorRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadBindSecretIdRaw(requestParameters: AuthApiAppRoleReadBindSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadBindSecretIdResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadBindSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadBindSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadBindSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadBindSecretId().'
             );
         }
 
@@ -2884,7 +2884,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2895,25 +2895,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadBindSecretId(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadBindSecretIdResponse> {
-        const response = await this.appRoleReadBindSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadBindSecretId(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadBindSecretIdResponse> {
+        const response = await this.appRoleReadBindSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadBoundCidrListRaw(requestParameters: AuthApiAppRoleReadBoundCidrListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadBoundCidrListResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadBoundCidrList().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadBoundCidrList().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadBoundCidrList().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadBoundCidrList().'
             );
         }
 
@@ -2922,7 +2922,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2933,25 +2933,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadBoundCidrList(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadBoundCidrListResponse> {
-        const response = await this.appRoleReadBoundCidrListRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadBoundCidrList(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadBoundCidrListResponse> {
+        const response = await this.appRoleReadBoundCidrListRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadLocalSecretIdsRaw(requestParameters: AuthApiAppRoleReadLocalSecretIdsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadLocalSecretIdsResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadLocalSecretIds().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadLocalSecretIds().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadLocalSecretIds().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadLocalSecretIds().'
             );
         }
 
@@ -2960,7 +2960,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/local-secret-ids`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/local-secret-ids`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2971,25 +2971,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadLocalSecretIds(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadLocalSecretIdsResponse> {
-        const response = await this.appRoleReadLocalSecretIdsRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadLocalSecretIds(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadLocalSecretIdsResponse> {
+        const response = await this.appRoleReadLocalSecretIdsRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadPeriodRaw(requestParameters: AuthApiAppRoleReadPeriodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadPeriodResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadPeriod().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadPeriod().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadPeriod().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadPeriod().'
             );
         }
 
@@ -2998,7 +2998,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3009,25 +3009,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadPeriod(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadPeriodResponse> {
-        const response = await this.appRoleReadPeriodRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadPeriod(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadPeriodResponse> {
+        const response = await this.appRoleReadPeriodRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadPoliciesRaw(requestParameters: AuthApiAppRoleReadPoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadPoliciesResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadPolicies().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadPolicies().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadPolicies().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadPolicies().'
             );
         }
 
@@ -3036,7 +3036,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3047,25 +3047,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadPolicies(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadPoliciesResponse> {
-        const response = await this.appRoleReadPoliciesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadPolicies(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadPoliciesResponse> {
+        const response = await this.appRoleReadPoliciesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadRoleRaw(requestParameters: AuthApiAppRoleReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadRoleResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadRole().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadRole().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadRole().'
             );
         }
 
@@ -3074,7 +3074,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3085,25 +3085,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadRole(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadRoleResponse> {
-        const response = await this.appRoleReadRoleRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadRole(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadRoleResponse> {
+        const response = await this.appRoleReadRoleRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadRoleIdRaw(requestParameters: AuthApiAppRoleReadRoleIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadRoleIdResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadRoleId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadRoleId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadRoleId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadRoleId().'
             );
         }
 
@@ -3112,7 +3112,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3123,25 +3123,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadRoleId(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadRoleIdResponse> {
-        const response = await this.appRoleReadRoleIdRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadRoleId(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadRoleIdResponse> {
+        const response = await this.appRoleReadRoleIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadSecretIdBoundCidrsRaw(requestParameters: AuthApiAppRoleReadSecretIdBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadSecretIdBoundCidrsResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadSecretIdBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadSecretIdBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadSecretIdBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadSecretIdBoundCidrs().'
             );
         }
 
@@ -3150,7 +3150,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3161,25 +3161,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadSecretIdBoundCidrs(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdBoundCidrsResponse> {
-        const response = await this.appRoleReadSecretIdBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadSecretIdBoundCidrs(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdBoundCidrsResponse> {
+        const response = await this.appRoleReadSecretIdBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadSecretIdNumUsesRaw(requestParameters: AuthApiAppRoleReadSecretIdNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadSecretIdNumUsesResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadSecretIdNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadSecretIdNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadSecretIdNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadSecretIdNumUses().'
             );
         }
 
@@ -3188,7 +3188,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3199,25 +3199,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadSecretIdNumUses(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdNumUsesResponse> {
-        const response = await this.appRoleReadSecretIdNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadSecretIdNumUses(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdNumUsesResponse> {
+        const response = await this.appRoleReadSecretIdNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadSecretIdTtlRaw(requestParameters: AuthApiAppRoleReadSecretIdTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadSecretIdTtlResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadSecretIdTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadSecretIdTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadSecretIdTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadSecretIdTtl().'
             );
         }
 
@@ -3226,7 +3226,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3237,25 +3237,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadSecretIdTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdTtlResponse> {
-        const response = await this.appRoleReadSecretIdTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadSecretIdTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadSecretIdTtlResponse> {
+        const response = await this.appRoleReadSecretIdTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadTokenBoundCidrsRaw(requestParameters: AuthApiAppRoleReadTokenBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadTokenBoundCidrsResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadTokenBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadTokenBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadTokenBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadTokenBoundCidrs().'
             );
         }
 
@@ -3264,7 +3264,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3275,25 +3275,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadTokenBoundCidrs(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenBoundCidrsResponse> {
-        const response = await this.appRoleReadTokenBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadTokenBoundCidrs(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenBoundCidrsResponse> {
+        const response = await this.appRoleReadTokenBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadTokenMaxTtlRaw(requestParameters: AuthApiAppRoleReadTokenMaxTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadTokenMaxTtlResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadTokenMaxTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadTokenMaxTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadTokenMaxTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadTokenMaxTtl().'
             );
         }
 
@@ -3302,7 +3302,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3313,25 +3313,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadTokenMaxTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenMaxTtlResponse> {
-        const response = await this.appRoleReadTokenMaxTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadTokenMaxTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenMaxTtlResponse> {
+        const response = await this.appRoleReadTokenMaxTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadTokenNumUsesRaw(requestParameters: AuthApiAppRoleReadTokenNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadTokenNumUsesResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadTokenNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadTokenNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadTokenNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadTokenNumUses().'
             );
         }
 
@@ -3340,7 +3340,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3351,25 +3351,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadTokenNumUses(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenNumUsesResponse> {
-        const response = await this.appRoleReadTokenNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadTokenNumUses(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenNumUsesResponse> {
+        const response = await this.appRoleReadTokenNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleReadTokenTtlRaw(requestParameters: AuthApiAppRoleReadTokenTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleReadTokenTtlResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleReadTokenTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleReadTokenTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleReadTokenTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleReadTokenTtl().'
             );
         }
 
@@ -3378,7 +3378,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3389,18 +3389,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleReadTokenTtl(roleName: string, approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenTtlResponse> {
-        const response = await this.appRoleReadTokenTtlRaw({ roleName: roleName, approleMountPath: approleMountPath }, initOverrides);
+    async appRoleReadTokenTtl(role_name: string, approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleReadTokenTtlResponse> {
+        const response = await this.appRoleReadTokenTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleTidySecretIdRaw(requestParameters: AuthApiAppRoleTidySecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleTidySecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleTidySecretId().'
             );
         }
 
@@ -3409,7 +3409,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/tidy/secret-id`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/tidy/secret-id`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3420,32 +3420,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleTidySecretId(approleMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleTidySecretIdRaw({ approleMountPath: approleMountPath }, initOverrides);
+    async appRoleTidySecretId(approle_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleTidySecretIdRaw({ approle_mount_path: approle_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteBindSecretIdRaw(requestParameters: AuthApiAppRoleWriteBindSecretIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteBindSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteBindSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteBindSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteBindSecretId().'
             );
         }
 
-        if (requestParameters['appRoleWriteBindSecretIdRequest'] == null) {
+        if (requestParameters['AppRoleWriteBindSecretIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteBindSecretIdRequest',
-                'Required parameter "appRoleWriteBindSecretIdRequest" was null or undefined when calling appRoleWriteBindSecretId().'
+                'AppRoleWriteBindSecretIdRequest',
+                'Required parameter "AppRoleWriteBindSecretIdRequest" was null or undefined when calling appRoleWriteBindSecretId().'
             );
         }
 
@@ -3456,11 +3456,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteBindSecretIdRequestToJSON(requestParameters['appRoleWriteBindSecretIdRequest']),
+            body: AppRoleWriteBindSecretIdRequestToJSON(requestParameters['AppRoleWriteBindSecretIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3468,32 +3468,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteBindSecretId(roleName: string, approleMountPath: string, appRoleWriteBindSecretIdRequest: AppRoleWriteBindSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteBindSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteBindSecretIdRequest: appRoleWriteBindSecretIdRequest }, initOverrides);
+    async appRoleWriteBindSecretId(role_name: string, approle_mount_path: string, AppRoleWriteBindSecretIdRequest: AppRoleWriteBindSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteBindSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteBindSecretIdRequest: AppRoleWriteBindSecretIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteBoundCidrListRaw(requestParameters: AuthApiAppRoleWriteBoundCidrListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteBoundCidrList().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteBoundCidrList().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteBoundCidrList().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteBoundCidrList().'
             );
         }
 
-        if (requestParameters['appRoleWriteBoundCidrListRequest'] == null) {
+        if (requestParameters['AppRoleWriteBoundCidrListRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteBoundCidrListRequest',
-                'Required parameter "appRoleWriteBoundCidrListRequest" was null or undefined when calling appRoleWriteBoundCidrList().'
+                'AppRoleWriteBoundCidrListRequest',
+                'Required parameter "AppRoleWriteBoundCidrListRequest" was null or undefined when calling appRoleWriteBoundCidrList().'
             );
         }
 
@@ -3504,11 +3504,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteBoundCidrListRequestToJSON(requestParameters['appRoleWriteBoundCidrListRequest']),
+            body: AppRoleWriteBoundCidrListRequestToJSON(requestParameters['AppRoleWriteBoundCidrListRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3516,32 +3516,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteBoundCidrList(roleName: string, approleMountPath: string, appRoleWriteBoundCidrListRequest: AppRoleWriteBoundCidrListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteBoundCidrListRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteBoundCidrListRequest: appRoleWriteBoundCidrListRequest }, initOverrides);
+    async appRoleWriteBoundCidrList(role_name: string, approle_mount_path: string, AppRoleWriteBoundCidrListRequest: AppRoleWriteBoundCidrListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteBoundCidrListRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteBoundCidrListRequest: AppRoleWriteBoundCidrListRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteCustomSecretIdRaw(requestParameters: AuthApiAppRoleWriteCustomSecretIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleWriteCustomSecretIdResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteCustomSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteCustomSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteCustomSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteCustomSecretId().'
             );
         }
 
-        if (requestParameters['appRoleWriteCustomSecretIdRequest'] == null) {
+        if (requestParameters['AppRoleWriteCustomSecretIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteCustomSecretIdRequest',
-                'Required parameter "appRoleWriteCustomSecretIdRequest" was null or undefined when calling appRoleWriteCustomSecretId().'
+                'AppRoleWriteCustomSecretIdRequest',
+                'Required parameter "AppRoleWriteCustomSecretIdRequest" was null or undefined when calling appRoleWriteCustomSecretId().'
             );
         }
 
@@ -3552,11 +3552,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/custom-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/custom-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteCustomSecretIdRequestToJSON(requestParameters['appRoleWriteCustomSecretIdRequest']),
+            body: AppRoleWriteCustomSecretIdRequestToJSON(requestParameters['AppRoleWriteCustomSecretIdRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AppRoleWriteCustomSecretIdResponseFromJSON(jsonValue));
@@ -3564,32 +3564,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteCustomSecretId(roleName: string, approleMountPath: string, appRoleWriteCustomSecretIdRequest: AppRoleWriteCustomSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleWriteCustomSecretIdResponse> {
-        const response = await this.appRoleWriteCustomSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteCustomSecretIdRequest: appRoleWriteCustomSecretIdRequest }, initOverrides);
+    async appRoleWriteCustomSecretId(role_name: string, approle_mount_path: string, AppRoleWriteCustomSecretIdRequest: AppRoleWriteCustomSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleWriteCustomSecretIdResponse> {
+        const response = await this.appRoleWriteCustomSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteCustomSecretIdRequest: AppRoleWriteCustomSecretIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWritePeriodRaw(requestParameters: AuthApiAppRoleWritePeriodOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWritePeriod().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWritePeriod().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWritePeriod().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWritePeriod().'
             );
         }
 
-        if (requestParameters['appRoleWritePeriodRequest'] == null) {
+        if (requestParameters['AppRoleWritePeriodRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWritePeriodRequest',
-                'Required parameter "appRoleWritePeriodRequest" was null or undefined when calling appRoleWritePeriod().'
+                'AppRoleWritePeriodRequest',
+                'Required parameter "AppRoleWritePeriodRequest" was null or undefined when calling appRoleWritePeriod().'
             );
         }
 
@@ -3600,11 +3600,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWritePeriodRequestToJSON(requestParameters['appRoleWritePeriodRequest']),
+            body: AppRoleWritePeriodRequestToJSON(requestParameters['AppRoleWritePeriodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3612,32 +3612,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWritePeriod(roleName: string, approleMountPath: string, appRoleWritePeriodRequest: AppRoleWritePeriodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWritePeriodRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWritePeriodRequest: appRoleWritePeriodRequest }, initOverrides);
+    async appRoleWritePeriod(role_name: string, approle_mount_path: string, AppRoleWritePeriodRequest: AppRoleWritePeriodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWritePeriodRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWritePeriodRequest: AppRoleWritePeriodRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWritePoliciesRaw(requestParameters: AuthApiAppRoleWritePoliciesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWritePolicies().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWritePolicies().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWritePolicies().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWritePolicies().'
             );
         }
 
-        if (requestParameters['appRoleWritePoliciesRequest'] == null) {
+        if (requestParameters['AppRoleWritePoliciesRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWritePoliciesRequest',
-                'Required parameter "appRoleWritePoliciesRequest" was null or undefined when calling appRoleWritePolicies().'
+                'AppRoleWritePoliciesRequest',
+                'Required parameter "AppRoleWritePoliciesRequest" was null or undefined when calling appRoleWritePolicies().'
             );
         }
 
@@ -3648,11 +3648,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWritePoliciesRequestToJSON(requestParameters['appRoleWritePoliciesRequest']),
+            body: AppRoleWritePoliciesRequestToJSON(requestParameters['AppRoleWritePoliciesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3660,32 +3660,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWritePolicies(roleName: string, approleMountPath: string, appRoleWritePoliciesRequest: AppRoleWritePoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWritePoliciesRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWritePoliciesRequest: appRoleWritePoliciesRequest }, initOverrides);
+    async appRoleWritePolicies(role_name: string, approle_mount_path: string, AppRoleWritePoliciesRequest: AppRoleWritePoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWritePoliciesRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWritePoliciesRequest: AppRoleWritePoliciesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteRoleRaw(requestParameters: AuthApiAppRoleWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteRole().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteRole().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteRole().'
             );
         }
 
-        if (requestParameters['appRoleWriteRoleRequest'] == null) {
+        if (requestParameters['AppRoleWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteRoleRequest',
-                'Required parameter "appRoleWriteRoleRequest" was null or undefined when calling appRoleWriteRole().'
+                'AppRoleWriteRoleRequest',
+                'Required parameter "AppRoleWriteRoleRequest" was null or undefined when calling appRoleWriteRole().'
             );
         }
 
@@ -3696,11 +3696,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteRoleRequestToJSON(requestParameters['appRoleWriteRoleRequest']),
+            body: AppRoleWriteRoleRequestToJSON(requestParameters['AppRoleWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3708,32 +3708,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteRole(roleName: string, approleMountPath: string, appRoleWriteRoleRequest: AppRoleWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteRoleRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteRoleRequest: appRoleWriteRoleRequest }, initOverrides);
+    async appRoleWriteRole(role_name: string, approle_mount_path: string, AppRoleWriteRoleRequest: AppRoleWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteRoleRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteRoleRequest: AppRoleWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteRoleIdRaw(requestParameters: AuthApiAppRoleWriteRoleIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteRoleId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteRoleId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteRoleId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteRoleId().'
             );
         }
 
-        if (requestParameters['appRoleWriteRoleIdRequest'] == null) {
+        if (requestParameters['AppRoleWriteRoleIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteRoleIdRequest',
-                'Required parameter "appRoleWriteRoleIdRequest" was null or undefined when calling appRoleWriteRoleId().'
+                'AppRoleWriteRoleIdRequest',
+                'Required parameter "AppRoleWriteRoleIdRequest" was null or undefined when calling appRoleWriteRoleId().'
             );
         }
 
@@ -3744,11 +3744,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteRoleIdRequestToJSON(requestParameters['appRoleWriteRoleIdRequest']),
+            body: AppRoleWriteRoleIdRequestToJSON(requestParameters['AppRoleWriteRoleIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3756,32 +3756,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteRoleId(roleName: string, approleMountPath: string, appRoleWriteRoleIdRequest: AppRoleWriteRoleIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteRoleIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteRoleIdRequest: appRoleWriteRoleIdRequest }, initOverrides);
+    async appRoleWriteRoleId(role_name: string, approle_mount_path: string, AppRoleWriteRoleIdRequest: AppRoleWriteRoleIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteRoleIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteRoleIdRequest: AppRoleWriteRoleIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteSecretIdRaw(requestParameters: AuthApiAppRoleWriteSecretIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AppRoleWriteSecretIdResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteSecretId().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteSecretId().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteSecretId().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteSecretId().'
             );
         }
 
-        if (requestParameters['appRoleWriteSecretIdRequest'] == null) {
+        if (requestParameters['AppRoleWriteSecretIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteSecretIdRequest',
-                'Required parameter "appRoleWriteSecretIdRequest" was null or undefined when calling appRoleWriteSecretId().'
+                'AppRoleWriteSecretIdRequest',
+                'Required parameter "AppRoleWriteSecretIdRequest" was null or undefined when calling appRoleWriteSecretId().'
             );
         }
 
@@ -3792,11 +3792,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteSecretIdRequestToJSON(requestParameters['appRoleWriteSecretIdRequest']),
+            body: AppRoleWriteSecretIdRequestToJSON(requestParameters['AppRoleWriteSecretIdRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AppRoleWriteSecretIdResponseFromJSON(jsonValue));
@@ -3804,32 +3804,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteSecretId(roleName: string, approleMountPath: string, appRoleWriteSecretIdRequest: AppRoleWriteSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleWriteSecretIdResponse> {
-        const response = await this.appRoleWriteSecretIdRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteSecretIdRequest: appRoleWriteSecretIdRequest }, initOverrides);
+    async appRoleWriteSecretId(role_name: string, approle_mount_path: string, AppRoleWriteSecretIdRequest: AppRoleWriteSecretIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AppRoleWriteSecretIdResponse> {
+        const response = await this.appRoleWriteSecretIdRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteSecretIdRequest: AppRoleWriteSecretIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteSecretIdBoundCidrsRaw(requestParameters: AuthApiAppRoleWriteSecretIdBoundCidrsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
             );
         }
 
-        if (requestParameters['appRoleWriteSecretIdBoundCidrsRequest'] == null) {
+        if (requestParameters['AppRoleWriteSecretIdBoundCidrsRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteSecretIdBoundCidrsRequest',
-                'Required parameter "appRoleWriteSecretIdBoundCidrsRequest" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
+                'AppRoleWriteSecretIdBoundCidrsRequest',
+                'Required parameter "AppRoleWriteSecretIdBoundCidrsRequest" was null or undefined when calling appRoleWriteSecretIdBoundCidrs().'
             );
         }
 
@@ -3840,11 +3840,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteSecretIdBoundCidrsRequestToJSON(requestParameters['appRoleWriteSecretIdBoundCidrsRequest']),
+            body: AppRoleWriteSecretIdBoundCidrsRequestToJSON(requestParameters['AppRoleWriteSecretIdBoundCidrsRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3852,32 +3852,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteSecretIdBoundCidrs(roleName: string, approleMountPath: string, appRoleWriteSecretIdBoundCidrsRequest: AppRoleWriteSecretIdBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteSecretIdBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteSecretIdBoundCidrsRequest: appRoleWriteSecretIdBoundCidrsRequest }, initOverrides);
+    async appRoleWriteSecretIdBoundCidrs(role_name: string, approle_mount_path: string, AppRoleWriteSecretIdBoundCidrsRequest: AppRoleWriteSecretIdBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteSecretIdBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteSecretIdBoundCidrsRequest: AppRoleWriteSecretIdBoundCidrsRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteSecretIdNumUsesRaw(requestParameters: AuthApiAppRoleWriteSecretIdNumUsesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteSecretIdNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteSecretIdNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteSecretIdNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteSecretIdNumUses().'
             );
         }
 
-        if (requestParameters['appRoleWriteSecretIdNumUsesRequest'] == null) {
+        if (requestParameters['AppRoleWriteSecretIdNumUsesRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteSecretIdNumUsesRequest',
-                'Required parameter "appRoleWriteSecretIdNumUsesRequest" was null or undefined when calling appRoleWriteSecretIdNumUses().'
+                'AppRoleWriteSecretIdNumUsesRequest',
+                'Required parameter "AppRoleWriteSecretIdNumUsesRequest" was null or undefined when calling appRoleWriteSecretIdNumUses().'
             );
         }
 
@@ -3888,11 +3888,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteSecretIdNumUsesRequestToJSON(requestParameters['appRoleWriteSecretIdNumUsesRequest']),
+            body: AppRoleWriteSecretIdNumUsesRequestToJSON(requestParameters['AppRoleWriteSecretIdNumUsesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3900,32 +3900,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteSecretIdNumUses(roleName: string, approleMountPath: string, appRoleWriteSecretIdNumUsesRequest: AppRoleWriteSecretIdNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteSecretIdNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteSecretIdNumUsesRequest: appRoleWriteSecretIdNumUsesRequest }, initOverrides);
+    async appRoleWriteSecretIdNumUses(role_name: string, approle_mount_path: string, AppRoleWriteSecretIdNumUsesRequest: AppRoleWriteSecretIdNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteSecretIdNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteSecretIdNumUsesRequest: AppRoleWriteSecretIdNumUsesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteSecretIdTtlRaw(requestParameters: AuthApiAppRoleWriteSecretIdTtlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteSecretIdTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteSecretIdTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteSecretIdTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteSecretIdTtl().'
             );
         }
 
-        if (requestParameters['appRoleWriteSecretIdTtlRequest'] == null) {
+        if (requestParameters['AppRoleWriteSecretIdTtlRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteSecretIdTtlRequest',
-                'Required parameter "appRoleWriteSecretIdTtlRequest" was null or undefined when calling appRoleWriteSecretIdTtl().'
+                'AppRoleWriteSecretIdTtlRequest',
+                'Required parameter "AppRoleWriteSecretIdTtlRequest" was null or undefined when calling appRoleWriteSecretIdTtl().'
             );
         }
 
@@ -3936,11 +3936,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteSecretIdTtlRequestToJSON(requestParameters['appRoleWriteSecretIdTtlRequest']),
+            body: AppRoleWriteSecretIdTtlRequestToJSON(requestParameters['AppRoleWriteSecretIdTtlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3948,32 +3948,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteSecretIdTtl(roleName: string, approleMountPath: string, appRoleWriteSecretIdTtlRequest: AppRoleWriteSecretIdTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteSecretIdTtlRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteSecretIdTtlRequest: appRoleWriteSecretIdTtlRequest }, initOverrides);
+    async appRoleWriteSecretIdTtl(role_name: string, approle_mount_path: string, AppRoleWriteSecretIdTtlRequest: AppRoleWriteSecretIdTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteSecretIdTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteSecretIdTtlRequest: AppRoleWriteSecretIdTtlRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteTokenBoundCidrsRaw(requestParameters: AuthApiAppRoleWriteTokenBoundCidrsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
             );
         }
 
-        if (requestParameters['appRoleWriteTokenBoundCidrsRequest'] == null) {
+        if (requestParameters['AppRoleWriteTokenBoundCidrsRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteTokenBoundCidrsRequest',
-                'Required parameter "appRoleWriteTokenBoundCidrsRequest" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
+                'AppRoleWriteTokenBoundCidrsRequest',
+                'Required parameter "AppRoleWriteTokenBoundCidrsRequest" was null or undefined when calling appRoleWriteTokenBoundCidrs().'
             );
         }
 
@@ -3984,11 +3984,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteTokenBoundCidrsRequestToJSON(requestParameters['appRoleWriteTokenBoundCidrsRequest']),
+            body: AppRoleWriteTokenBoundCidrsRequestToJSON(requestParameters['AppRoleWriteTokenBoundCidrsRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3996,32 +3996,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteTokenBoundCidrs(roleName: string, approleMountPath: string, appRoleWriteTokenBoundCidrsRequest: AppRoleWriteTokenBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteTokenBoundCidrsRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteTokenBoundCidrsRequest: appRoleWriteTokenBoundCidrsRequest }, initOverrides);
+    async appRoleWriteTokenBoundCidrs(role_name: string, approle_mount_path: string, AppRoleWriteTokenBoundCidrsRequest: AppRoleWriteTokenBoundCidrsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteTokenBoundCidrsRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteTokenBoundCidrsRequest: AppRoleWriteTokenBoundCidrsRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteTokenMaxTtlRaw(requestParameters: AuthApiAppRoleWriteTokenMaxTtlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteTokenMaxTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteTokenMaxTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteTokenMaxTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteTokenMaxTtl().'
             );
         }
 
-        if (requestParameters['appRoleWriteTokenMaxTtlRequest'] == null) {
+        if (requestParameters['AppRoleWriteTokenMaxTtlRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteTokenMaxTtlRequest',
-                'Required parameter "appRoleWriteTokenMaxTtlRequest" was null or undefined when calling appRoleWriteTokenMaxTtl().'
+                'AppRoleWriteTokenMaxTtlRequest',
+                'Required parameter "AppRoleWriteTokenMaxTtlRequest" was null or undefined when calling appRoleWriteTokenMaxTtl().'
             );
         }
 
@@ -4032,11 +4032,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteTokenMaxTtlRequestToJSON(requestParameters['appRoleWriteTokenMaxTtlRequest']),
+            body: AppRoleWriteTokenMaxTtlRequestToJSON(requestParameters['AppRoleWriteTokenMaxTtlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4044,32 +4044,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteTokenMaxTtl(roleName: string, approleMountPath: string, appRoleWriteTokenMaxTtlRequest: AppRoleWriteTokenMaxTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteTokenMaxTtlRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteTokenMaxTtlRequest: appRoleWriteTokenMaxTtlRequest }, initOverrides);
+    async appRoleWriteTokenMaxTtl(role_name: string, approle_mount_path: string, AppRoleWriteTokenMaxTtlRequest: AppRoleWriteTokenMaxTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteTokenMaxTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteTokenMaxTtlRequest: AppRoleWriteTokenMaxTtlRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteTokenNumUsesRaw(requestParameters: AuthApiAppRoleWriteTokenNumUsesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteTokenNumUses().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteTokenNumUses().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteTokenNumUses().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteTokenNumUses().'
             );
         }
 
-        if (requestParameters['appRoleWriteTokenNumUsesRequest'] == null) {
+        if (requestParameters['AppRoleWriteTokenNumUsesRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteTokenNumUsesRequest',
-                'Required parameter "appRoleWriteTokenNumUsesRequest" was null or undefined when calling appRoleWriteTokenNumUses().'
+                'AppRoleWriteTokenNumUsesRequest',
+                'Required parameter "AppRoleWriteTokenNumUsesRequest" was null or undefined when calling appRoleWriteTokenNumUses().'
             );
         }
 
@@ -4080,11 +4080,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteTokenNumUsesRequestToJSON(requestParameters['appRoleWriteTokenNumUsesRequest']),
+            body: AppRoleWriteTokenNumUsesRequestToJSON(requestParameters['AppRoleWriteTokenNumUsesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4092,32 +4092,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteTokenNumUses(roleName: string, approleMountPath: string, appRoleWriteTokenNumUsesRequest: AppRoleWriteTokenNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteTokenNumUsesRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteTokenNumUsesRequest: appRoleWriteTokenNumUsesRequest }, initOverrides);
+    async appRoleWriteTokenNumUses(role_name: string, approle_mount_path: string, AppRoleWriteTokenNumUsesRequest: AppRoleWriteTokenNumUsesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteTokenNumUsesRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteTokenNumUsesRequest: AppRoleWriteTokenNumUsesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async appRoleWriteTokenTtlRaw(requestParameters: AuthApiAppRoleWriteTokenTtlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling appRoleWriteTokenTtl().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling appRoleWriteTokenTtl().'
             );
         }
 
-        if (requestParameters['approleMountPath'] == null) {
+        if (requestParameters['approle_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'approleMountPath',
-                'Required parameter "approleMountPath" was null or undefined when calling appRoleWriteTokenTtl().'
+                'approle_mount_path',
+                'Required parameter "approle_mount_path" was null or undefined when calling appRoleWriteTokenTtl().'
             );
         }
 
-        if (requestParameters['appRoleWriteTokenTtlRequest'] == null) {
+        if (requestParameters['AppRoleWriteTokenTtlRequest'] == null) {
             throw new runtime.RequiredError(
-                'appRoleWriteTokenTtlRequest',
-                'Required parameter "appRoleWriteTokenTtlRequest" was null or undefined when calling appRoleWriteTokenTtl().'
+                'AppRoleWriteTokenTtlRequest',
+                'Required parameter "AppRoleWriteTokenTtlRequest" was null or undefined when calling appRoleWriteTokenTtl().'
             );
         }
 
@@ -4128,11 +4128,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approleMountPath']))),
+            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AppRoleWriteTokenTtlRequestToJSON(requestParameters['appRoleWriteTokenTtlRequest']),
+            body: AppRoleWriteTokenTtlRequestToJSON(requestParameters['AppRoleWriteTokenTtlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4140,32 +4140,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleWriteTokenTtl(roleName: string, approleMountPath: string, appRoleWriteTokenTtlRequest: AppRoleWriteTokenTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.appRoleWriteTokenTtlRaw({ roleName: roleName, approleMountPath: approleMountPath, appRoleWriteTokenTtlRequest: appRoleWriteTokenTtlRequest }, initOverrides);
+    async appRoleWriteTokenTtl(role_name: string, approle_mount_path: string, AppRoleWriteTokenTtlRequest: AppRoleWriteTokenTtlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.appRoleWriteTokenTtlRaw({ role_name: role_name, approle_mount_path: approle_mount_path, AppRoleWriteTokenTtlRequest: AppRoleWriteTokenTtlRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureCertificateRaw(requestParameters: AuthApiAwsConfigureCertificateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certName'] == null) {
+        if (requestParameters['cert_name'] == null) {
             throw new runtime.RequiredError(
-                'certName',
-                'Required parameter "certName" was null or undefined when calling awsConfigureCertificate().'
+                'cert_name',
+                'Required parameter "cert_name" was null or undefined when calling awsConfigureCertificate().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureCertificate().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureCertificate().'
             );
         }
 
-        if (requestParameters['awsConfigureCertificateRequest'] == null) {
+        if (requestParameters['AwsConfigureCertificateRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureCertificateRequest',
-                'Required parameter "awsConfigureCertificateRequest" was null or undefined when calling awsConfigureCertificate().'
+                'AwsConfigureCertificateRequest',
+                'Required parameter "AwsConfigureCertificateRequest" was null or undefined when calling awsConfigureCertificate().'
             );
         }
 
@@ -4176,11 +4176,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['certName']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureCertificateRequestToJSON(requestParameters['awsConfigureCertificateRequest']),
+            body: AwsConfigureCertificateRequestToJSON(requestParameters['AwsConfigureCertificateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4188,25 +4188,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureCertificate(certName: string, awsMountPath: string, awsConfigureCertificateRequest: AwsConfigureCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureCertificateRaw({ certName: certName, awsMountPath: awsMountPath, awsConfigureCertificateRequest: awsConfigureCertificateRequest }, initOverrides);
+    async awsConfigureCertificate(cert_name: string, aws_mount_path: string, AwsConfigureCertificateRequest: AwsConfigureCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureCertificateRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path, AwsConfigureCertificateRequest: AwsConfigureCertificateRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureClientRaw(requestParameters: AuthApiAwsConfigureClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureClient().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureClient().'
             );
         }
 
-        if (requestParameters['awsConfigureClientRequest'] == null) {
+        if (requestParameters['AwsConfigureClientRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureClientRequest',
-                'Required parameter "awsConfigureClientRequest" was null or undefined when calling awsConfigureClient().'
+                'AwsConfigureClientRequest',
+                'Required parameter "AwsConfigureClientRequest" was null or undefined when calling awsConfigureClient().'
             );
         }
 
@@ -4217,11 +4217,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureClientRequestToJSON(requestParameters['awsConfigureClientRequest']),
+            body: AwsConfigureClientRequestToJSON(requestParameters['AwsConfigureClientRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4229,25 +4229,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureClient(awsMountPath: string, awsConfigureClientRequest: AwsConfigureClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureClientRaw({ awsMountPath: awsMountPath, awsConfigureClientRequest: awsConfigureClientRequest }, initOverrides);
+    async awsConfigureClient(aws_mount_path: string, AwsConfigureClientRequest: AwsConfigureClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureClientRaw({ aws_mount_path: aws_mount_path, AwsConfigureClientRequest: AwsConfigureClientRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureIdentityAccessListTidyOperationRaw(requestParameters: AuthApiAwsConfigureIdentityAccessListTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureIdentityAccessListTidyOperation().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureIdentityAccessListTidyOperation().'
             );
         }
 
-        if (requestParameters['awsConfigureIdentityAccessListTidyOperationRequest'] == null) {
+        if (requestParameters['AwsConfigureIdentityAccessListTidyOperationRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureIdentityAccessListTidyOperationRequest',
-                'Required parameter "awsConfigureIdentityAccessListTidyOperationRequest" was null or undefined when calling awsConfigureIdentityAccessListTidyOperation().'
+                'AwsConfigureIdentityAccessListTidyOperationRequest',
+                'Required parameter "AwsConfigureIdentityAccessListTidyOperationRequest" was null or undefined when calling awsConfigureIdentityAccessListTidyOperation().'
             );
         }
 
@@ -4258,11 +4258,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureIdentityAccessListTidyOperationRequestToJSON(requestParameters['awsConfigureIdentityAccessListTidyOperationRequest']),
+            body: AwsConfigureIdentityAccessListTidyOperationRequestToJSON(requestParameters['AwsConfigureIdentityAccessListTidyOperationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4270,25 +4270,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureIdentityAccessListTidyOperation(awsMountPath: string, awsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureIdentityAccessListTidyOperationRaw({ awsMountPath: awsMountPath, awsConfigureIdentityAccessListTidyOperationRequest: awsConfigureIdentityAccessListTidyOperationRequest }, initOverrides);
+    async awsConfigureIdentityAccessListTidyOperation(aws_mount_path: string, AwsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureIdentityAccessListTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureIdentityIntegrationRaw(requestParameters: AuthApiAwsConfigureIdentityIntegrationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureIdentityIntegration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureIdentityIntegration().'
             );
         }
 
-        if (requestParameters['awsConfigureIdentityIntegrationRequest'] == null) {
+        if (requestParameters['AwsConfigureIdentityIntegrationRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureIdentityIntegrationRequest',
-                'Required parameter "awsConfigureIdentityIntegrationRequest" was null or undefined when calling awsConfigureIdentityIntegration().'
+                'AwsConfigureIdentityIntegrationRequest',
+                'Required parameter "AwsConfigureIdentityIntegrationRequest" was null or undefined when calling awsConfigureIdentityIntegration().'
             );
         }
 
@@ -4299,11 +4299,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureIdentityIntegrationRequestToJSON(requestParameters['awsConfigureIdentityIntegrationRequest']),
+            body: AwsConfigureIdentityIntegrationRequestToJSON(requestParameters['AwsConfigureIdentityIntegrationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4311,25 +4311,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureIdentityIntegration(awsMountPath: string, awsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureIdentityIntegrationRaw({ awsMountPath: awsMountPath, awsConfigureIdentityIntegrationRequest: awsConfigureIdentityIntegrationRequest }, initOverrides);
+    async awsConfigureIdentityIntegration(aws_mount_path: string, AwsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureIdentityIntegrationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureIdentityWhitelistTidyOperationRaw(requestParameters: AuthApiAwsConfigureIdentityWhitelistTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureIdentityWhitelistTidyOperation().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureIdentityWhitelistTidyOperation().'
             );
         }
 
-        if (requestParameters['awsConfigureIdentityWhitelistTidyOperationRequest'] == null) {
+        if (requestParameters['AwsConfigureIdentityWhitelistTidyOperationRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureIdentityWhitelistTidyOperationRequest',
-                'Required parameter "awsConfigureIdentityWhitelistTidyOperationRequest" was null or undefined when calling awsConfigureIdentityWhitelistTidyOperation().'
+                'AwsConfigureIdentityWhitelistTidyOperationRequest',
+                'Required parameter "AwsConfigureIdentityWhitelistTidyOperationRequest" was null or undefined when calling awsConfigureIdentityWhitelistTidyOperation().'
             );
         }
 
@@ -4340,11 +4340,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureIdentityWhitelistTidyOperationRequestToJSON(requestParameters['awsConfigureIdentityWhitelistTidyOperationRequest']),
+            body: AwsConfigureIdentityWhitelistTidyOperationRequestToJSON(requestParameters['AwsConfigureIdentityWhitelistTidyOperationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4352,25 +4352,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureIdentityWhitelistTidyOperation(awsMountPath: string, awsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureIdentityWhitelistTidyOperationRaw({ awsMountPath: awsMountPath, awsConfigureIdentityWhitelistTidyOperationRequest: awsConfigureIdentityWhitelistTidyOperationRequest }, initOverrides);
+    async awsConfigureIdentityWhitelistTidyOperation(aws_mount_path: string, AwsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureIdentityWhitelistTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureRoleTagBlacklistTidyOperationRaw(requestParameters: AuthApiAwsConfigureRoleTagBlacklistTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureRoleTagBlacklistTidyOperation().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureRoleTagBlacklistTidyOperation().'
             );
         }
 
-        if (requestParameters['awsConfigureRoleTagBlacklistTidyOperationRequest'] == null) {
+        if (requestParameters['AwsConfigureRoleTagBlacklistTidyOperationRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureRoleTagBlacklistTidyOperationRequest',
-                'Required parameter "awsConfigureRoleTagBlacklistTidyOperationRequest" was null or undefined when calling awsConfigureRoleTagBlacklistTidyOperation().'
+                'AwsConfigureRoleTagBlacklistTidyOperationRequest',
+                'Required parameter "AwsConfigureRoleTagBlacklistTidyOperationRequest" was null or undefined when calling awsConfigureRoleTagBlacklistTidyOperation().'
             );
         }
 
@@ -4381,11 +4381,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureRoleTagBlacklistTidyOperationRequestToJSON(requestParameters['awsConfigureRoleTagBlacklistTidyOperationRequest']),
+            body: AwsConfigureRoleTagBlacklistTidyOperationRequestToJSON(requestParameters['AwsConfigureRoleTagBlacklistTidyOperationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4393,25 +4393,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureRoleTagBlacklistTidyOperation(awsMountPath: string, awsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureRoleTagBlacklistTidyOperationRaw({ awsMountPath: awsMountPath, awsConfigureRoleTagBlacklistTidyOperationRequest: awsConfigureRoleTagBlacklistTidyOperationRequest }, initOverrides);
+    async awsConfigureRoleTagBlacklistTidyOperation(aws_mount_path: string, AwsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureRoleTagBlacklistTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsConfigureRoleTagDenyListTidyOperationRaw(requestParameters: AuthApiAwsConfigureRoleTagDenyListTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsConfigureRoleTagDenyListTidyOperation().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsConfigureRoleTagDenyListTidyOperation().'
             );
         }
 
-        if (requestParameters['awsConfigureRoleTagDenyListTidyOperationRequest'] == null) {
+        if (requestParameters['AwsConfigureRoleTagDenyListTidyOperationRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsConfigureRoleTagDenyListTidyOperationRequest',
-                'Required parameter "awsConfigureRoleTagDenyListTidyOperationRequest" was null or undefined when calling awsConfigureRoleTagDenyListTidyOperation().'
+                'AwsConfigureRoleTagDenyListTidyOperationRequest',
+                'Required parameter "AwsConfigureRoleTagDenyListTidyOperationRequest" was null or undefined when calling awsConfigureRoleTagDenyListTidyOperation().'
             );
         }
 
@@ -4422,11 +4422,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsConfigureRoleTagDenyListTidyOperationRequestToJSON(requestParameters['awsConfigureRoleTagDenyListTidyOperationRequest']),
+            body: AwsConfigureRoleTagDenyListTidyOperationRequestToJSON(requestParameters['AwsConfigureRoleTagDenyListTidyOperationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4434,8 +4434,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsConfigureRoleTagDenyListTidyOperation(awsMountPath: string, awsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsConfigureRoleTagDenyListTidyOperationRaw({ awsMountPath: awsMountPath, awsConfigureRoleTagDenyListTidyOperationRequest: awsConfigureRoleTagDenyListTidyOperationRequest }, initOverrides);
+    async awsConfigureRoleTagDenyListTidyOperation(aws_mount_path: string, AwsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsConfigureRoleTagDenyListTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4449,10 +4449,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteAuthRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteAuthRole().'
             );
         }
 
@@ -4461,7 +4461,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4472,25 +4472,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteAuthRole(role: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteAuthRoleRaw({ role: role, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteAuthRole(role: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteCertificateConfigurationRaw(requestParameters: AuthApiAwsDeleteCertificateConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certName'] == null) {
+        if (requestParameters['cert_name'] == null) {
             throw new runtime.RequiredError(
-                'certName',
-                'Required parameter "certName" was null or undefined when calling awsDeleteCertificateConfiguration().'
+                'cert_name',
+                'Required parameter "cert_name" was null or undefined when calling awsDeleteCertificateConfiguration().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteCertificateConfiguration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteCertificateConfiguration().'
             );
         }
 
@@ -4499,7 +4499,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['certName']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4510,18 +4510,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteCertificateConfiguration(certName: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteCertificateConfigurationRaw({ certName: certName, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteCertificateConfiguration(cert_name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteCertificateConfigurationRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteClientConfigurationRaw(requestParameters: AuthApiAwsDeleteClientConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteClientConfiguration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteClientConfiguration().'
             );
         }
 
@@ -4530,7 +4530,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4541,25 +4541,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteClientConfiguration(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteClientConfigurationRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteClientConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteClientConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteIdentityAccessListRaw(requestParameters: AuthApiAwsDeleteIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['instanceId'] == null) {
+        if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
-                'instanceId',
-                'Required parameter "instanceId" was null or undefined when calling awsDeleteIdentityAccessList().'
+                'instance_id',
+                'Required parameter "instance_id" was null or undefined when calling awsDeleteIdentityAccessList().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteIdentityAccessList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteIdentityAccessList().'
             );
         }
 
@@ -4568,7 +4568,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instanceId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4579,18 +4579,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteIdentityAccessList(instanceId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteIdentityAccessListRaw({ instanceId: instanceId, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteIdentityAccessList(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteIdentityAccessListRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteIdentityAccessListTidySettingsRaw(requestParameters: AuthApiAwsDeleteIdentityAccessListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteIdentityAccessListTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteIdentityAccessListTidySettings().'
             );
         }
 
@@ -4599,7 +4599,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4610,25 +4610,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteIdentityAccessListTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteIdentityAccessListTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteIdentityAccessListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteIdentityAccessListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteIdentityWhitelistRaw(requestParameters: AuthApiAwsDeleteIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['instanceId'] == null) {
+        if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
-                'instanceId',
-                'Required parameter "instanceId" was null or undefined when calling awsDeleteIdentityWhitelist().'
+                'instance_id',
+                'Required parameter "instance_id" was null or undefined when calling awsDeleteIdentityWhitelist().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteIdentityWhitelist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteIdentityWhitelist().'
             );
         }
 
@@ -4637,7 +4637,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instanceId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4648,18 +4648,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteIdentityWhitelist(instanceId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteIdentityWhitelistRaw({ instanceId: instanceId, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteIdentityWhitelist(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteIdentityWhitelistRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteIdentityWhitelistTidySettingsRaw(requestParameters: AuthApiAwsDeleteIdentityWhitelistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteIdentityWhitelistTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteIdentityWhitelistTidySettings().'
             );
         }
 
@@ -4668,7 +4668,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4679,25 +4679,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteIdentityWhitelistTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteIdentityWhitelistTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteIdentityWhitelistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteIdentityWhitelistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteRoleTagBlacklistRaw(requestParameters: AuthApiAwsDeleteRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsDeleteRoleTagBlacklist().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsDeleteRoleTagBlacklist().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteRoleTagBlacklist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteRoleTagBlacklist().'
             );
         }
 
@@ -4706,7 +4706,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4717,18 +4717,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteRoleTagBlacklist(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteRoleTagBlacklistRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteRoleTagBlacklistTidySettingsRaw(requestParameters: AuthApiAwsDeleteRoleTagBlacklistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteRoleTagBlacklistTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteRoleTagBlacklistTidySettings().'
             );
         }
 
@@ -4737,7 +4737,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4748,25 +4748,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteRoleTagBlacklistTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteRoleTagBlacklistTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteRoleTagBlacklistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteRoleTagBlacklistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteRoleTagDenyListRaw(requestParameters: AuthApiAwsDeleteRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsDeleteRoleTagDenyList().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsDeleteRoleTagDenyList().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteRoleTagDenyList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteRoleTagDenyList().'
             );
         }
 
@@ -4775,7 +4775,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4786,18 +4786,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteRoleTagDenyList(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteRoleTagDenyListRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteRoleTagDenyListTidySettingsRaw(requestParameters: AuthApiAwsDeleteRoleTagDenyListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteRoleTagDenyListTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteRoleTagDenyListTidySettings().'
             );
         }
 
@@ -4806,7 +4806,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4817,25 +4817,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteRoleTagDenyListTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteRoleTagDenyListTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteRoleTagDenyListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteRoleTagDenyListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsDeleteStsRoleRaw(requestParameters: AuthApiAwsDeleteStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['accountId'] == null) {
+        if (requestParameters['account_id'] == null) {
             throw new runtime.RequiredError(
-                'accountId',
-                'Required parameter "accountId" was null or undefined when calling awsDeleteStsRole().'
+                'account_id',
+                'Required parameter "account_id" was null or undefined when calling awsDeleteStsRole().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsDeleteStsRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsDeleteStsRole().'
             );
         }
 
@@ -4844,7 +4844,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['accountId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4855,18 +4855,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsDeleteStsRole(accountId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsDeleteStsRoleRaw({ accountId: accountId, awsMountPath: awsMountPath }, initOverrides);
+    async awsDeleteStsRole(account_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsDeleteStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListAuthRolesRaw(requestParameters: AuthApiAwsListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListAuthRoles().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListAuthRoles().'
             );
         }
 
@@ -4886,7 +4886,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/role/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4897,18 +4897,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListAuthRoles(awsMountPath: string, list: AwsListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListAuthRolesRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListAuthRoles(aws_mount_path: string, list: AwsListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListAuthRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListAuthRoles2Raw(requestParameters: AuthApiAwsListAuthRoles2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListAuthRoles2().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListAuthRoles2().'
             );
         }
 
@@ -4928,7 +4928,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4939,18 +4939,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListAuthRoles2(awsMountPath: string, list: AwsListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListAuthRoles2Raw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListAuthRoles2(aws_mount_path: string, list: AwsListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListAuthRoles2Raw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListCertificateConfigurationsRaw(requestParameters: AuthApiAwsListCertificateConfigurationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListCertificateConfigurations().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListCertificateConfigurations().'
             );
         }
 
@@ -4970,7 +4970,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificates/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/certificates/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4981,18 +4981,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListCertificateConfigurations(awsMountPath: string, list: AwsListCertificateConfigurationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListCertificateConfigurationsRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListCertificateConfigurations(aws_mount_path: string, list: AwsListCertificateConfigurationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListCertificateConfigurationsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListIdentityAccessListRaw(requestParameters: AuthApiAwsListIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListIdentityAccessList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListIdentityAccessList().'
             );
         }
 
@@ -5012,7 +5012,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-accesslist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5023,18 +5023,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListIdentityAccessList(awsMountPath: string, list: AwsListIdentityAccessListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListIdentityAccessListRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListIdentityAccessList(aws_mount_path: string, list: AwsListIdentityAccessListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListIdentityAccessListRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListIdentityWhitelistRaw(requestParameters: AuthApiAwsListIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListIdentityWhitelist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListIdentityWhitelist().'
             );
         }
 
@@ -5054,7 +5054,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-whitelist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5065,18 +5065,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListIdentityWhitelist(awsMountPath: string, list: AwsListIdentityWhitelistListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListIdentityWhitelistRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListIdentityWhitelist(aws_mount_path: string, list: AwsListIdentityWhitelistListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListIdentityWhitelistRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListRoleTagBlacklistsRaw(requestParameters: AuthApiAwsListRoleTagBlacklistsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListRoleTagBlacklists().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListRoleTagBlacklists().'
             );
         }
 
@@ -5096,7 +5096,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-blacklist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5107,18 +5107,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListRoleTagBlacklists(awsMountPath: string, list: AwsListRoleTagBlacklistsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListRoleTagBlacklistsRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListRoleTagBlacklists(aws_mount_path: string, list: AwsListRoleTagBlacklistsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListRoleTagBlacklistsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListRoleTagDenyListsRaw(requestParameters: AuthApiAwsListRoleTagDenyListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListRoleTagDenyLists().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListRoleTagDenyLists().'
             );
         }
 
@@ -5138,7 +5138,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-denylist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5149,18 +5149,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListRoleTagDenyLists(awsMountPath: string, list: AwsListRoleTagDenyListsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListRoleTagDenyListsRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListRoleTagDenyLists(aws_mount_path: string, list: AwsListRoleTagDenyListsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListRoleTagDenyListsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsListStsRoleRelationshipsRaw(requestParameters: AuthApiAwsListStsRoleRelationshipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsListStsRoleRelationships().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsListStsRoleRelationships().'
             );
         }
 
@@ -5180,7 +5180,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/sts/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5191,25 +5191,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListStsRoleRelationships(awsMountPath: string, list: AwsListStsRoleRelationshipsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.awsListStsRoleRelationshipsRaw({ awsMountPath: awsMountPath, list: list }, initOverrides);
+    async awsListStsRoleRelationships(aws_mount_path: string, list: AwsListStsRoleRelationshipsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.awsListStsRoleRelationshipsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsLoginRaw(requestParameters: AuthApiAwsLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsLogin().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsLogin().'
             );
         }
 
-        if (requestParameters['awsLoginRequest'] == null) {
+        if (requestParameters['AwsLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsLoginRequest',
-                'Required parameter "awsLoginRequest" was null or undefined when calling awsLogin().'
+                'AwsLoginRequest',
+                'Required parameter "AwsLoginRequest" was null or undefined when calling awsLogin().'
             );
         }
 
@@ -5220,11 +5220,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/login`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/login`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsLoginRequestToJSON(requestParameters['awsLoginRequest']),
+            body: AwsLoginRequestToJSON(requestParameters['AwsLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5232,8 +5232,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsLogin(awsMountPath: string, awsLoginRequest: AwsLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsLoginRaw({ awsMountPath: awsMountPath, awsLoginRequest: awsLoginRequest }, initOverrides);
+    async awsLogin(aws_mount_path: string, AwsLoginRequest: AwsLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsLoginRaw({ aws_mount_path: aws_mount_path, AwsLoginRequest: AwsLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5247,10 +5247,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadAuthRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadAuthRole().'
             );
         }
 
@@ -5259,7 +5259,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5270,25 +5270,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadAuthRole(role: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadAuthRoleRaw({ role: role, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadAuthRole(role: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadCertificateConfigurationRaw(requestParameters: AuthApiAwsReadCertificateConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certName'] == null) {
+        if (requestParameters['cert_name'] == null) {
             throw new runtime.RequiredError(
-                'certName',
-                'Required parameter "certName" was null or undefined when calling awsReadCertificateConfiguration().'
+                'cert_name',
+                'Required parameter "cert_name" was null or undefined when calling awsReadCertificateConfiguration().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadCertificateConfiguration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadCertificateConfiguration().'
             );
         }
 
@@ -5297,7 +5297,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['certName']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5308,18 +5308,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadCertificateConfiguration(certName: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadCertificateConfigurationRaw({ certName: certName, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadCertificateConfiguration(cert_name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadCertificateConfigurationRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadClientConfigurationRaw(requestParameters: AuthApiAwsReadClientConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadClientConfiguration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadClientConfiguration().'
             );
         }
 
@@ -5328,7 +5328,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5339,25 +5339,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadClientConfiguration(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadClientConfigurationRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadClientConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadClientConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadIdentityAccessListRaw(requestParameters: AuthApiAwsReadIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['instanceId'] == null) {
+        if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
-                'instanceId',
-                'Required parameter "instanceId" was null or undefined when calling awsReadIdentityAccessList().'
+                'instance_id',
+                'Required parameter "instance_id" was null or undefined when calling awsReadIdentityAccessList().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadIdentityAccessList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadIdentityAccessList().'
             );
         }
 
@@ -5366,7 +5366,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instanceId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5377,18 +5377,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadIdentityAccessList(instanceId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadIdentityAccessListRaw({ instanceId: instanceId, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadIdentityAccessList(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadIdentityAccessListRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadIdentityAccessListTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityAccessListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadIdentityAccessListTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadIdentityAccessListTidySettings().'
             );
         }
 
@@ -5397,7 +5397,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5408,18 +5408,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadIdentityAccessListTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadIdentityAccessListTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadIdentityAccessListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadIdentityAccessListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadIdentityIntegrationConfigurationRaw(requestParameters: AuthApiAwsReadIdentityIntegrationConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadIdentityIntegrationConfiguration().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadIdentityIntegrationConfiguration().'
             );
         }
 
@@ -5428,7 +5428,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5439,25 +5439,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadIdentityIntegrationConfiguration(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadIdentityIntegrationConfigurationRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadIdentityIntegrationConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadIdentityIntegrationConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadIdentityWhitelistRaw(requestParameters: AuthApiAwsReadIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['instanceId'] == null) {
+        if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
-                'instanceId',
-                'Required parameter "instanceId" was null or undefined when calling awsReadIdentityWhitelist().'
+                'instance_id',
+                'Required parameter "instance_id" was null or undefined when calling awsReadIdentityWhitelist().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadIdentityWhitelist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadIdentityWhitelist().'
             );
         }
 
@@ -5466,7 +5466,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instanceId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5477,18 +5477,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadIdentityWhitelist(instanceId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadIdentityWhitelistRaw({ instanceId: instanceId, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadIdentityWhitelist(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadIdentityWhitelistRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadIdentityWhitelistTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityWhitelistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadIdentityWhitelistTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadIdentityWhitelistTidySettings().'
             );
         }
 
@@ -5497,7 +5497,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5508,25 +5508,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadIdentityWhitelistTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadIdentityWhitelistTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadIdentityWhitelistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadIdentityWhitelistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadRoleTagBlacklistRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsReadRoleTagBlacklist().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsReadRoleTagBlacklist().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadRoleTagBlacklist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadRoleTagBlacklist().'
             );
         }
 
@@ -5535,7 +5535,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5546,18 +5546,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadRoleTagBlacklist(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadRoleTagBlacklistRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadRoleTagBlacklistTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadRoleTagBlacklistTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadRoleTagBlacklistTidySettings().'
             );
         }
 
@@ -5566,7 +5566,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5577,25 +5577,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadRoleTagBlacklistTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadRoleTagBlacklistTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadRoleTagBlacklistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadRoleTagBlacklistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadRoleTagDenyListRaw(requestParameters: AuthApiAwsReadRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsReadRoleTagDenyList().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsReadRoleTagDenyList().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadRoleTagDenyList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadRoleTagDenyList().'
             );
         }
 
@@ -5604,7 +5604,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5615,18 +5615,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadRoleTagDenyList(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadRoleTagDenyListRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadRoleTagDenyListTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagDenyListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadRoleTagDenyListTidySettings().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadRoleTagDenyListTidySettings().'
             );
         }
 
@@ -5635,7 +5635,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5646,25 +5646,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadRoleTagDenyListTidySettings(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadRoleTagDenyListTidySettingsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsReadRoleTagDenyListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadRoleTagDenyListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsReadStsRoleRaw(requestParameters: AuthApiAwsReadStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['accountId'] == null) {
+        if (requestParameters['account_id'] == null) {
             throw new runtime.RequiredError(
-                'accountId',
-                'Required parameter "accountId" was null or undefined when calling awsReadStsRole().'
+                'account_id',
+                'Required parameter "account_id" was null or undefined when calling awsReadStsRole().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsReadStsRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsReadStsRole().'
             );
         }
 
@@ -5673,7 +5673,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['accountId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5684,18 +5684,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsReadStsRole(accountId: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsReadStsRoleRaw({ accountId: accountId, awsMountPath: awsMountPath }, initOverrides);
+    async awsReadStsRole(account_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsReadStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsRotateRootCredentialsRaw(requestParameters: AuthApiAwsRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsRotateRootCredentials().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsRotateRootCredentials().'
             );
         }
 
@@ -5704,7 +5704,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5715,25 +5715,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsRotateRootCredentials(awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsRotateRootCredentialsRaw({ awsMountPath: awsMountPath }, initOverrides);
+    async awsRotateRootCredentials(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsRotateRootCredentialsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsTidyIdentityAccessListRaw(requestParameters: AuthApiAwsTidyIdentityAccessListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsTidyIdentityAccessList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsTidyIdentityAccessList().'
             );
         }
 
-        if (requestParameters['awsTidyIdentityAccessListRequest'] == null) {
+        if (requestParameters['AwsTidyIdentityAccessListRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsTidyIdentityAccessListRequest',
-                'Required parameter "awsTidyIdentityAccessListRequest" was null or undefined when calling awsTidyIdentityAccessList().'
+                'AwsTidyIdentityAccessListRequest',
+                'Required parameter "AwsTidyIdentityAccessListRequest" was null or undefined when calling awsTidyIdentityAccessList().'
             );
         }
 
@@ -5744,11 +5744,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsTidyIdentityAccessListRequestToJSON(requestParameters['awsTidyIdentityAccessListRequest']),
+            body: AwsTidyIdentityAccessListRequestToJSON(requestParameters['AwsTidyIdentityAccessListRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5756,25 +5756,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsTidyIdentityAccessList(awsMountPath: string, awsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsTidyIdentityAccessListRaw({ awsMountPath: awsMountPath, awsTidyIdentityAccessListRequest: awsTidyIdentityAccessListRequest }, initOverrides);
+    async awsTidyIdentityAccessList(aws_mount_path: string, AwsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsTidyIdentityAccessListRaw({ aws_mount_path: aws_mount_path, AwsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsTidyIdentityWhitelistRaw(requestParameters: AuthApiAwsTidyIdentityWhitelistOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsTidyIdentityWhitelist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsTidyIdentityWhitelist().'
             );
         }
 
-        if (requestParameters['awsTidyIdentityWhitelistRequest'] == null) {
+        if (requestParameters['AwsTidyIdentityWhitelistRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsTidyIdentityWhitelistRequest',
-                'Required parameter "awsTidyIdentityWhitelistRequest" was null or undefined when calling awsTidyIdentityWhitelist().'
+                'AwsTidyIdentityWhitelistRequest',
+                'Required parameter "AwsTidyIdentityWhitelistRequest" was null or undefined when calling awsTidyIdentityWhitelist().'
             );
         }
 
@@ -5785,11 +5785,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsTidyIdentityWhitelistRequestToJSON(requestParameters['awsTidyIdentityWhitelistRequest']),
+            body: AwsTidyIdentityWhitelistRequestToJSON(requestParameters['AwsTidyIdentityWhitelistRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5797,25 +5797,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsTidyIdentityWhitelist(awsMountPath: string, awsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsTidyIdentityWhitelistRaw({ awsMountPath: awsMountPath, awsTidyIdentityWhitelistRequest: awsTidyIdentityWhitelistRequest }, initOverrides);
+    async awsTidyIdentityWhitelist(aws_mount_path: string, AwsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsTidyIdentityWhitelistRaw({ aws_mount_path: aws_mount_path, AwsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsTidyRoleTagBlacklistRaw(requestParameters: AuthApiAwsTidyRoleTagBlacklistOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsTidyRoleTagBlacklist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsTidyRoleTagBlacklist().'
             );
         }
 
-        if (requestParameters['awsTidyRoleTagBlacklistRequest'] == null) {
+        if (requestParameters['AwsTidyRoleTagBlacklistRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsTidyRoleTagBlacklistRequest',
-                'Required parameter "awsTidyRoleTagBlacklistRequest" was null or undefined when calling awsTidyRoleTagBlacklist().'
+                'AwsTidyRoleTagBlacklistRequest',
+                'Required parameter "AwsTidyRoleTagBlacklistRequest" was null or undefined when calling awsTidyRoleTagBlacklist().'
             );
         }
 
@@ -5826,11 +5826,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsTidyRoleTagBlacklistRequestToJSON(requestParameters['awsTidyRoleTagBlacklistRequest']),
+            body: AwsTidyRoleTagBlacklistRequestToJSON(requestParameters['AwsTidyRoleTagBlacklistRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5838,25 +5838,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsTidyRoleTagBlacklist(awsMountPath: string, awsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsTidyRoleTagBlacklistRaw({ awsMountPath: awsMountPath, awsTidyRoleTagBlacklistRequest: awsTidyRoleTagBlacklistRequest }, initOverrides);
+    async awsTidyRoleTagBlacklist(aws_mount_path: string, AwsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsTidyRoleTagBlacklistRaw({ aws_mount_path: aws_mount_path, AwsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsTidyRoleTagDenyListRaw(requestParameters: AuthApiAwsTidyRoleTagDenyListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsTidyRoleTagDenyList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsTidyRoleTagDenyList().'
             );
         }
 
-        if (requestParameters['awsTidyRoleTagDenyListRequest'] == null) {
+        if (requestParameters['AwsTidyRoleTagDenyListRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsTidyRoleTagDenyListRequest',
-                'Required parameter "awsTidyRoleTagDenyListRequest" was null or undefined when calling awsTidyRoleTagDenyList().'
+                'AwsTidyRoleTagDenyListRequest',
+                'Required parameter "AwsTidyRoleTagDenyListRequest" was null or undefined when calling awsTidyRoleTagDenyList().'
             );
         }
 
@@ -5867,11 +5867,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsTidyRoleTagDenyListRequestToJSON(requestParameters['awsTidyRoleTagDenyListRequest']),
+            body: AwsTidyRoleTagDenyListRequestToJSON(requestParameters['AwsTidyRoleTagDenyListRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5879,8 +5879,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsTidyRoleTagDenyList(awsMountPath: string, awsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsTidyRoleTagDenyListRaw({ awsMountPath: awsMountPath, awsTidyRoleTagDenyListRequest: awsTidyRoleTagDenyListRequest }, initOverrides);
+    async awsTidyRoleTagDenyList(aws_mount_path: string, AwsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsTidyRoleTagDenyListRaw({ aws_mount_path: aws_mount_path, AwsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5894,17 +5894,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsWriteAuthRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsWriteAuthRole().'
             );
         }
 
-        if (requestParameters['awsWriteAuthRoleRequest'] == null) {
+        if (requestParameters['AwsWriteAuthRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsWriteAuthRoleRequest',
-                'Required parameter "awsWriteAuthRoleRequest" was null or undefined when calling awsWriteAuthRole().'
+                'AwsWriteAuthRoleRequest',
+                'Required parameter "AwsWriteAuthRoleRequest" was null or undefined when calling awsWriteAuthRole().'
             );
         }
 
@@ -5915,11 +5915,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsWriteAuthRoleRequestToJSON(requestParameters['awsWriteAuthRoleRequest']),
+            body: AwsWriteAuthRoleRequestToJSON(requestParameters['AwsWriteAuthRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5927,8 +5927,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsWriteAuthRole(role: string, awsMountPath: string, awsWriteAuthRoleRequest: AwsWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsWriteAuthRoleRaw({ role: role, awsMountPath: awsMountPath, awsWriteAuthRoleRequest: awsWriteAuthRoleRequest }, initOverrides);
+    async awsWriteAuthRole(role: string, aws_mount_path: string, AwsWriteAuthRoleRequest: AwsWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsWriteAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path, AwsWriteAuthRoleRequest: AwsWriteAuthRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5942,17 +5942,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsWriteRoleTag().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsWriteRoleTag().'
             );
         }
 
-        if (requestParameters['awsWriteRoleTagRequest'] == null) {
+        if (requestParameters['AwsWriteRoleTagRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsWriteRoleTagRequest',
-                'Required parameter "awsWriteRoleTagRequest" was null or undefined when calling awsWriteRoleTag().'
+                'AwsWriteRoleTagRequest',
+                'Required parameter "AwsWriteRoleTagRequest" was null or undefined when calling awsWriteRoleTag().'
             );
         }
 
@@ -5963,11 +5963,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}/tag`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/role/{role}/tag`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsWriteRoleTagRequestToJSON(requestParameters['awsWriteRoleTagRequest']),
+            body: AwsWriteRoleTagRequestToJSON(requestParameters['AwsWriteRoleTagRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5975,25 +5975,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsWriteRoleTag(role: string, awsMountPath: string, awsWriteRoleTagRequest: AwsWriteRoleTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsWriteRoleTagRaw({ role: role, awsMountPath: awsMountPath, awsWriteRoleTagRequest: awsWriteRoleTagRequest }, initOverrides);
+    async awsWriteRoleTag(role: string, aws_mount_path: string, AwsWriteRoleTagRequest: AwsWriteRoleTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsWriteRoleTagRaw({ role: role, aws_mount_path: aws_mount_path, AwsWriteRoleTagRequest: AwsWriteRoleTagRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsWriteRoleTagBlacklistRaw(requestParameters: AuthApiAwsWriteRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsWriteRoleTagBlacklist().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsWriteRoleTagBlacklist().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsWriteRoleTagBlacklist().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsWriteRoleTagBlacklist().'
             );
         }
 
@@ -6002,7 +6002,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6013,25 +6013,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsWriteRoleTagBlacklist(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsWriteRoleTagBlacklistRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsWriteRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsWriteRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsWriteRoleTagDenyListRaw(requestParameters: AuthApiAwsWriteRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleTag'] == null) {
+        if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
-                'roleTag',
-                'Required parameter "roleTag" was null or undefined when calling awsWriteRoleTagDenyList().'
+                'role_tag',
+                'Required parameter "role_tag" was null or undefined when calling awsWriteRoleTagDenyList().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsWriteRoleTagDenyList().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsWriteRoleTagDenyList().'
             );
         }
 
@@ -6040,7 +6040,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['roleTag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6051,32 +6051,32 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsWriteRoleTagDenyList(roleTag: string, awsMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsWriteRoleTagDenyListRaw({ roleTag: roleTag, awsMountPath: awsMountPath }, initOverrides);
+    async awsWriteRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsWriteRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async awsWriteStsRoleRaw(requestParameters: AuthApiAwsWriteStsRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['accountId'] == null) {
+        if (requestParameters['account_id'] == null) {
             throw new runtime.RequiredError(
-                'accountId',
-                'Required parameter "accountId" was null or undefined when calling awsWriteStsRole().'
+                'account_id',
+                'Required parameter "account_id" was null or undefined when calling awsWriteStsRole().'
             );
         }
 
-        if (requestParameters['awsMountPath'] == null) {
+        if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'awsMountPath',
-                'Required parameter "awsMountPath" was null or undefined when calling awsWriteStsRole().'
+                'aws_mount_path',
+                'Required parameter "aws_mount_path" was null or undefined when calling awsWriteStsRole().'
             );
         }
 
-        if (requestParameters['awsWriteStsRoleRequest'] == null) {
+        if (requestParameters['AwsWriteStsRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'awsWriteStsRoleRequest',
-                'Required parameter "awsWriteStsRoleRequest" was null or undefined when calling awsWriteStsRole().'
+                'AwsWriteStsRoleRequest',
+                'Required parameter "AwsWriteStsRoleRequest" was null or undefined when calling awsWriteStsRole().'
             );
         }
 
@@ -6087,11 +6087,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['accountId']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['awsMountPath']))),
+            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AwsWriteStsRoleRequestToJSON(requestParameters['awsWriteStsRoleRequest']),
+            body: AwsWriteStsRoleRequestToJSON(requestParameters['AwsWriteStsRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6099,25 +6099,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsWriteStsRole(accountId: string, awsMountPath: string, awsWriteStsRoleRequest: AwsWriteStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.awsWriteStsRoleRaw({ accountId: accountId, awsMountPath: awsMountPath, awsWriteStsRoleRequest: awsWriteStsRoleRequest }, initOverrides);
+    async awsWriteStsRole(account_id: string, aws_mount_path: string, AwsWriteStsRoleRequest: AwsWriteStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.awsWriteStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path, AwsWriteStsRoleRequest: AwsWriteStsRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureConfigureAuthRaw(requestParameters: AuthApiAzureConfigureAuthOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureConfigureAuth().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureConfigureAuth().'
             );
         }
 
-        if (requestParameters['azureConfigureAuthRequest'] == null) {
+        if (requestParameters['AzureConfigureAuthRequest'] == null) {
             throw new runtime.RequiredError(
-                'azureConfigureAuthRequest',
-                'Required parameter "azureConfigureAuthRequest" was null or undefined when calling azureConfigureAuth().'
+                'AzureConfigureAuthRequest',
+                'Required parameter "AzureConfigureAuthRequest" was null or undefined when calling azureConfigureAuth().'
             );
         }
 
@@ -6128,11 +6128,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AzureConfigureAuthRequestToJSON(requestParameters['azureConfigureAuthRequest']),
+            body: AzureConfigureAuthRequestToJSON(requestParameters['AzureConfigureAuthRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6140,18 +6140,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureConfigureAuth(azureMountPath: string, azureConfigureAuthRequest: AzureConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureConfigureAuthRaw({ azureMountPath: azureMountPath, azureConfigureAuthRequest: azureConfigureAuthRequest }, initOverrides);
+    async azureConfigureAuth(azure_mount_path: string, AzureConfigureAuthRequest: AzureConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureConfigureAuthRaw({ azure_mount_path: azure_mount_path, AzureConfigureAuthRequest: AzureConfigureAuthRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureDeleteAuthConfigurationRaw(requestParameters: AuthApiAzureDeleteAuthConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureDeleteAuthConfiguration().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureDeleteAuthConfiguration().'
             );
         }
 
@@ -6160,7 +6160,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6171,8 +6171,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureDeleteAuthConfiguration(azureMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureDeleteAuthConfigurationRaw({ azureMountPath: azureMountPath }, initOverrides);
+    async azureDeleteAuthConfiguration(azure_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureDeleteAuthConfigurationRaw({ azure_mount_path: azure_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6186,10 +6186,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureDeleteAuthRole().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureDeleteAuthRole().'
             );
         }
 
@@ -6198,7 +6198,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6209,18 +6209,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureDeleteAuthRole(name: string, azureMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureDeleteAuthRoleRaw({ name: name, azureMountPath: azureMountPath }, initOverrides);
+    async azureDeleteAuthRole(name: string, azure_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureDeleteAuthRoleRaw({ name: name, azure_mount_path: azure_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureListAuthRolesRaw(requestParameters: AuthApiAzureListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureListAuthRoles().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureListAuthRoles().'
             );
         }
 
@@ -6240,7 +6240,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/role/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6251,25 +6251,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureListAuthRoles(azureMountPath: string, list: AzureListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.azureListAuthRolesRaw({ azureMountPath: azureMountPath, list: list }, initOverrides);
+    async azureListAuthRoles(azure_mount_path: string, list: AzureListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.azureListAuthRolesRaw({ azure_mount_path: azure_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureLoginRaw(requestParameters: AuthApiAzureLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureLogin().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureLogin().'
             );
         }
 
-        if (requestParameters['azureLoginRequest'] == null) {
+        if (requestParameters['AzureLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'azureLoginRequest',
-                'Required parameter "azureLoginRequest" was null or undefined when calling azureLogin().'
+                'AzureLoginRequest',
+                'Required parameter "AzureLoginRequest" was null or undefined when calling azureLogin().'
             );
         }
 
@@ -6280,11 +6280,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/login`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/login`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AzureLoginRequestToJSON(requestParameters['azureLoginRequest']),
+            body: AzureLoginRequestToJSON(requestParameters['AzureLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6292,18 +6292,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureLogin(azureMountPath: string, azureLoginRequest: AzureLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureLoginRaw({ azureMountPath: azureMountPath, azureLoginRequest: azureLoginRequest }, initOverrides);
+    async azureLogin(azure_mount_path: string, AzureLoginRequest: AzureLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureLoginRaw({ azure_mount_path: azure_mount_path, AzureLoginRequest: AzureLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureReadAuthConfigurationRaw(requestParameters: AuthApiAzureReadAuthConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureReadAuthConfiguration().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureReadAuthConfiguration().'
             );
         }
 
@@ -6312,7 +6312,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6323,8 +6323,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureReadAuthConfiguration(azureMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureReadAuthConfigurationRaw({ azureMountPath: azureMountPath }, initOverrides);
+    async azureReadAuthConfiguration(azure_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureReadAuthConfigurationRaw({ azure_mount_path: azure_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6338,10 +6338,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureReadAuthRole().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureReadAuthRole().'
             );
         }
 
@@ -6350,7 +6350,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6361,18 +6361,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureReadAuthRole(name: string, azureMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureReadAuthRoleRaw({ name: name, azureMountPath: azureMountPath }, initOverrides);
+    async azureReadAuthRole(name: string, azure_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureReadAuthRoleRaw({ name: name, azure_mount_path: azure_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async azureRotateRootCredentialsRaw(requestParameters: AuthApiAzureRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureRotateRootCredentials().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureRotateRootCredentials().'
             );
         }
 
@@ -6381,7 +6381,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6392,8 +6392,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureRotateRootCredentials(azureMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureRotateRootCredentialsRaw({ azureMountPath: azureMountPath }, initOverrides);
+    async azureRotateRootCredentials(azure_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureRotateRootCredentialsRaw({ azure_mount_path: azure_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6407,17 +6407,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['azureMountPath'] == null) {
+        if (requestParameters['azure_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'azureMountPath',
-                'Required parameter "azureMountPath" was null or undefined when calling azureWriteAuthRole().'
+                'azure_mount_path',
+                'Required parameter "azure_mount_path" was null or undefined when calling azureWriteAuthRole().'
             );
         }
 
-        if (requestParameters['azureWriteAuthRoleRequest'] == null) {
+        if (requestParameters['AzureWriteAuthRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'azureWriteAuthRoleRequest',
-                'Required parameter "azureWriteAuthRoleRequest" was null or undefined when calling azureWriteAuthRole().'
+                'AzureWriteAuthRoleRequest',
+                'Required parameter "AzureWriteAuthRoleRequest" was null or undefined when calling azureWriteAuthRole().'
             );
         }
 
@@ -6428,11 +6428,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azureMountPath']))),
+            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AzureWriteAuthRoleRequestToJSON(requestParameters['azureWriteAuthRoleRequest']),
+            body: AzureWriteAuthRoleRequestToJSON(requestParameters['AzureWriteAuthRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6440,25 +6440,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureWriteAuthRole(name: string, azureMountPath: string, azureWriteAuthRoleRequest: AzureWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.azureWriteAuthRoleRaw({ name: name, azureMountPath: azureMountPath, azureWriteAuthRoleRequest: azureWriteAuthRoleRequest }, initOverrides);
+    async azureWriteAuthRole(name: string, azure_mount_path: string, AzureWriteAuthRoleRequest: AzureWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.azureWriteAuthRoleRaw({ name: name, azure_mount_path: azure_mount_path, AzureWriteAuthRoleRequest: AzureWriteAuthRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async certConfigureRaw(requestParameters: AuthApiCertConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certConfigure().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certConfigure().'
             );
         }
 
-        if (requestParameters['certConfigureRequest'] == null) {
+        if (requestParameters['CertConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'certConfigureRequest',
-                'Required parameter "certConfigureRequest" was null or undefined when calling certConfigure().'
+                'CertConfigureRequest',
+                'Required parameter "CertConfigureRequest" was null or undefined when calling certConfigure().'
             );
         }
 
@@ -6469,11 +6469,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CertConfigureRequestToJSON(requestParameters['certConfigureRequest']),
+            body: CertConfigureRequestToJSON(requestParameters['CertConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6481,8 +6481,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async certConfigure(certMountPath: string, certConfigureRequest: CertConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certConfigureRaw({ certMountPath: certMountPath, certConfigureRequest: certConfigureRequest }, initOverrides);
+    async certConfigure(cert_mount_path: string, CertConfigureRequest: CertConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certConfigureRaw({ cert_mount_path: cert_mount_path, CertConfigureRequest: CertConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6497,10 +6497,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certDeleteCertificate().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certDeleteCertificate().'
             );
         }
 
@@ -6509,7 +6509,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6521,8 +6521,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage trusted certificates used for authentication.
      */
-    async certDeleteCertificate(name: string, certMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certDeleteCertificateRaw({ name: name, certMountPath: certMountPath }, initOverrides);
+    async certDeleteCertificate(name: string, cert_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certDeleteCertificateRaw({ name: name, cert_mount_path: cert_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6537,10 +6537,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certDeleteCrl().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certDeleteCrl().'
             );
         }
 
@@ -6549,7 +6549,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6561,8 +6561,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage Certificate Revocation Lists checked during authentication.
      */
-    async certDeleteCrl(name: string, certMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certDeleteCrlRaw({ name: name, certMountPath: certMountPath }, initOverrides);
+    async certDeleteCrl(name: string, cert_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certDeleteCrlRaw({ name: name, cert_mount_path: cert_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6570,10 +6570,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage trusted certificates used for authentication.
      */
     async certListCertificatesRaw(requestParameters: AuthApiCertListCertificatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certListCertificates().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certListCertificates().'
             );
         }
 
@@ -6593,7 +6593,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/certs/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6605,18 +6605,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage trusted certificates used for authentication.
      */
-    async certListCertificates(certMountPath: string, list: CertListCertificatesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.certListCertificatesRaw({ certMountPath: certMountPath, list: list }, initOverrides);
+    async certListCertificates(cert_mount_path: string, list: CertListCertificatesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.certListCertificatesRaw({ cert_mount_path: cert_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async certListCrlsRaw(requestParameters: AuthApiCertListCrlsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certListCrls().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certListCrls().'
             );
         }
 
@@ -6636,7 +6636,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/crls/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6647,25 +6647,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async certListCrls(certMountPath: string, list: CertListCrlsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.certListCrlsRaw({ certMountPath: certMountPath, list: list }, initOverrides);
+    async certListCrls(cert_mount_path: string, list: CertListCrlsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.certListCrlsRaw({ cert_mount_path: cert_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async certLoginRaw(requestParameters: AuthApiCertLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certLogin().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certLogin().'
             );
         }
 
-        if (requestParameters['certLoginRequest'] == null) {
+        if (requestParameters['CertLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'certLoginRequest',
-                'Required parameter "certLoginRequest" was null or undefined when calling certLogin().'
+                'CertLoginRequest',
+                'Required parameter "CertLoginRequest" was null or undefined when calling certLogin().'
             );
         }
 
@@ -6676,11 +6676,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/login`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/login`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CertLoginRequestToJSON(requestParameters['certLoginRequest']),
+            body: CertLoginRequestToJSON(requestParameters['CertLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6688,8 +6688,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async certLogin(certMountPath: string, certLoginRequest: CertLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certLoginRaw({ certMountPath: certMountPath, certLoginRequest: certLoginRequest }, initOverrides);
+    async certLogin(cert_mount_path: string, CertLoginRequest: CertLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certLoginRaw({ cert_mount_path: cert_mount_path, CertLoginRequest: CertLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6704,10 +6704,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certReadCertificate().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certReadCertificate().'
             );
         }
 
@@ -6716,7 +6716,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6728,18 +6728,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage trusted certificates used for authentication.
      */
-    async certReadCertificate(name: string, certMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certReadCertificateRaw({ name: name, certMountPath: certMountPath }, initOverrides);
+    async certReadCertificate(name: string, cert_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certReadCertificateRaw({ name: name, cert_mount_path: cert_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async certReadConfigurationRaw(requestParameters: AuthApiCertReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certReadConfiguration().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certReadConfiguration().'
             );
         }
 
@@ -6748,7 +6748,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6759,8 +6759,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async certReadConfiguration(certMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certReadConfigurationRaw({ certMountPath: certMountPath }, initOverrides);
+    async certReadConfiguration(cert_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certReadConfigurationRaw({ cert_mount_path: cert_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6775,10 +6775,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certReadCrl().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certReadCrl().'
             );
         }
 
@@ -6787,7 +6787,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6799,8 +6799,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage Certificate Revocation Lists checked during authentication.
      */
-    async certReadCrl(name: string, certMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certReadCrlRaw({ name: name, certMountPath: certMountPath }, initOverrides);
+    async certReadCrl(name: string, cert_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certReadCrlRaw({ name: name, cert_mount_path: cert_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6815,17 +6815,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certWriteCertificate().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certWriteCertificate().'
             );
         }
 
-        if (requestParameters['certWriteCertificateRequest'] == null) {
+        if (requestParameters['CertWriteCertificateRequest'] == null) {
             throw new runtime.RequiredError(
-                'certWriteCertificateRequest',
-                'Required parameter "certWriteCertificateRequest" was null or undefined when calling certWriteCertificate().'
+                'CertWriteCertificateRequest',
+                'Required parameter "CertWriteCertificateRequest" was null or undefined when calling certWriteCertificate().'
             );
         }
 
@@ -6836,11 +6836,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CertWriteCertificateRequestToJSON(requestParameters['certWriteCertificateRequest']),
+            body: CertWriteCertificateRequestToJSON(requestParameters['CertWriteCertificateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6849,8 +6849,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage trusted certificates used for authentication.
      */
-    async certWriteCertificate(name: string, certMountPath: string, certWriteCertificateRequest: CertWriteCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certWriteCertificateRaw({ name: name, certMountPath: certMountPath, certWriteCertificateRequest: certWriteCertificateRequest }, initOverrides);
+    async certWriteCertificate(name: string, cert_mount_path: string, CertWriteCertificateRequest: CertWriteCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certWriteCertificateRaw({ name: name, cert_mount_path: cert_mount_path, CertWriteCertificateRequest: CertWriteCertificateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6865,17 +6865,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['certMountPath'] == null) {
+        if (requestParameters['cert_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'certMountPath',
-                'Required parameter "certMountPath" was null or undefined when calling certWriteCrl().'
+                'cert_mount_path',
+                'Required parameter "cert_mount_path" was null or undefined when calling certWriteCrl().'
             );
         }
 
-        if (requestParameters['certWriteCrlRequest'] == null) {
+        if (requestParameters['CertWriteCrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'certWriteCrlRequest',
-                'Required parameter "certWriteCrlRequest" was null or undefined when calling certWriteCrl().'
+                'CertWriteCrlRequest',
+                'Required parameter "CertWriteCrlRequest" was null or undefined when calling certWriteCrl().'
             );
         }
 
@@ -6886,11 +6886,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['certMountPath']))),
+            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CertWriteCrlRequestToJSON(requestParameters['certWriteCrlRequest']),
+            body: CertWriteCrlRequestToJSON(requestParameters['CertWriteCrlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6899,25 +6899,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage Certificate Revocation Lists checked during authentication.
      */
-    async certWriteCrl(name: string, certMountPath: string, certWriteCrlRequest: CertWriteCrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.certWriteCrlRaw({ name: name, certMountPath: certMountPath, certWriteCrlRequest: certWriteCrlRequest }, initOverrides);
+    async certWriteCrl(name: string, cert_mount_path: string, CertWriteCrlRequest: CertWriteCrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.certWriteCrlRaw({ name: name, cert_mount_path: cert_mount_path, CertWriteCrlRequest: CertWriteCrlRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async cloudFoundryConfigureRaw(requestParameters: AuthApiCloudFoundryConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryConfigure().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryConfigure().'
             );
         }
 
-        if (requestParameters['cloudFoundryConfigureRequest'] == null) {
+        if (requestParameters['CloudFoundryConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'cloudFoundryConfigureRequest',
-                'Required parameter "cloudFoundryConfigureRequest" was null or undefined when calling cloudFoundryConfigure().'
+                'CloudFoundryConfigureRequest',
+                'Required parameter "CloudFoundryConfigureRequest" was null or undefined when calling cloudFoundryConfigure().'
             );
         }
 
@@ -6928,11 +6928,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CloudFoundryConfigureRequestToJSON(requestParameters['cloudFoundryConfigureRequest']),
+            body: CloudFoundryConfigureRequestToJSON(requestParameters['CloudFoundryConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6940,18 +6940,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryConfigure(cfMountPath: string, cloudFoundryConfigureRequest: CloudFoundryConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryConfigureRaw({ cfMountPath: cfMountPath, cloudFoundryConfigureRequest: cloudFoundryConfigureRequest }, initOverrides);
+    async cloudFoundryConfigure(cf_mount_path: string, CloudFoundryConfigureRequest: CloudFoundryConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryConfigureRaw({ cf_mount_path: cf_mount_path, CloudFoundryConfigureRequest: CloudFoundryConfigureRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async cloudFoundryDeleteConfigurationRaw(requestParameters: AuthApiCloudFoundryDeleteConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryDeleteConfiguration().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryDeleteConfiguration().'
             );
         }
 
@@ -6960,7 +6960,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6971,8 +6971,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryDeleteConfiguration(cfMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryDeleteConfigurationRaw({ cfMountPath: cfMountPath }, initOverrides);
+    async cloudFoundryDeleteConfiguration(cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryDeleteConfigurationRaw({ cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -6986,10 +6986,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryDeleteRole().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryDeleteRole().'
             );
         }
 
@@ -6998,7 +6998,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7009,18 +7009,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryDeleteRole(role: string, cfMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryDeleteRoleRaw({ role: role, cfMountPath: cfMountPath }, initOverrides);
+    async cloudFoundryDeleteRole(role: string, cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryDeleteRoleRaw({ role: role, cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async cloudFoundryListRolesRaw(requestParameters: AuthApiCloudFoundryListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryListRoles().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryListRoles().'
             );
         }
 
@@ -7040,7 +7040,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/roles/`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7051,25 +7051,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryListRoles(cfMountPath: string, list: CloudFoundryListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.cloudFoundryListRolesRaw({ cfMountPath: cfMountPath, list: list }, initOverrides);
+    async cloudFoundryListRoles(cf_mount_path: string, list: CloudFoundryListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.cloudFoundryListRolesRaw({ cf_mount_path: cf_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async cloudFoundryLoginRaw(requestParameters: AuthApiCloudFoundryLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryLogin().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryLogin().'
             );
         }
 
-        if (requestParameters['cloudFoundryLoginRequest'] == null) {
+        if (requestParameters['CloudFoundryLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'cloudFoundryLoginRequest',
-                'Required parameter "cloudFoundryLoginRequest" was null or undefined when calling cloudFoundryLogin().'
+                'CloudFoundryLoginRequest',
+                'Required parameter "CloudFoundryLoginRequest" was null or undefined when calling cloudFoundryLogin().'
             );
         }
 
@@ -7080,11 +7080,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/login`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/login`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CloudFoundryLoginRequestToJSON(requestParameters['cloudFoundryLoginRequest']),
+            body: CloudFoundryLoginRequestToJSON(requestParameters['CloudFoundryLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7092,18 +7092,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryLogin(cfMountPath: string, cloudFoundryLoginRequest: CloudFoundryLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryLoginRaw({ cfMountPath: cfMountPath, cloudFoundryLoginRequest: cloudFoundryLoginRequest }, initOverrides);
+    async cloudFoundryLogin(cf_mount_path: string, CloudFoundryLoginRequest: CloudFoundryLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryLoginRaw({ cf_mount_path: cf_mount_path, CloudFoundryLoginRequest: CloudFoundryLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async cloudFoundryReadConfigurationRaw(requestParameters: AuthApiCloudFoundryReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryReadConfiguration().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryReadConfiguration().'
             );
         }
 
@@ -7112,7 +7112,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7123,8 +7123,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryReadConfiguration(cfMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryReadConfigurationRaw({ cfMountPath: cfMountPath }, initOverrides);
+    async cloudFoundryReadConfiguration(cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryReadConfigurationRaw({ cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7138,10 +7138,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryReadRole().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryReadRole().'
             );
         }
 
@@ -7150,7 +7150,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7161,8 +7161,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryReadRole(role: string, cfMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryReadRoleRaw({ role: role, cfMountPath: cfMountPath }, initOverrides);
+    async cloudFoundryReadRole(role: string, cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryReadRoleRaw({ role: role, cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7176,17 +7176,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['cfMountPath'] == null) {
+        if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'cfMountPath',
-                'Required parameter "cfMountPath" was null or undefined when calling cloudFoundryWriteRole().'
+                'cf_mount_path',
+                'Required parameter "cf_mount_path" was null or undefined when calling cloudFoundryWriteRole().'
             );
         }
 
-        if (requestParameters['cloudFoundryWriteRoleRequest'] == null) {
+        if (requestParameters['CloudFoundryWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'cloudFoundryWriteRoleRequest',
-                'Required parameter "cloudFoundryWriteRoleRequest" was null or undefined when calling cloudFoundryWriteRole().'
+                'CloudFoundryWriteRoleRequest',
+                'Required parameter "CloudFoundryWriteRoleRequest" was null or undefined when calling cloudFoundryWriteRole().'
             );
         }
 
@@ -7197,11 +7197,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cfMountPath']))),
+            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CloudFoundryWriteRoleRequestToJSON(requestParameters['cloudFoundryWriteRoleRequest']),
+            body: CloudFoundryWriteRoleRequestToJSON(requestParameters['CloudFoundryWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7209,25 +7209,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryWriteRole(role: string, cfMountPath: string, cloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cloudFoundryWriteRoleRaw({ role: role, cfMountPath: cfMountPath, cloudFoundryWriteRoleRequest: cloudFoundryWriteRoleRequest }, initOverrides);
+    async cloudFoundryWriteRole(role: string, cf_mount_path: string, CloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cloudFoundryWriteRoleRaw({ role: role, cf_mount_path: cf_mount_path, CloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async githubConfigureRaw(requestParameters: AuthApiGithubConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubConfigure().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubConfigure().'
             );
         }
 
-        if (requestParameters['githubConfigureRequest'] == null) {
+        if (requestParameters['GithubConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'githubConfigureRequest',
-                'Required parameter "githubConfigureRequest" was null or undefined when calling githubConfigure().'
+                'GithubConfigureRequest',
+                'Required parameter "GithubConfigureRequest" was null or undefined when calling githubConfigure().'
             );
         }
 
@@ -7238,11 +7238,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GithubConfigureRequestToJSON(requestParameters['githubConfigureRequest']),
+            body: GithubConfigureRequestToJSON(requestParameters['GithubConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7250,8 +7250,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async githubConfigure(githubMountPath: string, githubConfigureRequest: GithubConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubConfigureRaw({ githubMountPath: githubMountPath, githubConfigureRequest: githubConfigureRequest }, initOverrides);
+    async githubConfigure(github_mount_path: string, GithubConfigureRequest: GithubConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubConfigureRaw({ github_mount_path: github_mount_path, GithubConfigureRequest: GithubConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7266,10 +7266,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubDeleteTeamMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubDeleteTeamMapping().'
             );
         }
 
@@ -7278,7 +7278,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7290,8 +7290,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single teams mapping
      */
-    async githubDeleteTeamMapping(key: string, githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubDeleteTeamMappingRaw({ key: key, githubMountPath: githubMountPath }, initOverrides);
+    async githubDeleteTeamMapping(key: string, github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubDeleteTeamMappingRaw({ key: key, github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7306,10 +7306,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubDeleteUserMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubDeleteUserMapping().'
             );
         }
 
@@ -7318,7 +7318,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7330,8 +7330,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single users mapping
      */
-    async githubDeleteUserMapping(key: string, githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubDeleteUserMappingRaw({ key: key, githubMountPath: githubMountPath }, initOverrides);
+    async githubDeleteUserMapping(key: string, github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubDeleteUserMappingRaw({ key: key, github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7339,10 +7339,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read mappings for teams
      */
     async githubListTeamsRaw(requestParameters: AuthApiGithubListTeamsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubListTeams().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubListTeams().'
             );
         }
 
@@ -7362,7 +7362,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/teams/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7374,8 +7374,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for teams
      */
-    async githubListTeams(githubMountPath: string, list: GithubListTeamsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.githubListTeamsRaw({ githubMountPath: githubMountPath, list: list }, initOverrides);
+    async githubListTeams(github_mount_path: string, list: GithubListTeamsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.githubListTeamsRaw({ github_mount_path: github_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -7383,10 +7383,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read mappings for teams
      */
     async githubListTeams2Raw(requestParameters: AuthApiGithubListTeams2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubListTeams2().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubListTeams2().'
             );
         }
 
@@ -7395,7 +7395,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/teams`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7407,8 +7407,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for teams
      */
-    async githubListTeams2(githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubListTeams2Raw({ githubMountPath: githubMountPath }, initOverrides);
+    async githubListTeams2(github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubListTeams2Raw({ github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7416,10 +7416,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read mappings for users
      */
     async githubListUsersRaw(requestParameters: AuthApiGithubListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubListUsers().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubListUsers().'
             );
         }
 
@@ -7439,7 +7439,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/users/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7451,8 +7451,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for users
      */
-    async githubListUsers(githubMountPath: string, list: GithubListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.githubListUsersRaw({ githubMountPath: githubMountPath, list: list }, initOverrides);
+    async githubListUsers(github_mount_path: string, list: GithubListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.githubListUsersRaw({ github_mount_path: github_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -7460,10 +7460,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read mappings for users
      */
     async githubListUsers2Raw(requestParameters: AuthApiGithubListUsers2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubListUsers2().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubListUsers2().'
             );
         }
 
@@ -7472,7 +7472,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/users`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7484,25 +7484,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for users
      */
-    async githubListUsers2(githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubListUsers2Raw({ githubMountPath: githubMountPath }, initOverrides);
+    async githubListUsers2(github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubListUsers2Raw({ github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async githubLoginRaw(requestParameters: AuthApiGithubLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubLogin().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubLogin().'
             );
         }
 
-        if (requestParameters['githubLoginRequest'] == null) {
+        if (requestParameters['GithubLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'githubLoginRequest',
-                'Required parameter "githubLoginRequest" was null or undefined when calling githubLogin().'
+                'GithubLoginRequest',
+                'Required parameter "GithubLoginRequest" was null or undefined when calling githubLogin().'
             );
         }
 
@@ -7513,11 +7513,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/login`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/login`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GithubLoginRequestToJSON(requestParameters['githubLoginRequest']),
+            body: GithubLoginRequestToJSON(requestParameters['GithubLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7525,18 +7525,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async githubLogin(githubMountPath: string, githubLoginRequest: GithubLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubLoginRaw({ githubMountPath: githubMountPath, githubLoginRequest: githubLoginRequest }, initOverrides);
+    async githubLogin(github_mount_path: string, GithubLoginRequest: GithubLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubLoginRaw({ github_mount_path: github_mount_path, GithubLoginRequest: GithubLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async githubReadConfigurationRaw(requestParameters: AuthApiGithubReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubReadConfiguration().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubReadConfiguration().'
             );
         }
 
@@ -7545,7 +7545,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7556,8 +7556,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async githubReadConfiguration(githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubReadConfigurationRaw({ githubMountPath: githubMountPath }, initOverrides);
+    async githubReadConfiguration(github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubReadConfigurationRaw({ github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7572,10 +7572,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubReadTeamMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubReadTeamMapping().'
             );
         }
 
@@ -7584,7 +7584,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7596,8 +7596,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single teams mapping
      */
-    async githubReadTeamMapping(key: string, githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubReadTeamMappingRaw({ key: key, githubMountPath: githubMountPath }, initOverrides);
+    async githubReadTeamMapping(key: string, github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubReadTeamMappingRaw({ key: key, github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7612,10 +7612,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubReadUserMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubReadUserMapping().'
             );
         }
 
@@ -7624,7 +7624,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7636,8 +7636,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single users mapping
      */
-    async githubReadUserMapping(key: string, githubMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubReadUserMappingRaw({ key: key, githubMountPath: githubMountPath }, initOverrides);
+    async githubReadUserMapping(key: string, github_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubReadUserMappingRaw({ key: key, github_mount_path: github_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7652,17 +7652,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubWriteTeamMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubWriteTeamMapping().'
             );
         }
 
-        if (requestParameters['githubWriteTeamMappingRequest'] == null) {
+        if (requestParameters['GithubWriteTeamMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'githubWriteTeamMappingRequest',
-                'Required parameter "githubWriteTeamMappingRequest" was null or undefined when calling githubWriteTeamMapping().'
+                'GithubWriteTeamMappingRequest',
+                'Required parameter "GithubWriteTeamMappingRequest" was null or undefined when calling githubWriteTeamMapping().'
             );
         }
 
@@ -7673,11 +7673,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GithubWriteTeamMappingRequestToJSON(requestParameters['githubWriteTeamMappingRequest']),
+            body: GithubWriteTeamMappingRequestToJSON(requestParameters['GithubWriteTeamMappingRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7686,8 +7686,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single teams mapping
      */
-    async githubWriteTeamMapping(key: string, githubMountPath: string, githubWriteTeamMappingRequest: GithubWriteTeamMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubWriteTeamMappingRaw({ key: key, githubMountPath: githubMountPath, githubWriteTeamMappingRequest: githubWriteTeamMappingRequest }, initOverrides);
+    async githubWriteTeamMapping(key: string, github_mount_path: string, GithubWriteTeamMappingRequest: GithubWriteTeamMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubWriteTeamMappingRaw({ key: key, github_mount_path: github_mount_path, GithubWriteTeamMappingRequest: GithubWriteTeamMappingRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7702,17 +7702,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['githubMountPath'] == null) {
+        if (requestParameters['github_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'githubMountPath',
-                'Required parameter "githubMountPath" was null or undefined when calling githubWriteUserMapping().'
+                'github_mount_path',
+                'Required parameter "github_mount_path" was null or undefined when calling githubWriteUserMapping().'
             );
         }
 
-        if (requestParameters['githubWriteUserMappingRequest'] == null) {
+        if (requestParameters['GithubWriteUserMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'githubWriteUserMappingRequest',
-                'Required parameter "githubWriteUserMappingRequest" was null or undefined when calling githubWriteUserMapping().'
+                'GithubWriteUserMappingRequest',
+                'Required parameter "GithubWriteUserMappingRequest" was null or undefined when calling githubWriteUserMapping().'
             );
         }
 
@@ -7723,11 +7723,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['githubMountPath']))),
+            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GithubWriteUserMappingRequestToJSON(requestParameters['githubWriteUserMappingRequest']),
+            body: GithubWriteUserMappingRequestToJSON(requestParameters['GithubWriteUserMappingRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7736,25 +7736,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read/write/delete a single users mapping
      */
-    async githubWriteUserMapping(key: string, githubMountPath: string, githubWriteUserMappingRequest: GithubWriteUserMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.githubWriteUserMappingRaw({ key: key, githubMountPath: githubMountPath, githubWriteUserMappingRequest: githubWriteUserMappingRequest }, initOverrides);
+    async githubWriteUserMapping(key: string, github_mount_path: string, GithubWriteUserMappingRequest: GithubWriteUserMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.githubWriteUserMappingRaw({ key: key, github_mount_path: github_mount_path, GithubWriteUserMappingRequest: GithubWriteUserMappingRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async googleCloudConfigureAuthRaw(requestParameters: AuthApiGoogleCloudConfigureAuthOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudConfigureAuth().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudConfigureAuth().'
             );
         }
 
-        if (requestParameters['googleCloudConfigureAuthRequest'] == null) {
+        if (requestParameters['GoogleCloudConfigureAuthRequest'] == null) {
             throw new runtime.RequiredError(
-                'googleCloudConfigureAuthRequest',
-                'Required parameter "googleCloudConfigureAuthRequest" was null or undefined when calling googleCloudConfigureAuth().'
+                'GoogleCloudConfigureAuthRequest',
+                'Required parameter "GoogleCloudConfigureAuthRequest" was null or undefined when calling googleCloudConfigureAuth().'
             );
         }
 
@@ -7765,11 +7765,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GoogleCloudConfigureAuthRequestToJSON(requestParameters['googleCloudConfigureAuthRequest']),
+            body: GoogleCloudConfigureAuthRequestToJSON(requestParameters['GoogleCloudConfigureAuthRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7777,8 +7777,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudConfigureAuth(gcpMountPath: string, googleCloudConfigureAuthRequest: GoogleCloudConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudConfigureAuthRaw({ gcpMountPath: gcpMountPath, googleCloudConfigureAuthRequest: googleCloudConfigureAuthRequest }, initOverrides);
+    async googleCloudConfigureAuth(gcp_mount_path: string, GoogleCloudConfigureAuthRequest: GoogleCloudConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudConfigureAuthRaw({ gcp_mount_path: gcp_mount_path, GoogleCloudConfigureAuthRequest: GoogleCloudConfigureAuthRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7793,10 +7793,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudDeleteRole().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudDeleteRole().'
             );
         }
 
@@ -7805,7 +7805,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7817,8 +7817,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a GCP role with associated policies and required attributes.
      */
-    async googleCloudDeleteRole(name: string, gcpMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudDeleteRoleRaw({ name: name, gcpMountPath: gcpMountPath }, initOverrides);
+    async googleCloudDeleteRole(name: string, gcp_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudDeleteRoleRaw({ name: name, gcp_mount_path: gcp_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -7833,17 +7833,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudEditLabelsForRole().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudEditLabelsForRole().'
             );
         }
 
-        if (requestParameters['googleCloudEditLabelsForRoleRequest'] == null) {
+        if (requestParameters['GoogleCloudEditLabelsForRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'googleCloudEditLabelsForRoleRequest',
-                'Required parameter "googleCloudEditLabelsForRoleRequest" was null or undefined when calling googleCloudEditLabelsForRole().'
+                'GoogleCloudEditLabelsForRoleRequest',
+                'Required parameter "GoogleCloudEditLabelsForRoleRequest" was null or undefined when calling googleCloudEditLabelsForRole().'
             );
         }
 
@@ -7854,11 +7854,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}/labels`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/{name}/labels`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GoogleCloudEditLabelsForRoleRequestToJSON(requestParameters['googleCloudEditLabelsForRoleRequest']),
+            body: GoogleCloudEditLabelsForRoleRequestToJSON(requestParameters['GoogleCloudEditLabelsForRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7867,8 +7867,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Add or remove labels for an existing \'gce\' role
      */
-    async googleCloudEditLabelsForRole(name: string, gcpMountPath: string, googleCloudEditLabelsForRoleRequest: GoogleCloudEditLabelsForRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudEditLabelsForRoleRaw({ name: name, gcpMountPath: gcpMountPath, googleCloudEditLabelsForRoleRequest: googleCloudEditLabelsForRoleRequest }, initOverrides);
+    async googleCloudEditLabelsForRole(name: string, gcp_mount_path: string, GoogleCloudEditLabelsForRoleRequest: GoogleCloudEditLabelsForRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudEditLabelsForRoleRaw({ name: name, gcp_mount_path: gcp_mount_path, GoogleCloudEditLabelsForRoleRequest: GoogleCloudEditLabelsForRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7883,17 +7883,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudEditServiceAccountsForRole().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudEditServiceAccountsForRole().'
             );
         }
 
-        if (requestParameters['googleCloudEditServiceAccountsForRoleRequest'] == null) {
+        if (requestParameters['GoogleCloudEditServiceAccountsForRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'googleCloudEditServiceAccountsForRoleRequest',
-                'Required parameter "googleCloudEditServiceAccountsForRoleRequest" was null or undefined when calling googleCloudEditServiceAccountsForRole().'
+                'GoogleCloudEditServiceAccountsForRoleRequest',
+                'Required parameter "GoogleCloudEditServiceAccountsForRoleRequest" was null or undefined when calling googleCloudEditServiceAccountsForRole().'
             );
         }
 
@@ -7904,11 +7904,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}/service-accounts`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/{name}/service-accounts`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GoogleCloudEditServiceAccountsForRoleRequestToJSON(requestParameters['googleCloudEditServiceAccountsForRoleRequest']),
+            body: GoogleCloudEditServiceAccountsForRoleRequestToJSON(requestParameters['GoogleCloudEditServiceAccountsForRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7917,8 +7917,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Add or remove service accounts for an existing `iam` role
      */
-    async googleCloudEditServiceAccountsForRole(name: string, gcpMountPath: string, googleCloudEditServiceAccountsForRoleRequest: GoogleCloudEditServiceAccountsForRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudEditServiceAccountsForRoleRaw({ name: name, gcpMountPath: gcpMountPath, googleCloudEditServiceAccountsForRoleRequest: googleCloudEditServiceAccountsForRoleRequest }, initOverrides);
+    async googleCloudEditServiceAccountsForRole(name: string, gcp_mount_path: string, GoogleCloudEditServiceAccountsForRoleRequest: GoogleCloudEditServiceAccountsForRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudEditServiceAccountsForRoleRaw({ name: name, gcp_mount_path: gcp_mount_path, GoogleCloudEditServiceAccountsForRoleRequest: GoogleCloudEditServiceAccountsForRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7926,10 +7926,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles that are registered with Vault.
      */
     async googleCloudListRolesRaw(requestParameters: AuthApiGoogleCloudListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudListRoles().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudListRoles().'
             );
         }
 
@@ -7949,7 +7949,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7961,8 +7961,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async googleCloudListRoles(gcpMountPath: string, list: GoogleCloudListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.googleCloudListRolesRaw({ gcpMountPath: gcpMountPath, list: list }, initOverrides);
+    async googleCloudListRoles(gcp_mount_path: string, list: GoogleCloudListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.googleCloudListRolesRaw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -7970,10 +7970,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles that are registered with Vault.
      */
     async googleCloudListRoles2Raw(requestParameters: AuthApiGoogleCloudListRoles2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudListRoles2().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudListRoles2().'
             );
         }
 
@@ -7993,7 +7993,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/roles/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/roles/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8005,25 +8005,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async googleCloudListRoles2(gcpMountPath: string, list: GoogleCloudListRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.googleCloudListRoles2Raw({ gcpMountPath: gcpMountPath, list: list }, initOverrides);
+    async googleCloudListRoles2(gcp_mount_path: string, list: GoogleCloudListRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.googleCloudListRoles2Raw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async googleCloudLoginRaw(requestParameters: AuthApiGoogleCloudLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudLogin().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudLogin().'
             );
         }
 
-        if (requestParameters['googleCloudLoginRequest'] == null) {
+        if (requestParameters['GoogleCloudLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'googleCloudLoginRequest',
-                'Required parameter "googleCloudLoginRequest" was null or undefined when calling googleCloudLogin().'
+                'GoogleCloudLoginRequest',
+                'Required parameter "GoogleCloudLoginRequest" was null or undefined when calling googleCloudLogin().'
             );
         }
 
@@ -8034,11 +8034,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/login`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/login`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GoogleCloudLoginRequestToJSON(requestParameters['googleCloudLoginRequest']),
+            body: GoogleCloudLoginRequestToJSON(requestParameters['GoogleCloudLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8046,18 +8046,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudLogin(gcpMountPath: string, googleCloudLoginRequest: GoogleCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudLoginRaw({ gcpMountPath: gcpMountPath, googleCloudLoginRequest: googleCloudLoginRequest }, initOverrides);
+    async googleCloudLogin(gcp_mount_path: string, GoogleCloudLoginRequest: GoogleCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudLoginRaw({ gcp_mount_path: gcp_mount_path, GoogleCloudLoginRequest: GoogleCloudLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async googleCloudReadAuthConfigurationRaw(requestParameters: AuthApiGoogleCloudReadAuthConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudReadAuthConfiguration().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudReadAuthConfiguration().'
             );
         }
 
@@ -8066,7 +8066,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8077,8 +8077,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudReadAuthConfiguration(gcpMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudReadAuthConfigurationRaw({ gcpMountPath: gcpMountPath }, initOverrides);
+    async googleCloudReadAuthConfiguration(gcp_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudReadAuthConfigurationRaw({ gcp_mount_path: gcp_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8093,10 +8093,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudReadRole().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudReadRole().'
             );
         }
 
@@ -8105,7 +8105,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8117,18 +8117,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a GCP role with associated policies and required attributes.
      */
-    async googleCloudReadRole(name: string, gcpMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudReadRoleRaw({ name: name, gcpMountPath: gcpMountPath }, initOverrides);
+    async googleCloudReadRole(name: string, gcp_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudReadRoleRaw({ name: name, gcp_mount_path: gcp_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async googleCloudRotateRootCredentialsRaw(requestParameters: AuthApiGoogleCloudRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudRotateRootCredentials().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudRotateRootCredentials().'
             );
         }
 
@@ -8137,7 +8137,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8148,8 +8148,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudRotateRootCredentials(gcpMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudRotateRootCredentialsRaw({ gcpMountPath: gcpMountPath }, initOverrides);
+    async googleCloudRotateRootCredentials(gcp_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudRotateRootCredentialsRaw({ gcp_mount_path: gcp_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8164,17 +8164,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['gcpMountPath'] == null) {
+        if (requestParameters['gcp_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'gcpMountPath',
-                'Required parameter "gcpMountPath" was null or undefined when calling googleCloudWriteRole().'
+                'gcp_mount_path',
+                'Required parameter "gcp_mount_path" was null or undefined when calling googleCloudWriteRole().'
             );
         }
 
-        if (requestParameters['googleCloudWriteRoleRequest'] == null) {
+        if (requestParameters['GoogleCloudWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'googleCloudWriteRoleRequest',
-                'Required parameter "googleCloudWriteRoleRequest" was null or undefined when calling googleCloudWriteRole().'
+                'GoogleCloudWriteRoleRequest',
+                'Required parameter "GoogleCloudWriteRoleRequest" was null or undefined when calling googleCloudWriteRole().'
             );
         }
 
@@ -8185,11 +8185,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpMountPath']))),
+            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GoogleCloudWriteRoleRequestToJSON(requestParameters['googleCloudWriteRoleRequest']),
+            body: GoogleCloudWriteRoleRequestToJSON(requestParameters['GoogleCloudWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8198,8 +8198,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a GCP role with associated policies and required attributes.
      */
-    async googleCloudWriteRole(name: string, gcpMountPath: string, googleCloudWriteRoleRequest: GoogleCloudWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.googleCloudWriteRoleRaw({ name: name, gcpMountPath: gcpMountPath, googleCloudWriteRoleRequest: googleCloudWriteRoleRequest }, initOverrides);
+    async googleCloudWriteRole(name: string, gcp_mount_path: string, GoogleCloudWriteRoleRequest: GoogleCloudWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.googleCloudWriteRoleRaw({ name: name, gcp_mount_path: gcp_mount_path, GoogleCloudWriteRoleRequest: GoogleCloudWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8208,17 +8208,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Configure the JWT authentication backend.
      */
     async jwtConfigureRaw(requestParameters: AuthApiJwtConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtConfigure().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtConfigure().'
             );
         }
 
-        if (requestParameters['jwtConfigureRequest'] == null) {
+        if (requestParameters['JwtConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'jwtConfigureRequest',
-                'Required parameter "jwtConfigureRequest" was null or undefined when calling jwtConfigure().'
+                'JwtConfigureRequest',
+                'Required parameter "JwtConfigureRequest" was null or undefined when calling jwtConfigure().'
             );
         }
 
@@ -8229,11 +8229,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: JwtConfigureRequestToJSON(requestParameters['jwtConfigureRequest']),
+            body: JwtConfigureRequestToJSON(requestParameters['JwtConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8243,8 +8243,8 @@ export class AuthApi extends runtime.BaseAPI {
      * The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
      * Configure the JWT authentication backend.
      */
-    async jwtConfigure(jwtMountPath: string, jwtConfigureRequest: JwtConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtConfigureRaw({ jwtMountPath: jwtMountPath, jwtConfigureRequest: jwtConfigureRequest }, initOverrides);
+    async jwtConfigure(jwt_mount_path: string, JwtConfigureRequest: JwtConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtConfigureRaw({ jwt_mount_path: jwt_mount_path, JwtConfigureRequest: JwtConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8259,10 +8259,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtDeleteRole().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtDeleteRole().'
             );
         }
 
@@ -8271,7 +8271,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8283,8 +8283,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Delete an existing role.
      */
-    async jwtDeleteRole(name: string, jwtMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtDeleteRoleRaw({ name: name, jwtMountPath: jwtMountPath }, initOverrides);
+    async jwtDeleteRole(name: string, jwt_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtDeleteRoleRaw({ name: name, jwt_mount_path: jwt_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8293,10 +8293,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles registered with the backend.
      */
     async jwtListRolesRaw(requestParameters: AuthApiJwtListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtListRoles().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtListRoles().'
             );
         }
 
@@ -8316,7 +8316,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/role/`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8329,8 +8329,8 @@ export class AuthApi extends runtime.BaseAPI {
      * The list will contain the names of the roles.
      * Lists all the roles registered with the backend.
      */
-    async jwtListRoles(jwtMountPath: string, list: JwtListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.jwtListRolesRaw({ jwtMountPath: jwtMountPath, list: list }, initOverrides);
+    async jwtListRoles(jwt_mount_path: string, list: JwtListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.jwtListRolesRaw({ jwt_mount_path: jwt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -8338,17 +8338,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Authenticates to Vault using a JWT (or OIDC) token.
      */
     async jwtLoginRaw(requestParameters: AuthApiJwtLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtLogin().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtLogin().'
             );
         }
 
-        if (requestParameters['jwtLoginRequest'] == null) {
+        if (requestParameters['JwtLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'jwtLoginRequest',
-                'Required parameter "jwtLoginRequest" was null or undefined when calling jwtLogin().'
+                'JwtLoginRequest',
+                'Required parameter "JwtLoginRequest" was null or undefined when calling jwtLogin().'
             );
         }
 
@@ -8359,11 +8359,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/login`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/login`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: JwtLoginRequestToJSON(requestParameters['jwtLoginRequest']),
+            body: JwtLoginRequestToJSON(requestParameters['JwtLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8372,8 +8372,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Authenticates to Vault using a JWT (or OIDC) token.
      */
-    async jwtLogin(jwtMountPath: string, jwtLoginRequest: JwtLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtLoginRaw({ jwtMountPath: jwtMountPath, jwtLoginRequest: jwtLoginRequest }, initOverrides);
+    async jwtLogin(jwt_mount_path: string, JwtLoginRequest: JwtLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtLoginRaw({ jwt_mount_path: jwt_mount_path, JwtLoginRequest: JwtLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8381,17 +8381,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Callback endpoint to complete an OIDC login.
      */
     async jwtOidcCallbackRaw(requestParameters: AuthApiJwtOidcCallbackRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtOidcCallback().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtOidcCallback().'
             );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters['clientNonce'] != null) {
-            queryParameters['client_nonce'] = requestParameters['clientNonce'];
+        if (requestParameters['client_nonce'] != null) {
+            queryParameters['client_nonce'] = requestParameters['client_nonce'];
         }
 
         if (requestParameters['code'] != null) {
@@ -8405,7 +8405,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8417,8 +8417,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Callback endpoint to complete an OIDC login.
      */
-    async jwtOidcCallback(jwtMountPath: string, clientNonce?: string, code?: string, state?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtOidcCallbackRaw({ jwtMountPath: jwtMountPath, clientNonce: clientNonce, code: code, state: state }, initOverrides);
+    async jwtOidcCallback(jwt_mount_path: string, client_nonce?: string, code?: string, state?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtOidcCallbackRaw({ jwt_mount_path: jwt_mount_path, client_nonce: client_nonce, code: code, state: state }, initOverrides);
         return await response.value();
     }
 
@@ -8426,17 +8426,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Callback endpoint to handle form_posts.
      */
     async jwtOidcCallbackFormPostRaw(requestParameters: AuthApiJwtOidcCallbackFormPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtOidcCallbackFormPost().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtOidcCallbackFormPost().'
             );
         }
 
-        if (requestParameters['jwtOidcCallbackFormPostRequest'] == null) {
+        if (requestParameters['JwtOidcCallbackFormPostRequest'] == null) {
             throw new runtime.RequiredError(
-                'jwtOidcCallbackFormPostRequest',
-                'Required parameter "jwtOidcCallbackFormPostRequest" was null or undefined when calling jwtOidcCallbackFormPost().'
+                'JwtOidcCallbackFormPostRequest',
+                'Required parameter "JwtOidcCallbackFormPostRequest" was null or undefined when calling jwtOidcCallbackFormPost().'
             );
         }
 
@@ -8447,11 +8447,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: JwtOidcCallbackFormPostRequestToJSON(requestParameters['jwtOidcCallbackFormPostRequest']),
+            body: JwtOidcCallbackFormPostRequestToJSON(requestParameters['JwtOidcCallbackFormPostRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8460,8 +8460,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Callback endpoint to handle form_posts.
      */
-    async jwtOidcCallbackFormPost(jwtMountPath: string, jwtOidcCallbackFormPostRequest: JwtOidcCallbackFormPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtOidcCallbackFormPostRaw({ jwtMountPath: jwtMountPath, jwtOidcCallbackFormPostRequest: jwtOidcCallbackFormPostRequest }, initOverrides);
+    async jwtOidcCallbackFormPost(jwt_mount_path: string, JwtOidcCallbackFormPostRequest: JwtOidcCallbackFormPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtOidcCallbackFormPostRaw({ jwt_mount_path: jwt_mount_path, JwtOidcCallbackFormPostRequest: JwtOidcCallbackFormPostRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8469,17 +8469,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Request an authorization URL to start an OIDC login flow.
      */
     async jwtOidcRequestAuthorizationUrlRaw(requestParameters: AuthApiJwtOidcRequestAuthorizationUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtOidcRequestAuthorizationUrl().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtOidcRequestAuthorizationUrl().'
             );
         }
 
-        if (requestParameters['jwtOidcRequestAuthorizationUrlRequest'] == null) {
+        if (requestParameters['JwtOidcRequestAuthorizationUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'jwtOidcRequestAuthorizationUrlRequest',
-                'Required parameter "jwtOidcRequestAuthorizationUrlRequest" was null or undefined when calling jwtOidcRequestAuthorizationUrl().'
+                'JwtOidcRequestAuthorizationUrlRequest',
+                'Required parameter "JwtOidcRequestAuthorizationUrlRequest" was null or undefined when calling jwtOidcRequestAuthorizationUrl().'
             );
         }
 
@@ -8490,11 +8490,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/auth_url`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/oidc/auth_url`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: JwtOidcRequestAuthorizationUrlRequestToJSON(requestParameters['jwtOidcRequestAuthorizationUrlRequest']),
+            body: JwtOidcRequestAuthorizationUrlRequestToJSON(requestParameters['JwtOidcRequestAuthorizationUrlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8503,8 +8503,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Request an authorization URL to start an OIDC login flow.
      */
-    async jwtOidcRequestAuthorizationUrl(jwtMountPath: string, jwtOidcRequestAuthorizationUrlRequest: JwtOidcRequestAuthorizationUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtOidcRequestAuthorizationUrlRaw({ jwtMountPath: jwtMountPath, jwtOidcRequestAuthorizationUrlRequest: jwtOidcRequestAuthorizationUrlRequest }, initOverrides);
+    async jwtOidcRequestAuthorizationUrl(jwt_mount_path: string, JwtOidcRequestAuthorizationUrlRequest: JwtOidcRequestAuthorizationUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtOidcRequestAuthorizationUrlRaw({ jwt_mount_path: jwt_mount_path, JwtOidcRequestAuthorizationUrlRequest: JwtOidcRequestAuthorizationUrlRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8512,10 +8512,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read the current JWT authentication backend configuration.
      */
     async jwtReadConfigurationRaw(requestParameters: AuthApiJwtReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtReadConfiguration().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtReadConfiguration().'
             );
         }
 
@@ -8524,7 +8524,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8536,8 +8536,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read the current JWT authentication backend configuration.
      */
-    async jwtReadConfiguration(jwtMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtReadConfigurationRaw({ jwtMountPath: jwtMountPath }, initOverrides);
+    async jwtReadConfiguration(jwt_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtReadConfigurationRaw({ jwt_mount_path: jwt_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8552,10 +8552,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtReadRole().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtReadRole().'
             );
         }
 
@@ -8564,7 +8564,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8576,8 +8576,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read an existing role.
      */
-    async jwtReadRole(name: string, jwtMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtReadRoleRaw({ name: name, jwtMountPath: jwtMountPath }, initOverrides);
+    async jwtReadRole(name: string, jwt_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtReadRoleRaw({ name: name, jwt_mount_path: jwt_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8593,17 +8593,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['jwtMountPath'] == null) {
+        if (requestParameters['jwt_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'jwtMountPath',
-                'Required parameter "jwtMountPath" was null or undefined when calling jwtWriteRole().'
+                'jwt_mount_path',
+                'Required parameter "jwt_mount_path" was null or undefined when calling jwtWriteRole().'
             );
         }
 
-        if (requestParameters['jwtWriteRoleRequest'] == null) {
+        if (requestParameters['JwtWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'jwtWriteRoleRequest',
-                'Required parameter "jwtWriteRoleRequest" was null or undefined when calling jwtWriteRole().'
+                'JwtWriteRoleRequest',
+                'Required parameter "JwtWriteRoleRequest" was null or undefined when calling jwtWriteRole().'
             );
         }
 
@@ -8614,11 +8614,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwtMountPath']))),
+            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: JwtWriteRoleRequestToJSON(requestParameters['jwtWriteRoleRequest']),
+            body: JwtWriteRoleRequestToJSON(requestParameters['JwtWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8628,25 +8628,25 @@ export class AuthApi extends runtime.BaseAPI {
      * A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
      * Register an role with the backend.
      */
-    async jwtWriteRole(name: string, jwtMountPath: string, jwtWriteRoleRequest: JwtWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.jwtWriteRoleRaw({ name: name, jwtMountPath: jwtMountPath, jwtWriteRoleRequest: jwtWriteRoleRequest }, initOverrides);
+    async jwtWriteRole(name: string, jwt_mount_path: string, JwtWriteRoleRequest: JwtWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.jwtWriteRoleRaw({ name: name, jwt_mount_path: jwt_mount_path, JwtWriteRoleRequest: JwtWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosConfigureRaw(requestParameters: AuthApiKerberosConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosConfigure().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosConfigure().'
             );
         }
 
-        if (requestParameters['kerberosConfigureRequest'] == null) {
+        if (requestParameters['KerberosConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'kerberosConfigureRequest',
-                'Required parameter "kerberosConfigureRequest" was null or undefined when calling kerberosConfigure().'
+                'KerberosConfigureRequest',
+                'Required parameter "KerberosConfigureRequest" was null or undefined when calling kerberosConfigure().'
             );
         }
 
@@ -8657,11 +8657,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KerberosConfigureRequestToJSON(requestParameters['kerberosConfigureRequest']),
+            body: KerberosConfigureRequestToJSON(requestParameters['KerberosConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8669,25 +8669,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosConfigure(kerberosMountPath: string, kerberosConfigureRequest: KerberosConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosConfigureRaw({ kerberosMountPath: kerberosMountPath, kerberosConfigureRequest: kerberosConfigureRequest }, initOverrides);
+    async kerberosConfigure(kerberos_mount_path: string, KerberosConfigureRequest: KerberosConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosConfigureRaw({ kerberos_mount_path: kerberos_mount_path, KerberosConfigureRequest: KerberosConfigureRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosConfigureLdapRaw(requestParameters: AuthApiKerberosConfigureLdapOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosConfigureLdap().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosConfigureLdap().'
             );
         }
 
-        if (requestParameters['kerberosConfigureLdapRequest'] == null) {
+        if (requestParameters['KerberosConfigureLdapRequest'] == null) {
             throw new runtime.RequiredError(
-                'kerberosConfigureLdapRequest',
-                'Required parameter "kerberosConfigureLdapRequest" was null or undefined when calling kerberosConfigureLdap().'
+                'KerberosConfigureLdapRequest',
+                'Required parameter "KerberosConfigureLdapRequest" was null or undefined when calling kerberosConfigureLdap().'
             );
         }
 
@@ -8698,11 +8698,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KerberosConfigureLdapRequestToJSON(requestParameters['kerberosConfigureLdapRequest']),
+            body: KerberosConfigureLdapRequestToJSON(requestParameters['KerberosConfigureLdapRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8710,8 +8710,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosConfigureLdap(kerberosMountPath: string, kerberosConfigureLdapRequest: KerberosConfigureLdapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosConfigureLdapRaw({ kerberosMountPath: kerberosMountPath, kerberosConfigureLdapRequest: kerberosConfigureLdapRequest }, initOverrides);
+    async kerberosConfigureLdap(kerberos_mount_path: string, KerberosConfigureLdapRequest: KerberosConfigureLdapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosConfigureLdapRaw({ kerberos_mount_path: kerberos_mount_path, KerberosConfigureLdapRequest: KerberosConfigureLdapRequest }, initOverrides);
         return await response.value();
     }
 
@@ -8725,10 +8725,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosDeleteGroup().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosDeleteGroup().'
             );
         }
 
@@ -8737,7 +8737,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8748,18 +8748,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosDeleteGroup(name: string, kerberosMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosDeleteGroupRaw({ name: name, kerberosMountPath: kerberosMountPath }, initOverrides);
+    async kerberosDeleteGroup(name: string, kerberos_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosDeleteGroupRaw({ name: name, kerberos_mount_path: kerberos_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosListGroupsRaw(requestParameters: AuthApiKerberosListGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosListGroups().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosListGroups().'
             );
         }
 
@@ -8779,7 +8779,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/groups/`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8790,25 +8790,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosListGroups(kerberosMountPath: string, list: KerberosListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.kerberosListGroupsRaw({ kerberosMountPath: kerberosMountPath, list: list }, initOverrides);
+    async kerberosListGroups(kerberos_mount_path: string, list: KerberosListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.kerberosListGroupsRaw({ kerberos_mount_path: kerberos_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosLoginRaw(requestParameters: AuthApiKerberosLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosLogin().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosLogin().'
             );
         }
 
-        if (requestParameters['kerberosLoginRequest'] == null) {
+        if (requestParameters['KerberosLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'kerberosLoginRequest',
-                'Required parameter "kerberosLoginRequest" was null or undefined when calling kerberosLogin().'
+                'KerberosLoginRequest',
+                'Required parameter "KerberosLoginRequest" was null or undefined when calling kerberosLogin().'
             );
         }
 
@@ -8819,11 +8819,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KerberosLoginRequestToJSON(requestParameters['kerberosLoginRequest']),
+            body: KerberosLoginRequestToJSON(requestParameters['KerberosLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -8831,18 +8831,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosLogin(kerberosMountPath: string, kerberosLoginRequest: KerberosLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosLoginRaw({ kerberosMountPath: kerberosMountPath, kerberosLoginRequest: kerberosLoginRequest }, initOverrides);
+    async kerberosLogin(kerberos_mount_path: string, KerberosLoginRequest: KerberosLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosLoginRaw({ kerberos_mount_path: kerberos_mount_path, KerberosLoginRequest: KerberosLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosLogin2Raw(requestParameters: AuthApiKerberosLogin2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosLogin2().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosLogin2().'
             );
         }
 
@@ -8851,7 +8851,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8862,18 +8862,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosLogin2(kerberosMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosLogin2Raw({ kerberosMountPath: kerberosMountPath }, initOverrides);
+    async kerberosLogin2(kerberos_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosLogin2Raw({ kerberos_mount_path: kerberos_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosReadConfigurationRaw(requestParameters: AuthApiKerberosReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosReadConfiguration().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosReadConfiguration().'
             );
         }
 
@@ -8882,7 +8882,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8893,8 +8893,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosReadConfiguration(kerberosMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosReadConfigurationRaw({ kerberosMountPath: kerberosMountPath }, initOverrides);
+    async kerberosReadConfiguration(kerberos_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosReadConfigurationRaw({ kerberos_mount_path: kerberos_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8908,10 +8908,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosReadGroup().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosReadGroup().'
             );
         }
 
@@ -8920,7 +8920,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8931,18 +8931,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosReadGroup(name: string, kerberosMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosReadGroupRaw({ name: name, kerberosMountPath: kerberosMountPath }, initOverrides);
+    async kerberosReadGroup(name: string, kerberos_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosReadGroupRaw({ name: name, kerberos_mount_path: kerberos_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kerberosReadLdapConfigurationRaw(requestParameters: AuthApiKerberosReadLdapConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosReadLdapConfiguration().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosReadLdapConfiguration().'
             );
         }
 
@@ -8951,7 +8951,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8962,8 +8962,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosReadLdapConfiguration(kerberosMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosReadLdapConfigurationRaw({ kerberosMountPath: kerberosMountPath }, initOverrides);
+    async kerberosReadLdapConfiguration(kerberos_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosReadLdapConfigurationRaw({ kerberos_mount_path: kerberos_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -8977,17 +8977,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kerberosMountPath'] == null) {
+        if (requestParameters['kerberos_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kerberosMountPath',
-                'Required parameter "kerberosMountPath" was null or undefined when calling kerberosWriteGroup().'
+                'kerberos_mount_path',
+                'Required parameter "kerberos_mount_path" was null or undefined when calling kerberosWriteGroup().'
             );
         }
 
-        if (requestParameters['kerberosWriteGroupRequest'] == null) {
+        if (requestParameters['KerberosWriteGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'kerberosWriteGroupRequest',
-                'Required parameter "kerberosWriteGroupRequest" was null or undefined when calling kerberosWriteGroup().'
+                'KerberosWriteGroupRequest',
+                'Required parameter "KerberosWriteGroupRequest" was null or undefined when calling kerberosWriteGroup().'
             );
         }
 
@@ -8998,11 +8998,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberosMountPath']))),
+            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KerberosWriteGroupRequestToJSON(requestParameters['kerberosWriteGroupRequest']),
+            body: KerberosWriteGroupRequestToJSON(requestParameters['KerberosWriteGroupRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9010,25 +9010,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosWriteGroup(name: string, kerberosMountPath: string, kerberosWriteGroupRequest: KerberosWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kerberosWriteGroupRaw({ name: name, kerberosMountPath: kerberosMountPath, kerberosWriteGroupRequest: kerberosWriteGroupRequest }, initOverrides);
+    async kerberosWriteGroup(name: string, kerberos_mount_path: string, KerberosWriteGroupRequest: KerberosWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kerberosWriteGroupRaw({ name: name, kerberos_mount_path: kerberos_mount_path, KerberosWriteGroupRequest: KerberosWriteGroupRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kubernetesConfigureAuthRaw(requestParameters: AuthApiKubernetesConfigureAuthOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesConfigureAuth().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesConfigureAuth().'
             );
         }
 
-        if (requestParameters['kubernetesConfigureAuthRequest'] == null) {
+        if (requestParameters['KubernetesConfigureAuthRequest'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesConfigureAuthRequest',
-                'Required parameter "kubernetesConfigureAuthRequest" was null or undefined when calling kubernetesConfigureAuth().'
+                'KubernetesConfigureAuthRequest',
+                'Required parameter "KubernetesConfigureAuthRequest" was null or undefined when calling kubernetesConfigureAuth().'
             );
         }
 
@@ -9039,11 +9039,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KubernetesConfigureAuthRequestToJSON(requestParameters['kubernetesConfigureAuthRequest']),
+            body: KubernetesConfigureAuthRequestToJSON(requestParameters['KubernetesConfigureAuthRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9051,8 +9051,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kubernetesConfigureAuth(kubernetesMountPath: string, kubernetesConfigureAuthRequest: KubernetesConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesConfigureAuthRaw({ kubernetesMountPath: kubernetesMountPath, kubernetesConfigureAuthRequest: kubernetesConfigureAuthRequest }, initOverrides);
+    async kubernetesConfigureAuth(kubernetes_mount_path: string, KubernetesConfigureAuthRequest: KubernetesConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesConfigureAuthRaw({ kubernetes_mount_path: kubernetes_mount_path, KubernetesConfigureAuthRequest: KubernetesConfigureAuthRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9067,10 +9067,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesDeleteAuthRole().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesDeleteAuthRole().'
             );
         }
 
@@ -9079,7 +9079,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9091,8 +9091,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Register an role with the backend.
      */
-    async kubernetesDeleteAuthRole(name: string, kubernetesMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesDeleteAuthRoleRaw({ name: name, kubernetesMountPath: kubernetesMountPath }, initOverrides);
+    async kubernetesDeleteAuthRole(name: string, kubernetes_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesDeleteAuthRoleRaw({ name: name, kubernetes_mount_path: kubernetes_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9100,10 +9100,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles registered with the backend.
      */
     async kubernetesListAuthRolesRaw(requestParameters: AuthApiKubernetesListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesListAuthRoles().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesListAuthRoles().'
             );
         }
 
@@ -9123,7 +9123,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/role/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9135,8 +9135,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles registered with the backend.
      */
-    async kubernetesListAuthRoles(kubernetesMountPath: string, list: KubernetesListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.kubernetesListAuthRolesRaw({ kubernetesMountPath: kubernetesMountPath, list: list }, initOverrides);
+    async kubernetesListAuthRoles(kubernetes_mount_path: string, list: KubernetesListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.kubernetesListAuthRolesRaw({ kubernetes_mount_path: kubernetes_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -9144,17 +9144,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Authenticates Kubernetes service accounts with Vault.
      */
     async kubernetesLoginRaw(requestParameters: AuthApiKubernetesLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesLogin().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesLogin().'
             );
         }
 
-        if (requestParameters['kubernetesLoginRequest'] == null) {
+        if (requestParameters['KubernetesLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesLoginRequest',
-                'Required parameter "kubernetesLoginRequest" was null or undefined when calling kubernetesLogin().'
+                'KubernetesLoginRequest',
+                'Required parameter "KubernetesLoginRequest" was null or undefined when calling kubernetesLogin().'
             );
         }
 
@@ -9165,11 +9165,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/login`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/login`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KubernetesLoginRequestToJSON(requestParameters['kubernetesLoginRequest']),
+            body: KubernetesLoginRequestToJSON(requestParameters['KubernetesLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9178,18 +9178,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Authenticates Kubernetes service accounts with Vault.
      */
-    async kubernetesLogin(kubernetesMountPath: string, kubernetesLoginRequest: KubernetesLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesLoginRaw({ kubernetesMountPath: kubernetesMountPath, kubernetesLoginRequest: kubernetesLoginRequest }, initOverrides);
+    async kubernetesLogin(kubernetes_mount_path: string, KubernetesLoginRequest: KubernetesLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesLoginRaw({ kubernetes_mount_path: kubernetes_mount_path, KubernetesLoginRequest: KubernetesLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async kubernetesReadAuthConfigurationRaw(requestParameters: AuthApiKubernetesReadAuthConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesReadAuthConfiguration().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesReadAuthConfiguration().'
             );
         }
 
@@ -9198,7 +9198,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9209,8 +9209,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kubernetesReadAuthConfiguration(kubernetesMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesReadAuthConfigurationRaw({ kubernetesMountPath: kubernetesMountPath }, initOverrides);
+    async kubernetesReadAuthConfiguration(kubernetes_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesReadAuthConfigurationRaw({ kubernetes_mount_path: kubernetes_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9225,10 +9225,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesReadAuthRole().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesReadAuthRole().'
             );
         }
 
@@ -9237,7 +9237,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9249,8 +9249,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Register an role with the backend.
      */
-    async kubernetesReadAuthRole(name: string, kubernetesMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesReadAuthRoleRaw({ name: name, kubernetesMountPath: kubernetesMountPath }, initOverrides);
+    async kubernetesReadAuthRole(name: string, kubernetes_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesReadAuthRoleRaw({ name: name, kubernetes_mount_path: kubernetes_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9265,17 +9265,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['kubernetesMountPath'] == null) {
+        if (requestParameters['kubernetes_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesMountPath',
-                'Required parameter "kubernetesMountPath" was null or undefined when calling kubernetesWriteAuthRole().'
+                'kubernetes_mount_path',
+                'Required parameter "kubernetes_mount_path" was null or undefined when calling kubernetesWriteAuthRole().'
             );
         }
 
-        if (requestParameters['kubernetesWriteAuthRoleRequest'] == null) {
+        if (requestParameters['KubernetesWriteAuthRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'kubernetesWriteAuthRoleRequest',
-                'Required parameter "kubernetesWriteAuthRoleRequest" was null or undefined when calling kubernetesWriteAuthRole().'
+                'KubernetesWriteAuthRoleRequest',
+                'Required parameter "KubernetesWriteAuthRoleRequest" was null or undefined when calling kubernetesWriteAuthRole().'
             );
         }
 
@@ -9286,11 +9286,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetesMountPath']))),
+            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: KubernetesWriteAuthRoleRequestToJSON(requestParameters['kubernetesWriteAuthRoleRequest']),
+            body: KubernetesWriteAuthRoleRequestToJSON(requestParameters['KubernetesWriteAuthRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9299,25 +9299,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Register an role with the backend.
      */
-    async kubernetesWriteAuthRole(name: string, kubernetesMountPath: string, kubernetesWriteAuthRoleRequest: KubernetesWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kubernetesWriteAuthRoleRaw({ name: name, kubernetesMountPath: kubernetesMountPath, kubernetesWriteAuthRoleRequest: kubernetesWriteAuthRoleRequest }, initOverrides);
+    async kubernetesWriteAuthRole(name: string, kubernetes_mount_path: string, KubernetesWriteAuthRoleRequest: KubernetesWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kubernetesWriteAuthRoleRaw({ name: name, kubernetes_mount_path: kubernetes_mount_path, KubernetesWriteAuthRoleRequest: KubernetesWriteAuthRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ldapConfigureAuthRaw(requestParameters: AuthApiLdapConfigureAuthOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapConfigureAuth().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapConfigureAuth().'
             );
         }
 
-        if (requestParameters['ldapConfigureAuthRequest'] == null) {
+        if (requestParameters['LdapConfigureAuthRequest'] == null) {
             throw new runtime.RequiredError(
-                'ldapConfigureAuthRequest',
-                'Required parameter "ldapConfigureAuthRequest" was null or undefined when calling ldapConfigureAuth().'
+                'LdapConfigureAuthRequest',
+                'Required parameter "LdapConfigureAuthRequest" was null or undefined when calling ldapConfigureAuth().'
             );
         }
 
@@ -9328,11 +9328,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LdapConfigureAuthRequestToJSON(requestParameters['ldapConfigureAuthRequest']),
+            body: LdapConfigureAuthRequestToJSON(requestParameters['LdapConfigureAuthRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9340,8 +9340,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapConfigureAuth(ldapMountPath: string, ldapConfigureAuthRequest: LdapConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapConfigureAuthRaw({ ldapMountPath: ldapMountPath, ldapConfigureAuthRequest: ldapConfigureAuthRequest }, initOverrides);
+    async ldapConfigureAuth(ldap_mount_path: string, LdapConfigureAuthRequest: LdapConfigureAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapConfigureAuthRaw({ ldap_mount_path: ldap_mount_path, LdapConfigureAuthRequest: LdapConfigureAuthRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9356,10 +9356,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapDeleteGroup().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapDeleteGroup().'
             );
         }
 
@@ -9368,7 +9368,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9380,8 +9380,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async ldapDeleteGroup(name: string, ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapDeleteGroupRaw({ name: name, ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapDeleteGroup(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapDeleteGroupRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9396,10 +9396,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapDeleteUser().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapDeleteUser().'
             );
         }
 
@@ -9408,7 +9408,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9420,8 +9420,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async ldapDeleteUser(name: string, ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapDeleteUserRaw({ name: name, ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapDeleteUser(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapDeleteUserRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9429,10 +9429,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage additional groups for users allowed to authenticate.
      */
     async ldapListGroupsRaw(requestParameters: AuthApiLdapListGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapListGroups().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapListGroups().'
             );
         }
 
@@ -9452,7 +9452,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/groups/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9464,8 +9464,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async ldapListGroups(ldapMountPath: string, list: LdapListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.ldapListGroupsRaw({ ldapMountPath: ldapMountPath, list: list }, initOverrides);
+    async ldapListGroups(ldap_mount_path: string, list: LdapListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.ldapListGroupsRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -9473,10 +9473,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage users allowed to authenticate.
      */
     async ldapListUsersRaw(requestParameters: AuthApiLdapListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapListUsers().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapListUsers().'
             );
         }
 
@@ -9496,7 +9496,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/users/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9508,8 +9508,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async ldapListUsers(ldapMountPath: string, list: LdapListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.ldapListUsersRaw({ ldapMountPath: ldapMountPath, list: list }, initOverrides);
+    async ldapListUsers(ldap_mount_path: string, list: LdapListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.ldapListUsersRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -9524,17 +9524,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapLogin().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapLogin().'
             );
         }
 
-        if (requestParameters['ldapLoginRequest'] == null) {
+        if (requestParameters['LdapLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'ldapLoginRequest',
-                'Required parameter "ldapLoginRequest" was null or undefined when calling ldapLogin().'
+                'LdapLoginRequest',
+                'Required parameter "LdapLoginRequest" was null or undefined when calling ldapLogin().'
             );
         }
 
@@ -9545,11 +9545,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LdapLoginRequestToJSON(requestParameters['ldapLoginRequest']),
+            body: LdapLoginRequestToJSON(requestParameters['LdapLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9558,18 +9558,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Log in with a username and password.
      */
-    async ldapLogin(username: string, ldapMountPath: string, ldapLoginRequest: LdapLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapLoginRaw({ username: username, ldapMountPath: ldapMountPath, ldapLoginRequest: ldapLoginRequest }, initOverrides);
+    async ldapLogin(username: string, ldap_mount_path: string, LdapLoginRequest: LdapLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapLoginRaw({ username: username, ldap_mount_path: ldap_mount_path, LdapLoginRequest: LdapLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ldapReadAuthConfigurationRaw(requestParameters: AuthApiLdapReadAuthConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapReadAuthConfiguration().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadAuthConfiguration().'
             );
         }
 
@@ -9578,7 +9578,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9589,8 +9589,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapReadAuthConfiguration(ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapReadAuthConfigurationRaw({ ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapReadAuthConfiguration(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadAuthConfigurationRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9605,10 +9605,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapReadGroup().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadGroup().'
             );
         }
 
@@ -9617,7 +9617,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9629,8 +9629,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async ldapReadGroup(name: string, ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapReadGroupRaw({ name: name, ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapReadGroup(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadGroupRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9645,10 +9645,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapReadUser().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadUser().'
             );
         }
 
@@ -9657,7 +9657,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9669,18 +9669,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async ldapReadUser(name: string, ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapReadUserRaw({ name: name, ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapReadUser(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadUserRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ldapRotateRootCredentialsRaw(requestParameters: AuthApiLdapRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapRotateRootCredentials().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapRotateRootCredentials().'
             );
         }
 
@@ -9689,7 +9689,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/config/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9700,8 +9700,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapRotateRootCredentials(ldapMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapRotateRootCredentialsRaw({ ldapMountPath: ldapMountPath }, initOverrides);
+    async ldapRotateRootCredentials(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapRotateRootCredentialsRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9716,17 +9716,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapWriteGroup().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapWriteGroup().'
             );
         }
 
-        if (requestParameters['ldapWriteGroupRequest'] == null) {
+        if (requestParameters['LdapWriteGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'ldapWriteGroupRequest',
-                'Required parameter "ldapWriteGroupRequest" was null or undefined when calling ldapWriteGroup().'
+                'LdapWriteGroupRequest',
+                'Required parameter "LdapWriteGroupRequest" was null or undefined when calling ldapWriteGroup().'
             );
         }
 
@@ -9737,11 +9737,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LdapWriteGroupRequestToJSON(requestParameters['ldapWriteGroupRequest']),
+            body: LdapWriteGroupRequestToJSON(requestParameters['LdapWriteGroupRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9750,8 +9750,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async ldapWriteGroup(name: string, ldapMountPath: string, ldapWriteGroupRequest: LdapWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapWriteGroupRaw({ name: name, ldapMountPath: ldapMountPath, ldapWriteGroupRequest: ldapWriteGroupRequest }, initOverrides);
+    async ldapWriteGroup(name: string, ldap_mount_path: string, LdapWriteGroupRequest: LdapWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapWriteGroupRaw({ name: name, ldap_mount_path: ldap_mount_path, LdapWriteGroupRequest: LdapWriteGroupRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9766,17 +9766,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ldapMountPath'] == null) {
+        if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ldapMountPath',
-                'Required parameter "ldapMountPath" was null or undefined when calling ldapWriteUser().'
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapWriteUser().'
             );
         }
 
-        if (requestParameters['ldapWriteUserRequest'] == null) {
+        if (requestParameters['LdapWriteUserRequest'] == null) {
             throw new runtime.RequiredError(
-                'ldapWriteUserRequest',
-                'Required parameter "ldapWriteUserRequest" was null or undefined when calling ldapWriteUser().'
+                'LdapWriteUserRequest',
+                'Required parameter "LdapWriteUserRequest" was null or undefined when calling ldapWriteUser().'
             );
         }
 
@@ -9787,11 +9787,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldapMountPath']))),
+            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LdapWriteUserRequestToJSON(requestParameters['ldapWriteUserRequest']),
+            body: LdapWriteUserRequestToJSON(requestParameters['LdapWriteUserRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9800,25 +9800,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async ldapWriteUser(name: string, ldapMountPath: string, ldapWriteUserRequest: LdapWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ldapWriteUserRaw({ name: name, ldapMountPath: ldapMountPath, ldapWriteUserRequest: ldapWriteUserRequest }, initOverrides);
+    async ldapWriteUser(name: string, ldap_mount_path: string, LdapWriteUserRequest: LdapWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapWriteUserRaw({ name: name, ldap_mount_path: ldap_mount_path, LdapWriteUserRequest: LdapWriteUserRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ociConfigureRaw(requestParameters: AuthApiOciConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociConfigure().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociConfigure().'
             );
         }
 
-        if (requestParameters['ociConfigureRequest'] == null) {
+        if (requestParameters['OciConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'ociConfigureRequest',
-                'Required parameter "ociConfigureRequest" was null or undefined when calling ociConfigure().'
+                'OciConfigureRequest',
+                'Required parameter "OciConfigureRequest" was null or undefined when calling ociConfigure().'
             );
         }
 
@@ -9829,11 +9829,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OciConfigureRequestToJSON(requestParameters['ociConfigureRequest']),
+            body: OciConfigureRequestToJSON(requestParameters['OciConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9841,18 +9841,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ociConfigure(ociMountPath: string, ociConfigureRequest: OciConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociConfigureRaw({ ociMountPath: ociMountPath, ociConfigureRequest: ociConfigureRequest }, initOverrides);
+    async ociConfigure(oci_mount_path: string, OciConfigureRequest: OciConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociConfigureRaw({ oci_mount_path: oci_mount_path, OciConfigureRequest: OciConfigureRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ociDeleteConfigurationRaw(requestParameters: AuthApiOciDeleteConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociDeleteConfiguration().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociDeleteConfiguration().'
             );
         }
 
@@ -9861,7 +9861,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9872,8 +9872,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ociDeleteConfiguration(ociMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociDeleteConfigurationRaw({ ociMountPath: ociMountPath }, initOverrides);
+    async ociDeleteConfiguration(oci_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociDeleteConfigurationRaw({ oci_mount_path: oci_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9888,10 +9888,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociDeleteRole().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociDeleteRole().'
             );
         }
 
@@ -9900,7 +9900,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9912,8 +9912,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async ociDeleteRole(role: string, ociMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociDeleteRoleRaw({ role: role, ociMountPath: ociMountPath }, initOverrides);
+    async ociDeleteRole(role: string, oci_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociDeleteRoleRaw({ role: role, oci_mount_path: oci_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -9921,10 +9921,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Lists all the roles that are registered with Vault.
      */
     async ociListRolesRaw(requestParameters: AuthApiOciListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociListRoles().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociListRoles().'
             );
         }
 
@@ -9944,7 +9944,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/role/`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9956,8 +9956,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async ociListRoles(ociMountPath: string, list: OciListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.ociListRolesRaw({ ociMountPath: ociMountPath, list: list }, initOverrides);
+    async ociListRoles(oci_mount_path: string, list: OciListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.ociListRolesRaw({ oci_mount_path: oci_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -9972,17 +9972,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociLogin().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociLogin().'
             );
         }
 
-        if (requestParameters['ociLoginRequest'] == null) {
+        if (requestParameters['OciLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'ociLoginRequest',
-                'Required parameter "ociLoginRequest" was null or undefined when calling ociLogin().'
+                'OciLoginRequest',
+                'Required parameter "OciLoginRequest" was null or undefined when calling ociLogin().'
             );
         }
 
@@ -9993,11 +9993,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/login/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/login/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OciLoginRequestToJSON(requestParameters['ociLoginRequest']),
+            body: OciLoginRequestToJSON(requestParameters['OciLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10006,18 +10006,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Authenticates to Vault using OCI credentials
      */
-    async ociLogin(role: string, ociMountPath: string, ociLoginRequest: OciLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociLoginRaw({ role: role, ociMountPath: ociMountPath, ociLoginRequest: ociLoginRequest }, initOverrides);
+    async ociLogin(role: string, oci_mount_path: string, OciLoginRequest: OciLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociLoginRaw({ role: role, oci_mount_path: oci_mount_path, OciLoginRequest: OciLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async ociReadConfigurationRaw(requestParameters: AuthApiOciReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociReadConfiguration().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociReadConfiguration().'
             );
         }
 
@@ -10026,7 +10026,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10037,8 +10037,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async ociReadConfiguration(ociMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociReadConfigurationRaw({ ociMountPath: ociMountPath }, initOverrides);
+    async ociReadConfiguration(oci_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociReadConfigurationRaw({ oci_mount_path: oci_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10053,10 +10053,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociReadRole().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociReadRole().'
             );
         }
 
@@ -10065,7 +10065,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10077,8 +10077,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async ociReadRole(role: string, ociMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociReadRoleRaw({ role: role, ociMountPath: ociMountPath }, initOverrides);
+    async ociReadRole(role: string, oci_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociReadRoleRaw({ role: role, oci_mount_path: oci_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10093,17 +10093,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['ociMountPath'] == null) {
+        if (requestParameters['oci_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'ociMountPath',
-                'Required parameter "ociMountPath" was null or undefined when calling ociWriteRole().'
+                'oci_mount_path',
+                'Required parameter "oci_mount_path" was null or undefined when calling ociWriteRole().'
             );
         }
 
-        if (requestParameters['ociWriteRoleRequest'] == null) {
+        if (requestParameters['OciWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'ociWriteRoleRequest',
-                'Required parameter "ociWriteRoleRequest" was null or undefined when calling ociWriteRole().'
+                'OciWriteRoleRequest',
+                'Required parameter "OciWriteRoleRequest" was null or undefined when calling ociWriteRole().'
             );
         }
 
@@ -10114,11 +10114,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['ociMountPath']))),
+            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OciWriteRoleRequestToJSON(requestParameters['ociWriteRoleRequest']),
+            body: OciWriteRoleRequestToJSON(requestParameters['OciWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10127,25 +10127,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Create a role and associate policies to it.
      */
-    async ociWriteRole(role: string, ociMountPath: string, ociWriteRoleRequest: OciWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.ociWriteRoleRaw({ role: role, ociMountPath: ociMountPath, ociWriteRoleRequest: ociWriteRoleRequest }, initOverrides);
+    async ociWriteRole(role: string, oci_mount_path: string, OciWriteRoleRequest: OciWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ociWriteRoleRaw({ role: role, oci_mount_path: oci_mount_path, OciWriteRoleRequest: OciWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async oktaConfigureRaw(requestParameters: AuthApiOktaConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaConfigure().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaConfigure().'
             );
         }
 
-        if (requestParameters['oktaConfigureRequest'] == null) {
+        if (requestParameters['OktaConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'oktaConfigureRequest',
-                'Required parameter "oktaConfigureRequest" was null or undefined when calling oktaConfigure().'
+                'OktaConfigureRequest',
+                'Required parameter "OktaConfigureRequest" was null or undefined when calling oktaConfigure().'
             );
         }
 
@@ -10156,11 +10156,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OktaConfigureRequestToJSON(requestParameters['oktaConfigureRequest']),
+            body: OktaConfigureRequestToJSON(requestParameters['OktaConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10168,8 +10168,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async oktaConfigure(oktaMountPath: string, oktaConfigureRequest: OktaConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaConfigureRaw({ oktaMountPath: oktaMountPath, oktaConfigureRequest: oktaConfigureRequest }, initOverrides);
+    async oktaConfigure(okta_mount_path: string, OktaConfigureRequest: OktaConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaConfigureRaw({ okta_mount_path: okta_mount_path, OktaConfigureRequest: OktaConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10184,10 +10184,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaDeleteGroup().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaDeleteGroup().'
             );
         }
 
@@ -10196,7 +10196,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10208,8 +10208,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async oktaDeleteGroup(name: string, oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaDeleteGroupRaw({ name: name, oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaDeleteGroup(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaDeleteGroupRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10224,10 +10224,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaDeleteUser().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaDeleteUser().'
             );
         }
 
@@ -10236,7 +10236,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10248,8 +10248,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async oktaDeleteUser(name: string, oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaDeleteUserRaw({ name: name, oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaDeleteUser(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaDeleteUserRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10257,10 +10257,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage users allowed to authenticate.
      */
     async oktaListGroupsRaw(requestParameters: AuthApiOktaListGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaListGroups().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaListGroups().'
             );
         }
 
@@ -10280,7 +10280,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/groups/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10292,8 +10292,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async oktaListGroups(oktaMountPath: string, list: OktaListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.oktaListGroupsRaw({ oktaMountPath: oktaMountPath, list: list }, initOverrides);
+    async oktaListGroups(okta_mount_path: string, list: OktaListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.oktaListGroupsRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -10301,10 +10301,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage additional groups for users allowed to authenticate.
      */
     async oktaListUsersRaw(requestParameters: AuthApiOktaListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaListUsers().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaListUsers().'
             );
         }
 
@@ -10324,7 +10324,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/users/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10336,8 +10336,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async oktaListUsers(oktaMountPath: string, list: OktaListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.oktaListUsersRaw({ oktaMountPath: oktaMountPath, list: list }, initOverrides);
+    async oktaListUsers(okta_mount_path: string, list: OktaListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.oktaListUsersRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -10352,17 +10352,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaLogin().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaLogin().'
             );
         }
 
-        if (requestParameters['oktaLoginRequest'] == null) {
+        if (requestParameters['OktaLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'oktaLoginRequest',
-                'Required parameter "oktaLoginRequest" was null or undefined when calling oktaLogin().'
+                'OktaLoginRequest',
+                'Required parameter "OktaLoginRequest" was null or undefined when calling oktaLogin().'
             );
         }
 
@@ -10373,11 +10373,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OktaLoginRequestToJSON(requestParameters['oktaLoginRequest']),
+            body: OktaLoginRequestToJSON(requestParameters['OktaLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10386,18 +10386,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Log in with a username and password.
      */
-    async oktaLogin(username: string, oktaMountPath: string, oktaLoginRequest: OktaLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaLoginRaw({ username: username, oktaMountPath: oktaMountPath, oktaLoginRequest: oktaLoginRequest }, initOverrides);
+    async oktaLogin(username: string, okta_mount_path: string, OktaLoginRequest: OktaLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaLoginRaw({ username: username, okta_mount_path: okta_mount_path, OktaLoginRequest: OktaLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async oktaReadConfigurationRaw(requestParameters: AuthApiOktaReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaReadConfiguration().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaReadConfiguration().'
             );
         }
 
@@ -10406,7 +10406,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10417,8 +10417,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async oktaReadConfiguration(oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaReadConfigurationRaw({ oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaReadConfiguration(okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaReadConfigurationRaw({ okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10433,10 +10433,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaReadGroup().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaReadGroup().'
             );
         }
 
@@ -10445,7 +10445,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10457,8 +10457,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async oktaReadGroup(name: string, oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaReadGroupRaw({ name: name, oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaReadGroup(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaReadGroupRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10473,10 +10473,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaReadUser().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaReadUser().'
             );
         }
 
@@ -10485,7 +10485,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10497,8 +10497,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async oktaReadUser(name: string, oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaReadUserRaw({ name: name, oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaReadUser(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaReadUserRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10512,10 +10512,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaVerify().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaVerify().'
             );
         }
 
@@ -10524,7 +10524,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/verify/{nonce}`.replace(`{${"nonce"}}`, encodeURIComponent(String(requestParameters['nonce']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/verify/{nonce}`.replace(`{${"nonce"}}`, encodeURIComponent(String(requestParameters['nonce']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10535,8 +10535,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async oktaVerify(nonce: string, oktaMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaVerifyRaw({ nonce: nonce, oktaMountPath: oktaMountPath }, initOverrides);
+    async oktaVerify(nonce: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaVerifyRaw({ nonce: nonce, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10551,17 +10551,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaWriteGroup().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaWriteGroup().'
             );
         }
 
-        if (requestParameters['oktaWriteGroupRequest'] == null) {
+        if (requestParameters['OktaWriteGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'oktaWriteGroupRequest',
-                'Required parameter "oktaWriteGroupRequest" was null or undefined when calling oktaWriteGroup().'
+                'OktaWriteGroupRequest',
+                'Required parameter "OktaWriteGroupRequest" was null or undefined when calling oktaWriteGroup().'
             );
         }
 
@@ -10572,11 +10572,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OktaWriteGroupRequestToJSON(requestParameters['oktaWriteGroupRequest']),
+            body: OktaWriteGroupRequestToJSON(requestParameters['OktaWriteGroupRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10585,8 +10585,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async oktaWriteGroup(name: string, oktaMountPath: string, oktaWriteGroupRequest: OktaWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaWriteGroupRaw({ name: name, oktaMountPath: oktaMountPath, oktaWriteGroupRequest: oktaWriteGroupRequest }, initOverrides);
+    async oktaWriteGroup(name: string, okta_mount_path: string, OktaWriteGroupRequest: OktaWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaWriteGroupRaw({ name: name, okta_mount_path: okta_mount_path, OktaWriteGroupRequest: OktaWriteGroupRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10601,17 +10601,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['oktaMountPath'] == null) {
+        if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'oktaMountPath',
-                'Required parameter "oktaMountPath" was null or undefined when calling oktaWriteUser().'
+                'okta_mount_path',
+                'Required parameter "okta_mount_path" was null or undefined when calling oktaWriteUser().'
             );
         }
 
-        if (requestParameters['oktaWriteUserRequest'] == null) {
+        if (requestParameters['OktaWriteUserRequest'] == null) {
             throw new runtime.RequiredError(
-                'oktaWriteUserRequest',
-                'Required parameter "oktaWriteUserRequest" was null or undefined when calling oktaWriteUser().'
+                'OktaWriteUserRequest',
+                'Required parameter "OktaWriteUserRequest" was null or undefined when calling oktaWriteUser().'
             );
         }
 
@@ -10622,11 +10622,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['oktaMountPath']))),
+            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OktaWriteUserRequestToJSON(requestParameters['oktaWriteUserRequest']),
+            body: OktaWriteUserRequestToJSON(requestParameters['OktaWriteUserRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10635,25 +10635,25 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async oktaWriteUser(name: string, oktaMountPath: string, oktaWriteUserRequest: OktaWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.oktaWriteUserRaw({ name: name, oktaMountPath: oktaMountPath, oktaWriteUserRequest: oktaWriteUserRequest }, initOverrides);
+    async oktaWriteUser(name: string, okta_mount_path: string, OktaWriteUserRequest: OktaWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.oktaWriteUserRaw({ name: name, okta_mount_path: okta_mount_path, OktaWriteUserRequest: OktaWriteUserRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async radiusConfigureRaw(requestParameters: AuthApiRadiusConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusConfigure().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusConfigure().'
             );
         }
 
-        if (requestParameters['radiusConfigureRequest'] == null) {
+        if (requestParameters['RadiusConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'radiusConfigureRequest',
-                'Required parameter "radiusConfigureRequest" was null or undefined when calling radiusConfigure().'
+                'RadiusConfigureRequest',
+                'Required parameter "RadiusConfigureRequest" was null or undefined when calling radiusConfigure().'
             );
         }
 
@@ -10664,11 +10664,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RadiusConfigureRequestToJSON(requestParameters['radiusConfigureRequest']),
+            body: RadiusConfigureRequestToJSON(requestParameters['RadiusConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10676,8 +10676,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async radiusConfigure(radiusMountPath: string, radiusConfigureRequest: RadiusConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusConfigureRaw({ radiusMountPath: radiusMountPath, radiusConfigureRequest: radiusConfigureRequest }, initOverrides);
+    async radiusConfigure(radius_mount_path: string, RadiusConfigureRequest: RadiusConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusConfigureRaw({ radius_mount_path: radius_mount_path, RadiusConfigureRequest: RadiusConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10692,10 +10692,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusDeleteUser().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusDeleteUser().'
             );
         }
 
@@ -10704,7 +10704,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10716,8 +10716,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async radiusDeleteUser(name: string, radiusMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusDeleteUserRaw({ name: name, radiusMountPath: radiusMountPath }, initOverrides);
+    async radiusDeleteUser(name: string, radius_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusDeleteUserRaw({ name: name, radius_mount_path: radius_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10725,10 +10725,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage users allowed to authenticate.
      */
     async radiusListUsersRaw(requestParameters: AuthApiRadiusListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusListUsers().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusListUsers().'
             );
         }
 
@@ -10748,7 +10748,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/users/`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10760,8 +10760,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async radiusListUsers(radiusMountPath: string, list: RadiusListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.radiusListUsersRaw({ radiusMountPath: radiusMountPath, list: list }, initOverrides);
+    async radiusListUsers(radius_mount_path: string, list: RadiusListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.radiusListUsersRaw({ radius_mount_path: radius_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -10769,17 +10769,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Log in with a username and password.
      */
     async radiusLoginRaw(requestParameters: AuthApiRadiusLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusLogin().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusLogin().'
             );
         }
 
-        if (requestParameters['radiusLoginRequest'] == null) {
+        if (requestParameters['RadiusLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'radiusLoginRequest',
-                'Required parameter "radiusLoginRequest" was null or undefined when calling radiusLogin().'
+                'RadiusLoginRequest',
+                'Required parameter "RadiusLoginRequest" was null or undefined when calling radiusLogin().'
             );
         }
 
@@ -10790,11 +10790,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/login`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/login`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RadiusLoginRequestToJSON(requestParameters['radiusLoginRequest']),
+            body: RadiusLoginRequestToJSON(requestParameters['RadiusLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10803,8 +10803,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Log in with a username and password.
      */
-    async radiusLogin(radiusMountPath: string, radiusLoginRequest: RadiusLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusLoginRaw({ radiusMountPath: radiusMountPath, radiusLoginRequest: radiusLoginRequest }, initOverrides);
+    async radiusLogin(radius_mount_path: string, RadiusLoginRequest: RadiusLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusLoginRaw({ radius_mount_path: radius_mount_path, RadiusLoginRequest: RadiusLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10819,17 +10819,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusLoginWithUsername().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusLoginWithUsername().'
             );
         }
 
-        if (requestParameters['radiusLoginWithUsernameRequest'] == null) {
+        if (requestParameters['RadiusLoginWithUsernameRequest'] == null) {
             throw new runtime.RequiredError(
-                'radiusLoginWithUsernameRequest',
-                'Required parameter "radiusLoginWithUsernameRequest" was null or undefined when calling radiusLoginWithUsername().'
+                'RadiusLoginWithUsernameRequest',
+                'Required parameter "RadiusLoginWithUsernameRequest" was null or undefined when calling radiusLoginWithUsername().'
             );
         }
 
@@ -10840,11 +10840,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/login/{urlusername}`.replace(`{${"urlusername"}}`, encodeURIComponent(String(requestParameters['urlusername']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/login/{urlusername}`.replace(`{${"urlusername"}}`, encodeURIComponent(String(requestParameters['urlusername']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RadiusLoginWithUsernameRequestToJSON(requestParameters['radiusLoginWithUsernameRequest']),
+            body: RadiusLoginWithUsernameRequestToJSON(requestParameters['RadiusLoginWithUsernameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10853,18 +10853,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Log in with a username and password.
      */
-    async radiusLoginWithUsername(urlusername: string, radiusMountPath: string, radiusLoginWithUsernameRequest: RadiusLoginWithUsernameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusLoginWithUsernameRaw({ urlusername: urlusername, radiusMountPath: radiusMountPath, radiusLoginWithUsernameRequest: radiusLoginWithUsernameRequest }, initOverrides);
+    async radiusLoginWithUsername(urlusername: string, radius_mount_path: string, RadiusLoginWithUsernameRequest: RadiusLoginWithUsernameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusLoginWithUsernameRaw({ urlusername: urlusername, radius_mount_path: radius_mount_path, RadiusLoginWithUsernameRequest: RadiusLoginWithUsernameRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async radiusReadConfigurationRaw(requestParameters: AuthApiRadiusReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusReadConfiguration().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusReadConfiguration().'
             );
         }
 
@@ -10873,7 +10873,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10884,8 +10884,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async radiusReadConfiguration(radiusMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusReadConfigurationRaw({ radiusMountPath: radiusMountPath }, initOverrides);
+    async radiusReadConfiguration(radius_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusReadConfigurationRaw({ radius_mount_path: radius_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10900,10 +10900,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusReadUser().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusReadUser().'
             );
         }
 
@@ -10912,7 +10912,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10924,8 +10924,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async radiusReadUser(name: string, radiusMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusReadUserRaw({ name: name, radiusMountPath: radiusMountPath }, initOverrides);
+    async radiusReadUser(name: string, radius_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusReadUserRaw({ name: name, radius_mount_path: radius_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -10940,17 +10940,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['radiusMountPath'] == null) {
+        if (requestParameters['radius_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'radiusMountPath',
-                'Required parameter "radiusMountPath" was null or undefined when calling radiusWriteUser().'
+                'radius_mount_path',
+                'Required parameter "radius_mount_path" was null or undefined when calling radiusWriteUser().'
             );
         }
 
-        if (requestParameters['radiusWriteUserRequest'] == null) {
+        if (requestParameters['RadiusWriteUserRequest'] == null) {
             throw new runtime.RequiredError(
-                'radiusWriteUserRequest',
-                'Required parameter "radiusWriteUserRequest" was null or undefined when calling radiusWriteUser().'
+                'RadiusWriteUserRequest',
+                'Required parameter "RadiusWriteUserRequest" was null or undefined when calling radiusWriteUser().'
             );
         }
 
@@ -10961,11 +10961,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radiusMountPath']))),
+            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RadiusWriteUserRequestToJSON(requestParameters['radiusWriteUserRequest']),
+            body: RadiusWriteUserRequestToJSON(requestParameters['RadiusWriteUserRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10974,8 +10974,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async radiusWriteUser(name: string, radiusMountPath: string, radiusWriteUserRequest: RadiusWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.radiusWriteUserRaw({ name: name, radiusMountPath: radiusMountPath, radiusWriteUserRequest: radiusWriteUserRequest }, initOverrides);
+    async radiusWriteUser(name: string, radius_mount_path: string, RadiusWriteUserRequest: RadiusWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.radiusWriteUserRaw({ name: name, radius_mount_path: radius_mount_path, RadiusWriteUserRequest: RadiusWriteUserRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10990,10 +10990,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlDeleteRoleName().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlDeleteRoleName().'
             );
         }
 
@@ -11002,7 +11002,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11014,8 +11014,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Delete a role.
      */
-    async samlDeleteRoleName(name: string, samlMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlDeleteRoleNameRaw({ name: name, samlMountPath: samlMountPath }, initOverrides);
+    async samlDeleteRoleName(name: string, saml_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlDeleteRoleNameRaw({ name: name, saml_mount_path: saml_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -11023,10 +11023,10 @@ export class AuthApi extends runtime.BaseAPI {
      * List all roles.
      */
     async samlListRoleRaw(requestParameters: AuthApiSamlListRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlListRole().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlListRole().'
             );
         }
 
@@ -11046,7 +11046,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/role/`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11058,8 +11058,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * List all roles.
      */
-    async samlListRole(samlMountPath: string, list: SamlListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.samlListRoleRaw({ samlMountPath: samlMountPath, list: list }, initOverrides);
+    async samlListRole(saml_mount_path: string, list: SamlListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.samlListRoleRaw({ saml_mount_path: saml_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -11067,10 +11067,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Read the configuration of the auth method.
      */
     async samlReadConfigRaw(requestParameters: AuthApiSamlReadConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlReadConfig().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlReadConfig().'
             );
         }
 
@@ -11079,7 +11079,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11091,8 +11091,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read the configuration of the auth method.
      */
-    async samlReadConfig(samlMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlReadConfigRaw({ samlMountPath: samlMountPath }, initOverrides);
+    async samlReadConfig(saml_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlReadConfigRaw({ saml_mount_path: saml_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -11107,10 +11107,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlReadRoleName().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlReadRoleName().'
             );
         }
 
@@ -11119,7 +11119,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11131,8 +11131,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read a role\'s configuration.
      */
-    async samlReadRoleName(name: string, samlMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlReadRoleNameRaw({ name: name, samlMountPath: samlMountPath }, initOverrides);
+    async samlReadRoleName(name: string, saml_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlReadRoleNameRaw({ name: name, saml_mount_path: saml_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -11140,17 +11140,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Provides the Assertion Consumer Service to handle the Identity Provider binding.
      */
     async samlWriteCallbackRaw(requestParameters: AuthApiSamlWriteCallbackOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlWriteCallback().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlWriteCallback().'
             );
         }
 
-        if (requestParameters['samlWriteCallbackRequest'] == null) {
+        if (requestParameters['SamlWriteCallbackRequest'] == null) {
             throw new runtime.RequiredError(
-                'samlWriteCallbackRequest',
-                'Required parameter "samlWriteCallbackRequest" was null or undefined when calling samlWriteCallback().'
+                'SamlWriteCallbackRequest',
+                'Required parameter "SamlWriteCallbackRequest" was null or undefined when calling samlWriteCallback().'
             );
         }
 
@@ -11161,11 +11161,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/callback`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/callback`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SamlWriteCallbackRequestToJSON(requestParameters['samlWriteCallbackRequest']),
+            body: SamlWriteCallbackRequestToJSON(requestParameters['SamlWriteCallbackRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11174,8 +11174,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Provides the Assertion Consumer Service to handle the Identity Provider binding.
      */
-    async samlWriteCallback(samlMountPath: string, samlWriteCallbackRequest: SamlWriteCallbackRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlWriteCallbackRaw({ samlMountPath: samlMountPath, samlWriteCallbackRequest: samlWriteCallbackRequest }, initOverrides);
+    async samlWriteCallback(saml_mount_path: string, SamlWriteCallbackRequest: SamlWriteCallbackRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlWriteCallbackRaw({ saml_mount_path: saml_mount_path, SamlWriteCallbackRequest: SamlWriteCallbackRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11183,17 +11183,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Update the configuration of the auth method.
      */
     async samlWriteConfigRaw(requestParameters: AuthApiSamlWriteConfigOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlWriteConfig().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlWriteConfig().'
             );
         }
 
-        if (requestParameters['samlWriteConfigRequest'] == null) {
+        if (requestParameters['SamlWriteConfigRequest'] == null) {
             throw new runtime.RequiredError(
-                'samlWriteConfigRequest',
-                'Required parameter "samlWriteConfigRequest" was null or undefined when calling samlWriteConfig().'
+                'SamlWriteConfigRequest',
+                'Required parameter "SamlWriteConfigRequest" was null or undefined when calling samlWriteConfig().'
             );
         }
 
@@ -11204,11 +11204,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SamlWriteConfigRequestToJSON(requestParameters['samlWriteConfigRequest']),
+            body: SamlWriteConfigRequestToJSON(requestParameters['SamlWriteConfigRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11217,8 +11217,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Update the configuration of the auth method.
      */
-    async samlWriteConfig(samlMountPath: string, samlWriteConfigRequest: SamlWriteConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlWriteConfigRaw({ samlMountPath: samlMountPath, samlWriteConfigRequest: samlWriteConfigRequest }, initOverrides);
+    async samlWriteConfig(saml_mount_path: string, SamlWriteConfigRequest: SamlWriteConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlWriteConfigRaw({ saml_mount_path: saml_mount_path, SamlWriteConfigRequest: SamlWriteConfigRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11233,17 +11233,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlWriteRoleName().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlWriteRoleName().'
             );
         }
 
-        if (requestParameters['samlWriteRoleNameRequest'] == null) {
+        if (requestParameters['SamlWriteRoleNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'samlWriteRoleNameRequest',
-                'Required parameter "samlWriteRoleNameRequest" was null or undefined when calling samlWriteRoleName().'
+                'SamlWriteRoleNameRequest',
+                'Required parameter "SamlWriteRoleNameRequest" was null or undefined when calling samlWriteRoleName().'
             );
         }
 
@@ -11254,11 +11254,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SamlWriteRoleNameRequestToJSON(requestParameters['samlWriteRoleNameRequest']),
+            body: SamlWriteRoleNameRequestToJSON(requestParameters['SamlWriteRoleNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11267,8 +11267,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Update a role\'s configuration.
      */
-    async samlWriteRoleName(name: string, samlMountPath: string, samlWriteRoleNameRequest: SamlWriteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlWriteRoleNameRaw({ name: name, samlMountPath: samlMountPath, samlWriteRoleNameRequest: samlWriteRoleNameRequest }, initOverrides);
+    async samlWriteRoleName(name: string, saml_mount_path: string, SamlWriteRoleNameRequest: SamlWriteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlWriteRoleNameRaw({ name: name, saml_mount_path: saml_mount_path, SamlWriteRoleNameRequest: SamlWriteRoleNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11276,17 +11276,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Obtain an SSO Service URL to start a SAML authentication flow.
      */
     async samlWriteSsoServiceUrlRaw(requestParameters: AuthApiSamlWriteSsoServiceUrlOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlWriteSsoServiceUrl().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlWriteSsoServiceUrl().'
             );
         }
 
-        if (requestParameters['samlWriteSsoServiceUrlRequest'] == null) {
+        if (requestParameters['SamlWriteSsoServiceUrlRequest'] == null) {
             throw new runtime.RequiredError(
-                'samlWriteSsoServiceUrlRequest',
-                'Required parameter "samlWriteSsoServiceUrlRequest" was null or undefined when calling samlWriteSsoServiceUrl().'
+                'SamlWriteSsoServiceUrlRequest',
+                'Required parameter "SamlWriteSsoServiceUrlRequest" was null or undefined when calling samlWriteSsoServiceUrl().'
             );
         }
 
@@ -11297,11 +11297,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/sso_service_url`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/sso_service_url`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SamlWriteSsoServiceUrlRequestToJSON(requestParameters['samlWriteSsoServiceUrlRequest']),
+            body: SamlWriteSsoServiceUrlRequestToJSON(requestParameters['SamlWriteSsoServiceUrlRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11310,8 +11310,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Obtain an SSO Service URL to start a SAML authentication flow.
      */
-    async samlWriteSsoServiceUrl(samlMountPath: string, samlWriteSsoServiceUrlRequest: SamlWriteSsoServiceUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlWriteSsoServiceUrlRaw({ samlMountPath: samlMountPath, samlWriteSsoServiceUrlRequest: samlWriteSsoServiceUrlRequest }, initOverrides);
+    async samlWriteSsoServiceUrl(saml_mount_path: string, SamlWriteSsoServiceUrlRequest: SamlWriteSsoServiceUrlRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlWriteSsoServiceUrlRaw({ saml_mount_path: saml_mount_path, SamlWriteSsoServiceUrlRequest: SamlWriteSsoServiceUrlRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11319,17 +11319,17 @@ export class AuthApi extends runtime.BaseAPI {
      * Obtain a Vault token to complete the authentication flow.
      */
     async samlWriteTokenRaw(requestParameters: AuthApiSamlWriteTokenOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['samlMountPath'] == null) {
+        if (requestParameters['saml_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'samlMountPath',
-                'Required parameter "samlMountPath" was null or undefined when calling samlWriteToken().'
+                'saml_mount_path',
+                'Required parameter "saml_mount_path" was null or undefined when calling samlWriteToken().'
             );
         }
 
-        if (requestParameters['samlWriteTokenRequest'] == null) {
+        if (requestParameters['SamlWriteTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'samlWriteTokenRequest',
-                'Required parameter "samlWriteTokenRequest" was null or undefined when calling samlWriteToken().'
+                'SamlWriteTokenRequest',
+                'Required parameter "SamlWriteTokenRequest" was null or undefined when calling samlWriteToken().'
             );
         }
 
@@ -11340,11 +11340,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/token`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['samlMountPath']))),
+            path: `/auth/{saml_mount_path}/token`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SamlWriteTokenRequestToJSON(requestParameters['samlWriteTokenRequest']),
+            body: SamlWriteTokenRequestToJSON(requestParameters['SamlWriteTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11353,8 +11353,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Obtain a Vault token to complete the authentication flow.
      */
-    async samlWriteToken(samlMountPath: string, samlWriteTokenRequest: SamlWriteTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.samlWriteTokenRaw({ samlMountPath: samlMountPath, samlWriteTokenRequest: samlWriteTokenRequest }, initOverrides);
+    async samlWriteToken(saml_mount_path: string, SamlWriteTokenRequest: SamlWriteTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.samlWriteTokenRaw({ saml_mount_path: saml_mount_path, SamlWriteTokenRequest: SamlWriteTokenRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11368,10 +11368,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['scepMountPath'] == null) {
+        if (requestParameters['scep_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'scepMountPath',
-                'Required parameter "scepMountPath" was null or undefined when calling scepDeleteRoleRole().'
+                'scep_mount_path',
+                'Required parameter "scep_mount_path" was null or undefined when calling scepDeleteRoleRole().'
             );
         }
 
@@ -11380,7 +11380,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scepMountPath']))),
+            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11391,18 +11391,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepDeleteRoleRole(role: string, scepMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.scepDeleteRoleRoleRaw({ role: role, scepMountPath: scepMountPath }, initOverrides);
+    async scepDeleteRoleRole(role: string, scep_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scepDeleteRoleRoleRaw({ role: role, scep_mount_path: scep_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async scepListAuthRolesRaw(requestParameters: AuthApiScepListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['scepMountPath'] == null) {
+        if (requestParameters['scep_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'scepMountPath',
-                'Required parameter "scepMountPath" was null or undefined when calling scepListAuthRoles().'
+                'scep_mount_path',
+                'Required parameter "scep_mount_path" was null or undefined when calling scepListAuthRoles().'
             );
         }
 
@@ -11422,7 +11422,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scepMountPath']))),
+            path: `/auth/{scep_mount_path}/role/`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11433,25 +11433,25 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepListAuthRoles(scepMountPath: string, list: ScepListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.scepListAuthRolesRaw({ scepMountPath: scepMountPath, list: list }, initOverrides);
+    async scepListAuthRoles(scep_mount_path: string, list: ScepListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.scepListAuthRolesRaw({ scep_mount_path: scep_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async scepLoginRaw(requestParameters: AuthApiScepLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['scepMountPath'] == null) {
+        if (requestParameters['scep_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'scepMountPath',
-                'Required parameter "scepMountPath" was null or undefined when calling scepLogin().'
+                'scep_mount_path',
+                'Required parameter "scep_mount_path" was null or undefined when calling scepLogin().'
             );
         }
 
-        if (requestParameters['scepLoginRequest'] == null) {
+        if (requestParameters['ScepLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'scepLoginRequest',
-                'Required parameter "scepLoginRequest" was null or undefined when calling scepLogin().'
+                'ScepLoginRequest',
+                'Required parameter "ScepLoginRequest" was null or undefined when calling scepLogin().'
             );
         }
 
@@ -11462,11 +11462,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/login`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scepMountPath']))),
+            path: `/auth/{scep_mount_path}/login`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ScepLoginRequestToJSON(requestParameters['scepLoginRequest']),
+            body: ScepLoginRequestToJSON(requestParameters['ScepLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11474,8 +11474,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepLogin(scepMountPath: string, scepLoginRequest: ScepLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.scepLoginRaw({ scepMountPath: scepMountPath, scepLoginRequest: scepLoginRequest }, initOverrides);
+    async scepLogin(scep_mount_path: string, ScepLoginRequest: ScepLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scepLoginRaw({ scep_mount_path: scep_mount_path, ScepLoginRequest: ScepLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11489,10 +11489,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['scepMountPath'] == null) {
+        if (requestParameters['scep_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'scepMountPath',
-                'Required parameter "scepMountPath" was null or undefined when calling scepReadRoleRole().'
+                'scep_mount_path',
+                'Required parameter "scep_mount_path" was null or undefined when calling scepReadRoleRole().'
             );
         }
 
@@ -11501,7 +11501,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scepMountPath']))),
+            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11512,8 +11512,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepReadRoleRole(role: string, scepMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.scepReadRoleRoleRaw({ role: role, scepMountPath: scepMountPath }, initOverrides);
+    async scepReadRoleRole(role: string, scep_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scepReadRoleRoleRaw({ role: role, scep_mount_path: scep_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -11527,17 +11527,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['scepMountPath'] == null) {
+        if (requestParameters['scep_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'scepMountPath',
-                'Required parameter "scepMountPath" was null or undefined when calling scepWriteRoleRole().'
+                'scep_mount_path',
+                'Required parameter "scep_mount_path" was null or undefined when calling scepWriteRoleRole().'
             );
         }
 
-        if (requestParameters['scepWriteRoleRoleRequest'] == null) {
+        if (requestParameters['ScepWriteRoleRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'scepWriteRoleRoleRequest',
-                'Required parameter "scepWriteRoleRoleRequest" was null or undefined when calling scepWriteRoleRole().'
+                'ScepWriteRoleRoleRequest',
+                'Required parameter "ScepWriteRoleRoleRequest" was null or undefined when calling scepWriteRoleRole().'
             );
         }
 
@@ -11548,11 +11548,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scepMountPath']))),
+            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ScepWriteRoleRoleRequestToJSON(requestParameters['scepWriteRoleRoleRequest']),
+            body: ScepWriteRoleRoleRequestToJSON(requestParameters['ScepWriteRoleRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11560,8 +11560,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepWriteRoleRole(role: string, scepMountPath: string, scepWriteRoleRoleRequest: ScepWriteRoleRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.scepWriteRoleRoleRaw({ role: role, scepMountPath: scepMountPath, scepWriteRoleRoleRequest: scepWriteRoleRoleRequest }, initOverrides);
+    async scepWriteRoleRole(role: string, scep_mount_path: string, ScepWriteRoleRoleRequest: ScepWriteRoleRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scepWriteRoleRoleRaw({ role: role, scep_mount_path: scep_mount_path, ScepWriteRoleRoleRequest: ScepWriteRoleRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11569,10 +11569,10 @@ export class AuthApi extends runtime.BaseAPI {
      * The token create path is used to create new tokens.
      */
     async tokenCreateRaw(requestParameters: AuthApiTokenCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenCreateRequest'] == null) {
+        if (requestParameters['TokenCreateRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenCreateRequest',
-                'Required parameter "tokenCreateRequest" was null or undefined when calling tokenCreate().'
+                'TokenCreateRequest',
+                'Required parameter "TokenCreateRequest" was null or undefined when calling tokenCreate().'
             );
         }
 
@@ -11587,7 +11587,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenCreateRequestToJSON(requestParameters['tokenCreateRequest']),
+            body: TokenCreateRequestToJSON(requestParameters['TokenCreateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11596,8 +11596,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * The token create path is used to create new tokens.
      */
-    async tokenCreate(tokenCreateRequest: TokenCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenCreateRaw({ tokenCreateRequest: tokenCreateRequest }, initOverrides);
+    async tokenCreate(TokenCreateRequest: TokenCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenCreateRaw({ TokenCreateRequest: TokenCreateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11605,17 +11605,17 @@ export class AuthApi extends runtime.BaseAPI {
      * This token create path is used to create new tokens adhering to the given role.
      */
     async tokenCreateAgainstRoleRaw(requestParameters: AuthApiTokenCreateAgainstRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling tokenCreateAgainstRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tokenCreateAgainstRole().'
             );
         }
 
-        if (requestParameters['tokenCreateAgainstRoleRequest'] == null) {
+        if (requestParameters['TokenCreateAgainstRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenCreateAgainstRoleRequest',
-                'Required parameter "tokenCreateAgainstRoleRequest" was null or undefined when calling tokenCreateAgainstRole().'
+                'TokenCreateAgainstRoleRequest',
+                'Required parameter "TokenCreateAgainstRoleRequest" was null or undefined when calling tokenCreateAgainstRole().'
             );
         }
 
@@ -11626,11 +11626,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/token/create/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))),
+            path: `/auth/token/create/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenCreateAgainstRoleRequestToJSON(requestParameters['tokenCreateAgainstRoleRequest']),
+            body: TokenCreateAgainstRoleRequestToJSON(requestParameters['TokenCreateAgainstRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11639,8 +11639,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This token create path is used to create new tokens adhering to the given role.
      */
-    async tokenCreateAgainstRole(roleName: string, tokenCreateAgainstRoleRequest: TokenCreateAgainstRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenCreateAgainstRoleRaw({ roleName: roleName, tokenCreateAgainstRoleRequest: tokenCreateAgainstRoleRequest }, initOverrides);
+    async tokenCreateAgainstRole(role_name: string, TokenCreateAgainstRoleRequest: TokenCreateAgainstRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenCreateAgainstRoleRaw({ role_name: role_name, TokenCreateAgainstRoleRequest: TokenCreateAgainstRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11648,10 +11648,10 @@ export class AuthApi extends runtime.BaseAPI {
      * The token create path is used to create new orphan tokens.
      */
     async tokenCreateOrphanRaw(requestParameters: AuthApiTokenCreateOrphanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenCreateOrphanRequest'] == null) {
+        if (requestParameters['TokenCreateOrphanRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenCreateOrphanRequest',
-                'Required parameter "tokenCreateOrphanRequest" was null or undefined when calling tokenCreateOrphan().'
+                'TokenCreateOrphanRequest',
+                'Required parameter "TokenCreateOrphanRequest" was null or undefined when calling tokenCreateOrphan().'
             );
         }
 
@@ -11666,7 +11666,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenCreateOrphanRequestToJSON(requestParameters['tokenCreateOrphanRequest']),
+            body: TokenCreateOrphanRequestToJSON(requestParameters['TokenCreateOrphanRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11675,18 +11675,18 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * The token create path is used to create new orphan tokens.
      */
-    async tokenCreateOrphan(tokenCreateOrphanRequest: TokenCreateOrphanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenCreateOrphanRaw({ tokenCreateOrphanRequest: tokenCreateOrphanRequest }, initOverrides);
+    async tokenCreateOrphan(TokenCreateOrphanRequest: TokenCreateOrphanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenCreateOrphanRaw({ TokenCreateOrphanRequest: TokenCreateOrphanRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async tokenDeleteRoleRaw(requestParameters: AuthApiTokenDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling tokenDeleteRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tokenDeleteRole().'
             );
         }
 
@@ -11695,7 +11695,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))),
+            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11706,8 +11706,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async tokenDeleteRole(roleName: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenDeleteRoleRaw({ roleName: roleName }, initOverrides);
+    async tokenDeleteRole(role_name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenDeleteRoleRaw({ role_name: role_name }, initOverrides);
         return await response.value();
     }
 
@@ -11788,10 +11788,10 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      */
     async tokenLookUpRaw(requestParameters: AuthApiTokenLookUpOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenLookUpRequest'] == null) {
+        if (requestParameters['TokenLookUpRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenLookUpRequest',
-                'Required parameter "tokenLookUpRequest" was null or undefined when calling tokenLookUp().'
+                'TokenLookUpRequest',
+                'Required parameter "TokenLookUpRequest" was null or undefined when calling tokenLookUp().'
             );
         }
 
@@ -11806,7 +11806,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenLookUpRequestToJSON(requestParameters['tokenLookUpRequest']),
+            body: TokenLookUpRequestToJSON(requestParameters['TokenLookUpRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11814,8 +11814,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async tokenLookUp(tokenLookUpRequest: TokenLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenLookUpRaw({ tokenLookUpRequest: tokenLookUpRequest }, initOverrides);
+    async tokenLookUp(TokenLookUpRequest: TokenLookUpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenLookUpRaw({ TokenLookUpRequest: TokenLookUpRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11851,10 +11851,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
      */
     async tokenLookUpAccessorRaw(requestParameters: AuthApiTokenLookUpAccessorOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenLookUpAccessorRequest'] == null) {
+        if (requestParameters['TokenLookUpAccessorRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenLookUpAccessorRequest',
-                'Required parameter "tokenLookUpAccessorRequest" was null or undefined when calling tokenLookUpAccessor().'
+                'TokenLookUpAccessorRequest',
+                'Required parameter "TokenLookUpAccessorRequest" was null or undefined when calling tokenLookUpAccessor().'
             );
         }
 
@@ -11869,7 +11869,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenLookUpAccessorRequestToJSON(requestParameters['tokenLookUpAccessorRequest']),
+            body: TokenLookUpAccessorRequestToJSON(requestParameters['TokenLookUpAccessorRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11878,8 +11878,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
      */
-    async tokenLookUpAccessor(tokenLookUpAccessorRequest: TokenLookUpAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenLookUpAccessorRaw({ tokenLookUpAccessorRequest: tokenLookUpAccessorRequest }, initOverrides);
+    async tokenLookUpAccessor(TokenLookUpAccessorRequest: TokenLookUpAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenLookUpAccessorRaw({ TokenLookUpAccessorRequest: TokenLookUpAccessorRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11910,10 +11910,10 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      */
     async tokenLookUpSelf2Raw(requestParameters: AuthApiTokenLookUpSelf2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenLookUpSelf2Request'] == null) {
+        if (requestParameters['TokenLookUpSelf2Request'] == null) {
             throw new runtime.RequiredError(
-                'tokenLookUpSelf2Request',
-                'Required parameter "tokenLookUpSelf2Request" was null or undefined when calling tokenLookUpSelf2().'
+                'TokenLookUpSelf2Request',
+                'Required parameter "TokenLookUpSelf2Request" was null or undefined when calling tokenLookUpSelf2().'
             );
         }
 
@@ -11928,7 +11928,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenLookUpSelf2RequestToJSON(requestParameters['tokenLookUpSelf2Request']),
+            body: TokenLookUpSelf2RequestToJSON(requestParameters['TokenLookUpSelf2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11936,18 +11936,18 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async tokenLookUpSelf2(tokenLookUpSelf2Request: TokenLookUpSelf2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenLookUpSelf2Raw({ tokenLookUpSelf2Request: tokenLookUpSelf2Request }, initOverrides);
+    async tokenLookUpSelf2(TokenLookUpSelf2Request: TokenLookUpSelf2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenLookUpSelf2Raw({ TokenLookUpSelf2Request: TokenLookUpSelf2Request }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async tokenReadRoleRaw(requestParameters: AuthApiTokenReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling tokenReadRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tokenReadRole().'
             );
         }
 
@@ -11956,7 +11956,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))),
+            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11967,8 +11967,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async tokenReadRole(roleName: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenReadRoleRaw({ roleName: roleName }, initOverrides);
+    async tokenReadRole(role_name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenReadRoleRaw({ role_name: role_name }, initOverrides);
         return await response.value();
     }
 
@@ -11976,10 +11976,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will renew the given token and prevent expiration.
      */
     async tokenRenewRaw(requestParameters: AuthApiTokenRenewOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRenewRequest'] == null) {
+        if (requestParameters['TokenRenewRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRenewRequest',
-                'Required parameter "tokenRenewRequest" was null or undefined when calling tokenRenew().'
+                'TokenRenewRequest',
+                'Required parameter "TokenRenewRequest" was null or undefined when calling tokenRenew().'
             );
         }
 
@@ -11994,7 +11994,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRenewRequestToJSON(requestParameters['tokenRenewRequest']),
+            body: TokenRenewRequestToJSON(requestParameters['TokenRenewRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12003,8 +12003,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will renew the given token and prevent expiration.
      */
-    async tokenRenew(tokenRenewRequest: TokenRenewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRenewRaw({ tokenRenewRequest: tokenRenewRequest }, initOverrides);
+    async tokenRenew(TokenRenewRequest: TokenRenewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRenewRaw({ TokenRenewRequest: TokenRenewRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12012,10 +12012,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
      */
     async tokenRenewAccessorRaw(requestParameters: AuthApiTokenRenewAccessorOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRenewAccessorRequest'] == null) {
+        if (requestParameters['TokenRenewAccessorRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRenewAccessorRequest',
-                'Required parameter "tokenRenewAccessorRequest" was null or undefined when calling tokenRenewAccessor().'
+                'TokenRenewAccessorRequest',
+                'Required parameter "TokenRenewAccessorRequest" was null or undefined when calling tokenRenewAccessor().'
             );
         }
 
@@ -12030,7 +12030,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRenewAccessorRequestToJSON(requestParameters['tokenRenewAccessorRequest']),
+            body: TokenRenewAccessorRequestToJSON(requestParameters['TokenRenewAccessorRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12039,8 +12039,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
      */
-    async tokenRenewAccessor(tokenRenewAccessorRequest: TokenRenewAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRenewAccessorRaw({ tokenRenewAccessorRequest: tokenRenewAccessorRequest }, initOverrides);
+    async tokenRenewAccessor(TokenRenewAccessorRequest: TokenRenewAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRenewAccessorRaw({ TokenRenewAccessorRequest: TokenRenewAccessorRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12048,10 +12048,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will renew the token used to call it and prevent expiration.
      */
     async tokenRenewSelfRaw(requestParameters: AuthApiTokenRenewSelfOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRenewSelfRequest'] == null) {
+        if (requestParameters['TokenRenewSelfRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRenewSelfRequest',
-                'Required parameter "tokenRenewSelfRequest" was null or undefined when calling tokenRenewSelf().'
+                'TokenRenewSelfRequest',
+                'Required parameter "TokenRenewSelfRequest" was null or undefined when calling tokenRenewSelf().'
             );
         }
 
@@ -12066,7 +12066,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRenewSelfRequestToJSON(requestParameters['tokenRenewSelfRequest']),
+            body: TokenRenewSelfRequestToJSON(requestParameters['TokenRenewSelfRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12075,8 +12075,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will renew the token used to call it and prevent expiration.
      */
-    async tokenRenewSelf(tokenRenewSelfRequest: TokenRenewSelfRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRenewSelfRaw({ tokenRenewSelfRequest: tokenRenewSelfRequest }, initOverrides);
+    async tokenRenewSelf(TokenRenewSelfRequest: TokenRenewSelfRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRenewSelfRaw({ TokenRenewSelfRequest: TokenRenewSelfRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12084,10 +12084,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will delete the given token and all of its child tokens.
      */
     async tokenRevokeRaw(requestParameters: AuthApiTokenRevokeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRevokeRequest'] == null) {
+        if (requestParameters['TokenRevokeRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRevokeRequest',
-                'Required parameter "tokenRevokeRequest" was null or undefined when calling tokenRevoke().'
+                'TokenRevokeRequest',
+                'Required parameter "TokenRevokeRequest" was null or undefined when calling tokenRevoke().'
             );
         }
 
@@ -12102,7 +12102,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRevokeRequestToJSON(requestParameters['tokenRevokeRequest']),
+            body: TokenRevokeRequestToJSON(requestParameters['TokenRevokeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12111,8 +12111,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will delete the given token and all of its child tokens.
      */
-    async tokenRevoke(tokenRevokeRequest: TokenRevokeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRevokeRaw({ tokenRevokeRequest: tokenRevokeRequest }, initOverrides);
+    async tokenRevoke(TokenRevokeRequest: TokenRevokeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRevokeRaw({ TokenRevokeRequest: TokenRevokeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12120,10 +12120,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will delete the token associated with the accessor and all of its child tokens.
      */
     async tokenRevokeAccessorRaw(requestParameters: AuthApiTokenRevokeAccessorOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRevokeAccessorRequest'] == null) {
+        if (requestParameters['TokenRevokeAccessorRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRevokeAccessorRequest',
-                'Required parameter "tokenRevokeAccessorRequest" was null or undefined when calling tokenRevokeAccessor().'
+                'TokenRevokeAccessorRequest',
+                'Required parameter "TokenRevokeAccessorRequest" was null or undefined when calling tokenRevokeAccessor().'
             );
         }
 
@@ -12138,7 +12138,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRevokeAccessorRequestToJSON(requestParameters['tokenRevokeAccessorRequest']),
+            body: TokenRevokeAccessorRequestToJSON(requestParameters['TokenRevokeAccessorRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12147,8 +12147,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will delete the token associated with the accessor and all of its child tokens.
      */
-    async tokenRevokeAccessor(tokenRevokeAccessorRequest: TokenRevokeAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRevokeAccessorRaw({ tokenRevokeAccessorRequest: tokenRevokeAccessorRequest }, initOverrides);
+    async tokenRevokeAccessor(TokenRevokeAccessorRequest: TokenRevokeAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRevokeAccessorRaw({ TokenRevokeAccessorRequest: TokenRevokeAccessorRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12156,10 +12156,10 @@ export class AuthApi extends runtime.BaseAPI {
      * This endpoint will delete the token and orphan its child tokens.
      */
     async tokenRevokeOrphanRaw(requestParameters: AuthApiTokenRevokeOrphanOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['tokenRevokeOrphanRequest'] == null) {
+        if (requestParameters['TokenRevokeOrphanRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenRevokeOrphanRequest',
-                'Required parameter "tokenRevokeOrphanRequest" was null or undefined when calling tokenRevokeOrphan().'
+                'TokenRevokeOrphanRequest',
+                'Required parameter "TokenRevokeOrphanRequest" was null or undefined when calling tokenRevokeOrphan().'
             );
         }
 
@@ -12174,7 +12174,7 @@ export class AuthApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenRevokeOrphanRequestToJSON(requestParameters['tokenRevokeOrphanRequest']),
+            body: TokenRevokeOrphanRequestToJSON(requestParameters['TokenRevokeOrphanRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12183,8 +12183,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint will delete the token and orphan its child tokens.
      */
-    async tokenRevokeOrphan(tokenRevokeOrphanRequest: TokenRevokeOrphanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenRevokeOrphanRaw({ tokenRevokeOrphanRequest: tokenRevokeOrphanRequest }, initOverrides);
+    async tokenRevokeOrphan(TokenRevokeOrphanRequest: TokenRevokeOrphanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRevokeOrphanRaw({ TokenRevokeOrphanRequest: TokenRevokeOrphanRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12243,17 +12243,17 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      */
     async tokenWriteRoleRaw(requestParameters: AuthApiTokenWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['roleName'] == null) {
+        if (requestParameters['role_name'] == null) {
             throw new runtime.RequiredError(
-                'roleName',
-                'Required parameter "roleName" was null or undefined when calling tokenWriteRole().'
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tokenWriteRole().'
             );
         }
 
-        if (requestParameters['tokenWriteRoleRequest'] == null) {
+        if (requestParameters['TokenWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'tokenWriteRoleRequest',
-                'Required parameter "tokenWriteRoleRequest" was null or undefined when calling tokenWriteRole().'
+                'TokenWriteRoleRequest',
+                'Required parameter "TokenWriteRoleRequest" was null or undefined when calling tokenWriteRole().'
             );
         }
 
@@ -12264,11 +12264,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['roleName']))),
+            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TokenWriteRoleRequestToJSON(requestParameters['tokenWriteRoleRequest']),
+            body: TokenWriteRoleRequestToJSON(requestParameters['TokenWriteRoleRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12276,8 +12276,8 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async tokenWriteRole(roleName: string, tokenWriteRoleRequest: TokenWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.tokenWriteRoleRaw({ roleName: roleName, tokenWriteRoleRequest: tokenWriteRoleRequest }, initOverrides);
+    async tokenWriteRole(role_name: string, TokenWriteRoleRequest: TokenWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenWriteRoleRaw({ role_name: role_name, TokenWriteRoleRequest: TokenWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12292,10 +12292,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassDeleteUser().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassDeleteUser().'
             );
         }
 
@@ -12304,7 +12304,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12316,8 +12316,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async userpassDeleteUser(username: string, userpassMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassDeleteUserRaw({ username: username, userpassMountPath: userpassMountPath }, initOverrides);
+    async userpassDeleteUser(username: string, userpass_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassDeleteUserRaw({ username: username, userpass_mount_path: userpass_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -12325,10 +12325,10 @@ export class AuthApi extends runtime.BaseAPI {
      * Manage users allowed to authenticate.
      */
     async userpassListUsersRaw(requestParameters: AuthApiUserpassListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassListUsers().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassListUsers().'
             );
         }
 
@@ -12348,7 +12348,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/`.replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/`.replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12360,8 +12360,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async userpassListUsers(userpassMountPath: string, list: UserpassListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.userpassListUsersRaw({ userpassMountPath: userpassMountPath, list: list }, initOverrides);
+    async userpassListUsers(userpass_mount_path: string, list: UserpassListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.userpassListUsersRaw({ userpass_mount_path: userpass_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -12376,17 +12376,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassLogin().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassLogin().'
             );
         }
 
-        if (requestParameters['userpassLoginRequest'] == null) {
+        if (requestParameters['UserpassLoginRequest'] == null) {
             throw new runtime.RequiredError(
-                'userpassLoginRequest',
-                'Required parameter "userpassLoginRequest" was null or undefined when calling userpassLogin().'
+                'UserpassLoginRequest',
+                'Required parameter "UserpassLoginRequest" was null or undefined when calling userpassLogin().'
             );
         }
 
@@ -12397,11 +12397,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UserpassLoginRequestToJSON(requestParameters['userpassLoginRequest']),
+            body: UserpassLoginRequestToJSON(requestParameters['UserpassLoginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12410,8 +12410,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Log in with a username and password.
      */
-    async userpassLogin(username: string, userpassMountPath: string, userpassLoginRequest: UserpassLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassLoginRaw({ username: username, userpassMountPath: userpassMountPath, userpassLoginRequest: userpassLoginRequest }, initOverrides);
+    async userpassLogin(username: string, userpass_mount_path: string, UserpassLoginRequest: UserpassLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassLoginRaw({ username: username, userpass_mount_path: userpass_mount_path, UserpassLoginRequest: UserpassLoginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12426,10 +12426,10 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassReadUser().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassReadUser().'
             );
         }
 
@@ -12438,7 +12438,7 @@ export class AuthApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12450,8 +12450,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async userpassReadUser(username: string, userpassMountPath: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassReadUserRaw({ username: username, userpassMountPath: userpassMountPath }, initOverrides);
+    async userpassReadUser(username: string, userpass_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassReadUserRaw({ username: username, userpass_mount_path: userpass_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -12466,17 +12466,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassResetPassword().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassResetPassword().'
             );
         }
 
-        if (requestParameters['userpassResetPasswordRequest'] == null) {
+        if (requestParameters['UserpassResetPasswordRequest'] == null) {
             throw new runtime.RequiredError(
-                'userpassResetPasswordRequest',
-                'Required parameter "userpassResetPasswordRequest" was null or undefined when calling userpassResetPassword().'
+                'UserpassResetPasswordRequest',
+                'Required parameter "UserpassResetPasswordRequest" was null or undefined when calling userpassResetPassword().'
             );
         }
 
@@ -12487,11 +12487,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}/password`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/{username}/password`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UserpassResetPasswordRequestToJSON(requestParameters['userpassResetPasswordRequest']),
+            body: UserpassResetPasswordRequestToJSON(requestParameters['UserpassResetPasswordRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12500,8 +12500,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Reset user\'s password.
      */
-    async userpassResetPassword(username: string, userpassMountPath: string, userpassResetPasswordRequest: UserpassResetPasswordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassResetPasswordRaw({ username: username, userpassMountPath: userpassMountPath, userpassResetPasswordRequest: userpassResetPasswordRequest }, initOverrides);
+    async userpassResetPassword(username: string, userpass_mount_path: string, UserpassResetPasswordRequest: UserpassResetPasswordRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassResetPasswordRaw({ username: username, userpass_mount_path: userpass_mount_path, UserpassResetPasswordRequest: UserpassResetPasswordRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12516,17 +12516,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassUpdatePolicies().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassUpdatePolicies().'
             );
         }
 
-        if (requestParameters['userpassUpdatePoliciesRequest'] == null) {
+        if (requestParameters['UserpassUpdatePoliciesRequest'] == null) {
             throw new runtime.RequiredError(
-                'userpassUpdatePoliciesRequest',
-                'Required parameter "userpassUpdatePoliciesRequest" was null or undefined when calling userpassUpdatePolicies().'
+                'UserpassUpdatePoliciesRequest',
+                'Required parameter "UserpassUpdatePoliciesRequest" was null or undefined when calling userpassUpdatePolicies().'
             );
         }
 
@@ -12537,11 +12537,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}/policies`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/{username}/policies`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UserpassUpdatePoliciesRequestToJSON(requestParameters['userpassUpdatePoliciesRequest']),
+            body: UserpassUpdatePoliciesRequestToJSON(requestParameters['UserpassUpdatePoliciesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12550,8 +12550,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Update the policies associated with the username.
      */
-    async userpassUpdatePolicies(username: string, userpassMountPath: string, userpassUpdatePoliciesRequest: UserpassUpdatePoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassUpdatePoliciesRaw({ username: username, userpassMountPath: userpassMountPath, userpassUpdatePoliciesRequest: userpassUpdatePoliciesRequest }, initOverrides);
+    async userpassUpdatePolicies(username: string, userpass_mount_path: string, UserpassUpdatePoliciesRequest: UserpassUpdatePoliciesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassUpdatePoliciesRaw({ username: username, userpass_mount_path: userpass_mount_path, UserpassUpdatePoliciesRequest: UserpassUpdatePoliciesRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12566,17 +12566,17 @@ export class AuthApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userpassMountPath'] == null) {
+        if (requestParameters['userpass_mount_path'] == null) {
             throw new runtime.RequiredError(
-                'userpassMountPath',
-                'Required parameter "userpassMountPath" was null or undefined when calling userpassWriteUser().'
+                'userpass_mount_path',
+                'Required parameter "userpass_mount_path" was null or undefined when calling userpassWriteUser().'
             );
         }
 
-        if (requestParameters['userpassWriteUserRequest'] == null) {
+        if (requestParameters['UserpassWriteUserRequest'] == null) {
             throw new runtime.RequiredError(
-                'userpassWriteUserRequest',
-                'Required parameter "userpassWriteUserRequest" was null or undefined when calling userpassWriteUser().'
+                'UserpassWriteUserRequest',
+                'Required parameter "UserpassWriteUserRequest" was null or undefined when calling userpassWriteUser().'
             );
         }
 
@@ -12587,11 +12587,11 @@ export class AuthApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpassMountPath']))),
+            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UserpassWriteUserRequestToJSON(requestParameters['userpassWriteUserRequest']),
+            body: UserpassWriteUserRequestToJSON(requestParameters['UserpassWriteUserRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12600,8 +12600,8 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async userpassWriteUser(username: string, userpassMountPath: string, userpassWriteUserRequest: UserpassWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.userpassWriteUserRaw({ username: username, userpassMountPath: userpassMountPath, userpassWriteUserRequest: userpassWriteUserRequest }, initOverrides);
+    async userpassWriteUser(username: string, userpass_mount_path: string, UserpassWriteUserRequest: UserpassWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.userpassWriteUserRaw({ username: username, userpass_mount_path: userpass_mount_path, UserpassWriteUserRequest: UserpassWriteUserRequest }, initOverrides);
         return await response.value();
     }
 

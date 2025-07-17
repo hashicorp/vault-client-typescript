@@ -24,13 +24,13 @@ export interface CorsReadConfigurationResponse {
      * @type {Array<string>}
      * @memberof CorsReadConfigurationResponse
      */
-    allowedHeaders?: Array<string>;
+    allowed_headers?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof CorsReadConfigurationResponse
      */
-    allowedOrigins?: Array<string>;
+    allowed_origins?: Array<string>;
     /**
      * 
      * @type {boolean}
@@ -56,8 +56,8 @@ export function CorsReadConfigurationResponseFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'allowedHeaders': json['allowed_headers'] == null ? undefined : json['allowed_headers'],
-        'allowedOrigins': json['allowed_origins'] == null ? undefined : json['allowed_origins'],
+        'allowed_headers': json['allowed_headers'] == null ? undefined : json['allowed_headers'],
+        'allowed_origins': json['allowed_origins'] == null ? undefined : json['allowed_origins'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
     };
 }
@@ -73,8 +73,8 @@ export function CorsReadConfigurationResponseToJSONTyped(value?: CorsReadConfigu
 
     return {
         
-        'allowed_headers': value['allowedHeaders'],
-        'allowed_origins': value['allowedOrigins'],
+        'allowed_headers': value['allowed_headers'],
+        'allowed_origins': value['allowed_origins'],
         'enabled': value['enabled'],
     };
 }

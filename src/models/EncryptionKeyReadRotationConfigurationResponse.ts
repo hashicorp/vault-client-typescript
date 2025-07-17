@@ -36,7 +36,7 @@ export interface EncryptionKeyReadRotationConfigurationResponse {
      * @type {number}
      * @memberof EncryptionKeyReadRotationConfigurationResponse
      */
-    maxOperations?: number;
+    max_operations?: number;
 }
 
 /**
@@ -58,7 +58,7 @@ export function EncryptionKeyReadRotationConfigurationResponseFromJSONTyped(json
         
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
         'interval': json['interval'] == null ? undefined : json['interval'],
-        'maxOperations': json['max_operations'] == null ? undefined : json['max_operations'],
+        'max_operations': json['max_operations'] == null ? undefined : json['max_operations'],
     };
 }
 
@@ -75,7 +75,7 @@ export function EncryptionKeyReadRotationConfigurationResponseToJSONTyped(value?
         
         'enabled': value['enabled'],
         'interval': value['interval'],
-        'max_operations': value['maxOperations'],
+        'max_operations': value['max_operations'],
     };
 }
 

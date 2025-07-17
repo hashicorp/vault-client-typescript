@@ -24,7 +24,7 @@ export interface AppRoleWriteRoleIdRequest {
      * @type {string}
      * @memberof AppRoleWriteRoleIdRequest
      */
-    roleId?: string;
+    role_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteRoleIdRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'roleId': json['role_id'] == null ? undefined : json['role_id'],
+        'role_id': json['role_id'] == null ? undefined : json['role_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteRoleIdRequestToJSONTyped(value?: AppRoleWriteRoleIdR
 
     return {
         
-        'role_id': value['roleId'],
+        'role_id': value['role_id'],
     };
 }
 

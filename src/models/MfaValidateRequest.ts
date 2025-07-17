@@ -24,21 +24,21 @@ export interface MfaValidateRequest {
      * @type {object}
      * @memberof MfaValidateRequest
      */
-    mfaPayload: object;
+    mfa_payload: object;
     /**
      * ID for this MFA request
      * @type {string}
      * @memberof MfaValidateRequest
      */
-    mfaRequestId: string;
+    mfa_request_id: string;
 }
 
 /**
  * Check if a given object implements the MfaValidateRequest interface.
  */
 export function instanceOfMfaValidateRequest(value: object): value is MfaValidateRequest {
-    if (!('mfaPayload' in value) || value['mfaPayload'] === undefined) return false;
-    if (!('mfaRequestId' in value) || value['mfaRequestId'] === undefined) return false;
+    if (!('mfa_payload' in value) || value['mfa_payload'] === undefined) return false;
+    if (!('mfa_request_id' in value) || value['mfa_request_id'] === undefined) return false;
     return true;
 }
 
@@ -52,8 +52,8 @@ export function MfaValidateRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'mfaPayload': json['mfa_payload'],
-        'mfaRequestId': json['mfa_request_id'],
+        'mfa_payload': json['mfa_payload'],
+        'mfa_request_id': json['mfa_request_id'],
     };
 }
 
@@ -68,8 +68,8 @@ export function MfaValidateRequestToJSONTyped(value?: MfaValidateRequest | null,
 
     return {
         
-        'mfa_payload': value['mfaPayload'],
-        'mfa_request_id': value['mfaRequestId'],
+        'mfa_payload': value['mfa_payload'],
+        'mfa_request_id': value['mfa_request_id'],
     };
 }
 

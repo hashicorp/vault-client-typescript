@@ -24,45 +24,45 @@ export interface CloudFoundryWriteRoleRequest {
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    boundApplicationIds?: Array<string>;
+    bound_application_ids?: Array<string>;
     /**
      * Use "token_bound_cidrs" instead. If this and "token_bound_cidrs" are both specified, only "token_bound_cidrs" will be used.
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      * @deprecated
      */
-    boundCidrs?: Array<string>;
+    bound_cidrs?: Array<string>;
     /**
      * Require that the client certificate presented has at least one of these instance IDs.
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    boundInstanceIds?: Array<string>;
+    bound_instance_ids?: Array<string>;
     /**
      * Require that the client certificate presented has at least one of these org IDs.
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    boundOrganizationIds?: Array<string>;
+    bound_organization_ids?: Array<string>;
     /**
      * Require that the client certificate presented has at least one of these space IDs.
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    boundSpaceIds?: Array<string>;
+    bound_space_ids?: Array<string>;
     /**
      * If set to true, disables the default behavior that logging in must be performed from an acceptable IP address described by the certificate presented.
      * @type {boolean}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    disableIpMatching?: boolean;
+    disable_ip_matching?: boolean;
     /**
      * Use "token_max_ttl" instead. If this and "token_max_ttl" are both specified, only "token_max_ttl" will be used.
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -82,55 +82,55 @@ export interface CloudFoundryWriteRoleRequest {
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof CloudFoundryWriteRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -157,24 +157,24 @@ export function CloudFoundryWriteRoleRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'boundApplicationIds': json['bound_application_ids'] == null ? undefined : json['bound_application_ids'],
-        'boundCidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
-        'boundInstanceIds': json['bound_instance_ids'] == null ? undefined : json['bound_instance_ids'],
-        'boundOrganizationIds': json['bound_organization_ids'] == null ? undefined : json['bound_organization_ids'],
-        'boundSpaceIds': json['bound_space_ids'] == null ? undefined : json['bound_space_ids'],
-        'disableIpMatching': json['disable_ip_matching'] == null ? undefined : json['disable_ip_matching'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'bound_application_ids': json['bound_application_ids'] == null ? undefined : json['bound_application_ids'],
+        'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
+        'bound_instance_ids': json['bound_instance_ids'] == null ? undefined : json['bound_instance_ids'],
+        'bound_organization_ids': json['bound_organization_ids'] == null ? undefined : json['bound_organization_ids'],
+        'bound_space_ids': json['bound_space_ids'] == null ? undefined : json['bound_space_ids'],
+        'disable_ip_matching': json['disable_ip_matching'] == null ? undefined : json['disable_ip_matching'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -190,24 +190,24 @@ export function CloudFoundryWriteRoleRequestToJSONTyped(value?: CloudFoundryWrit
 
     return {
         
-        'bound_application_ids': value['boundApplicationIds'],
-        'bound_cidrs': value['boundCidrs'],
-        'bound_instance_ids': value['boundInstanceIds'],
-        'bound_organization_ids': value['boundOrganizationIds'],
-        'bound_space_ids': value['boundSpaceIds'],
-        'disable_ip_matching': value['disableIpMatching'],
-        'max_ttl': value['maxTtl'],
+        'bound_application_ids': value['bound_application_ids'],
+        'bound_cidrs': value['bound_cidrs'],
+        'bound_instance_ids': value['bound_instance_ids'],
+        'bound_organization_ids': value['bound_organization_ids'],
+        'bound_space_ids': value['bound_space_ids'],
+        'disable_ip_matching': value['disable_ip_matching'],
+        'max_ttl': value['max_ttl'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
     };
 }

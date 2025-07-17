@@ -30,25 +30,25 @@ export interface RekeyAttemptInitializeRequest {
      * @type {Array<string>}
      * @memberof RekeyAttemptInitializeRequest
      */
-    pgpKeys?: Array<string>;
+    pgp_keys?: Array<string>;
     /**
      * Turns on verification functionality
      * @type {boolean}
      * @memberof RekeyAttemptInitializeRequest
      */
-    requireVerification?: boolean;
+    require_verification?: boolean;
     /**
      * Specifies the number of shares to split the unseal key into.
      * @type {number}
      * @memberof RekeyAttemptInitializeRequest
      */
-    secretShares?: number;
+    secret_shares?: number;
     /**
      * Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as secret_shares.
      * @type {number}
      * @memberof RekeyAttemptInitializeRequest
      */
-    secretThreshold?: number;
+    secret_threshold?: number;
 }
 
 /**
@@ -69,10 +69,10 @@ export function RekeyAttemptInitializeRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'backup': json['backup'] == null ? undefined : json['backup'],
-        'pgpKeys': json['pgp_keys'] == null ? undefined : json['pgp_keys'],
-        'requireVerification': json['require_verification'] == null ? undefined : json['require_verification'],
-        'secretShares': json['secret_shares'] == null ? undefined : json['secret_shares'],
-        'secretThreshold': json['secret_threshold'] == null ? undefined : json['secret_threshold'],
+        'pgp_keys': json['pgp_keys'] == null ? undefined : json['pgp_keys'],
+        'require_verification': json['require_verification'] == null ? undefined : json['require_verification'],
+        'secret_shares': json['secret_shares'] == null ? undefined : json['secret_shares'],
+        'secret_threshold': json['secret_threshold'] == null ? undefined : json['secret_threshold'],
     };
 }
 
@@ -88,10 +88,10 @@ export function RekeyAttemptInitializeRequestToJSONTyped(value?: RekeyAttemptIni
     return {
         
         'backup': value['backup'],
-        'pgp_keys': value['pgpKeys'],
-        'require_verification': value['requireVerification'],
-        'secret_shares': value['secretShares'],
-        'secret_threshold': value['secretThreshold'],
+        'pgp_keys': value['pgp_keys'],
+        'require_verification': value['require_verification'],
+        'secret_shares': value['secret_shares'],
+        'secret_threshold': value['secret_threshold'],
     };
 }
 

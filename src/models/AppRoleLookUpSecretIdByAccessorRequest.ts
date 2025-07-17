@@ -24,7 +24,7 @@ export interface AppRoleLookUpSecretIdByAccessorRequest {
      * @type {string}
      * @memberof AppRoleLookUpSecretIdByAccessorRequest
      */
-    secretIdAccessor?: string;
+    secret_id_accessor?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleLookUpSecretIdByAccessorRequestFromJSONTyped(json: any, i
     }
     return {
         
-        'secretIdAccessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
+        'secret_id_accessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleLookUpSecretIdByAccessorRequestToJSONTyped(value?: AppRol
 
     return {
         
-        'secret_id_accessor': value['secretIdAccessor'],
+        'secret_id_accessor': value['secret_id_accessor'],
     };
 }
 

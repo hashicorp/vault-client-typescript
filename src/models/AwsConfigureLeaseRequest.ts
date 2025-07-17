@@ -30,7 +30,7 @@ export interface AwsConfigureLeaseRequest {
      * @type {string}
      * @memberof AwsConfigureLeaseRequest
      */
-    leaseMax?: string;
+    lease_max?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function AwsConfigureLeaseRequestFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'lease': json['lease'] == null ? undefined : json['lease'],
-        'leaseMax': json['lease_max'] == null ? undefined : json['lease_max'],
+        'lease_max': json['lease_max'] == null ? undefined : json['lease_max'],
     };
 }
 
@@ -67,7 +67,7 @@ export function AwsConfigureLeaseRequestToJSONTyped(value?: AwsConfigureLeaseReq
     return {
         
         'lease': value['lease'],
-        'lease_max': value['leaseMax'],
+        'lease_max': value['lease_max'],
     };
 }
 

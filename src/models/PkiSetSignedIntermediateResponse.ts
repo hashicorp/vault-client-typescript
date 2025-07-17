@@ -24,25 +24,25 @@ export interface PkiSetSignedIntermediateResponse {
      * @type {Array<string>}
      * @memberof PkiSetSignedIntermediateResponse
      */
-    existingIssuers?: Array<string>;
+    existing_issuers?: Array<string>;
     /**
      * Existing keys specified as part of the import bundle of this request
      * @type {Array<string>}
      * @memberof PkiSetSignedIntermediateResponse
      */
-    existingKeys?: Array<string>;
+    existing_keys?: Array<string>;
     /**
      * Net-new issuers imported as a part of this request
      * @type {Array<string>}
      * @memberof PkiSetSignedIntermediateResponse
      */
-    importedIssuers?: Array<string>;
+    imported_issuers?: Array<string>;
     /**
      * Net-new keys imported as a part of this request
      * @type {Array<string>}
      * @memberof PkiSetSignedIntermediateResponse
      */
-    importedKeys?: Array<string>;
+    imported_keys?: Array<string>;
     /**
      * A mapping of issuer_id to key_id for all issuers included in this request
      * @type {object}
@@ -68,10 +68,10 @@ export function PkiSetSignedIntermediateResponseFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'existingIssuers': json['existing_issuers'] == null ? undefined : json['existing_issuers'],
-        'existingKeys': json['existing_keys'] == null ? undefined : json['existing_keys'],
-        'importedIssuers': json['imported_issuers'] == null ? undefined : json['imported_issuers'],
-        'importedKeys': json['imported_keys'] == null ? undefined : json['imported_keys'],
+        'existing_issuers': json['existing_issuers'] == null ? undefined : json['existing_issuers'],
+        'existing_keys': json['existing_keys'] == null ? undefined : json['existing_keys'],
+        'imported_issuers': json['imported_issuers'] == null ? undefined : json['imported_issuers'],
+        'imported_keys': json['imported_keys'] == null ? undefined : json['imported_keys'],
         'mapping': json['mapping'] == null ? undefined : json['mapping'],
     };
 }
@@ -87,10 +87,10 @@ export function PkiSetSignedIntermediateResponseToJSONTyped(value?: PkiSetSigned
 
     return {
         
-        'existing_issuers': value['existingIssuers'],
-        'existing_keys': value['existingKeys'],
-        'imported_issuers': value['importedIssuers'],
-        'imported_keys': value['importedKeys'],
+        'existing_issuers': value['existing_issuers'],
+        'existing_keys': value['existing_keys'],
+        'imported_issuers': value['imported_issuers'],
+        'imported_keys': value['imported_keys'],
         'mapping': value['mapping'],
     };
 }

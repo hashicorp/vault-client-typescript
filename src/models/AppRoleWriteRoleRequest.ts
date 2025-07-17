@@ -24,20 +24,20 @@ export interface AppRoleWriteRoleRequest {
      * @type {boolean}
      * @memberof AppRoleWriteRoleRequest
      */
-    bindSecretId?: boolean;
+    bind_secret_id?: boolean;
     /**
      * Use "secret_id_bound_cidrs" instead.
      * @type {Array<string>}
      * @memberof AppRoleWriteRoleRequest
      * @deprecated
      */
-    boundCidrList?: Array<string>;
+    bound_cidr_list?: Array<string>;
     /**
      * If set, the secret IDs generated using this role will be cluster local. This can only be set during role creation and once set, it can't be reset later.
      * @type {boolean}
      * @memberof AppRoleWriteRoleRequest
      */
-    localSecretIds?: boolean;
+    local_secret_ids?: boolean;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -57,79 +57,79 @@ export interface AppRoleWriteRoleRequest {
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    roleId?: string;
+    role_id?: string;
     /**
      * Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
      * @type {Array<string>}
      * @memberof AppRoleWriteRoleRequest
      */
-    secretIdBoundCidrs?: Array<string>;
+    secret_id_bound_cidrs?: Array<string>;
     /**
      * Number of times a SecretID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the the secret_id is of unlimited use.
      * @type {number}
      * @memberof AppRoleWriteRoleRequest
      */
-    secretIdNumUses?: number;
+    secret_id_num_uses?: number;
     /**
      * Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    secretIdTtl?: string;
+    secret_id_ttl?: string;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof AppRoleWriteRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
 }
 
 /**
@@ -149,24 +149,24 @@ export function AppRoleWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'bindSecretId': json['bind_secret_id'] == null ? undefined : json['bind_secret_id'],
-        'boundCidrList': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
-        'localSecretIds': json['local_secret_ids'] == null ? undefined : json['local_secret_ids'],
+        'bind_secret_id': json['bind_secret_id'] == null ? undefined : json['bind_secret_id'],
+        'bound_cidr_list': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
+        'local_secret_ids': json['local_secret_ids'] == null ? undefined : json['local_secret_ids'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'roleId': json['role_id'] == null ? undefined : json['role_id'],
-        'secretIdBoundCidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
-        'secretIdNumUses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
-        'secretIdTtl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'role_id': json['role_id'] == null ? undefined : json['role_id'],
+        'secret_id_bound_cidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
+        'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
+        'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
     };
 }
 
@@ -181,24 +181,24 @@ export function AppRoleWriteRoleRequestToJSONTyped(value?: AppRoleWriteRoleReque
 
     return {
         
-        'bind_secret_id': value['bindSecretId'],
-        'bound_cidr_list': value['boundCidrList'],
-        'local_secret_ids': value['localSecretIds'],
+        'bind_secret_id': value['bind_secret_id'],
+        'bound_cidr_list': value['bound_cidr_list'],
+        'local_secret_ids': value['local_secret_ids'],
         'period': value['period'],
         'policies': value['policies'],
-        'role_id': value['roleId'],
-        'secret_id_bound_cidrs': value['secretIdBoundCidrs'],
-        'secret_id_num_uses': value['secretIdNumUses'],
-        'secret_id_ttl': value['secretIdTtl'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'role_id': value['role_id'],
+        'secret_id_bound_cidrs': value['secret_id_bound_cidrs'],
+        'secret_id_num_uses': value['secret_id_num_uses'],
+        'secret_id_ttl': value['secret_id_ttl'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
     };
 }
 

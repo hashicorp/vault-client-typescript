@@ -24,7 +24,7 @@ export interface TransitTrimKeyRequest {
      * @type {number}
      * @memberof TransitTrimKeyRequest
      */
-    minAvailableVersion?: number;
+    min_available_version?: number;
 }
 
 /**
@@ -44,7 +44,7 @@ export function TransitTrimKeyRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'minAvailableVersion': json['min_available_version'] == null ? undefined : json['min_available_version'],
+        'min_available_version': json['min_available_version'] == null ? undefined : json['min_available_version'],
     };
 }
 
@@ -59,7 +59,7 @@ export function TransitTrimKeyRequestToJSONTyped(value?: TransitTrimKeyRequest |
 
     return {
         
-        'min_available_version': value['minAvailableVersion'],
+        'min_available_version': value['min_available_version'],
     };
 }
 

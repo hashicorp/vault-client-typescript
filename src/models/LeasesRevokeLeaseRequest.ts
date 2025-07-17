@@ -24,7 +24,7 @@ export interface LeasesRevokeLeaseRequest {
      * @type {string}
      * @memberof LeasesRevokeLeaseRequest
      */
-    leaseId?: string;
+    lease_id?: string;
     /**
      * Whether or not to perform the revocation synchronously
      * @type {boolean}
@@ -50,7 +50,7 @@ export function LeasesRevokeLeaseRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'leaseId': json['lease_id'] == null ? undefined : json['lease_id'],
+        'lease_id': json['lease_id'] == null ? undefined : json['lease_id'],
         'sync': json['sync'] == null ? undefined : json['sync'],
     };
 }
@@ -66,7 +66,7 @@ export function LeasesRevokeLeaseRequestToJSONTyped(value?: LeasesRevokeLeaseReq
 
     return {
         
-        'lease_id': value['leaseId'],
+        'lease_id': value['lease_id'],
         'sync': value['sync'],
     };
 }

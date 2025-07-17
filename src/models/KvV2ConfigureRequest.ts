@@ -24,19 +24,19 @@ export interface KvV2ConfigureRequest {
      * @type {boolean}
      * @memberof KvV2ConfigureRequest
      */
-    casRequired?: boolean;
+    cas_required?: boolean;
     /**
      * If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string.
      * @type {string}
      * @memberof KvV2ConfigureRequest
      */
-    deleteVersionAfter?: string;
+    delete_version_after?: string;
     /**
      * The number of versions to keep for each key. Defaults to 10
      * @type {number}
      * @memberof KvV2ConfigureRequest
      */
-    maxVersions?: number;
+    max_versions?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function KvV2ConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'casRequired': json['cas_required'] == null ? undefined : json['cas_required'],
-        'deleteVersionAfter': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
-        'maxVersions': json['max_versions'] == null ? undefined : json['max_versions'],
+        'cas_required': json['cas_required'] == null ? undefined : json['cas_required'],
+        'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
     };
 }
 
@@ -73,9 +73,9 @@ export function KvV2ConfigureRequestToJSONTyped(value?: KvV2ConfigureRequest | n
 
     return {
         
-        'cas_required': value['casRequired'],
-        'delete_version_after': value['deleteVersionAfter'],
-        'max_versions': value['maxVersions'],
+        'cas_required': value['cas_required'],
+        'delete_version_after': value['delete_version_after'],
+        'max_versions': value['max_versions'],
     };
 }
 

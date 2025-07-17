@@ -24,19 +24,19 @@ export interface AwsGenerateStsCredentialsWithParametersRequest {
      * @type {string}
      * @memberof AwsGenerateStsCredentialsWithParametersRequest
      */
-    mfaCode?: string;
+    mfa_code?: string;
     /**
      * ARN of role to assume when credential_type is assumed_role
      * @type {string}
      * @memberof AwsGenerateStsCredentialsWithParametersRequest
      */
-    roleArn?: string;
+    role_arn?: string;
     /**
      * Session name to use when assuming role. Max chars: 64
      * @type {string}
      * @memberof AwsGenerateStsCredentialsWithParametersRequest
      */
-    roleSessionName?: string;
+    role_session_name?: string;
     /**
      * Lifetime of the returned credentials in seconds
      * @type {string}
@@ -62,9 +62,9 @@ export function AwsGenerateStsCredentialsWithParametersRequestFromJSONTyped(json
     }
     return {
         
-        'mfaCode': json['mfa_code'] == null ? undefined : json['mfa_code'],
-        'roleArn': json['role_arn'] == null ? undefined : json['role_arn'],
-        'roleSessionName': json['role_session_name'] == null ? undefined : json['role_session_name'],
+        'mfa_code': json['mfa_code'] == null ? undefined : json['mfa_code'],
+        'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
+        'role_session_name': json['role_session_name'] == null ? undefined : json['role_session_name'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -80,9 +80,9 @@ export function AwsGenerateStsCredentialsWithParametersRequestToJSONTyped(value?
 
     return {
         
-        'mfa_code': value['mfaCode'],
-        'role_arn': value['roleArn'],
-        'role_session_name': value['roleSessionName'],
+        'mfa_code': value['mfa_code'],
+        'role_arn': value['role_arn'],
+        'role_session_name': value['role_session_name'],
         'ttl': value['ttl'],
     };
 }

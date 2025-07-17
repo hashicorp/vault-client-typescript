@@ -24,13 +24,13 @@ export interface TransformWriteFpeTransformationRequest {
      * @type {Array<string>}
      * @memberof TransformWriteFpeTransformationRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * If false, deletion of this transform is prevented.
      * @type {boolean}
      * @memberof TransformWriteFpeTransformationRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * The name of the template to use.
      * @type {string}
@@ -42,7 +42,7 @@ export interface TransformWriteFpeTransformationRequest {
      * @type {string}
      * @memberof TransformWriteFpeTransformationRequest
      */
-    tweakSource?: string;
+    tweak_source?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function TransformWriteFpeTransformationRequestFromJSONTyped(json: any, i
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
         'template': json['template'] == null ? undefined : json['template'],
-        'tweakSource': json['tweak_source'] == null ? undefined : json['tweak_source'],
+        'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
     };
 }
 
@@ -80,10 +80,10 @@ export function TransformWriteFpeTransformationRequestToJSONTyped(value?: Transf
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
-        'deletion_allowed': value['deletionAllowed'],
+        'allowed_roles': value['allowed_roles'],
+        'deletion_allowed': value['deletion_allowed'],
         'template': value['template'],
-        'tweak_source': value['tweakSource'],
+        'tweak_source': value['tweak_source'],
     };
 }
 

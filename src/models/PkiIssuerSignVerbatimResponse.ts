@@ -24,7 +24,7 @@ export interface PkiIssuerSignVerbatimResponse {
      * @type {Array<string>}
      * @memberof PkiIssuerSignVerbatimResponse
      */
-    caChain?: Array<string>;
+    ca_chain?: Array<string>;
     /**
      * Certificate
      * @type {string}
@@ -42,13 +42,13 @@ export interface PkiIssuerSignVerbatimResponse {
      * @type {string}
      * @memberof PkiIssuerSignVerbatimResponse
      */
-    issuingCa?: string;
+    issuing_ca?: string;
     /**
      * Serial Number
      * @type {string}
      * @memberof PkiIssuerSignVerbatimResponse
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiIssuerSignVerbatimResponseFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'caChain': json['ca_chain'] == null ? undefined : json['ca_chain'],
+        'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'issuingCa': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'issuing_ca': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiIssuerSignVerbatimResponseToJSONTyped(value?: PkiIssuerSignVe
 
     return {
         
-        'ca_chain': value['caChain'],
+        'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
         'expiration': value['expiration'],
-        'issuing_ca': value['issuingCa'],
-        'serial_number': value['serialNumber'],
+        'issuing_ca': value['issuing_ca'],
+        'serial_number': value['serial_number'],
     };
 }
 

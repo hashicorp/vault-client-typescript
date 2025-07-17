@@ -24,19 +24,19 @@ export interface MfaUpdatePingIdMethodRequest {
      * @type {string}
      * @memberof MfaUpdatePingIdMethodRequest
      */
-    methodName?: string;
+    method_name?: string;
     /**
      * The settings file provided by Ping, Base64-encoded. This must be a settings file suitable for third-party clients, not the PingID SDK or PingFederate.
      * @type {string}
      * @memberof MfaUpdatePingIdMethodRequest
      */
-    settingsFileBase64?: string;
+    settings_file_base64?: string;
     /**
      * A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, "{{alias.name}}@example.com". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
      * @type {string}
      * @memberof MfaUpdatePingIdMethodRequest
      */
-    usernameFormat?: string;
+    username_format?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function MfaUpdatePingIdMethodRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'methodName': json['method_name'] == null ? undefined : json['method_name'],
-        'settingsFileBase64': json['settings_file_base64'] == null ? undefined : json['settings_file_base64'],
-        'usernameFormat': json['username_format'] == null ? undefined : json['username_format'],
+        'method_name': json['method_name'] == null ? undefined : json['method_name'],
+        'settings_file_base64': json['settings_file_base64'] == null ? undefined : json['settings_file_base64'],
+        'username_format': json['username_format'] == null ? undefined : json['username_format'],
     };
 }
 
@@ -73,9 +73,9 @@ export function MfaUpdatePingIdMethodRequestToJSONTyped(value?: MfaUpdatePingIdM
 
     return {
         
-        'method_name': value['methodName'],
-        'settings_file_base64': value['settingsFileBase64'],
-        'username_format': value['usernameFormat'],
+        'method_name': value['method_name'],
+        'settings_file_base64': value['settings_file_base64'],
+        'username_format': value['username_format'],
     };
 }
 

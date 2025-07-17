@@ -24,7 +24,7 @@ export interface TransformDecodeRequest {
      * @type {Array<object>}
      * @memberof TransformDecodeRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The transformation to perform. If no value is provided and the role contains a single transformation, this value will be inferred from the role.
      * @type {string}
@@ -62,7 +62,7 @@ export function TransformDecodeRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'transformation': json['transformation'] == null ? undefined : json['transformation'],
         'tweak': json['tweak'] == null ? undefined : json['tweak'],
         'value': json['value'] == null ? undefined : json['value'],
@@ -80,7 +80,7 @@ export function TransformDecodeRequestToJSONTyped(value?: TransformDecodeRequest
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'transformation': value['transformation'],
         'tweak': value['tweak'],
         'value': value['value'],

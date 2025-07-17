@@ -24,13 +24,13 @@ export interface JwtOidcRequestAuthorizationUrlRequest {
      * @type {string}
      * @memberof JwtOidcRequestAuthorizationUrlRequest
      */
-    clientNonce?: string;
+    client_nonce?: string;
     /**
      * The OAuth redirect_uri to use in the authorization URL.
      * @type {string}
      * @memberof JwtOidcRequestAuthorizationUrlRequest
      */
-    redirectUri?: string;
+    redirect_uri?: string;
     /**
      * The role to issue an OIDC authorization URL against.
      * @type {string}
@@ -56,8 +56,8 @@ export function JwtOidcRequestAuthorizationUrlRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'clientNonce': json['client_nonce'] == null ? undefined : json['client_nonce'],
-        'redirectUri': json['redirect_uri'] == null ? undefined : json['redirect_uri'],
+        'client_nonce': json['client_nonce'] == null ? undefined : json['client_nonce'],
+        'redirect_uri': json['redirect_uri'] == null ? undefined : json['redirect_uri'],
         'role': json['role'] == null ? undefined : json['role'],
     };
 }
@@ -73,8 +73,8 @@ export function JwtOidcRequestAuthorizationUrlRequestToJSONTyped(value?: JwtOidc
 
     return {
         
-        'client_nonce': value['clientNonce'],
-        'redirect_uri': value['redirectUri'],
+        'client_nonce': value['client_nonce'],
+        'redirect_uri': value['redirect_uri'],
         'role': value['role'],
     };
 }

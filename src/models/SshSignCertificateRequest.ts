@@ -24,13 +24,13 @@ export interface SshSignCertificateRequest {
      * @type {string}
      * @memberof SshSignCertificateRequest
      */
-    certType?: string;
+    cert_type?: string;
     /**
      * Critical options that the certificate should be signed for.
      * @type {object}
      * @memberof SshSignCertificateRequest
      */
-    criticalOptions?: object;
+    critical_options?: object;
     /**
      * Extensions that the certificate should be signed for.
      * @type {object}
@@ -42,13 +42,13 @@ export interface SshSignCertificateRequest {
      * @type {string}
      * @memberof SshSignCertificateRequest
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * SSH public key that should be signed.
      * @type {string}
      * @memberof SshSignCertificateRequest
      */
-    publicKey?: string;
+    public_key?: string;
     /**
      * The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL.
      * @type {string}
@@ -60,7 +60,7 @@ export interface SshSignCertificateRequest {
      * @type {string}
      * @memberof SshSignCertificateRequest
      */
-    validPrincipals?: string;
+    valid_principals?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function SshSignCertificateRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'certType': json['cert_type'] == null ? undefined : json['cert_type'],
-        'criticalOptions': json['critical_options'] == null ? undefined : json['critical_options'],
+        'cert_type': json['cert_type'] == null ? undefined : json['cert_type'],
+        'critical_options': json['critical_options'] == null ? undefined : json['critical_options'],
         'extensions': json['extensions'] == null ? undefined : json['extensions'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'publicKey': json['public_key'] == null ? undefined : json['public_key'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'public_key': json['public_key'] == null ? undefined : json['public_key'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'validPrincipals': json['valid_principals'] == null ? undefined : json['valid_principals'],
+        'valid_principals': json['valid_principals'] == null ? undefined : json['valid_principals'],
     };
 }
 
@@ -101,13 +101,13 @@ export function SshSignCertificateRequestToJSONTyped(value?: SshSignCertificateR
 
     return {
         
-        'cert_type': value['certType'],
-        'critical_options': value['criticalOptions'],
+        'cert_type': value['cert_type'],
+        'critical_options': value['critical_options'],
         'extensions': value['extensions'],
-        'key_id': value['keyId'],
-        'public_key': value['publicKey'],
+        'key_id': value['key_id'],
+        'public_key': value['public_key'],
         'ttl': value['ttl'],
-        'valid_principals': value['validPrincipals'],
+        'valid_principals': value['valid_principals'],
     };
 }
 

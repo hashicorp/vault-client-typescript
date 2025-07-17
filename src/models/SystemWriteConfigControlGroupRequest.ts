@@ -24,7 +24,7 @@ export interface SystemWriteConfigControlGroupRequest {
      * @type {string}
      * @memberof SystemWriteConfigControlGroupRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteConfigControlGroupRequestFromJSONTyped(json: any, ign
     }
     return {
         
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteConfigControlGroupRequestToJSONTyped(value?: SystemWr
 
     return {
         
-        'max_ttl': value['maxTtl'],
+        'max_ttl': value['max_ttl'],
     };
 }
 

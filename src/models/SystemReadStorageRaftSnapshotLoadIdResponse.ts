@@ -24,13 +24,13 @@ export interface SystemReadStorageRaftSnapshotLoadIdResponse {
      * @type {string}
      * @memberof SystemReadStorageRaftSnapshotLoadIdResponse
      */
-    autoSnapshotConfig?: string;
+    auto_snapshot_config?: string;
     /**
      * the id of the cluster
      * @type {string}
      * @memberof SystemReadStorageRaftSnapshotLoadIdResponse
      */
-    clusterId?: string;
+    cluster_id?: string;
     /**
      * error message if status is error
      * @type {string}
@@ -42,13 +42,13 @@ export interface SystemReadStorageRaftSnapshotLoadIdResponse {
      * @type {Date}
      * @memberof SystemReadStorageRaftSnapshotLoadIdResponse
      */
-    expiresAt?: Date;
+    expires_at?: Date;
     /**
      * unique id of the snapshot
      * @type {string}
      * @memberof SystemReadStorageRaftSnapshotLoadIdResponse
      */
-    snapshotId?: string;
+    snapshot_id?: string;
     /**
      * status of the snapshot, can be one of: loading, ready, error
      * @type {string}
@@ -60,7 +60,7 @@ export interface SystemReadStorageRaftSnapshotLoadIdResponse {
      * @type {string}
      * @memberof SystemReadStorageRaftSnapshotLoadIdResponse
      */
-    uploaderEntityId?: string;
+    uploader_entity_id?: string;
     /**
      * unique id of the snapshot
      * @type {string}
@@ -86,13 +86,13 @@ export function SystemReadStorageRaftSnapshotLoadIdResponseFromJSONTyped(json: a
     }
     return {
         
-        'autoSnapshotConfig': json['auto_snapshot_config'] == null ? undefined : json['auto_snapshot_config'],
-        'clusterId': json['cluster_id'] == null ? undefined : json['cluster_id'],
+        'auto_snapshot_config': json['auto_snapshot_config'] == null ? undefined : json['auto_snapshot_config'],
+        'cluster_id': json['cluster_id'] == null ? undefined : json['cluster_id'],
         'error': json['error'] == null ? undefined : json['error'],
-        'expiresAt': json['expires_at'] == null ? undefined : (new Date(json['expires_at'])),
-        'snapshotId': json['snapshot_id'] == null ? undefined : json['snapshot_id'],
+        'expires_at': json['expires_at'] == null ? undefined : (new Date(json['expires_at'])),
+        'snapshot_id': json['snapshot_id'] == null ? undefined : json['snapshot_id'],
         'status': json['status'] == null ? undefined : json['status'],
-        'uploaderEntityId': json['uploader_entity_id'] == null ? undefined : json['uploader_entity_id'],
+        'uploader_entity_id': json['uploader_entity_id'] == null ? undefined : json['uploader_entity_id'],
         'url': json['url'] == null ? undefined : json['url'],
     };
 }
@@ -108,13 +108,13 @@ export function SystemReadStorageRaftSnapshotLoadIdResponseToJSONTyped(value?: S
 
     return {
         
-        'auto_snapshot_config': value['autoSnapshotConfig'],
-        'cluster_id': value['clusterId'],
+        'auto_snapshot_config': value['auto_snapshot_config'],
+        'cluster_id': value['cluster_id'],
         'error': value['error'],
-        'expires_at': value['expiresAt'] == null ? undefined : ((value['expiresAt']).toISOString()),
-        'snapshot_id': value['snapshotId'],
+        'expires_at': value['expires_at'] == null ? undefined : ((value['expires_at']).toISOString()),
+        'snapshot_id': value['snapshot_id'],
         'status': value['status'],
-        'uploader_entity_id': value['uploaderEntityId'],
+        'uploader_entity_id': value['uploader_entity_id'],
         'url': value['url'],
     };
 }

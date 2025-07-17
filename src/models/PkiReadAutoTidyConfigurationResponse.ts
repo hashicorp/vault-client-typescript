@@ -24,7 +24,7 @@ export interface PkiReadAutoTidyConfigurationResponse {
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    acmeAccountSafetyBuffer?: number;
+    acme_account_safety_buffer?: number;
     /**
      * Specifies whether automatic tidy is enabled or not
      * @type {boolean}
@@ -36,115 +36,115 @@ export interface PkiReadAutoTidyConfigurationResponse {
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    intervalDuration?: number;
+    interval_duration?: number;
     /**
      * Issuer safety buffer
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    issuerSafetyBuffer?: number;
+    issuer_safety_buffer?: number;
     /**
      * 
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    maintainStoredCertificateCounts?: boolean;
+    maintain_stored_certificate_counts?: boolean;
     /**
      * The maximum amount of time in seconds auto-tidy will be delayed after startup
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    maxStartupBackoffDuration?: number;
+    max_startup_backoff_duration?: number;
     /**
      * The minimum amount of time in seconds auto-tidy will be delayed after startup
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    minStartupBackoffDuration?: number;
+    min_startup_backoff_duration?: number;
     /**
      * Duration to pause between tidying certificates
      * @type {string}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    pauseDuration?: string;
+    pause_duration?: string;
     /**
      * 
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    publishStoredCertificateCountMetrics?: boolean;
+    publish_stored_certificate_count_metrics?: boolean;
     /**
      * 
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    revocationQueueSafetyBuffer?: number;
+    revocation_queue_safety_buffer?: number;
     /**
      * Safety buffer time duration
      * @type {number}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    safetyBuffer?: number;
+    safety_buffer?: number;
     /**
      * Tidy Unused Acme Accounts, and Orders
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyAcme?: boolean;
+    tidy_acme?: boolean;
     /**
      * Tidy cert metadata
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyCertMetadata?: boolean;
+    tidy_cert_metadata?: boolean;
     /**
      * Specifies whether to tidy up the certificate store
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyCertStore?: boolean;
+    tidy_cert_store?: boolean;
     /**
      * Tidy CMPv2 nonce store
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyCmpv2NonceStore?: boolean;
+    tidy_cmpv2_nonce_store?: boolean;
     /**
      * Tidy the cross-cluster revoked certificate store
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyCrossClusterRevokedCerts?: boolean;
+    tidy_cross_cluster_revoked_certs?: boolean;
     /**
      * Specifies whether tidy expired issuers
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyExpiredIssuers?: boolean;
+    tidy_expired_issuers?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyMoveLegacyCaBundle?: boolean;
+    tidy_move_legacy_ca_bundle?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyRevocationQueue?: boolean;
+    tidy_revocation_queue?: boolean;
     /**
      * Specifies whether to associate revoked certificates with their corresponding issuers
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyRevokedCertIssuerAssociations?: boolean;
+    tidy_revoked_cert_issuer_associations?: boolean;
     /**
      * Specifies whether to remove all invalid and expired certificates from storage
      * @type {boolean}
      * @memberof PkiReadAutoTidyConfigurationResponse
      */
-    tidyRevokedCerts?: boolean;
+    tidy_revoked_certs?: boolean;
 }
 
 /**
@@ -164,27 +164,27 @@ export function PkiReadAutoTidyConfigurationResponseFromJSONTyped(json: any, ign
     }
     return {
         
-        'acmeAccountSafetyBuffer': json['acme_account_safety_buffer'] == null ? undefined : json['acme_account_safety_buffer'],
+        'acme_account_safety_buffer': json['acme_account_safety_buffer'] == null ? undefined : json['acme_account_safety_buffer'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'intervalDuration': json['interval_duration'] == null ? undefined : json['interval_duration'],
-        'issuerSafetyBuffer': json['issuer_safety_buffer'] == null ? undefined : json['issuer_safety_buffer'],
-        'maintainStoredCertificateCounts': json['maintain_stored_certificate_counts'] == null ? undefined : json['maintain_stored_certificate_counts'],
-        'maxStartupBackoffDuration': json['max_startup_backoff_duration'] == null ? undefined : json['max_startup_backoff_duration'],
-        'minStartupBackoffDuration': json['min_startup_backoff_duration'] == null ? undefined : json['min_startup_backoff_duration'],
-        'pauseDuration': json['pause_duration'] == null ? undefined : json['pause_duration'],
-        'publishStoredCertificateCountMetrics': json['publish_stored_certificate_count_metrics'] == null ? undefined : json['publish_stored_certificate_count_metrics'],
-        'revocationQueueSafetyBuffer': json['revocation_queue_safety_buffer'] == null ? undefined : json['revocation_queue_safety_buffer'],
-        'safetyBuffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
-        'tidyAcme': json['tidy_acme'] == null ? undefined : json['tidy_acme'],
-        'tidyCertMetadata': json['tidy_cert_metadata'] == null ? undefined : json['tidy_cert_metadata'],
-        'tidyCertStore': json['tidy_cert_store'] == null ? undefined : json['tidy_cert_store'],
-        'tidyCmpv2NonceStore': json['tidy_cmpv2_nonce_store'] == null ? undefined : json['tidy_cmpv2_nonce_store'],
-        'tidyCrossClusterRevokedCerts': json['tidy_cross_cluster_revoked_certs'] == null ? undefined : json['tidy_cross_cluster_revoked_certs'],
-        'tidyExpiredIssuers': json['tidy_expired_issuers'] == null ? undefined : json['tidy_expired_issuers'],
-        'tidyMoveLegacyCaBundle': json['tidy_move_legacy_ca_bundle'] == null ? undefined : json['tidy_move_legacy_ca_bundle'],
-        'tidyRevocationQueue': json['tidy_revocation_queue'] == null ? undefined : json['tidy_revocation_queue'],
-        'tidyRevokedCertIssuerAssociations': json['tidy_revoked_cert_issuer_associations'] == null ? undefined : json['tidy_revoked_cert_issuer_associations'],
-        'tidyRevokedCerts': json['tidy_revoked_certs'] == null ? undefined : json['tidy_revoked_certs'],
+        'interval_duration': json['interval_duration'] == null ? undefined : json['interval_duration'],
+        'issuer_safety_buffer': json['issuer_safety_buffer'] == null ? undefined : json['issuer_safety_buffer'],
+        'maintain_stored_certificate_counts': json['maintain_stored_certificate_counts'] == null ? undefined : json['maintain_stored_certificate_counts'],
+        'max_startup_backoff_duration': json['max_startup_backoff_duration'] == null ? undefined : json['max_startup_backoff_duration'],
+        'min_startup_backoff_duration': json['min_startup_backoff_duration'] == null ? undefined : json['min_startup_backoff_duration'],
+        'pause_duration': json['pause_duration'] == null ? undefined : json['pause_duration'],
+        'publish_stored_certificate_count_metrics': json['publish_stored_certificate_count_metrics'] == null ? undefined : json['publish_stored_certificate_count_metrics'],
+        'revocation_queue_safety_buffer': json['revocation_queue_safety_buffer'] == null ? undefined : json['revocation_queue_safety_buffer'],
+        'safety_buffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
+        'tidy_acme': json['tidy_acme'] == null ? undefined : json['tidy_acme'],
+        'tidy_cert_metadata': json['tidy_cert_metadata'] == null ? undefined : json['tidy_cert_metadata'],
+        'tidy_cert_store': json['tidy_cert_store'] == null ? undefined : json['tidy_cert_store'],
+        'tidy_cmpv2_nonce_store': json['tidy_cmpv2_nonce_store'] == null ? undefined : json['tidy_cmpv2_nonce_store'],
+        'tidy_cross_cluster_revoked_certs': json['tidy_cross_cluster_revoked_certs'] == null ? undefined : json['tidy_cross_cluster_revoked_certs'],
+        'tidy_expired_issuers': json['tidy_expired_issuers'] == null ? undefined : json['tidy_expired_issuers'],
+        'tidy_move_legacy_ca_bundle': json['tidy_move_legacy_ca_bundle'] == null ? undefined : json['tidy_move_legacy_ca_bundle'],
+        'tidy_revocation_queue': json['tidy_revocation_queue'] == null ? undefined : json['tidy_revocation_queue'],
+        'tidy_revoked_cert_issuer_associations': json['tidy_revoked_cert_issuer_associations'] == null ? undefined : json['tidy_revoked_cert_issuer_associations'],
+        'tidy_revoked_certs': json['tidy_revoked_certs'] == null ? undefined : json['tidy_revoked_certs'],
     };
 }
 
@@ -199,27 +199,27 @@ export function PkiReadAutoTidyConfigurationResponseToJSONTyped(value?: PkiReadA
 
     return {
         
-        'acme_account_safety_buffer': value['acmeAccountSafetyBuffer'],
+        'acme_account_safety_buffer': value['acme_account_safety_buffer'],
         'enabled': value['enabled'],
-        'interval_duration': value['intervalDuration'],
-        'issuer_safety_buffer': value['issuerSafetyBuffer'],
-        'maintain_stored_certificate_counts': value['maintainStoredCertificateCounts'],
-        'max_startup_backoff_duration': value['maxStartupBackoffDuration'],
-        'min_startup_backoff_duration': value['minStartupBackoffDuration'],
-        'pause_duration': value['pauseDuration'],
-        'publish_stored_certificate_count_metrics': value['publishStoredCertificateCountMetrics'],
-        'revocation_queue_safety_buffer': value['revocationQueueSafetyBuffer'],
-        'safety_buffer': value['safetyBuffer'],
-        'tidy_acme': value['tidyAcme'],
-        'tidy_cert_metadata': value['tidyCertMetadata'],
-        'tidy_cert_store': value['tidyCertStore'],
-        'tidy_cmpv2_nonce_store': value['tidyCmpv2NonceStore'],
-        'tidy_cross_cluster_revoked_certs': value['tidyCrossClusterRevokedCerts'],
-        'tidy_expired_issuers': value['tidyExpiredIssuers'],
-        'tidy_move_legacy_ca_bundle': value['tidyMoveLegacyCaBundle'],
-        'tidy_revocation_queue': value['tidyRevocationQueue'],
-        'tidy_revoked_cert_issuer_associations': value['tidyRevokedCertIssuerAssociations'],
-        'tidy_revoked_certs': value['tidyRevokedCerts'],
+        'interval_duration': value['interval_duration'],
+        'issuer_safety_buffer': value['issuer_safety_buffer'],
+        'maintain_stored_certificate_counts': value['maintain_stored_certificate_counts'],
+        'max_startup_backoff_duration': value['max_startup_backoff_duration'],
+        'min_startup_backoff_duration': value['min_startup_backoff_duration'],
+        'pause_duration': value['pause_duration'],
+        'publish_stored_certificate_count_metrics': value['publish_stored_certificate_count_metrics'],
+        'revocation_queue_safety_buffer': value['revocation_queue_safety_buffer'],
+        'safety_buffer': value['safety_buffer'],
+        'tidy_acme': value['tidy_acme'],
+        'tidy_cert_metadata': value['tidy_cert_metadata'],
+        'tidy_cert_store': value['tidy_cert_store'],
+        'tidy_cmpv2_nonce_store': value['tidy_cmpv2_nonce_store'],
+        'tidy_cross_cluster_revoked_certs': value['tidy_cross_cluster_revoked_certs'],
+        'tidy_expired_issuers': value['tidy_expired_issuers'],
+        'tidy_move_legacy_ca_bundle': value['tidy_move_legacy_ca_bundle'],
+        'tidy_revocation_queue': value['tidy_revocation_queue'],
+        'tidy_revoked_cert_issuer_associations': value['tidy_revoked_cert_issuer_associations'],
+        'tidy_revoked_certs': value['tidy_revoked_certs'],
     };
 }
 

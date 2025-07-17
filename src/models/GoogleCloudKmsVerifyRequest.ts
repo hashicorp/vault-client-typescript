@@ -30,7 +30,7 @@ export interface GoogleCloudKmsVerifyRequest {
      * @type {number}
      * @memberof GoogleCloudKmsVerifyRequest
      */
-    keyVersion?: number;
+    key_version?: number;
     /**
      * Base64-encoded signature to use for verification. This field is required.
      * @type {string}
@@ -57,7 +57,7 @@ export function GoogleCloudKmsVerifyRequestFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'digest': json['digest'] == null ? undefined : json['digest'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'signature': json['signature'] == null ? undefined : json['signature'],
     };
 }
@@ -74,7 +74,7 @@ export function GoogleCloudKmsVerifyRequestToJSONTyped(value?: GoogleCloudKmsVer
     return {
         
         'digest': value['digest'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
         'signature': value['signature'],
     };
 }

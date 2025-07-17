@@ -24,7 +24,7 @@ export interface TransformValidateTokenRequest {
      * @type {Array<object>}
      * @memberof TransformValidateTokenRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * Name of the transformation.
      * @type {string}
@@ -56,7 +56,7 @@ export function TransformValidateTokenRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'transformation': json['transformation'] == null ? undefined : json['transformation'],
         'value': json['value'] == null ? undefined : json['value'],
     };
@@ -73,7 +73,7 @@ export function TransformValidateTokenRequestToJSONTyped(value?: TransformValida
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'transformation': value['transformation'],
         'value': value['value'],
     };

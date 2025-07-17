@@ -30,13 +30,13 @@ export interface KubernetesGenerateCredentialsRequest {
      * @type {boolean}
      * @memberof KubernetesGenerateCredentialsRequest
      */
-    clusterRoleBinding?: boolean;
+    cluster_role_binding?: boolean;
     /**
      * The name of the Kubernetes namespace in which to generate the credentials
      * @type {string}
      * @memberof KubernetesGenerateCredentialsRequest
      */
-    kubernetesNamespace: string;
+    kubernetes_namespace: string;
     /**
      * The TTL of the generated credentials
      * @type {string}
@@ -49,7 +49,7 @@ export interface KubernetesGenerateCredentialsRequest {
  * Check if a given object implements the KubernetesGenerateCredentialsRequest interface.
  */
 export function instanceOfKubernetesGenerateCredentialsRequest(value: object): value is KubernetesGenerateCredentialsRequest {
-    if (!('kubernetesNamespace' in value) || value['kubernetesNamespace'] === undefined) return false;
+    if (!('kubernetes_namespace' in value) || value['kubernetes_namespace'] === undefined) return false;
     return true;
 }
 
@@ -64,8 +64,8 @@ export function KubernetesGenerateCredentialsRequestFromJSONTyped(json: any, ign
     return {
         
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
-        'clusterRoleBinding': json['cluster_role_binding'] == null ? undefined : json['cluster_role_binding'],
-        'kubernetesNamespace': json['kubernetes_namespace'],
+        'cluster_role_binding': json['cluster_role_binding'] == null ? undefined : json['cluster_role_binding'],
+        'kubernetes_namespace': json['kubernetes_namespace'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -82,8 +82,8 @@ export function KubernetesGenerateCredentialsRequestToJSONTyped(value?: Kubernet
     return {
         
         'audiences': value['audiences'],
-        'cluster_role_binding': value['clusterRoleBinding'],
-        'kubernetes_namespace': value['kubernetesNamespace'],
+        'cluster_role_binding': value['cluster_role_binding'],
+        'kubernetes_namespace': value['kubernetes_namespace'],
         'ttl': value['ttl'],
     };
 }

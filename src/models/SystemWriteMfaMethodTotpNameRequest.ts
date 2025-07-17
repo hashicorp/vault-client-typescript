@@ -42,13 +42,13 @@ export interface SystemWriteMfaMethodTotpNameRequest {
      * @type {number}
      * @memberof SystemWriteMfaMethodTotpNameRequest
      */
-    keySize?: number;
+    key_size?: number;
     /**
      * Max number of allowed validation attempts.
      * @type {number}
      * @memberof SystemWriteMfaMethodTotpNameRequest
      */
-    maxValidationAttempts?: number;
+    max_validation_attempts?: number;
     /**
      * The length of time used to generate a counter for the TOTP token calculation.
      * @type {string}
@@ -60,7 +60,7 @@ export interface SystemWriteMfaMethodTotpNameRequest {
      * @type {number}
      * @memberof SystemWriteMfaMethodTotpNameRequest
      */
-    qrSize?: number;
+    qr_size?: number;
     /**
      * The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1.
      * @type {number}
@@ -89,10 +89,10 @@ export function SystemWriteMfaMethodTotpNameRequestFromJSONTyped(json: any, igno
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
         'digits': json['digits'] == null ? undefined : json['digits'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
-        'keySize': json['key_size'] == null ? undefined : json['key_size'],
-        'maxValidationAttempts': json['max_validation_attempts'] == null ? undefined : json['max_validation_attempts'],
+        'key_size': json['key_size'] == null ? undefined : json['key_size'],
+        'max_validation_attempts': json['max_validation_attempts'] == null ? undefined : json['max_validation_attempts'],
         'period': json['period'] == null ? undefined : json['period'],
-        'qrSize': json['qr_size'] == null ? undefined : json['qr_size'],
+        'qr_size': json['qr_size'] == null ? undefined : json['qr_size'],
         'skew': json['skew'] == null ? undefined : json['skew'],
     };
 }
@@ -111,10 +111,10 @@ export function SystemWriteMfaMethodTotpNameRequestToJSONTyped(value?: SystemWri
         'algorithm': value['algorithm'],
         'digits': value['digits'],
         'issuer': value['issuer'],
-        'key_size': value['keySize'],
-        'max_validation_attempts': value['maxValidationAttempts'],
+        'key_size': value['key_size'],
+        'max_validation_attempts': value['max_validation_attempts'],
         'period': value['period'],
-        'qr_size': value['qrSize'],
+        'qr_size': value['qr_size'],
         'skew': value['skew'],
     };
 }

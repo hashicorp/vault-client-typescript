@@ -24,7 +24,7 @@ export interface OidcRotateKeyRequest {
      * @type {string}
      * @memberof OidcRotateKeyRequest
      */
-    verificationTtl?: string;
+    verification_ttl?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function OidcRotateKeyRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'verificationTtl': json['verification_ttl'] == null ? undefined : json['verification_ttl'],
+        'verification_ttl': json['verification_ttl'] == null ? undefined : json['verification_ttl'],
     };
 }
 
@@ -59,7 +59,7 @@ export function OidcRotateKeyRequestToJSONTyped(value?: OidcRotateKeyRequest | n
 
     return {
         
-        'verification_ttl': value['verificationTtl'],
+        'verification_ttl': value['verification_ttl'],
     };
 }
 

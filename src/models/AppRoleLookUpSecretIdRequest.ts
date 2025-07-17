@@ -24,7 +24,7 @@ export interface AppRoleLookUpSecretIdRequest {
      * @type {string}
      * @memberof AppRoleLookUpSecretIdRequest
      */
-    secretId?: string;
+    secret_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleLookUpSecretIdRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'secretId': json['secret_id'] == null ? undefined : json['secret_id'],
+        'secret_id': json['secret_id'] == null ? undefined : json['secret_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleLookUpSecretIdRequestToJSONTyped(value?: AppRoleLookUpSec
 
     return {
         
-        'secret_id': value['secretId'],
+        'secret_id': value['secret_id'],
     };
 }
 

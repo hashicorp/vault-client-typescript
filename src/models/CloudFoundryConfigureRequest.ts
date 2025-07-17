@@ -24,101 +24,101 @@ export interface CloudFoundryConfigureRequest {
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfApiAddr?: string;
+    cf_api_addr?: string;
     /**
      * The PEM-format certificates that are presented for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfApiMutualTlsCertificate?: string;
+    cf_api_mutual_tls_certificate?: string;
     /**
      * The PEM-format private key that are used for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfApiMutualTlsKey?: string;
+    cf_api_mutual_tls_key?: string;
     /**
      * The PEM-format CA certificates that are acceptable for the CF API to present.
      * @type {Array<string>}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfApiTrustedCertificates?: Array<string>;
+    cf_api_trusted_certificates?: Array<string>;
     /**
      * The client id for CF’s API.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfClientId?: string;
+    cf_client_id?: string;
     /**
      * The client secret for CF’s API.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfClientSecret?: string;
+    cf_client_secret?: string;
     /**
      * The password for CF’s API.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfPassword?: string;
+    cf_password?: string;
     /**
      * The timeout for calls to CF’s API.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfTimeout?: string;
+    cf_timeout?: string;
     /**
      * The username for CF’s API.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    cfUsername?: string;
+    cf_username?: string;
     /**
      * The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.
      * @type {Array<string>}
      * @memberof CloudFoundryConfigureRequest
      */
-    identityCaCertificates?: Array<string>;
+    identity_ca_certificates?: Array<string>;
     /**
      * Duration in seconds for the maximum acceptable length in the future a "signing_time" can be. Useful for clock drift. Set low to reduce the opportunity for replay attacks.
      * @type {number}
      * @memberof CloudFoundryConfigureRequest
      */
-    loginMaxSecondsNotAfter?: number;
+    login_max_seconds_not_after?: number;
     /**
      * Duration in seconds for the maximum acceptable age of a "signing_time". Useful for clock drift. Set low to reduce the opportunity for replay attacks.
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      */
-    loginMaxSecondsNotBefore?: string;
+    login_max_seconds_not_before?: string;
     /**
      * Deprecated. Please use "cf_api_addr".
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      * @deprecated
      */
-    pcfApiAddr?: string;
+    pcf_api_addr?: string;
     /**
      * Deprecated. Please use "cf_api_trusted_certificates".
      * @type {Array<string>}
      * @memberof CloudFoundryConfigureRequest
      * @deprecated
      */
-    pcfApiTrustedCertificates?: Array<string>;
+    pcf_api_trusted_certificates?: Array<string>;
     /**
      * Deprecated. Please use "cf_password".
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      * @deprecated
      */
-    pcfPassword?: string;
+    pcf_password?: string;
     /**
      * Deprecated. Please use "cf_username".
      * @type {string}
      * @memberof CloudFoundryConfigureRequest
      * @deprecated
      */
-    pcfUsername?: string;
+    pcf_username?: string;
 }
 
 /**
@@ -138,22 +138,22 @@ export function CloudFoundryConfigureRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'cfApiAddr': json['cf_api_addr'] == null ? undefined : json['cf_api_addr'],
-        'cfApiMutualTlsCertificate': json['cf_api_mutual_tls_certificate'] == null ? undefined : json['cf_api_mutual_tls_certificate'],
-        'cfApiMutualTlsKey': json['cf_api_mutual_tls_key'] == null ? undefined : json['cf_api_mutual_tls_key'],
-        'cfApiTrustedCertificates': json['cf_api_trusted_certificates'] == null ? undefined : json['cf_api_trusted_certificates'],
-        'cfClientId': json['cf_client_id'] == null ? undefined : json['cf_client_id'],
-        'cfClientSecret': json['cf_client_secret'] == null ? undefined : json['cf_client_secret'],
-        'cfPassword': json['cf_password'] == null ? undefined : json['cf_password'],
-        'cfTimeout': json['cf_timeout'] == null ? undefined : json['cf_timeout'],
-        'cfUsername': json['cf_username'] == null ? undefined : json['cf_username'],
-        'identityCaCertificates': json['identity_ca_certificates'] == null ? undefined : json['identity_ca_certificates'],
-        'loginMaxSecondsNotAfter': json['login_max_seconds_not_after'] == null ? undefined : json['login_max_seconds_not_after'],
-        'loginMaxSecondsNotBefore': json['login_max_seconds_not_before'] == null ? undefined : json['login_max_seconds_not_before'],
-        'pcfApiAddr': json['pcf_api_addr'] == null ? undefined : json['pcf_api_addr'],
-        'pcfApiTrustedCertificates': json['pcf_api_trusted_certificates'] == null ? undefined : json['pcf_api_trusted_certificates'],
-        'pcfPassword': json['pcf_password'] == null ? undefined : json['pcf_password'],
-        'pcfUsername': json['pcf_username'] == null ? undefined : json['pcf_username'],
+        'cf_api_addr': json['cf_api_addr'] == null ? undefined : json['cf_api_addr'],
+        'cf_api_mutual_tls_certificate': json['cf_api_mutual_tls_certificate'] == null ? undefined : json['cf_api_mutual_tls_certificate'],
+        'cf_api_mutual_tls_key': json['cf_api_mutual_tls_key'] == null ? undefined : json['cf_api_mutual_tls_key'],
+        'cf_api_trusted_certificates': json['cf_api_trusted_certificates'] == null ? undefined : json['cf_api_trusted_certificates'],
+        'cf_client_id': json['cf_client_id'] == null ? undefined : json['cf_client_id'],
+        'cf_client_secret': json['cf_client_secret'] == null ? undefined : json['cf_client_secret'],
+        'cf_password': json['cf_password'] == null ? undefined : json['cf_password'],
+        'cf_timeout': json['cf_timeout'] == null ? undefined : json['cf_timeout'],
+        'cf_username': json['cf_username'] == null ? undefined : json['cf_username'],
+        'identity_ca_certificates': json['identity_ca_certificates'] == null ? undefined : json['identity_ca_certificates'],
+        'login_max_seconds_not_after': json['login_max_seconds_not_after'] == null ? undefined : json['login_max_seconds_not_after'],
+        'login_max_seconds_not_before': json['login_max_seconds_not_before'] == null ? undefined : json['login_max_seconds_not_before'],
+        'pcf_api_addr': json['pcf_api_addr'] == null ? undefined : json['pcf_api_addr'],
+        'pcf_api_trusted_certificates': json['pcf_api_trusted_certificates'] == null ? undefined : json['pcf_api_trusted_certificates'],
+        'pcf_password': json['pcf_password'] == null ? undefined : json['pcf_password'],
+        'pcf_username': json['pcf_username'] == null ? undefined : json['pcf_username'],
     };
 }
 
@@ -168,22 +168,22 @@ export function CloudFoundryConfigureRequestToJSONTyped(value?: CloudFoundryConf
 
     return {
         
-        'cf_api_addr': value['cfApiAddr'],
-        'cf_api_mutual_tls_certificate': value['cfApiMutualTlsCertificate'],
-        'cf_api_mutual_tls_key': value['cfApiMutualTlsKey'],
-        'cf_api_trusted_certificates': value['cfApiTrustedCertificates'],
-        'cf_client_id': value['cfClientId'],
-        'cf_client_secret': value['cfClientSecret'],
-        'cf_password': value['cfPassword'],
-        'cf_timeout': value['cfTimeout'],
-        'cf_username': value['cfUsername'],
-        'identity_ca_certificates': value['identityCaCertificates'],
-        'login_max_seconds_not_after': value['loginMaxSecondsNotAfter'],
-        'login_max_seconds_not_before': value['loginMaxSecondsNotBefore'],
-        'pcf_api_addr': value['pcfApiAddr'],
-        'pcf_api_trusted_certificates': value['pcfApiTrustedCertificates'],
-        'pcf_password': value['pcfPassword'],
-        'pcf_username': value['pcfUsername'],
+        'cf_api_addr': value['cf_api_addr'],
+        'cf_api_mutual_tls_certificate': value['cf_api_mutual_tls_certificate'],
+        'cf_api_mutual_tls_key': value['cf_api_mutual_tls_key'],
+        'cf_api_trusted_certificates': value['cf_api_trusted_certificates'],
+        'cf_client_id': value['cf_client_id'],
+        'cf_client_secret': value['cf_client_secret'],
+        'cf_password': value['cf_password'],
+        'cf_timeout': value['cf_timeout'],
+        'cf_username': value['cf_username'],
+        'identity_ca_certificates': value['identity_ca_certificates'],
+        'login_max_seconds_not_after': value['login_max_seconds_not_after'],
+        'login_max_seconds_not_before': value['login_max_seconds_not_before'],
+        'pcf_api_addr': value['pcf_api_addr'],
+        'pcf_api_trusted_certificates': value['pcf_api_trusted_certificates'],
+        'pcf_password': value['pcf_password'],
+        'pcf_username': value['pcf_username'],
     };
 }
 

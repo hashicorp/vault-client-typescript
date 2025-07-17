@@ -30,7 +30,7 @@ export interface SystemWriteQuotasLeaseCountNameRequest {
      * @type {number}
      * @memberof SystemWriteQuotasLeaseCountNameRequest
      */
-    maxLeases?: number;
+    max_leases?: number;
     /**
      * Path including the applicable namespace prefix.
      * @type {string}
@@ -69,7 +69,7 @@ export function SystemWriteQuotasLeaseCountNameRequestFromJSONTyped(json: any, i
     return {
         
         'inheritable': json['inheritable'] == null ? undefined : json['inheritable'],
-        'maxLeases': json['max_leases'] == null ? undefined : json['max_leases'],
+        'max_leases': json['max_leases'] == null ? undefined : json['max_leases'],
         'path': json['path'] == null ? undefined : json['path'],
         'role': json['role'] == null ? undefined : json['role'],
         'type': json['type'] == null ? undefined : json['type'],
@@ -88,7 +88,7 @@ export function SystemWriteQuotasLeaseCountNameRequestToJSONTyped(value?: System
     return {
         
         'inheritable': value['inheritable'],
-        'max_leases': value['maxLeases'],
+        'max_leases': value['max_leases'],
         'path': value['path'],
         'role': value['role'],
         'type': value['type'],

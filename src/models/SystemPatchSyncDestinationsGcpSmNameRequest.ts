@@ -24,19 +24,19 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      * @type {Array<string>}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * GCP IAM service account credentials JSON string to access the secret manager
      * @type {string}
@@ -48,19 +48,19 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      * @type {object}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    customTags?: object;
+    custom_tags?: object;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys.
      * @type {string}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    globalKmsKey?: string;
+    global_kms_key?: string;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -72,13 +72,13 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      * @type {object}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    locationalKmsKeys?: object;
+    locational_kms_keys?: object;
     /**
      * The target project to manage secrets in. If set, overrides the project derived from the service account JSON credentials or application default credentials. The credentials must be authorized to perform actions in the target project.
      * @type {string}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    projectId?: string;
+    project_id?: string;
     /**
      * Asynchronously unsyncs all associated secrets with the destination then deletes the destination config.
      * @type {boolean}
@@ -90,19 +90,19 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      * @type {Array<string>}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    replicationLocations?: Array<string>;
+    replication_locations?: Array<string>;
     /**
      * Template describing how to generate external secret names. Supports a subset of the Go Template syntax.
      * @type {string}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
     /**
      * List of custom tags to remove for patch requests. This field is ignored on create and update requests.
      * @type {Array<string>}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
-    tagsToRemove?: Array<string>;
+    tags_to_remove?: Array<string>;
 }
 
 /**
@@ -122,20 +122,20 @@ export function SystemPatchSyncDestinationsGcpSmNameRequestFromJSONTyped(json: a
     }
     return {
         
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
         'credentials': json['credentials'] == null ? undefined : json['credentials'],
-        'customTags': json['custom_tags'] == null ? undefined : json['custom_tags'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
-        'globalKmsKey': json['global_kms_key'] == null ? undefined : json['global_kms_key'],
+        'custom_tags': json['custom_tags'] == null ? undefined : json['custom_tags'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'global_kms_key': json['global_kms_key'] == null ? undefined : json['global_kms_key'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
-        'locationalKmsKeys': json['locational_kms_keys'] == null ? undefined : json['locational_kms_keys'],
-        'projectId': json['project_id'] == null ? undefined : json['project_id'],
+        'locational_kms_keys': json['locational_kms_keys'] == null ? undefined : json['locational_kms_keys'],
+        'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'replicationLocations': json['replication_locations'] == null ? undefined : json['replication_locations'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
-        'tagsToRemove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
+        'replication_locations': json['replication_locations'] == null ? undefined : json['replication_locations'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'tags_to_remove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
     };
 }
 
@@ -150,20 +150,20 @@ export function SystemPatchSyncDestinationsGcpSmNameRequestToJSONTyped(value?: S
 
     return {
         
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
         'credentials': value['credentials'],
-        'custom_tags': value['customTags'],
-        'disable_strict_networking': value['disableStrictNetworking'],
-        'global_kms_key': value['globalKmsKey'],
+        'custom_tags': value['custom_tags'],
+        'disable_strict_networking': value['disable_strict_networking'],
+        'global_kms_key': value['global_kms_key'],
         'granularity': value['granularity'],
-        'locational_kms_keys': value['locationalKmsKeys'],
-        'project_id': value['projectId'],
+        'locational_kms_keys': value['locational_kms_keys'],
+        'project_id': value['project_id'],
         'purge': value['purge'],
-        'replication_locations': value['replicationLocations'],
-        'secret_name_template': value['secretNameTemplate'],
-        'tags_to_remove': value['tagsToRemove'],
+        'replication_locations': value['replication_locations'],
+        'secret_name_template': value['secret_name_template'],
+        'tags_to_remove': value['tags_to_remove'],
     };
 }
 

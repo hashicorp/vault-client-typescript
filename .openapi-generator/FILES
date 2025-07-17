@@ -1,6 +1,5 @@
 .npmignore
 README.md
-package.json
 src/apis/AuthApi.ts
 src/apis/IdentityApi.ts
 src/apis/SecretsApi.ts

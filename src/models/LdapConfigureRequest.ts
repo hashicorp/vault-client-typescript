@@ -24,7 +24,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    anonymousGroupSearch?: boolean;
+    anonymous_group_search?: boolean;
     /**
      * LDAP DN for searching for the user DN (optional)
      * @type {string}
@@ -42,7 +42,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    caseSensitiveNames?: boolean;
+    case_sensitive_names?: boolean;
     /**
      * CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
      * @type {string}
@@ -54,37 +54,37 @@ export interface LdapConfigureRequest {
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    clientTlsCert?: string;
+    client_tls_cert?: string;
     /**
      * Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    clientTlsKey?: string;
+    client_tls_key?: string;
     /**
      * Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    connectionTimeout?: string;
+    connection_timeout?: string;
     /**
      * Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    denyNullBind?: boolean;
+    deny_null_bind?: boolean;
     /**
      * When aliases should be dereferenced on search operations. Accepted values are 'never', 'finding', 'searching', 'always'. Defaults to 'never'.
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    dereferenceAliases?: LdapConfigureRequestDereferenceAliasesEnum;
+    dereference_aliases?: LdapConfigureRequestDereferenceAliasesEnum;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * Use anonymous bind to discover the bind DN of a user (optional)
      * @type {boolean}
@@ -96,7 +96,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    enableSamaccountnameLogin?: boolean;
+    enable_samaccountname_login?: boolean;
     /**
      * LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: "cn" or "memberOf", etc. Default: cn
      * @type {string}
@@ -120,7 +120,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    insecureTls?: boolean;
+    insecure_tls?: boolean;
     /**
      * The desired length of passwords that Vault generates.
      * @type {number}
@@ -133,43 +133,43 @@ export interface LdapConfigureRequest {
      * @type {number}
      * @memberof LdapConfigureRequest
      */
-    maxPageSize?: number;
+    max_page_size?: number;
     /**
      * The maximum password time-to-live.
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Password policy to use to generate passwords
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    passwordPolicy?: string;
+    password_policy?: string;
     /**
      * Timeout, in seconds, for the connection when making requests against the server before returning back an error.
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    requestTimeout?: string;
+    request_timeout?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * The desired LDAP schema used when modifying user account passwords.
      * @type {string}
@@ -181,7 +181,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    skipStaticRoleImportRotation?: boolean;
+    skip_static_role_import_rotation?: boolean;
     /**
      * Issue a StartTLS command after establishing unencrypted connection (optional)
      * @type {boolean}
@@ -193,13 +193,13 @@ export interface LdapConfigureRequest {
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    tlsMaxVersion?: LdapConfigureRequestTlsMaxVersionEnum;
+    tls_max_version?: LdapConfigureRequestTlsMaxVersionEnum;
     /**
      * Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
      * @type {string}
      * @memberof LdapConfigureRequest
      */
-    tlsMinVersion?: LdapConfigureRequestTlsMinVersionEnum;
+    tls_min_version?: LdapConfigureRequestTlsMinVersionEnum;
     /**
      * The default password time-to-live.
      * @type {string}
@@ -223,13 +223,13 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    usePre111GroupCnBehavior?: boolean;
+    use_pre111_group_cn_behavior?: boolean;
     /**
      * If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    useTokenGroups?: boolean;
+    use_token_groups?: boolean;
     /**
      * Attribute used for users (default: cn)
      * @type {string}
@@ -253,7 +253,7 @@ export interface LdapConfigureRequest {
      * @type {boolean}
      * @memberof LdapConfigureRequest
      */
-    usernameAsAlias?: boolean;
+    username_as_alias?: boolean;
 }
 
 /**
@@ -305,45 +305,45 @@ export function LdapConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'anonymousGroupSearch': json['anonymous_group_search'] == null ? undefined : json['anonymous_group_search'],
+        'anonymous_group_search': json['anonymous_group_search'] == null ? undefined : json['anonymous_group_search'],
         'binddn': json['binddn'] == null ? undefined : json['binddn'],
         'bindpass': json['bindpass'] == null ? undefined : json['bindpass'],
-        'caseSensitiveNames': json['case_sensitive_names'] == null ? undefined : json['case_sensitive_names'],
+        'case_sensitive_names': json['case_sensitive_names'] == null ? undefined : json['case_sensitive_names'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'clientTlsCert': json['client_tls_cert'] == null ? undefined : json['client_tls_cert'],
-        'clientTlsKey': json['client_tls_key'] == null ? undefined : json['client_tls_key'],
-        'connectionTimeout': json['connection_timeout'] == null ? undefined : json['connection_timeout'],
-        'denyNullBind': json['deny_null_bind'] == null ? undefined : json['deny_null_bind'],
-        'dereferenceAliases': json['dereference_aliases'] == null ? undefined : json['dereference_aliases'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'client_tls_cert': json['client_tls_cert'] == null ? undefined : json['client_tls_cert'],
+        'client_tls_key': json['client_tls_key'] == null ? undefined : json['client_tls_key'],
+        'connection_timeout': json['connection_timeout'] == null ? undefined : json['connection_timeout'],
+        'deny_null_bind': json['deny_null_bind'] == null ? undefined : json['deny_null_bind'],
+        'dereference_aliases': json['dereference_aliases'] == null ? undefined : json['dereference_aliases'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'discoverdn': json['discoverdn'] == null ? undefined : json['discoverdn'],
-        'enableSamaccountnameLogin': json['enable_samaccountname_login'] == null ? undefined : json['enable_samaccountname_login'],
+        'enable_samaccountname_login': json['enable_samaccountname_login'] == null ? undefined : json['enable_samaccountname_login'],
         'groupattr': json['groupattr'] == null ? undefined : json['groupattr'],
         'groupdn': json['groupdn'] == null ? undefined : json['groupdn'],
         'groupfilter': json['groupfilter'] == null ? undefined : json['groupfilter'],
-        'insecureTls': json['insecure_tls'] == null ? undefined : json['insecure_tls'],
+        'insecure_tls': json['insecure_tls'] == null ? undefined : json['insecure_tls'],
         'length': json['length'] == null ? undefined : json['length'],
-        'maxPageSize': json['max_page_size'] == null ? undefined : json['max_page_size'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'passwordPolicy': json['password_policy'] == null ? undefined : json['password_policy'],
-        'requestTimeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'max_page_size': json['max_page_size'] == null ? undefined : json['max_page_size'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
+        'request_timeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'schema': json['schema'] == null ? undefined : json['schema'],
-        'skipStaticRoleImportRotation': json['skip_static_role_import_rotation'] == null ? undefined : json['skip_static_role_import_rotation'],
+        'skip_static_role_import_rotation': json['skip_static_role_import_rotation'] == null ? undefined : json['skip_static_role_import_rotation'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
-        'tlsMaxVersion': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
-        'tlsMinVersion': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
+        'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
+        'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
         'upndomain': json['upndomain'] == null ? undefined : json['upndomain'],
         'url': json['url'] == null ? undefined : json['url'],
-        'usePre111GroupCnBehavior': json['use_pre111_group_cn_behavior'] == null ? undefined : json['use_pre111_group_cn_behavior'],
-        'useTokenGroups': json['use_token_groups'] == null ? undefined : json['use_token_groups'],
+        'use_pre111_group_cn_behavior': json['use_pre111_group_cn_behavior'] == null ? undefined : json['use_pre111_group_cn_behavior'],
+        'use_token_groups': json['use_token_groups'] == null ? undefined : json['use_token_groups'],
         'userattr': json['userattr'] == null ? undefined : json['userattr'],
         'userdn': json['userdn'] == null ? undefined : json['userdn'],
         'userfilter': json['userfilter'] == null ? undefined : json['userfilter'],
-        'usernameAsAlias': json['username_as_alias'] == null ? undefined : json['username_as_alias'],
+        'username_as_alias': json['username_as_alias'] == null ? undefined : json['username_as_alias'],
     };
 }
 
@@ -358,45 +358,45 @@ export function LdapConfigureRequestToJSONTyped(value?: LdapConfigureRequest | n
 
     return {
         
-        'anonymous_group_search': value['anonymousGroupSearch'],
+        'anonymous_group_search': value['anonymous_group_search'],
         'binddn': value['binddn'],
         'bindpass': value['bindpass'],
-        'case_sensitive_names': value['caseSensitiveNames'],
+        'case_sensitive_names': value['case_sensitive_names'],
         'certificate': value['certificate'],
-        'client_tls_cert': value['clientTlsCert'],
-        'client_tls_key': value['clientTlsKey'],
-        'connection_timeout': value['connectionTimeout'],
-        'deny_null_bind': value['denyNullBind'],
-        'dereference_aliases': value['dereferenceAliases'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
+        'client_tls_cert': value['client_tls_cert'],
+        'client_tls_key': value['client_tls_key'],
+        'connection_timeout': value['connection_timeout'],
+        'deny_null_bind': value['deny_null_bind'],
+        'dereference_aliases': value['dereference_aliases'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
         'discoverdn': value['discoverdn'],
-        'enable_samaccountname_login': value['enableSamaccountnameLogin'],
+        'enable_samaccountname_login': value['enable_samaccountname_login'],
         'groupattr': value['groupattr'],
         'groupdn': value['groupdn'],
         'groupfilter': value['groupfilter'],
-        'insecure_tls': value['insecureTls'],
+        'insecure_tls': value['insecure_tls'],
         'length': value['length'],
-        'max_page_size': value['maxPageSize'],
-        'max_ttl': value['maxTtl'],
-        'password_policy': value['passwordPolicy'],
-        'request_timeout': value['requestTimeout'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
+        'max_page_size': value['max_page_size'],
+        'max_ttl': value['max_ttl'],
+        'password_policy': value['password_policy'],
+        'request_timeout': value['request_timeout'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
         'schema': value['schema'],
-        'skip_static_role_import_rotation': value['skipStaticRoleImportRotation'],
+        'skip_static_role_import_rotation': value['skip_static_role_import_rotation'],
         'starttls': value['starttls'],
-        'tls_max_version': value['tlsMaxVersion'],
-        'tls_min_version': value['tlsMinVersion'],
+        'tls_max_version': value['tls_max_version'],
+        'tls_min_version': value['tls_min_version'],
         'ttl': value['ttl'],
         'upndomain': value['upndomain'],
         'url': value['url'],
-        'use_pre111_group_cn_behavior': value['usePre111GroupCnBehavior'],
-        'use_token_groups': value['useTokenGroups'],
+        'use_pre111_group_cn_behavior': value['use_pre111_group_cn_behavior'],
+        'use_token_groups': value['use_token_groups'],
         'userattr': value['userattr'],
         'userdn': value['userdn'],
         'userfilter': value['userfilter'],
-        'username_as_alias': value['usernameAsAlias'],
+        'username_as_alias': value['username_as_alias'],
     };
 }
 

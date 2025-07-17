@@ -24,37 +24,37 @@ export interface MongoDbAtlasWriteRoleRequest {
      * @type {Array<string>}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    cidrBlocks?: Array<string>;
+    cidr_blocks?: Array<string>;
     /**
      * IP address to be added to the access list for the API key. Optional for organization and project keys.
      * @type {Array<string>}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    ipAddresses?: Array<string>;
+    ip_addresses?: Array<string>;
     /**
      * The maximum allowed lifetime of credentials issued using this role.
      * @type {string}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Organization ID required for an organization API key
      * @type {string}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    organizationId?: string;
+    organization_id?: string;
     /**
      * Project ID the project API key belongs to.
      * @type {string}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    projectId?: string;
+    project_id?: string;
     /**
      * Roles assigned when an organization API Key is assigned to a project API key
      * @type {Array<string>}
      * @memberof MongoDbAtlasWriteRoleRequest
      */
-    projectRoles?: Array<string>;
+    project_roles?: Array<string>;
     /**
      * List of roles that the API Key should be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project, required for organization and project keys.
      * @type {Array<string>}
@@ -87,12 +87,12 @@ export function MongoDbAtlasWriteRoleRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'cidrBlocks': json['cidr_blocks'] == null ? undefined : json['cidr_blocks'],
-        'ipAddresses': json['ip_addresses'] == null ? undefined : json['ip_addresses'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'organizationId': json['organization_id'] == null ? undefined : json['organization_id'],
-        'projectId': json['project_id'] == null ? undefined : json['project_id'],
-        'projectRoles': json['project_roles'] == null ? undefined : json['project_roles'],
+        'cidr_blocks': json['cidr_blocks'] == null ? undefined : json['cidr_blocks'],
+        'ip_addresses': json['ip_addresses'] == null ? undefined : json['ip_addresses'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'organization_id': json['organization_id'] == null ? undefined : json['organization_id'],
+        'project_id': json['project_id'] == null ? undefined : json['project_id'],
+        'project_roles': json['project_roles'] == null ? undefined : json['project_roles'],
         'roles': json['roles'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
@@ -109,12 +109,12 @@ export function MongoDbAtlasWriteRoleRequestToJSONTyped(value?: MongoDbAtlasWrit
 
     return {
         
-        'cidr_blocks': value['cidrBlocks'],
-        'ip_addresses': value['ipAddresses'],
-        'max_ttl': value['maxTtl'],
-        'organization_id': value['organizationId'],
-        'project_id': value['projectId'],
-        'project_roles': value['projectRoles'],
+        'cidr_blocks': value['cidr_blocks'],
+        'ip_addresses': value['ip_addresses'],
+        'max_ttl': value['max_ttl'],
+        'organization_id': value['organization_id'],
+        'project_id': value['project_id'],
+        'project_roles': value['project_roles'],
         'roles': value['roles'],
         'ttl': value['ttl'],
     };

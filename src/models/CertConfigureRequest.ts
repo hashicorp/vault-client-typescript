@@ -24,31 +24,31 @@ export interface CertConfigureRequest {
      * @type {boolean}
      * @memberof CertConfigureRequest
      */
-    disableBinding?: boolean;
+    disable_binding?: boolean;
     /**
      * If set, metadata of the certificate including the metadata corresponding to allowed_metadata_extensions will be stored in the alias. Defaults to false.
      * @type {boolean}
      * @memberof CertConfigureRequest
      */
-    enableIdentityAliasMetadata?: boolean;
+    enable_identity_alias_metadata?: boolean;
     /**
      * If set, metadata of the client certificate will be returned on authentication failures.
      * @type {boolean}
      * @memberof CertConfigureRequest
      */
-    enableMetadataOnFailures?: boolean;
+    enable_metadata_on_failures?: boolean;
     /**
      * The size of the in memory OCSP response cache, shared by all configured certs
      * @type {number}
      * @memberof CertConfigureRequest
      */
-    ocspCacheSize?: number;
+    ocsp_cache_size?: number;
     /**
      * The size of the in memory role cache
      * @type {number}
      * @memberof CertConfigureRequest
      */
-    roleCacheSize?: number;
+    role_cache_size?: number;
 }
 
 /**
@@ -68,11 +68,11 @@ export function CertConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'disableBinding': json['disable_binding'] == null ? undefined : json['disable_binding'],
-        'enableIdentityAliasMetadata': json['enable_identity_alias_metadata'] == null ? undefined : json['enable_identity_alias_metadata'],
-        'enableMetadataOnFailures': json['enable_metadata_on_failures'] == null ? undefined : json['enable_metadata_on_failures'],
-        'ocspCacheSize': json['ocsp_cache_size'] == null ? undefined : json['ocsp_cache_size'],
-        'roleCacheSize': json['role_cache_size'] == null ? undefined : json['role_cache_size'],
+        'disable_binding': json['disable_binding'] == null ? undefined : json['disable_binding'],
+        'enable_identity_alias_metadata': json['enable_identity_alias_metadata'] == null ? undefined : json['enable_identity_alias_metadata'],
+        'enable_metadata_on_failures': json['enable_metadata_on_failures'] == null ? undefined : json['enable_metadata_on_failures'],
+        'ocsp_cache_size': json['ocsp_cache_size'] == null ? undefined : json['ocsp_cache_size'],
+        'role_cache_size': json['role_cache_size'] == null ? undefined : json['role_cache_size'],
     };
 }
 
@@ -87,11 +87,11 @@ export function CertConfigureRequestToJSONTyped(value?: CertConfigureRequest | n
 
     return {
         
-        'disable_binding': value['disableBinding'],
-        'enable_identity_alias_metadata': value['enableIdentityAliasMetadata'],
-        'enable_metadata_on_failures': value['enableMetadataOnFailures'],
-        'ocsp_cache_size': value['ocspCacheSize'],
-        'role_cache_size': value['roleCacheSize'],
+        'disable_binding': value['disable_binding'],
+        'enable_identity_alias_metadata': value['enable_identity_alias_metadata'],
+        'enable_metadata_on_failures': value['enable_metadata_on_failures'],
+        'ocsp_cache_size': value['ocsp_cache_size'],
+        'role_cache_size': value['role_cache_size'],
     };
 }
 

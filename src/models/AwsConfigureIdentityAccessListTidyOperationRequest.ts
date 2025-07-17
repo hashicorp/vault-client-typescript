@@ -24,13 +24,13 @@ export interface AwsConfigureIdentityAccessListTidyOperationRequest {
      * @type {boolean}
      * @memberof AwsConfigureIdentityAccessListTidyOperationRequest
      */
-    disablePeriodicTidy?: boolean;
+    disable_periodic_tidy?: boolean;
     /**
      * The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
      * @type {string}
      * @memberof AwsConfigureIdentityAccessListTidyOperationRequest
      */
-    safetyBuffer?: string;
+    safety_buffer?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function AwsConfigureIdentityAccessListTidyOperationRequestFromJSONTyped(
     }
     return {
         
-        'disablePeriodicTidy': json['disable_periodic_tidy'] == null ? undefined : json['disable_periodic_tidy'],
-        'safetyBuffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
+        'disable_periodic_tidy': json['disable_periodic_tidy'] == null ? undefined : json['disable_periodic_tidy'],
+        'safety_buffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
     };
 }
 
@@ -66,8 +66,8 @@ export function AwsConfigureIdentityAccessListTidyOperationRequestToJSONTyped(va
 
     return {
         
-        'disable_periodic_tidy': value['disablePeriodicTidy'],
-        'safety_buffer': value['safetyBuffer'],
+        'disable_periodic_tidy': value['disable_periodic_tidy'],
+        'safety_buffer': value['safety_buffer'],
     };
 }
 

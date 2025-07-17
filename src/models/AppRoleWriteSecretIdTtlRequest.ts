@@ -24,7 +24,7 @@ export interface AppRoleWriteSecretIdTtlRequest {
      * @type {string}
      * @memberof AppRoleWriteSecretIdTtlRequest
      */
-    secretIdTtl?: string;
+    secret_id_ttl?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteSecretIdTtlRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'secretIdTtl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteSecretIdTtlRequestToJSONTyped(value?: AppRoleWriteSe
 
     return {
         
-        'secret_id_ttl': value['secretIdTtl'],
+        'secret_id_ttl': value['secret_id_ttl'],
     };
 }
 

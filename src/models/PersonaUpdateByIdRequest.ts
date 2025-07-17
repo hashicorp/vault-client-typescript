@@ -24,7 +24,7 @@ export interface PersonaUpdateByIdRequest {
      * @type {string}
      * @memberof PersonaUpdateByIdRequest
      */
-    entityId?: string;
+    entity_id?: string;
     /**
      * Metadata to be associated with the persona. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
      * @type {object}
@@ -36,7 +36,7 @@ export interface PersonaUpdateByIdRequest {
      * @type {string}
      * @memberof PersonaUpdateByIdRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the persona
      * @type {string}
@@ -62,9 +62,9 @@ export function PersonaUpdateByIdRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -80,9 +80,9 @@ export function PersonaUpdateByIdRequestToJSONTyped(value?: PersonaUpdateByIdReq
 
     return {
         
-        'entity_id': value['entityId'],
+        'entity_id': value['entity_id'],
         'metadata': value['metadata'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

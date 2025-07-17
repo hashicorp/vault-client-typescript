@@ -24,7 +24,7 @@ export interface LeasesReadLeaseResponse {
      * @type {Date}
      * @memberof LeasesReadLeaseResponse
      */
-    expireTime?: Date;
+    expire_time?: Date;
     /**
      * Lease id
      * @type {string}
@@ -36,13 +36,13 @@ export interface LeasesReadLeaseResponse {
      * @type {Date}
      * @memberof LeasesReadLeaseResponse
      */
-    issueTime?: Date;
+    issue_time?: Date;
     /**
      * Optional Timestamp of the last time the lease was renewed
      * @type {Date}
      * @memberof LeasesReadLeaseResponse
      */
-    lastRenewal?: Date;
+    last_renewal?: Date;
     /**
      * True if the lease is able to be renewed
      * @type {boolean}
@@ -74,10 +74,10 @@ export function LeasesReadLeaseResponseFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'expireTime': json['expire_time'] == null ? undefined : (new Date(json['expire_time'])),
+        'expire_time': json['expire_time'] == null ? undefined : (new Date(json['expire_time'])),
         'id': json['id'] == null ? undefined : json['id'],
-        'issueTime': json['issue_time'] == null ? undefined : (new Date(json['issue_time'])),
-        'lastRenewal': json['last_renewal'] == null ? undefined : (new Date(json['last_renewal'])),
+        'issue_time': json['issue_time'] == null ? undefined : (new Date(json['issue_time'])),
+        'last_renewal': json['last_renewal'] == null ? undefined : (new Date(json['last_renewal'])),
         'renewable': json['renewable'] == null ? undefined : json['renewable'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
@@ -94,10 +94,10 @@ export function LeasesReadLeaseResponseToJSONTyped(value?: LeasesReadLeaseRespon
 
     return {
         
-        'expire_time': value['expireTime'] == null ? undefined : ((value['expireTime']).toISOString()),
+        'expire_time': value['expire_time'] == null ? undefined : ((value['expire_time']).toISOString()),
         'id': value['id'],
-        'issue_time': value['issueTime'] == null ? undefined : ((value['issueTime']).toISOString()),
-        'last_renewal': value['lastRenewal'] == null ? undefined : ((value['lastRenewal']).toISOString()),
+        'issue_time': value['issue_time'] == null ? undefined : ((value['issue_time']).toISOString()),
+        'last_renewal': value['last_renewal'] == null ? undefined : ((value['last_renewal']).toISOString()),
         'renewable': value['renewable'],
         'ttl': value['ttl'],
     };

@@ -24,14 +24,14 @@ export interface MfaGenerateTotpSecretRequest {
      * @type {string}
      * @memberof MfaGenerateTotpSecretRequest
      */
-    methodId: string;
+    method_id: string;
 }
 
 /**
  * Check if a given object implements the MfaGenerateTotpSecretRequest interface.
  */
 export function instanceOfMfaGenerateTotpSecretRequest(value: object): value is MfaGenerateTotpSecretRequest {
-    if (!('methodId' in value) || value['methodId'] === undefined) return false;
+    if (!('method_id' in value) || value['method_id'] === undefined) return false;
     return true;
 }
 
@@ -45,7 +45,7 @@ export function MfaGenerateTotpSecretRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'methodId': json['method_id'],
+        'method_id': json['method_id'],
     };
 }
 
@@ -60,7 +60,7 @@ export function MfaGenerateTotpSecretRequestToJSONTyped(value?: MfaGenerateTotpS
 
     return {
         
-        'method_id': value['methodId'],
+        'method_id': value['method_id'],
     };
 }
 

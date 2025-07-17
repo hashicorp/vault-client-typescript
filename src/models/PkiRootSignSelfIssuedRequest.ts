@@ -30,13 +30,13 @@ export interface PkiRootSignSelfIssuedRequest {
      * @type {string}
      * @memberof PkiRootSignSelfIssuedRequest
      */
-    issuerRef?: string;
+    issuer_ref?: string;
     /**
      * If true, require the public key algorithm of the signer to match that of the self issued certificate.
      * @type {boolean}
      * @memberof PkiRootSignSelfIssuedRequest
      */
-    requireMatchingCertificateAlgorithms?: boolean;
+    require_matching_certificate_algorithms?: boolean;
 }
 
 /**
@@ -57,8 +57,8 @@ export function PkiRootSignSelfIssuedRequestFromJSONTyped(json: any, ignoreDiscr
     return {
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'issuerRef': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
-        'requireMatchingCertificateAlgorithms': json['require_matching_certificate_algorithms'] == null ? undefined : json['require_matching_certificate_algorithms'],
+        'issuer_ref': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
+        'require_matching_certificate_algorithms': json['require_matching_certificate_algorithms'] == null ? undefined : json['require_matching_certificate_algorithms'],
     };
 }
 
@@ -74,8 +74,8 @@ export function PkiRootSignSelfIssuedRequestToJSONTyped(value?: PkiRootSignSelfI
     return {
         
         'certificate': value['certificate'],
-        'issuer_ref': value['issuerRef'],
-        'require_matching_certificate_algorithms': value['requireMatchingCertificateAlgorithms'],
+        'issuer_ref': value['issuer_ref'],
+        'require_matching_certificate_algorithms': value['require_matching_certificate_algorithms'],
     };
 }
 

@@ -30,13 +30,13 @@ export interface RootTokenGenerationInitializeResponse {
      * @type {string}
      * @memberof RootTokenGenerationInitializeResponse
      */
-    encodedRootToken?: string;
+    encoded_root_token?: string;
     /**
      * 
      * @type {string}
      * @memberof RootTokenGenerationInitializeResponse
      */
-    encodedToken?: string;
+    encoded_token?: string;
     /**
      * 
      * @type {string}
@@ -54,13 +54,13 @@ export interface RootTokenGenerationInitializeResponse {
      * @type {number}
      * @memberof RootTokenGenerationInitializeResponse
      */
-    otpLength?: number;
+    otp_length?: number;
     /**
      * 
      * @type {string}
      * @memberof RootTokenGenerationInitializeResponse
      */
-    pgpFingerprint?: string;
+    pgp_fingerprint?: string;
     /**
      * 
      * @type {number}
@@ -99,12 +99,12 @@ export function RootTokenGenerationInitializeResponseFromJSONTyped(json: any, ig
     return {
         
         'complete': json['complete'] == null ? undefined : json['complete'],
-        'encodedRootToken': json['encoded_root_token'] == null ? undefined : json['encoded_root_token'],
-        'encodedToken': json['encoded_token'] == null ? undefined : json['encoded_token'],
+        'encoded_root_token': json['encoded_root_token'] == null ? undefined : json['encoded_root_token'],
+        'encoded_token': json['encoded_token'] == null ? undefined : json['encoded_token'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'otp': json['otp'] == null ? undefined : json['otp'],
-        'otpLength': json['otp_length'] == null ? undefined : json['otp_length'],
-        'pgpFingerprint': json['pgp_fingerprint'] == null ? undefined : json['pgp_fingerprint'],
+        'otp_length': json['otp_length'] == null ? undefined : json['otp_length'],
+        'pgp_fingerprint': json['pgp_fingerprint'] == null ? undefined : json['pgp_fingerprint'],
         'progress': json['progress'] == null ? undefined : json['progress'],
         'required': json['required'] == null ? undefined : json['required'],
         'started': json['started'] == null ? undefined : json['started'],
@@ -123,12 +123,12 @@ export function RootTokenGenerationInitializeResponseToJSONTyped(value?: RootTok
     return {
         
         'complete': value['complete'],
-        'encoded_root_token': value['encodedRootToken'],
-        'encoded_token': value['encodedToken'],
+        'encoded_root_token': value['encoded_root_token'],
+        'encoded_token': value['encoded_token'],
         'nonce': value['nonce'],
         'otp': value['otp'],
-        'otp_length': value['otpLength'],
-        'pgp_fingerprint': value['pgpFingerprint'],
+        'otp_length': value['otp_length'],
+        'pgp_fingerprint': value['pgp_fingerprint'],
         'progress': value['progress'],
         'required': value['required'],
         'started': value['started'],

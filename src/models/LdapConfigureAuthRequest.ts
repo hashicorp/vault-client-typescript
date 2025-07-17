@@ -24,7 +24,7 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    anonymousGroupSearch?: boolean;
+    anonymous_group_search?: boolean;
     /**
      * LDAP DN for searching for the user DN (optional)
      * @type {string}
@@ -42,7 +42,7 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    caseSensitiveNames?: boolean;
+    case_sensitive_names?: boolean;
     /**
      * CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
      * @type {string}
@@ -54,37 +54,37 @@ export interface LdapConfigureAuthRequest {
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    clientTlsCert?: string;
+    client_tls_cert?: string;
     /**
      * Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    clientTlsKey?: string;
+    client_tls_key?: string;
     /**
      * Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    connectionTimeout?: string;
+    connection_timeout?: string;
     /**
      * Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    denyNullBind?: boolean;
+    deny_null_bind?: boolean;
     /**
      * When aliases should be dereferenced on search operations. Accepted values are 'never', 'finding', 'searching', 'always'. Defaults to 'never'.
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    dereferenceAliases?: LdapConfigureAuthRequestDereferenceAliasesEnum;
+    dereference_aliases?: LdapConfigureAuthRequestDereferenceAliasesEnum;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * Use anonymous bind to discover the bind DN of a user (optional)
      * @type {boolean}
@@ -96,7 +96,7 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    enableSamaccountnameLogin?: boolean;
+    enable_samaccountname_login?: boolean;
     /**
      * LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: "cn" or "memberOf", etc. Default: cn
      * @type {string}
@@ -120,43 +120,43 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    insecureTls?: boolean;
+    insecure_tls?: boolean;
     /**
      * If set to a value greater than 0, the LDAP backend will use the LDAP server's paged search control to request pages of up to the given size. This can be used to avoid hitting the LDAP server's maximum result size limit. Otherwise, the LDAP backend will not use the paged search control.
      * @type {number}
      * @memberof LdapConfigureAuthRequest
      */
-    maxPageSize?: number;
+    max_page_size?: number;
     /**
      * Password policy to use to rotate the root password
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    passwordPolicy?: string;
+    password_policy?: string;
     /**
      * Timeout, in seconds, for the connection when making requests against the server before returning back an error.
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    requestTimeout?: string;
+    request_timeout?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * Issue a StartTLS command after establishing unencrypted connection (optional)
      * @type {boolean}
@@ -168,67 +168,67 @@ export interface LdapConfigureAuthRequest {
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tlsMaxVersion?: LdapConfigureAuthRequestTlsMaxVersionEnum;
+    tls_max_version?: LdapConfigureAuthRequestTlsMaxVersionEnum;
     /**
      * Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tlsMinVersion?: LdapConfigureAuthRequestTlsMinVersionEnum;
+    tls_min_version?: LdapConfigureAuthRequestTlsMinVersionEnum;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any configured for specific users/groups.
      * @type {Array<string>}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof LdapConfigureAuthRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Enables userPrincipalDomain login with [username]@UPNDomain (optional)
      * @type {string}
@@ -246,13 +246,13 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    usePre111GroupCnBehavior?: boolean;
+    use_pre111_group_cn_behavior?: boolean;
     /**
      * If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    useTokenGroups?: boolean;
+    use_token_groups?: boolean;
     /**
      * Attribute used for users (default: cn)
      * @type {string}
@@ -276,7 +276,7 @@ export interface LdapConfigureAuthRequest {
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
      */
-    usernameAsAlias?: boolean;
+    username_as_alias?: boolean;
 }
 
 /**
@@ -328,49 +328,49 @@ export function LdapConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'anonymousGroupSearch': json['anonymous_group_search'] == null ? undefined : json['anonymous_group_search'],
+        'anonymous_group_search': json['anonymous_group_search'] == null ? undefined : json['anonymous_group_search'],
         'binddn': json['binddn'] == null ? undefined : json['binddn'],
         'bindpass': json['bindpass'] == null ? undefined : json['bindpass'],
-        'caseSensitiveNames': json['case_sensitive_names'] == null ? undefined : json['case_sensitive_names'],
+        'case_sensitive_names': json['case_sensitive_names'] == null ? undefined : json['case_sensitive_names'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'clientTlsCert': json['client_tls_cert'] == null ? undefined : json['client_tls_cert'],
-        'clientTlsKey': json['client_tls_key'] == null ? undefined : json['client_tls_key'],
-        'connectionTimeout': json['connection_timeout'] == null ? undefined : json['connection_timeout'],
-        'denyNullBind': json['deny_null_bind'] == null ? undefined : json['deny_null_bind'],
-        'dereferenceAliases': json['dereference_aliases'] == null ? undefined : json['dereference_aliases'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'client_tls_cert': json['client_tls_cert'] == null ? undefined : json['client_tls_cert'],
+        'client_tls_key': json['client_tls_key'] == null ? undefined : json['client_tls_key'],
+        'connection_timeout': json['connection_timeout'] == null ? undefined : json['connection_timeout'],
+        'deny_null_bind': json['deny_null_bind'] == null ? undefined : json['deny_null_bind'],
+        'dereference_aliases': json['dereference_aliases'] == null ? undefined : json['dereference_aliases'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'discoverdn': json['discoverdn'] == null ? undefined : json['discoverdn'],
-        'enableSamaccountnameLogin': json['enable_samaccountname_login'] == null ? undefined : json['enable_samaccountname_login'],
+        'enable_samaccountname_login': json['enable_samaccountname_login'] == null ? undefined : json['enable_samaccountname_login'],
         'groupattr': json['groupattr'] == null ? undefined : json['groupattr'],
         'groupdn': json['groupdn'] == null ? undefined : json['groupdn'],
         'groupfilter': json['groupfilter'] == null ? undefined : json['groupfilter'],
-        'insecureTls': json['insecure_tls'] == null ? undefined : json['insecure_tls'],
-        'maxPageSize': json['max_page_size'] == null ? undefined : json['max_page_size'],
-        'passwordPolicy': json['password_policy'] == null ? undefined : json['password_policy'],
-        'requestTimeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'insecure_tls': json['insecure_tls'] == null ? undefined : json['insecure_tls'],
+        'max_page_size': json['max_page_size'] == null ? undefined : json['max_page_size'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
+        'request_timeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
-        'tlsMaxVersion': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
-        'tlsMinVersion': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
+        'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'upndomain': json['upndomain'] == null ? undefined : json['upndomain'],
         'url': json['url'] == null ? undefined : json['url'],
-        'usePre111GroupCnBehavior': json['use_pre111_group_cn_behavior'] == null ? undefined : json['use_pre111_group_cn_behavior'],
-        'useTokenGroups': json['use_token_groups'] == null ? undefined : json['use_token_groups'],
+        'use_pre111_group_cn_behavior': json['use_pre111_group_cn_behavior'] == null ? undefined : json['use_pre111_group_cn_behavior'],
+        'use_token_groups': json['use_token_groups'] == null ? undefined : json['use_token_groups'],
         'userattr': json['userattr'] == null ? undefined : json['userattr'],
         'userdn': json['userdn'] == null ? undefined : json['userdn'],
         'userfilter': json['userfilter'] == null ? undefined : json['userfilter'],
-        'usernameAsAlias': json['username_as_alias'] == null ? undefined : json['username_as_alias'],
+        'username_as_alias': json['username_as_alias'] == null ? undefined : json['username_as_alias'],
     };
 }
 
@@ -385,49 +385,49 @@ export function LdapConfigureAuthRequestToJSONTyped(value?: LdapConfigureAuthReq
 
     return {
         
-        'anonymous_group_search': value['anonymousGroupSearch'],
+        'anonymous_group_search': value['anonymous_group_search'],
         'binddn': value['binddn'],
         'bindpass': value['bindpass'],
-        'case_sensitive_names': value['caseSensitiveNames'],
+        'case_sensitive_names': value['case_sensitive_names'],
         'certificate': value['certificate'],
-        'client_tls_cert': value['clientTlsCert'],
-        'client_tls_key': value['clientTlsKey'],
-        'connection_timeout': value['connectionTimeout'],
-        'deny_null_bind': value['denyNullBind'],
-        'dereference_aliases': value['dereferenceAliases'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
+        'client_tls_cert': value['client_tls_cert'],
+        'client_tls_key': value['client_tls_key'],
+        'connection_timeout': value['connection_timeout'],
+        'deny_null_bind': value['deny_null_bind'],
+        'dereference_aliases': value['dereference_aliases'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
         'discoverdn': value['discoverdn'],
-        'enable_samaccountname_login': value['enableSamaccountnameLogin'],
+        'enable_samaccountname_login': value['enable_samaccountname_login'],
         'groupattr': value['groupattr'],
         'groupdn': value['groupdn'],
         'groupfilter': value['groupfilter'],
-        'insecure_tls': value['insecureTls'],
-        'max_page_size': value['maxPageSize'],
-        'password_policy': value['passwordPolicy'],
-        'request_timeout': value['requestTimeout'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
+        'insecure_tls': value['insecure_tls'],
+        'max_page_size': value['max_page_size'],
+        'password_policy': value['password_policy'],
+        'request_timeout': value['request_timeout'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
         'starttls': value['starttls'],
-        'tls_max_version': value['tlsMaxVersion'],
-        'tls_min_version': value['tlsMinVersion'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'tls_max_version': value['tls_max_version'],
+        'tls_min_version': value['tls_min_version'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'upndomain': value['upndomain'],
         'url': value['url'],
-        'use_pre111_group_cn_behavior': value['usePre111GroupCnBehavior'],
-        'use_token_groups': value['useTokenGroups'],
+        'use_pre111_group_cn_behavior': value['use_pre111_group_cn_behavior'],
+        'use_token_groups': value['use_token_groups'],
         'userattr': value['userattr'],
         'userdn': value['userdn'],
         'userfilter': value['userfilter'],
-        'username_as_alias': value['usernameAsAlias'],
+        'username_as_alias': value['username_as_alias'],
     };
 }
 

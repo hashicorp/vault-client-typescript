@@ -24,7 +24,7 @@ export interface CloudFoundryLoginRequest {
      * @type {string}
      * @memberof CloudFoundryLoginRequest
      */
-    cfInstanceCert: string;
+    cf_instance_cert: string;
     /**
      * The name of the role to authenticate against.
      * @type {string}
@@ -42,17 +42,17 @@ export interface CloudFoundryLoginRequest {
      * @type {string}
      * @memberof CloudFoundryLoginRequest
      */
-    signingTime: string;
+    signing_time: string;
 }
 
 /**
  * Check if a given object implements the CloudFoundryLoginRequest interface.
  */
 export function instanceOfCloudFoundryLoginRequest(value: object): value is CloudFoundryLoginRequest {
-    if (!('cfInstanceCert' in value) || value['cfInstanceCert'] === undefined) return false;
+    if (!('cf_instance_cert' in value) || value['cf_instance_cert'] === undefined) return false;
     if (!('role' in value) || value['role'] === undefined) return false;
     if (!('signature' in value) || value['signature'] === undefined) return false;
-    if (!('signingTime' in value) || value['signingTime'] === undefined) return false;
+    if (!('signing_time' in value) || value['signing_time'] === undefined) return false;
     return true;
 }
 
@@ -66,10 +66,10 @@ export function CloudFoundryLoginRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'cfInstanceCert': json['cf_instance_cert'],
+        'cf_instance_cert': json['cf_instance_cert'],
         'role': json['role'],
         'signature': json['signature'],
-        'signingTime': json['signing_time'],
+        'signing_time': json['signing_time'],
     };
 }
 
@@ -84,10 +84,10 @@ export function CloudFoundryLoginRequestToJSONTyped(value?: CloudFoundryLoginReq
 
     return {
         
-        'cf_instance_cert': value['cfInstanceCert'],
+        'cf_instance_cert': value['cf_instance_cert'],
         'role': value['role'],
         'signature': value['signature'],
-        'signing_time': value['signingTime'],
+        'signing_time': value['signing_time'],
     };
 }
 

@@ -24,37 +24,37 @@ export interface SystemWriteSyncDestinationsVercelProjectNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    accessToken?: string;
+    access_token?: string;
     /**
      * Sets which IPv4 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    allowedIpv4Addresses?: Array<string>;
+    allowed_ipv4_addresses?: Array<string>;
     /**
      * Sets which IPv6 addresses Vault is allowed to connect to for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    allowedIpv6Addresses?: Array<string>;
+    allowed_ipv6_addresses?: Array<string>;
     /**
      * Sets which port numbers Vault is allowed to connect through for syncing secrets.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    allowedPorts?: Array<string>;
+    allowed_ports?: Array<string>;
     /**
      * Deployment environments where the environment variables are available. Accepts 'development', 'preview' & 'production'.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    deploymentEnvironments?: Array<string>;
+    deployment_environments?: Array<string>;
     /**
      * Allows all IP addresses and ports to be connected to for syncing secrets.
      * @type {boolean}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    disableStrictNetworking?: boolean;
+    disable_strict_networking?: boolean;
     /**
      * Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`.
      * @type {string}
@@ -66,7 +66,7 @@ export interface SystemWriteSyncDestinationsVercelProjectNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    projectId?: string;
+    project_id?: string;
     /**
      * Asynchronously unsyncs all associated secrets with the destination then deletes the destination config.
      * @type {boolean}
@@ -78,13 +78,13 @@ export interface SystemWriteSyncDestinationsVercelProjectNameRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    secretNameTemplate?: string;
+    secret_name_template?: string;
     /**
      * Team ID the project belongs to. Optional.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsVercelProjectNameRequest
      */
-    teamId?: string;
+    team_id?: string;
 }
 
 /**
@@ -104,17 +104,17 @@ export function SystemWriteSyncDestinationsVercelProjectNameRequestFromJSONTyped
     }
     return {
         
-        'accessToken': json['access_token'] == null ? undefined : json['access_token'],
-        'allowedIpv4Addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
-        'allowedIpv6Addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
-        'allowedPorts': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
-        'deploymentEnvironments': json['deployment_environments'] == null ? undefined : json['deployment_environments'],
-        'disableStrictNetworking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'access_token': json['access_token'] == null ? undefined : json['access_token'],
+        'allowed_ipv4_addresses': json['allowed_ipv4_addresses'] == null ? undefined : json['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': json['allowed_ipv6_addresses'] == null ? undefined : json['allowed_ipv6_addresses'],
+        'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
+        'deployment_environments': json['deployment_environments'] == null ? undefined : json['deployment_environments'],
+        'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
-        'projectId': json['project_id'] == null ? undefined : json['project_id'],
+        'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'secretNameTemplate': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
-        'teamId': json['team_id'] == null ? undefined : json['team_id'],
+        'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'team_id': json['team_id'] == null ? undefined : json['team_id'],
     };
 }
 
@@ -129,17 +129,17 @@ export function SystemWriteSyncDestinationsVercelProjectNameRequestToJSONTyped(v
 
     return {
         
-        'access_token': value['accessToken'],
-        'allowed_ipv4_addresses': value['allowedIpv4Addresses'],
-        'allowed_ipv6_addresses': value['allowedIpv6Addresses'],
-        'allowed_ports': value['allowedPorts'],
-        'deployment_environments': value['deploymentEnvironments'],
-        'disable_strict_networking': value['disableStrictNetworking'],
+        'access_token': value['access_token'],
+        'allowed_ipv4_addresses': value['allowed_ipv4_addresses'],
+        'allowed_ipv6_addresses': value['allowed_ipv6_addresses'],
+        'allowed_ports': value['allowed_ports'],
+        'deployment_environments': value['deployment_environments'],
+        'disable_strict_networking': value['disable_strict_networking'],
         'granularity': value['granularity'],
-        'project_id': value['projectId'],
+        'project_id': value['project_id'],
         'purge': value['purge'],
-        'secret_name_template': value['secretNameTemplate'],
-        'team_id': value['teamId'],
+        'secret_name_template': value['secret_name_template'],
+        'team_id': value['team_id'],
     };
 }
 

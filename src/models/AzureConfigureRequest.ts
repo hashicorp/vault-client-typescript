@@ -24,19 +24,19 @@ export interface AzureConfigureRequest {
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * The OAuth2 client secret to connect to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable.
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    clientSecret?: string;
+    client_secret?: string;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof AzureConfigureRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable.
      * @type {string}
@@ -48,49 +48,49 @@ export interface AzureConfigureRequest {
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    identityTokenAudience?: string;
+    identity_token_audience?: string;
     /**
      * Time-to-live of plugin identity tokens
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    identityTokenTtl?: string;
+    identity_token_ttl?: string;
     /**
      * The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds)
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    rootPasswordTtl?: string;
+    root_password_ttl?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * The subscription id for the Azure Active Directory. This value can also be provided with the AZURE_SUBSCRIPTION_ID environment variable.
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    subscriptionId?: string;
+    subscription_id?: string;
     /**
      * The tenant id for the Azure Active Directory. This value can also be provided with the AZURE_TENANT_ID environment variable.
      * @type {string}
      * @memberof AzureConfigureRequest
      */
-    tenantId?: string;
+    tenant_id?: string;
 }
 
 /**
@@ -110,18 +110,18 @@ export function AzureConfigureRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
-        'clientSecret': json['client_secret'] == null ? undefined : json['client_secret'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
+        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'environment': json['environment'] == null ? undefined : json['environment'],
-        'identityTokenAudience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
-        'identityTokenTtl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
-        'rootPasswordTtl': json['root_password_ttl'] == null ? undefined : json['root_password_ttl'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'subscriptionId': json['subscription_id'] == null ? undefined : json['subscription_id'],
-        'tenantId': json['tenant_id'] == null ? undefined : json['tenant_id'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
+        'root_password_ttl': json['root_password_ttl'] == null ? undefined : json['root_password_ttl'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
+        'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
     };
 }
 
@@ -136,18 +136,18 @@ export function AzureConfigureRequestToJSONTyped(value?: AzureConfigureRequest |
 
     return {
         
-        'client_id': value['clientId'],
-        'client_secret': value['clientSecret'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
+        'client_id': value['client_id'],
+        'client_secret': value['client_secret'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
         'environment': value['environment'],
-        'identity_token_audience': value['identityTokenAudience'],
-        'identity_token_ttl': value['identityTokenTtl'],
-        'root_password_ttl': value['rootPasswordTtl'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
-        'subscription_id': value['subscriptionId'],
-        'tenant_id': value['tenantId'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_ttl': value['identity_token_ttl'],
+        'root_password_ttl': value['root_password_ttl'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
+        'subscription_id': value['subscription_id'],
+        'tenant_id': value['tenant_id'],
     };
 }
 

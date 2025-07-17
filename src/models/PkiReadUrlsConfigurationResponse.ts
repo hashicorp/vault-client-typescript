@@ -24,31 +24,31 @@ export interface PkiReadUrlsConfigurationResponse {
      * @type {Array<string>}
      * @memberof PkiReadUrlsConfigurationResponse
      */
-    crlDistributionPoints?: Array<string>;
+    crl_distribution_points?: Array<string>;
     /**
      * Comma-separated list of URLs to be used for the Delta CRL distribution points attribute. See also RFC 5280 Section 4.2.1.15.
      * @type {Array<string>}
      * @memberof PkiReadUrlsConfigurationResponse
      */
-    deltaCrlDistributionPoints?: Array<string>;
+    delta_crl_distribution_points?: Array<string>;
     /**
      * Whether or not to enable templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}' and '{{cluster_path}}' are available, but the addresses are not checked for URI validity until issuance time. This requires /config/cluster's path to be set on all PR Secondary clusters.
      * @type {boolean}
      * @memberof PkiReadUrlsConfigurationResponse
      */
-    enableTemplating?: boolean;
+    enable_templating?: boolean;
     /**
      * Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.
      * @type {Array<string>}
      * @memberof PkiReadUrlsConfigurationResponse
      */
-    issuingCertificates?: Array<string>;
+    issuing_certificates?: Array<string>;
     /**
      * Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.
      * @type {Array<string>}
      * @memberof PkiReadUrlsConfigurationResponse
      */
-    ocspServers?: Array<string>;
+    ocsp_servers?: Array<string>;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiReadUrlsConfigurationResponseFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'crlDistributionPoints': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
-        'deltaCrlDistributionPoints': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
-        'enableTemplating': json['enable_templating'] == null ? undefined : json['enable_templating'],
-        'issuingCertificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
-        'ocspServers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
+        'crl_distribution_points': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
+        'delta_crl_distribution_points': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
+        'enable_templating': json['enable_templating'] == null ? undefined : json['enable_templating'],
+        'issuing_certificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
+        'ocsp_servers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiReadUrlsConfigurationResponseToJSONTyped(value?: PkiReadUrlsC
 
     return {
         
-        'crl_distribution_points': value['crlDistributionPoints'],
-        'delta_crl_distribution_points': value['deltaCrlDistributionPoints'],
-        'enable_templating': value['enableTemplating'],
-        'issuing_certificates': value['issuingCertificates'],
-        'ocsp_servers': value['ocspServers'],
+        'crl_distribution_points': value['crl_distribution_points'],
+        'delta_crl_distribution_points': value['delta_crl_distribution_points'],
+        'enable_templating': value['enable_templating'],
+        'issuing_certificates': value['issuing_certificates'],
+        'ocsp_servers': value['ocsp_servers'],
     };
 }
 

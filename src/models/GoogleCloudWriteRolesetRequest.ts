@@ -36,13 +36,13 @@ export interface GoogleCloudWriteRolesetRequest {
      * @type {string}
      * @memberof GoogleCloudWriteRolesetRequest
      */
-    secretType?: string;
+    secret_type?: string;
     /**
      * List of OAuth scopes to assign to credentials generated under this role set
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRolesetRequest
      */
-    tokenScopes?: Array<string>;
+    token_scopes?: Array<string>;
 }
 
 /**
@@ -64,8 +64,8 @@ export function GoogleCloudWriteRolesetRequestFromJSONTyped(json: any, ignoreDis
         
         'bindings': json['bindings'] == null ? undefined : json['bindings'],
         'project': json['project'] == null ? undefined : json['project'],
-        'secretType': json['secret_type'] == null ? undefined : json['secret_type'],
-        'tokenScopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
+        'secret_type': json['secret_type'] == null ? undefined : json['secret_type'],
+        'token_scopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
     };
 }
 
@@ -82,8 +82,8 @@ export function GoogleCloudWriteRolesetRequestToJSONTyped(value?: GoogleCloudWri
         
         'bindings': value['bindings'],
         'project': value['project'],
-        'secret_type': value['secretType'],
-        'token_scopes': value['tokenScopes'],
+        'secret_type': value['secret_type'],
+        'token_scopes': value['token_scopes'],
     };
 }
 

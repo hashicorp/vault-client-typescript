@@ -30,19 +30,19 @@ export interface GoogleCloudWriteStaticAccountRequest {
      * @type {string}
      * @memberof GoogleCloudWriteStaticAccountRequest
      */
-    secretType?: string;
+    secret_type?: string;
     /**
      * Required. Email of the GCP service account to manage. Cannot be updated.
      * @type {string}
      * @memberof GoogleCloudWriteStaticAccountRequest
      */
-    serviceAccountEmail?: string;
+    service_account_email?: string;
     /**
      * List of OAuth scopes to assign to access tokens generated under this account. Ignored if "secret_type" is not ""access_token""
      * @type {Array<string>}
      * @memberof GoogleCloudWriteStaticAccountRequest
      */
-    tokenScopes?: Array<string>;
+    token_scopes?: Array<string>;
 }
 
 /**
@@ -63,9 +63,9 @@ export function GoogleCloudWriteStaticAccountRequestFromJSONTyped(json: any, ign
     return {
         
         'bindings': json['bindings'] == null ? undefined : json['bindings'],
-        'secretType': json['secret_type'] == null ? undefined : json['secret_type'],
-        'serviceAccountEmail': json['service_account_email'] == null ? undefined : json['service_account_email'],
-        'tokenScopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
+        'secret_type': json['secret_type'] == null ? undefined : json['secret_type'],
+        'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
+        'token_scopes': json['token_scopes'] == null ? undefined : json['token_scopes'],
     };
 }
 
@@ -81,9 +81,9 @@ export function GoogleCloudWriteStaticAccountRequestToJSONTyped(value?: GoogleCl
     return {
         
         'bindings': value['bindings'],
-        'secret_type': value['secretType'],
-        'service_account_email': value['serviceAccountEmail'],
-        'token_scopes': value['tokenScopes'],
+        'secret_type': value['secret_type'],
+        'service_account_email': value['service_account_email'],
+        'token_scopes': value['token_scopes'],
     };
 }
 

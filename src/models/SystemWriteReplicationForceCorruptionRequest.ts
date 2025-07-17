@@ -24,7 +24,7 @@ export interface SystemWriteReplicationForceCorruptionRequest {
      * @type {boolean}
      * @memberof SystemWriteReplicationForceCorruptionRequest
      */
-    compositeRootHash?: boolean;
+    composite_root_hash?: boolean;
     /**
      * force corrupting pages
      * @type {number}
@@ -48,7 +48,7 @@ export interface SystemWriteReplicationForceCorruptionRequest {
      * @type {boolean}
      * @memberof SystemWriteReplicationForceCorruptionRequest
      */
-    subtreeRootHash?: boolean;
+    subtree_root_hash?: boolean;
 }
 
 /**
@@ -68,11 +68,11 @@ export function SystemWriteReplicationForceCorruptionRequestFromJSONTyped(json: 
     }
     return {
         
-        'compositeRootHash': json['composite_root_hash'] == null ? undefined : json['composite_root_hash'],
+        'composite_root_hash': json['composite_root_hash'] == null ? undefined : json['composite_root_hash'],
         'page': json['page'] == null ? undefined : json['page'],
         'subpage': json['subpage'] == null ? undefined : json['subpage'],
         'subtree': json['subtree'] == null ? undefined : json['subtree'],
-        'subtreeRootHash': json['subtree_root_hash'] == null ? undefined : json['subtree_root_hash'],
+        'subtree_root_hash': json['subtree_root_hash'] == null ? undefined : json['subtree_root_hash'],
     };
 }
 
@@ -87,11 +87,11 @@ export function SystemWriteReplicationForceCorruptionRequestToJSONTyped(value?: 
 
     return {
         
-        'composite_root_hash': value['compositeRootHash'],
+        'composite_root_hash': value['composite_root_hash'],
         'page': value['page'],
         'subpage': value['subpage'],
         'subtree': value['subtree'],
-        'subtree_root_hash': value['subtreeRootHash'],
+        'subtree_root_hash': value['subtree_root_hash'],
     };
 }
 

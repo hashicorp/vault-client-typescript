@@ -24,7 +24,7 @@ export interface PkiConfigureEstRequest {
      * @type {Array<string>}
      * @memberof PkiConfigureEstRequest
      */
-    auditFields?: Array<string>;
+    audit_fields?: Array<string>;
     /**
      * A map of authentication type to authentication parameters
      * @type {object}
@@ -36,19 +36,19 @@ export interface PkiConfigureEstRequest {
      * @type {boolean}
      * @memberof PkiConfigureEstRequest
      */
-    defaultMount?: boolean;
+    default_mount?: boolean;
     /**
      * the policy of the default EST responder path, required if default_mount is true
      * @type {string}
      * @memberof PkiConfigureEstRequest
      */
-    defaultPathPolicy?: string;
+    default_path_policy?: string;
     /**
      * Parse CSR to that its fields can be used by sentinel policies.
      * @type {boolean}
      * @memberof PkiConfigureEstRequest
      */
-    enableSentinelParsing?: boolean;
+    enable_sentinel_parsing?: boolean;
     /**
      * whether EST is enabled, defaults to false
      * @type {boolean}
@@ -60,7 +60,7 @@ export interface PkiConfigureEstRequest {
      * @type {object}
      * @memberof PkiConfigureEstRequest
      */
-    labelToPathPolicy?: object;
+    label_to_path_policy?: object;
 }
 
 /**
@@ -80,13 +80,13 @@ export function PkiConfigureEstRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'auditFields': json['audit_fields'] == null ? undefined : json['audit_fields'],
+        'audit_fields': json['audit_fields'] == null ? undefined : json['audit_fields'],
         'authenticators': json['authenticators'] == null ? undefined : json['authenticators'],
-        'defaultMount': json['default_mount'] == null ? undefined : json['default_mount'],
-        'defaultPathPolicy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
-        'enableSentinelParsing': json['enable_sentinel_parsing'] == null ? undefined : json['enable_sentinel_parsing'],
+        'default_mount': json['default_mount'] == null ? undefined : json['default_mount'],
+        'default_path_policy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
+        'enable_sentinel_parsing': json['enable_sentinel_parsing'] == null ? undefined : json['enable_sentinel_parsing'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'labelToPathPolicy': json['label_to_path_policy'] == null ? undefined : json['label_to_path_policy'],
+        'label_to_path_policy': json['label_to_path_policy'] == null ? undefined : json['label_to_path_policy'],
     };
 }
 
@@ -101,13 +101,13 @@ export function PkiConfigureEstRequestToJSONTyped(value?: PkiConfigureEstRequest
 
     return {
         
-        'audit_fields': value['auditFields'],
+        'audit_fields': value['audit_fields'],
         'authenticators': value['authenticators'],
-        'default_mount': value['defaultMount'],
-        'default_path_policy': value['defaultPathPolicy'],
-        'enable_sentinel_parsing': value['enableSentinelParsing'],
+        'default_mount': value['default_mount'],
+        'default_path_policy': value['default_path_policy'],
+        'enable_sentinel_parsing': value['enable_sentinel_parsing'],
         'enabled': value['enabled'],
-        'label_to_path_policy': value['labelToPathPolicy'],
+        'label_to_path_policy': value['label_to_path_policy'],
     };
 }
 

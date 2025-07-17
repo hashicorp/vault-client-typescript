@@ -771,7 +771,7 @@ import {
 
 export interface SystemApiAuditingCalculateHashOperationRequest {
     path: string;
-    auditingCalculateHashRequest: AuditingCalculateHashRequest;
+    AuditingCalculateHashRequest: AuditingCalculateHashRequest;
 }
 
 export interface SystemApiAuditingDisableDeviceRequest {
@@ -784,12 +784,12 @@ export interface SystemApiAuditingDisableRequestHeaderRequest {
 
 export interface SystemApiAuditingEnableDeviceOperationRequest {
     path: string;
-    auditingEnableDeviceRequest: AuditingEnableDeviceRequest;
+    AuditingEnableDeviceRequest: AuditingEnableDeviceRequest;
 }
 
 export interface SystemApiAuditingEnableRequestHeaderOperationRequest {
     header: string;
-    auditingEnableRequestHeaderRequest: AuditingEnableRequestHeaderRequest;
+    AuditingEnableRequestHeaderRequest: AuditingEnableRequestHeaderRequest;
 }
 
 export interface SystemApiAuditingReadRequestHeaderInformationRequest {
@@ -802,7 +802,7 @@ export interface SystemApiAuthDisableMethodRequest {
 
 export interface SystemApiAuthEnableMethodOperationRequest {
     path: string;
-    authEnableMethodRequest: AuthEnableMethodRequest;
+    AuthEnableMethodRequest: AuthEnableMethodRequest;
 }
 
 export interface SystemApiAuthReadConfigurationRequest {
@@ -815,69 +815,69 @@ export interface SystemApiAuthReadTuningInformationRequest {
 
 export interface SystemApiAuthTuneConfigurationParametersOperationRequest {
     path: string;
-    authTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest;
+    AuthTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest;
 }
 
 export interface SystemApiCorsConfigureOperationRequest {
-    corsConfigureRequest: CorsConfigureRequest;
+    CorsConfigureRequest: CorsConfigureRequest;
 }
 
 export interface SystemApiCreateCustomMessageOperationRequest {
-    createCustomMessageRequest: CreateCustomMessageRequest;
+    CreateCustomMessageRequest: CreateCustomMessageRequest;
 }
 
 export interface SystemApiDecodeTokenOperationRequest {
-    decodeTokenRequest: DecodeTokenRequest;
+    DecodeTokenRequest: DecodeTokenRequest;
 }
 
 export interface SystemApiEncryptionKeyConfigureRotationOperationRequest {
-    encryptionKeyConfigureRotationRequest: EncryptionKeyConfigureRotationRequest;
+    EncryptionKeyConfigureRotationRequest: EncryptionKeyConfigureRotationRequest;
 }
 
 export interface SystemApiGenerateHashOperationRequest {
-    generateHashRequest: GenerateHashRequest;
+    GenerateHashRequest: GenerateHashRequest;
 }
 
 export interface SystemApiGenerateHashWithAlgorithmOperationRequest {
     urlalgorithm: string;
-    generateHashWithAlgorithmRequest: GenerateHashWithAlgorithmRequest;
+    GenerateHashWithAlgorithmRequest: GenerateHashWithAlgorithmRequest;
 }
 
 export interface SystemApiGenerateRandomOperationRequest {
-    generateRandomRequest: GenerateRandomRequest;
+    GenerateRandomRequest: GenerateRandomRequest;
 }
 
 export interface SystemApiGenerateRandomWithBytesOperationRequest {
     urlbytes: string;
-    generateRandomWithBytesRequest: GenerateRandomWithBytesRequest;
+    GenerateRandomWithBytesRequest: GenerateRandomWithBytesRequest;
 }
 
 export interface SystemApiGenerateRandomWithSourceOperationRequest {
     source: string;
-    generateRandomWithSourceRequest: GenerateRandomWithSourceRequest;
+    GenerateRandomWithSourceRequest: GenerateRandomWithSourceRequest;
 }
 
 export interface SystemApiGenerateRandomWithSourceAndBytesOperationRequest {
     source: string;
     urlbytes: string;
-    generateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest;
+    GenerateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest;
 }
 
 export interface SystemApiInitializeOperationRequest {
-    initializeRequest: InitializeRequest;
+    InitializeRequest: InitializeRequest;
 }
 
 export interface SystemApiInternalClientActivityConfigureOperationRequest {
-    internalClientActivityConfigureRequest: InternalClientActivityConfigureRequest;
+    InternalClientActivityConfigureRequest: InternalClientActivityConfigureRequest;
 }
 
 export interface SystemApiInternalGenerateOpenApiDocumentRequest {
     context?: string;
-    genericMountPaths?: boolean;
+    generic_mount_paths?: boolean;
 }
 
 export interface SystemApiInternalGenerateOpenApiDocumentWithParametersOperationRequest {
-    internalGenerateOpenApiDocumentWithParametersRequest: InternalGenerateOpenApiDocumentWithParametersRequest;
+    InternalGenerateOpenApiDocumentWithParametersRequest: InternalGenerateOpenApiDocumentWithParametersRequest;
 }
 
 export interface SystemApiInternalInspectRouterRequest {
@@ -902,58 +902,58 @@ export interface SystemApiLeasesLookUpRequest {
 }
 
 export interface SystemApiLeasesReadLeaseOperationRequest {
-    leasesReadLeaseRequest: LeasesReadLeaseRequest;
+    LeasesReadLeaseRequest: LeasesReadLeaseRequest;
 }
 
 export interface SystemApiLeasesRenewLeaseOperationRequest {
-    leasesRenewLeaseRequest: LeasesRenewLeaseRequest;
+    LeasesRenewLeaseRequest: LeasesRenewLeaseRequest;
 }
 
 export interface SystemApiLeasesRenewLease2OperationRequest {
-    leasesRenewLease2Request: LeasesRenewLease2Request;
+    LeasesRenewLease2Request: LeasesRenewLease2Request;
 }
 
 export interface SystemApiLeasesRenewLeaseWithIdOperationRequest {
-    urlLeaseId: string;
-    leasesRenewLeaseWithIdRequest: LeasesRenewLeaseWithIdRequest;
+    url_lease_id: string;
+    LeasesRenewLeaseWithIdRequest: LeasesRenewLeaseWithIdRequest;
 }
 
 export interface SystemApiLeasesRenewLeaseWithId2OperationRequest {
-    urlLeaseId: string;
-    leasesRenewLeaseWithId2Request: LeasesRenewLeaseWithId2Request;
+    url_lease_id: string;
+    LeasesRenewLeaseWithId2Request: LeasesRenewLeaseWithId2Request;
 }
 
 export interface SystemApiLeasesRevokeLeaseOperationRequest {
-    leasesRevokeLeaseRequest: LeasesRevokeLeaseRequest;
+    LeasesRevokeLeaseRequest: LeasesRevokeLeaseRequest;
 }
 
 export interface SystemApiLeasesRevokeLease2OperationRequest {
-    leasesRevokeLease2Request: LeasesRevokeLease2Request;
+    LeasesRevokeLease2Request: LeasesRevokeLease2Request;
 }
 
 export interface SystemApiLeasesRevokeLeaseWithIdOperationRequest {
-    urlLeaseId: string;
-    leasesRevokeLeaseWithIdRequest: LeasesRevokeLeaseWithIdRequest;
+    url_lease_id: string;
+    LeasesRevokeLeaseWithIdRequest: LeasesRevokeLeaseWithIdRequest;
 }
 
 export interface SystemApiLeasesRevokeLeaseWithId2OperationRequest {
-    urlLeaseId: string;
-    leasesRevokeLeaseWithId2Request: LeasesRevokeLeaseWithId2Request;
+    url_lease_id: string;
+    LeasesRevokeLeaseWithId2Request: LeasesRevokeLeaseWithId2Request;
 }
 
 export interface SystemApiLeasesRevokeLeaseWithPrefixOperationRequest {
     prefix: string;
-    leasesRevokeLeaseWithPrefixRequest: LeasesRevokeLeaseWithPrefixRequest;
+    LeasesRevokeLeaseWithPrefixRequest: LeasesRevokeLeaseWithPrefixRequest;
 }
 
 export interface SystemApiLeasesRevokeLeaseWithPrefix2OperationRequest {
     prefix: string;
-    leasesRevokeLeaseWithPrefix2Request: LeasesRevokeLeaseWithPrefix2Request;
+    LeasesRevokeLeaseWithPrefix2Request: LeasesRevokeLeaseWithPrefix2Request;
 }
 
 export interface SystemApiLockedUsersUnlockRequest {
-    aliasIdentifier: string;
-    mountAccessor: string;
+    alias_identifier: string;
+    mount_accessor: string;
 }
 
 export interface SystemApiLoggersReadVerbosityLevelForRequest {
@@ -965,12 +965,12 @@ export interface SystemApiLoggersRevertVerbosityLevelForRequest {
 }
 
 export interface SystemApiLoggersUpdateVerbosityLevelOperationRequest {
-    loggersUpdateVerbosityLevelRequest: LoggersUpdateVerbosityLevelRequest;
+    LoggersUpdateVerbosityLevelRequest: LoggersUpdateVerbosityLevelRequest;
 }
 
 export interface SystemApiLoggersUpdateVerbosityLevelForOperationRequest {
     name: string;
-    loggersUpdateVerbosityLevelForRequest: LoggersUpdateVerbosityLevelForRequest;
+    LoggersUpdateVerbosityLevelForRequest: LoggersUpdateVerbosityLevelForRequest;
 }
 
 export interface SystemApiMetricsRequest {
@@ -978,12 +978,12 @@ export interface SystemApiMetricsRequest {
 }
 
 export interface SystemApiMfaValidateOperationRequest {
-    mfaValidateRequest: MfaValidateRequest;
+    MfaValidateRequest: MfaValidateRequest;
 }
 
 export interface SystemApiMonitorRequest {
-    logFormat?: string;
-    logLevel?: string;
+    log_format?: string;
+    log_level?: string;
 }
 
 export interface SystemApiMountsDisableSecretsEngineRequest {
@@ -992,7 +992,7 @@ export interface SystemApiMountsDisableSecretsEngineRequest {
 
 export interface SystemApiMountsEnableSecretsEngineOperationRequest {
     path: string;
-    mountsEnableSecretsEngineRequest: MountsEnableSecretsEngineRequest;
+    MountsEnableSecretsEngineRequest: MountsEnableSecretsEngineRequest;
 }
 
 export interface SystemApiMountsReadConfigurationRequest {
@@ -1005,7 +1005,7 @@ export interface SystemApiMountsReadTuningInformationRequest {
 
 export interface SystemApiMountsTuneConfigurationParametersOperationRequest {
     path: string;
-    mountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest;
+    MountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest;
 }
 
 export interface SystemApiPluginsCatalogListPluginsWithTypeRequest {
@@ -1016,7 +1016,7 @@ export interface SystemApiPluginsCatalogListPluginsWithTypeRequest {
 export interface SystemApiPluginsCatalogPinsCreatePinnedVersionOperationRequest {
     name: string;
     type: string;
-    pluginsCatalogPinsCreatePinnedVersionRequest: PluginsCatalogPinsCreatePinnedVersionRequest;
+    PluginsCatalogPinsCreatePinnedVersionRequest: PluginsCatalogPinsCreatePinnedVersionRequest;
 }
 
 export interface SystemApiPluginsCatalogPinsReadPinnedVersionRequest {
@@ -1040,13 +1040,13 @@ export interface SystemApiPluginsCatalogReadPluginConfigurationWithTypeRequest {
 
 export interface SystemApiPluginsCatalogRegisterPluginOperationRequest {
     name: string;
-    pluginsCatalogRegisterPluginRequest: PluginsCatalogRegisterPluginRequest;
+    PluginsCatalogRegisterPluginRequest: PluginsCatalogRegisterPluginRequest;
 }
 
 export interface SystemApiPluginsCatalogRegisterPluginWithTypeOperationRequest {
     name: string;
     type: string;
-    pluginsCatalogRegisterPluginWithTypeRequest: PluginsCatalogRegisterPluginWithTypeRequest;
+    PluginsCatalogRegisterPluginWithTypeRequest: PluginsCatalogRegisterPluginWithTypeRequest;
 }
 
 export interface SystemApiPluginsCatalogRemovePluginRequest {
@@ -1059,7 +1059,7 @@ export interface SystemApiPluginsCatalogRemovePluginWithTypeRequest {
 }
 
 export interface SystemApiPluginsReloadBackendsOperationRequest {
-    pluginsReloadBackendsRequest: PluginsReloadBackendsRequest;
+    PluginsReloadBackendsRequest: PluginsReloadBackendsRequest;
 }
 
 export interface SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request {
@@ -1074,7 +1074,7 @@ export interface SystemApiPluginsRuntimesCatalogReadPluginRuntimeConfigurationRe
 export interface SystemApiPluginsRuntimesCatalogRegisterPluginRuntimeOperationRequest {
     name: string;
     type: string;
-    pluginsRuntimesCatalogRegisterPluginRuntimeRequest: PluginsRuntimesCatalogRegisterPluginRuntimeRequest;
+    PluginsRuntimesCatalogRegisterPluginRuntimeRequest: PluginsRuntimesCatalogRegisterPluginRuntimeRequest;
 }
 
 export interface SystemApiPluginsRuntimesCatalogRemovePluginRuntimeRequest {
@@ -1124,33 +1124,33 @@ export interface SystemApiPoliciesReadPasswordPolicyRequest {
 
 export interface SystemApiPoliciesWriteAclPolicyOperationRequest {
     name: string;
-    policiesWriteAclPolicyRequest: PoliciesWriteAclPolicyRequest;
+    PoliciesWriteAclPolicyRequest: PoliciesWriteAclPolicyRequest;
 }
 
 export interface SystemApiPoliciesWriteAclPolicy2OperationRequest {
     name: string;
-    policiesWriteAclPolicy2Request: PoliciesWriteAclPolicy2Request;
+    PoliciesWriteAclPolicy2Request: PoliciesWriteAclPolicy2Request;
 }
 
 export interface SystemApiPoliciesWritePasswordPolicyOperationRequest {
     name: string;
-    policiesWritePasswordPolicyRequest: PoliciesWritePasswordPolicyRequest;
+    PoliciesWritePasswordPolicyRequest: PoliciesWritePasswordPolicyRequest;
 }
 
 export interface SystemApiQueryTokenAccessorCapabilitiesOperationRequest {
-    queryTokenAccessorCapabilitiesRequest: QueryTokenAccessorCapabilitiesRequest;
+    QueryTokenAccessorCapabilitiesRequest: QueryTokenAccessorCapabilitiesRequest;
 }
 
 export interface SystemApiQueryTokenCapabilitiesOperationRequest {
-    queryTokenCapabilitiesRequest: QueryTokenCapabilitiesRequest;
+    QueryTokenCapabilitiesRequest: QueryTokenCapabilitiesRequest;
 }
 
 export interface SystemApiQueryTokenSelfCapabilitiesOperationRequest {
-    queryTokenSelfCapabilitiesRequest: QueryTokenSelfCapabilitiesRequest;
+    QueryTokenSelfCapabilitiesRequest: QueryTokenSelfCapabilitiesRequest;
 }
 
 export interface SystemApiRateLimitQuotasConfigureOperationRequest {
-    rateLimitQuotasConfigureRequest: RateLimitQuotasConfigureRequest;
+    RateLimitQuotasConfigureRequest: RateLimitQuotasConfigureRequest;
 }
 
 export interface SystemApiRateLimitQuotasDeleteRequest {
@@ -1167,7 +1167,7 @@ export interface SystemApiRateLimitQuotasReadRequest {
 
 export interface SystemApiRateLimitQuotasWriteOperationRequest {
     name: string;
-    rateLimitQuotasWriteRequest: RateLimitQuotasWriteRequest;
+    RateLimitQuotasWriteRequest: RateLimitQuotasWriteRequest;
 }
 
 export interface SystemApiRawDeleteRequest {
@@ -1185,11 +1185,11 @@ export interface SystemApiRawReadRequest {
 
 export interface SystemApiRawWriteOperationRequest {
     path: string;
-    rawWriteRequest: RawWriteRequest;
+    RawWriteRequest: RawWriteRequest;
 }
 
 export interface SystemApiReadWrappingPropertiesOperationRequest {
-    readWrappingPropertiesRequest: ReadWrappingPropertiesRequest;
+    ReadWrappingPropertiesRequest: ReadWrappingPropertiesRequest;
 }
 
 export interface SystemApiReadWrappingProperties2Request {
@@ -1197,21 +1197,21 @@ export interface SystemApiReadWrappingProperties2Request {
 }
 
 export interface SystemApiRekeyAttemptInitializeOperationRequest {
-    rekeyAttemptInitializeRequest: RekeyAttemptInitializeRequest;
+    RekeyAttemptInitializeRequest: RekeyAttemptInitializeRequest;
 }
 
 export interface SystemApiRekeyAttemptUpdateOperationRequest {
-    rekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest;
+    RekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest;
 }
 
 export interface SystemApiRekeyVerificationUpdateOperationRequest {
-    rekeyVerificationUpdateRequest: RekeyVerificationUpdateRequest;
+    RekeyVerificationUpdateRequest: RekeyVerificationUpdateRequest;
 }
 
 export interface SystemApiReloadPluginsOperationRequest {
     name: string;
     type: string;
-    reloadPluginsRequest: ReloadPluginsRequest;
+    ReloadPluginsRequest: ReloadPluginsRequest;
 }
 
 export interface SystemApiReloadSubsystemRequest {
@@ -1219,27 +1219,27 @@ export interface SystemApiReloadSubsystemRequest {
 }
 
 export interface SystemApiRemountOperationRequest {
-    remountRequest: RemountRequest;
+    RemountRequest: RemountRequest;
 }
 
 export interface SystemApiRemountStatusRequest {
-    migrationId: string;
+    migration_id: string;
 }
 
 export interface SystemApiRewrapOperationRequest {
-    rewrapRequest: RewrapRequest;
+    RewrapRequest: RewrapRequest;
 }
 
 export interface SystemApiRootTokenGenerationInitializeOperationRequest {
-    rootTokenGenerationInitializeRequest: RootTokenGenerationInitializeRequest;
+    RootTokenGenerationInitializeRequest: RootTokenGenerationInitializeRequest;
 }
 
 export interface SystemApiRootTokenGenerationInitialize2OperationRequest {
-    rootTokenGenerationInitialize2Request: RootTokenGenerationInitialize2Request;
+    RootTokenGenerationInitialize2Request: RootTokenGenerationInitialize2Request;
 }
 
 export interface SystemApiRootTokenGenerationUpdateOperationRequest {
-    rootTokenGenerationUpdateRequest: RootTokenGenerationUpdateRequest;
+    RootTokenGenerationUpdateRequest: RootTokenGenerationUpdateRequest;
 }
 
 export interface SystemApiSubscriptionsCreateRequest {
@@ -1257,7 +1257,7 @@ export interface SystemApiSubscriptionsListEventsSubscriptionsRequest {
 }
 
 export interface SystemApiSubscriptionsWriteEventsSubscriptionsOperationRequest {
-    subscriptionsWriteEventsSubscriptionsRequest: SubscriptionsWriteEventsSubscriptionsRequest;
+    SubscriptionsWriteEventsSubscriptionsRequest: SubscriptionsWriteEventsSubscriptionsRequest;
 }
 
 export interface SystemApiSystemDeleteManagedKeysTypeNameRequest {
@@ -1389,41 +1389,41 @@ export interface SystemApiSystemListSyncGithubAppsRequest {
 
 export interface SystemApiSystemPatchNamespacesPathOperationRequest {
     path: string;
-    systemPatchNamespacesPathRequest: SystemPatchNamespacesPathRequest;
+    SystemPatchNamespacesPathRequest: SystemPatchNamespacesPathRequest;
 }
 
 export interface SystemApiSystemPatchSyncConfigOperationRequest {
-    systemPatchSyncConfigRequest: SystemPatchSyncConfigRequest;
+    SystemPatchSyncConfigRequest: SystemPatchSyncConfigRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsAwsSmNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsAwsSmNameRequest: SystemPatchSyncDestinationsAwsSmNameRequest;
+    SystemPatchSyncDestinationsAwsSmNameRequest: SystemPatchSyncDestinationsAwsSmNameRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsAzureKvNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsAzureKvNameRequest: SystemPatchSyncDestinationsAzureKvNameRequest;
+    SystemPatchSyncDestinationsAzureKvNameRequest: SystemPatchSyncDestinationsAzureKvNameRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsGcpSmNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsGcpSmNameRequest: SystemPatchSyncDestinationsGcpSmNameRequest;
+    SystemPatchSyncDestinationsGcpSmNameRequest: SystemPatchSyncDestinationsGcpSmNameRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsGhNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsGhNameRequest: SystemPatchSyncDestinationsGhNameRequest;
+    SystemPatchSyncDestinationsGhNameRequest: SystemPatchSyncDestinationsGhNameRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsInMemNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsInMemNameRequest: SystemPatchSyncDestinationsInMemNameRequest;
+    SystemPatchSyncDestinationsInMemNameRequest: SystemPatchSyncDestinationsInMemNameRequest;
 }
 
 export interface SystemApiSystemPatchSyncDestinationsVercelProjectNameOperationRequest {
     name: string;
-    systemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest;
+    SystemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest;
 }
 
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
@@ -1493,7 +1493,7 @@ export interface SystemApiSystemReadStorageRaftSnapshotLoadIdRequest {
 
 export interface SystemApiSystemReadSyncAssociationsMountSecretNameRequest {
     mount: string;
-    secretName: string;
+    secret_name: string;
 }
 
 export interface SystemApiSystemReadSyncDestinationsAwsSmNameRequest {
@@ -1530,65 +1530,65 @@ export interface SystemApiSystemReadSyncGithubAppsNameRequest {
 }
 
 export interface SystemApiSystemWriteConfigControlGroupOperationRequest {
-    systemWriteConfigControlGroupRequest: SystemWriteConfigControlGroupRequest;
+    SystemWriteConfigControlGroupRequest: SystemWriteConfigControlGroupRequest;
 }
 
 export interface SystemApiSystemWriteConfigGroupPolicyApplicationOperationRequest {
-    systemWriteConfigGroupPolicyApplicationRequest: SystemWriteConfigGroupPolicyApplicationRequest;
+    SystemWriteConfigGroupPolicyApplicationRequest: SystemWriteConfigGroupPolicyApplicationRequest;
 }
 
 export interface SystemApiSystemWriteControlGroupAuthorizeOperationRequest {
-    systemWriteControlGroupAuthorizeRequest: SystemWriteControlGroupAuthorizeRequest;
+    SystemWriteControlGroupAuthorizeRequest: SystemWriteControlGroupAuthorizeRequest;
 }
 
 export interface SystemApiSystemWriteControlGroupRequestOperationRequest {
-    systemWriteControlGroupRequestRequest: SystemWriteControlGroupRequestRequest;
+    SystemWriteControlGroupRequestRequest: SystemWriteControlGroupRequestRequest;
 }
 
 export interface SystemApiSystemWriteInternalCountersActivityWriteOperationRequest {
-    systemWriteInternalCountersActivityWriteRequest: SystemWriteInternalCountersActivityWriteRequest;
+    SystemWriteInternalCountersActivityWriteRequest: SystemWriteInternalCountersActivityWriteRequest;
 }
 
 export interface SystemApiSystemWriteManagedKeysTypeNameOperationRequest {
     name: string;
     type: string;
-    systemWriteManagedKeysTypeNameRequest: SystemWriteManagedKeysTypeNameRequest;
+    SystemWriteManagedKeysTypeNameRequest: SystemWriteManagedKeysTypeNameRequest;
 }
 
 export interface SystemApiSystemWriteManagedKeysTypeNameTestSignOperationRequest {
     name: string;
     type: string;
-    systemWriteManagedKeysTypeNameTestSignRequest: SystemWriteManagedKeysTypeNameTestSignRequest;
+    SystemWriteManagedKeysTypeNameTestSignRequest: SystemWriteManagedKeysTypeNameTestSignRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodDuoNameOperationRequest {
     name: string;
-    systemWriteMfaMethodDuoNameRequest: SystemWriteMfaMethodDuoNameRequest;
+    SystemWriteMfaMethodDuoNameRequest: SystemWriteMfaMethodDuoNameRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodOktaNameOperationRequest {
     name: string;
-    systemWriteMfaMethodOktaNameRequest: SystemWriteMfaMethodOktaNameRequest;
+    SystemWriteMfaMethodOktaNameRequest: SystemWriteMfaMethodOktaNameRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodPingidNameOperationRequest {
     name: string;
-    systemWriteMfaMethodPingidNameRequest: SystemWriteMfaMethodPingidNameRequest;
+    SystemWriteMfaMethodPingidNameRequest: SystemWriteMfaMethodPingidNameRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodTotpNameOperationRequest {
     name: string;
-    systemWriteMfaMethodTotpNameRequest: SystemWriteMfaMethodTotpNameRequest;
+    SystemWriteMfaMethodTotpNameRequest: SystemWriteMfaMethodTotpNameRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodTotpNameAdminDestroyOperationRequest {
     name: string;
-    systemWriteMfaMethodTotpNameAdminDestroyRequest: SystemWriteMfaMethodTotpNameAdminDestroyRequest;
+    SystemWriteMfaMethodTotpNameAdminDestroyRequest: SystemWriteMfaMethodTotpNameAdminDestroyRequest;
 }
 
 export interface SystemApiSystemWriteMfaMethodTotpNameAdminGenerateOperationRequest {
     name: string;
-    systemWriteMfaMethodTotpNameAdminGenerateRequest: SystemWriteMfaMethodTotpNameAdminGenerateRequest;
+    SystemWriteMfaMethodTotpNameAdminGenerateRequest: SystemWriteMfaMethodTotpNameAdminGenerateRequest;
 }
 
 export interface SystemApiSystemWriteNamespacesApiLockLockPathRequest {
@@ -1596,44 +1596,44 @@ export interface SystemApiSystemWriteNamespacesApiLockLockPathRequest {
 }
 
 export interface SystemApiSystemWriteNamespacesApiLockUnlockOperationRequest {
-    systemWriteNamespacesApiLockUnlockRequest: SystemWriteNamespacesApiLockUnlockRequest;
+    SystemWriteNamespacesApiLockUnlockRequest: SystemWriteNamespacesApiLockUnlockRequest;
 }
 
 export interface SystemApiSystemWriteNamespacesApiLockUnlockPathOperationRequest {
     path: string;
-    systemWriteNamespacesApiLockUnlockPathRequest: SystemWriteNamespacesApiLockUnlockPathRequest;
+    SystemWriteNamespacesApiLockUnlockPathRequest: SystemWriteNamespacesApiLockUnlockPathRequest;
 }
 
 export interface SystemApiSystemWriteNamespacesPathOperationRequest {
     path: string;
-    systemWriteNamespacesPathRequest: SystemWriteNamespacesPathRequest;
+    SystemWriteNamespacesPathRequest: SystemWriteNamespacesPathRequest;
 }
 
 export interface SystemApiSystemWritePoliciesEgpNameOperationRequest {
     name: string;
-    systemWritePoliciesEgpNameRequest: SystemWritePoliciesEgpNameRequest;
+    SystemWritePoliciesEgpNameRequest: SystemWritePoliciesEgpNameRequest;
 }
 
 export interface SystemApiSystemWritePoliciesRgpNameOperationRequest {
     name: string;
-    systemWritePoliciesRgpNameRequest: SystemWritePoliciesRgpNameRequest;
+    SystemWritePoliciesRgpNameRequest: SystemWritePoliciesRgpNameRequest;
 }
 
 export interface SystemApiSystemWriteQuotasLeaseCountNameOperationRequest {
     name: string;
-    systemWriteQuotasLeaseCountNameRequest: SystemWriteQuotasLeaseCountNameRequest;
+    SystemWriteQuotasLeaseCountNameRequest: SystemWriteQuotasLeaseCountNameRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrPrimaryEnableOperationRequest {
-    systemWriteReplicationDrPrimaryEnableRequest: SystemWriteReplicationDrPrimaryEnableRequest;
+    SystemWriteReplicationDrPrimaryEnableRequest: SystemWriteReplicationDrPrimaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrPrimaryRevokeSecondaryOperationRequest {
-    systemWriteReplicationDrPrimaryRevokeSecondaryRequest: SystemWriteReplicationDrPrimaryRevokeSecondaryRequest;
+    SystemWriteReplicationDrPrimaryRevokeSecondaryRequest: SystemWriteReplicationDrPrimaryRevokeSecondaryRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrPrimarySecondaryTokenOperationRequest {
-    systemWriteReplicationDrPrimarySecondaryTokenRequest: SystemWriteReplicationDrPrimarySecondaryTokenRequest;
+    SystemWriteReplicationDrPrimarySecondaryTokenRequest: SystemWriteReplicationDrPrimarySecondaryTokenRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryConfigReloadSubsystemRequest {
@@ -1641,157 +1641,157 @@ export interface SystemApiSystemWriteReplicationDrSecondaryConfigReloadSubsystem
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryDisableOperationRequest {
-    systemWriteReplicationDrSecondaryDisableRequest: SystemWriteReplicationDrSecondaryDisableRequest;
+    SystemWriteReplicationDrSecondaryDisableRequest: SystemWriteReplicationDrSecondaryDisableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryEnableOperationRequest {
-    systemWriteReplicationDrSecondaryEnableRequest: SystemWriteReplicationDrSecondaryEnableRequest;
+    SystemWriteReplicationDrSecondaryEnableRequest: SystemWriteReplicationDrSecondaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryMerkleCheckOperationRequest {
-    systemWriteReplicationDrSecondaryMerkleCheckRequest: SystemWriteReplicationDrSecondaryMerkleCheckRequest;
+    SystemWriteReplicationDrSecondaryMerkleCheckRequest: SystemWriteReplicationDrSecondaryMerkleCheckRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryOperationTokenDeleteOperationRequest {
-    systemWriteReplicationDrSecondaryOperationTokenDeleteRequest: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest;
+    SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryPromoteOperationRequest {
-    systemWriteReplicationDrSecondaryPromoteRequest: SystemWriteReplicationDrSecondaryPromoteRequest;
+    SystemWriteReplicationDrSecondaryPromoteRequest: SystemWriteReplicationDrSecondaryPromoteRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryRecoverOperationRequest {
-    systemWriteReplicationDrSecondaryRecoverRequest: SystemWriteReplicationDrSecondaryRecoverRequest;
+    SystemWriteReplicationDrSecondaryRecoverRequest: SystemWriteReplicationDrSecondaryRecoverRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryReindexOperationRequest {
-    systemWriteReplicationDrSecondaryReindexRequest: SystemWriteReplicationDrSecondaryReindexRequest;
+    SystemWriteReplicationDrSecondaryReindexRequest: SystemWriteReplicationDrSecondaryReindexRequest;
 }
 
 export interface SystemApiSystemWriteReplicationDrSecondaryUpdatePrimaryOperationRequest {
-    systemWriteReplicationDrSecondaryUpdatePrimaryRequest: SystemWriteReplicationDrSecondaryUpdatePrimaryRequest;
+    SystemWriteReplicationDrSecondaryUpdatePrimaryRequest: SystemWriteReplicationDrSecondaryUpdatePrimaryRequest;
 }
 
 export interface SystemApiSystemWriteReplicationForceCorruptionOperationRequest {
-    systemWriteReplicationForceCorruptionRequest: SystemWriteReplicationForceCorruptionRequest;
+    SystemWriteReplicationForceCorruptionRequest: SystemWriteReplicationForceCorruptionRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformancePrimaryEnableOperationRequest {
-    systemWriteReplicationPerformancePrimaryEnableRequest: SystemWriteReplicationPerformancePrimaryEnableRequest;
+    SystemWriteReplicationPerformancePrimaryEnableRequest: SystemWriteReplicationPerformancePrimaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformancePrimaryPathsFilterIdOperationRequest {
     id: string;
-    systemWriteReplicationPerformancePrimaryPathsFilterIdRequest: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest;
+    SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformancePrimaryRevokeSecondaryOperationRequest {
-    systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest;
+    SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformancePrimarySecondaryTokenOperationRequest {
-    systemWriteReplicationPerformancePrimarySecondaryTokenRequest: SystemWriteReplicationPerformancePrimarySecondaryTokenRequest;
+    SystemWriteReplicationPerformancePrimarySecondaryTokenRequest: SystemWriteReplicationPerformancePrimarySecondaryTokenRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformanceSecondaryEnableOperationRequest {
-    systemWriteReplicationPerformanceSecondaryEnableRequest: SystemWriteReplicationPerformanceSecondaryEnableRequest;
+    SystemWriteReplicationPerformanceSecondaryEnableRequest: SystemWriteReplicationPerformanceSecondaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformanceSecondaryPromoteOperationRequest {
-    systemWriteReplicationPerformanceSecondaryPromoteRequest: SystemWriteReplicationPerformanceSecondaryPromoteRequest;
+    SystemWriteReplicationPerformanceSecondaryPromoteRequest: SystemWriteReplicationPerformanceSecondaryPromoteRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPerformanceSecondaryUpdatePrimaryOperationRequest {
-    systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest;
+    SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPrimaryEnableOperationRequest {
-    systemWriteReplicationPrimaryEnableRequest: SystemWriteReplicationPrimaryEnableRequest;
+    SystemWriteReplicationPrimaryEnableRequest: SystemWriteReplicationPrimaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPrimaryRevokeSecondaryOperationRequest {
-    systemWriteReplicationPrimaryRevokeSecondaryRequest: SystemWriteReplicationPrimaryRevokeSecondaryRequest;
+    SystemWriteReplicationPrimaryRevokeSecondaryRequest: SystemWriteReplicationPrimaryRevokeSecondaryRequest;
 }
 
 export interface SystemApiSystemWriteReplicationPrimarySecondaryTokenOperationRequest {
-    systemWriteReplicationPrimarySecondaryTokenRequest: SystemWriteReplicationPrimarySecondaryTokenRequest;
+    SystemWriteReplicationPrimarySecondaryTokenRequest: SystemWriteReplicationPrimarySecondaryTokenRequest;
 }
 
 export interface SystemApiSystemWriteReplicationReindexOperationRequest {
-    systemWriteReplicationReindexRequest: SystemWriteReplicationReindexRequest;
+    SystemWriteReplicationReindexRequest: SystemWriteReplicationReindexRequest;
 }
 
 export interface SystemApiSystemWriteReplicationSecondaryEnableOperationRequest {
-    systemWriteReplicationSecondaryEnableRequest: SystemWriteReplicationSecondaryEnableRequest;
+    SystemWriteReplicationSecondaryEnableRequest: SystemWriteReplicationSecondaryEnableRequest;
 }
 
 export interface SystemApiSystemWriteReplicationSecondaryPromoteOperationRequest {
-    systemWriteReplicationSecondaryPromoteRequest: SystemWriteReplicationSecondaryPromoteRequest;
+    SystemWriteReplicationSecondaryPromoteRequest: SystemWriteReplicationSecondaryPromoteRequest;
 }
 
 export interface SystemApiSystemWriteReplicationSecondaryUpdatePrimaryOperationRequest {
-    systemWriteReplicationSecondaryUpdatePrimaryRequest: SystemWriteReplicationSecondaryUpdatePrimaryRequest;
+    SystemWriteReplicationSecondaryUpdatePrimaryRequest: SystemWriteReplicationSecondaryUpdatePrimaryRequest;
 }
 
 export interface SystemApiSystemWriteStorageRaftSnapshotAutoConfigNameOperationRequest {
     name: string;
-    systemWriteStorageRaftSnapshotAutoConfigNameRequest: SystemWriteStorageRaftSnapshotAutoConfigNameRequest;
+    SystemWriteStorageRaftSnapshotAutoConfigNameRequest: SystemWriteStorageRaftSnapshotAutoConfigNameRequest;
 }
 
 export interface SystemApiSystemWriteStorageRaftSnapshotAutoSnapshotLoadNameOperationRequest {
     name: string;
-    systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest;
+    SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsAwsSmNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsAwsSmNameRequest: SystemWriteSyncDestinationsAwsSmNameRequest;
+    SystemWriteSyncDestinationsAwsSmNameRequest: SystemWriteSyncDestinationsAwsSmNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsAzureKvNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsAzureKvNameRequest: SystemWriteSyncDestinationsAzureKvNameRequest;
+    SystemWriteSyncDestinationsAzureKvNameRequest: SystemWriteSyncDestinationsAzureKvNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsGcpSmNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsGcpSmNameRequest: SystemWriteSyncDestinationsGcpSmNameRequest;
+    SystemWriteSyncDestinationsGcpSmNameRequest: SystemWriteSyncDestinationsGcpSmNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsGhNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsGhNameRequest: SystemWriteSyncDestinationsGhNameRequest;
+    SystemWriteSyncDestinationsGhNameRequest: SystemWriteSyncDestinationsGhNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsInMemNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsInMemNameRequest: SystemWriteSyncDestinationsInMemNameRequest;
+    SystemWriteSyncDestinationsInMemNameRequest: SystemWriteSyncDestinationsInMemNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsTypeNameAssociationsRemoveOperationRequest {
     name: string;
     type: string;
-    systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest;
+    SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsTypeNameAssociationsSetOperationRequest {
     name: string;
     type: string;
-    systemWriteSyncDestinationsTypeNameAssociationsSetRequest: SystemWriteSyncDestinationsTypeNameAssociationsSetRequest;
+    SystemWriteSyncDestinationsTypeNameAssociationsSetRequest: SystemWriteSyncDestinationsTypeNameAssociationsSetRequest;
 }
 
 export interface SystemApiSystemWriteSyncDestinationsVercelProjectNameOperationRequest {
     name: string;
-    systemWriteSyncDestinationsVercelProjectNameRequest: SystemWriteSyncDestinationsVercelProjectNameRequest;
+    SystemWriteSyncDestinationsVercelProjectNameRequest: SystemWriteSyncDestinationsVercelProjectNameRequest;
 }
 
 export interface SystemApiSystemWriteSyncGithubAppsNameOperationRequest {
     name: string;
-    systemWriteSyncGithubAppsNameRequest: SystemWriteSyncGithubAppsNameRequest;
+    SystemWriteSyncGithubAppsNameRequest: SystemWriteSyncGithubAppsNameRequest;
 }
 
 export interface SystemApiSystemWriteUtilizationOperationRequest {
-    systemWriteUtilizationRequest: SystemWriteUtilizationRequest;
+    SystemWriteUtilizationRequest: SystemWriteUtilizationRequest;
 }
 
 export interface SystemApiUiConfigDeleteCustomMessageRequest {
@@ -1811,12 +1811,12 @@ export interface SystemApiUiConfigReadCustomMessageRequest {
 
 export interface SystemApiUiConfigUpdateCustomMessageOperationRequest {
     id: string;
-    uiConfigUpdateCustomMessageRequest: UiConfigUpdateCustomMessageRequest;
+    UiConfigUpdateCustomMessageRequest: UiConfigUpdateCustomMessageRequest;
 }
 
 export interface SystemApiUiHeadersConfigureOperationRequest {
     header: string;
-    uiHeadersConfigureRequest: UiHeadersConfigureRequest;
+    UiHeadersConfigureRequest: UiHeadersConfigureRequest;
 }
 
 export interface SystemApiUiHeadersDeleteConfigurationRequest {
@@ -1833,7 +1833,7 @@ export interface SystemApiUiHeadersReadConfigurationRequest {
 
 export interface SystemApiUiLoginDefaultAuthConfigureOperationRequest {
     name: string;
-    uiLoginDefaultAuthConfigureRequest: UiLoginDefaultAuthConfigureRequest;
+    UiLoginDefaultAuthConfigureRequest: UiLoginDefaultAuthConfigureRequest;
 }
 
 export interface SystemApiUiLoginDefaultAuthDeleteConfigurationRequest {
@@ -1849,11 +1849,11 @@ export interface SystemApiUiLoginDefaultAuthReadConfigurationRequest {
 }
 
 export interface SystemApiUnsealOperationRequest {
-    unsealRequest: UnsealRequest;
+    UnsealRequest: UnsealRequest;
 }
 
 export interface SystemApiUnwrapOperationRequest {
-    unwrapRequest: UnwrapRequest;
+    UnwrapRequest: UnwrapRequest;
 }
 
 export interface SystemApiVersionHistoryRequest {
@@ -1869,7 +1869,7 @@ export interface SystemApiWellKnownReadLabelRequest {
 }
 
 export interface SystemApiWrapRequest {
-    requestBody: { [key: string]: any; };
+    request_body: { [key: string]: any; };
 }
 
 /**
@@ -1991,10 +1991,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['auditingCalculateHashRequest'] == null) {
+        if (requestParameters['AuditingCalculateHashRequest'] == null) {
             throw new runtime.RequiredError(
-                'auditingCalculateHashRequest',
-                'Required parameter "auditingCalculateHashRequest" was null or undefined when calling auditingCalculateHash().'
+                'AuditingCalculateHashRequest',
+                'Required parameter "AuditingCalculateHashRequest" was null or undefined when calling auditingCalculateHash().'
             );
         }
 
@@ -2009,7 +2009,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuditingCalculateHashRequestToJSON(requestParameters['auditingCalculateHashRequest']),
+            body: AuditingCalculateHashRequestToJSON(requestParameters['AuditingCalculateHashRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AuditingCalculateHashResponseFromJSON(jsonValue));
@@ -2017,8 +2017,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async auditingCalculateHash(path: string, auditingCalculateHashRequest: AuditingCalculateHashRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuditingCalculateHashResponse> {
-        const response = await this.auditingCalculateHashRaw({ path: path, auditingCalculateHashRequest: auditingCalculateHashRequest }, initOverrides);
+    async auditingCalculateHash(path: string, AuditingCalculateHashRequest: AuditingCalculateHashRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuditingCalculateHashResponse> {
+        const response = await this.auditingCalculateHashRaw({ path: path, AuditingCalculateHashRequest: AuditingCalculateHashRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2099,10 +2099,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['auditingEnableDeviceRequest'] == null) {
+        if (requestParameters['AuditingEnableDeviceRequest'] == null) {
             throw new runtime.RequiredError(
-                'auditingEnableDeviceRequest',
-                'Required parameter "auditingEnableDeviceRequest" was null or undefined when calling auditingEnableDevice().'
+                'AuditingEnableDeviceRequest',
+                'Required parameter "AuditingEnableDeviceRequest" was null or undefined when calling auditingEnableDevice().'
             );
         }
 
@@ -2117,7 +2117,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuditingEnableDeviceRequestToJSON(requestParameters['auditingEnableDeviceRequest']),
+            body: AuditingEnableDeviceRequestToJSON(requestParameters['AuditingEnableDeviceRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2126,8 +2126,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enable a new audit device at the supplied path.
      */
-    async auditingEnableDevice(path: string, auditingEnableDeviceRequest: AuditingEnableDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.auditingEnableDeviceRaw({ path: path, auditingEnableDeviceRequest: auditingEnableDeviceRequest }, initOverrides);
+    async auditingEnableDevice(path: string, AuditingEnableDeviceRequest: AuditingEnableDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.auditingEnableDeviceRaw({ path: path, AuditingEnableDeviceRequest: AuditingEnableDeviceRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2142,10 +2142,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['auditingEnableRequestHeaderRequest'] == null) {
+        if (requestParameters['AuditingEnableRequestHeaderRequest'] == null) {
             throw new runtime.RequiredError(
-                'auditingEnableRequestHeaderRequest',
-                'Required parameter "auditingEnableRequestHeaderRequest" was null or undefined when calling auditingEnableRequestHeader().'
+                'AuditingEnableRequestHeaderRequest',
+                'Required parameter "AuditingEnableRequestHeaderRequest" was null or undefined when calling auditingEnableRequestHeader().'
             );
         }
 
@@ -2160,7 +2160,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuditingEnableRequestHeaderRequestToJSON(requestParameters['auditingEnableRequestHeaderRequest']),
+            body: AuditingEnableRequestHeaderRequestToJSON(requestParameters['AuditingEnableRequestHeaderRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2169,8 +2169,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enable auditing of a header.
      */
-    async auditingEnableRequestHeader(header: string, auditingEnableRequestHeaderRequest: AuditingEnableRequestHeaderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.auditingEnableRequestHeaderRaw({ header: header, auditingEnableRequestHeaderRequest: auditingEnableRequestHeaderRequest }, initOverrides);
+    async auditingEnableRequestHeader(header: string, AuditingEnableRequestHeaderRequest: AuditingEnableRequestHeaderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.auditingEnableRequestHeaderRaw({ header: header, AuditingEnableRequestHeaderRequest: AuditingEnableRequestHeaderRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2304,10 +2304,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['authEnableMethodRequest'] == null) {
+        if (requestParameters['AuthEnableMethodRequest'] == null) {
             throw new runtime.RequiredError(
-                'authEnableMethodRequest',
-                'Required parameter "authEnableMethodRequest" was null or undefined when calling authEnableMethod().'
+                'AuthEnableMethodRequest',
+                'Required parameter "AuthEnableMethodRequest" was null or undefined when calling authEnableMethod().'
             );
         }
 
@@ -2322,7 +2322,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuthEnableMethodRequestToJSON(requestParameters['authEnableMethodRequest']),
+            body: AuthEnableMethodRequestToJSON(requestParameters['AuthEnableMethodRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2332,8 +2332,8 @@ export class SystemApi extends runtime.BaseAPI {
      * After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
      * Enables a new auth method.
      */
-    async authEnableMethod(path: string, authEnableMethodRequest: AuthEnableMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.authEnableMethodRaw({ path: path, authEnableMethodRequest: authEnableMethodRequest }, initOverrides);
+    async authEnableMethod(path: string, AuthEnableMethodRequest: AuthEnableMethodRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.authEnableMethodRaw({ path: path, AuthEnableMethodRequest: AuthEnableMethodRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2441,10 +2441,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['authTuneConfigurationParametersRequest'] == null) {
+        if (requestParameters['AuthTuneConfigurationParametersRequest'] == null) {
             throw new runtime.RequiredError(
-                'authTuneConfigurationParametersRequest',
-                'Required parameter "authTuneConfigurationParametersRequest" was null or undefined when calling authTuneConfigurationParameters().'
+                'AuthTuneConfigurationParametersRequest',
+                'Required parameter "AuthTuneConfigurationParametersRequest" was null or undefined when calling authTuneConfigurationParameters().'
             );
         }
 
@@ -2459,7 +2459,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuthTuneConfigurationParametersRequestToJSON(requestParameters['authTuneConfigurationParametersRequest']),
+            body: AuthTuneConfigurationParametersRequestToJSON(requestParameters['AuthTuneConfigurationParametersRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2469,8 +2469,8 @@ export class SystemApi extends runtime.BaseAPI {
      * This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
      * Tune configuration parameters for a given auth path.
      */
-    async authTuneConfigurationParameters(path: string, authTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.authTuneConfigurationParametersRaw({ path: path, authTuneConfigurationParametersRequest: authTuneConfigurationParametersRequest }, initOverrides);
+    async authTuneConfigurationParameters(path: string, AuthTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.authTuneConfigurationParametersRaw({ path: path, AuthTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2534,10 +2534,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Configure the CORS settings.
      */
     async corsConfigureRaw(requestParameters: SystemApiCorsConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['corsConfigureRequest'] == null) {
+        if (requestParameters['CorsConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'corsConfigureRequest',
-                'Required parameter "corsConfigureRequest" was null or undefined when calling corsConfigure().'
+                'CorsConfigureRequest',
+                'Required parameter "CorsConfigureRequest" was null or undefined when calling corsConfigure().'
             );
         }
 
@@ -2552,7 +2552,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CorsConfigureRequestToJSON(requestParameters['corsConfigureRequest']),
+            body: CorsConfigureRequestToJSON(requestParameters['CorsConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2561,8 +2561,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Configure the CORS settings.
      */
-    async corsConfigure(corsConfigureRequest: CorsConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.corsConfigureRaw({ corsConfigureRequest: corsConfigureRequest }, initOverrides);
+    async corsConfigure(CorsConfigureRequest: CorsConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.corsConfigureRaw({ CorsConfigureRequest: CorsConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2622,10 +2622,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Create custom message
      */
     async createCustomMessageRaw(requestParameters: SystemApiCreateCustomMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['createCustomMessageRequest'] == null) {
+        if (requestParameters['CreateCustomMessageRequest'] == null) {
             throw new runtime.RequiredError(
-                'createCustomMessageRequest',
-                'Required parameter "createCustomMessageRequest" was null or undefined when calling createCustomMessage().'
+                'CreateCustomMessageRequest',
+                'Required parameter "CreateCustomMessageRequest" was null or undefined when calling createCustomMessage().'
             );
         }
 
@@ -2640,7 +2640,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: CreateCustomMessageRequestToJSON(requestParameters['createCustomMessageRequest']),
+            body: CreateCustomMessageRequestToJSON(requestParameters['CreateCustomMessageRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2649,8 +2649,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Create custom message
      */
-    async createCustomMessage(createCustomMessageRequest: CreateCustomMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.createCustomMessageRaw({ createCustomMessageRequest: createCustomMessageRequest }, initOverrides);
+    async createCustomMessage(CreateCustomMessageRequest: CreateCustomMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.createCustomMessageRaw({ CreateCustomMessageRequest: CreateCustomMessageRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2658,10 +2658,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Decodes the encoded token with the otp.
      */
     async decodeTokenRaw(requestParameters: SystemApiDecodeTokenOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['decodeTokenRequest'] == null) {
+        if (requestParameters['DecodeTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'decodeTokenRequest',
-                'Required parameter "decodeTokenRequest" was null or undefined when calling decodeToken().'
+                'DecodeTokenRequest',
+                'Required parameter "DecodeTokenRequest" was null or undefined when calling decodeToken().'
             );
         }
 
@@ -2676,7 +2676,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DecodeTokenRequestToJSON(requestParameters['decodeTokenRequest']),
+            body: DecodeTokenRequestToJSON(requestParameters['DecodeTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2685,18 +2685,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Decodes the encoded token with the otp.
      */
-    async decodeToken(decodeTokenRequest: DecodeTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.decodeTokenRaw({ decodeTokenRequest: decodeTokenRequest }, initOverrides);
+    async decodeToken(DecodeTokenRequest: DecodeTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.decodeTokenRaw({ DecodeTokenRequest: DecodeTokenRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async encryptionKeyConfigureRotationRaw(requestParameters: SystemApiEncryptionKeyConfigureRotationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['encryptionKeyConfigureRotationRequest'] == null) {
+        if (requestParameters['EncryptionKeyConfigureRotationRequest'] == null) {
             throw new runtime.RequiredError(
-                'encryptionKeyConfigureRotationRequest',
-                'Required parameter "encryptionKeyConfigureRotationRequest" was null or undefined when calling encryptionKeyConfigureRotation().'
+                'EncryptionKeyConfigureRotationRequest',
+                'Required parameter "EncryptionKeyConfigureRotationRequest" was null or undefined when calling encryptionKeyConfigureRotation().'
             );
         }
 
@@ -2711,7 +2711,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EncryptionKeyConfigureRotationRequestToJSON(requestParameters['encryptionKeyConfigureRotationRequest']),
+            body: EncryptionKeyConfigureRotationRequestToJSON(requestParameters['EncryptionKeyConfigureRotationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -2719,8 +2719,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async encryptionKeyConfigureRotation(encryptionKeyConfigureRotationRequest: EncryptionKeyConfigureRotationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.encryptionKeyConfigureRotationRaw({ encryptionKeyConfigureRotationRequest: encryptionKeyConfigureRotationRequest }, initOverrides);
+    async encryptionKeyConfigureRotation(EncryptionKeyConfigureRotationRequest: EncryptionKeyConfigureRotationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.encryptionKeyConfigureRotationRaw({ EncryptionKeyConfigureRotationRequest: EncryptionKeyConfigureRotationRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2801,10 +2801,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async generateHashRaw(requestParameters: SystemApiGenerateHashOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateHashResponse>> {
-        if (requestParameters['generateHashRequest'] == null) {
+        if (requestParameters['GenerateHashRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateHashRequest',
-                'Required parameter "generateHashRequest" was null or undefined when calling generateHash().'
+                'GenerateHashRequest',
+                'Required parameter "GenerateHashRequest" was null or undefined when calling generateHash().'
             );
         }
 
@@ -2819,7 +2819,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateHashRequestToJSON(requestParameters['generateHashRequest']),
+            body: GenerateHashRequestToJSON(requestParameters['GenerateHashRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateHashResponseFromJSON(jsonValue));
@@ -2827,8 +2827,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateHash(generateHashRequest: GenerateHashRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateHashResponse> {
-        const response = await this.generateHashRaw({ generateHashRequest: generateHashRequest }, initOverrides);
+    async generateHash(GenerateHashRequest: GenerateHashRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateHashResponse> {
+        const response = await this.generateHashRaw({ GenerateHashRequest: GenerateHashRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2842,10 +2842,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['generateHashWithAlgorithmRequest'] == null) {
+        if (requestParameters['GenerateHashWithAlgorithmRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateHashWithAlgorithmRequest',
-                'Required parameter "generateHashWithAlgorithmRequest" was null or undefined when calling generateHashWithAlgorithm().'
+                'GenerateHashWithAlgorithmRequest',
+                'Required parameter "GenerateHashWithAlgorithmRequest" was null or undefined when calling generateHashWithAlgorithm().'
             );
         }
 
@@ -2860,7 +2860,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateHashWithAlgorithmRequestToJSON(requestParameters['generateHashWithAlgorithmRequest']),
+            body: GenerateHashWithAlgorithmRequestToJSON(requestParameters['GenerateHashWithAlgorithmRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateHashWithAlgorithmResponseFromJSON(jsonValue));
@@ -2868,18 +2868,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateHashWithAlgorithm(urlalgorithm: string, generateHashWithAlgorithmRequest: GenerateHashWithAlgorithmRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateHashWithAlgorithmResponse> {
-        const response = await this.generateHashWithAlgorithmRaw({ urlalgorithm: urlalgorithm, generateHashWithAlgorithmRequest: generateHashWithAlgorithmRequest }, initOverrides);
+    async generateHashWithAlgorithm(urlalgorithm: string, GenerateHashWithAlgorithmRequest: GenerateHashWithAlgorithmRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateHashWithAlgorithmResponse> {
+        const response = await this.generateHashWithAlgorithmRaw({ urlalgorithm: urlalgorithm, GenerateHashWithAlgorithmRequest: GenerateHashWithAlgorithmRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async generateRandomRaw(requestParameters: SystemApiGenerateRandomOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateRandomResponse>> {
-        if (requestParameters['generateRandomRequest'] == null) {
+        if (requestParameters['GenerateRandomRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateRandomRequest',
-                'Required parameter "generateRandomRequest" was null or undefined when calling generateRandom().'
+                'GenerateRandomRequest',
+                'Required parameter "GenerateRandomRequest" was null or undefined when calling generateRandom().'
             );
         }
 
@@ -2894,7 +2894,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateRandomRequestToJSON(requestParameters['generateRandomRequest']),
+            body: GenerateRandomRequestToJSON(requestParameters['GenerateRandomRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateRandomResponseFromJSON(jsonValue));
@@ -2902,8 +2902,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateRandom(generateRandomRequest: GenerateRandomRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomResponse> {
-        const response = await this.generateRandomRaw({ generateRandomRequest: generateRandomRequest }, initOverrides);
+    async generateRandom(GenerateRandomRequest: GenerateRandomRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomResponse> {
+        const response = await this.generateRandomRaw({ GenerateRandomRequest: GenerateRandomRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2917,10 +2917,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['generateRandomWithBytesRequest'] == null) {
+        if (requestParameters['GenerateRandomWithBytesRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateRandomWithBytesRequest',
-                'Required parameter "generateRandomWithBytesRequest" was null or undefined when calling generateRandomWithBytes().'
+                'GenerateRandomWithBytesRequest',
+                'Required parameter "GenerateRandomWithBytesRequest" was null or undefined when calling generateRandomWithBytes().'
             );
         }
 
@@ -2935,7 +2935,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateRandomWithBytesRequestToJSON(requestParameters['generateRandomWithBytesRequest']),
+            body: GenerateRandomWithBytesRequestToJSON(requestParameters['GenerateRandomWithBytesRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateRandomWithBytesResponseFromJSON(jsonValue));
@@ -2943,8 +2943,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateRandomWithBytes(urlbytes: string, generateRandomWithBytesRequest: GenerateRandomWithBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithBytesResponse> {
-        const response = await this.generateRandomWithBytesRaw({ urlbytes: urlbytes, generateRandomWithBytesRequest: generateRandomWithBytesRequest }, initOverrides);
+    async generateRandomWithBytes(urlbytes: string, GenerateRandomWithBytesRequest: GenerateRandomWithBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithBytesResponse> {
+        const response = await this.generateRandomWithBytesRaw({ urlbytes: urlbytes, GenerateRandomWithBytesRequest: GenerateRandomWithBytesRequest }, initOverrides);
         return await response.value();
     }
 
@@ -2958,10 +2958,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['generateRandomWithSourceRequest'] == null) {
+        if (requestParameters['GenerateRandomWithSourceRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateRandomWithSourceRequest',
-                'Required parameter "generateRandomWithSourceRequest" was null or undefined when calling generateRandomWithSource().'
+                'GenerateRandomWithSourceRequest',
+                'Required parameter "GenerateRandomWithSourceRequest" was null or undefined when calling generateRandomWithSource().'
             );
         }
 
@@ -2976,7 +2976,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateRandomWithSourceRequestToJSON(requestParameters['generateRandomWithSourceRequest']),
+            body: GenerateRandomWithSourceRequestToJSON(requestParameters['GenerateRandomWithSourceRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateRandomWithSourceResponseFromJSON(jsonValue));
@@ -2984,8 +2984,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateRandomWithSource(source: string, generateRandomWithSourceRequest: GenerateRandomWithSourceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithSourceResponse> {
-        const response = await this.generateRandomWithSourceRaw({ source: source, generateRandomWithSourceRequest: generateRandomWithSourceRequest }, initOverrides);
+    async generateRandomWithSource(source: string, GenerateRandomWithSourceRequest: GenerateRandomWithSourceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithSourceResponse> {
+        const response = await this.generateRandomWithSourceRaw({ source: source, GenerateRandomWithSourceRequest: GenerateRandomWithSourceRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3006,10 +3006,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['generateRandomWithSourceAndBytesRequest'] == null) {
+        if (requestParameters['GenerateRandomWithSourceAndBytesRequest'] == null) {
             throw new runtime.RequiredError(
-                'generateRandomWithSourceAndBytesRequest',
-                'Required parameter "generateRandomWithSourceAndBytesRequest" was null or undefined when calling generateRandomWithSourceAndBytes().'
+                'GenerateRandomWithSourceAndBytesRequest',
+                'Required parameter "GenerateRandomWithSourceAndBytesRequest" was null or undefined when calling generateRandomWithSourceAndBytes().'
             );
         }
 
@@ -3024,7 +3024,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: GenerateRandomWithSourceAndBytesRequestToJSON(requestParameters['generateRandomWithSourceAndBytesRequest']),
+            body: GenerateRandomWithSourceAndBytesRequestToJSON(requestParameters['GenerateRandomWithSourceAndBytesRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => GenerateRandomWithSourceAndBytesResponseFromJSON(jsonValue));
@@ -3032,8 +3032,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateRandomWithSourceAndBytes(source: string, urlbytes: string, generateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithSourceAndBytesResponse> {
-        const response = await this.generateRandomWithSourceAndBytesRaw({ source: source, urlbytes: urlbytes, generateRandomWithSourceAndBytesRequest: generateRandomWithSourceAndBytesRequest }, initOverrides);
+    async generateRandomWithSourceAndBytes(source: string, urlbytes: string, GenerateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateRandomWithSourceAndBytesResponse> {
+        const response = await this.generateRandomWithSourceAndBytesRaw({ source: source, urlbytes: urlbytes, GenerateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3092,10 +3092,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Initialize a new Vault.
      */
     async initializeRaw(requestParameters: SystemApiInitializeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['initializeRequest'] == null) {
+        if (requestParameters['InitializeRequest'] == null) {
             throw new runtime.RequiredError(
-                'initializeRequest',
-                'Required parameter "initializeRequest" was null or undefined when calling initialize().'
+                'InitializeRequest',
+                'Required parameter "InitializeRequest" was null or undefined when calling initialize().'
             );
         }
 
@@ -3110,7 +3110,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: InitializeRequestToJSON(requestParameters['initializeRequest']),
+            body: InitializeRequestToJSON(requestParameters['InitializeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3120,8 +3120,8 @@ export class SystemApi extends runtime.BaseAPI {
      * The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
      * Initialize a new Vault.
      */
-    async initialize(initializeRequest: InitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.initializeRaw({ initializeRequest: initializeRequest }, initOverrides);
+    async initialize(InitializeRequest: InitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.initializeRaw({ InitializeRequest: InitializeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3129,10 +3129,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Enable or disable collection of client count, set retention period, or set default reporting period.
      */
     async internalClientActivityConfigureRaw(requestParameters: SystemApiInternalClientActivityConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['internalClientActivityConfigureRequest'] == null) {
+        if (requestParameters['InternalClientActivityConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'internalClientActivityConfigureRequest',
-                'Required parameter "internalClientActivityConfigureRequest" was null or undefined when calling internalClientActivityConfigure().'
+                'InternalClientActivityConfigureRequest',
+                'Required parameter "InternalClientActivityConfigureRequest" was null or undefined when calling internalClientActivityConfigure().'
             );
         }
 
@@ -3147,7 +3147,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: InternalClientActivityConfigureRequestToJSON(requestParameters['internalClientActivityConfigureRequest']),
+            body: InternalClientActivityConfigureRequestToJSON(requestParameters['InternalClientActivityConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3156,8 +3156,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enable or disable collection of client count, set retention period, or set default reporting period.
      */
-    async internalClientActivityConfigure(internalClientActivityConfigureRequest: InternalClientActivityConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalClientActivityConfigureRaw({ internalClientActivityConfigureRequest: internalClientActivityConfigureRequest }, initOverrides);
+    async internalClientActivityConfigure(InternalClientActivityConfigureRequest: InternalClientActivityConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.internalClientActivityConfigureRaw({ InternalClientActivityConfigureRequest: InternalClientActivityConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3328,8 +3328,8 @@ export class SystemApi extends runtime.BaseAPI {
             queryParameters['context'] = requestParameters['context'];
         }
 
-        if (requestParameters['genericMountPaths'] != null) {
-            queryParameters['generic_mount_paths'] = requestParameters['genericMountPaths'];
+        if (requestParameters['generic_mount_paths'] != null) {
+            queryParameters['generic_mount_paths'] = requestParameters['generic_mount_paths'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -3346,18 +3346,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async internalGenerateOpenApiDocument(context?: string, genericMountPaths?: boolean, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalGenerateOpenApiDocumentRaw({ context: context, genericMountPaths: genericMountPaths }, initOverrides);
+    async internalGenerateOpenApiDocument(context?: string, generic_mount_paths?: boolean, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.internalGenerateOpenApiDocumentRaw({ context: context, generic_mount_paths: generic_mount_paths }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async internalGenerateOpenApiDocumentWithParametersRaw(requestParameters: SystemApiInternalGenerateOpenApiDocumentWithParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['internalGenerateOpenApiDocumentWithParametersRequest'] == null) {
+        if (requestParameters['InternalGenerateOpenApiDocumentWithParametersRequest'] == null) {
             throw new runtime.RequiredError(
-                'internalGenerateOpenApiDocumentWithParametersRequest',
-                'Required parameter "internalGenerateOpenApiDocumentWithParametersRequest" was null or undefined when calling internalGenerateOpenApiDocumentWithParameters().'
+                'InternalGenerateOpenApiDocumentWithParametersRequest',
+                'Required parameter "InternalGenerateOpenApiDocumentWithParametersRequest" was null or undefined when calling internalGenerateOpenApiDocumentWithParameters().'
             );
         }
 
@@ -3372,7 +3372,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: InternalGenerateOpenApiDocumentWithParametersRequestToJSON(requestParameters['internalGenerateOpenApiDocumentWithParametersRequest']),
+            body: InternalGenerateOpenApiDocumentWithParametersRequestToJSON(requestParameters['InternalGenerateOpenApiDocumentWithParametersRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3380,8 +3380,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async internalGenerateOpenApiDocumentWithParameters(internalGenerateOpenApiDocumentWithParametersRequest: InternalGenerateOpenApiDocumentWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalGenerateOpenApiDocumentWithParametersRaw({ internalGenerateOpenApiDocumentWithParametersRequest: internalGenerateOpenApiDocumentWithParametersRequest }, initOverrides);
+    async internalGenerateOpenApiDocumentWithParameters(InternalGenerateOpenApiDocumentWithParametersRequest: InternalGenerateOpenApiDocumentWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.internalGenerateOpenApiDocumentWithParametersRaw({ InternalGenerateOpenApiDocumentWithParametersRequest: InternalGenerateOpenApiDocumentWithParametersRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3803,10 +3803,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async leasesReadLeaseRaw(requestParameters: SystemApiLeasesReadLeaseOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LeasesReadLeaseResponse>> {
-        if (requestParameters['leasesReadLeaseRequest'] == null) {
+        if (requestParameters['LeasesReadLeaseRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesReadLeaseRequest',
-                'Required parameter "leasesReadLeaseRequest" was null or undefined when calling leasesReadLease().'
+                'LeasesReadLeaseRequest',
+                'Required parameter "LeasesReadLeaseRequest" was null or undefined when calling leasesReadLease().'
             );
         }
 
@@ -3821,7 +3821,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesReadLeaseRequestToJSON(requestParameters['leasesReadLeaseRequest']),
+            body: LeasesReadLeaseRequestToJSON(requestParameters['LeasesReadLeaseRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => LeasesReadLeaseResponseFromJSON(jsonValue));
@@ -3829,8 +3829,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async leasesReadLease(leasesReadLeaseRequest: LeasesReadLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LeasesReadLeaseResponse> {
-        const response = await this.leasesReadLeaseRaw({ leasesReadLeaseRequest: leasesReadLeaseRequest }, initOverrides);
+    async leasesReadLease(LeasesReadLeaseRequest: LeasesReadLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LeasesReadLeaseResponse> {
+        const response = await this.leasesReadLeaseRaw({ LeasesReadLeaseRequest: LeasesReadLeaseRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3838,10 +3838,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Renews a lease, requesting to extend the lease.
      */
     async leasesRenewLeaseRaw(requestParameters: SystemApiLeasesRenewLeaseOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['leasesRenewLeaseRequest'] == null) {
+        if (requestParameters['LeasesRenewLeaseRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesRenewLeaseRequest',
-                'Required parameter "leasesRenewLeaseRequest" was null or undefined when calling leasesRenewLease().'
+                'LeasesRenewLeaseRequest',
+                'Required parameter "LeasesRenewLeaseRequest" was null or undefined when calling leasesRenewLease().'
             );
         }
 
@@ -3856,7 +3856,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRenewLeaseRequestToJSON(requestParameters['leasesRenewLeaseRequest']),
+            body: LeasesRenewLeaseRequestToJSON(requestParameters['LeasesRenewLeaseRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3865,8 +3865,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Renews a lease, requesting to extend the lease.
      */
-    async leasesRenewLease(leasesRenewLeaseRequest: LeasesRenewLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRenewLeaseRaw({ leasesRenewLeaseRequest: leasesRenewLeaseRequest }, initOverrides);
+    async leasesRenewLease(LeasesRenewLeaseRequest: LeasesRenewLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRenewLeaseRaw({ LeasesRenewLeaseRequest: LeasesRenewLeaseRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3874,10 +3874,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Renews a lease, requesting to extend the lease.
      */
     async leasesRenewLease2Raw(requestParameters: SystemApiLeasesRenewLease2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['leasesRenewLease2Request'] == null) {
+        if (requestParameters['LeasesRenewLease2Request'] == null) {
             throw new runtime.RequiredError(
-                'leasesRenewLease2Request',
-                'Required parameter "leasesRenewLease2Request" was null or undefined when calling leasesRenewLease2().'
+                'LeasesRenewLease2Request',
+                'Required parameter "LeasesRenewLease2Request" was null or undefined when calling leasesRenewLease2().'
             );
         }
 
@@ -3892,7 +3892,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRenewLease2RequestToJSON(requestParameters['leasesRenewLease2Request']),
+            body: LeasesRenewLease2RequestToJSON(requestParameters['LeasesRenewLease2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3901,8 +3901,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Renews a lease, requesting to extend the lease.
      */
-    async leasesRenewLease2(leasesRenewLease2Request: LeasesRenewLease2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRenewLease2Raw({ leasesRenewLease2Request: leasesRenewLease2Request }, initOverrides);
+    async leasesRenewLease2(LeasesRenewLease2Request: LeasesRenewLease2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRenewLease2Raw({ LeasesRenewLease2Request: LeasesRenewLease2Request }, initOverrides);
         return await response.value();
     }
 
@@ -3910,17 +3910,17 @@ export class SystemApi extends runtime.BaseAPI {
      * Renews a lease, requesting to extend the lease.
      */
     async leasesRenewLeaseWithIdRaw(requestParameters: SystemApiLeasesRenewLeaseWithIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['urlLeaseId'] == null) {
+        if (requestParameters['url_lease_id'] == null) {
             throw new runtime.RequiredError(
-                'urlLeaseId',
-                'Required parameter "urlLeaseId" was null or undefined when calling leasesRenewLeaseWithId().'
+                'url_lease_id',
+                'Required parameter "url_lease_id" was null or undefined when calling leasesRenewLeaseWithId().'
             );
         }
 
-        if (requestParameters['leasesRenewLeaseWithIdRequest'] == null) {
+        if (requestParameters['LeasesRenewLeaseWithIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesRenewLeaseWithIdRequest',
-                'Required parameter "leasesRenewLeaseWithIdRequest" was null or undefined when calling leasesRenewLeaseWithId().'
+                'LeasesRenewLeaseWithIdRequest',
+                'Required parameter "LeasesRenewLeaseWithIdRequest" was null or undefined when calling leasesRenewLeaseWithId().'
             );
         }
 
@@ -3931,11 +3931,11 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['urlLeaseId']))),
+            path: `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRenewLeaseWithIdRequestToJSON(requestParameters['leasesRenewLeaseWithIdRequest']),
+            body: LeasesRenewLeaseWithIdRequestToJSON(requestParameters['LeasesRenewLeaseWithIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3944,8 +3944,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Renews a lease, requesting to extend the lease.
      */
-    async leasesRenewLeaseWithId(urlLeaseId: string, leasesRenewLeaseWithIdRequest: LeasesRenewLeaseWithIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRenewLeaseWithIdRaw({ urlLeaseId: urlLeaseId, leasesRenewLeaseWithIdRequest: leasesRenewLeaseWithIdRequest }, initOverrides);
+    async leasesRenewLeaseWithId(url_lease_id: string, LeasesRenewLeaseWithIdRequest: LeasesRenewLeaseWithIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRenewLeaseWithIdRaw({ url_lease_id: url_lease_id, LeasesRenewLeaseWithIdRequest: LeasesRenewLeaseWithIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -3953,17 +3953,17 @@ export class SystemApi extends runtime.BaseAPI {
      * Renews a lease, requesting to extend the lease.
      */
     async leasesRenewLeaseWithId2Raw(requestParameters: SystemApiLeasesRenewLeaseWithId2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['urlLeaseId'] == null) {
+        if (requestParameters['url_lease_id'] == null) {
             throw new runtime.RequiredError(
-                'urlLeaseId',
-                'Required parameter "urlLeaseId" was null or undefined when calling leasesRenewLeaseWithId2().'
+                'url_lease_id',
+                'Required parameter "url_lease_id" was null or undefined when calling leasesRenewLeaseWithId2().'
             );
         }
 
-        if (requestParameters['leasesRenewLeaseWithId2Request'] == null) {
+        if (requestParameters['LeasesRenewLeaseWithId2Request'] == null) {
             throw new runtime.RequiredError(
-                'leasesRenewLeaseWithId2Request',
-                'Required parameter "leasesRenewLeaseWithId2Request" was null or undefined when calling leasesRenewLeaseWithId2().'
+                'LeasesRenewLeaseWithId2Request',
+                'Required parameter "LeasesRenewLeaseWithId2Request" was null or undefined when calling leasesRenewLeaseWithId2().'
             );
         }
 
@@ -3974,11 +3974,11 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['urlLeaseId']))),
+            path: `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRenewLeaseWithId2RequestToJSON(requestParameters['leasesRenewLeaseWithId2Request']),
+            body: LeasesRenewLeaseWithId2RequestToJSON(requestParameters['LeasesRenewLeaseWithId2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -3987,8 +3987,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Renews a lease, requesting to extend the lease.
      */
-    async leasesRenewLeaseWithId2(urlLeaseId: string, leasesRenewLeaseWithId2Request: LeasesRenewLeaseWithId2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRenewLeaseWithId2Raw({ urlLeaseId: urlLeaseId, leasesRenewLeaseWithId2Request: leasesRenewLeaseWithId2Request }, initOverrides);
+    async leasesRenewLeaseWithId2(url_lease_id: string, LeasesRenewLeaseWithId2Request: LeasesRenewLeaseWithId2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRenewLeaseWithId2Raw({ url_lease_id: url_lease_id, LeasesRenewLeaseWithId2Request: LeasesRenewLeaseWithId2Request }, initOverrides);
         return await response.value();
     }
 
@@ -3996,10 +3996,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Revokes a lease immediately.
      */
     async leasesRevokeLeaseRaw(requestParameters: SystemApiLeasesRevokeLeaseOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['leasesRevokeLeaseRequest'] == null) {
+        if (requestParameters['LeasesRevokeLeaseRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLeaseRequest',
-                'Required parameter "leasesRevokeLeaseRequest" was null or undefined when calling leasesRevokeLease().'
+                'LeasesRevokeLeaseRequest',
+                'Required parameter "LeasesRevokeLeaseRequest" was null or undefined when calling leasesRevokeLease().'
             );
         }
 
@@ -4014,7 +4014,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLeaseRequestToJSON(requestParameters['leasesRevokeLeaseRequest']),
+            body: LeasesRevokeLeaseRequestToJSON(requestParameters['LeasesRevokeLeaseRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4023,8 +4023,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes a lease immediately.
      */
-    async leasesRevokeLease(leasesRevokeLeaseRequest: LeasesRevokeLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLeaseRaw({ leasesRevokeLeaseRequest: leasesRevokeLeaseRequest }, initOverrides);
+    async leasesRevokeLease(LeasesRevokeLeaseRequest: LeasesRevokeLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLeaseRaw({ LeasesRevokeLeaseRequest: LeasesRevokeLeaseRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4032,10 +4032,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Revokes a lease immediately.
      */
     async leasesRevokeLease2Raw(requestParameters: SystemApiLeasesRevokeLease2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['leasesRevokeLease2Request'] == null) {
+        if (requestParameters['LeasesRevokeLease2Request'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLease2Request',
-                'Required parameter "leasesRevokeLease2Request" was null or undefined when calling leasesRevokeLease2().'
+                'LeasesRevokeLease2Request',
+                'Required parameter "LeasesRevokeLease2Request" was null or undefined when calling leasesRevokeLease2().'
             );
         }
 
@@ -4050,7 +4050,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLease2RequestToJSON(requestParameters['leasesRevokeLease2Request']),
+            body: LeasesRevokeLease2RequestToJSON(requestParameters['LeasesRevokeLease2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4059,8 +4059,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes a lease immediately.
      */
-    async leasesRevokeLease2(leasesRevokeLease2Request: LeasesRevokeLease2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLease2Raw({ leasesRevokeLease2Request: leasesRevokeLease2Request }, initOverrides);
+    async leasesRevokeLease2(LeasesRevokeLease2Request: LeasesRevokeLease2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLease2Raw({ LeasesRevokeLease2Request: LeasesRevokeLease2Request }, initOverrides);
         return await response.value();
     }
 
@@ -4068,17 +4068,17 @@ export class SystemApi extends runtime.BaseAPI {
      * Revokes a lease immediately.
      */
     async leasesRevokeLeaseWithIdRaw(requestParameters: SystemApiLeasesRevokeLeaseWithIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['urlLeaseId'] == null) {
+        if (requestParameters['url_lease_id'] == null) {
             throw new runtime.RequiredError(
-                'urlLeaseId',
-                'Required parameter "urlLeaseId" was null or undefined when calling leasesRevokeLeaseWithId().'
+                'url_lease_id',
+                'Required parameter "url_lease_id" was null or undefined when calling leasesRevokeLeaseWithId().'
             );
         }
 
-        if (requestParameters['leasesRevokeLeaseWithIdRequest'] == null) {
+        if (requestParameters['LeasesRevokeLeaseWithIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLeaseWithIdRequest',
-                'Required parameter "leasesRevokeLeaseWithIdRequest" was null or undefined when calling leasesRevokeLeaseWithId().'
+                'LeasesRevokeLeaseWithIdRequest',
+                'Required parameter "LeasesRevokeLeaseWithIdRequest" was null or undefined when calling leasesRevokeLeaseWithId().'
             );
         }
 
@@ -4089,11 +4089,11 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['urlLeaseId']))),
+            path: `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLeaseWithIdRequestToJSON(requestParameters['leasesRevokeLeaseWithIdRequest']),
+            body: LeasesRevokeLeaseWithIdRequestToJSON(requestParameters['LeasesRevokeLeaseWithIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4102,8 +4102,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes a lease immediately.
      */
-    async leasesRevokeLeaseWithId(urlLeaseId: string, leasesRevokeLeaseWithIdRequest: LeasesRevokeLeaseWithIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLeaseWithIdRaw({ urlLeaseId: urlLeaseId, leasesRevokeLeaseWithIdRequest: leasesRevokeLeaseWithIdRequest }, initOverrides);
+    async leasesRevokeLeaseWithId(url_lease_id: string, LeasesRevokeLeaseWithIdRequest: LeasesRevokeLeaseWithIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLeaseWithIdRaw({ url_lease_id: url_lease_id, LeasesRevokeLeaseWithIdRequest: LeasesRevokeLeaseWithIdRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4111,17 +4111,17 @@ export class SystemApi extends runtime.BaseAPI {
      * Revokes a lease immediately.
      */
     async leasesRevokeLeaseWithId2Raw(requestParameters: SystemApiLeasesRevokeLeaseWithId2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['urlLeaseId'] == null) {
+        if (requestParameters['url_lease_id'] == null) {
             throw new runtime.RequiredError(
-                'urlLeaseId',
-                'Required parameter "urlLeaseId" was null or undefined when calling leasesRevokeLeaseWithId2().'
+                'url_lease_id',
+                'Required parameter "url_lease_id" was null or undefined when calling leasesRevokeLeaseWithId2().'
             );
         }
 
-        if (requestParameters['leasesRevokeLeaseWithId2Request'] == null) {
+        if (requestParameters['LeasesRevokeLeaseWithId2Request'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLeaseWithId2Request',
-                'Required parameter "leasesRevokeLeaseWithId2Request" was null or undefined when calling leasesRevokeLeaseWithId2().'
+                'LeasesRevokeLeaseWithId2Request',
+                'Required parameter "LeasesRevokeLeaseWithId2Request" was null or undefined when calling leasesRevokeLeaseWithId2().'
             );
         }
 
@@ -4132,11 +4132,11 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['urlLeaseId']))),
+            path: `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLeaseWithId2RequestToJSON(requestParameters['leasesRevokeLeaseWithId2Request']),
+            body: LeasesRevokeLeaseWithId2RequestToJSON(requestParameters['LeasesRevokeLeaseWithId2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4145,8 +4145,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes a lease immediately.
      */
-    async leasesRevokeLeaseWithId2(urlLeaseId: string, leasesRevokeLeaseWithId2Request: LeasesRevokeLeaseWithId2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLeaseWithId2Raw({ urlLeaseId: urlLeaseId, leasesRevokeLeaseWithId2Request: leasesRevokeLeaseWithId2Request }, initOverrides);
+    async leasesRevokeLeaseWithId2(url_lease_id: string, LeasesRevokeLeaseWithId2Request: LeasesRevokeLeaseWithId2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLeaseWithId2Raw({ url_lease_id: url_lease_id, LeasesRevokeLeaseWithId2Request: LeasesRevokeLeaseWithId2Request }, initOverrides);
         return await response.value();
     }
 
@@ -4161,10 +4161,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['leasesRevokeLeaseWithPrefixRequest'] == null) {
+        if (requestParameters['LeasesRevokeLeaseWithPrefixRequest'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLeaseWithPrefixRequest',
-                'Required parameter "leasesRevokeLeaseWithPrefixRequest" was null or undefined when calling leasesRevokeLeaseWithPrefix().'
+                'LeasesRevokeLeaseWithPrefixRequest',
+                'Required parameter "LeasesRevokeLeaseWithPrefixRequest" was null or undefined when calling leasesRevokeLeaseWithPrefix().'
             );
         }
 
@@ -4179,7 +4179,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLeaseWithPrefixRequestToJSON(requestParameters['leasesRevokeLeaseWithPrefixRequest']),
+            body: LeasesRevokeLeaseWithPrefixRequestToJSON(requestParameters['LeasesRevokeLeaseWithPrefixRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4188,8 +4188,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes all secrets (via a lease ID prefix) or tokens (via the tokens\' path property) generated under a given prefix immediately.
      */
-    async leasesRevokeLeaseWithPrefix(prefix: string, leasesRevokeLeaseWithPrefixRequest: LeasesRevokeLeaseWithPrefixRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLeaseWithPrefixRaw({ prefix: prefix, leasesRevokeLeaseWithPrefixRequest: leasesRevokeLeaseWithPrefixRequest }, initOverrides);
+    async leasesRevokeLeaseWithPrefix(prefix: string, LeasesRevokeLeaseWithPrefixRequest: LeasesRevokeLeaseWithPrefixRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLeaseWithPrefixRaw({ prefix: prefix, LeasesRevokeLeaseWithPrefixRequest: LeasesRevokeLeaseWithPrefixRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4204,10 +4204,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['leasesRevokeLeaseWithPrefix2Request'] == null) {
+        if (requestParameters['LeasesRevokeLeaseWithPrefix2Request'] == null) {
             throw new runtime.RequiredError(
-                'leasesRevokeLeaseWithPrefix2Request',
-                'Required parameter "leasesRevokeLeaseWithPrefix2Request" was null or undefined when calling leasesRevokeLeaseWithPrefix2().'
+                'LeasesRevokeLeaseWithPrefix2Request',
+                'Required parameter "LeasesRevokeLeaseWithPrefix2Request" was null or undefined when calling leasesRevokeLeaseWithPrefix2().'
             );
         }
 
@@ -4222,7 +4222,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LeasesRevokeLeaseWithPrefix2RequestToJSON(requestParameters['leasesRevokeLeaseWithPrefix2Request']),
+            body: LeasesRevokeLeaseWithPrefix2RequestToJSON(requestParameters['LeasesRevokeLeaseWithPrefix2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4231,8 +4231,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Revokes all secrets (via a lease ID prefix) or tokens (via the tokens\' path property) generated under a given prefix immediately.
      */
-    async leasesRevokeLeaseWithPrefix2(prefix: string, leasesRevokeLeaseWithPrefix2Request: LeasesRevokeLeaseWithPrefix2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.leasesRevokeLeaseWithPrefix2Raw({ prefix: prefix, leasesRevokeLeaseWithPrefix2Request: leasesRevokeLeaseWithPrefix2Request }, initOverrides);
+    async leasesRevokeLeaseWithPrefix2(prefix: string, LeasesRevokeLeaseWithPrefix2Request: LeasesRevokeLeaseWithPrefix2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.leasesRevokeLeaseWithPrefix2Raw({ prefix: prefix, LeasesRevokeLeaseWithPrefix2Request: LeasesRevokeLeaseWithPrefix2Request }, initOverrides);
         return await response.value();
     }
 
@@ -4316,17 +4316,17 @@ export class SystemApi extends runtime.BaseAPI {
      * Unlocks the user with given mount_accessor and alias_identifier
      */
     async lockedUsersUnlockRaw(requestParameters: SystemApiLockedUsersUnlockRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['aliasIdentifier'] == null) {
+        if (requestParameters['alias_identifier'] == null) {
             throw new runtime.RequiredError(
-                'aliasIdentifier',
-                'Required parameter "aliasIdentifier" was null or undefined when calling lockedUsersUnlock().'
+                'alias_identifier',
+                'Required parameter "alias_identifier" was null or undefined when calling lockedUsersUnlock().'
             );
         }
 
-        if (requestParameters['mountAccessor'] == null) {
+        if (requestParameters['mount_accessor'] == null) {
             throw new runtime.RequiredError(
-                'mountAccessor',
-                'Required parameter "mountAccessor" was null or undefined when calling lockedUsersUnlock().'
+                'mount_accessor',
+                'Required parameter "mount_accessor" was null or undefined when calling lockedUsersUnlock().'
             );
         }
 
@@ -4335,7 +4335,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['aliasIdentifier']))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mountAccessor']))),
+            path: `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['alias_identifier']))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mount_accessor']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4347,8 +4347,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Unlocks the user with given mount_accessor and alias_identifier
      */
-    async lockedUsersUnlock(aliasIdentifier: string, mountAccessor: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.lockedUsersUnlockRaw({ aliasIdentifier: aliasIdentifier, mountAccessor: mountAccessor }, initOverrides);
+    async lockedUsersUnlock(alias_identifier: string, mount_accessor: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.lockedUsersUnlockRaw({ alias_identifier: alias_identifier, mount_accessor: mount_accessor }, initOverrides);
         return await response.value();
     }
 
@@ -4474,10 +4474,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Modify the log level for all existing loggers.
      */
     async loggersUpdateVerbosityLevelRaw(requestParameters: SystemApiLoggersUpdateVerbosityLevelOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['loggersUpdateVerbosityLevelRequest'] == null) {
+        if (requestParameters['LoggersUpdateVerbosityLevelRequest'] == null) {
             throw new runtime.RequiredError(
-                'loggersUpdateVerbosityLevelRequest',
-                'Required parameter "loggersUpdateVerbosityLevelRequest" was null or undefined when calling loggersUpdateVerbosityLevel().'
+                'LoggersUpdateVerbosityLevelRequest',
+                'Required parameter "LoggersUpdateVerbosityLevelRequest" was null or undefined when calling loggersUpdateVerbosityLevel().'
             );
         }
 
@@ -4492,7 +4492,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LoggersUpdateVerbosityLevelRequestToJSON(requestParameters['loggersUpdateVerbosityLevelRequest']),
+            body: LoggersUpdateVerbosityLevelRequestToJSON(requestParameters['LoggersUpdateVerbosityLevelRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4501,8 +4501,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Modify the log level for all existing loggers.
      */
-    async loggersUpdateVerbosityLevel(loggersUpdateVerbosityLevelRequest: LoggersUpdateVerbosityLevelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.loggersUpdateVerbosityLevelRaw({ loggersUpdateVerbosityLevelRequest: loggersUpdateVerbosityLevelRequest }, initOverrides);
+    async loggersUpdateVerbosityLevel(LoggersUpdateVerbosityLevelRequest: LoggersUpdateVerbosityLevelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.loggersUpdateVerbosityLevelRaw({ LoggersUpdateVerbosityLevelRequest: LoggersUpdateVerbosityLevelRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4517,10 +4517,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['loggersUpdateVerbosityLevelForRequest'] == null) {
+        if (requestParameters['LoggersUpdateVerbosityLevelForRequest'] == null) {
             throw new runtime.RequiredError(
-                'loggersUpdateVerbosityLevelForRequest',
-                'Required parameter "loggersUpdateVerbosityLevelForRequest" was null or undefined when calling loggersUpdateVerbosityLevelFor().'
+                'LoggersUpdateVerbosityLevelForRequest',
+                'Required parameter "LoggersUpdateVerbosityLevelForRequest" was null or undefined when calling loggersUpdateVerbosityLevelFor().'
             );
         }
 
@@ -4535,7 +4535,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: LoggersUpdateVerbosityLevelForRequestToJSON(requestParameters['loggersUpdateVerbosityLevelForRequest']),
+            body: LoggersUpdateVerbosityLevelForRequestToJSON(requestParameters['LoggersUpdateVerbosityLevelForRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4544,8 +4544,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Modify the log level of a single logger.
      */
-    async loggersUpdateVerbosityLevelFor(name: string, loggersUpdateVerbosityLevelForRequest: LoggersUpdateVerbosityLevelForRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.loggersUpdateVerbosityLevelForRaw({ name: name, loggersUpdateVerbosityLevelForRequest: loggersUpdateVerbosityLevelForRequest }, initOverrides);
+    async loggersUpdateVerbosityLevelFor(name: string, LoggersUpdateVerbosityLevelForRequest: LoggersUpdateVerbosityLevelForRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.loggersUpdateVerbosityLevelForRaw({ name: name, LoggersUpdateVerbosityLevelForRequest: LoggersUpdateVerbosityLevelForRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4581,10 +4581,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
      */
     async mfaValidateRaw(requestParameters: SystemApiMfaValidateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['mfaValidateRequest'] == null) {
+        if (requestParameters['MfaValidateRequest'] == null) {
             throw new runtime.RequiredError(
-                'mfaValidateRequest',
-                'Required parameter "mfaValidateRequest" was null or undefined when calling mfaValidate().'
+                'MfaValidateRequest',
+                'Required parameter "MfaValidateRequest" was null or undefined when calling mfaValidate().'
             );
         }
 
@@ -4599,7 +4599,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MfaValidateRequestToJSON(requestParameters['mfaValidateRequest']),
+            body: MfaValidateRequestToJSON(requestParameters['MfaValidateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4608,8 +4608,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
      */
-    async mfaValidate(mfaValidateRequest: MfaValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mfaValidateRaw({ mfaValidateRequest: mfaValidateRequest }, initOverrides);
+    async mfaValidate(MfaValidateRequest: MfaValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaValidateRaw({ MfaValidateRequest: MfaValidateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4618,12 +4618,12 @@ export class SystemApi extends runtime.BaseAPI {
     async monitorRaw(requestParameters: SystemApiMonitorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
-        if (requestParameters['logFormat'] != null) {
-            queryParameters['log_format'] = requestParameters['logFormat'];
+        if (requestParameters['log_format'] != null) {
+            queryParameters['log_format'] = requestParameters['log_format'];
         }
 
-        if (requestParameters['logLevel'] != null) {
-            queryParameters['log_level'] = requestParameters['logLevel'];
+        if (requestParameters['log_level'] != null) {
+            queryParameters['log_level'] = requestParameters['log_level'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -4640,8 +4640,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async monitor(logFormat?: string, logLevel?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.monitorRaw({ logFormat: logFormat, logLevel: logLevel }, initOverrides);
+    async monitor(log_format?: string, log_level?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.monitorRaw({ log_format: log_format, log_level: log_level }, initOverrides);
         return await response.value();
     }
 
@@ -4689,10 +4689,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['mountsEnableSecretsEngineRequest'] == null) {
+        if (requestParameters['MountsEnableSecretsEngineRequest'] == null) {
             throw new runtime.RequiredError(
-                'mountsEnableSecretsEngineRequest',
-                'Required parameter "mountsEnableSecretsEngineRequest" was null or undefined when calling mountsEnableSecretsEngine().'
+                'MountsEnableSecretsEngineRequest',
+                'Required parameter "MountsEnableSecretsEngineRequest" was null or undefined when calling mountsEnableSecretsEngine().'
             );
         }
 
@@ -4707,7 +4707,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MountsEnableSecretsEngineRequestToJSON(requestParameters['mountsEnableSecretsEngineRequest']),
+            body: MountsEnableSecretsEngineRequestToJSON(requestParameters['MountsEnableSecretsEngineRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4716,8 +4716,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enable a new secrets engine at the given path.
      */
-    async mountsEnableSecretsEngine(path: string, mountsEnableSecretsEngineRequest: MountsEnableSecretsEngineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mountsEnableSecretsEngineRaw({ path: path, mountsEnableSecretsEngineRequest: mountsEnableSecretsEngineRequest }, initOverrides);
+    async mountsEnableSecretsEngine(path: string, MountsEnableSecretsEngineRequest: MountsEnableSecretsEngineRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mountsEnableSecretsEngineRaw({ path: path, MountsEnableSecretsEngineRequest: MountsEnableSecretsEngineRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4819,10 +4819,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['mountsTuneConfigurationParametersRequest'] == null) {
+        if (requestParameters['MountsTuneConfigurationParametersRequest'] == null) {
             throw new runtime.RequiredError(
-                'mountsTuneConfigurationParametersRequest',
-                'Required parameter "mountsTuneConfigurationParametersRequest" was null or undefined when calling mountsTuneConfigurationParameters().'
+                'MountsTuneConfigurationParametersRequest',
+                'Required parameter "MountsTuneConfigurationParametersRequest" was null or undefined when calling mountsTuneConfigurationParameters().'
             );
         }
 
@@ -4837,7 +4837,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: MountsTuneConfigurationParametersRequestToJSON(requestParameters['mountsTuneConfigurationParametersRequest']),
+            body: MountsTuneConfigurationParametersRequestToJSON(requestParameters['MountsTuneConfigurationParametersRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4845,8 +4845,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async mountsTuneConfigurationParameters(path: string, mountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.mountsTuneConfigurationParametersRaw({ path: path, mountsTuneConfigurationParametersRequest: mountsTuneConfigurationParametersRequest }, initOverrides);
+    async mountsTuneConfigurationParameters(path: string, MountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mountsTuneConfigurationParametersRaw({ path: path, MountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest }, initOverrides);
         return await response.value();
     }
 
@@ -4936,10 +4936,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['pluginsCatalogPinsCreatePinnedVersionRequest'] == null) {
+        if (requestParameters['PluginsCatalogPinsCreatePinnedVersionRequest'] == null) {
             throw new runtime.RequiredError(
-                'pluginsCatalogPinsCreatePinnedVersionRequest',
-                'Required parameter "pluginsCatalogPinsCreatePinnedVersionRequest" was null or undefined when calling pluginsCatalogPinsCreatePinnedVersion().'
+                'PluginsCatalogPinsCreatePinnedVersionRequest',
+                'Required parameter "PluginsCatalogPinsCreatePinnedVersionRequest" was null or undefined when calling pluginsCatalogPinsCreatePinnedVersion().'
             );
         }
 
@@ -4954,7 +4954,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PluginsCatalogPinsCreatePinnedVersionRequestToJSON(requestParameters['pluginsCatalogPinsCreatePinnedVersionRequest']),
+            body: PluginsCatalogPinsCreatePinnedVersionRequestToJSON(requestParameters['PluginsCatalogPinsCreatePinnedVersionRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -4963,8 +4963,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Create or update the pinned version for a plugin with a given type and name.
      */
-    async pluginsCatalogPinsCreatePinnedVersion(name: string, type: string, pluginsCatalogPinsCreatePinnedVersionRequest: PluginsCatalogPinsCreatePinnedVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pluginsCatalogPinsCreatePinnedVersionRaw({ name: name, type: type, pluginsCatalogPinsCreatePinnedVersionRequest: pluginsCatalogPinsCreatePinnedVersionRequest }, initOverrides);
+    async pluginsCatalogPinsCreatePinnedVersion(name: string, type: string, PluginsCatalogPinsCreatePinnedVersionRequest: PluginsCatalogPinsCreatePinnedVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pluginsCatalogPinsCreatePinnedVersionRaw({ name: name, type: type, PluginsCatalogPinsCreatePinnedVersionRequest: PluginsCatalogPinsCreatePinnedVersionRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5156,10 +5156,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['pluginsCatalogRegisterPluginRequest'] == null) {
+        if (requestParameters['PluginsCatalogRegisterPluginRequest'] == null) {
             throw new runtime.RequiredError(
-                'pluginsCatalogRegisterPluginRequest',
-                'Required parameter "pluginsCatalogRegisterPluginRequest" was null or undefined when calling pluginsCatalogRegisterPlugin().'
+                'PluginsCatalogRegisterPluginRequest',
+                'Required parameter "PluginsCatalogRegisterPluginRequest" was null or undefined when calling pluginsCatalogRegisterPlugin().'
             );
         }
 
@@ -5174,7 +5174,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PluginsCatalogRegisterPluginRequestToJSON(requestParameters['pluginsCatalogRegisterPluginRequest']),
+            body: PluginsCatalogRegisterPluginRequestToJSON(requestParameters['PluginsCatalogRegisterPluginRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5183,8 +5183,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Register a new plugin, or updates an existing one with the supplied name.
      */
-    async pluginsCatalogRegisterPlugin(name: string, pluginsCatalogRegisterPluginRequest: PluginsCatalogRegisterPluginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pluginsCatalogRegisterPluginRaw({ name: name, pluginsCatalogRegisterPluginRequest: pluginsCatalogRegisterPluginRequest }, initOverrides);
+    async pluginsCatalogRegisterPlugin(name: string, PluginsCatalogRegisterPluginRequest: PluginsCatalogRegisterPluginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pluginsCatalogRegisterPluginRaw({ name: name, PluginsCatalogRegisterPluginRequest: PluginsCatalogRegisterPluginRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5206,10 +5206,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['pluginsCatalogRegisterPluginWithTypeRequest'] == null) {
+        if (requestParameters['PluginsCatalogRegisterPluginWithTypeRequest'] == null) {
             throw new runtime.RequiredError(
-                'pluginsCatalogRegisterPluginWithTypeRequest',
-                'Required parameter "pluginsCatalogRegisterPluginWithTypeRequest" was null or undefined when calling pluginsCatalogRegisterPluginWithType().'
+                'PluginsCatalogRegisterPluginWithTypeRequest',
+                'Required parameter "PluginsCatalogRegisterPluginWithTypeRequest" was null or undefined when calling pluginsCatalogRegisterPluginWithType().'
             );
         }
 
@@ -5224,7 +5224,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PluginsCatalogRegisterPluginWithTypeRequestToJSON(requestParameters['pluginsCatalogRegisterPluginWithTypeRequest']),
+            body: PluginsCatalogRegisterPluginWithTypeRequestToJSON(requestParameters['PluginsCatalogRegisterPluginWithTypeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5233,8 +5233,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Register a new plugin, or updates an existing one with the supplied name.
      */
-    async pluginsCatalogRegisterPluginWithType(name: string, type: string, pluginsCatalogRegisterPluginWithTypeRequest: PluginsCatalogRegisterPluginWithTypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pluginsCatalogRegisterPluginWithTypeRaw({ name: name, type: type, pluginsCatalogRegisterPluginWithTypeRequest: pluginsCatalogRegisterPluginWithTypeRequest }, initOverrides);
+    async pluginsCatalogRegisterPluginWithType(name: string, type: string, PluginsCatalogRegisterPluginWithTypeRequest: PluginsCatalogRegisterPluginWithTypeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pluginsCatalogRegisterPluginWithTypeRaw({ name: name, type: type, PluginsCatalogRegisterPluginWithTypeRequest: PluginsCatalogRegisterPluginWithTypeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5316,10 +5316,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Reload mounted plugin backends.
      */
     async pluginsReloadBackendsRaw(requestParameters: SystemApiPluginsReloadBackendsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsReloadBackendsResponse>> {
-        if (requestParameters['pluginsReloadBackendsRequest'] == null) {
+        if (requestParameters['PluginsReloadBackendsRequest'] == null) {
             throw new runtime.RequiredError(
-                'pluginsReloadBackendsRequest',
-                'Required parameter "pluginsReloadBackendsRequest" was null or undefined when calling pluginsReloadBackends().'
+                'PluginsReloadBackendsRequest',
+                'Required parameter "PluginsReloadBackendsRequest" was null or undefined when calling pluginsReloadBackends().'
             );
         }
 
@@ -5334,7 +5334,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PluginsReloadBackendsRequestToJSON(requestParameters['pluginsReloadBackendsRequest']),
+            body: PluginsReloadBackendsRequestToJSON(requestParameters['PluginsReloadBackendsRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PluginsReloadBackendsResponseFromJSON(jsonValue));
@@ -5344,8 +5344,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
      * Reload mounted plugin backends.
      */
-    async pluginsReloadBackends(pluginsReloadBackendsRequest: PluginsReloadBackendsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsReloadBackendsResponse> {
-        const response = await this.pluginsReloadBackendsRaw({ pluginsReloadBackendsRequest: pluginsReloadBackendsRequest }, initOverrides);
+    async pluginsReloadBackends(PluginsReloadBackendsRequest: PluginsReloadBackendsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsReloadBackendsResponse> {
+        const response = await this.pluginsReloadBackendsRaw({ PluginsReloadBackendsRequest: PluginsReloadBackendsRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5466,10 +5466,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['pluginsRuntimesCatalogRegisterPluginRuntimeRequest'] == null) {
+        if (requestParameters['PluginsRuntimesCatalogRegisterPluginRuntimeRequest'] == null) {
             throw new runtime.RequiredError(
-                'pluginsRuntimesCatalogRegisterPluginRuntimeRequest',
-                'Required parameter "pluginsRuntimesCatalogRegisterPluginRuntimeRequest" was null or undefined when calling pluginsRuntimesCatalogRegisterPluginRuntime().'
+                'PluginsRuntimesCatalogRegisterPluginRuntimeRequest',
+                'Required parameter "PluginsRuntimesCatalogRegisterPluginRuntimeRequest" was null or undefined when calling pluginsRuntimesCatalogRegisterPluginRuntime().'
             );
         }
 
@@ -5484,7 +5484,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PluginsRuntimesCatalogRegisterPluginRuntimeRequestToJSON(requestParameters['pluginsRuntimesCatalogRegisterPluginRuntimeRequest']),
+            body: PluginsRuntimesCatalogRegisterPluginRuntimeRequestToJSON(requestParameters['PluginsRuntimesCatalogRegisterPluginRuntimeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5493,8 +5493,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Register a new plugin runtime, or updates an existing one with the supplied name.
      */
-    async pluginsRuntimesCatalogRegisterPluginRuntime(name: string, type: string, pluginsRuntimesCatalogRegisterPluginRuntimeRequest: PluginsRuntimesCatalogRegisterPluginRuntimeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pluginsRuntimesCatalogRegisterPluginRuntimeRaw({ name: name, type: type, pluginsRuntimesCatalogRegisterPluginRuntimeRequest: pluginsRuntimesCatalogRegisterPluginRuntimeRequest }, initOverrides);
+    async pluginsRuntimesCatalogRegisterPluginRuntime(name: string, type: string, PluginsRuntimesCatalogRegisterPluginRuntimeRequest: PluginsRuntimesCatalogRegisterPluginRuntimeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pluginsRuntimesCatalogRegisterPluginRuntimeRaw({ name: name, type: type, PluginsRuntimesCatalogRegisterPluginRuntimeRequest: PluginsRuntimesCatalogRegisterPluginRuntimeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5911,10 +5911,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['policiesWriteAclPolicyRequest'] == null) {
+        if (requestParameters['PoliciesWriteAclPolicyRequest'] == null) {
             throw new runtime.RequiredError(
-                'policiesWriteAclPolicyRequest',
-                'Required parameter "policiesWriteAclPolicyRequest" was null or undefined when calling policiesWriteAclPolicy().'
+                'PoliciesWriteAclPolicyRequest',
+                'Required parameter "PoliciesWriteAclPolicyRequest" was null or undefined when calling policiesWriteAclPolicy().'
             );
         }
 
@@ -5929,7 +5929,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PoliciesWriteAclPolicyRequestToJSON(requestParameters['policiesWriteAclPolicyRequest']),
+            body: PoliciesWriteAclPolicyRequestToJSON(requestParameters['PoliciesWriteAclPolicyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5938,8 +5938,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Add a new or update an existing ACL policy.
      */
-    async policiesWriteAclPolicy(name: string, policiesWriteAclPolicyRequest: PoliciesWriteAclPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.policiesWriteAclPolicyRaw({ name: name, policiesWriteAclPolicyRequest: policiesWriteAclPolicyRequest }, initOverrides);
+    async policiesWriteAclPolicy(name: string, PoliciesWriteAclPolicyRequest: PoliciesWriteAclPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.policiesWriteAclPolicyRaw({ name: name, PoliciesWriteAclPolicyRequest: PoliciesWriteAclPolicyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5954,10 +5954,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['policiesWriteAclPolicy2Request'] == null) {
+        if (requestParameters['PoliciesWriteAclPolicy2Request'] == null) {
             throw new runtime.RequiredError(
-                'policiesWriteAclPolicy2Request',
-                'Required parameter "policiesWriteAclPolicy2Request" was null or undefined when calling policiesWriteAclPolicy2().'
+                'PoliciesWriteAclPolicy2Request',
+                'Required parameter "PoliciesWriteAclPolicy2Request" was null or undefined when calling policiesWriteAclPolicy2().'
             );
         }
 
@@ -5972,7 +5972,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PoliciesWriteAclPolicy2RequestToJSON(requestParameters['policiesWriteAclPolicy2Request']),
+            body: PoliciesWriteAclPolicy2RequestToJSON(requestParameters['PoliciesWriteAclPolicy2Request']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -5981,8 +5981,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Add a new or update an existing policy.
      */
-    async policiesWriteAclPolicy2(name: string, policiesWriteAclPolicy2Request: PoliciesWriteAclPolicy2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.policiesWriteAclPolicy2Raw({ name: name, policiesWriteAclPolicy2Request: policiesWriteAclPolicy2Request }, initOverrides);
+    async policiesWriteAclPolicy2(name: string, PoliciesWriteAclPolicy2Request: PoliciesWriteAclPolicy2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.policiesWriteAclPolicy2Raw({ name: name, PoliciesWriteAclPolicy2Request: PoliciesWriteAclPolicy2Request }, initOverrides);
         return await response.value();
     }
 
@@ -5997,10 +5997,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['policiesWritePasswordPolicyRequest'] == null) {
+        if (requestParameters['PoliciesWritePasswordPolicyRequest'] == null) {
             throw new runtime.RequiredError(
-                'policiesWritePasswordPolicyRequest',
-                'Required parameter "policiesWritePasswordPolicyRequest" was null or undefined when calling policiesWritePasswordPolicy().'
+                'PoliciesWritePasswordPolicyRequest',
+                'Required parameter "PoliciesWritePasswordPolicyRequest" was null or undefined when calling policiesWritePasswordPolicy().'
             );
         }
 
@@ -6015,7 +6015,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PoliciesWritePasswordPolicyRequestToJSON(requestParameters['policiesWritePasswordPolicyRequest']),
+            body: PoliciesWritePasswordPolicyRequestToJSON(requestParameters['PoliciesWritePasswordPolicyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6024,8 +6024,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Add a new or update an existing password policy.
      */
-    async policiesWritePasswordPolicy(name: string, policiesWritePasswordPolicyRequest: PoliciesWritePasswordPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.policiesWritePasswordPolicyRaw({ name: name, policiesWritePasswordPolicyRequest: policiesWritePasswordPolicyRequest }, initOverrides);
+    async policiesWritePasswordPolicy(name: string, PoliciesWritePasswordPolicyRequest: PoliciesWritePasswordPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.policiesWritePasswordPolicyRaw({ name: name, PoliciesWritePasswordPolicyRequest: PoliciesWritePasswordPolicyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6340,10 +6340,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async queryTokenAccessorCapabilitiesRaw(requestParameters: SystemApiQueryTokenAccessorCapabilitiesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['queryTokenAccessorCapabilitiesRequest'] == null) {
+        if (requestParameters['QueryTokenAccessorCapabilitiesRequest'] == null) {
             throw new runtime.RequiredError(
-                'queryTokenAccessorCapabilitiesRequest',
-                'Required parameter "queryTokenAccessorCapabilitiesRequest" was null or undefined when calling queryTokenAccessorCapabilities().'
+                'QueryTokenAccessorCapabilitiesRequest',
+                'Required parameter "QueryTokenAccessorCapabilitiesRequest" was null or undefined when calling queryTokenAccessorCapabilities().'
             );
         }
 
@@ -6358,7 +6358,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: QueryTokenAccessorCapabilitiesRequestToJSON(requestParameters['queryTokenAccessorCapabilitiesRequest']),
+            body: QueryTokenAccessorCapabilitiesRequestToJSON(requestParameters['QueryTokenAccessorCapabilitiesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6366,18 +6366,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async queryTokenAccessorCapabilities(queryTokenAccessorCapabilitiesRequest: QueryTokenAccessorCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.queryTokenAccessorCapabilitiesRaw({ queryTokenAccessorCapabilitiesRequest: queryTokenAccessorCapabilitiesRequest }, initOverrides);
+    async queryTokenAccessorCapabilities(QueryTokenAccessorCapabilitiesRequest: QueryTokenAccessorCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.queryTokenAccessorCapabilitiesRaw({ QueryTokenAccessorCapabilitiesRequest: QueryTokenAccessorCapabilitiesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async queryTokenCapabilitiesRaw(requestParameters: SystemApiQueryTokenCapabilitiesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['queryTokenCapabilitiesRequest'] == null) {
+        if (requestParameters['QueryTokenCapabilitiesRequest'] == null) {
             throw new runtime.RequiredError(
-                'queryTokenCapabilitiesRequest',
-                'Required parameter "queryTokenCapabilitiesRequest" was null or undefined when calling queryTokenCapabilities().'
+                'QueryTokenCapabilitiesRequest',
+                'Required parameter "QueryTokenCapabilitiesRequest" was null or undefined when calling queryTokenCapabilities().'
             );
         }
 
@@ -6392,7 +6392,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: QueryTokenCapabilitiesRequestToJSON(requestParameters['queryTokenCapabilitiesRequest']),
+            body: QueryTokenCapabilitiesRequestToJSON(requestParameters['QueryTokenCapabilitiesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6400,18 +6400,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async queryTokenCapabilities(queryTokenCapabilitiesRequest: QueryTokenCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.queryTokenCapabilitiesRaw({ queryTokenCapabilitiesRequest: queryTokenCapabilitiesRequest }, initOverrides);
+    async queryTokenCapabilities(QueryTokenCapabilitiesRequest: QueryTokenCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.queryTokenCapabilitiesRaw({ QueryTokenCapabilitiesRequest: QueryTokenCapabilitiesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async queryTokenSelfCapabilitiesRaw(requestParameters: SystemApiQueryTokenSelfCapabilitiesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['queryTokenSelfCapabilitiesRequest'] == null) {
+        if (requestParameters['QueryTokenSelfCapabilitiesRequest'] == null) {
             throw new runtime.RequiredError(
-                'queryTokenSelfCapabilitiesRequest',
-                'Required parameter "queryTokenSelfCapabilitiesRequest" was null or undefined when calling queryTokenSelfCapabilities().'
+                'QueryTokenSelfCapabilitiesRequest',
+                'Required parameter "QueryTokenSelfCapabilitiesRequest" was null or undefined when calling queryTokenSelfCapabilities().'
             );
         }
 
@@ -6426,7 +6426,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: QueryTokenSelfCapabilitiesRequestToJSON(requestParameters['queryTokenSelfCapabilitiesRequest']),
+            body: QueryTokenSelfCapabilitiesRequestToJSON(requestParameters['QueryTokenSelfCapabilitiesRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6434,18 +6434,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async queryTokenSelfCapabilities(queryTokenSelfCapabilitiesRequest: QueryTokenSelfCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.queryTokenSelfCapabilitiesRaw({ queryTokenSelfCapabilitiesRequest: queryTokenSelfCapabilitiesRequest }, initOverrides);
+    async queryTokenSelfCapabilities(QueryTokenSelfCapabilitiesRequest: QueryTokenSelfCapabilitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.queryTokenSelfCapabilitiesRaw({ QueryTokenSelfCapabilitiesRequest: QueryTokenSelfCapabilitiesRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async rateLimitQuotasConfigureRaw(requestParameters: SystemApiRateLimitQuotasConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['rateLimitQuotasConfigureRequest'] == null) {
+        if (requestParameters['RateLimitQuotasConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'rateLimitQuotasConfigureRequest',
-                'Required parameter "rateLimitQuotasConfigureRequest" was null or undefined when calling rateLimitQuotasConfigure().'
+                'RateLimitQuotasConfigureRequest',
+                'Required parameter "RateLimitQuotasConfigureRequest" was null or undefined when calling rateLimitQuotasConfigure().'
             );
         }
 
@@ -6460,7 +6460,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RateLimitQuotasConfigureRequestToJSON(requestParameters['rateLimitQuotasConfigureRequest']),
+            body: RateLimitQuotasConfigureRequestToJSON(requestParameters['RateLimitQuotasConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6468,8 +6468,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async rateLimitQuotasConfigure(rateLimitQuotasConfigureRequest: RateLimitQuotasConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.rateLimitQuotasConfigureRaw({ rateLimitQuotasConfigureRequest: rateLimitQuotasConfigureRequest }, initOverrides);
+    async rateLimitQuotasConfigure(RateLimitQuotasConfigureRequest: RateLimitQuotasConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rateLimitQuotasConfigureRaw({ RateLimitQuotasConfigureRequest: RateLimitQuotasConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6604,10 +6604,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['rateLimitQuotasWriteRequest'] == null) {
+        if (requestParameters['RateLimitQuotasWriteRequest'] == null) {
             throw new runtime.RequiredError(
-                'rateLimitQuotasWriteRequest',
-                'Required parameter "rateLimitQuotasWriteRequest" was null or undefined when calling rateLimitQuotasWrite().'
+                'RateLimitQuotasWriteRequest',
+                'Required parameter "RateLimitQuotasWriteRequest" was null or undefined when calling rateLimitQuotasWrite().'
             );
         }
 
@@ -6622,7 +6622,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RateLimitQuotasWriteRequestToJSON(requestParameters['rateLimitQuotasWriteRequest']),
+            body: RateLimitQuotasWriteRequestToJSON(requestParameters['RateLimitQuotasWriteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6630,8 +6630,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async rateLimitQuotasWrite(name: string, rateLimitQuotasWriteRequest: RateLimitQuotasWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.rateLimitQuotasWriteRaw({ name: name, rateLimitQuotasWriteRequest: rateLimitQuotasWriteRequest }, initOverrides);
+    async rateLimitQuotasWrite(name: string, RateLimitQuotasWriteRequest: RateLimitQuotasWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rateLimitQuotasWriteRaw({ name: name, RateLimitQuotasWriteRequest: RateLimitQuotasWriteRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6756,10 +6756,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['rawWriteRequest'] == null) {
+        if (requestParameters['RawWriteRequest'] == null) {
             throw new runtime.RequiredError(
-                'rawWriteRequest',
-                'Required parameter "rawWriteRequest" was null or undefined when calling rawWrite().'
+                'RawWriteRequest',
+                'Required parameter "RawWriteRequest" was null or undefined when calling rawWrite().'
             );
         }
 
@@ -6774,7 +6774,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RawWriteRequestToJSON(requestParameters['rawWriteRequest']),
+            body: RawWriteRequestToJSON(requestParameters['RawWriteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -6783,8 +6783,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Update the value of the key at the given path.
      */
-    async rawWrite(path: string, rawWriteRequest: RawWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.rawWriteRaw({ path: path, rawWriteRequest: rawWriteRequest }, initOverrides);
+    async rawWrite(path: string, RawWriteRequest: RawWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rawWriteRaw({ path: path, RawWriteRequest: RawWriteRequest }, initOverrides);
         return await response.value();
     }
 
@@ -6950,10 +6950,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Look up wrapping properties for the given token.
      */
     async readWrappingPropertiesRaw(requestParameters: SystemApiReadWrappingPropertiesOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReadWrappingPropertiesResponse>> {
-        if (requestParameters['readWrappingPropertiesRequest'] == null) {
+        if (requestParameters['ReadWrappingPropertiesRequest'] == null) {
             throw new runtime.RequiredError(
-                'readWrappingPropertiesRequest',
-                'Required parameter "readWrappingPropertiesRequest" was null or undefined when calling readWrappingProperties().'
+                'ReadWrappingPropertiesRequest',
+                'Required parameter "ReadWrappingPropertiesRequest" was null or undefined when calling readWrappingProperties().'
             );
         }
 
@@ -6968,7 +6968,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ReadWrappingPropertiesRequestToJSON(requestParameters['readWrappingPropertiesRequest']),
+            body: ReadWrappingPropertiesRequestToJSON(requestParameters['ReadWrappingPropertiesRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => ReadWrappingPropertiesResponseFromJSON(jsonValue));
@@ -6977,8 +6977,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Look up wrapping properties for the given token.
      */
-    async readWrappingProperties(readWrappingPropertiesRequest: ReadWrappingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReadWrappingPropertiesResponse> {
-        const response = await this.readWrappingPropertiesRaw({ readWrappingPropertiesRequest: readWrappingPropertiesRequest }, initOverrides);
+    async readWrappingProperties(ReadWrappingPropertiesRequest: ReadWrappingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReadWrappingPropertiesResponse> {
+        const response = await this.readWrappingPropertiesRaw({ ReadWrappingPropertiesRequest: ReadWrappingPropertiesRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7045,10 +7045,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Initializes a new rekey attempt.
      */
     async rekeyAttemptInitializeRaw(requestParameters: SystemApiRekeyAttemptInitializeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyAttemptInitializeResponse>> {
-        if (requestParameters['rekeyAttemptInitializeRequest'] == null) {
+        if (requestParameters['RekeyAttemptInitializeRequest'] == null) {
             throw new runtime.RequiredError(
-                'rekeyAttemptInitializeRequest',
-                'Required parameter "rekeyAttemptInitializeRequest" was null or undefined when calling rekeyAttemptInitialize().'
+                'RekeyAttemptInitializeRequest',
+                'Required parameter "RekeyAttemptInitializeRequest" was null or undefined when calling rekeyAttemptInitialize().'
             );
         }
 
@@ -7063,7 +7063,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RekeyAttemptInitializeRequestToJSON(requestParameters['rekeyAttemptInitializeRequest']),
+            body: RekeyAttemptInitializeRequestToJSON(requestParameters['RekeyAttemptInitializeRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RekeyAttemptInitializeResponseFromJSON(jsonValue));
@@ -7073,8 +7073,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
      * Initializes a new rekey attempt.
      */
-    async rekeyAttemptInitialize(rekeyAttemptInitializeRequest: RekeyAttemptInitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyAttemptInitializeResponse> {
-        const response = await this.rekeyAttemptInitializeRaw({ rekeyAttemptInitializeRequest: rekeyAttemptInitializeRequest }, initOverrides);
+    async rekeyAttemptInitialize(RekeyAttemptInitializeRequest: RekeyAttemptInitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyAttemptInitializeResponse> {
+        const response = await this.rekeyAttemptInitializeRaw({ RekeyAttemptInitializeRequest: RekeyAttemptInitializeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7108,10 +7108,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Enter a single unseal key share to progress the rekey of the Vault.
      */
     async rekeyAttemptUpdateRaw(requestParameters: SystemApiRekeyAttemptUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyAttemptUpdateResponse>> {
-        if (requestParameters['rekeyAttemptUpdateRequest'] == null) {
+        if (requestParameters['RekeyAttemptUpdateRequest'] == null) {
             throw new runtime.RequiredError(
-                'rekeyAttemptUpdateRequest',
-                'Required parameter "rekeyAttemptUpdateRequest" was null or undefined when calling rekeyAttemptUpdate().'
+                'RekeyAttemptUpdateRequest',
+                'Required parameter "RekeyAttemptUpdateRequest" was null or undefined when calling rekeyAttemptUpdate().'
             );
         }
 
@@ -7126,7 +7126,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RekeyAttemptUpdateRequestToJSON(requestParameters['rekeyAttemptUpdateRequest']),
+            body: RekeyAttemptUpdateRequestToJSON(requestParameters['RekeyAttemptUpdateRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RekeyAttemptUpdateResponseFromJSON(jsonValue));
@@ -7135,8 +7135,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enter a single unseal key share to progress the rekey of the Vault.
      */
-    async rekeyAttemptUpdate(rekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyAttemptUpdateResponse> {
-        const response = await this.rekeyAttemptUpdateRaw({ rekeyAttemptUpdateRequest: rekeyAttemptUpdateRequest }, initOverrides);
+    async rekeyAttemptUpdate(RekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyAttemptUpdateResponse> {
+        const response = await this.rekeyAttemptUpdateRaw({ RekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7298,10 +7298,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Enter a single new key share to progress the rekey verification operation.
      */
     async rekeyVerificationUpdateRaw(requestParameters: SystemApiRekeyVerificationUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyVerificationUpdateResponse>> {
-        if (requestParameters['rekeyVerificationUpdateRequest'] == null) {
+        if (requestParameters['RekeyVerificationUpdateRequest'] == null) {
             throw new runtime.RequiredError(
-                'rekeyVerificationUpdateRequest',
-                'Required parameter "rekeyVerificationUpdateRequest" was null or undefined when calling rekeyVerificationUpdate().'
+                'RekeyVerificationUpdateRequest',
+                'Required parameter "RekeyVerificationUpdateRequest" was null or undefined when calling rekeyVerificationUpdate().'
             );
         }
 
@@ -7316,7 +7316,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RekeyVerificationUpdateRequestToJSON(requestParameters['rekeyVerificationUpdateRequest']),
+            body: RekeyVerificationUpdateRequestToJSON(requestParameters['RekeyVerificationUpdateRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RekeyVerificationUpdateResponseFromJSON(jsonValue));
@@ -7325,8 +7325,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Enter a single new key share to progress the rekey verification operation.
      */
-    async rekeyVerificationUpdate(rekeyVerificationUpdateRequest: RekeyVerificationUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyVerificationUpdateResponse> {
-        const response = await this.rekeyVerificationUpdateRaw({ rekeyVerificationUpdateRequest: rekeyVerificationUpdateRequest }, initOverrides);
+    async rekeyVerificationUpdate(RekeyVerificationUpdateRequest: RekeyVerificationUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyVerificationUpdateResponse> {
+        const response = await this.rekeyVerificationUpdateRaw({ RekeyVerificationUpdateRequest: RekeyVerificationUpdateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7349,10 +7349,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['reloadPluginsRequest'] == null) {
+        if (requestParameters['ReloadPluginsRequest'] == null) {
             throw new runtime.RequiredError(
-                'reloadPluginsRequest',
-                'Required parameter "reloadPluginsRequest" was null or undefined when calling reloadPlugins().'
+                'ReloadPluginsRequest',
+                'Required parameter "ReloadPluginsRequest" was null or undefined when calling reloadPlugins().'
             );
         }
 
@@ -7367,7 +7367,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ReloadPluginsRequestToJSON(requestParameters['reloadPluginsRequest']),
+            body: ReloadPluginsRequestToJSON(requestParameters['ReloadPluginsRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => ReloadPluginsResponseFromJSON(jsonValue));
@@ -7377,8 +7377,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Reload all plugins of a specific name and type across all namespaces. If \"scope\" is provided and is \"global\", the plugin is reloaded across all nodes and clusters. If a new plugin version has been pinned, this will ensure all instances start using the new version.
      * Reload all instances of a specific plugin.
      */
-    async reloadPlugins(name: string, type: string, reloadPluginsRequest: ReloadPluginsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReloadPluginsResponse> {
-        const response = await this.reloadPluginsRaw({ name: name, type: type, reloadPluginsRequest: reloadPluginsRequest }, initOverrides);
+    async reloadPlugins(name: string, type: string, ReloadPluginsRequest: ReloadPluginsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReloadPluginsResponse> {
+        const response = await this.reloadPluginsRaw({ name: name, type: type, ReloadPluginsRequest: ReloadPluginsRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7419,10 +7419,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Initiate a mount migration
      */
     async remountRaw(requestParameters: SystemApiRemountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RemountResponse>> {
-        if (requestParameters['remountRequest'] == null) {
+        if (requestParameters['RemountRequest'] == null) {
             throw new runtime.RequiredError(
-                'remountRequest',
-                'Required parameter "remountRequest" was null or undefined when calling remount().'
+                'RemountRequest',
+                'Required parameter "RemountRequest" was null or undefined when calling remount().'
             );
         }
 
@@ -7437,7 +7437,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RemountRequestToJSON(requestParameters['remountRequest']),
+            body: RemountRequestToJSON(requestParameters['RemountRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RemountResponseFromJSON(jsonValue));
@@ -7446,8 +7446,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Initiate a mount migration
      */
-    async remount(remountRequest: RemountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RemountResponse> {
-        const response = await this.remountRaw({ remountRequest: remountRequest }, initOverrides);
+    async remount(RemountRequest: RemountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RemountResponse> {
+        const response = await this.remountRaw({ RemountRequest: RemountRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7455,10 +7455,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Check status of a mount migration
      */
     async remountStatusRaw(requestParameters: SystemApiRemountStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RemountStatusResponse>> {
-        if (requestParameters['migrationId'] == null) {
+        if (requestParameters['migration_id'] == null) {
             throw new runtime.RequiredError(
-                'migrationId',
-                'Required parameter "migrationId" was null or undefined when calling remountStatus().'
+                'migration_id',
+                'Required parameter "migration_id" was null or undefined when calling remountStatus().'
             );
         }
 
@@ -7467,7 +7467,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migrationId']))),
+            path: `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migration_id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7479,18 +7479,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Check status of a mount migration
      */
-    async remountStatus(migrationId: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RemountStatusResponse> {
-        const response = await this.remountStatusRaw({ migrationId: migrationId }, initOverrides);
+    async remountStatus(migration_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RemountStatusResponse> {
+        const response = await this.remountStatusRaw({ migration_id: migration_id }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async rewrapRaw(requestParameters: SystemApiRewrapOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['rewrapRequest'] == null) {
+        if (requestParameters['RewrapRequest'] == null) {
             throw new runtime.RequiredError(
-                'rewrapRequest',
-                'Required parameter "rewrapRequest" was null or undefined when calling rewrap().'
+                'RewrapRequest',
+                'Required parameter "RewrapRequest" was null or undefined when calling rewrap().'
             );
         }
 
@@ -7505,7 +7505,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RewrapRequestToJSON(requestParameters['rewrapRequest']),
+            body: RewrapRequestToJSON(requestParameters['RewrapRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -7513,8 +7513,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async rewrap(rewrapRequest: RewrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.rewrapRaw({ rewrapRequest: rewrapRequest }, initOverrides);
+    async rewrap(RewrapRequest: RewrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rewrapRaw({ RewrapRequest: RewrapRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7575,10 +7575,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Initializes a new root generation attempt.
      */
     async rootTokenGenerationInitializeRaw(requestParameters: SystemApiRootTokenGenerationInitializeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RootTokenGenerationInitializeResponse>> {
-        if (requestParameters['rootTokenGenerationInitializeRequest'] == null) {
+        if (requestParameters['RootTokenGenerationInitializeRequest'] == null) {
             throw new runtime.RequiredError(
-                'rootTokenGenerationInitializeRequest',
-                'Required parameter "rootTokenGenerationInitializeRequest" was null or undefined when calling rootTokenGenerationInitialize().'
+                'RootTokenGenerationInitializeRequest',
+                'Required parameter "RootTokenGenerationInitializeRequest" was null or undefined when calling rootTokenGenerationInitialize().'
             );
         }
 
@@ -7593,7 +7593,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RootTokenGenerationInitializeRequestToJSON(requestParameters['rootTokenGenerationInitializeRequest']),
+            body: RootTokenGenerationInitializeRequestToJSON(requestParameters['RootTokenGenerationInitializeRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RootTokenGenerationInitializeResponseFromJSON(jsonValue));
@@ -7603,8 +7603,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
      * Initializes a new root generation attempt.
      */
-    async rootTokenGenerationInitialize(rootTokenGenerationInitializeRequest: RootTokenGenerationInitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationInitializeResponse> {
-        const response = await this.rootTokenGenerationInitializeRaw({ rootTokenGenerationInitializeRequest: rootTokenGenerationInitializeRequest }, initOverrides);
+    async rootTokenGenerationInitialize(RootTokenGenerationInitializeRequest: RootTokenGenerationInitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationInitializeResponse> {
+        const response = await this.rootTokenGenerationInitializeRaw({ RootTokenGenerationInitializeRequest: RootTokenGenerationInitializeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7613,10 +7613,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Initializes a new root generation attempt.
      */
     async rootTokenGenerationInitialize2Raw(requestParameters: SystemApiRootTokenGenerationInitialize2OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RootTokenGenerationInitialize2Response>> {
-        if (requestParameters['rootTokenGenerationInitialize2Request'] == null) {
+        if (requestParameters['RootTokenGenerationInitialize2Request'] == null) {
             throw new runtime.RequiredError(
-                'rootTokenGenerationInitialize2Request',
-                'Required parameter "rootTokenGenerationInitialize2Request" was null or undefined when calling rootTokenGenerationInitialize2().'
+                'RootTokenGenerationInitialize2Request',
+                'Required parameter "RootTokenGenerationInitialize2Request" was null or undefined when calling rootTokenGenerationInitialize2().'
             );
         }
 
@@ -7631,7 +7631,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RootTokenGenerationInitialize2RequestToJSON(requestParameters['rootTokenGenerationInitialize2Request']),
+            body: RootTokenGenerationInitialize2RequestToJSON(requestParameters['RootTokenGenerationInitialize2Request']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RootTokenGenerationInitialize2ResponseFromJSON(jsonValue));
@@ -7641,8 +7641,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
      * Initializes a new root generation attempt.
      */
-    async rootTokenGenerationInitialize2(rootTokenGenerationInitialize2Request: RootTokenGenerationInitialize2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationInitialize2Response> {
-        const response = await this.rootTokenGenerationInitialize2Raw({ rootTokenGenerationInitialize2Request: rootTokenGenerationInitialize2Request }, initOverrides);
+    async rootTokenGenerationInitialize2(RootTokenGenerationInitialize2Request: RootTokenGenerationInitialize2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationInitialize2Response> {
+        const response = await this.rootTokenGenerationInitialize2Raw({ RootTokenGenerationInitialize2Request: RootTokenGenerationInitialize2Request }, initOverrides);
         return await response.value();
     }
 
@@ -7703,10 +7703,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Enter a single unseal key share to progress the root generation attempt.
      */
     async rootTokenGenerationUpdateRaw(requestParameters: SystemApiRootTokenGenerationUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RootTokenGenerationUpdateResponse>> {
-        if (requestParameters['rootTokenGenerationUpdateRequest'] == null) {
+        if (requestParameters['RootTokenGenerationUpdateRequest'] == null) {
             throw new runtime.RequiredError(
-                'rootTokenGenerationUpdateRequest',
-                'Required parameter "rootTokenGenerationUpdateRequest" was null or undefined when calling rootTokenGenerationUpdate().'
+                'RootTokenGenerationUpdateRequest',
+                'Required parameter "RootTokenGenerationUpdateRequest" was null or undefined when calling rootTokenGenerationUpdate().'
             );
         }
 
@@ -7721,7 +7721,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: RootTokenGenerationUpdateRequestToJSON(requestParameters['rootTokenGenerationUpdateRequest']),
+            body: RootTokenGenerationUpdateRequestToJSON(requestParameters['RootTokenGenerationUpdateRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => RootTokenGenerationUpdateResponseFromJSON(jsonValue));
@@ -7731,8 +7731,8 @@ export class SystemApi extends runtime.BaseAPI {
      * If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
      * Enter a single unseal key share to progress the root generation attempt.
      */
-    async rootTokenGenerationUpdate(rootTokenGenerationUpdateRequest: RootTokenGenerationUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationUpdateResponse> {
-        const response = await this.rootTokenGenerationUpdateRaw({ rootTokenGenerationUpdateRequest: rootTokenGenerationUpdateRequest }, initOverrides);
+    async rootTokenGenerationUpdate(RootTokenGenerationUpdateRequest: RootTokenGenerationUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RootTokenGenerationUpdateResponse> {
+        const response = await this.rootTokenGenerationUpdateRaw({ RootTokenGenerationUpdateRequest: RootTokenGenerationUpdateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -7963,10 +7963,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Creates a new event notification subscription and starts to send events to it.
      */
     async subscriptionsWriteEventsSubscriptionsRaw(requestParameters: SystemApiSubscriptionsWriteEventsSubscriptionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SubscriptionsWriteEventsSubscriptionsResponse>> {
-        if (requestParameters['subscriptionsWriteEventsSubscriptionsRequest'] == null) {
+        if (requestParameters['SubscriptionsWriteEventsSubscriptionsRequest'] == null) {
             throw new runtime.RequiredError(
-                'subscriptionsWriteEventsSubscriptionsRequest',
-                'Required parameter "subscriptionsWriteEventsSubscriptionsRequest" was null or undefined when calling subscriptionsWriteEventsSubscriptions().'
+                'SubscriptionsWriteEventsSubscriptionsRequest',
+                'Required parameter "SubscriptionsWriteEventsSubscriptionsRequest" was null or undefined when calling subscriptionsWriteEventsSubscriptions().'
             );
         }
 
@@ -7981,7 +7981,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SubscriptionsWriteEventsSubscriptionsRequestToJSON(requestParameters['subscriptionsWriteEventsSubscriptionsRequest']),
+            body: SubscriptionsWriteEventsSubscriptionsRequestToJSON(requestParameters['SubscriptionsWriteEventsSubscriptionsRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SubscriptionsWriteEventsSubscriptionsResponseFromJSON(jsonValue));
@@ -7990,8 +7990,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Creates a new event notification subscription and starts to send events to it.
      */
-    async subscriptionsWriteEventsSubscriptions(subscriptionsWriteEventsSubscriptionsRequest: SubscriptionsWriteEventsSubscriptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SubscriptionsWriteEventsSubscriptionsResponse> {
-        const response = await this.subscriptionsWriteEventsSubscriptionsRaw({ subscriptionsWriteEventsSubscriptionsRequest: subscriptionsWriteEventsSubscriptionsRequest }, initOverrides);
+    async subscriptionsWriteEventsSubscriptions(SubscriptionsWriteEventsSubscriptionsRequest: SubscriptionsWriteEventsSubscriptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SubscriptionsWriteEventsSubscriptionsResponse> {
+        const response = await this.subscriptionsWriteEventsSubscriptionsRaw({ SubscriptionsWriteEventsSubscriptionsRequest: SubscriptionsWriteEventsSubscriptionsRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9111,10 +9111,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchNamespacesPathRequest'] == null) {
+        if (requestParameters['SystemPatchNamespacesPathRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchNamespacesPathRequest',
-                'Required parameter "systemPatchNamespacesPathRequest" was null or undefined when calling systemPatchNamespacesPath().'
+                'SystemPatchNamespacesPathRequest',
+                'Required parameter "SystemPatchNamespacesPathRequest" was null or undefined when calling systemPatchNamespacesPath().'
             );
         }
 
@@ -9129,7 +9129,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchNamespacesPathRequestToJSON(requestParameters['systemPatchNamespacesPathRequest']),
+            body: SystemPatchNamespacesPathRequestToJSON(requestParameters['SystemPatchNamespacesPathRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -9137,18 +9137,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchNamespacesPath(path: string, systemPatchNamespacesPathRequest: SystemPatchNamespacesPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemPatchNamespacesPathRaw({ path: path, systemPatchNamespacesPathRequest: systemPatchNamespacesPathRequest }, initOverrides);
+    async systemPatchNamespacesPath(path: string, SystemPatchNamespacesPathRequest: SystemPatchNamespacesPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemPatchNamespacesPathRaw({ path: path, SystemPatchNamespacesPathRequest: SystemPatchNamespacesPathRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemPatchSyncConfigRaw(requestParameters: SystemApiSystemPatchSyncConfigOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemPatchSyncConfigResponse>> {
-        if (requestParameters['systemPatchSyncConfigRequest'] == null) {
+        if (requestParameters['SystemPatchSyncConfigRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncConfigRequest',
-                'Required parameter "systemPatchSyncConfigRequest" was null or undefined when calling systemPatchSyncConfig().'
+                'SystemPatchSyncConfigRequest',
+                'Required parameter "SystemPatchSyncConfigRequest" was null or undefined when calling systemPatchSyncConfig().'
             );
         }
 
@@ -9163,7 +9163,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncConfigRequestToJSON(requestParameters['systemPatchSyncConfigRequest']),
+            body: SystemPatchSyncConfigRequestToJSON(requestParameters['SystemPatchSyncConfigRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncConfigResponseFromJSON(jsonValue));
@@ -9171,8 +9171,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncConfig(systemPatchSyncConfigRequest: SystemPatchSyncConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncConfigResponse> {
-        const response = await this.systemPatchSyncConfigRaw({ systemPatchSyncConfigRequest: systemPatchSyncConfigRequest }, initOverrides);
+    async systemPatchSyncConfig(SystemPatchSyncConfigRequest: SystemPatchSyncConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncConfigResponse> {
+        const response = await this.systemPatchSyncConfigRaw({ SystemPatchSyncConfigRequest: SystemPatchSyncConfigRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9186,10 +9186,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsAwsSmNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsAwsSmNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsAwsSmNameRequest',
-                'Required parameter "systemPatchSyncDestinationsAwsSmNameRequest" was null or undefined when calling systemPatchSyncDestinationsAwsSmName().'
+                'SystemPatchSyncDestinationsAwsSmNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsAwsSmNameRequest" was null or undefined when calling systemPatchSyncDestinationsAwsSmName().'
             );
         }
 
@@ -9204,7 +9204,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsAwsSmNameRequestToJSON(requestParameters['systemPatchSyncDestinationsAwsSmNameRequest']),
+            body: SystemPatchSyncDestinationsAwsSmNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsAwsSmNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsAwsSmNameResponseFromJSON(jsonValue));
@@ -9212,8 +9212,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsAwsSmName(name: string, systemPatchSyncDestinationsAwsSmNameRequest: SystemPatchSyncDestinationsAwsSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsAwsSmNameResponse> {
-        const response = await this.systemPatchSyncDestinationsAwsSmNameRaw({ name: name, systemPatchSyncDestinationsAwsSmNameRequest: systemPatchSyncDestinationsAwsSmNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsAwsSmName(name: string, SystemPatchSyncDestinationsAwsSmNameRequest: SystemPatchSyncDestinationsAwsSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsAwsSmNameResponse> {
+        const response = await this.systemPatchSyncDestinationsAwsSmNameRaw({ name: name, SystemPatchSyncDestinationsAwsSmNameRequest: SystemPatchSyncDestinationsAwsSmNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9227,10 +9227,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsAzureKvNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsAzureKvNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsAzureKvNameRequest',
-                'Required parameter "systemPatchSyncDestinationsAzureKvNameRequest" was null or undefined when calling systemPatchSyncDestinationsAzureKvName().'
+                'SystemPatchSyncDestinationsAzureKvNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsAzureKvNameRequest" was null or undefined when calling systemPatchSyncDestinationsAzureKvName().'
             );
         }
 
@@ -9245,7 +9245,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsAzureKvNameRequestToJSON(requestParameters['systemPatchSyncDestinationsAzureKvNameRequest']),
+            body: SystemPatchSyncDestinationsAzureKvNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsAzureKvNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsAzureKvNameResponseFromJSON(jsonValue));
@@ -9253,8 +9253,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsAzureKvName(name: string, systemPatchSyncDestinationsAzureKvNameRequest: SystemPatchSyncDestinationsAzureKvNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsAzureKvNameResponse> {
-        const response = await this.systemPatchSyncDestinationsAzureKvNameRaw({ name: name, systemPatchSyncDestinationsAzureKvNameRequest: systemPatchSyncDestinationsAzureKvNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsAzureKvName(name: string, SystemPatchSyncDestinationsAzureKvNameRequest: SystemPatchSyncDestinationsAzureKvNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsAzureKvNameResponse> {
+        const response = await this.systemPatchSyncDestinationsAzureKvNameRaw({ name: name, SystemPatchSyncDestinationsAzureKvNameRequest: SystemPatchSyncDestinationsAzureKvNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9268,10 +9268,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsGcpSmNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsGcpSmNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsGcpSmNameRequest',
-                'Required parameter "systemPatchSyncDestinationsGcpSmNameRequest" was null or undefined when calling systemPatchSyncDestinationsGcpSmName().'
+                'SystemPatchSyncDestinationsGcpSmNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsGcpSmNameRequest" was null or undefined when calling systemPatchSyncDestinationsGcpSmName().'
             );
         }
 
@@ -9286,7 +9286,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsGcpSmNameRequestToJSON(requestParameters['systemPatchSyncDestinationsGcpSmNameRequest']),
+            body: SystemPatchSyncDestinationsGcpSmNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsGcpSmNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsGcpSmNameResponseFromJSON(jsonValue));
@@ -9294,8 +9294,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsGcpSmName(name: string, systemPatchSyncDestinationsGcpSmNameRequest: SystemPatchSyncDestinationsGcpSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsGcpSmNameResponse> {
-        const response = await this.systemPatchSyncDestinationsGcpSmNameRaw({ name: name, systemPatchSyncDestinationsGcpSmNameRequest: systemPatchSyncDestinationsGcpSmNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsGcpSmName(name: string, SystemPatchSyncDestinationsGcpSmNameRequest: SystemPatchSyncDestinationsGcpSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsGcpSmNameResponse> {
+        const response = await this.systemPatchSyncDestinationsGcpSmNameRaw({ name: name, SystemPatchSyncDestinationsGcpSmNameRequest: SystemPatchSyncDestinationsGcpSmNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9309,10 +9309,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsGhNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsGhNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsGhNameRequest',
-                'Required parameter "systemPatchSyncDestinationsGhNameRequest" was null or undefined when calling systemPatchSyncDestinationsGhName().'
+                'SystemPatchSyncDestinationsGhNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsGhNameRequest" was null or undefined when calling systemPatchSyncDestinationsGhName().'
             );
         }
 
@@ -9327,7 +9327,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsGhNameRequestToJSON(requestParameters['systemPatchSyncDestinationsGhNameRequest']),
+            body: SystemPatchSyncDestinationsGhNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsGhNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsGhNameResponseFromJSON(jsonValue));
@@ -9335,8 +9335,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsGhName(name: string, systemPatchSyncDestinationsGhNameRequest: SystemPatchSyncDestinationsGhNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsGhNameResponse> {
-        const response = await this.systemPatchSyncDestinationsGhNameRaw({ name: name, systemPatchSyncDestinationsGhNameRequest: systemPatchSyncDestinationsGhNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsGhName(name: string, SystemPatchSyncDestinationsGhNameRequest: SystemPatchSyncDestinationsGhNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsGhNameResponse> {
+        const response = await this.systemPatchSyncDestinationsGhNameRaw({ name: name, SystemPatchSyncDestinationsGhNameRequest: SystemPatchSyncDestinationsGhNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9350,10 +9350,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsInMemNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsInMemNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsInMemNameRequest',
-                'Required parameter "systemPatchSyncDestinationsInMemNameRequest" was null or undefined when calling systemPatchSyncDestinationsInMemName().'
+                'SystemPatchSyncDestinationsInMemNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsInMemNameRequest" was null or undefined when calling systemPatchSyncDestinationsInMemName().'
             );
         }
 
@@ -9368,7 +9368,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsInMemNameRequestToJSON(requestParameters['systemPatchSyncDestinationsInMemNameRequest']),
+            body: SystemPatchSyncDestinationsInMemNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsInMemNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsInMemNameResponseFromJSON(jsonValue));
@@ -9376,8 +9376,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsInMemName(name: string, systemPatchSyncDestinationsInMemNameRequest: SystemPatchSyncDestinationsInMemNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsInMemNameResponse> {
-        const response = await this.systemPatchSyncDestinationsInMemNameRaw({ name: name, systemPatchSyncDestinationsInMemNameRequest: systemPatchSyncDestinationsInMemNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsInMemName(name: string, SystemPatchSyncDestinationsInMemNameRequest: SystemPatchSyncDestinationsInMemNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsInMemNameResponse> {
+        const response = await this.systemPatchSyncDestinationsInMemNameRaw({ name: name, SystemPatchSyncDestinationsInMemNameRequest: SystemPatchSyncDestinationsInMemNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -9391,10 +9391,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemPatchSyncDestinationsVercelProjectNameRequest'] == null) {
+        if (requestParameters['SystemPatchSyncDestinationsVercelProjectNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemPatchSyncDestinationsVercelProjectNameRequest',
-                'Required parameter "systemPatchSyncDestinationsVercelProjectNameRequest" was null or undefined when calling systemPatchSyncDestinationsVercelProjectName().'
+                'SystemPatchSyncDestinationsVercelProjectNameRequest',
+                'Required parameter "SystemPatchSyncDestinationsVercelProjectNameRequest" was null or undefined when calling systemPatchSyncDestinationsVercelProjectName().'
             );
         }
 
@@ -9409,7 +9409,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemPatchSyncDestinationsVercelProjectNameRequestToJSON(requestParameters['systemPatchSyncDestinationsVercelProjectNameRequest']),
+            body: SystemPatchSyncDestinationsVercelProjectNameRequestToJSON(requestParameters['SystemPatchSyncDestinationsVercelProjectNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemPatchSyncDestinationsVercelProjectNameResponseFromJSON(jsonValue));
@@ -9417,8 +9417,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemPatchSyncDestinationsVercelProjectName(name: string, systemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsVercelProjectNameResponse> {
-        const response = await this.systemPatchSyncDestinationsVercelProjectNameRaw({ name: name, systemPatchSyncDestinationsVercelProjectNameRequest: systemPatchSyncDestinationsVercelProjectNameRequest }, initOverrides);
+    async systemPatchSyncDestinationsVercelProjectName(name: string, SystemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemPatchSyncDestinationsVercelProjectNameResponse> {
+        const response = await this.systemPatchSyncDestinationsVercelProjectNameRaw({ name: name, SystemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10209,10 +10209,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['secretName'] == null) {
+        if (requestParameters['secret_name'] == null) {
             throw new runtime.RequiredError(
-                'secretName',
-                'Required parameter "secretName" was null or undefined when calling systemReadSyncAssociationsMountSecretName().'
+                'secret_name',
+                'Required parameter "secret_name" was null or undefined when calling systemReadSyncAssociationsMountSecretName().'
             );
         }
 
@@ -10221,7 +10221,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secretName']))),
+            path: `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secret_name']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10232,8 +10232,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemReadSyncAssociationsMountSecretName(mount: string, secretName: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadSyncAssociationsMountSecretNameResponse> {
-        const response = await this.systemReadSyncAssociationsMountSecretNameRaw({ mount: mount, secretName: secretName }, initOverrides);
+    async systemReadSyncAssociationsMountSecretName(mount: string, secret_name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadSyncAssociationsMountSecretNameResponse> {
+        const response = await this.systemReadSyncAssociationsMountSecretNameRaw({ mount: mount, secret_name: secret_name }, initOverrides);
         return await response.value();
     }
 
@@ -10520,10 +10520,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Configure control group global settings.
      */
     async systemWriteConfigControlGroupRaw(requestParameters: SystemApiSystemWriteConfigControlGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteConfigControlGroupRequest'] == null) {
+        if (requestParameters['SystemWriteConfigControlGroupRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteConfigControlGroupRequest',
-                'Required parameter "systemWriteConfigControlGroupRequest" was null or undefined when calling systemWriteConfigControlGroup().'
+                'SystemWriteConfigControlGroupRequest',
+                'Required parameter "SystemWriteConfigControlGroupRequest" was null or undefined when calling systemWriteConfigControlGroup().'
             );
         }
 
@@ -10538,7 +10538,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteConfigControlGroupRequestToJSON(requestParameters['systemWriteConfigControlGroupRequest']),
+            body: SystemWriteConfigControlGroupRequestToJSON(requestParameters['SystemWriteConfigControlGroupRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10547,8 +10547,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Configure control group global settings.
      */
-    async systemWriteConfigControlGroup(systemWriteConfigControlGroupRequest: SystemWriteConfigControlGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteConfigControlGroupRaw({ systemWriteConfigControlGroupRequest: systemWriteConfigControlGroupRequest }, initOverrides);
+    async systemWriteConfigControlGroup(SystemWriteConfigControlGroupRequest: SystemWriteConfigControlGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteConfigControlGroupRaw({ SystemWriteConfigControlGroupRequest: SystemWriteConfigControlGroupRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10557,10 +10557,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Updates the policy application mode for Vault.
      */
     async systemWriteConfigGroupPolicyApplicationRaw(requestParameters: SystemApiSystemWriteConfigGroupPolicyApplicationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteConfigGroupPolicyApplicationRequest'] == null) {
+        if (requestParameters['SystemWriteConfigGroupPolicyApplicationRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteConfigGroupPolicyApplicationRequest',
-                'Required parameter "systemWriteConfigGroupPolicyApplicationRequest" was null or undefined when calling systemWriteConfigGroupPolicyApplication().'
+                'SystemWriteConfigGroupPolicyApplicationRequest',
+                'Required parameter "SystemWriteConfigGroupPolicyApplicationRequest" was null or undefined when calling systemWriteConfigGroupPolicyApplication().'
             );
         }
 
@@ -10575,7 +10575,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteConfigGroupPolicyApplicationRequestToJSON(requestParameters['systemWriteConfigGroupPolicyApplicationRequest']),
+            body: SystemWriteConfigGroupPolicyApplicationRequestToJSON(requestParameters['SystemWriteConfigGroupPolicyApplicationRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10585,8 +10585,8 @@ export class SystemApi extends runtime.BaseAPI {
      * The group_policy_application_mode must be provided, as within_namespace_hierarchy or any.
      * Updates the policy application mode for Vault.
      */
-    async systemWriteConfigGroupPolicyApplication(systemWriteConfigGroupPolicyApplicationRequest: SystemWriteConfigGroupPolicyApplicationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteConfigGroupPolicyApplicationRaw({ systemWriteConfigGroupPolicyApplicationRequest: systemWriteConfigGroupPolicyApplicationRequest }, initOverrides);
+    async systemWriteConfigGroupPolicyApplication(SystemWriteConfigGroupPolicyApplicationRequest: SystemWriteConfigGroupPolicyApplicationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteConfigGroupPolicyApplicationRaw({ SystemWriteConfigGroupPolicyApplicationRequest: SystemWriteConfigGroupPolicyApplicationRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10594,10 +10594,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Authorize a control group request
      */
     async systemWriteControlGroupAuthorizeRaw(requestParameters: SystemApiSystemWriteControlGroupAuthorizeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteControlGroupAuthorizeRequest'] == null) {
+        if (requestParameters['SystemWriteControlGroupAuthorizeRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteControlGroupAuthorizeRequest',
-                'Required parameter "systemWriteControlGroupAuthorizeRequest" was null or undefined when calling systemWriteControlGroupAuthorize().'
+                'SystemWriteControlGroupAuthorizeRequest',
+                'Required parameter "SystemWriteControlGroupAuthorizeRequest" was null or undefined when calling systemWriteControlGroupAuthorize().'
             );
         }
 
@@ -10612,7 +10612,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteControlGroupAuthorizeRequestToJSON(requestParameters['systemWriteControlGroupAuthorizeRequest']),
+            body: SystemWriteControlGroupAuthorizeRequestToJSON(requestParameters['SystemWriteControlGroupAuthorizeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10621,8 +10621,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Authorize a control group request
      */
-    async systemWriteControlGroupAuthorize(systemWriteControlGroupAuthorizeRequest: SystemWriteControlGroupAuthorizeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteControlGroupAuthorizeRaw({ systemWriteControlGroupAuthorizeRequest: systemWriteControlGroupAuthorizeRequest }, initOverrides);
+    async systemWriteControlGroupAuthorize(SystemWriteControlGroupAuthorizeRequest: SystemWriteControlGroupAuthorizeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteControlGroupAuthorizeRaw({ SystemWriteControlGroupAuthorizeRequest: SystemWriteControlGroupAuthorizeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10630,10 +10630,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Check the status of a control group request
      */
     async systemWriteControlGroupRequestRaw(requestParameters: SystemApiSystemWriteControlGroupRequestOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteControlGroupRequestRequest'] == null) {
+        if (requestParameters['SystemWriteControlGroupRequestRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteControlGroupRequestRequest',
-                'Required parameter "systemWriteControlGroupRequestRequest" was null or undefined when calling systemWriteControlGroupRequest().'
+                'SystemWriteControlGroupRequestRequest',
+                'Required parameter "SystemWriteControlGroupRequestRequest" was null or undefined when calling systemWriteControlGroupRequest().'
             );
         }
 
@@ -10648,7 +10648,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteControlGroupRequestRequestToJSON(requestParameters['systemWriteControlGroupRequestRequest']),
+            body: SystemWriteControlGroupRequestRequestToJSON(requestParameters['SystemWriteControlGroupRequestRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10657,8 +10657,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Check the status of a control group request
      */
-    async systemWriteControlGroupRequest(systemWriteControlGroupRequestRequest: SystemWriteControlGroupRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteControlGroupRequestRaw({ systemWriteControlGroupRequestRequest: systemWriteControlGroupRequestRequest }, initOverrides);
+    async systemWriteControlGroupRequest(SystemWriteControlGroupRequestRequest: SystemWriteControlGroupRequestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteControlGroupRequestRaw({ SystemWriteControlGroupRequestRequest: SystemWriteControlGroupRequestRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10666,10 +10666,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Write activity log data
      */
     async systemWriteInternalCountersActivityWriteRaw(requestParameters: SystemApiSystemWriteInternalCountersActivityWriteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteInternalCountersActivityWriteRequest'] == null) {
+        if (requestParameters['SystemWriteInternalCountersActivityWriteRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteInternalCountersActivityWriteRequest',
-                'Required parameter "systemWriteInternalCountersActivityWriteRequest" was null or undefined when calling systemWriteInternalCountersActivityWrite().'
+                'SystemWriteInternalCountersActivityWriteRequest',
+                'Required parameter "SystemWriteInternalCountersActivityWriteRequest" was null or undefined when calling systemWriteInternalCountersActivityWrite().'
             );
         }
 
@@ -10684,7 +10684,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteInternalCountersActivityWriteRequestToJSON(requestParameters['systemWriteInternalCountersActivityWriteRequest']),
+            body: SystemWriteInternalCountersActivityWriteRequestToJSON(requestParameters['SystemWriteInternalCountersActivityWriteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10693,8 +10693,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Write activity log data
      */
-    async systemWriteInternalCountersActivityWrite(systemWriteInternalCountersActivityWriteRequest: SystemWriteInternalCountersActivityWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteInternalCountersActivityWriteRaw({ systemWriteInternalCountersActivityWriteRequest: systemWriteInternalCountersActivityWriteRequest }, initOverrides);
+    async systemWriteInternalCountersActivityWrite(SystemWriteInternalCountersActivityWriteRequest: SystemWriteInternalCountersActivityWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteInternalCountersActivityWriteRaw({ SystemWriteInternalCountersActivityWriteRequest: SystemWriteInternalCountersActivityWriteRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10715,10 +10715,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteManagedKeysTypeNameRequest'] == null) {
+        if (requestParameters['SystemWriteManagedKeysTypeNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteManagedKeysTypeNameRequest',
-                'Required parameter "systemWriteManagedKeysTypeNameRequest" was null or undefined when calling systemWriteManagedKeysTypeName().'
+                'SystemWriteManagedKeysTypeNameRequest',
+                'Required parameter "SystemWriteManagedKeysTypeNameRequest" was null or undefined when calling systemWriteManagedKeysTypeName().'
             );
         }
 
@@ -10733,7 +10733,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteManagedKeysTypeNameRequestToJSON(requestParameters['systemWriteManagedKeysTypeNameRequest']),
+            body: SystemWriteManagedKeysTypeNameRequestToJSON(requestParameters['SystemWriteManagedKeysTypeNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10741,8 +10741,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteManagedKeysTypeName(name: string, type: string, systemWriteManagedKeysTypeNameRequest: SystemWriteManagedKeysTypeNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteManagedKeysTypeNameRaw({ name: name, type: type, systemWriteManagedKeysTypeNameRequest: systemWriteManagedKeysTypeNameRequest }, initOverrides);
+    async systemWriteManagedKeysTypeName(name: string, type: string, SystemWriteManagedKeysTypeNameRequest: SystemWriteManagedKeysTypeNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteManagedKeysTypeNameRaw({ name: name, type: type, SystemWriteManagedKeysTypeNameRequest: SystemWriteManagedKeysTypeNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10763,10 +10763,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteManagedKeysTypeNameTestSignRequest'] == null) {
+        if (requestParameters['SystemWriteManagedKeysTypeNameTestSignRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteManagedKeysTypeNameTestSignRequest',
-                'Required parameter "systemWriteManagedKeysTypeNameTestSignRequest" was null or undefined when calling systemWriteManagedKeysTypeNameTestSign().'
+                'SystemWriteManagedKeysTypeNameTestSignRequest',
+                'Required parameter "SystemWriteManagedKeysTypeNameTestSignRequest" was null or undefined when calling systemWriteManagedKeysTypeNameTestSign().'
             );
         }
 
@@ -10781,7 +10781,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteManagedKeysTypeNameTestSignRequestToJSON(requestParameters['systemWriteManagedKeysTypeNameTestSignRequest']),
+            body: SystemWriteManagedKeysTypeNameTestSignRequestToJSON(requestParameters['SystemWriteManagedKeysTypeNameTestSignRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10789,8 +10789,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteManagedKeysTypeNameTestSign(name: string, type: string, systemWriteManagedKeysTypeNameTestSignRequest: SystemWriteManagedKeysTypeNameTestSignRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteManagedKeysTypeNameTestSignRaw({ name: name, type: type, systemWriteManagedKeysTypeNameTestSignRequest: systemWriteManagedKeysTypeNameTestSignRequest }, initOverrides);
+    async systemWriteManagedKeysTypeNameTestSign(name: string, type: string, SystemWriteManagedKeysTypeNameTestSignRequest: SystemWriteManagedKeysTypeNameTestSignRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteManagedKeysTypeNameTestSignRaw({ name: name, type: type, SystemWriteManagedKeysTypeNameTestSignRequest: SystemWriteManagedKeysTypeNameTestSignRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10805,10 +10805,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodDuoNameRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodDuoNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodDuoNameRequest',
-                'Required parameter "systemWriteMfaMethodDuoNameRequest" was null or undefined when calling systemWriteMfaMethodDuoName().'
+                'SystemWriteMfaMethodDuoNameRequest',
+                'Required parameter "SystemWriteMfaMethodDuoNameRequest" was null or undefined when calling systemWriteMfaMethodDuoName().'
             );
         }
 
@@ -10823,7 +10823,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodDuoNameRequestToJSON(requestParameters['systemWriteMfaMethodDuoNameRequest']),
+            body: SystemWriteMfaMethodDuoNameRequestToJSON(requestParameters['SystemWriteMfaMethodDuoNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10832,8 +10832,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Defines or updates a Duo MFA method.
      */
-    async systemWriteMfaMethodDuoName(name: string, systemWriteMfaMethodDuoNameRequest: SystemWriteMfaMethodDuoNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodDuoNameRaw({ name: name, systemWriteMfaMethodDuoNameRequest: systemWriteMfaMethodDuoNameRequest }, initOverrides);
+    async systemWriteMfaMethodDuoName(name: string, SystemWriteMfaMethodDuoNameRequest: SystemWriteMfaMethodDuoNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodDuoNameRaw({ name: name, SystemWriteMfaMethodDuoNameRequest: SystemWriteMfaMethodDuoNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10848,10 +10848,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodOktaNameRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodOktaNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodOktaNameRequest',
-                'Required parameter "systemWriteMfaMethodOktaNameRequest" was null or undefined when calling systemWriteMfaMethodOktaName().'
+                'SystemWriteMfaMethodOktaNameRequest',
+                'Required parameter "SystemWriteMfaMethodOktaNameRequest" was null or undefined when calling systemWriteMfaMethodOktaName().'
             );
         }
 
@@ -10866,7 +10866,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodOktaNameRequestToJSON(requestParameters['systemWriteMfaMethodOktaNameRequest']),
+            body: SystemWriteMfaMethodOktaNameRequestToJSON(requestParameters['SystemWriteMfaMethodOktaNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10875,8 +10875,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Defines or updates an Okta MFA method.
      */
-    async systemWriteMfaMethodOktaName(name: string, systemWriteMfaMethodOktaNameRequest: SystemWriteMfaMethodOktaNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodOktaNameRaw({ name: name, systemWriteMfaMethodOktaNameRequest: systemWriteMfaMethodOktaNameRequest }, initOverrides);
+    async systemWriteMfaMethodOktaName(name: string, SystemWriteMfaMethodOktaNameRequest: SystemWriteMfaMethodOktaNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodOktaNameRaw({ name: name, SystemWriteMfaMethodOktaNameRequest: SystemWriteMfaMethodOktaNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10891,10 +10891,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodPingidNameRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodPingidNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodPingidNameRequest',
-                'Required parameter "systemWriteMfaMethodPingidNameRequest" was null or undefined when calling systemWriteMfaMethodPingidName().'
+                'SystemWriteMfaMethodPingidNameRequest',
+                'Required parameter "SystemWriteMfaMethodPingidNameRequest" was null or undefined when calling systemWriteMfaMethodPingidName().'
             );
         }
 
@@ -10909,7 +10909,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodPingidNameRequestToJSON(requestParameters['systemWriteMfaMethodPingidNameRequest']),
+            body: SystemWriteMfaMethodPingidNameRequestToJSON(requestParameters['SystemWriteMfaMethodPingidNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10918,8 +10918,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Defines or updates a PingID MFA method.
      */
-    async systemWriteMfaMethodPingidName(name: string, systemWriteMfaMethodPingidNameRequest: SystemWriteMfaMethodPingidNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodPingidNameRaw({ name: name, systemWriteMfaMethodPingidNameRequest: systemWriteMfaMethodPingidNameRequest }, initOverrides);
+    async systemWriteMfaMethodPingidName(name: string, SystemWriteMfaMethodPingidNameRequest: SystemWriteMfaMethodPingidNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodPingidNameRaw({ name: name, SystemWriteMfaMethodPingidNameRequest: SystemWriteMfaMethodPingidNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10934,10 +10934,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodTotpNameRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodTotpNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodTotpNameRequest',
-                'Required parameter "systemWriteMfaMethodTotpNameRequest" was null or undefined when calling systemWriteMfaMethodTotpName().'
+                'SystemWriteMfaMethodTotpNameRequest',
+                'Required parameter "SystemWriteMfaMethodTotpNameRequest" was null or undefined when calling systemWriteMfaMethodTotpName().'
             );
         }
 
@@ -10952,7 +10952,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodTotpNameRequestToJSON(requestParameters['systemWriteMfaMethodTotpNameRequest']),
+            body: SystemWriteMfaMethodTotpNameRequestToJSON(requestParameters['SystemWriteMfaMethodTotpNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -10961,8 +10961,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Defines or updates a TOTP MFA method.
      */
-    async systemWriteMfaMethodTotpName(name: string, systemWriteMfaMethodTotpNameRequest: SystemWriteMfaMethodTotpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodTotpNameRaw({ name: name, systemWriteMfaMethodTotpNameRequest: systemWriteMfaMethodTotpNameRequest }, initOverrides);
+    async systemWriteMfaMethodTotpName(name: string, SystemWriteMfaMethodTotpNameRequest: SystemWriteMfaMethodTotpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodTotpNameRaw({ name: name, SystemWriteMfaMethodTotpNameRequest: SystemWriteMfaMethodTotpNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -10977,10 +10977,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodTotpNameAdminDestroyRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodTotpNameAdminDestroyRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodTotpNameAdminDestroyRequest',
-                'Required parameter "systemWriteMfaMethodTotpNameAdminDestroyRequest" was null or undefined when calling systemWriteMfaMethodTotpNameAdminDestroy().'
+                'SystemWriteMfaMethodTotpNameAdminDestroyRequest',
+                'Required parameter "SystemWriteMfaMethodTotpNameAdminDestroyRequest" was null or undefined when calling systemWriteMfaMethodTotpNameAdminDestroy().'
             );
         }
 
@@ -10995,7 +10995,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodTotpNameAdminDestroyRequestToJSON(requestParameters['systemWriteMfaMethodTotpNameAdminDestroyRequest']),
+            body: SystemWriteMfaMethodTotpNameAdminDestroyRequestToJSON(requestParameters['SystemWriteMfaMethodTotpNameAdminDestroyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11004,8 +11004,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the TOTP secret for the given method name on the given entity.
      */
-    async systemWriteMfaMethodTotpNameAdminDestroy(name: string, systemWriteMfaMethodTotpNameAdminDestroyRequest: SystemWriteMfaMethodTotpNameAdminDestroyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodTotpNameAdminDestroyRaw({ name: name, systemWriteMfaMethodTotpNameAdminDestroyRequest: systemWriteMfaMethodTotpNameAdminDestroyRequest }, initOverrides);
+    async systemWriteMfaMethodTotpNameAdminDestroy(name: string, SystemWriteMfaMethodTotpNameAdminDestroyRequest: SystemWriteMfaMethodTotpNameAdminDestroyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodTotpNameAdminDestroyRaw({ name: name, SystemWriteMfaMethodTotpNameAdminDestroyRequest: SystemWriteMfaMethodTotpNameAdminDestroyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11020,10 +11020,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteMfaMethodTotpNameAdminGenerateRequest'] == null) {
+        if (requestParameters['SystemWriteMfaMethodTotpNameAdminGenerateRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteMfaMethodTotpNameAdminGenerateRequest',
-                'Required parameter "systemWriteMfaMethodTotpNameAdminGenerateRequest" was null or undefined when calling systemWriteMfaMethodTotpNameAdminGenerate().'
+                'SystemWriteMfaMethodTotpNameAdminGenerateRequest',
+                'Required parameter "SystemWriteMfaMethodTotpNameAdminGenerateRequest" was null or undefined when calling systemWriteMfaMethodTotpNameAdminGenerate().'
             );
         }
 
@@ -11038,7 +11038,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteMfaMethodTotpNameAdminGenerateRequestToJSON(requestParameters['systemWriteMfaMethodTotpNameAdminGenerateRequest']),
+            body: SystemWriteMfaMethodTotpNameAdminGenerateRequestToJSON(requestParameters['SystemWriteMfaMethodTotpNameAdminGenerateRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11047,8 +11047,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Generates a TOTP secret for the given method name on the given entity.
      */
-    async systemWriteMfaMethodTotpNameAdminGenerate(name: string, systemWriteMfaMethodTotpNameAdminGenerateRequest: SystemWriteMfaMethodTotpNameAdminGenerateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteMfaMethodTotpNameAdminGenerateRaw({ name: name, systemWriteMfaMethodTotpNameAdminGenerateRequest: systemWriteMfaMethodTotpNameAdminGenerateRequest }, initOverrides);
+    async systemWriteMfaMethodTotpNameAdminGenerate(name: string, SystemWriteMfaMethodTotpNameAdminGenerateRequest: SystemWriteMfaMethodTotpNameAdminGenerateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteMfaMethodTotpNameAdminGenerateRaw({ name: name, SystemWriteMfaMethodTotpNameAdminGenerateRequest: SystemWriteMfaMethodTotpNameAdminGenerateRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11115,10 +11115,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Unlock the API for a namespace and its descendants
      */
     async systemWriteNamespacesApiLockUnlockRaw(requestParameters: SystemApiSystemWriteNamespacesApiLockUnlockOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteNamespacesApiLockUnlockRequest'] == null) {
+        if (requestParameters['SystemWriteNamespacesApiLockUnlockRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteNamespacesApiLockUnlockRequest',
-                'Required parameter "systemWriteNamespacesApiLockUnlockRequest" was null or undefined when calling systemWriteNamespacesApiLockUnlock().'
+                'SystemWriteNamespacesApiLockUnlockRequest',
+                'Required parameter "SystemWriteNamespacesApiLockUnlockRequest" was null or undefined when calling systemWriteNamespacesApiLockUnlock().'
             );
         }
 
@@ -11133,7 +11133,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteNamespacesApiLockUnlockRequestToJSON(requestParameters['systemWriteNamespacesApiLockUnlockRequest']),
+            body: SystemWriteNamespacesApiLockUnlockRequestToJSON(requestParameters['SystemWriteNamespacesApiLockUnlockRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11142,8 +11142,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Unlock the API for a namespace and its descendants
      */
-    async systemWriteNamespacesApiLockUnlock(systemWriteNamespacesApiLockUnlockRequest: SystemWriteNamespacesApiLockUnlockRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteNamespacesApiLockUnlockRaw({ systemWriteNamespacesApiLockUnlockRequest: systemWriteNamespacesApiLockUnlockRequest }, initOverrides);
+    async systemWriteNamespacesApiLockUnlock(SystemWriteNamespacesApiLockUnlockRequest: SystemWriteNamespacesApiLockUnlockRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteNamespacesApiLockUnlockRaw({ SystemWriteNamespacesApiLockUnlockRequest: SystemWriteNamespacesApiLockUnlockRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11158,10 +11158,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteNamespacesApiLockUnlockPathRequest'] == null) {
+        if (requestParameters['SystemWriteNamespacesApiLockUnlockPathRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteNamespacesApiLockUnlockPathRequest',
-                'Required parameter "systemWriteNamespacesApiLockUnlockPathRequest" was null or undefined when calling systemWriteNamespacesApiLockUnlockPath().'
+                'SystemWriteNamespacesApiLockUnlockPathRequest',
+                'Required parameter "SystemWriteNamespacesApiLockUnlockPathRequest" was null or undefined when calling systemWriteNamespacesApiLockUnlockPath().'
             );
         }
 
@@ -11176,7 +11176,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteNamespacesApiLockUnlockPathRequestToJSON(requestParameters['systemWriteNamespacesApiLockUnlockPathRequest']),
+            body: SystemWriteNamespacesApiLockUnlockPathRequestToJSON(requestParameters['SystemWriteNamespacesApiLockUnlockPathRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11185,8 +11185,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Unlock the API for a namespace and its descendants
      */
-    async systemWriteNamespacesApiLockUnlockPath(path: string, systemWriteNamespacesApiLockUnlockPathRequest: SystemWriteNamespacesApiLockUnlockPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteNamespacesApiLockUnlockPathRaw({ path: path, systemWriteNamespacesApiLockUnlockPathRequest: systemWriteNamespacesApiLockUnlockPathRequest }, initOverrides);
+    async systemWriteNamespacesApiLockUnlockPath(path: string, SystemWriteNamespacesApiLockUnlockPathRequest: SystemWriteNamespacesApiLockUnlockPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteNamespacesApiLockUnlockPathRaw({ path: path, SystemWriteNamespacesApiLockUnlockPathRequest: SystemWriteNamespacesApiLockUnlockPathRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11200,10 +11200,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteNamespacesPathRequest'] == null) {
+        if (requestParameters['SystemWriteNamespacesPathRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteNamespacesPathRequest',
-                'Required parameter "systemWriteNamespacesPathRequest" was null or undefined when calling systemWriteNamespacesPath().'
+                'SystemWriteNamespacesPathRequest',
+                'Required parameter "SystemWriteNamespacesPathRequest" was null or undefined when calling systemWriteNamespacesPath().'
             );
         }
 
@@ -11218,7 +11218,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteNamespacesPathRequestToJSON(requestParameters['systemWriteNamespacesPathRequest']),
+            body: SystemWriteNamespacesPathRequestToJSON(requestParameters['SystemWriteNamespacesPathRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11226,8 +11226,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteNamespacesPath(path: string, systemWriteNamespacesPathRequest: SystemWriteNamespacesPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteNamespacesPathRaw({ path: path, systemWriteNamespacesPathRequest: systemWriteNamespacesPathRequest }, initOverrides);
+    async systemWriteNamespacesPath(path: string, SystemWriteNamespacesPathRequest: SystemWriteNamespacesPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteNamespacesPathRaw({ path: path, SystemWriteNamespacesPathRequest: SystemWriteNamespacesPathRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11242,10 +11242,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWritePoliciesEgpNameRequest'] == null) {
+        if (requestParameters['SystemWritePoliciesEgpNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWritePoliciesEgpNameRequest',
-                'Required parameter "systemWritePoliciesEgpNameRequest" was null or undefined when calling systemWritePoliciesEgpName().'
+                'SystemWritePoliciesEgpNameRequest',
+                'Required parameter "SystemWritePoliciesEgpNameRequest" was null or undefined when calling systemWritePoliciesEgpName().'
             );
         }
 
@@ -11260,7 +11260,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWritePoliciesEgpNameRequestToJSON(requestParameters['systemWritePoliciesEgpNameRequest']),
+            body: SystemWritePoliciesEgpNameRequestToJSON(requestParameters['SystemWritePoliciesEgpNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11269,8 +11269,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read, Modify, or Delete an access control policy.
      */
-    async systemWritePoliciesEgpName(name: string, systemWritePoliciesEgpNameRequest: SystemWritePoliciesEgpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWritePoliciesEgpNameRaw({ name: name, systemWritePoliciesEgpNameRequest: systemWritePoliciesEgpNameRequest }, initOverrides);
+    async systemWritePoliciesEgpName(name: string, SystemWritePoliciesEgpNameRequest: SystemWritePoliciesEgpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWritePoliciesEgpNameRaw({ name: name, SystemWritePoliciesEgpNameRequest: SystemWritePoliciesEgpNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11285,10 +11285,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWritePoliciesRgpNameRequest'] == null) {
+        if (requestParameters['SystemWritePoliciesRgpNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWritePoliciesRgpNameRequest',
-                'Required parameter "systemWritePoliciesRgpNameRequest" was null or undefined when calling systemWritePoliciesRgpName().'
+                'SystemWritePoliciesRgpNameRequest',
+                'Required parameter "SystemWritePoliciesRgpNameRequest" was null or undefined when calling systemWritePoliciesRgpName().'
             );
         }
 
@@ -11303,7 +11303,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWritePoliciesRgpNameRequestToJSON(requestParameters['systemWritePoliciesRgpNameRequest']),
+            body: SystemWritePoliciesRgpNameRequestToJSON(requestParameters['SystemWritePoliciesRgpNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11312,8 +11312,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read, Modify, or Delete an access control policy.
      */
-    async systemWritePoliciesRgpName(name: string, systemWritePoliciesRgpNameRequest: SystemWritePoliciesRgpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWritePoliciesRgpNameRaw({ name: name, systemWritePoliciesRgpNameRequest: systemWritePoliciesRgpNameRequest }, initOverrides);
+    async systemWritePoliciesRgpName(name: string, SystemWritePoliciesRgpNameRequest: SystemWritePoliciesRgpNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWritePoliciesRgpNameRaw({ name: name, SystemWritePoliciesRgpNameRequest: SystemWritePoliciesRgpNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11327,10 +11327,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteQuotasLeaseCountNameRequest'] == null) {
+        if (requestParameters['SystemWriteQuotasLeaseCountNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteQuotasLeaseCountNameRequest',
-                'Required parameter "systemWriteQuotasLeaseCountNameRequest" was null or undefined when calling systemWriteQuotasLeaseCountName().'
+                'SystemWriteQuotasLeaseCountNameRequest',
+                'Required parameter "SystemWriteQuotasLeaseCountNameRequest" was null or undefined when calling systemWriteQuotasLeaseCountName().'
             );
         }
 
@@ -11345,7 +11345,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteQuotasLeaseCountNameRequestToJSON(requestParameters['systemWriteQuotasLeaseCountNameRequest']),
+            body: SystemWriteQuotasLeaseCountNameRequestToJSON(requestParameters['SystemWriteQuotasLeaseCountNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11353,8 +11353,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteQuotasLeaseCountName(name: string, systemWriteQuotasLeaseCountNameRequest: SystemWriteQuotasLeaseCountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteQuotasLeaseCountNameRaw({ name: name, systemWriteQuotasLeaseCountNameRequest: systemWriteQuotasLeaseCountNameRequest }, initOverrides);
+    async systemWriteQuotasLeaseCountName(name: string, SystemWriteQuotasLeaseCountNameRequest: SystemWriteQuotasLeaseCountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteQuotasLeaseCountNameRaw({ name: name, SystemWriteQuotasLeaseCountNameRequest: SystemWriteQuotasLeaseCountNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11409,10 +11409,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationDrPrimaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationDrPrimaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrPrimaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrPrimaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrPrimaryEnableRequest',
-                'Required parameter "systemWriteReplicationDrPrimaryEnableRequest" was null or undefined when calling systemWriteReplicationDrPrimaryEnable().'
+                'SystemWriteReplicationDrPrimaryEnableRequest',
+                'Required parameter "SystemWriteReplicationDrPrimaryEnableRequest" was null or undefined when calling systemWriteReplicationDrPrimaryEnable().'
             );
         }
 
@@ -11427,7 +11427,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrPrimaryEnableRequestToJSON(requestParameters['systemWriteReplicationDrPrimaryEnableRequest']),
+            body: SystemWriteReplicationDrPrimaryEnableRequestToJSON(requestParameters['SystemWriteReplicationDrPrimaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11435,18 +11435,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrPrimaryEnable(systemWriteReplicationDrPrimaryEnableRequest: SystemWriteReplicationDrPrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrPrimaryEnableRaw({ systemWriteReplicationDrPrimaryEnableRequest: systemWriteReplicationDrPrimaryEnableRequest }, initOverrides);
+    async systemWriteReplicationDrPrimaryEnable(SystemWriteReplicationDrPrimaryEnableRequest: SystemWriteReplicationDrPrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrPrimaryEnableRaw({ SystemWriteReplicationDrPrimaryEnableRequest: SystemWriteReplicationDrPrimaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrPrimaryRevokeSecondaryRaw(requestParameters: SystemApiSystemWriteReplicationDrPrimaryRevokeSecondaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrPrimaryRevokeSecondaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrPrimaryRevokeSecondaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrPrimaryRevokeSecondaryRequest',
-                'Required parameter "systemWriteReplicationDrPrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationDrPrimaryRevokeSecondary().'
+                'SystemWriteReplicationDrPrimaryRevokeSecondaryRequest',
+                'Required parameter "SystemWriteReplicationDrPrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationDrPrimaryRevokeSecondary().'
             );
         }
 
@@ -11461,7 +11461,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrPrimaryRevokeSecondaryRequestToJSON(requestParameters['systemWriteReplicationDrPrimaryRevokeSecondaryRequest']),
+            body: SystemWriteReplicationDrPrimaryRevokeSecondaryRequestToJSON(requestParameters['SystemWriteReplicationDrPrimaryRevokeSecondaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11469,18 +11469,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrPrimaryRevokeSecondary(systemWriteReplicationDrPrimaryRevokeSecondaryRequest: SystemWriteReplicationDrPrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrPrimaryRevokeSecondaryRaw({ systemWriteReplicationDrPrimaryRevokeSecondaryRequest: systemWriteReplicationDrPrimaryRevokeSecondaryRequest }, initOverrides);
+    async systemWriteReplicationDrPrimaryRevokeSecondary(SystemWriteReplicationDrPrimaryRevokeSecondaryRequest: SystemWriteReplicationDrPrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrPrimaryRevokeSecondaryRaw({ SystemWriteReplicationDrPrimaryRevokeSecondaryRequest: SystemWriteReplicationDrPrimaryRevokeSecondaryRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrPrimarySecondaryTokenRaw(requestParameters: SystemApiSystemWriteReplicationDrPrimarySecondaryTokenOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrPrimarySecondaryTokenRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrPrimarySecondaryTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrPrimarySecondaryTokenRequest',
-                'Required parameter "systemWriteReplicationDrPrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationDrPrimarySecondaryToken().'
+                'SystemWriteReplicationDrPrimarySecondaryTokenRequest',
+                'Required parameter "SystemWriteReplicationDrPrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationDrPrimarySecondaryToken().'
             );
         }
 
@@ -11495,7 +11495,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrPrimarySecondaryTokenRequestToJSON(requestParameters['systemWriteReplicationDrPrimarySecondaryTokenRequest']),
+            body: SystemWriteReplicationDrPrimarySecondaryTokenRequestToJSON(requestParameters['SystemWriteReplicationDrPrimarySecondaryTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11503,8 +11503,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrPrimarySecondaryToken(systemWriteReplicationDrPrimarySecondaryTokenRequest: SystemWriteReplicationDrPrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrPrimarySecondaryTokenRaw({ systemWriteReplicationDrPrimarySecondaryTokenRequest: systemWriteReplicationDrPrimarySecondaryTokenRequest }, initOverrides);
+    async systemWriteReplicationDrPrimarySecondaryToken(SystemWriteReplicationDrPrimarySecondaryTokenRequest: SystemWriteReplicationDrPrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrPrimarySecondaryTokenRaw({ SystemWriteReplicationDrPrimarySecondaryTokenRequest: SystemWriteReplicationDrPrimarySecondaryTokenRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11544,10 +11544,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationDrSecondaryDisableRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryDisableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryDisableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryDisableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryDisableRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryDisableRequest" was null or undefined when calling systemWriteReplicationDrSecondaryDisable().'
+                'SystemWriteReplicationDrSecondaryDisableRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryDisableRequest" was null or undefined when calling systemWriteReplicationDrSecondaryDisable().'
             );
         }
 
@@ -11562,7 +11562,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryDisableRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryDisableRequest']),
+            body: SystemWriteReplicationDrSecondaryDisableRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryDisableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11570,18 +11570,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryDisable(systemWriteReplicationDrSecondaryDisableRequest: SystemWriteReplicationDrSecondaryDisableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryDisableRaw({ systemWriteReplicationDrSecondaryDisableRequest: systemWriteReplicationDrSecondaryDisableRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryDisable(SystemWriteReplicationDrSecondaryDisableRequest: SystemWriteReplicationDrSecondaryDisableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryDisableRaw({ SystemWriteReplicationDrSecondaryDisableRequest: SystemWriteReplicationDrSecondaryDisableRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryEnableRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationDrSecondaryEnable().'
+                'SystemWriteReplicationDrSecondaryEnableRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationDrSecondaryEnable().'
             );
         }
 
@@ -11596,7 +11596,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryEnableRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryEnableRequest']),
+            body: SystemWriteReplicationDrSecondaryEnableRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11604,8 +11604,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryEnable(systemWriteReplicationDrSecondaryEnableRequest: SystemWriteReplicationDrSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryEnableRaw({ systemWriteReplicationDrSecondaryEnableRequest: systemWriteReplicationDrSecondaryEnableRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryEnable(SystemWriteReplicationDrSecondaryEnableRequest: SystemWriteReplicationDrSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryEnableRaw({ SystemWriteReplicationDrSecondaryEnableRequest: SystemWriteReplicationDrSecondaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11636,10 +11636,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationDrSecondaryMerkleCheckRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryMerkleCheckOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryMerkleCheckRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryMerkleCheckRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryMerkleCheckRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryMerkleCheckRequest" was null or undefined when calling systemWriteReplicationDrSecondaryMerkleCheck().'
+                'SystemWriteReplicationDrSecondaryMerkleCheckRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryMerkleCheckRequest" was null or undefined when calling systemWriteReplicationDrSecondaryMerkleCheck().'
             );
         }
 
@@ -11654,7 +11654,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryMerkleCheckRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryMerkleCheckRequest']),
+            body: SystemWriteReplicationDrSecondaryMerkleCheckRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryMerkleCheckRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11662,18 +11662,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryMerkleCheck(systemWriteReplicationDrSecondaryMerkleCheckRequest: SystemWriteReplicationDrSecondaryMerkleCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryMerkleCheckRaw({ systemWriteReplicationDrSecondaryMerkleCheckRequest: systemWriteReplicationDrSecondaryMerkleCheckRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryMerkleCheck(SystemWriteReplicationDrSecondaryMerkleCheckRequest: SystemWriteReplicationDrSecondaryMerkleCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryMerkleCheckRaw({ SystemWriteReplicationDrSecondaryMerkleCheckRequest: SystemWriteReplicationDrSecondaryMerkleCheckRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryOperationTokenDeleteRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryOperationTokenDeleteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryOperationTokenDeleteRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryOperationTokenDeleteRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryOperationTokenDeleteRequest" was null or undefined when calling systemWriteReplicationDrSecondaryOperationTokenDelete().'
+                'SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest" was null or undefined when calling systemWriteReplicationDrSecondaryOperationTokenDelete().'
             );
         }
 
@@ -11688,7 +11688,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryOperationTokenDeleteRequest']),
+            body: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11696,18 +11696,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryOperationTokenDelete(systemWriteReplicationDrSecondaryOperationTokenDeleteRequest: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryOperationTokenDeleteRaw({ systemWriteReplicationDrSecondaryOperationTokenDeleteRequest: systemWriteReplicationDrSecondaryOperationTokenDeleteRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryOperationTokenDelete(SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryOperationTokenDeleteRaw({ SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest: SystemWriteReplicationDrSecondaryOperationTokenDeleteRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryPromoteRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryPromoteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryPromoteRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryPromoteRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryPromoteRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationDrSecondaryPromote().'
+                'SystemWriteReplicationDrSecondaryPromoteRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationDrSecondaryPromote().'
             );
         }
 
@@ -11722,7 +11722,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryPromoteRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryPromoteRequest']),
+            body: SystemWriteReplicationDrSecondaryPromoteRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryPromoteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11730,18 +11730,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryPromote(systemWriteReplicationDrSecondaryPromoteRequest: SystemWriteReplicationDrSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryPromoteRaw({ systemWriteReplicationDrSecondaryPromoteRequest: systemWriteReplicationDrSecondaryPromoteRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryPromote(SystemWriteReplicationDrSecondaryPromoteRequest: SystemWriteReplicationDrSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryPromoteRaw({ SystemWriteReplicationDrSecondaryPromoteRequest: SystemWriteReplicationDrSecondaryPromoteRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryRecoverRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryRecoverOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryRecoverRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryRecoverRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryRecoverRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryRecoverRequest" was null or undefined when calling systemWriteReplicationDrSecondaryRecover().'
+                'SystemWriteReplicationDrSecondaryRecoverRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryRecoverRequest" was null or undefined when calling systemWriteReplicationDrSecondaryRecover().'
             );
         }
 
@@ -11756,7 +11756,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryRecoverRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryRecoverRequest']),
+            body: SystemWriteReplicationDrSecondaryRecoverRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryRecoverRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11764,18 +11764,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryRecover(systemWriteReplicationDrSecondaryRecoverRequest: SystemWriteReplicationDrSecondaryRecoverRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryRecoverRaw({ systemWriteReplicationDrSecondaryRecoverRequest: systemWriteReplicationDrSecondaryRecoverRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryRecover(SystemWriteReplicationDrSecondaryRecoverRequest: SystemWriteReplicationDrSecondaryRecoverRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryRecoverRaw({ SystemWriteReplicationDrSecondaryRecoverRequest: SystemWriteReplicationDrSecondaryRecoverRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryReindexRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryReindexOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryReindexRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryReindexRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryReindexRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryReindexRequest" was null or undefined when calling systemWriteReplicationDrSecondaryReindex().'
+                'SystemWriteReplicationDrSecondaryReindexRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryReindexRequest" was null or undefined when calling systemWriteReplicationDrSecondaryReindex().'
             );
         }
 
@@ -11790,7 +11790,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryReindexRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryReindexRequest']),
+            body: SystemWriteReplicationDrSecondaryReindexRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryReindexRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11798,18 +11798,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryReindex(systemWriteReplicationDrSecondaryReindexRequest: SystemWriteReplicationDrSecondaryReindexRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryReindexRaw({ systemWriteReplicationDrSecondaryReindexRequest: systemWriteReplicationDrSecondaryReindexRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryReindex(SystemWriteReplicationDrSecondaryReindexRequest: SystemWriteReplicationDrSecondaryReindexRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryReindexRaw({ SystemWriteReplicationDrSecondaryReindexRequest: SystemWriteReplicationDrSecondaryReindexRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationDrSecondaryUpdatePrimaryRaw(requestParameters: SystemApiSystemWriteReplicationDrSecondaryUpdatePrimaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationDrSecondaryUpdatePrimaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationDrSecondaryUpdatePrimaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationDrSecondaryUpdatePrimaryRequest',
-                'Required parameter "systemWriteReplicationDrSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationDrSecondaryUpdatePrimary().'
+                'SystemWriteReplicationDrSecondaryUpdatePrimaryRequest',
+                'Required parameter "SystemWriteReplicationDrSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationDrSecondaryUpdatePrimary().'
             );
         }
 
@@ -11824,7 +11824,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationDrSecondaryUpdatePrimaryRequestToJSON(requestParameters['systemWriteReplicationDrSecondaryUpdatePrimaryRequest']),
+            body: SystemWriteReplicationDrSecondaryUpdatePrimaryRequestToJSON(requestParameters['SystemWriteReplicationDrSecondaryUpdatePrimaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11832,8 +11832,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationDrSecondaryUpdatePrimary(systemWriteReplicationDrSecondaryUpdatePrimaryRequest: SystemWriteReplicationDrSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationDrSecondaryUpdatePrimaryRaw({ systemWriteReplicationDrSecondaryUpdatePrimaryRequest: systemWriteReplicationDrSecondaryUpdatePrimaryRequest }, initOverrides);
+    async systemWriteReplicationDrSecondaryUpdatePrimary(SystemWriteReplicationDrSecondaryUpdatePrimaryRequest: SystemWriteReplicationDrSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationDrSecondaryUpdatePrimaryRaw({ SystemWriteReplicationDrSecondaryUpdatePrimaryRequest: SystemWriteReplicationDrSecondaryUpdatePrimaryRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11841,10 +11841,10 @@ export class SystemApi extends runtime.BaseAPI {
      * force corrupting stuff
      */
     async systemWriteReplicationForceCorruptionRaw(requestParameters: SystemApiSystemWriteReplicationForceCorruptionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationForceCorruptionRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationForceCorruptionRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationForceCorruptionRequest',
-                'Required parameter "systemWriteReplicationForceCorruptionRequest" was null or undefined when calling systemWriteReplicationForceCorruption().'
+                'SystemWriteReplicationForceCorruptionRequest',
+                'Required parameter "SystemWriteReplicationForceCorruptionRequest" was null or undefined when calling systemWriteReplicationForceCorruption().'
             );
         }
 
@@ -11859,7 +11859,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationForceCorruptionRequestToJSON(requestParameters['systemWriteReplicationForceCorruptionRequest']),
+            body: SystemWriteReplicationForceCorruptionRequestToJSON(requestParameters['SystemWriteReplicationForceCorruptionRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11868,8 +11868,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * force corrupting stuff
      */
-    async systemWriteReplicationForceCorruption(systemWriteReplicationForceCorruptionRequest: SystemWriteReplicationForceCorruptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationForceCorruptionRaw({ systemWriteReplicationForceCorruptionRequest: systemWriteReplicationForceCorruptionRequest }, initOverrides);
+    async systemWriteReplicationForceCorruption(SystemWriteReplicationForceCorruptionRequest: SystemWriteReplicationForceCorruptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationForceCorruptionRaw({ SystemWriteReplicationForceCorruptionRequest: SystemWriteReplicationForceCorruptionRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11948,10 +11948,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationPerformancePrimaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationPerformancePrimaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformancePrimaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformancePrimaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformancePrimaryEnableRequest',
-                'Required parameter "systemWriteReplicationPerformancePrimaryEnableRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryEnable().'
+                'SystemWriteReplicationPerformancePrimaryEnableRequest',
+                'Required parameter "SystemWriteReplicationPerformancePrimaryEnableRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryEnable().'
             );
         }
 
@@ -11966,7 +11966,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformancePrimaryEnableRequestToJSON(requestParameters['systemWriteReplicationPerformancePrimaryEnableRequest']),
+            body: SystemWriteReplicationPerformancePrimaryEnableRequestToJSON(requestParameters['SystemWriteReplicationPerformancePrimaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -11974,8 +11974,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformancePrimaryEnable(systemWriteReplicationPerformancePrimaryEnableRequest: SystemWriteReplicationPerformancePrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformancePrimaryEnableRaw({ systemWriteReplicationPerformancePrimaryEnableRequest: systemWriteReplicationPerformancePrimaryEnableRequest }, initOverrides);
+    async systemWriteReplicationPerformancePrimaryEnable(SystemWriteReplicationPerformancePrimaryEnableRequest: SystemWriteReplicationPerformancePrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformancePrimaryEnableRaw({ SystemWriteReplicationPerformancePrimaryEnableRequest: SystemWriteReplicationPerformancePrimaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
@@ -11989,10 +11989,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteReplicationPerformancePrimaryPathsFilterIdRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformancePrimaryPathsFilterIdRequest',
-                'Required parameter "systemWriteReplicationPerformancePrimaryPathsFilterIdRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryPathsFilterId().'
+                'SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest',
+                'Required parameter "SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryPathsFilterId().'
             );
         }
 
@@ -12007,7 +12007,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequestToJSON(requestParameters['systemWriteReplicationPerformancePrimaryPathsFilterIdRequest']),
+            body: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequestToJSON(requestParameters['SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12015,18 +12015,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformancePrimaryPathsFilterId(id: string, systemWriteReplicationPerformancePrimaryPathsFilterIdRequest: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformancePrimaryPathsFilterIdRaw({ id: id, systemWriteReplicationPerformancePrimaryPathsFilterIdRequest: systemWriteReplicationPerformancePrimaryPathsFilterIdRequest }, initOverrides);
+    async systemWriteReplicationPerformancePrimaryPathsFilterId(id: string, SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformancePrimaryPathsFilterIdRaw({ id: id, SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest: SystemWriteReplicationPerformancePrimaryPathsFilterIdRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationPerformancePrimaryRevokeSecondaryRaw(requestParameters: SystemApiSystemWriteReplicationPerformancePrimaryRevokeSecondaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest',
-                'Required parameter "systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryRevokeSecondary().'
+                'SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest',
+                'Required parameter "SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationPerformancePrimaryRevokeSecondary().'
             );
         }
 
@@ -12041,7 +12041,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequestToJSON(requestParameters['systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest']),
+            body: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequestToJSON(requestParameters['SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12049,18 +12049,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformancePrimaryRevokeSecondary(systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformancePrimaryRevokeSecondaryRaw({ systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: systemWriteReplicationPerformancePrimaryRevokeSecondaryRequest }, initOverrides);
+    async systemWriteReplicationPerformancePrimaryRevokeSecondary(SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformancePrimaryRevokeSecondaryRaw({ SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest: SystemWriteReplicationPerformancePrimaryRevokeSecondaryRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationPerformancePrimarySecondaryTokenRaw(requestParameters: SystemApiSystemWriteReplicationPerformancePrimarySecondaryTokenOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformancePrimarySecondaryTokenRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformancePrimarySecondaryTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformancePrimarySecondaryTokenRequest',
-                'Required parameter "systemWriteReplicationPerformancePrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationPerformancePrimarySecondaryToken().'
+                'SystemWriteReplicationPerformancePrimarySecondaryTokenRequest',
+                'Required parameter "SystemWriteReplicationPerformancePrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationPerformancePrimarySecondaryToken().'
             );
         }
 
@@ -12075,7 +12075,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformancePrimarySecondaryTokenRequestToJSON(requestParameters['systemWriteReplicationPerformancePrimarySecondaryTokenRequest']),
+            body: SystemWriteReplicationPerformancePrimarySecondaryTokenRequestToJSON(requestParameters['SystemWriteReplicationPerformancePrimarySecondaryTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12083,8 +12083,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformancePrimarySecondaryToken(systemWriteReplicationPerformancePrimarySecondaryTokenRequest: SystemWriteReplicationPerformancePrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformancePrimarySecondaryTokenRaw({ systemWriteReplicationPerformancePrimarySecondaryTokenRequest: systemWriteReplicationPerformancePrimarySecondaryTokenRequest }, initOverrides);
+    async systemWriteReplicationPerformancePrimarySecondaryToken(SystemWriteReplicationPerformancePrimarySecondaryTokenRequest: SystemWriteReplicationPerformancePrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformancePrimarySecondaryTokenRaw({ SystemWriteReplicationPerformancePrimarySecondaryTokenRequest: SystemWriteReplicationPerformancePrimarySecondaryTokenRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12115,10 +12115,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationPerformanceSecondaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationPerformanceSecondaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformanceSecondaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformanceSecondaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformanceSecondaryEnableRequest',
-                'Required parameter "systemWriteReplicationPerformanceSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryEnable().'
+                'SystemWriteReplicationPerformanceSecondaryEnableRequest',
+                'Required parameter "SystemWriteReplicationPerformanceSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryEnable().'
             );
         }
 
@@ -12133,7 +12133,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformanceSecondaryEnableRequestToJSON(requestParameters['systemWriteReplicationPerformanceSecondaryEnableRequest']),
+            body: SystemWriteReplicationPerformanceSecondaryEnableRequestToJSON(requestParameters['SystemWriteReplicationPerformanceSecondaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12141,8 +12141,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformanceSecondaryEnable(systemWriteReplicationPerformanceSecondaryEnableRequest: SystemWriteReplicationPerformanceSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformanceSecondaryEnableRaw({ systemWriteReplicationPerformanceSecondaryEnableRequest: systemWriteReplicationPerformanceSecondaryEnableRequest }, initOverrides);
+    async systemWriteReplicationPerformanceSecondaryEnable(SystemWriteReplicationPerformanceSecondaryEnableRequest: SystemWriteReplicationPerformanceSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformanceSecondaryEnableRaw({ SystemWriteReplicationPerformanceSecondaryEnableRequest: SystemWriteReplicationPerformanceSecondaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12173,10 +12173,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationPerformanceSecondaryPromoteRaw(requestParameters: SystemApiSystemWriteReplicationPerformanceSecondaryPromoteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformanceSecondaryPromoteRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformanceSecondaryPromoteRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformanceSecondaryPromoteRequest',
-                'Required parameter "systemWriteReplicationPerformanceSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryPromote().'
+                'SystemWriteReplicationPerformanceSecondaryPromoteRequest',
+                'Required parameter "SystemWriteReplicationPerformanceSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryPromote().'
             );
         }
 
@@ -12191,7 +12191,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformanceSecondaryPromoteRequestToJSON(requestParameters['systemWriteReplicationPerformanceSecondaryPromoteRequest']),
+            body: SystemWriteReplicationPerformanceSecondaryPromoteRequestToJSON(requestParameters['SystemWriteReplicationPerformanceSecondaryPromoteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12199,18 +12199,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformanceSecondaryPromote(systemWriteReplicationPerformanceSecondaryPromoteRequest: SystemWriteReplicationPerformanceSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformanceSecondaryPromoteRaw({ systemWriteReplicationPerformanceSecondaryPromoteRequest: systemWriteReplicationPerformanceSecondaryPromoteRequest }, initOverrides);
+    async systemWriteReplicationPerformanceSecondaryPromote(SystemWriteReplicationPerformanceSecondaryPromoteRequest: SystemWriteReplicationPerformanceSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformanceSecondaryPromoteRaw({ SystemWriteReplicationPerformanceSecondaryPromoteRequest: SystemWriteReplicationPerformanceSecondaryPromoteRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationPerformanceSecondaryUpdatePrimaryRaw(requestParameters: SystemApiSystemWriteReplicationPerformanceSecondaryUpdatePrimaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest',
-                'Required parameter "systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryUpdatePrimary().'
+                'SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest',
+                'Required parameter "SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationPerformanceSecondaryUpdatePrimary().'
             );
         }
 
@@ -12225,7 +12225,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequestToJSON(requestParameters['systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest']),
+            body: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequestToJSON(requestParameters['SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12233,8 +12233,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPerformanceSecondaryUpdatePrimary(systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPerformanceSecondaryUpdatePrimaryRaw({ systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: systemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest }, initOverrides);
+    async systemWriteReplicationPerformanceSecondaryUpdatePrimary(SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPerformanceSecondaryUpdatePrimaryRaw({ SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest: SystemWriteReplicationPerformanceSecondaryUpdatePrimaryRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12289,10 +12289,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationPrimaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationPrimaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPrimaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPrimaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPrimaryEnableRequest',
-                'Required parameter "systemWriteReplicationPrimaryEnableRequest" was null or undefined when calling systemWriteReplicationPrimaryEnable().'
+                'SystemWriteReplicationPrimaryEnableRequest',
+                'Required parameter "SystemWriteReplicationPrimaryEnableRequest" was null or undefined when calling systemWriteReplicationPrimaryEnable().'
             );
         }
 
@@ -12307,7 +12307,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPrimaryEnableRequestToJSON(requestParameters['systemWriteReplicationPrimaryEnableRequest']),
+            body: SystemWriteReplicationPrimaryEnableRequestToJSON(requestParameters['SystemWriteReplicationPrimaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12315,18 +12315,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPrimaryEnable(systemWriteReplicationPrimaryEnableRequest: SystemWriteReplicationPrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPrimaryEnableRaw({ systemWriteReplicationPrimaryEnableRequest: systemWriteReplicationPrimaryEnableRequest }, initOverrides);
+    async systemWriteReplicationPrimaryEnable(SystemWriteReplicationPrimaryEnableRequest: SystemWriteReplicationPrimaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPrimaryEnableRaw({ SystemWriteReplicationPrimaryEnableRequest: SystemWriteReplicationPrimaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationPrimaryRevokeSecondaryRaw(requestParameters: SystemApiSystemWriteReplicationPrimaryRevokeSecondaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPrimaryRevokeSecondaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPrimaryRevokeSecondaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPrimaryRevokeSecondaryRequest',
-                'Required parameter "systemWriteReplicationPrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationPrimaryRevokeSecondary().'
+                'SystemWriteReplicationPrimaryRevokeSecondaryRequest',
+                'Required parameter "SystemWriteReplicationPrimaryRevokeSecondaryRequest" was null or undefined when calling systemWriteReplicationPrimaryRevokeSecondary().'
             );
         }
 
@@ -12341,7 +12341,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPrimaryRevokeSecondaryRequestToJSON(requestParameters['systemWriteReplicationPrimaryRevokeSecondaryRequest']),
+            body: SystemWriteReplicationPrimaryRevokeSecondaryRequestToJSON(requestParameters['SystemWriteReplicationPrimaryRevokeSecondaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12349,18 +12349,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPrimaryRevokeSecondary(systemWriteReplicationPrimaryRevokeSecondaryRequest: SystemWriteReplicationPrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPrimaryRevokeSecondaryRaw({ systemWriteReplicationPrimaryRevokeSecondaryRequest: systemWriteReplicationPrimaryRevokeSecondaryRequest }, initOverrides);
+    async systemWriteReplicationPrimaryRevokeSecondary(SystemWriteReplicationPrimaryRevokeSecondaryRequest: SystemWriteReplicationPrimaryRevokeSecondaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPrimaryRevokeSecondaryRaw({ SystemWriteReplicationPrimaryRevokeSecondaryRequest: SystemWriteReplicationPrimaryRevokeSecondaryRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationPrimarySecondaryTokenRaw(requestParameters: SystemApiSystemWriteReplicationPrimarySecondaryTokenOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationPrimarySecondaryTokenRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationPrimarySecondaryTokenRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationPrimarySecondaryTokenRequest',
-                'Required parameter "systemWriteReplicationPrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationPrimarySecondaryToken().'
+                'SystemWriteReplicationPrimarySecondaryTokenRequest',
+                'Required parameter "SystemWriteReplicationPrimarySecondaryTokenRequest" was null or undefined when calling systemWriteReplicationPrimarySecondaryToken().'
             );
         }
 
@@ -12375,7 +12375,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationPrimarySecondaryTokenRequestToJSON(requestParameters['systemWriteReplicationPrimarySecondaryTokenRequest']),
+            body: SystemWriteReplicationPrimarySecondaryTokenRequestToJSON(requestParameters['SystemWriteReplicationPrimarySecondaryTokenRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12383,8 +12383,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationPrimarySecondaryToken(systemWriteReplicationPrimarySecondaryTokenRequest: SystemWriteReplicationPrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationPrimarySecondaryTokenRaw({ systemWriteReplicationPrimarySecondaryTokenRequest: systemWriteReplicationPrimarySecondaryTokenRequest }, initOverrides);
+    async systemWriteReplicationPrimarySecondaryToken(SystemWriteReplicationPrimarySecondaryTokenRequest: SystemWriteReplicationPrimarySecondaryTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationPrimarySecondaryTokenRaw({ SystemWriteReplicationPrimarySecondaryTokenRequest: SystemWriteReplicationPrimarySecondaryTokenRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12415,10 +12415,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationReindexRaw(requestParameters: SystemApiSystemWriteReplicationReindexOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationReindexRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationReindexRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationReindexRequest',
-                'Required parameter "systemWriteReplicationReindexRequest" was null or undefined when calling systemWriteReplicationReindex().'
+                'SystemWriteReplicationReindexRequest',
+                'Required parameter "SystemWriteReplicationReindexRequest" was null or undefined when calling systemWriteReplicationReindex().'
             );
         }
 
@@ -12433,7 +12433,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationReindexRequestToJSON(requestParameters['systemWriteReplicationReindexRequest']),
+            body: SystemWriteReplicationReindexRequestToJSON(requestParameters['SystemWriteReplicationReindexRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12441,8 +12441,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationReindex(systemWriteReplicationReindexRequest: SystemWriteReplicationReindexRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationReindexRaw({ systemWriteReplicationReindexRequest: systemWriteReplicationReindexRequest }, initOverrides);
+    async systemWriteReplicationReindex(SystemWriteReplicationReindexRequest: SystemWriteReplicationReindexRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationReindexRaw({ SystemWriteReplicationReindexRequest: SystemWriteReplicationReindexRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12473,10 +12473,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async systemWriteReplicationSecondaryEnableRaw(requestParameters: SystemApiSystemWriteReplicationSecondaryEnableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationSecondaryEnableRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationSecondaryEnableRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationSecondaryEnableRequest',
-                'Required parameter "systemWriteReplicationSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationSecondaryEnable().'
+                'SystemWriteReplicationSecondaryEnableRequest',
+                'Required parameter "SystemWriteReplicationSecondaryEnableRequest" was null or undefined when calling systemWriteReplicationSecondaryEnable().'
             );
         }
 
@@ -12491,7 +12491,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationSecondaryEnableRequestToJSON(requestParameters['systemWriteReplicationSecondaryEnableRequest']),
+            body: SystemWriteReplicationSecondaryEnableRequestToJSON(requestParameters['SystemWriteReplicationSecondaryEnableRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12499,18 +12499,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationSecondaryEnable(systemWriteReplicationSecondaryEnableRequest: SystemWriteReplicationSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationSecondaryEnableRaw({ systemWriteReplicationSecondaryEnableRequest: systemWriteReplicationSecondaryEnableRequest }, initOverrides);
+    async systemWriteReplicationSecondaryEnable(SystemWriteReplicationSecondaryEnableRequest: SystemWriteReplicationSecondaryEnableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationSecondaryEnableRaw({ SystemWriteReplicationSecondaryEnableRequest: SystemWriteReplicationSecondaryEnableRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationSecondaryPromoteRaw(requestParameters: SystemApiSystemWriteReplicationSecondaryPromoteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationSecondaryPromoteRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationSecondaryPromoteRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationSecondaryPromoteRequest',
-                'Required parameter "systemWriteReplicationSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationSecondaryPromote().'
+                'SystemWriteReplicationSecondaryPromoteRequest',
+                'Required parameter "SystemWriteReplicationSecondaryPromoteRequest" was null or undefined when calling systemWriteReplicationSecondaryPromote().'
             );
         }
 
@@ -12525,7 +12525,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationSecondaryPromoteRequestToJSON(requestParameters['systemWriteReplicationSecondaryPromoteRequest']),
+            body: SystemWriteReplicationSecondaryPromoteRequestToJSON(requestParameters['SystemWriteReplicationSecondaryPromoteRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12533,18 +12533,18 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationSecondaryPromote(systemWriteReplicationSecondaryPromoteRequest: SystemWriteReplicationSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationSecondaryPromoteRaw({ systemWriteReplicationSecondaryPromoteRequest: systemWriteReplicationSecondaryPromoteRequest }, initOverrides);
+    async systemWriteReplicationSecondaryPromote(SystemWriteReplicationSecondaryPromoteRequest: SystemWriteReplicationSecondaryPromoteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationSecondaryPromoteRaw({ SystemWriteReplicationSecondaryPromoteRequest: SystemWriteReplicationSecondaryPromoteRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async systemWriteReplicationSecondaryUpdatePrimaryRaw(requestParameters: SystemApiSystemWriteReplicationSecondaryUpdatePrimaryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['systemWriteReplicationSecondaryUpdatePrimaryRequest'] == null) {
+        if (requestParameters['SystemWriteReplicationSecondaryUpdatePrimaryRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteReplicationSecondaryUpdatePrimaryRequest',
-                'Required parameter "systemWriteReplicationSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationSecondaryUpdatePrimary().'
+                'SystemWriteReplicationSecondaryUpdatePrimaryRequest',
+                'Required parameter "SystemWriteReplicationSecondaryUpdatePrimaryRequest" was null or undefined when calling systemWriteReplicationSecondaryUpdatePrimary().'
             );
         }
 
@@ -12559,7 +12559,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteReplicationSecondaryUpdatePrimaryRequestToJSON(requestParameters['systemWriteReplicationSecondaryUpdatePrimaryRequest']),
+            body: SystemWriteReplicationSecondaryUpdatePrimaryRequestToJSON(requestParameters['SystemWriteReplicationSecondaryUpdatePrimaryRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12567,8 +12567,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteReplicationSecondaryUpdatePrimary(systemWriteReplicationSecondaryUpdatePrimaryRequest: SystemWriteReplicationSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteReplicationSecondaryUpdatePrimaryRaw({ systemWriteReplicationSecondaryUpdatePrimaryRequest: systemWriteReplicationSecondaryUpdatePrimaryRequest }, initOverrides);
+    async systemWriteReplicationSecondaryUpdatePrimary(SystemWriteReplicationSecondaryUpdatePrimaryRequest: SystemWriteReplicationSecondaryUpdatePrimaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteReplicationSecondaryUpdatePrimaryRaw({ SystemWriteReplicationSecondaryUpdatePrimaryRequest: SystemWriteReplicationSecondaryUpdatePrimaryRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12609,10 +12609,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteStorageRaftSnapshotAutoConfigNameRequest'] == null) {
+        if (requestParameters['SystemWriteStorageRaftSnapshotAutoConfigNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteStorageRaftSnapshotAutoConfigNameRequest',
-                'Required parameter "systemWriteStorageRaftSnapshotAutoConfigNameRequest" was null or undefined when calling systemWriteStorageRaftSnapshotAutoConfigName().'
+                'SystemWriteStorageRaftSnapshotAutoConfigNameRequest',
+                'Required parameter "SystemWriteStorageRaftSnapshotAutoConfigNameRequest" was null or undefined when calling systemWriteStorageRaftSnapshotAutoConfigName().'
             );
         }
 
@@ -12627,7 +12627,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteStorageRaftSnapshotAutoConfigNameRequestToJSON(requestParameters['systemWriteStorageRaftSnapshotAutoConfigNameRequest']),
+            body: SystemWriteStorageRaftSnapshotAutoConfigNameRequestToJSON(requestParameters['SystemWriteStorageRaftSnapshotAutoConfigNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12636,8 +12636,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Update automated raft snapshot configuration
      */
-    async systemWriteStorageRaftSnapshotAutoConfigName(name: string, systemWriteStorageRaftSnapshotAutoConfigNameRequest: SystemWriteStorageRaftSnapshotAutoConfigNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteStorageRaftSnapshotAutoConfigNameRaw({ name: name, systemWriteStorageRaftSnapshotAutoConfigNameRequest: systemWriteStorageRaftSnapshotAutoConfigNameRequest }, initOverrides);
+    async systemWriteStorageRaftSnapshotAutoConfigName(name: string, SystemWriteStorageRaftSnapshotAutoConfigNameRequest: SystemWriteStorageRaftSnapshotAutoConfigNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteStorageRaftSnapshotAutoConfigNameRaw({ name: name, SystemWriteStorageRaftSnapshotAutoConfigNameRequest: SystemWriteStorageRaftSnapshotAutoConfigNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12651,10 +12651,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest'] == null) {
+        if (requestParameters['SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest',
-                'Required parameter "systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest" was null or undefined when calling systemWriteStorageRaftSnapshotAutoSnapshotLoadName().'
+                'SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest',
+                'Required parameter "SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest" was null or undefined when calling systemWriteStorageRaftSnapshotAutoSnapshotLoadName().'
             );
         }
 
@@ -12669,7 +12669,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequestToJSON(requestParameters['systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest']),
+            body: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequestToJSON(requestParameters['SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -12677,8 +12677,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteStorageRaftSnapshotAutoSnapshotLoadName(name: string, systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRaw({ name: name, systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest }, initOverrides);
+    async systemWriteStorageRaftSnapshotAutoSnapshotLoadName(name: string, SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteStorageRaftSnapshotAutoSnapshotLoadNameRaw({ name: name, SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest: SystemWriteStorageRaftSnapshotAutoSnapshotLoadNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12718,10 +12718,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsAwsSmNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsAwsSmNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsAwsSmNameRequest',
-                'Required parameter "systemWriteSyncDestinationsAwsSmNameRequest" was null or undefined when calling systemWriteSyncDestinationsAwsSmName().'
+                'SystemWriteSyncDestinationsAwsSmNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsAwsSmNameRequest" was null or undefined when calling systemWriteSyncDestinationsAwsSmName().'
             );
         }
 
@@ -12736,7 +12736,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsAwsSmNameRequestToJSON(requestParameters['systemWriteSyncDestinationsAwsSmNameRequest']),
+            body: SystemWriteSyncDestinationsAwsSmNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsAwsSmNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsAwsSmNameResponseFromJSON(jsonValue));
@@ -12744,8 +12744,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsAwsSmName(name: string, systemWriteSyncDestinationsAwsSmNameRequest: SystemWriteSyncDestinationsAwsSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsAwsSmNameResponse> {
-        const response = await this.systemWriteSyncDestinationsAwsSmNameRaw({ name: name, systemWriteSyncDestinationsAwsSmNameRequest: systemWriteSyncDestinationsAwsSmNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsAwsSmName(name: string, SystemWriteSyncDestinationsAwsSmNameRequest: SystemWriteSyncDestinationsAwsSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsAwsSmNameResponse> {
+        const response = await this.systemWriteSyncDestinationsAwsSmNameRaw({ name: name, SystemWriteSyncDestinationsAwsSmNameRequest: SystemWriteSyncDestinationsAwsSmNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12759,10 +12759,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsAzureKvNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsAzureKvNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsAzureKvNameRequest',
-                'Required parameter "systemWriteSyncDestinationsAzureKvNameRequest" was null or undefined when calling systemWriteSyncDestinationsAzureKvName().'
+                'SystemWriteSyncDestinationsAzureKvNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsAzureKvNameRequest" was null or undefined when calling systemWriteSyncDestinationsAzureKvName().'
             );
         }
 
@@ -12777,7 +12777,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsAzureKvNameRequestToJSON(requestParameters['systemWriteSyncDestinationsAzureKvNameRequest']),
+            body: SystemWriteSyncDestinationsAzureKvNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsAzureKvNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsAzureKvNameResponseFromJSON(jsonValue));
@@ -12785,8 +12785,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsAzureKvName(name: string, systemWriteSyncDestinationsAzureKvNameRequest: SystemWriteSyncDestinationsAzureKvNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsAzureKvNameResponse> {
-        const response = await this.systemWriteSyncDestinationsAzureKvNameRaw({ name: name, systemWriteSyncDestinationsAzureKvNameRequest: systemWriteSyncDestinationsAzureKvNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsAzureKvName(name: string, SystemWriteSyncDestinationsAzureKvNameRequest: SystemWriteSyncDestinationsAzureKvNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsAzureKvNameResponse> {
+        const response = await this.systemWriteSyncDestinationsAzureKvNameRaw({ name: name, SystemWriteSyncDestinationsAzureKvNameRequest: SystemWriteSyncDestinationsAzureKvNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12800,10 +12800,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsGcpSmNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsGcpSmNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsGcpSmNameRequest',
-                'Required parameter "systemWriteSyncDestinationsGcpSmNameRequest" was null or undefined when calling systemWriteSyncDestinationsGcpSmName().'
+                'SystemWriteSyncDestinationsGcpSmNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsGcpSmNameRequest" was null or undefined when calling systemWriteSyncDestinationsGcpSmName().'
             );
         }
 
@@ -12818,7 +12818,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsGcpSmNameRequestToJSON(requestParameters['systemWriteSyncDestinationsGcpSmNameRequest']),
+            body: SystemWriteSyncDestinationsGcpSmNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsGcpSmNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsGcpSmNameResponseFromJSON(jsonValue));
@@ -12826,8 +12826,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsGcpSmName(name: string, systemWriteSyncDestinationsGcpSmNameRequest: SystemWriteSyncDestinationsGcpSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsGcpSmNameResponse> {
-        const response = await this.systemWriteSyncDestinationsGcpSmNameRaw({ name: name, systemWriteSyncDestinationsGcpSmNameRequest: systemWriteSyncDestinationsGcpSmNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsGcpSmName(name: string, SystemWriteSyncDestinationsGcpSmNameRequest: SystemWriteSyncDestinationsGcpSmNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsGcpSmNameResponse> {
+        const response = await this.systemWriteSyncDestinationsGcpSmNameRaw({ name: name, SystemWriteSyncDestinationsGcpSmNameRequest: SystemWriteSyncDestinationsGcpSmNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12841,10 +12841,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsGhNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsGhNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsGhNameRequest',
-                'Required parameter "systemWriteSyncDestinationsGhNameRequest" was null or undefined when calling systemWriteSyncDestinationsGhName().'
+                'SystemWriteSyncDestinationsGhNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsGhNameRequest" was null or undefined when calling systemWriteSyncDestinationsGhName().'
             );
         }
 
@@ -12859,7 +12859,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsGhNameRequestToJSON(requestParameters['systemWriteSyncDestinationsGhNameRequest']),
+            body: SystemWriteSyncDestinationsGhNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsGhNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsGhNameResponseFromJSON(jsonValue));
@@ -12867,8 +12867,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsGhName(name: string, systemWriteSyncDestinationsGhNameRequest: SystemWriteSyncDestinationsGhNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsGhNameResponse> {
-        const response = await this.systemWriteSyncDestinationsGhNameRaw({ name: name, systemWriteSyncDestinationsGhNameRequest: systemWriteSyncDestinationsGhNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsGhName(name: string, SystemWriteSyncDestinationsGhNameRequest: SystemWriteSyncDestinationsGhNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsGhNameResponse> {
+        const response = await this.systemWriteSyncDestinationsGhNameRaw({ name: name, SystemWriteSyncDestinationsGhNameRequest: SystemWriteSyncDestinationsGhNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12882,10 +12882,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsInMemNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsInMemNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsInMemNameRequest',
-                'Required parameter "systemWriteSyncDestinationsInMemNameRequest" was null or undefined when calling systemWriteSyncDestinationsInMemName().'
+                'SystemWriteSyncDestinationsInMemNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsInMemNameRequest" was null or undefined when calling systemWriteSyncDestinationsInMemName().'
             );
         }
 
@@ -12900,7 +12900,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsInMemNameRequestToJSON(requestParameters['systemWriteSyncDestinationsInMemNameRequest']),
+            body: SystemWriteSyncDestinationsInMemNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsInMemNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsInMemNameResponseFromJSON(jsonValue));
@@ -12908,8 +12908,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsInMemName(name: string, systemWriteSyncDestinationsInMemNameRequest: SystemWriteSyncDestinationsInMemNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsInMemNameResponse> {
-        const response = await this.systemWriteSyncDestinationsInMemNameRaw({ name: name, systemWriteSyncDestinationsInMemNameRequest: systemWriteSyncDestinationsInMemNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsInMemName(name: string, SystemWriteSyncDestinationsInMemNameRequest: SystemWriteSyncDestinationsInMemNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsInMemNameResponse> {
+        const response = await this.systemWriteSyncDestinationsInMemNameRaw({ name: name, SystemWriteSyncDestinationsInMemNameRequest: SystemWriteSyncDestinationsInMemNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12930,10 +12930,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest',
-                'Required parameter "systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest" was null or undefined when calling systemWriteSyncDestinationsTypeNameAssociationsRemove().'
+                'SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest',
+                'Required parameter "SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest" was null or undefined when calling systemWriteSyncDestinationsTypeNameAssociationsRemove().'
             );
         }
 
@@ -12948,7 +12948,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequestToJSON(requestParameters['systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest']),
+            body: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequestToJSON(requestParameters['SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponseFromJSON(jsonValue));
@@ -12956,8 +12956,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsTypeNameAssociationsRemove(name: string, type: string, systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponse> {
-        const response = await this.systemWriteSyncDestinationsTypeNameAssociationsRemoveRaw({ name: name, type: type, systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: systemWriteSyncDestinationsTypeNameAssociationsRemoveRequest }, initOverrides);
+    async systemWriteSyncDestinationsTypeNameAssociationsRemove(name: string, type: string, SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsTypeNameAssociationsRemoveResponse> {
+        const response = await this.systemWriteSyncDestinationsTypeNameAssociationsRemoveRaw({ name: name, type: type, SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest: SystemWriteSyncDestinationsTypeNameAssociationsRemoveRequest }, initOverrides);
         return await response.value();
     }
 
@@ -12978,10 +12978,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsTypeNameAssociationsSetRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsTypeNameAssociationsSetRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsTypeNameAssociationsSetRequest',
-                'Required parameter "systemWriteSyncDestinationsTypeNameAssociationsSetRequest" was null or undefined when calling systemWriteSyncDestinationsTypeNameAssociationsSet().'
+                'SystemWriteSyncDestinationsTypeNameAssociationsSetRequest',
+                'Required parameter "SystemWriteSyncDestinationsTypeNameAssociationsSetRequest" was null or undefined when calling systemWriteSyncDestinationsTypeNameAssociationsSet().'
             );
         }
 
@@ -12996,7 +12996,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsTypeNameAssociationsSetRequestToJSON(requestParameters['systemWriteSyncDestinationsTypeNameAssociationsSetRequest']),
+            body: SystemWriteSyncDestinationsTypeNameAssociationsSetRequestToJSON(requestParameters['SystemWriteSyncDestinationsTypeNameAssociationsSetRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsTypeNameAssociationsSetResponseFromJSON(jsonValue));
@@ -13004,8 +13004,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsTypeNameAssociationsSet(name: string, type: string, systemWriteSyncDestinationsTypeNameAssociationsSetRequest: SystemWriteSyncDestinationsTypeNameAssociationsSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsTypeNameAssociationsSetResponse> {
-        const response = await this.systemWriteSyncDestinationsTypeNameAssociationsSetRaw({ name: name, type: type, systemWriteSyncDestinationsTypeNameAssociationsSetRequest: systemWriteSyncDestinationsTypeNameAssociationsSetRequest }, initOverrides);
+    async systemWriteSyncDestinationsTypeNameAssociationsSet(name: string, type: string, SystemWriteSyncDestinationsTypeNameAssociationsSetRequest: SystemWriteSyncDestinationsTypeNameAssociationsSetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsTypeNameAssociationsSetResponse> {
+        const response = await this.systemWriteSyncDestinationsTypeNameAssociationsSetRaw({ name: name, type: type, SystemWriteSyncDestinationsTypeNameAssociationsSetRequest: SystemWriteSyncDestinationsTypeNameAssociationsSetRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13019,10 +13019,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncDestinationsVercelProjectNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncDestinationsVercelProjectNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncDestinationsVercelProjectNameRequest',
-                'Required parameter "systemWriteSyncDestinationsVercelProjectNameRequest" was null or undefined when calling systemWriteSyncDestinationsVercelProjectName().'
+                'SystemWriteSyncDestinationsVercelProjectNameRequest',
+                'Required parameter "SystemWriteSyncDestinationsVercelProjectNameRequest" was null or undefined when calling systemWriteSyncDestinationsVercelProjectName().'
             );
         }
 
@@ -13037,7 +13037,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncDestinationsVercelProjectNameRequestToJSON(requestParameters['systemWriteSyncDestinationsVercelProjectNameRequest']),
+            body: SystemWriteSyncDestinationsVercelProjectNameRequestToJSON(requestParameters['SystemWriteSyncDestinationsVercelProjectNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncDestinationsVercelProjectNameResponseFromJSON(jsonValue));
@@ -13045,8 +13045,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncDestinationsVercelProjectName(name: string, systemWriteSyncDestinationsVercelProjectNameRequest: SystemWriteSyncDestinationsVercelProjectNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsVercelProjectNameResponse> {
-        const response = await this.systemWriteSyncDestinationsVercelProjectNameRaw({ name: name, systemWriteSyncDestinationsVercelProjectNameRequest: systemWriteSyncDestinationsVercelProjectNameRequest }, initOverrides);
+    async systemWriteSyncDestinationsVercelProjectName(name: string, SystemWriteSyncDestinationsVercelProjectNameRequest: SystemWriteSyncDestinationsVercelProjectNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncDestinationsVercelProjectNameResponse> {
+        const response = await this.systemWriteSyncDestinationsVercelProjectNameRaw({ name: name, SystemWriteSyncDestinationsVercelProjectNameRequest: SystemWriteSyncDestinationsVercelProjectNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13060,10 +13060,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['systemWriteSyncGithubAppsNameRequest'] == null) {
+        if (requestParameters['SystemWriteSyncGithubAppsNameRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteSyncGithubAppsNameRequest',
-                'Required parameter "systemWriteSyncGithubAppsNameRequest" was null or undefined when calling systemWriteSyncGithubAppsName().'
+                'SystemWriteSyncGithubAppsNameRequest',
+                'Required parameter "SystemWriteSyncGithubAppsNameRequest" was null or undefined when calling systemWriteSyncGithubAppsName().'
             );
         }
 
@@ -13078,7 +13078,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteSyncGithubAppsNameRequestToJSON(requestParameters['systemWriteSyncGithubAppsNameRequest']),
+            body: SystemWriteSyncGithubAppsNameRequestToJSON(requestParameters['SystemWriteSyncGithubAppsNameRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteSyncGithubAppsNameResponseFromJSON(jsonValue));
@@ -13086,8 +13086,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemWriteSyncGithubAppsName(name: string, systemWriteSyncGithubAppsNameRequest: SystemWriteSyncGithubAppsNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncGithubAppsNameResponse> {
-        const response = await this.systemWriteSyncGithubAppsNameRaw({ name: name, systemWriteSyncGithubAppsNameRequest: systemWriteSyncGithubAppsNameRequest }, initOverrides);
+    async systemWriteSyncGithubAppsName(name: string, SystemWriteSyncGithubAppsNameRequest: SystemWriteSyncGithubAppsNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteSyncGithubAppsNameResponse> {
+        const response = await this.systemWriteSyncGithubAppsNameRaw({ name: name, SystemWriteSyncGithubAppsNameRequest: SystemWriteSyncGithubAppsNameRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13096,10 +13096,10 @@ export class SystemApi extends runtime.BaseAPI {
      * returns manual license reporting report data
      */
     async systemWriteUtilizationRaw(requestParameters: SystemApiSystemWriteUtilizationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemWriteUtilizationResponse>> {
-        if (requestParameters['systemWriteUtilizationRequest'] == null) {
+        if (requestParameters['SystemWriteUtilizationRequest'] == null) {
             throw new runtime.RequiredError(
-                'systemWriteUtilizationRequest',
-                'Required parameter "systemWriteUtilizationRequest" was null or undefined when calling systemWriteUtilization().'
+                'SystemWriteUtilizationRequest',
+                'Required parameter "SystemWriteUtilizationRequest" was null or undefined when calling systemWriteUtilization().'
             );
         }
 
@@ -13114,7 +13114,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SystemWriteUtilizationRequestToJSON(requestParameters['systemWriteUtilizationRequest']),
+            body: SystemWriteUtilizationRequestToJSON(requestParameters['SystemWriteUtilizationRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SystemWriteUtilizationResponseFromJSON(jsonValue));
@@ -13124,8 +13124,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Gets manual license reporting data
      * returns manual license reporting report data
      */
-    async systemWriteUtilization(systemWriteUtilizationRequest: SystemWriteUtilizationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteUtilizationResponse> {
-        const response = await this.systemWriteUtilizationRaw({ systemWriteUtilizationRequest: systemWriteUtilizationRequest }, initOverrides);
+    async systemWriteUtilization(SystemWriteUtilizationRequest: SystemWriteUtilizationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemWriteUtilizationResponse> {
+        const response = await this.systemWriteUtilizationRaw({ SystemWriteUtilizationRequest: SystemWriteUtilizationRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13255,10 +13255,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['uiConfigUpdateCustomMessageRequest'] == null) {
+        if (requestParameters['UiConfigUpdateCustomMessageRequest'] == null) {
             throw new runtime.RequiredError(
-                'uiConfigUpdateCustomMessageRequest',
-                'Required parameter "uiConfigUpdateCustomMessageRequest" was null or undefined when calling uiConfigUpdateCustomMessage().'
+                'UiConfigUpdateCustomMessageRequest',
+                'Required parameter "UiConfigUpdateCustomMessageRequest" was null or undefined when calling uiConfigUpdateCustomMessage().'
             );
         }
 
@@ -13273,7 +13273,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UiConfigUpdateCustomMessageRequestToJSON(requestParameters['uiConfigUpdateCustomMessageRequest']),
+            body: UiConfigUpdateCustomMessageRequestToJSON(requestParameters['UiConfigUpdateCustomMessageRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => UiConfigUpdateCustomMessageResponseFromJSON(jsonValue));
@@ -13282,8 +13282,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Update custom message
      */
-    async uiConfigUpdateCustomMessage(id: string, uiConfigUpdateCustomMessageRequest: UiConfigUpdateCustomMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiConfigUpdateCustomMessageResponse> {
-        const response = await this.uiConfigUpdateCustomMessageRaw({ id: id, uiConfigUpdateCustomMessageRequest: uiConfigUpdateCustomMessageRequest }, initOverrides);
+    async uiConfigUpdateCustomMessage(id: string, UiConfigUpdateCustomMessageRequest: UiConfigUpdateCustomMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiConfigUpdateCustomMessageResponse> {
+        const response = await this.uiConfigUpdateCustomMessageRaw({ id: id, UiConfigUpdateCustomMessageRequest: UiConfigUpdateCustomMessageRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13298,10 +13298,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['uiHeadersConfigureRequest'] == null) {
+        if (requestParameters['UiHeadersConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'uiHeadersConfigureRequest',
-                'Required parameter "uiHeadersConfigureRequest" was null or undefined when calling uiHeadersConfigure().'
+                'UiHeadersConfigureRequest',
+                'Required parameter "UiHeadersConfigureRequest" was null or undefined when calling uiHeadersConfigure().'
             );
         }
 
@@ -13316,7 +13316,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UiHeadersConfigureRequestToJSON(requestParameters['uiHeadersConfigureRequest']),
+            body: UiHeadersConfigureRequestToJSON(requestParameters['UiHeadersConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -13325,8 +13325,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Configure the values to be returned for the UI header.
      */
-    async uiHeadersConfigure(header: string, uiHeadersConfigureRequest: UiHeadersConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.uiHeadersConfigureRaw({ header: header, uiHeadersConfigureRequest: uiHeadersConfigureRequest }, initOverrides);
+    async uiHeadersConfigure(header: string, UiHeadersConfigureRequest: UiHeadersConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.uiHeadersConfigureRaw({ header: header, UiHeadersConfigureRequest: UiHeadersConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13444,10 +13444,10 @@ export class SystemApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['uiLoginDefaultAuthConfigureRequest'] == null) {
+        if (requestParameters['UiLoginDefaultAuthConfigureRequest'] == null) {
             throw new runtime.RequiredError(
-                'uiLoginDefaultAuthConfigureRequest',
-                'Required parameter "uiLoginDefaultAuthConfigureRequest" was null or undefined when calling uiLoginDefaultAuthConfigure().'
+                'UiLoginDefaultAuthConfigureRequest',
+                'Required parameter "UiLoginDefaultAuthConfigureRequest" was null or undefined when calling uiLoginDefaultAuthConfigure().'
             );
         }
 
@@ -13462,7 +13462,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UiLoginDefaultAuthConfigureRequestToJSON(requestParameters['uiLoginDefaultAuthConfigureRequest']),
+            body: UiLoginDefaultAuthConfigureRequestToJSON(requestParameters['UiLoginDefaultAuthConfigureRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -13471,8 +13471,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Configure Default Auth method for UI Login.
      */
-    async uiLoginDefaultAuthConfigure(name: string, uiLoginDefaultAuthConfigureRequest: UiLoginDefaultAuthConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.uiLoginDefaultAuthConfigureRaw({ name: name, uiLoginDefaultAuthConfigureRequest: uiLoginDefaultAuthConfigureRequest }, initOverrides);
+    async uiLoginDefaultAuthConfigure(name: string, UiLoginDefaultAuthConfigureRequest: UiLoginDefaultAuthConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.uiLoginDefaultAuthConfigureRaw({ name: name, UiLoginDefaultAuthConfigureRequest: UiLoginDefaultAuthConfigureRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13607,10 +13607,10 @@ export class SystemApi extends runtime.BaseAPI {
      * Unseal the Vault.
      */
     async unsealRaw(requestParameters: SystemApiUnsealOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UnsealResponse>> {
-        if (requestParameters['unsealRequest'] == null) {
+        if (requestParameters['UnsealRequest'] == null) {
             throw new runtime.RequiredError(
-                'unsealRequest',
-                'Required parameter "unsealRequest" was null or undefined when calling unseal().'
+                'UnsealRequest',
+                'Required parameter "UnsealRequest" was null or undefined when calling unseal().'
             );
         }
 
@@ -13625,7 +13625,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UnsealRequestToJSON(requestParameters['unsealRequest']),
+            body: UnsealRequestToJSON(requestParameters['UnsealRequest']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => UnsealResponseFromJSON(jsonValue));
@@ -13634,18 +13634,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Unseal the Vault.
      */
-    async unseal(unsealRequest: UnsealRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UnsealResponse> {
-        const response = await this.unsealRaw({ unsealRequest: unsealRequest }, initOverrides);
+    async unseal(UnsealRequest: UnsealRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UnsealResponse> {
+        const response = await this.unsealRaw({ UnsealRequest: UnsealRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
     async unwrapRaw(requestParameters: SystemApiUnwrapOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['unwrapRequest'] == null) {
+        if (requestParameters['UnwrapRequest'] == null) {
             throw new runtime.RequiredError(
-                'unwrapRequest',
-                'Required parameter "unwrapRequest" was null or undefined when calling unwrap().'
+                'UnwrapRequest',
+                'Required parameter "UnwrapRequest" was null or undefined when calling unwrap().'
             );
         }
 
@@ -13660,7 +13660,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UnwrapRequestToJSON(requestParameters['unwrapRequest']),
+            body: UnwrapRequestToJSON(requestParameters['UnwrapRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -13668,8 +13668,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async unwrap(unwrapRequest: UnwrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.unwrapRaw({ unwrapRequest: unwrapRequest }, initOverrides);
+    async unwrap(UnwrapRequest: UnwrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.unwrapRaw({ UnwrapRequest: UnwrapRequest }, initOverrides);
         return await response.value();
     }
 
@@ -13805,10 +13805,10 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      */
     async wrapRaw(requestParameters: SystemApiWrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['requestBody'] == null) {
+        if (requestParameters['request_body'] == null) {
             throw new runtime.RequiredError(
-                'requestBody',
-                'Required parameter "requestBody" was null or undefined when calling wrap().'
+                'request_body',
+                'Required parameter "request_body" was null or undefined when calling wrap().'
             );
         }
 
@@ -13823,7 +13823,7 @@ export class SystemApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters['requestBody'],
+            body: requestParameters['request_body'],
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -13831,8 +13831,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async wrap(requestBody: { [key: string]: any; }, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.wrapRaw({ requestBody: requestBody }, initOverrides);
+    async wrap(request_body: { [key: string]: any; }, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.wrapRaw({ request_body: request_body }, initOverrides);
         return await response.value();
     }
 

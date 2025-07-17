@@ -24,19 +24,19 @@ export interface SystemWriteMfaMethodPingidNameRequest {
      * @type {string}
      * @memberof SystemWriteMfaMethodPingidNameRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * The settings file provided by Ping, Base64-encoded. This must be a settings file suitable for third-party clients, not the PingID SDK or PingFederate.
      * @type {string}
      * @memberof SystemWriteMfaMethodPingidNameRequest
      */
-    settingsFileBase64?: string;
+    settings_file_base64?: string;
     /**
      * A format string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, "{{alias.name}}@example.com". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
      * @type {string}
      * @memberof SystemWriteMfaMethodPingidNameRequest
      */
-    usernameFormat?: string;
+    username_format?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function SystemWriteMfaMethodPingidNameRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
-        'settingsFileBase64': json['settings_file_base64'] == null ? undefined : json['settings_file_base64'],
-        'usernameFormat': json['username_format'] == null ? undefined : json['username_format'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'settings_file_base64': json['settings_file_base64'] == null ? undefined : json['settings_file_base64'],
+        'username_format': json['username_format'] == null ? undefined : json['username_format'],
     };
 }
 
@@ -73,9 +73,9 @@ export function SystemWriteMfaMethodPingidNameRequestToJSONTyped(value?: SystemW
 
     return {
         
-        'mount_accessor': value['mountAccessor'],
-        'settings_file_base64': value['settingsFileBase64'],
-        'username_format': value['usernameFormat'],
+        'mount_accessor': value['mount_accessor'],
+        'settings_file_base64': value['settings_file_base64'],
+        'username_format': value['username_format'],
     };
 }
 

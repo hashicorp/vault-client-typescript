@@ -24,13 +24,13 @@ export interface AliCloudConfigureRequest {
      * @type {string}
      * @memberof AliCloudConfigureRequest
      */
-    accessKey?: string;
+    access_key?: string;
     /**
      * Secret key with appropriate permissions.
      * @type {string}
      * @memberof AliCloudConfigureRequest
      */
-    secretKey?: string;
+    secret_key?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function AliCloudConfigureRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'accessKey': json['access_key'] == null ? undefined : json['access_key'],
-        'secretKey': json['secret_key'] == null ? undefined : json['secret_key'],
+        'access_key': json['access_key'] == null ? undefined : json['access_key'],
+        'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
     };
 }
 
@@ -66,8 +66,8 @@ export function AliCloudConfigureRequestToJSONTyped(value?: AliCloudConfigureReq
 
     return {
         
-        'access_key': value['accessKey'],
-        'secret_key': value['secretKey'],
+        'access_key': value['access_key'],
+        'secret_key': value['secret_key'],
     };
 }
 

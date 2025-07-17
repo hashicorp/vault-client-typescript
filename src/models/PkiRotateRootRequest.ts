@@ -24,13 +24,13 @@ export interface PkiRotateRootRequest {
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    altNames?: string;
+    alt_names?: string;
     /**
      * The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    commonName?: string;
+    common_name?: string;
     /**
      * If set, Country will be set to this value.
      * @type {Array<string>}
@@ -42,31 +42,31 @@ export interface PkiRotateRootRequest {
      * @type {boolean}
      * @memberof PkiRotateRootRequest
      */
-    excludeCnFromSans?: boolean;
+    exclude_cn_from_sans?: boolean;
     /**
      * Domains for which this certificate is not allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    excludedDnsDomains?: Array<string>;
+    excluded_dns_domains?: Array<string>;
     /**
      * Email addresses for which this certificate is not allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    excludedEmailAddresses?: Array<string>;
+    excluded_email_addresses?: Array<string>;
     /**
      * IP ranges for which this certificate is not allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10). Ranges must be specified in the notation of IP address and prefix length, like "192.0.2.0/24" or "2001:db8::/32", as defined in RFC 4632 and RFC 4291.
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    excludedIpRanges?: Array<string>;
+    excluded_ip_ranges?: Array<string>;
     /**
      * URI domains for which this certificate is not allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    excludedUriDomains?: Array<string>;
+    excluded_uri_domains?: Array<string>;
     /**
      * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
@@ -78,43 +78,43 @@ export interface PkiRotateRootRequest {
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    ipSans?: Array<string>;
+    ip_sans?: Array<string>;
     /**
      * Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    issuerName?: string;
+    issuer_name?: string;
     /**
      * The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, 4096 or 8192; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
      * @type {number}
      * @memberof PkiRotateRootRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * Reference to a existing key; either "default" for the configured default key, an identifier or the name assigned to the key.
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    keyRef?: string;
+    key_ref?: string;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    keyType?: PkiRotateRootRequestKeyTypeEnum;
+    key_type?: PkiRotateRootRequestKeyTypeEnum;
     /**
      * This list of key usages (not extended key usages) will be added to the existing set of key usages, CRL,CertSign, on the generated certificate. Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the "KeyUsage" part of the name. To use the issuer for CMPv2, DigitalSignature must be set.
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    keyUsage?: Array<string>;
+    key_usage?: Array<string>;
     /**
      * If set, Locality will be set to this value.
      * @type {Array<string>}
@@ -126,31 +126,31 @@ export interface PkiRotateRootRequest {
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
     /**
      * The maximum allowable path length
      * @type {number}
      * @memberof PkiRotateRootRequest
      */
-    maxPathLength?: number;
+    max_path_length?: number;
     /**
      * Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    notAfter?: string;
+    not_after?: string;
     /**
      * The duration before now which the certificate needs to be backdated by.
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    notBeforeDuration?: string;
+    not_before_duration?: string;
     /**
      * If set, O (Organization) will be set to this value.
      * @type {Array<string>}
@@ -162,7 +162,7 @@ export interface PkiRotateRootRequest {
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    otherSans?: Array<string>;
+    other_sans?: Array<string>;
     /**
      * If set, OU (OrganizationalUnit) will be set to this value.
      * @type {Array<string>}
@@ -174,37 +174,37 @@ export interface PkiRotateRootRequest {
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    permittedDnsDomains?: Array<string>;
+    permitted_dns_domains?: Array<string>;
     /**
      * Email addresses for which this certificate is allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    permittedEmailAddresses?: Array<string>;
+    permitted_email_addresses?: Array<string>;
     /**
      * IP ranges for which this certificate is allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10). Ranges must be specified in the notation of IP address and prefix length, like "192.0.2.0/24" or "2001:db8::/32", as defined in RFC 4632 and RFC 4291.
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    permittedIpRanges?: Array<string>;
+    permitted_ip_ranges?: Array<string>;
     /**
      * URI domains for which this certificate is allowed to sign or issue child certificates (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    permittedUriDomains?: Array<string>;
+    permitted_uri_domains?: Array<string>;
     /**
      * If set, Postal Code will be set to this value.
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    postalCode?: Array<string>;
+    postal_code?: Array<string>;
     /**
      * Format for the returned private key. Generally the default will be controlled by the "format" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to "der".
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    privateKeyFormat?: PkiRotateRootRequestPrivateKeyFormatEnum;
+    private_key_format?: PkiRotateRootRequestPrivateKeyFormatEnum;
     /**
      * If set, Province will be set to this value.
      * @type {Array<string>}
@@ -216,19 +216,19 @@ export interface PkiRotateRootRequest {
      * @type {string}
      * @memberof PkiRotateRootRequest
      */
-    serialNumber?: string;
+    serial_number?: string;
     /**
      * The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
      * @type {number}
      * @memberof PkiRotateRootRequest
      */
-    signatureBits?: number;
+    signature_bits?: number;
     /**
      * If set, Street Address will be set to this value.
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    streetAddress?: Array<string>;
+    street_address?: Array<string>;
     /**
      * The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
      * @type {string}
@@ -240,13 +240,13 @@ export interface PkiRotateRootRequest {
      * @type {Array<string>}
      * @memberof PkiRotateRootRequest
      */
-    uriSans?: Array<string>;
+    uri_sans?: Array<string>;
     /**
      * Whether or not to use PSS signatures when using a RSA key-type issuer. Defaults to false.
      * @type {boolean}
      * @memberof PkiRotateRootRequest
      */
-    usePss?: boolean;
+    use_pss?: boolean;
 }
 
 /**
@@ -296,44 +296,44 @@ export function PkiRotateRootRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'altNames': json['alt_names'] == null ? undefined : json['alt_names'],
-        'commonName': json['common_name'] == null ? undefined : json['common_name'],
+        'alt_names': json['alt_names'] == null ? undefined : json['alt_names'],
+        'common_name': json['common_name'] == null ? undefined : json['common_name'],
         'country': json['country'] == null ? undefined : json['country'],
-        'excludeCnFromSans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
-        'excludedDnsDomains': json['excluded_dns_domains'] == null ? undefined : json['excluded_dns_domains'],
-        'excludedEmailAddresses': json['excluded_email_addresses'] == null ? undefined : json['excluded_email_addresses'],
-        'excludedIpRanges': json['excluded_ip_ranges'] == null ? undefined : json['excluded_ip_ranges'],
-        'excludedUriDomains': json['excluded_uri_domains'] == null ? undefined : json['excluded_uri_domains'],
+        'exclude_cn_from_sans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
+        'excluded_dns_domains': json['excluded_dns_domains'] == null ? undefined : json['excluded_dns_domains'],
+        'excluded_email_addresses': json['excluded_email_addresses'] == null ? undefined : json['excluded_email_addresses'],
+        'excluded_ip_ranges': json['excluded_ip_ranges'] == null ? undefined : json['excluded_ip_ranges'],
+        'excluded_uri_domains': json['excluded_uri_domains'] == null ? undefined : json['excluded_uri_domains'],
         'format': json['format'] == null ? undefined : json['format'],
-        'ipSans': json['ip_sans'] == null ? undefined : json['ip_sans'],
-        'issuerName': json['issuer_name'] == null ? undefined : json['issuer_name'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyRef': json['key_ref'] == null ? undefined : json['key_ref'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'keyUsage': json['key_usage'] == null ? undefined : json['key_usage'],
+        'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
+        'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_ref': json['key_ref'] == null ? undefined : json['key_ref'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'key_usage': json['key_usage'] == null ? undefined : json['key_usage'],
         'locality': json['locality'] == null ? undefined : json['locality'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
-        'maxPathLength': json['max_path_length'] == null ? undefined : json['max_path_length'],
-        'notAfter': json['not_after'] == null ? undefined : json['not_after'],
-        'notBeforeDuration': json['not_before_duration'] == null ? undefined : json['not_before_duration'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'max_path_length': json['max_path_length'] == null ? undefined : json['max_path_length'],
+        'not_after': json['not_after'] == null ? undefined : json['not_after'],
+        'not_before_duration': json['not_before_duration'] == null ? undefined : json['not_before_duration'],
         'organization': json['organization'] == null ? undefined : json['organization'],
-        'otherSans': json['other_sans'] == null ? undefined : json['other_sans'],
+        'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
         'ou': json['ou'] == null ? undefined : json['ou'],
-        'permittedDnsDomains': json['permitted_dns_domains'] == null ? undefined : json['permitted_dns_domains'],
-        'permittedEmailAddresses': json['permitted_email_addresses'] == null ? undefined : json['permitted_email_addresses'],
-        'permittedIpRanges': json['permitted_ip_ranges'] == null ? undefined : json['permitted_ip_ranges'],
-        'permittedUriDomains': json['permitted_uri_domains'] == null ? undefined : json['permitted_uri_domains'],
-        'postalCode': json['postal_code'] == null ? undefined : json['postal_code'],
-        'privateKeyFormat': json['private_key_format'] == null ? undefined : json['private_key_format'],
+        'permitted_dns_domains': json['permitted_dns_domains'] == null ? undefined : json['permitted_dns_domains'],
+        'permitted_email_addresses': json['permitted_email_addresses'] == null ? undefined : json['permitted_email_addresses'],
+        'permitted_ip_ranges': json['permitted_ip_ranges'] == null ? undefined : json['permitted_ip_ranges'],
+        'permitted_uri_domains': json['permitted_uri_domains'] == null ? undefined : json['permitted_uri_domains'],
+        'postal_code': json['postal_code'] == null ? undefined : json['postal_code'],
+        'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
         'province': json['province'] == null ? undefined : json['province'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
-        'signatureBits': json['signature_bits'] == null ? undefined : json['signature_bits'],
-        'streetAddress': json['street_address'] == null ? undefined : json['street_address'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
+        'signature_bits': json['signature_bits'] == null ? undefined : json['signature_bits'],
+        'street_address': json['street_address'] == null ? undefined : json['street_address'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'uriSans': json['uri_sans'] == null ? undefined : json['uri_sans'],
-        'usePss': json['use_pss'] == null ? undefined : json['use_pss'],
+        'uri_sans': json['uri_sans'] == null ? undefined : json['uri_sans'],
+        'use_pss': json['use_pss'] == null ? undefined : json['use_pss'],
     };
 }
 
@@ -348,44 +348,44 @@ export function PkiRotateRootRequestToJSONTyped(value?: PkiRotateRootRequest | n
 
     return {
         
-        'alt_names': value['altNames'],
-        'common_name': value['commonName'],
+        'alt_names': value['alt_names'],
+        'common_name': value['common_name'],
         'country': value['country'],
-        'exclude_cn_from_sans': value['excludeCnFromSans'],
-        'excluded_dns_domains': value['excludedDnsDomains'],
-        'excluded_email_addresses': value['excludedEmailAddresses'],
-        'excluded_ip_ranges': value['excludedIpRanges'],
-        'excluded_uri_domains': value['excludedUriDomains'],
+        'exclude_cn_from_sans': value['exclude_cn_from_sans'],
+        'excluded_dns_domains': value['excluded_dns_domains'],
+        'excluded_email_addresses': value['excluded_email_addresses'],
+        'excluded_ip_ranges': value['excluded_ip_ranges'],
+        'excluded_uri_domains': value['excluded_uri_domains'],
         'format': value['format'],
-        'ip_sans': value['ipSans'],
-        'issuer_name': value['issuerName'],
-        'key_bits': value['keyBits'],
-        'key_name': value['keyName'],
-        'key_ref': value['keyRef'],
-        'key_type': value['keyType'],
-        'key_usage': value['keyUsage'],
+        'ip_sans': value['ip_sans'],
+        'issuer_name': value['issuer_name'],
+        'key_bits': value['key_bits'],
+        'key_name': value['key_name'],
+        'key_ref': value['key_ref'],
+        'key_type': value['key_type'],
+        'key_usage': value['key_usage'],
         'locality': value['locality'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
-        'max_path_length': value['maxPathLength'],
-        'not_after': value['notAfter'],
-        'not_before_duration': value['notBeforeDuration'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
+        'max_path_length': value['max_path_length'],
+        'not_after': value['not_after'],
+        'not_before_duration': value['not_before_duration'],
         'organization': value['organization'],
-        'other_sans': value['otherSans'],
+        'other_sans': value['other_sans'],
         'ou': value['ou'],
-        'permitted_dns_domains': value['permittedDnsDomains'],
-        'permitted_email_addresses': value['permittedEmailAddresses'],
-        'permitted_ip_ranges': value['permittedIpRanges'],
-        'permitted_uri_domains': value['permittedUriDomains'],
-        'postal_code': value['postalCode'],
-        'private_key_format': value['privateKeyFormat'],
+        'permitted_dns_domains': value['permitted_dns_domains'],
+        'permitted_email_addresses': value['permitted_email_addresses'],
+        'permitted_ip_ranges': value['permitted_ip_ranges'],
+        'permitted_uri_domains': value['permitted_uri_domains'],
+        'postal_code': value['postal_code'],
+        'private_key_format': value['private_key_format'],
         'province': value['province'],
-        'serial_number': value['serialNumber'],
-        'signature_bits': value['signatureBits'],
-        'street_address': value['streetAddress'],
+        'serial_number': value['serial_number'],
+        'signature_bits': value['signature_bits'],
+        'street_address': value['street_address'],
         'ttl': value['ttl'],
-        'uri_sans': value['uriSans'],
-        'use_pss': value['usePss'],
+        'uri_sans': value['uri_sans'],
+        'use_pss': value['use_pss'],
     };
 }
 

@@ -24,67 +24,67 @@ export interface DatabaseConfigureConnectionRequest {
      * @type {Array<string>}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * Password policy to use when generating passwords.
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    passwordPolicy?: string;
+    password_policy?: string;
     /**
      * The name of a builtin or previously registered plugin known to vault. This endpoint will create an instance of that plugin type.
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    pluginName?: string;
+    plugin_name?: string;
     /**
      * The version of the plugin to use.
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * Specifies the database statements to be executed to rotate the root user's credentials. See the plugin's API page for more information on support and formatting for this parameter.
      * @type {Array<string>}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    rootRotationStatements?: Array<string>;
+    root_rotation_statements?: Array<string>;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * Enterprise only. If true, the static roles associated with this connection will not have their passwords rotated on creation of the role. Defaults to false.
      * @type {boolean}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    skipStaticRoleImportRotation?: boolean;
+    skip_static_role_import_rotation?: boolean;
     /**
      * If true, the connection details are verified by actually connecting to the database. Defaults to true.
      * @type {boolean}
      * @memberof DatabaseConfigureConnectionRequest
      */
-    verifyConnection?: boolean;
+    verify_connection?: boolean;
 }
 
 /**
@@ -104,17 +104,17 @@ export function DatabaseConfigureConnectionRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
-        'passwordPolicy': json['password_policy'] == null ? undefined : json['password_policy'],
-        'pluginName': json['plugin_name'] == null ? undefined : json['plugin_name'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'rootRotationStatements': json['root_rotation_statements'] == null ? undefined : json['root_rotation_statements'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'skipStaticRoleImportRotation': json['skip_static_role_import_rotation'] == null ? undefined : json['skip_static_role_import_rotation'],
-        'verifyConnection': json['verify_connection'] == null ? undefined : json['verify_connection'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
+        'plugin_name': json['plugin_name'] == null ? undefined : json['plugin_name'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'root_rotation_statements': json['root_rotation_statements'] == null ? undefined : json['root_rotation_statements'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'skip_static_role_import_rotation': json['skip_static_role_import_rotation'] == null ? undefined : json['skip_static_role_import_rotation'],
+        'verify_connection': json['verify_connection'] == null ? undefined : json['verify_connection'],
     };
 }
 
@@ -129,17 +129,17 @@ export function DatabaseConfigureConnectionRequestToJSONTyped(value?: DatabaseCo
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
-        'password_policy': value['passwordPolicy'],
-        'plugin_name': value['pluginName'],
-        'plugin_version': value['pluginVersion'],
-        'root_rotation_statements': value['rootRotationStatements'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
-        'skip_static_role_import_rotation': value['skipStaticRoleImportRotation'],
-        'verify_connection': value['verifyConnection'],
+        'allowed_roles': value['allowed_roles'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
+        'password_policy': value['password_policy'],
+        'plugin_name': value['plugin_name'],
+        'plugin_version': value['plugin_version'],
+        'root_rotation_statements': value['root_rotation_statements'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
+        'skip_static_role_import_rotation': value['skip_static_role_import_rotation'],
+        'verify_connection': value['verify_connection'],
     };
 }
 

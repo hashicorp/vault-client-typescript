@@ -30,7 +30,7 @@ export interface LeasesCountResponse {
      * @type {number}
      * @memberof LeasesCountResponse
      */
-    leaseCount?: number;
+    lease_count?: number;
 }
 
 /**
@@ -51,7 +51,7 @@ export function LeasesCountResponseFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'counts': json['counts'] == null ? undefined : json['counts'],
-        'leaseCount': json['lease_count'] == null ? undefined : json['lease_count'],
+        'lease_count': json['lease_count'] == null ? undefined : json['lease_count'],
     };
 }
 
@@ -67,7 +67,7 @@ export function LeasesCountResponseToJSONTyped(value?: LeasesCountResponse | nul
     return {
         
         'counts': value['counts'],
-        'lease_count': value['leaseCount'],
+        'lease_count': value['lease_count'],
     };
 }
 

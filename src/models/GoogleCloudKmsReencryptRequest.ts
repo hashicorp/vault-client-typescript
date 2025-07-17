@@ -24,7 +24,7 @@ export interface GoogleCloudKmsReencryptRequest {
      * @type {string}
      * @memberof GoogleCloudKmsReencryptRequest
      */
-    additionalAuthenticatedData?: string;
+    additional_authenticated_data?: string;
     /**
      * Ciphertext to be re-encrypted to the latest key version. This must be ciphertext that Vault previously generated for this named key.
      * @type {string}
@@ -36,7 +36,7 @@ export interface GoogleCloudKmsReencryptRequest {
      * @type {number}
      * @memberof GoogleCloudKmsReencryptRequest
      */
-    keyVersion?: number;
+    key_version?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function GoogleCloudKmsReencryptRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'additionalAuthenticatedData': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
+        'additional_authenticated_data': json['additional_authenticated_data'] == null ? undefined : json['additional_authenticated_data'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
-        'keyVersion': json['key_version'] == null ? undefined : json['key_version'],
+        'key_version': json['key_version'] == null ? undefined : json['key_version'],
     };
 }
 
@@ -73,9 +73,9 @@ export function GoogleCloudKmsReencryptRequestToJSONTyped(value?: GoogleCloudKms
 
     return {
         
-        'additional_authenticated_data': value['additionalAuthenticatedData'],
+        'additional_authenticated_data': value['additional_authenticated_data'],
         'ciphertext': value['ciphertext'],
-        'key_version': value['keyVersion'],
+        'key_version': value['key_version'],
     };
 }
 

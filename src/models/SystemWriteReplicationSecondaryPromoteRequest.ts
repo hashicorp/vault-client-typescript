@@ -30,7 +30,7 @@ export interface SystemWriteReplicationSecondaryPromoteRequest {
      * @type {string}
      * @memberof SystemWriteReplicationSecondaryPromoteRequest
      */
-    primaryClusterAddr?: string;
+    primary_cluster_addr?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function SystemWriteReplicationSecondaryPromoteRequestFromJSONTyped(json:
     return {
         
         'force': json['force'] == null ? undefined : json['force'],
-        'primaryClusterAddr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
+        'primary_cluster_addr': json['primary_cluster_addr'] == null ? undefined : json['primary_cluster_addr'],
     };
 }
 
@@ -67,7 +67,7 @@ export function SystemWriteReplicationSecondaryPromoteRequestToJSONTyped(value?:
     return {
         
         'force': value['force'],
-        'primary_cluster_addr': value['primaryClusterAddr'],
+        'primary_cluster_addr': value['primary_cluster_addr'],
     };
 }
 

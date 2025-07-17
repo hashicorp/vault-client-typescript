@@ -24,25 +24,25 @@ export interface AwsWriteRoleTagRequest {
      * @type {boolean}
      * @memberof AwsWriteRoleTagRequest
      */
-    allowInstanceMigration?: boolean;
+    allow_instance_migration?: boolean;
     /**
      * If set, only allows a single token to be granted per instance ID. In order to perform a fresh login, the entry in access list for the instance ID needs to be cleared using the 'auth/aws-ec2/identity-accesslist/<instance_id>' endpoint.
      * @type {boolean}
      * @memberof AwsWriteRoleTagRequest
      */
-    disallowReauthentication?: boolean;
+    disallow_reauthentication?: boolean;
     /**
      * Instance ID for which this tag is intended for. If set, the created tag can only be used by the instance with the given ID.
      * @type {string}
      * @memberof AwsWriteRoleTagRequest
      */
-    instanceId?: string;
+    instance_id?: string;
     /**
      * If set, specifies the maximum allowed token lifetime.
      * @type {string}
      * @memberof AwsWriteRoleTagRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Policies to be associated with the tag. If set, must be a subset of the role's policies. If set, but set to an empty value, only the 'default' policy will be given to issued tokens.
      * @type {Array<string>}
@@ -68,10 +68,10 @@ export function AwsWriteRoleTagRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'allowInstanceMigration': json['allow_instance_migration'] == null ? undefined : json['allow_instance_migration'],
-        'disallowReauthentication': json['disallow_reauthentication'] == null ? undefined : json['disallow_reauthentication'],
-        'instanceId': json['instance_id'] == null ? undefined : json['instance_id'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'allow_instance_migration': json['allow_instance_migration'] == null ? undefined : json['allow_instance_migration'],
+        'disallow_reauthentication': json['disallow_reauthentication'] == null ? undefined : json['disallow_reauthentication'],
+        'instance_id': json['instance_id'] == null ? undefined : json['instance_id'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'policies': json['policies'] == null ? undefined : json['policies'],
     };
 }
@@ -87,10 +87,10 @@ export function AwsWriteRoleTagRequestToJSONTyped(value?: AwsWriteRoleTagRequest
 
     return {
         
-        'allow_instance_migration': value['allowInstanceMigration'],
-        'disallow_reauthentication': value['disallowReauthentication'],
-        'instance_id': value['instanceId'],
-        'max_ttl': value['maxTtl'],
+        'allow_instance_migration': value['allow_instance_migration'],
+        'disallow_reauthentication': value['disallow_reauthentication'],
+        'instance_id': value['instance_id'],
+        'max_ttl': value['max_ttl'],
         'policies': value['policies'],
     };
 }

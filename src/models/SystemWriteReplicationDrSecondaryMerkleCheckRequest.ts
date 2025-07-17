@@ -24,7 +24,7 @@ export interface SystemWriteReplicationDrSecondaryMerkleCheckRequest {
      * @type {string}
      * @memberof SystemWriteReplicationDrSecondaryMerkleCheckRequest
      */
-    drOperationToken?: string;
+    dr_operation_token?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteReplicationDrSecondaryMerkleCheckRequestFromJSONTyped
     }
     return {
         
-        'drOperationToken': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
+        'dr_operation_token': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteReplicationDrSecondaryMerkleCheckRequestToJSONTyped(v
 
     return {
         
-        'dr_operation_token': value['drOperationToken'],
+        'dr_operation_token': value['dr_operation_token'],
     };
 }
 

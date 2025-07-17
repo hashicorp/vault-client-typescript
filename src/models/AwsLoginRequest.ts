@@ -24,25 +24,25 @@ export interface AwsLoginRequest {
      * @type {string}
      * @memberof AwsLoginRequest
      */
-    iamHttpRequestMethod?: string;
+    iam_http_request_method?: string;
     /**
      * Base64-encoded request body when auth_type is iam. This must match the request body included in the signature.
      * @type {string}
      * @memberof AwsLoginRequest
      */
-    iamRequestBody?: string;
+    iam_request_body?: string;
     /**
      * Key/value pairs of headers for use in the sts:GetCallerIdentity HTTP requests headers when auth_type is iam. Can be either a Base64-encoded, JSON-serialized string, or a JSON object of key/value pairs. This must at a minimum include the headers over which AWS has included a signature.
      * @type {string}
      * @memberof AwsLoginRequest
      */
-    iamRequestHeaders?: string;
+    iam_request_headers?: string;
     /**
      * Base64-encoded full URL against which to make the AWS request when using iam auth_type.
      * @type {string}
      * @memberof AwsLoginRequest
      */
-    iamRequestUrl?: string;
+    iam_request_url?: string;
     /**
      * Base64 encoded EC2 instance identity document. This needs to be supplied along with the 'signature' parameter. If using 'curl' for fetching the identity document, consider using the option '-w 0' while piping the output to 'base64' binary.
      * @type {string}
@@ -92,10 +92,10 @@ export function AwsLoginRequestFromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         
-        'iamHttpRequestMethod': json['iam_http_request_method'] == null ? undefined : json['iam_http_request_method'],
-        'iamRequestBody': json['iam_request_body'] == null ? undefined : json['iam_request_body'],
-        'iamRequestHeaders': json['iam_request_headers'] == null ? undefined : json['iam_request_headers'],
-        'iamRequestUrl': json['iam_request_url'] == null ? undefined : json['iam_request_url'],
+        'iam_http_request_method': json['iam_http_request_method'] == null ? undefined : json['iam_http_request_method'],
+        'iam_request_body': json['iam_request_body'] == null ? undefined : json['iam_request_body'],
+        'iam_request_headers': json['iam_request_headers'] == null ? undefined : json['iam_request_headers'],
+        'iam_request_url': json['iam_request_url'] == null ? undefined : json['iam_request_url'],
         'identity': json['identity'] == null ? undefined : json['identity'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'pkcs7': json['pkcs7'] == null ? undefined : json['pkcs7'],
@@ -115,10 +115,10 @@ export function AwsLoginRequestToJSONTyped(value?: AwsLoginRequest | null, ignor
 
     return {
         
-        'iam_http_request_method': value['iamHttpRequestMethod'],
-        'iam_request_body': value['iamRequestBody'],
-        'iam_request_headers': value['iamRequestHeaders'],
-        'iam_request_url': value['iamRequestUrl'],
+        'iam_http_request_method': value['iam_http_request_method'],
+        'iam_request_body': value['iam_request_body'],
+        'iam_request_headers': value['iam_request_headers'],
+        'iam_request_url': value['iam_request_url'],
         'identity': value['identity'],
         'nonce': value['nonce'],
         'pkcs7': value['pkcs7'],

@@ -24,21 +24,21 @@ export interface MongoDbAtlasConfigureRequest {
      * @type {string}
      * @memberof MongoDbAtlasConfigureRequest
      */
-    privateKey: string;
+    private_key: string;
     /**
      * MongoDB Atlas Programmatic Public Key
      * @type {string}
      * @memberof MongoDbAtlasConfigureRequest
      */
-    publicKey: string;
+    public_key: string;
 }
 
 /**
  * Check if a given object implements the MongoDbAtlasConfigureRequest interface.
  */
 export function instanceOfMongoDbAtlasConfigureRequest(value: object): value is MongoDbAtlasConfigureRequest {
-    if (!('privateKey' in value) || value['privateKey'] === undefined) return false;
-    if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
+    if (!('private_key' in value) || value['private_key'] === undefined) return false;
+    if (!('public_key' in value) || value['public_key'] === undefined) return false;
     return true;
 }
 
@@ -52,8 +52,8 @@ export function MongoDbAtlasConfigureRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'privateKey': json['private_key'],
-        'publicKey': json['public_key'],
+        'private_key': json['private_key'],
+        'public_key': json['public_key'],
     };
 }
 
@@ -68,8 +68,8 @@ export function MongoDbAtlasConfigureRequestToJSONTyped(value?: MongoDbAtlasConf
 
     return {
         
-        'private_key': value['privateKey'],
-        'public_key': value['publicKey'],
+        'private_key': value['private_key'],
+        'public_key': value['public_key'],
     };
 }
 

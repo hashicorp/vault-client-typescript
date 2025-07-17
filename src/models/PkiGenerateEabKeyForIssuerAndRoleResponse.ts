@@ -24,13 +24,13 @@ export interface PkiGenerateEabKeyForIssuerAndRoleResponse {
      * @type {string}
      * @memberof PkiGenerateEabKeyForIssuerAndRoleResponse
      */
-    acmeDirectory?: string;
+    acme_directory?: string;
     /**
      * An RFC3339 formatted date time when the EAB token was created
      * @type {Date}
      * @memberof PkiGenerateEabKeyForIssuerAndRoleResponse
      */
-    createdOn?: Date;
+    created_on?: Date;
     /**
      * The EAB key identifier
      * @type {string}
@@ -48,7 +48,7 @@ export interface PkiGenerateEabKeyForIssuerAndRoleResponse {
      * @type {string}
      * @memberof PkiGenerateEabKeyForIssuerAndRoleResponse
      */
-    keyType?: string;
+    key_type?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiGenerateEabKeyForIssuerAndRoleResponseFromJSONTyped(json: any
     }
     return {
         
-        'acmeDirectory': json['acme_directory'] == null ? undefined : json['acme_directory'],
-        'createdOn': json['created_on'] == null ? undefined : (new Date(json['created_on'])),
+        'acme_directory': json['acme_directory'] == null ? undefined : json['acme_directory'],
+        'created_on': json['created_on'] == null ? undefined : (new Date(json['created_on'])),
         'id': json['id'] == null ? undefined : json['id'],
         'key': json['key'] == null ? undefined : json['key'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiGenerateEabKeyForIssuerAndRoleResponseToJSONTyped(value?: Pki
 
     return {
         
-        'acme_directory': value['acmeDirectory'],
-        'created_on': value['createdOn'] == null ? undefined : ((value['createdOn']).toISOString()),
+        'acme_directory': value['acme_directory'],
+        'created_on': value['created_on'] == null ? undefined : ((value['created_on']).toISOString()),
         'id': value['id'],
         'key': value['key'],
-        'key_type': value['keyType'],
+        'key_type': value['key_type'],
     };
 }
 

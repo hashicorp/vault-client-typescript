@@ -24,13 +24,13 @@ export interface AppRoleLoginRequest {
      * @type {string}
      * @memberof AppRoleLoginRequest
      */
-    roleId?: string;
+    role_id?: string;
     /**
      * SecretID belong to the App role
      * @type {string}
      * @memberof AppRoleLoginRequest
      */
-    secretId?: string;
+    secret_id?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function AppRoleLoginRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'roleId': json['role_id'] == null ? undefined : json['role_id'],
-        'secretId': json['secret_id'] == null ? undefined : json['secret_id'],
+        'role_id': json['role_id'] == null ? undefined : json['role_id'],
+        'secret_id': json['secret_id'] == null ? undefined : json['secret_id'],
     };
 }
 
@@ -66,8 +66,8 @@ export function AppRoleLoginRequestToJSONTyped(value?: AppRoleLoginRequest | nul
 
     return {
         
-        'role_id': value['roleId'],
-        'secret_id': value['secretId'],
+        'role_id': value['role_id'],
+        'secret_id': value['secret_id'],
     };
 }
 

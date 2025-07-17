@@ -31,7 +31,7 @@ export interface AppRoleReadPoliciesResponse {
      * @type {Array<string>}
      * @memberof AppRoleReadPoliciesResponse
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function AppRoleReadPoliciesResponseFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
     };
 }
 
@@ -68,7 +68,7 @@ export function AppRoleReadPoliciesResponseToJSONTyped(value?: AppRoleReadPolici
     return {
         
         'policies': value['policies'],
-        'token_policies': value['tokenPolicies'],
+        'token_policies': value['token_policies'],
     };
 }
 

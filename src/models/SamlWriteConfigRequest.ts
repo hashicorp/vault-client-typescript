@@ -24,69 +24,69 @@ export interface SamlWriteConfigRequest {
      * @type {Array<string>}
      * @memberof SamlWriteConfigRequest
      */
-    acsUrls: Array<string>;
+    acs_urls: Array<string>;
     /**
      * The role to use if no role is provided during login. If not set, a role is required during login.
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    defaultRole?: string;
+    default_role?: string;
     /**
      * The entity ID of this authentication method as a SAML Service Provider
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    entityId: string;
+    entity_id: string;
     /**
      * The PEM-encoded certificate of the Identity Provider used to verify response and assertion signatures. Mutually exclusive with 'idp_metadata_url'.
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    idpCert?: string;
+    idp_cert?: string;
     /**
      * The entity ID of the Identity Provider. Mutually exclusive with 'idp_metadata_url'.
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    idpEntityId?: string;
+    idp_entity_id?: string;
     /**
      * The metadata URL of the Identity Provider. Mutually exclusive with 'idp_sso_url', 'idp_issuer' and 'idp_cert'. Must be a well-formatted URL.
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    idpMetadataUrl?: string;
+    idp_metadata_url?: string;
     /**
      * The SSO URL of the Identity Provider. Mutually exclusive with 'idp_metadata_url'. Must be a well-formatted URL.
      * @type {string}
      * @memberof SamlWriteConfigRequest
      */
-    idpSsoUrl?: string;
+    idp_sso_url?: string;
     /**
      * Enables validation of signature for at least assertion in the SAML response. If IDP allows signing both response and assertion, then recommendation is to opt for validating signatures of both by enabling individual options
      * @type {boolean}
      * @memberof SamlWriteConfigRequest
      */
-    validateAssertionSignature?: boolean;
+    validate_assertion_signature?: boolean;
     /**
      * Enables validation of signature for at least response in the SAML response. If IDP allows signing both response and assertion, then recommendation is to opt for validating signatures of both by enabling individual options
      * @type {boolean}
      * @memberof SamlWriteConfigRequest
      */
-    validateResponseSignature?: boolean;
+    validate_response_signature?: boolean;
     /**
      * Log additional information during the SAML exchange. The user data will be logged when debug-level logging is active and the full SAML response will be logged when trace-level logging is active
      * @type {boolean}
      * @memberof SamlWriteConfigRequest
      */
-    verboseLogging?: boolean;
+    verbose_logging?: boolean;
 }
 
 /**
  * Check if a given object implements the SamlWriteConfigRequest interface.
  */
 export function instanceOfSamlWriteConfigRequest(value: object): value is SamlWriteConfigRequest {
-    if (!('acsUrls' in value) || value['acsUrls'] === undefined) return false;
-    if (!('entityId' in value) || value['entityId'] === undefined) return false;
+    if (!('acs_urls' in value) || value['acs_urls'] === undefined) return false;
+    if (!('entity_id' in value) || value['entity_id'] === undefined) return false;
     return true;
 }
 
@@ -100,16 +100,16 @@ export function SamlWriteConfigRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'acsUrls': json['acs_urls'],
-        'defaultRole': json['default_role'] == null ? undefined : json['default_role'],
-        'entityId': json['entity_id'],
-        'idpCert': json['idp_cert'] == null ? undefined : json['idp_cert'],
-        'idpEntityId': json['idp_entity_id'] == null ? undefined : json['idp_entity_id'],
-        'idpMetadataUrl': json['idp_metadata_url'] == null ? undefined : json['idp_metadata_url'],
-        'idpSsoUrl': json['idp_sso_url'] == null ? undefined : json['idp_sso_url'],
-        'validateAssertionSignature': json['validate_assertion_signature'] == null ? undefined : json['validate_assertion_signature'],
-        'validateResponseSignature': json['validate_response_signature'] == null ? undefined : json['validate_response_signature'],
-        'verboseLogging': json['verbose_logging'] == null ? undefined : json['verbose_logging'],
+        'acs_urls': json['acs_urls'],
+        'default_role': json['default_role'] == null ? undefined : json['default_role'],
+        'entity_id': json['entity_id'],
+        'idp_cert': json['idp_cert'] == null ? undefined : json['idp_cert'],
+        'idp_entity_id': json['idp_entity_id'] == null ? undefined : json['idp_entity_id'],
+        'idp_metadata_url': json['idp_metadata_url'] == null ? undefined : json['idp_metadata_url'],
+        'idp_sso_url': json['idp_sso_url'] == null ? undefined : json['idp_sso_url'],
+        'validate_assertion_signature': json['validate_assertion_signature'] == null ? undefined : json['validate_assertion_signature'],
+        'validate_response_signature': json['validate_response_signature'] == null ? undefined : json['validate_response_signature'],
+        'verbose_logging': json['verbose_logging'] == null ? undefined : json['verbose_logging'],
     };
 }
 
@@ -124,16 +124,16 @@ export function SamlWriteConfigRequestToJSONTyped(value?: SamlWriteConfigRequest
 
     return {
         
-        'acs_urls': value['acsUrls'],
-        'default_role': value['defaultRole'],
-        'entity_id': value['entityId'],
-        'idp_cert': value['idpCert'],
-        'idp_entity_id': value['idpEntityId'],
-        'idp_metadata_url': value['idpMetadataUrl'],
-        'idp_sso_url': value['idpSsoUrl'],
-        'validate_assertion_signature': value['validateAssertionSignature'],
-        'validate_response_signature': value['validateResponseSignature'],
-        'verbose_logging': value['verboseLogging'],
+        'acs_urls': value['acs_urls'],
+        'default_role': value['default_role'],
+        'entity_id': value['entity_id'],
+        'idp_cert': value['idp_cert'],
+        'idp_entity_id': value['idp_entity_id'],
+        'idp_metadata_url': value['idp_metadata_url'],
+        'idp_sso_url': value['idp_sso_url'],
+        'validate_assertion_signature': value['validate_assertion_signature'],
+        'validate_response_signature': value['validate_response_signature'],
+        'verbose_logging': value['verbose_logging'],
     };
 }
 

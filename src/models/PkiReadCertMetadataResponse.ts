@@ -24,7 +24,7 @@ export interface PkiReadCertMetadataResponse {
      * @type {string}
      * @memberof PkiReadCertMetadataResponse
      */
-    certMetadata?: string;
+    cert_metadata?: string;
     /**
      * Expiration time of the certificate, RFC 3339 formatted
      * @type {string}
@@ -36,7 +36,7 @@ export interface PkiReadCertMetadataResponse {
      * @type {string}
      * @memberof PkiReadCertMetadataResponse
      */
-    issuerId?: string;
+    issuer_id?: string;
     /**
      * Role that issued the certificate
      * @type {string}
@@ -48,7 +48,7 @@ export interface PkiReadCertMetadataResponse {
      * @type {string}
      * @memberof PkiReadCertMetadataResponse
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function PkiReadCertMetadataResponseFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'certMetadata': json['cert_metadata'] == null ? undefined : json['cert_metadata'],
+        'cert_metadata': json['cert_metadata'] == null ? undefined : json['cert_metadata'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'issuerId': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
         'role': json['role'] == null ? undefined : json['role'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -87,11 +87,11 @@ export function PkiReadCertMetadataResponseToJSONTyped(value?: PkiReadCertMetada
 
     return {
         
-        'cert_metadata': value['certMetadata'],
+        'cert_metadata': value['cert_metadata'],
         'expiration': value['expiration'],
-        'issuer_id': value['issuerId'],
+        'issuer_id': value['issuer_id'],
         'role': value['role'],
-        'serial_number': value['serialNumber'],
+        'serial_number': value['serial_number'],
     };
 }
 

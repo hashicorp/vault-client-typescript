@@ -24,7 +24,7 @@ export interface TransformCheckTokenizedRequest {
      * @type {Array<object>}
      * @memberof TransformCheckTokenizedRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * For lookup, the specific expiration time of the token to retrieve. Can be omitted to look for a token with no expiration, or `any` for all tokens regardless of expiration. This and min/max expiration cannot be used simultaneously.
      * @type {string}
@@ -36,13 +36,13 @@ export interface TransformCheckTokenizedRequest {
      * @type {string}
      * @memberof TransformCheckTokenizedRequest
      */
-    maxExpiration?: string;
+    max_expiration?: string;
     /**
      * For ranged lookup of expirable tokens, the minimum expiration time of the token (in RFC3339 format), inclusive. This and expiration cannot be used simultaneously.
      * @type {string}
      * @memberof TransformCheckTokenizedRequest
      */
-    minExpiration?: string;
+    min_expiration?: string;
     /**
      * Name of the transformation.
      * @type {string}
@@ -74,10 +74,10 @@ export function TransformCheckTokenizedRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'maxExpiration': json['max_expiration'] == null ? undefined : json['max_expiration'],
-        'minExpiration': json['min_expiration'] == null ? undefined : json['min_expiration'],
+        'max_expiration': json['max_expiration'] == null ? undefined : json['max_expiration'],
+        'min_expiration': json['min_expiration'] == null ? undefined : json['min_expiration'],
         'transformation': json['transformation'] == null ? undefined : json['transformation'],
         'value': json['value'] == null ? undefined : json['value'],
     };
@@ -94,10 +94,10 @@ export function TransformCheckTokenizedRequestToJSONTyped(value?: TransformCheck
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'expiration': value['expiration'],
-        'max_expiration': value['maxExpiration'],
-        'min_expiration': value['minExpiration'],
+        'max_expiration': value['max_expiration'],
+        'min_expiration': value['min_expiration'],
         'transformation': value['transformation'],
         'value': value['value'],
     };

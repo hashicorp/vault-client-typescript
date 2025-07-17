@@ -30,13 +30,13 @@ export interface TransformWriteTemplateRequest {
      * @type {object}
      * @memberof TransformWriteTemplateRequest
      */
-    decodeFormats?: object;
+    decode_formats?: object;
     /**
      * The regular expression template to use to format encoded values. This is only used during FPE transformations.
      * @type {string}
      * @memberof TransformWriteTemplateRequest
      */
-    encodeFormat?: string;
+    encode_format?: string;
     /**
      * The pattern used for matching. Currently, only regular expression pattern is supported.
      * @type {string}
@@ -69,8 +69,8 @@ export function TransformWriteTemplateRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'alphabet': json['alphabet'] == null ? undefined : json['alphabet'],
-        'decodeFormats': json['decode_formats'] == null ? undefined : json['decode_formats'],
-        'encodeFormat': json['encode_format'] == null ? undefined : json['encode_format'],
+        'decode_formats': json['decode_formats'] == null ? undefined : json['decode_formats'],
+        'encode_format': json['encode_format'] == null ? undefined : json['encode_format'],
         'pattern': json['pattern'] == null ? undefined : json['pattern'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -88,8 +88,8 @@ export function TransformWriteTemplateRequestToJSONTyped(value?: TransformWriteT
     return {
         
         'alphabet': value['alphabet'],
-        'decode_formats': value['decodeFormats'],
-        'encode_format': value['encodeFormat'],
+        'decode_formats': value['decode_formats'],
+        'encode_format': value['encode_format'],
         'pattern': value['pattern'],
         'type': value['type'],
     };

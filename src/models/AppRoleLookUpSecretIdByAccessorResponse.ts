@@ -24,25 +24,25 @@ export interface AppRoleLookUpSecretIdByAccessorResponse {
      * @type {Array<string>}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    cidrList?: Array<string>;
+    cidr_list?: Array<string>;
     /**
      * 
      * @type {Date}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    creationTime?: Date;
+    creation_time?: Date;
     /**
      * 
      * @type {Date}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    expirationTime?: Date;
+    expiration_time?: Date;
     /**
      * 
      * @type {Date}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    lastUpdatedTime?: Date;
+    last_updated_time?: Date;
     /**
      * 
      * @type {object}
@@ -54,25 +54,25 @@ export interface AppRoleLookUpSecretIdByAccessorResponse {
      * @type {string}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    secretIdAccessor?: string;
+    secret_id_accessor?: string;
     /**
      * Number of times a secret ID can access the role, after which the secret ID will expire.
      * @type {number}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    secretIdNumUses?: number;
+    secret_id_num_uses?: number;
     /**
      * Duration in seconds after which the issued secret ID expires.
      * @type {number}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    secretIdTtl?: number;
+    secret_id_ttl?: number;
     /**
      * List of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
      * @type {Array<string>}
      * @memberof AppRoleLookUpSecretIdByAccessorResponse
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
 }
 
 /**
@@ -92,15 +92,15 @@ export function AppRoleLookUpSecretIdByAccessorResponseFromJSONTyped(json: any, 
     }
     return {
         
-        'cidrList': json['cidr_list'] == null ? undefined : json['cidr_list'],
-        'creationTime': json['creation_time'] == null ? undefined : (new Date(json['creation_time'])),
-        'expirationTime': json['expiration_time'] == null ? undefined : (new Date(json['expiration_time'])),
-        'lastUpdatedTime': json['last_updated_time'] == null ? undefined : (new Date(json['last_updated_time'])),
+        'cidr_list': json['cidr_list'] == null ? undefined : json['cidr_list'],
+        'creation_time': json['creation_time'] == null ? undefined : (new Date(json['creation_time'])),
+        'expiration_time': json['expiration_time'] == null ? undefined : (new Date(json['expiration_time'])),
+        'last_updated_time': json['last_updated_time'] == null ? undefined : (new Date(json['last_updated_time'])),
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'secretIdAccessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
-        'secretIdNumUses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
-        'secretIdTtl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'secret_id_accessor': json['secret_id_accessor'] == null ? undefined : json['secret_id_accessor'],
+        'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
+        'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
     };
 }
 
@@ -115,15 +115,15 @@ export function AppRoleLookUpSecretIdByAccessorResponseToJSONTyped(value?: AppRo
 
     return {
         
-        'cidr_list': value['cidrList'],
-        'creation_time': value['creationTime'] == null ? undefined : ((value['creationTime']).toISOString()),
-        'expiration_time': value['expirationTime'] == null ? undefined : ((value['expirationTime']).toISOString()),
-        'last_updated_time': value['lastUpdatedTime'] == null ? undefined : ((value['lastUpdatedTime']).toISOString()),
+        'cidr_list': value['cidr_list'],
+        'creation_time': value['creation_time'] == null ? undefined : ((value['creation_time']).toISOString()),
+        'expiration_time': value['expiration_time'] == null ? undefined : ((value['expiration_time']).toISOString()),
+        'last_updated_time': value['last_updated_time'] == null ? undefined : ((value['last_updated_time']).toISOString()),
         'metadata': value['metadata'],
-        'secret_id_accessor': value['secretIdAccessor'],
-        'secret_id_num_uses': value['secretIdNumUses'],
-        'secret_id_ttl': value['secretIdTtl'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
+        'secret_id_accessor': value['secret_id_accessor'],
+        'secret_id_num_uses': value['secret_id_num_uses'],
+        'secret_id_ttl': value['secret_id_ttl'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface GroupCreateAliasRequest {
      * @type {string}
      * @memberof GroupCreateAliasRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * ID of the group alias.
      * @type {string}
@@ -36,7 +36,7 @@ export interface GroupCreateAliasRequest {
      * @type {string}
      * @memberof GroupCreateAliasRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Alias of the group.
      * @type {string}
@@ -62,9 +62,9 @@ export function GroupCreateAliasRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
         'id': json['id'] == null ? undefined : json['id'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -80,9 +80,9 @@ export function GroupCreateAliasRequestToJSONTyped(value?: GroupCreateAliasReque
 
     return {
         
-        'canonical_id': value['canonicalId'],
+        'canonical_id': value['canonical_id'],
         'id': value['id'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

@@ -24,25 +24,25 @@ export interface AliCloudWriteRoleRequest {
      * @type {string}
      * @memberof AliCloudWriteRoleRequest
      */
-    inlinePolicies?: string;
+    inline_policies?: string;
     /**
      * The maximum allowed lifetime of tokens issued using this role.
      * @type {string}
      * @memberof AliCloudWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * The name and type of each remote policy to be applied. Example: "name:AliyunRDSReadOnlyAccess,type:System".
      * @type {Array<string>}
      * @memberof AliCloudWriteRoleRequest
      */
-    remotePolicies?: Array<string>;
+    remote_policies?: Array<string>;
     /**
      * ARN of the role to be assumed. If provided, inline_policies and remote_policies should be blank. At creation time, this role must have configured trusted actors, and the access key and secret that will be used to assume the role (in /config) must qualify as a trusted actor.
      * @type {string}
      * @memberof AliCloudWriteRoleRequest
      */
-    roleArn?: string;
+    role_arn?: string;
     /**
      * Duration in seconds after which the issued token should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
      * @type {string}
@@ -68,10 +68,10 @@ export function AliCloudWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'inlinePolicies': json['inline_policies'] == null ? undefined : json['inline_policies'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'remotePolicies': json['remote_policies'] == null ? undefined : json['remote_policies'],
-        'roleArn': json['role_arn'] == null ? undefined : json['role_arn'],
+        'inline_policies': json['inline_policies'] == null ? undefined : json['inline_policies'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'remote_policies': json['remote_policies'] == null ? undefined : json['remote_policies'],
+        'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -87,10 +87,10 @@ export function AliCloudWriteRoleRequestToJSONTyped(value?: AliCloudWriteRoleReq
 
     return {
         
-        'inline_policies': value['inlinePolicies'],
-        'max_ttl': value['maxTtl'],
-        'remote_policies': value['remotePolicies'],
-        'role_arn': value['roleArn'],
+        'inline_policies': value['inline_policies'],
+        'max_ttl': value['max_ttl'],
+        'remote_policies': value['remote_policies'],
+        'role_arn': value['role_arn'],
         'ttl': value['ttl'],
     };
 }

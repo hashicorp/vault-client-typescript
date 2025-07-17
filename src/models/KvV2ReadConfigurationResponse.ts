@@ -24,19 +24,19 @@ export interface KvV2ReadConfigurationResponse {
      * @type {boolean}
      * @memberof KvV2ReadConfigurationResponse
      */
-    casRequired?: boolean;
+    cas_required?: boolean;
     /**
      * The length of time before a version is deleted.
      * @type {string}
      * @memberof KvV2ReadConfigurationResponse
      */
-    deleteVersionAfter?: string;
+    delete_version_after?: string;
     /**
      * The number of versions to keep for each key.
      * @type {number}
      * @memberof KvV2ReadConfigurationResponse
      */
-    maxVersions?: number;
+    max_versions?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function KvV2ReadConfigurationResponseFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'casRequired': json['cas_required'] == null ? undefined : json['cas_required'],
-        'deleteVersionAfter': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
-        'maxVersions': json['max_versions'] == null ? undefined : json['max_versions'],
+        'cas_required': json['cas_required'] == null ? undefined : json['cas_required'],
+        'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
     };
 }
 
@@ -73,9 +73,9 @@ export function KvV2ReadConfigurationResponseToJSONTyped(value?: KvV2ReadConfigu
 
     return {
         
-        'cas_required': value['casRequired'],
-        'delete_version_after': value['deleteVersionAfter'],
-        'max_versions': value['maxVersions'],
+        'cas_required': value['cas_required'],
+        'delete_version_after': value['delete_version_after'],
+        'max_versions': value['max_versions'],
     };
 }
 

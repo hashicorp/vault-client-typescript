@@ -24,7 +24,7 @@ export interface DecodeTokenRequest {
      * @type {string}
      * @memberof DecodeTokenRequest
      */
-    encodedToken?: string;
+    encoded_token?: string;
     /**
      * Specifies the otp code for decode.
      * @type {string}
@@ -50,7 +50,7 @@ export function DecodeTokenRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'encodedToken': json['encoded_token'] == null ? undefined : json['encoded_token'],
+        'encoded_token': json['encoded_token'] == null ? undefined : json['encoded_token'],
         'otp': json['otp'] == null ? undefined : json['otp'],
     };
 }
@@ -66,7 +66,7 @@ export function DecodeTokenRequestToJSONTyped(value?: DecodeTokenRequest | null,
 
     return {
         
-        'encoded_token': value['encodedToken'],
+        'encoded_token': value['encoded_token'],
         'otp': value['otp'],
     };
 }

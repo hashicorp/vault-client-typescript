@@ -24,13 +24,13 @@ export interface TransitRotateKeyRequest {
      * @type {string}
      * @memberof TransitRotateKeyRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use for the new version of this transit key
      * @type {string}
      * @memberof TransitRotateKeyRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
 }
 
 /**
@@ -50,8 +50,8 @@ export function TransitRotateKeyRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
     };
 }
 
@@ -66,8 +66,8 @@ export function TransitRotateKeyRequestToJSONTyped(value?: TransitRotateKeyReque
 
     return {
         
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
     };
 }
 

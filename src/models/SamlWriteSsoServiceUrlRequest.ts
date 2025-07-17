@@ -24,19 +24,19 @@ export interface SamlWriteSsoServiceUrlRequest {
      * @type {string}
      * @memberof SamlWriteSsoServiceUrlRequest
      */
-    acsUrl?: string;
+    acs_url?: string;
     /**
      * The client challenge. Must be the output of a base64-encoded, sha256 digest of the 'client_verifier' eventually provided to the token API.
      * @type {string}
      * @memberof SamlWriteSsoServiceUrlRequest
      */
-    clientChallenge: string;
+    client_challenge: string;
     /**
      * The type of the requesting client. The response from the Assertion Consumer Service callback API will differ based on the provided type.
      * @type {string}
      * @memberof SamlWriteSsoServiceUrlRequest
      */
-    clientType?: SamlWriteSsoServiceUrlRequestClientTypeEnum;
+    client_type?: SamlWriteSsoServiceUrlRequestClientTypeEnum;
     /**
      * The role to issue an SSO Service URL for.
      * @type {string}
@@ -59,7 +59,7 @@ export enum SamlWriteSsoServiceUrlRequestClientTypeEnum {
  * Check if a given object implements the SamlWriteSsoServiceUrlRequest interface.
  */
 export function instanceOfSamlWriteSsoServiceUrlRequest(value: object): value is SamlWriteSsoServiceUrlRequest {
-    if (!('clientChallenge' in value) || value['clientChallenge'] === undefined) return false;
+    if (!('client_challenge' in value) || value['client_challenge'] === undefined) return false;
     if (!('role' in value) || value['role'] === undefined) return false;
     return true;
 }
@@ -74,9 +74,9 @@ export function SamlWriteSsoServiceUrlRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'acsUrl': json['acs_url'] == null ? undefined : json['acs_url'],
-        'clientChallenge': json['client_challenge'],
-        'clientType': json['client_type'] == null ? undefined : json['client_type'],
+        'acs_url': json['acs_url'] == null ? undefined : json['acs_url'],
+        'client_challenge': json['client_challenge'],
+        'client_type': json['client_type'] == null ? undefined : json['client_type'],
         'role': json['role'],
     };
 }
@@ -92,9 +92,9 @@ export function SamlWriteSsoServiceUrlRequestToJSONTyped(value?: SamlWriteSsoSer
 
     return {
         
-        'acs_url': value['acsUrl'],
-        'client_challenge': value['clientChallenge'],
-        'client_type': value['clientType'],
+        'acs_url': value['acs_url'],
+        'client_challenge': value['client_challenge'],
+        'client_type': value['client_type'],
         'role': value['role'],
     };
 }

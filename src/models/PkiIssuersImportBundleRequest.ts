@@ -24,7 +24,7 @@ export interface PkiIssuersImportBundleRequest {
      * @type {string}
      * @memberof PkiIssuersImportBundleRequest
      */
-    pemBundle?: string;
+    pem_bundle?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function PkiIssuersImportBundleRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'pemBundle': json['pem_bundle'] == null ? undefined : json['pem_bundle'],
+        'pem_bundle': json['pem_bundle'] == null ? undefined : json['pem_bundle'],
     };
 }
 
@@ -59,7 +59,7 @@ export function PkiIssuersImportBundleRequestToJSONTyped(value?: PkiIssuersImpor
 
     return {
         
-        'pem_bundle': value['pemBundle'],
+        'pem_bundle': value['pem_bundle'],
     };
 }
 

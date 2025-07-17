@@ -30,7 +30,7 @@ export interface RabbitMqWriteRoleRequest {
      * @type {string}
      * @memberof RabbitMqWriteRoleRequest
      */
-    vhostTopics?: string;
+    vhost_topics?: string;
     /**
      * A map of virtual hosts to permissions.
      * @type {string}
@@ -57,7 +57,7 @@ export function RabbitMqWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'tags': json['tags'] == null ? undefined : json['tags'],
-        'vhostTopics': json['vhost_topics'] == null ? undefined : json['vhost_topics'],
+        'vhost_topics': json['vhost_topics'] == null ? undefined : json['vhost_topics'],
         'vhosts': json['vhosts'] == null ? undefined : json['vhosts'],
     };
 }
@@ -74,7 +74,7 @@ export function RabbitMqWriteRoleRequestToJSONTyped(value?: RabbitMqWriteRoleReq
     return {
         
         'tags': value['tags'],
-        'vhost_topics': value['vhostTopics'],
+        'vhost_topics': value['vhost_topics'],
         'vhosts': value['vhosts'],
     };
 }

@@ -24,50 +24,50 @@ export interface CertWriteCertificateRequest {
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedCommonNames?: Array<string>;
+    allowed_common_names?: Array<string>;
     /**
      * A comma-separated list of DNS names. At least one must exist in the SANs. Supports globbing.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedDnsSans?: Array<string>;
+    allowed_dns_sans?: Array<string>;
     /**
      * A comma-separated list of Email Addresses. At least one must exist in the SANs. Supports globbing.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedEmailSans?: Array<string>;
+    allowed_email_sans?: Array<string>;
     /**
      * A comma-separated string or array of oid extensions. Upon successful authentication, these extensions will be added as metadata if they are present in the certificate. The metadata key will be the string consisting of the oid numbers separated by a dash (-) instead of a dot (.) to allow usage in ACL templates.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedMetadataExtensions?: Array<string>;
+    allowed_metadata_extensions?: Array<string>;
     /**
      * A comma-separated list of names. At least one must exist in either the Common Name or SANs. Supports globbing. This parameter is deprecated, please use allowed_common_names, allowed_dns_sans, allowed_email_sans, allowed_uri_sans.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedNames?: Array<string>;
+    allowed_names?: Array<string>;
     /**
      * A comma-separated list of Organizational Units names. At least one must exist in the OU field.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedOrganizationalUnits?: Array<string>;
+    allowed_organizational_units?: Array<string>;
     /**
      * A comma-separated list of URIs. At least one must exist in the SANs. Supports globbing.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    allowedUriSans?: Array<string>;
+    allowed_uri_sans?: Array<string>;
     /**
      * Use "token_bound_cidrs" instead. If this and "token_bound_cidrs" are both specified, only "token_bound_cidrs" will be used.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      * @deprecated
      */
-    boundCidrs?: Array<string>;
+    bound_cidrs?: Array<string>;
     /**
      * The public certificate that should be trusted. Must be x509 PEM encoded.
      * @type {string}
@@ -79,7 +79,7 @@ export interface CertWriteCertificateRequest {
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    displayName?: string;
+    display_name?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {number}
@@ -93,49 +93,49 @@ export interface CertWriteCertificateRequest {
      * @memberof CertWriteCertificateRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Any additional CA certificates needed to communicate with OCSP servers
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    ocspCaCertificates?: string;
+    ocsp_ca_certificates?: string;
     /**
      * Whether to attempt OCSP verification of certificates at login
      * @type {boolean}
      * @memberof CertWriteCertificateRequest
      */
-    ocspEnabled?: boolean;
+    ocsp_enabled?: boolean;
     /**
      * If set to true, if an OCSP revocation cannot be made successfully, login will proceed rather than failing. If false, failing to get an OCSP status fails the request.
      * @type {boolean}
      * @memberof CertWriteCertificateRequest
      */
-    ocspFailOpen?: boolean;
+    ocsp_fail_open?: boolean;
     /**
      * The number of retries the OCSP client should attempt per query.
      * @type {number}
      * @memberof CertWriteCertificateRequest
      */
-    ocspMaxRetries?: number;
+    ocsp_max_retries?: number;
     /**
      * If set to true, rather than accepting the first successful OCSP response, query all servers and consider the certificate valid only if all servers agree.
      * @type {boolean}
      * @memberof CertWriteCertificateRequest
      */
-    ocspQueryAllServers?: boolean;
+    ocsp_query_all_servers?: boolean;
     /**
      * A comma-separated list of OCSP server addresses. If unset, the OCSP server is determined from the AuthorityInformationAccess extension on the certificate being inspected.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    ocspServersOverride?: Array<string>;
+    ocsp_servers_override?: Array<string>;
     /**
      * If greater than 0, specifies the maximum age of an OCSP thisUpdate field to avoid accepting old responses without a nextUpdate field.
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    ocspThisUpdateMaxAge?: string;
+    ocsp_this_update_max_age?: string;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -155,61 +155,61 @@ export interface CertWriteCertificateRequest {
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    requiredExtensions?: Array<string>;
+    required_extensions?: Array<string>;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof CertWriteCertificateRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof CertWriteCertificateRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof CertWriteCertificateRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -236,37 +236,37 @@ export function CertWriteCertificateRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'allowedCommonNames': json['allowed_common_names'] == null ? undefined : json['allowed_common_names'],
-        'allowedDnsSans': json['allowed_dns_sans'] == null ? undefined : json['allowed_dns_sans'],
-        'allowedEmailSans': json['allowed_email_sans'] == null ? undefined : json['allowed_email_sans'],
-        'allowedMetadataExtensions': json['allowed_metadata_extensions'] == null ? undefined : json['allowed_metadata_extensions'],
-        'allowedNames': json['allowed_names'] == null ? undefined : json['allowed_names'],
-        'allowedOrganizationalUnits': json['allowed_organizational_units'] == null ? undefined : json['allowed_organizational_units'],
-        'allowedUriSans': json['allowed_uri_sans'] == null ? undefined : json['allowed_uri_sans'],
-        'boundCidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
+        'allowed_common_names': json['allowed_common_names'] == null ? undefined : json['allowed_common_names'],
+        'allowed_dns_sans': json['allowed_dns_sans'] == null ? undefined : json['allowed_dns_sans'],
+        'allowed_email_sans': json['allowed_email_sans'] == null ? undefined : json['allowed_email_sans'],
+        'allowed_metadata_extensions': json['allowed_metadata_extensions'] == null ? undefined : json['allowed_metadata_extensions'],
+        'allowed_names': json['allowed_names'] == null ? undefined : json['allowed_names'],
+        'allowed_organizational_units': json['allowed_organizational_units'] == null ? undefined : json['allowed_organizational_units'],
+        'allowed_uri_sans': json['allowed_uri_sans'] == null ? undefined : json['allowed_uri_sans'],
+        'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
-        'displayName': json['display_name'] == null ? undefined : json['display_name'],
+        'display_name': json['display_name'] == null ? undefined : json['display_name'],
         'lease': json['lease'] == null ? undefined : json['lease'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'ocspCaCertificates': json['ocsp_ca_certificates'] == null ? undefined : json['ocsp_ca_certificates'],
-        'ocspEnabled': json['ocsp_enabled'] == null ? undefined : json['ocsp_enabled'],
-        'ocspFailOpen': json['ocsp_fail_open'] == null ? undefined : json['ocsp_fail_open'],
-        'ocspMaxRetries': json['ocsp_max_retries'] == null ? undefined : json['ocsp_max_retries'],
-        'ocspQueryAllServers': json['ocsp_query_all_servers'] == null ? undefined : json['ocsp_query_all_servers'],
-        'ocspServersOverride': json['ocsp_servers_override'] == null ? undefined : json['ocsp_servers_override'],
-        'ocspThisUpdateMaxAge': json['ocsp_this_update_max_age'] == null ? undefined : json['ocsp_this_update_max_age'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'ocsp_ca_certificates': json['ocsp_ca_certificates'] == null ? undefined : json['ocsp_ca_certificates'],
+        'ocsp_enabled': json['ocsp_enabled'] == null ? undefined : json['ocsp_enabled'],
+        'ocsp_fail_open': json['ocsp_fail_open'] == null ? undefined : json['ocsp_fail_open'],
+        'ocsp_max_retries': json['ocsp_max_retries'] == null ? undefined : json['ocsp_max_retries'],
+        'ocsp_query_all_servers': json['ocsp_query_all_servers'] == null ? undefined : json['ocsp_query_all_servers'],
+        'ocsp_servers_override': json['ocsp_servers_override'] == null ? undefined : json['ocsp_servers_override'],
+        'ocsp_this_update_max_age': json['ocsp_this_update_max_age'] == null ? undefined : json['ocsp_this_update_max_age'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'requiredExtensions': json['required_extensions'] == null ? undefined : json['required_extensions'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'required_extensions': json['required_extensions'] == null ? undefined : json['required_extensions'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -282,37 +282,37 @@ export function CertWriteCertificateRequestToJSONTyped(value?: CertWriteCertific
 
     return {
         
-        'allowed_common_names': value['allowedCommonNames'],
-        'allowed_dns_sans': value['allowedDnsSans'],
-        'allowed_email_sans': value['allowedEmailSans'],
-        'allowed_metadata_extensions': value['allowedMetadataExtensions'],
-        'allowed_names': value['allowedNames'],
-        'allowed_organizational_units': value['allowedOrganizationalUnits'],
-        'allowed_uri_sans': value['allowedUriSans'],
-        'bound_cidrs': value['boundCidrs'],
+        'allowed_common_names': value['allowed_common_names'],
+        'allowed_dns_sans': value['allowed_dns_sans'],
+        'allowed_email_sans': value['allowed_email_sans'],
+        'allowed_metadata_extensions': value['allowed_metadata_extensions'],
+        'allowed_names': value['allowed_names'],
+        'allowed_organizational_units': value['allowed_organizational_units'],
+        'allowed_uri_sans': value['allowed_uri_sans'],
+        'bound_cidrs': value['bound_cidrs'],
         'certificate': value['certificate'],
-        'display_name': value['displayName'],
+        'display_name': value['display_name'],
         'lease': value['lease'],
-        'max_ttl': value['maxTtl'],
-        'ocsp_ca_certificates': value['ocspCaCertificates'],
-        'ocsp_enabled': value['ocspEnabled'],
-        'ocsp_fail_open': value['ocspFailOpen'],
-        'ocsp_max_retries': value['ocspMaxRetries'],
-        'ocsp_query_all_servers': value['ocspQueryAllServers'],
-        'ocsp_servers_override': value['ocspServersOverride'],
-        'ocsp_this_update_max_age': value['ocspThisUpdateMaxAge'],
+        'max_ttl': value['max_ttl'],
+        'ocsp_ca_certificates': value['ocsp_ca_certificates'],
+        'ocsp_enabled': value['ocsp_enabled'],
+        'ocsp_fail_open': value['ocsp_fail_open'],
+        'ocsp_max_retries': value['ocsp_max_retries'],
+        'ocsp_query_all_servers': value['ocsp_query_all_servers'],
+        'ocsp_servers_override': value['ocsp_servers_override'],
+        'ocsp_this_update_max_age': value['ocsp_this_update_max_age'],
         'period': value['period'],
         'policies': value['policies'],
-        'required_extensions': value['requiredExtensions'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'required_extensions': value['required_extensions'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
     };
 }

@@ -24,7 +24,7 @@ export interface SystemDeleteSyncGithubAppsNameResponse {
      * @type {number}
      * @memberof SystemDeleteSyncGithubAppsNameResponse
      */
-    appId?: number;
+    app_id?: number;
     /**
      * The name of the GitHub app. Used to identify the application when configuring the GitHub destination
      * @type {string}
@@ -50,7 +50,7 @@ export function SystemDeleteSyncGithubAppsNameResponseFromJSONTyped(json: any, i
     }
     return {
         
-        'appId': json['app_id'] == null ? undefined : json['app_id'],
+        'app_id': json['app_id'] == null ? undefined : json['app_id'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -66,7 +66,7 @@ export function SystemDeleteSyncGithubAppsNameResponseToJSONTyped(value?: System
 
     return {
         
-        'app_id': value['appId'],
+        'app_id': value['app_id'],
         'name': value['name'],
     };
 }

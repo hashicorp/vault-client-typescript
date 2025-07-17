@@ -30,7 +30,7 @@ export interface InternalGenerateOpenApiDocumentWithParametersRequest {
      * @type {boolean}
      * @memberof InternalGenerateOpenApiDocumentWithParametersRequest
      */
-    genericMountPaths?: boolean;
+    generic_mount_paths?: boolean;
 }
 
 /**
@@ -51,7 +51,7 @@ export function InternalGenerateOpenApiDocumentWithParametersRequestFromJSONType
     return {
         
         'context': json['context'] == null ? undefined : json['context'],
-        'genericMountPaths': json['generic_mount_paths'] == null ? undefined : json['generic_mount_paths'],
+        'generic_mount_paths': json['generic_mount_paths'] == null ? undefined : json['generic_mount_paths'],
     };
 }
 
@@ -67,7 +67,7 @@ export function InternalGenerateOpenApiDocumentWithParametersRequestToJSONTyped(
     return {
         
         'context': value['context'],
-        'generic_mount_paths': value['genericMountPaths'],
+        'generic_mount_paths': value['generic_mount_paths'],
     };
 }
 

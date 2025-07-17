@@ -24,7 +24,7 @@ export interface TransformLookUpTokenRequest {
      * @type {Array<object>}
      * @memberof TransformLookUpTokenRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * For lookup, the specific expiration time of the token to retrieve. Can be omitted to look for a token with no expiration, or `any` for all tokens regardless of expiration. This and min/max expiration cannot be used simultaneously.
      * @type {string}
@@ -36,13 +36,13 @@ export interface TransformLookUpTokenRequest {
      * @type {string}
      * @memberof TransformLookUpTokenRequest
      */
-    maxExpiration?: string;
+    max_expiration?: string;
     /**
      * For ranged lookup of expirable tokens, the minimum expiration time of the token (in RFC3339 format), inclusive. This and expiration cannot be used simultaneously.
      * @type {string}
      * @memberof TransformLookUpTokenRequest
      */
-    minExpiration?: string;
+    min_expiration?: string;
     /**
      * For DELETE, the value of the token to delete
      * @type {string}
@@ -80,10 +80,10 @@ export function TransformLookUpTokenRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'maxExpiration': json['max_expiration'] == null ? undefined : json['max_expiration'],
-        'minExpiration': json['min_expiration'] == null ? undefined : json['min_expiration'],
+        'max_expiration': json['max_expiration'] == null ? undefined : json['max_expiration'],
+        'min_expiration': json['min_expiration'] == null ? undefined : json['min_expiration'],
         'token': json['token'] == null ? undefined : json['token'],
         'transformation': json['transformation'] == null ? undefined : json['transformation'],
         'value': json['value'] == null ? undefined : json['value'],
@@ -101,10 +101,10 @@ export function TransformLookUpTokenRequestToJSONTyped(value?: TransformLookUpTo
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'expiration': value['expiration'],
-        'max_expiration': value['maxExpiration'],
-        'min_expiration': value['minExpiration'],
+        'max_expiration': value['max_expiration'],
+        'min_expiration': value['min_expiration'],
         'token': value['token'],
         'transformation': value['transformation'],
         'value': value['value'],

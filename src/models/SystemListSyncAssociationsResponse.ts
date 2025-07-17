@@ -24,7 +24,7 @@ export interface SystemListSyncAssociationsResponse {
      * @type {object}
      * @memberof SystemListSyncAssociationsResponse
      */
-    keyInfo?: object;
+    key_info?: object;
     /**
      * List of mounts with at least one association.
      * @type {Array<string>}
@@ -36,13 +36,13 @@ export interface SystemListSyncAssociationsResponse {
      * @type {number}
      * @memberof SystemListSyncAssociationsResponse
      */
-    totalAssociations?: number;
+    total_associations?: number;
     /**
      * Total number of synced secrets across all destinations.
      * @type {number}
      * @memberof SystemListSyncAssociationsResponse
      */
-    totalSecrets?: number;
+    total_secrets?: number;
 }
 
 /**
@@ -62,10 +62,10 @@ export function SystemListSyncAssociationsResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
-        'totalAssociations': json['total_associations'] == null ? undefined : json['total_associations'],
-        'totalSecrets': json['total_secrets'] == null ? undefined : json['total_secrets'],
+        'total_associations': json['total_associations'] == null ? undefined : json['total_associations'],
+        'total_secrets': json['total_secrets'] == null ? undefined : json['total_secrets'],
     };
 }
 
@@ -80,10 +80,10 @@ export function SystemListSyncAssociationsResponseToJSONTyped(value?: SystemList
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
-        'total_associations': value['totalAssociations'],
-        'total_secrets': value['totalSecrets'],
+        'total_associations': value['total_associations'],
+        'total_secrets': value['total_secrets'],
     };
 }
 

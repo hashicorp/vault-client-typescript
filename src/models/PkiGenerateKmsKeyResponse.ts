@@ -24,25 +24,25 @@ export interface PkiGenerateKmsKeyResponse {
      * @type {string}
      * @memberof PkiGenerateKmsKeyResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Name assigned to this key.
      * @type {string}
      * @memberof PkiGenerateKmsKeyResponse
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiGenerateKmsKeyResponse
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * The private key string
      * @type {string}
      * @memberof PkiGenerateKmsKeyResponse
      */
-    privateKey?: string;
+    private_key?: string;
 }
 
 /**
@@ -62,10 +62,10 @@ export function PkiGenerateKmsKeyResponseFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
     };
 }
 
@@ -80,10 +80,10 @@ export function PkiGenerateKmsKeyResponseToJSONTyped(value?: PkiGenerateKmsKeyRe
 
     return {
         
-        'key_id': value['keyId'],
-        'key_name': value['keyName'],
-        'key_type': value['keyType'],
-        'private_key': value['privateKey'],
+        'key_id': value['key_id'],
+        'key_name': value['key_name'],
+        'key_type': value['key_type'],
+        'private_key': value['private_key'],
     };
 }
 

@@ -24,19 +24,19 @@ export interface TransitConfigureKeyRequest {
      * @type {boolean}
      * @memberof TransitConfigureKeyRequest
      */
-    allowPlaintextBackup?: boolean;
+    allow_plaintext_backup?: boolean;
     /**
      * Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key.
      * @type {string}
      * @memberof TransitConfigureKeyRequest
      */
-    autoRotatePeriod?: string;
+    auto_rotate_period?: string;
     /**
      * Whether to allow deletion of the key
      * @type {boolean}
      * @memberof TransitConfigureKeyRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * Enables export of the key. Once set, this cannot be disabled.
      * @type {boolean}
@@ -48,13 +48,13 @@ export interface TransitConfigureKeyRequest {
      * @type {number}
      * @memberof TransitConfigureKeyRequest
      */
-    minDecryptionVersion?: number;
+    min_decryption_version?: number;
     /**
      * If set, the minimum version of the key allowed to be used for encryption; or for signing keys, to be used for signing. If set to zero, only the latest version of the key is allowed.
      * @type {number}
      * @memberof TransitConfigureKeyRequest
      */
-    minEncryptionVersion?: number;
+    min_encryption_version?: number;
 }
 
 /**
@@ -74,12 +74,12 @@ export function TransitConfigureKeyRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'allowPlaintextBackup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
-        'autoRotatePeriod': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'allow_plaintext_backup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
+        'auto_rotate_period': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
         'exportable': json['exportable'] == null ? undefined : json['exportable'],
-        'minDecryptionVersion': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
-        'minEncryptionVersion': json['min_encryption_version'] == null ? undefined : json['min_encryption_version'],
+        'min_decryption_version': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
+        'min_encryption_version': json['min_encryption_version'] == null ? undefined : json['min_encryption_version'],
     };
 }
 
@@ -94,12 +94,12 @@ export function TransitConfigureKeyRequestToJSONTyped(value?: TransitConfigureKe
 
     return {
         
-        'allow_plaintext_backup': value['allowPlaintextBackup'],
-        'auto_rotate_period': value['autoRotatePeriod'],
-        'deletion_allowed': value['deletionAllowed'],
+        'allow_plaintext_backup': value['allow_plaintext_backup'],
+        'auto_rotate_period': value['auto_rotate_period'],
+        'deletion_allowed': value['deletion_allowed'],
         'exportable': value['exportable'],
-        'min_decryption_version': value['minDecryptionVersion'],
-        'min_encryption_version': value['minEncryptionVersion'],
+        'min_decryption_version': value['min_decryption_version'],
+        'min_encryption_version': value['min_encryption_version'],
     };
 }
 

@@ -24,19 +24,19 @@ export interface KvV2PatchResponse {
      * @type {Date}
      * @memberof KvV2PatchResponse
      */
-    createdTime?: Date;
+    created_time?: Date;
     /**
      * 
      * @type {object}
      * @memberof KvV2PatchResponse
      */
-    customMetadata?: object;
+    custom_metadata?: object;
     /**
      * 
      * @type {string}
      * @memberof KvV2PatchResponse
      */
-    deletionTime?: string;
+    deletion_time?: string;
     /**
      * 
      * @type {boolean}
@@ -68,9 +68,9 @@ export function KvV2PatchResponseFromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         
-        'createdTime': json['created_time'] == null ? undefined : (new Date(json['created_time'])),
-        'customMetadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
-        'deletionTime': json['deletion_time'] == null ? undefined : json['deletion_time'],
+        'created_time': json['created_time'] == null ? undefined : (new Date(json['created_time'])),
+        'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
+        'deletion_time': json['deletion_time'] == null ? undefined : json['deletion_time'],
         'destroyed': json['destroyed'] == null ? undefined : json['destroyed'],
         'version': json['version'] == null ? undefined : json['version'],
     };
@@ -87,9 +87,9 @@ export function KvV2PatchResponseToJSONTyped(value?: KvV2PatchResponse | null, i
 
     return {
         
-        'created_time': value['createdTime'] == null ? undefined : ((value['createdTime']).toISOString()),
-        'custom_metadata': value['customMetadata'],
-        'deletion_time': value['deletionTime'],
+        'created_time': value['created_time'] == null ? undefined : ((value['created_time']).toISOString()),
+        'custom_metadata': value['custom_metadata'],
+        'deletion_time': value['deletion_time'],
         'destroyed': value['destroyed'],
         'version': value['version'],
     };

@@ -24,139 +24,139 @@ export interface SystemWriteStorageRaftSnapshotAutoConfigNameRequest {
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsAccessKeyId?: string;
+    aws_access_key_id?: string;
     /**
      * AWS bucket
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3Bucket?: string;
+    aws_s3_bucket?: string;
     /**
      * Disable TLS for the AWS endpoint, intended only for testing
      * @type {boolean}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3DisableTls?: boolean;
+    aws_s3_disable_tls?: boolean;
     /**
      * Use KMS to encrypt bucket contents
      * @type {boolean}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3EnableKms?: boolean;
+    aws_s3_enable_kms?: boolean;
     /**
      * AWS endpoint, typically only set when using a non-AWS S3 instance like Minio
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3Endpoint?: string;
+    aws_s3_endpoint?: string;
     /**
      * Use the endpoint/bucket URL style instead of bucket.endpoint
      * @type {boolean}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3ForcePathStyle?: boolean;
+    aws_s3_force_path_style?: boolean;
     /**
      * Use named KMS key
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3KmsKey?: string;
+    aws_s3_kms_key?: string;
     /**
      * AWS region
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3Region?: string;
+    aws_s3_region?: string;
     /**
      * Use AES256 to encrypt bucket contents
      * @type {boolean}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsS3ServerSideEncryption?: boolean;
+    aws_s3_server_side_encryption?: boolean;
     /**
      * AWS secret access key
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsSecretAccessKey?: string;
+    aws_secret_access_key?: string;
     /**
      * AWS session token
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    awsSessionToken?: string;
+    aws_session_token?: string;
     /**
      * Azure account key
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureAccountKey?: string;
+    azure_account_key?: string;
     /**
      * Azure account name
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureAccountName?: string;
+    azure_account_name?: string;
     /**
      * Azure auth mode: shared, managed, or application
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureAuthMode?: string;
+    azure_auth_mode?: string;
     /**
      * Azure blob environment
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureBlobEnvironment?: string;
+    azure_blob_environment?: string;
     /**
      * Azure client id
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureClientId?: string;
+    azure_client_id?: string;
     /**
      * Azure container name
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureContainerName?: string;
+    azure_container_name?: string;
     /**
      * Azure blob storage endpoint
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    azureEndpoint?: string;
+    azure_endpoint?: string;
     /**
      * file/object prefix prepended to snapshot ID
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    filePrefix?: string;
+    file_prefix?: string;
     /**
      * Disable TLS, normally only for testing
      * @type {boolean}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    googleDisableTls?: boolean;
+    google_disable_tls?: boolean;
     /**
      * GCS endpoint
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    googleEndpoint?: string;
+    google_endpoint?: string;
     /**
      * GCS bucket
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    googleGcsBucket?: string;
+    google_gcs_bucket?: string;
     /**
      * Service account key in JSON format
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    googleServiceAccountKey?: string;
+    google_service_account_key?: string;
     /**
      * snapshot schedule
      * @type {string}
@@ -168,13 +168,13 @@ export interface SystemWriteStorageRaftSnapshotAutoConfigNameRequest {
      * @type {number}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    localMaxSpace?: number;
+    local_max_space?: number;
     /**
      * directory (local) or bucket prefix (cloud) for snapshot
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    pathPrefix?: string;
+    path_prefix?: string;
     /**
      * how many snapshots to keep
      * @type {number}
@@ -186,7 +186,7 @@ export interface SystemWriteStorageRaftSnapshotAutoConfigNameRequest {
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
      */
-    storageType?: SystemWriteStorageRaftSnapshotAutoConfigNameRequestStorageTypeEnum;
+    storage_type?: SystemWriteStorageRaftSnapshotAutoConfigNameRequestStorageTypeEnum;
 }
 
 /**
@@ -218,34 +218,34 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestFromJSONTyped
     }
     return {
         
-        'awsAccessKeyId': json['aws_access_key_id'] == null ? undefined : json['aws_access_key_id'],
-        'awsS3Bucket': json['aws_s3_bucket'] == null ? undefined : json['aws_s3_bucket'],
-        'awsS3DisableTls': json['aws_s3_disable_tls'] == null ? undefined : json['aws_s3_disable_tls'],
-        'awsS3EnableKms': json['aws_s3_enable_kms'] == null ? undefined : json['aws_s3_enable_kms'],
-        'awsS3Endpoint': json['aws_s3_endpoint'] == null ? undefined : json['aws_s3_endpoint'],
-        'awsS3ForcePathStyle': json['aws_s3_force_path_style'] == null ? undefined : json['aws_s3_force_path_style'],
-        'awsS3KmsKey': json['aws_s3_kms_key'] == null ? undefined : json['aws_s3_kms_key'],
-        'awsS3Region': json['aws_s3_region'] == null ? undefined : json['aws_s3_region'],
-        'awsS3ServerSideEncryption': json['aws_s3_server_side_encryption'] == null ? undefined : json['aws_s3_server_side_encryption'],
-        'awsSecretAccessKey': json['aws_secret_access_key'] == null ? undefined : json['aws_secret_access_key'],
-        'awsSessionToken': json['aws_session_token'] == null ? undefined : json['aws_session_token'],
-        'azureAccountKey': json['azure_account_key'] == null ? undefined : json['azure_account_key'],
-        'azureAccountName': json['azure_account_name'] == null ? undefined : json['azure_account_name'],
-        'azureAuthMode': json['azure_auth_mode'] == null ? undefined : json['azure_auth_mode'],
-        'azureBlobEnvironment': json['azure_blob_environment'] == null ? undefined : json['azure_blob_environment'],
-        'azureClientId': json['azure_client_id'] == null ? undefined : json['azure_client_id'],
-        'azureContainerName': json['azure_container_name'] == null ? undefined : json['azure_container_name'],
-        'azureEndpoint': json['azure_endpoint'] == null ? undefined : json['azure_endpoint'],
-        'filePrefix': json['file_prefix'] == null ? undefined : json['file_prefix'],
-        'googleDisableTls': json['google_disable_tls'] == null ? undefined : json['google_disable_tls'],
-        'googleEndpoint': json['google_endpoint'] == null ? undefined : json['google_endpoint'],
-        'googleGcsBucket': json['google_gcs_bucket'] == null ? undefined : json['google_gcs_bucket'],
-        'googleServiceAccountKey': json['google_service_account_key'] == null ? undefined : json['google_service_account_key'],
+        'aws_access_key_id': json['aws_access_key_id'] == null ? undefined : json['aws_access_key_id'],
+        'aws_s3_bucket': json['aws_s3_bucket'] == null ? undefined : json['aws_s3_bucket'],
+        'aws_s3_disable_tls': json['aws_s3_disable_tls'] == null ? undefined : json['aws_s3_disable_tls'],
+        'aws_s3_enable_kms': json['aws_s3_enable_kms'] == null ? undefined : json['aws_s3_enable_kms'],
+        'aws_s3_endpoint': json['aws_s3_endpoint'] == null ? undefined : json['aws_s3_endpoint'],
+        'aws_s3_force_path_style': json['aws_s3_force_path_style'] == null ? undefined : json['aws_s3_force_path_style'],
+        'aws_s3_kms_key': json['aws_s3_kms_key'] == null ? undefined : json['aws_s3_kms_key'],
+        'aws_s3_region': json['aws_s3_region'] == null ? undefined : json['aws_s3_region'],
+        'aws_s3_server_side_encryption': json['aws_s3_server_side_encryption'] == null ? undefined : json['aws_s3_server_side_encryption'],
+        'aws_secret_access_key': json['aws_secret_access_key'] == null ? undefined : json['aws_secret_access_key'],
+        'aws_session_token': json['aws_session_token'] == null ? undefined : json['aws_session_token'],
+        'azure_account_key': json['azure_account_key'] == null ? undefined : json['azure_account_key'],
+        'azure_account_name': json['azure_account_name'] == null ? undefined : json['azure_account_name'],
+        'azure_auth_mode': json['azure_auth_mode'] == null ? undefined : json['azure_auth_mode'],
+        'azure_blob_environment': json['azure_blob_environment'] == null ? undefined : json['azure_blob_environment'],
+        'azure_client_id': json['azure_client_id'] == null ? undefined : json['azure_client_id'],
+        'azure_container_name': json['azure_container_name'] == null ? undefined : json['azure_container_name'],
+        'azure_endpoint': json['azure_endpoint'] == null ? undefined : json['azure_endpoint'],
+        'file_prefix': json['file_prefix'] == null ? undefined : json['file_prefix'],
+        'google_disable_tls': json['google_disable_tls'] == null ? undefined : json['google_disable_tls'],
+        'google_endpoint': json['google_endpoint'] == null ? undefined : json['google_endpoint'],
+        'google_gcs_bucket': json['google_gcs_bucket'] == null ? undefined : json['google_gcs_bucket'],
+        'google_service_account_key': json['google_service_account_key'] == null ? undefined : json['google_service_account_key'],
         'interval': json['interval'] == null ? undefined : json['interval'],
-        'localMaxSpace': json['local_max_space'] == null ? undefined : json['local_max_space'],
-        'pathPrefix': json['path_prefix'] == null ? undefined : json['path_prefix'],
+        'local_max_space': json['local_max_space'] == null ? undefined : json['local_max_space'],
+        'path_prefix': json['path_prefix'] == null ? undefined : json['path_prefix'],
         'retain': json['retain'] == null ? undefined : json['retain'],
-        'storageType': json['storage_type'] == null ? undefined : json['storage_type'],
+        'storage_type': json['storage_type'] == null ? undefined : json['storage_type'],
     };
 }
 
@@ -260,34 +260,34 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestToJSONTyped(v
 
     return {
         
-        'aws_access_key_id': value['awsAccessKeyId'],
-        'aws_s3_bucket': value['awsS3Bucket'],
-        'aws_s3_disable_tls': value['awsS3DisableTls'],
-        'aws_s3_enable_kms': value['awsS3EnableKms'],
-        'aws_s3_endpoint': value['awsS3Endpoint'],
-        'aws_s3_force_path_style': value['awsS3ForcePathStyle'],
-        'aws_s3_kms_key': value['awsS3KmsKey'],
-        'aws_s3_region': value['awsS3Region'],
-        'aws_s3_server_side_encryption': value['awsS3ServerSideEncryption'],
-        'aws_secret_access_key': value['awsSecretAccessKey'],
-        'aws_session_token': value['awsSessionToken'],
-        'azure_account_key': value['azureAccountKey'],
-        'azure_account_name': value['azureAccountName'],
-        'azure_auth_mode': value['azureAuthMode'],
-        'azure_blob_environment': value['azureBlobEnvironment'],
-        'azure_client_id': value['azureClientId'],
-        'azure_container_name': value['azureContainerName'],
-        'azure_endpoint': value['azureEndpoint'],
-        'file_prefix': value['filePrefix'],
-        'google_disable_tls': value['googleDisableTls'],
-        'google_endpoint': value['googleEndpoint'],
-        'google_gcs_bucket': value['googleGcsBucket'],
-        'google_service_account_key': value['googleServiceAccountKey'],
+        'aws_access_key_id': value['aws_access_key_id'],
+        'aws_s3_bucket': value['aws_s3_bucket'],
+        'aws_s3_disable_tls': value['aws_s3_disable_tls'],
+        'aws_s3_enable_kms': value['aws_s3_enable_kms'],
+        'aws_s3_endpoint': value['aws_s3_endpoint'],
+        'aws_s3_force_path_style': value['aws_s3_force_path_style'],
+        'aws_s3_kms_key': value['aws_s3_kms_key'],
+        'aws_s3_region': value['aws_s3_region'],
+        'aws_s3_server_side_encryption': value['aws_s3_server_side_encryption'],
+        'aws_secret_access_key': value['aws_secret_access_key'],
+        'aws_session_token': value['aws_session_token'],
+        'azure_account_key': value['azure_account_key'],
+        'azure_account_name': value['azure_account_name'],
+        'azure_auth_mode': value['azure_auth_mode'],
+        'azure_blob_environment': value['azure_blob_environment'],
+        'azure_client_id': value['azure_client_id'],
+        'azure_container_name': value['azure_container_name'],
+        'azure_endpoint': value['azure_endpoint'],
+        'file_prefix': value['file_prefix'],
+        'google_disable_tls': value['google_disable_tls'],
+        'google_endpoint': value['google_endpoint'],
+        'google_gcs_bucket': value['google_gcs_bucket'],
+        'google_service_account_key': value['google_service_account_key'],
         'interval': value['interval'],
-        'local_max_space': value['localMaxSpace'],
-        'path_prefix': value['pathPrefix'],
+        'local_max_space': value['local_max_space'],
+        'path_prefix': value['path_prefix'],
         'retain': value['retain'],
-        'storage_type': value['storageType'],
+        'storage_type': value['storage_type'],
     };
 }
 

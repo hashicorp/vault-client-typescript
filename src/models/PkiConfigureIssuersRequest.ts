@@ -30,7 +30,7 @@ export interface PkiConfigureIssuersRequest {
      * @type {boolean}
      * @memberof PkiConfigureIssuersRequest
      */
-    defaultFollowsLatestIssuer?: boolean;
+    default_follows_latest_issuer?: boolean;
 }
 
 /**
@@ -51,7 +51,7 @@ export function PkiConfigureIssuersRequestFromJSONTyped(json: any, ignoreDiscrim
     return {
         
         '_default': json['default'] == null ? undefined : json['default'],
-        'defaultFollowsLatestIssuer': json['default_follows_latest_issuer'] == null ? undefined : json['default_follows_latest_issuer'],
+        'default_follows_latest_issuer': json['default_follows_latest_issuer'] == null ? undefined : json['default_follows_latest_issuer'],
     };
 }
 
@@ -67,7 +67,7 @@ export function PkiConfigureIssuersRequestToJSONTyped(value?: PkiConfigureIssuer
     return {
         
         'default': value['_default'],
-        'default_follows_latest_issuer': value['defaultFollowsLatestIssuer'],
+        'default_follows_latest_issuer': value['default_follows_latest_issuer'],
     };
 }
 

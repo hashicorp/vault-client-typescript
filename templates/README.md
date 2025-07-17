@@ -266,10 +266,3 @@ await this.api.sys.uiConfigListCustomMessages(
   }
 );
 ```
-
-# Camelizing Response Keys
-
-For instances where a response is typed as void and we return the full response or for nested objects that are not typed, the response keys
-will be in snake_case. This causes issues with consistency since the `JSONApiResponse` transformer will convert known properties
-to camelCase. To ensure keys are consistently cased a method was added to convert all keys to camelCase. This is utilized in both
-the `JSONApiResponse` and `VoidApiResponse` classes.

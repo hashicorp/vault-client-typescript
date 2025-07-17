@@ -24,37 +24,37 @@ export interface MountsReadTuningInformationResponse {
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    allowedManagedKeys?: Array<string>;
+    allowed_managed_keys?: Array<string>;
     /**
      * A list of headers to whitelist and allow a plugin to set on responses.
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    allowedResponseHeaders?: Array<string>;
+    allowed_response_headers?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    auditNonHmacRequestKeys?: Array<string>;
+    audit_non_hmac_request_keys?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    auditNonHmacResponseKeys?: Array<string>;
+    audit_non_hmac_response_keys?: Array<string>;
     /**
      * The default lease TTL for this mount.
      * @type {number}
      * @memberof MountsReadTuningInformationResponse
      */
-    defaultLeaseTtl?: number;
+    default_lease_ttl?: number;
     /**
      * A list of auth accessors that the mount is allowed to delegate authentication too
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    delegatedAuthAccessors?: Array<string>;
+    delegated_auth_accessors?: Array<string>;
     /**
      * User-friendly description for this credential backend.
      * @type {string}
@@ -66,31 +66,31 @@ export interface MountsReadTuningInformationResponse {
      * @type {boolean}
      * @memberof MountsReadTuningInformationResponse
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof MountsReadTuningInformationResponse
      */
-    forceNoCache?: boolean;
+    force_no_cache?: boolean;
     /**
      * 
      * @type {string}
      * @memberof MountsReadTuningInformationResponse
      */
-    identityTokenKey?: string;
+    identity_token_key?: string;
     /**
      * 
      * @type {string}
      * @memberof MountsReadTuningInformationResponse
      */
-    listingVisibility?: string;
+    listing_visibility?: string;
     /**
      * The max lease TTL for this mount.
      * @type {number}
      * @memberof MountsReadTuningInformationResponse
      */
-    maxLeaseTtl?: number;
+    max_lease_ttl?: number;
     /**
      * The options to pass into the backend. Should be a json object with string keys and values.
      * @type {object}
@@ -102,49 +102,49 @@ export interface MountsReadTuningInformationResponse {
      * @type {Array<string>}
      * @memberof MountsReadTuningInformationResponse
      */
-    passthroughRequestHeaders?: Array<string>;
+    passthrough_request_headers?: Array<string>;
     /**
      * The semantic version of the plugin to use, or image tag if oci_image is provided.
      * @type {string}
      * @memberof MountsReadTuningInformationResponse
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * The type of token to issue (service or batch).
      * @type {string}
      * @memberof MountsReadTuningInformationResponse
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * 
      * @type {boolean}
      * @memberof MountsReadTuningInformationResponse
      */
-    trimRequestTrailingSlashes?: boolean;
+    trim_request_trailing_slashes?: boolean;
     /**
      * 
      * @type {number}
      * @memberof MountsReadTuningInformationResponse
      */
-    userLockoutCounterResetDuration?: number;
+    user_lockout_counter_reset_duration?: number;
     /**
      * 
      * @type {boolean}
      * @memberof MountsReadTuningInformationResponse
      */
-    userLockoutDisable?: boolean;
+    user_lockout_disable?: boolean;
     /**
      * 
      * @type {number}
      * @memberof MountsReadTuningInformationResponse
      */
-    userLockoutDuration?: number;
+    user_lockout_duration?: number;
     /**
      * 
      * @type {number}
      * @memberof MountsReadTuningInformationResponse
      */
-    userLockoutThreshold?: number;
+    user_lockout_threshold?: number;
 }
 
 /**
@@ -164,27 +164,27 @@ export function MountsReadTuningInformationResponseFromJSONTyped(json: any, igno
     }
     return {
         
-        'allowedManagedKeys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
-        'allowedResponseHeaders': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
-        'auditNonHmacRequestKeys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
-        'auditNonHmacResponseKeys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
-        'defaultLeaseTtl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
-        'delegatedAuthAccessors': json['delegated_auth_accessors'] == null ? undefined : json['delegated_auth_accessors'],
+        'allowed_managed_keys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
+        'allowed_response_headers': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
+        'audit_non_hmac_request_keys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
+        'default_lease_ttl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
+        'delegated_auth_accessors': json['delegated_auth_accessors'] == null ? undefined : json['delegated_auth_accessors'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
-        'forceNoCache': json['force_no_cache'] == null ? undefined : json['force_no_cache'],
-        'identityTokenKey': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
-        'listingVisibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
-        'maxLeaseTtl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'force_no_cache': json['force_no_cache'] == null ? undefined : json['force_no_cache'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'listing_visibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
+        'max_lease_ttl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
         'options': json['options'] == null ? undefined : json['options'],
-        'passthroughRequestHeaders': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
-        'trimRequestTrailingSlashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
-        'userLockoutCounterResetDuration': json['user_lockout_counter_reset_duration'] == null ? undefined : json['user_lockout_counter_reset_duration'],
-        'userLockoutDisable': json['user_lockout_disable'] == null ? undefined : json['user_lockout_disable'],
-        'userLockoutDuration': json['user_lockout_duration'] == null ? undefined : json['user_lockout_duration'],
-        'userLockoutThreshold': json['user_lockout_threshold'] == null ? undefined : json['user_lockout_threshold'],
+        'passthrough_request_headers': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
+        'trim_request_trailing_slashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
+        'user_lockout_counter_reset_duration': json['user_lockout_counter_reset_duration'] == null ? undefined : json['user_lockout_counter_reset_duration'],
+        'user_lockout_disable': json['user_lockout_disable'] == null ? undefined : json['user_lockout_disable'],
+        'user_lockout_duration': json['user_lockout_duration'] == null ? undefined : json['user_lockout_duration'],
+        'user_lockout_threshold': json['user_lockout_threshold'] == null ? undefined : json['user_lockout_threshold'],
     };
 }
 
@@ -199,27 +199,27 @@ export function MountsReadTuningInformationResponseToJSONTyped(value?: MountsRea
 
     return {
         
-        'allowed_managed_keys': value['allowedManagedKeys'],
-        'allowed_response_headers': value['allowedResponseHeaders'],
-        'audit_non_hmac_request_keys': value['auditNonHmacRequestKeys'],
-        'audit_non_hmac_response_keys': value['auditNonHmacResponseKeys'],
-        'default_lease_ttl': value['defaultLeaseTtl'],
-        'delegated_auth_accessors': value['delegatedAuthAccessors'],
+        'allowed_managed_keys': value['allowed_managed_keys'],
+        'allowed_response_headers': value['allowed_response_headers'],
+        'audit_non_hmac_request_keys': value['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': value['audit_non_hmac_response_keys'],
+        'default_lease_ttl': value['default_lease_ttl'],
+        'delegated_auth_accessors': value['delegated_auth_accessors'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
-        'force_no_cache': value['forceNoCache'],
-        'identity_token_key': value['identityTokenKey'],
-        'listing_visibility': value['listingVisibility'],
-        'max_lease_ttl': value['maxLeaseTtl'],
+        'external_entropy_access': value['external_entropy_access'],
+        'force_no_cache': value['force_no_cache'],
+        'identity_token_key': value['identity_token_key'],
+        'listing_visibility': value['listing_visibility'],
+        'max_lease_ttl': value['max_lease_ttl'],
         'options': value['options'],
-        'passthrough_request_headers': value['passthroughRequestHeaders'],
-        'plugin_version': value['pluginVersion'],
-        'token_type': value['tokenType'],
-        'trim_request_trailing_slashes': value['trimRequestTrailingSlashes'],
-        'user_lockout_counter_reset_duration': value['userLockoutCounterResetDuration'],
-        'user_lockout_disable': value['userLockoutDisable'],
-        'user_lockout_duration': value['userLockoutDuration'],
-        'user_lockout_threshold': value['userLockoutThreshold'],
+        'passthrough_request_headers': value['passthrough_request_headers'],
+        'plugin_version': value['plugin_version'],
+        'token_type': value['token_type'],
+        'trim_request_trailing_slashes': value['trim_request_trailing_slashes'],
+        'user_lockout_counter_reset_duration': value['user_lockout_counter_reset_duration'],
+        'user_lockout_disable': value['user_lockout_disable'],
+        'user_lockout_duration': value['user_lockout_duration'],
+        'user_lockout_threshold': value['user_lockout_threshold'],
     };
 }
 

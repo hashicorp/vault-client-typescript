@@ -24,94 +24,94 @@ export interface JwtWriteRoleRequest {
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      */
-    allowedRedirectUris?: Array<string>;
+    allowed_redirect_uris?: Array<string>;
     /**
      * Comma-separated list of 'aud' claims that are valid for login; any match is sufficient
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      */
-    boundAudiences?: Array<string>;
+    bound_audiences?: Array<string>;
     /**
      * Use "token_bound_cidrs" instead. If this and "token_bound_cidrs" are both specified, only "token_bound_cidrs" will be used.
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      * @deprecated
      */
-    boundCidrs?: Array<string>;
+    bound_cidrs?: Array<string>;
     /**
      * Map of claims/values which must match for login
      * @type {object}
      * @memberof JwtWriteRoleRequest
      */
-    boundClaims?: object;
+    bound_claims?: object;
     /**
      * How to interpret values in the map of claims/values (which must match for login): allowed values are 'string' or 'glob'
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    boundClaimsType?: string;
+    bound_claims_type?: string;
     /**
      * The 'sub' claim that is valid for login. Optional.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    boundSubject?: string;
+    bound_subject?: string;
     /**
      * Mappings of claims (key) that will be copied to a metadata field (value)
      * @type {object}
      * @memberof JwtWriteRoleRequest
      */
-    claimMappings?: object;
+    claim_mappings?: object;
     /**
      * Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    clockSkewLeeway?: string;
+    clock_skew_leeway?: string;
     /**
      * Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    expirationLeeway?: string;
+    expiration_leeway?: string;
     /**
      * The claim to use for the Identity group alias names
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    groupsClaim?: string;
+    groups_claim?: string;
     /**
      * Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    maxAge?: string;
+    max_age?: string;
     /**
      * Use "token_max_ttl" instead. If this and "token_max_ttl" are both specified, only "token_max_ttl" will be used.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      * @deprecated
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    notBeforeLeeway?: string;
+    not_before_leeway?: string;
     /**
      * Use "token_num_uses" instead. If this and "token_num_uses" are both specified, only "token_num_uses" will be used.
      * @type {number}
      * @memberof JwtWriteRoleRequest
      * @deprecated
      */
-    numUses?: number;
+    num_uses?: number;
     /**
      * Comma-separated list of OIDC scopes
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      */
-    oidcScopes?: Array<string>;
+    oidc_scopes?: Array<string>;
     /**
      * Use "token_period" instead. If this and "token_period" are both specified, only "token_period" will be used.
      * @type {string}
@@ -131,61 +131,61 @@ export interface JwtWriteRoleRequest {
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    roleType?: string;
+    role_type?: string;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    tokenMaxTtl?: string;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof JwtWriteRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof JwtWriteRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
      */
-    tokenPolicies?: Array<string>;
+    token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    tokenTtl?: string;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Use "token_ttl" instead. If this and "token_ttl" are both specified, only "token_ttl" will be used.
      * @type {string}
@@ -198,19 +198,19 @@ export interface JwtWriteRoleRequest {
      * @type {string}
      * @memberof JwtWriteRoleRequest
      */
-    userClaim?: string;
+    user_claim?: string;
     /**
      * If true, the user_claim value will use JSON pointer syntax for referencing claims.
      * @type {boolean}
      * @memberof JwtWriteRoleRequest
      */
-    userClaimJsonPointer?: boolean;
+    user_claim_json_pointer?: boolean;
     /**
      * Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
      * @type {boolean}
      * @memberof JwtWriteRoleRequest
      */
-    verboseOidcLogging?: boolean;
+    verbose_oidc_logging?: boolean;
 }
 
 /**
@@ -230,37 +230,37 @@ export function JwtWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'allowedRedirectUris': json['allowed_redirect_uris'] == null ? undefined : json['allowed_redirect_uris'],
-        'boundAudiences': json['bound_audiences'] == null ? undefined : json['bound_audiences'],
-        'boundCidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
-        'boundClaims': json['bound_claims'] == null ? undefined : json['bound_claims'],
-        'boundClaimsType': json['bound_claims_type'] == null ? undefined : json['bound_claims_type'],
-        'boundSubject': json['bound_subject'] == null ? undefined : json['bound_subject'],
-        'claimMappings': json['claim_mappings'] == null ? undefined : json['claim_mappings'],
-        'clockSkewLeeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
-        'expirationLeeway': json['expiration_leeway'] == null ? undefined : json['expiration_leeway'],
-        'groupsClaim': json['groups_claim'] == null ? undefined : json['groups_claim'],
-        'maxAge': json['max_age'] == null ? undefined : json['max_age'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'notBeforeLeeway': json['not_before_leeway'] == null ? undefined : json['not_before_leeway'],
-        'numUses': json['num_uses'] == null ? undefined : json['num_uses'],
-        'oidcScopes': json['oidc_scopes'] == null ? undefined : json['oidc_scopes'],
+        'allowed_redirect_uris': json['allowed_redirect_uris'] == null ? undefined : json['allowed_redirect_uris'],
+        'bound_audiences': json['bound_audiences'] == null ? undefined : json['bound_audiences'],
+        'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
+        'bound_claims': json['bound_claims'] == null ? undefined : json['bound_claims'],
+        'bound_claims_type': json['bound_claims_type'] == null ? undefined : json['bound_claims_type'],
+        'bound_subject': json['bound_subject'] == null ? undefined : json['bound_subject'],
+        'claim_mappings': json['claim_mappings'] == null ? undefined : json['claim_mappings'],
+        'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
+        'expiration_leeway': json['expiration_leeway'] == null ? undefined : json['expiration_leeway'],
+        'groups_claim': json['groups_claim'] == null ? undefined : json['groups_claim'],
+        'max_age': json['max_age'] == null ? undefined : json['max_age'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'not_before_leeway': json['not_before_leeway'] == null ? undefined : json['not_before_leeway'],
+        'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
+        'oidc_scopes': json['oidc_scopes'] == null ? undefined : json['oidc_scopes'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'roleType': json['role_type'] == null ? undefined : json['role_type'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenMaxTtl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenPolicies': json['token_policies'] == null ? undefined : json['token_policies'],
-        'tokenTtl': json['token_ttl'] == null ? undefined : json['token_ttl'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'role_type': json['role_type'] == null ? undefined : json['role_type'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_policies': json['token_policies'] == null ? undefined : json['token_policies'],
+        'token_ttl': json['token_ttl'] == null ? undefined : json['token_ttl'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'userClaim': json['user_claim'] == null ? undefined : json['user_claim'],
-        'userClaimJsonPointer': json['user_claim_json_pointer'] == null ? undefined : json['user_claim_json_pointer'],
-        'verboseOidcLogging': json['verbose_oidc_logging'] == null ? undefined : json['verbose_oidc_logging'],
+        'user_claim': json['user_claim'] == null ? undefined : json['user_claim'],
+        'user_claim_json_pointer': json['user_claim_json_pointer'] == null ? undefined : json['user_claim_json_pointer'],
+        'verbose_oidc_logging': json['verbose_oidc_logging'] == null ? undefined : json['verbose_oidc_logging'],
     };
 }
 
@@ -275,37 +275,37 @@ export function JwtWriteRoleRequestToJSONTyped(value?: JwtWriteRoleRequest | nul
 
     return {
         
-        'allowed_redirect_uris': value['allowedRedirectUris'],
-        'bound_audiences': value['boundAudiences'],
-        'bound_cidrs': value['boundCidrs'],
-        'bound_claims': value['boundClaims'],
-        'bound_claims_type': value['boundClaimsType'],
-        'bound_subject': value['boundSubject'],
-        'claim_mappings': value['claimMappings'],
-        'clock_skew_leeway': value['clockSkewLeeway'],
-        'expiration_leeway': value['expirationLeeway'],
-        'groups_claim': value['groupsClaim'],
-        'max_age': value['maxAge'],
-        'max_ttl': value['maxTtl'],
-        'not_before_leeway': value['notBeforeLeeway'],
-        'num_uses': value['numUses'],
-        'oidc_scopes': value['oidcScopes'],
+        'allowed_redirect_uris': value['allowed_redirect_uris'],
+        'bound_audiences': value['bound_audiences'],
+        'bound_cidrs': value['bound_cidrs'],
+        'bound_claims': value['bound_claims'],
+        'bound_claims_type': value['bound_claims_type'],
+        'bound_subject': value['bound_subject'],
+        'claim_mappings': value['claim_mappings'],
+        'clock_skew_leeway': value['clock_skew_leeway'],
+        'expiration_leeway': value['expiration_leeway'],
+        'groups_claim': value['groups_claim'],
+        'max_age': value['max_age'],
+        'max_ttl': value['max_ttl'],
+        'not_before_leeway': value['not_before_leeway'],
+        'num_uses': value['num_uses'],
+        'oidc_scopes': value['oidc_scopes'],
         'period': value['period'],
         'policies': value['policies'],
-        'role_type': value['roleType'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_max_ttl': value['tokenMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_policies': value['tokenPolicies'],
-        'token_ttl': value['tokenTtl'],
-        'token_type': value['tokenType'],
+        'role_type': value['role_type'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_max_ttl': value['token_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_policies': value['token_policies'],
+        'token_ttl': value['token_ttl'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
-        'user_claim': value['userClaim'],
-        'user_claim_json_pointer': value['userClaimJsonPointer'],
-        'verbose_oidc_logging': value['verboseOidcLogging'],
+        'user_claim': value['user_claim'],
+        'user_claim_json_pointer': value['user_claim_json_pointer'],
+        'verbose_oidc_logging': value['verbose_oidc_logging'],
     };
 }
 

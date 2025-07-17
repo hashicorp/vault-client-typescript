@@ -24,19 +24,19 @@ export interface DatabaseWriteStaticRoleRequest {
      * @type {object}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    credentialConfig?: object;
+    credential_config?: object;
     /**
      * The type of credential to manage. Options include: 'password', 'rsa_private_key'. Defaults to 'password'.
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    credentialType?: string;
+    credential_type?: string;
     /**
      * Name of the database this role acts on.
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    dbName?: string;
+    db_name?: string;
     /**
      * Enterprise only. If set, the initial static account password of the external db user before the first Vault rotatation.
      * @type {string}
@@ -48,38 +48,38 @@ export interface DatabaseWriteStaticRoleRequest {
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * Schedule for automatic credential rotation of the given username. Mutually exclusive with "rotation_period."
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the database statements to be executed to rotate the accounts credentials. Not every plugin type will support this functionality. See the plugin's API page for more information on support and formatting for this parameter.
      * @type {Array<string>}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    rotationStatements?: Array<string>;
+    rotation_statements?: Array<string>;
     /**
      * The window of time in which rotations are allowed to occur starting from a given "rotation_schedule". Requires "rotation_schedule" to be specified
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * Used to connect to a self-managed static account. Must be provided by the user when root credentials are not provided.
      * @type {string}
      * @memberof DatabaseWriteStaticRoleRequest
      * @deprecated
      */
-    selfManagedPassword?: string;
+    self_managed_password?: string;
     /**
      * Enterprise only. If true, the static account password will not be rotated on creation of the role. Defaults to false.
      * @type {boolean}
      * @memberof DatabaseWriteStaticRoleRequest
      */
-    skipImportRotation?: boolean;
+    skip_import_rotation?: boolean;
     /**
      * Name of the static user account for Vault to manage. Requires "rotation_period" to be specified
      * @type {string}
@@ -105,16 +105,16 @@ export function DatabaseWriteStaticRoleRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'credentialConfig': json['credential_config'] == null ? undefined : json['credential_config'],
-        'credentialType': json['credential_type'] == null ? undefined : json['credential_type'],
-        'dbName': json['db_name'] == null ? undefined : json['db_name'],
+        'credential_config': json['credential_config'] == null ? undefined : json['credential_config'],
+        'credential_type': json['credential_type'] == null ? undefined : json['credential_type'],
+        'db_name': json['db_name'] == null ? undefined : json['db_name'],
         'password': json['password'] == null ? undefined : json['password'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationStatements': json['rotation_statements'] == null ? undefined : json['rotation_statements'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'selfManagedPassword': json['self_managed_password'] == null ? undefined : json['self_managed_password'],
-        'skipImportRotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_statements': json['rotation_statements'] == null ? undefined : json['rotation_statements'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'self_managed_password': json['self_managed_password'] == null ? undefined : json['self_managed_password'],
+        'skip_import_rotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
         'username': json['username'] == null ? undefined : json['username'],
     };
 }
@@ -130,16 +130,16 @@ export function DatabaseWriteStaticRoleRequestToJSONTyped(value?: DatabaseWriteS
 
     return {
         
-        'credential_config': value['credentialConfig'],
-        'credential_type': value['credentialType'],
-        'db_name': value['dbName'],
+        'credential_config': value['credential_config'],
+        'credential_type': value['credential_type'],
+        'db_name': value['db_name'],
         'password': value['password'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_statements': value['rotationStatements'],
-        'rotation_window': value['rotationWindow'],
-        'self_managed_password': value['selfManagedPassword'],
-        'skip_import_rotation': value['skipImportRotation'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_statements': value['rotation_statements'],
+        'rotation_window': value['rotation_window'],
+        'self_managed_password': value['self_managed_password'],
+        'skip_import_rotation': value['skip_import_rotation'],
         'username': value['username'],
     };
 }

@@ -31,7 +31,7 @@ export interface AppRoleReadPeriodResponse {
      * @type {number}
      * @memberof AppRoleReadPeriodResponse
      */
-    tokenPeriod?: number;
+    token_period?: number;
 }
 
 /**
@@ -52,7 +52,7 @@ export function AppRoleReadPeriodResponseFromJSONTyped(json: any, ignoreDiscrimi
     return {
         
         'period': json['period'] == null ? undefined : json['period'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
     };
 }
 
@@ -68,7 +68,7 @@ export function AppRoleReadPeriodResponseToJSONTyped(value?: AppRoleReadPeriodRe
     return {
         
         'period': value['period'],
-        'token_period': value['tokenPeriod'],
+        'token_period': value['token_period'],
     };
 }
 

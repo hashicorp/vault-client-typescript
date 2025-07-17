@@ -24,25 +24,25 @@ export interface OidcProviderAuthorizeWithParametersRequest {
      * @type {string}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    clientId: string;
+    client_id: string;
     /**
      * The code challenge derived from the code verifier.
      * @type {string}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    codeChallenge?: string;
+    code_challenge?: string;
     /**
      * The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.
      * @type {string}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    codeChallengeMethod?: string;
+    code_challenge_method?: string;
     /**
      * The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
      * @type {number}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    maxAge?: number;
+    max_age?: number;
     /**
      * The value that will be returned in the ID token nonce claim after a token exchange.
      * @type {string}
@@ -54,13 +54,13 @@ export interface OidcProviderAuthorizeWithParametersRequest {
      * @type {string}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    redirectUri: string;
+    redirect_uri: string;
     /**
      * The OIDC authentication flow to be used. The following response types are supported: 'code'
      * @type {string}
      * @memberof OidcProviderAuthorizeWithParametersRequest
      */
-    responseType: string;
+    response_type: string;
     /**
      * A space-delimited, case-sensitive list of scopes to be requested. The 'openid' scope is required.
      * @type {string}
@@ -79,9 +79,9 @@ export interface OidcProviderAuthorizeWithParametersRequest {
  * Check if a given object implements the OidcProviderAuthorizeWithParametersRequest interface.
  */
 export function instanceOfOidcProviderAuthorizeWithParametersRequest(value: object): value is OidcProviderAuthorizeWithParametersRequest {
-    if (!('clientId' in value) || value['clientId'] === undefined) return false;
-    if (!('redirectUri' in value) || value['redirectUri'] === undefined) return false;
-    if (!('responseType' in value) || value['responseType'] === undefined) return false;
+    if (!('client_id' in value) || value['client_id'] === undefined) return false;
+    if (!('redirect_uri' in value) || value['redirect_uri'] === undefined) return false;
+    if (!('response_type' in value) || value['response_type'] === undefined) return false;
     if (!('scope' in value) || value['scope'] === undefined) return false;
     return true;
 }
@@ -96,13 +96,13 @@ export function OidcProviderAuthorizeWithParametersRequestFromJSONTyped(json: an
     }
     return {
         
-        'clientId': json['client_id'],
-        'codeChallenge': json['code_challenge'] == null ? undefined : json['code_challenge'],
-        'codeChallengeMethod': json['code_challenge_method'] == null ? undefined : json['code_challenge_method'],
-        'maxAge': json['max_age'] == null ? undefined : json['max_age'],
+        'client_id': json['client_id'],
+        'code_challenge': json['code_challenge'] == null ? undefined : json['code_challenge'],
+        'code_challenge_method': json['code_challenge_method'] == null ? undefined : json['code_challenge_method'],
+        'max_age': json['max_age'] == null ? undefined : json['max_age'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'redirectUri': json['redirect_uri'],
-        'responseType': json['response_type'],
+        'redirect_uri': json['redirect_uri'],
+        'response_type': json['response_type'],
         'scope': json['scope'],
         'state': json['state'] == null ? undefined : json['state'],
     };
@@ -119,13 +119,13 @@ export function OidcProviderAuthorizeWithParametersRequestToJSONTyped(value?: Oi
 
     return {
         
-        'client_id': value['clientId'],
-        'code_challenge': value['codeChallenge'],
-        'code_challenge_method': value['codeChallengeMethod'],
-        'max_age': value['maxAge'],
+        'client_id': value['client_id'],
+        'code_challenge': value['code_challenge'],
+        'code_challenge_method': value['code_challenge_method'],
+        'max_age': value['max_age'],
         'nonce': value['nonce'],
-        'redirect_uri': value['redirectUri'],
-        'response_type': value['responseType'],
+        'redirect_uri': value['redirect_uri'],
+        'response_type': value['response_type'],
         'scope': value['scope'],
         'state': value['state'],
     };

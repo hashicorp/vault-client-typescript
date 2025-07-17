@@ -24,7 +24,7 @@ export interface PkiWriteExternalPolicyIssueResponse {
      * @type {Array<string>}
      * @memberof PkiWriteExternalPolicyIssueResponse
      */
-    caChain?: Array<string>;
+    ca_chain?: Array<string>;
     /**
      * Certificate
      * @type {string}
@@ -42,25 +42,25 @@ export interface PkiWriteExternalPolicyIssueResponse {
      * @type {string}
      * @memberof PkiWriteExternalPolicyIssueResponse
      */
-    issuingCa?: string;
+    issuing_ca?: string;
     /**
      * Private key
      * @type {string}
      * @memberof PkiWriteExternalPolicyIssueResponse
      */
-    privateKey?: string;
+    private_key?: string;
     /**
      * Private key type
      * @type {string}
      * @memberof PkiWriteExternalPolicyIssueResponse
      */
-    privateKeyType?: string;
+    private_key_type?: string;
     /**
      * Serial Number
      * @type {string}
      * @memberof PkiWriteExternalPolicyIssueResponse
      */
-    serialNumber?: string;
+    serial_number?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function PkiWriteExternalPolicyIssueResponseFromJSONTyped(json: any, igno
     }
     return {
         
-        'caChain': json['ca_chain'] == null ? undefined : json['ca_chain'],
+        'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
         'expiration': json['expiration'] == null ? undefined : json['expiration'],
-        'issuingCa': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
-        'privateKeyType': json['private_key_type'] == null ? undefined : json['private_key_type'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
+        'issuing_ca': json['issuing_ca'] == null ? undefined : json['issuing_ca'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
+        'private_key_type': json['private_key_type'] == null ? undefined : json['private_key_type'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
 
@@ -101,13 +101,13 @@ export function PkiWriteExternalPolicyIssueResponseToJSONTyped(value?: PkiWriteE
 
     return {
         
-        'ca_chain': value['caChain'],
+        'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
         'expiration': value['expiration'],
-        'issuing_ca': value['issuingCa'],
-        'private_key': value['privateKey'],
-        'private_key_type': value['privateKeyType'],
-        'serial_number': value['serialNumber'],
+        'issuing_ca': value['issuing_ca'],
+        'private_key': value['private_key'],
+        'private_key_type': value['private_key_type'],
+        'serial_number': value['serial_number'],
     };
 }
 

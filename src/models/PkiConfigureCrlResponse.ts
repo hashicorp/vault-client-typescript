@@ -24,25 +24,25 @@ export interface PkiConfigureCrlResponse {
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    autoRebuild?: boolean;
+    auto_rebuild?: boolean;
     /**
      * The time before the CRL expires to automatically rebuild it, when enabled. Must be shorter than the CRL expiry. Defaults to 12h.
      * @type {string}
      * @memberof PkiConfigureCrlResponse
      */
-    autoRebuildGracePeriod?: string;
+    auto_rebuild_grace_period?: string;
     /**
      * Whether to enable a global, cross-cluster revocation queue. Must be used with auto_rebuild=true.
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    crossClusterRevocation?: boolean;
+    cross_cluster_revocation?: boolean;
     /**
      * The time between delta CRL rebuilds if a new revocation has occurred. Must be shorter than the CRL expiry. Defaults to 15m.
      * @type {string}
      * @memberof PkiConfigureCrlResponse
      */
-    deltaRebuildInterval?: string;
+    delta_rebuild_interval?: string;
     /**
      * If set to true, disables generating the CRL entirely.
      * @type {boolean}
@@ -54,7 +54,7 @@ export interface PkiConfigureCrlResponse {
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    enableDelta?: boolean;
+    enable_delta?: boolean;
     /**
      * The amount of time the generated CRL should be valid; defaults to 72 hours
      * @type {string}
@@ -66,31 +66,31 @@ export interface PkiConfigureCrlResponse {
      * @type {number}
      * @memberof PkiConfigureCrlResponse
      */
-    maxCrlEntries?: number;
+    max_crl_entries?: number;
     /**
      * If set to true, ocsp unauthorized responses will be returned.
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    ocspDisable?: boolean;
+    ocsp_disable?: boolean;
     /**
      * The amount of time an OCSP response will be valid (controls the NextUpdate field); defaults to 12 hours
      * @type {string}
      * @memberof PkiConfigureCrlResponse
      */
-    ocspExpiry?: string;
+    ocsp_expiry?: string;
     /**
      * If set to true enables global replication of revocation entries, also enabling unified versions of OCSP and CRLs if their respective features are enabled. disable for CRLs and ocsp_disable for OCSP.
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    unifiedCrl?: boolean;
+    unified_crl?: boolean;
     /**
      * If set to true, existing CRL and OCSP paths will return the unified CRL instead of a response based on cluster-local data
      * @type {boolean}
      * @memberof PkiConfigureCrlResponse
      */
-    unifiedCrlOnExistingPaths?: boolean;
+    unified_crl_on_existing_paths?: boolean;
 }
 
 /**
@@ -110,18 +110,18 @@ export function PkiConfigureCrlResponseFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'autoRebuild': json['auto_rebuild'] == null ? undefined : json['auto_rebuild'],
-        'autoRebuildGracePeriod': json['auto_rebuild_grace_period'] == null ? undefined : json['auto_rebuild_grace_period'],
-        'crossClusterRevocation': json['cross_cluster_revocation'] == null ? undefined : json['cross_cluster_revocation'],
-        'deltaRebuildInterval': json['delta_rebuild_interval'] == null ? undefined : json['delta_rebuild_interval'],
+        'auto_rebuild': json['auto_rebuild'] == null ? undefined : json['auto_rebuild'],
+        'auto_rebuild_grace_period': json['auto_rebuild_grace_period'] == null ? undefined : json['auto_rebuild_grace_period'],
+        'cross_cluster_revocation': json['cross_cluster_revocation'] == null ? undefined : json['cross_cluster_revocation'],
+        'delta_rebuild_interval': json['delta_rebuild_interval'] == null ? undefined : json['delta_rebuild_interval'],
         'disable': json['disable'] == null ? undefined : json['disable'],
-        'enableDelta': json['enable_delta'] == null ? undefined : json['enable_delta'],
+        'enable_delta': json['enable_delta'] == null ? undefined : json['enable_delta'],
         'expiry': json['expiry'] == null ? undefined : json['expiry'],
-        'maxCrlEntries': json['max_crl_entries'] == null ? undefined : json['max_crl_entries'],
-        'ocspDisable': json['ocsp_disable'] == null ? undefined : json['ocsp_disable'],
-        'ocspExpiry': json['ocsp_expiry'] == null ? undefined : json['ocsp_expiry'],
-        'unifiedCrl': json['unified_crl'] == null ? undefined : json['unified_crl'],
-        'unifiedCrlOnExistingPaths': json['unified_crl_on_existing_paths'] == null ? undefined : json['unified_crl_on_existing_paths'],
+        'max_crl_entries': json['max_crl_entries'] == null ? undefined : json['max_crl_entries'],
+        'ocsp_disable': json['ocsp_disable'] == null ? undefined : json['ocsp_disable'],
+        'ocsp_expiry': json['ocsp_expiry'] == null ? undefined : json['ocsp_expiry'],
+        'unified_crl': json['unified_crl'] == null ? undefined : json['unified_crl'],
+        'unified_crl_on_existing_paths': json['unified_crl_on_existing_paths'] == null ? undefined : json['unified_crl_on_existing_paths'],
     };
 }
 
@@ -136,18 +136,18 @@ export function PkiConfigureCrlResponseToJSONTyped(value?: PkiConfigureCrlRespon
 
     return {
         
-        'auto_rebuild': value['autoRebuild'],
-        'auto_rebuild_grace_period': value['autoRebuildGracePeriod'],
-        'cross_cluster_revocation': value['crossClusterRevocation'],
-        'delta_rebuild_interval': value['deltaRebuildInterval'],
+        'auto_rebuild': value['auto_rebuild'],
+        'auto_rebuild_grace_period': value['auto_rebuild_grace_period'],
+        'cross_cluster_revocation': value['cross_cluster_revocation'],
+        'delta_rebuild_interval': value['delta_rebuild_interval'],
         'disable': value['disable'],
-        'enable_delta': value['enableDelta'],
+        'enable_delta': value['enable_delta'],
         'expiry': value['expiry'],
-        'max_crl_entries': value['maxCrlEntries'],
-        'ocsp_disable': value['ocspDisable'],
-        'ocsp_expiry': value['ocspExpiry'],
-        'unified_crl': value['unifiedCrl'],
-        'unified_crl_on_existing_paths': value['unifiedCrlOnExistingPaths'],
+        'max_crl_entries': value['max_crl_entries'],
+        'ocsp_disable': value['ocsp_disable'],
+        'ocsp_expiry': value['ocsp_expiry'],
+        'unified_crl': value['unified_crl'],
+        'unified_crl_on_existing_paths': value['unified_crl_on_existing_paths'],
     };
 }
 

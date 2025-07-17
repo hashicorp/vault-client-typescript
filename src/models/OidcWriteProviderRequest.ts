@@ -24,7 +24,7 @@ export interface OidcWriteProviderRequest {
      * @type {Array<string>}
      * @memberof OidcWriteProviderRequest
      */
-    allowedClientIds?: Array<string>;
+    allowed_client_ids?: Array<string>;
     /**
      * Specifies what will be used for the iss claim of ID tokens.
      * @type {string}
@@ -36,7 +36,7 @@ export interface OidcWriteProviderRequest {
      * @type {Array<string>}
      * @memberof OidcWriteProviderRequest
      */
-    scopesSupported?: Array<string>;
+    scopes_supported?: Array<string>;
 }
 
 /**
@@ -56,9 +56,9 @@ export function OidcWriteProviderRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
-        'allowedClientIds': json['allowed_client_ids'] == null ? undefined : json['allowed_client_ids'],
+        'allowed_client_ids': json['allowed_client_ids'] == null ? undefined : json['allowed_client_ids'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
-        'scopesSupported': json['scopes_supported'] == null ? undefined : json['scopes_supported'],
+        'scopes_supported': json['scopes_supported'] == null ? undefined : json['scopes_supported'],
     };
 }
 
@@ -73,9 +73,9 @@ export function OidcWriteProviderRequestToJSONTyped(value?: OidcWriteProviderReq
 
     return {
         
-        'allowed_client_ids': value['allowedClientIds'],
+        'allowed_client_ids': value['allowed_client_ids'],
         'issuer': value['issuer'],
-        'scopes_supported': value['scopesSupported'],
+        'scopes_supported': value['scopes_supported'],
     };
 }
 

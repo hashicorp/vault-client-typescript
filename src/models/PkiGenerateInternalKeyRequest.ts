@@ -24,31 +24,31 @@ export interface PkiGenerateInternalKeyRequest {
      * @type {number}
      * @memberof PkiGenerateInternalKeyRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * Optional name to be used for this key
      * @type {string}
      * @memberof PkiGenerateInternalKeyRequest
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiGenerateInternalKeyRequest
      */
-    keyType?: PkiGenerateInternalKeyRequestKeyTypeEnum;
+    key_type?: PkiGenerateInternalKeyRequestKeyTypeEnum;
     /**
      * The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
      * @type {string}
      * @memberof PkiGenerateInternalKeyRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
      * @type {string}
      * @memberof PkiGenerateInternalKeyRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
 }
 
 /**
@@ -79,11 +79,11 @@ export function PkiGenerateInternalKeyRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
     };
 }
 
@@ -98,11 +98,11 @@ export function PkiGenerateInternalKeyRequestToJSONTyped(value?: PkiGenerateInte
 
     return {
         
-        'key_bits': value['keyBits'],
-        'key_name': value['keyName'],
-        'key_type': value['keyType'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
+        'key_bits': value['key_bits'],
+        'key_name': value['key_name'],
+        'key_type': value['key_type'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
     };
 }
 

@@ -24,7 +24,7 @@ export interface SystemWriteNamespacesPathRequest {
      * @type {object}
      * @memberof SystemWriteNamespacesPathRequest
      */
-    customMetadata?: object;
+    custom_metadata?: object;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteNamespacesPathRequestFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'customMetadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
+        'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteNamespacesPathRequestToJSONTyped(value?: SystemWriteN
 
     return {
         
-        'custom_metadata': value['customMetadata'],
+        'custom_metadata': value['custom_metadata'],
     };
 }
 

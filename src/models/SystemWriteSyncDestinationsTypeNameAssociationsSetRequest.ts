@@ -30,7 +30,7 @@ export interface SystemWriteSyncDestinationsTypeNameAssociationsSetRequest {
      * @type {string}
      * @memberof SystemWriteSyncDestinationsTypeNameAssociationsSetRequest
      */
-    secretName?: string;
+    secret_name?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsSetRequestFromJSO
     return {
         
         'mount': json['mount'] == null ? undefined : json['mount'],
-        'secretName': json['secret_name'] == null ? undefined : json['secret_name'],
+        'secret_name': json['secret_name'] == null ? undefined : json['secret_name'],
     };
 }
 
@@ -67,7 +67,7 @@ export function SystemWriteSyncDestinationsTypeNameAssociationsSetRequestToJSONT
     return {
         
         'mount': value['mount'],
-        'secret_name': value['secretName'],
+        'secret_name': value['secret_name'],
     };
 }
 

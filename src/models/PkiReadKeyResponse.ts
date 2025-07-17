@@ -24,37 +24,37 @@ export interface PkiReadKeyResponse {
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Key Name
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * Key Type
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * Managed Key Id
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * Managed Key Name
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
     /**
      * RFC 5280 Subject Key Identifier of the public counterpart
      * @type {string}
      * @memberof PkiReadKeyResponse
      */
-    subjectKeyId?: string;
+    subject_key_id?: string;
 }
 
 /**
@@ -74,12 +74,12 @@ export function PkiReadKeyResponseFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
-        'subjectKeyId': json['subject_key_id'] == null ? undefined : json['subject_key_id'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'subject_key_id': json['subject_key_id'] == null ? undefined : json['subject_key_id'],
     };
 }
 
@@ -94,12 +94,12 @@ export function PkiReadKeyResponseToJSONTyped(value?: PkiReadKeyResponse | null,
 
     return {
         
-        'key_id': value['keyId'],
-        'key_name': value['keyName'],
-        'key_type': value['keyType'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
-        'subject_key_id': value['subjectKeyId'],
+        'key_id': value['key_id'],
+        'key_name': value['key_name'],
+        'key_type': value['key_type'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
+        'subject_key_id': value['subject_key_id'],
     };
 }
 

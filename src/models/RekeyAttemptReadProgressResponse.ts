@@ -42,7 +42,7 @@ export interface RekeyAttemptReadProgressResponse {
      * @type {Array<string>}
      * @memberof RekeyAttemptReadProgressResponse
      */
-    pgpFingerprints?: Array<string>;
+    pgp_fingerprints?: Array<string>;
     /**
      * 
      * @type {number}
@@ -72,13 +72,13 @@ export interface RekeyAttemptReadProgressResponse {
      * @type {string}
      * @memberof RekeyAttemptReadProgressResponse
      */
-    verificationNonce?: string;
+    verification_nonce?: string;
     /**
      * 
      * @type {boolean}
      * @memberof RekeyAttemptReadProgressResponse
      */
-    verificationRequired?: boolean;
+    verification_required?: boolean;
 }
 
 /**
@@ -101,13 +101,13 @@ export function RekeyAttemptReadProgressResponseFromJSONTyped(json: any, ignoreD
         'backup': json['backup'] == null ? undefined : json['backup'],
         'n': json['n'] == null ? undefined : json['n'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'pgpFingerprints': json['pgp_fingerprints'] == null ? undefined : json['pgp_fingerprints'],
+        'pgp_fingerprints': json['pgp_fingerprints'] == null ? undefined : json['pgp_fingerprints'],
         'progress': json['progress'] == null ? undefined : json['progress'],
         'required': json['required'] == null ? undefined : json['required'],
         'started': json['started'] == null ? undefined : json['started'],
         't': json['t'] == null ? undefined : json['t'],
-        'verificationNonce': json['verification_nonce'] == null ? undefined : json['verification_nonce'],
-        'verificationRequired': json['verification_required'] == null ? undefined : json['verification_required'],
+        'verification_nonce': json['verification_nonce'] == null ? undefined : json['verification_nonce'],
+        'verification_required': json['verification_required'] == null ? undefined : json['verification_required'],
     };
 }
 
@@ -125,13 +125,13 @@ export function RekeyAttemptReadProgressResponseToJSONTyped(value?: RekeyAttempt
         'backup': value['backup'],
         'n': value['n'],
         'nonce': value['nonce'],
-        'pgp_fingerprints': value['pgpFingerprints'],
+        'pgp_fingerprints': value['pgp_fingerprints'],
         'progress': value['progress'],
         'required': value['required'],
         'started': value['started'],
         't': value['t'],
-        'verification_nonce': value['verificationNonce'],
-        'verification_required': value['verificationRequired'],
+        'verification_nonce': value['verification_nonce'],
+        'verification_required': value['verification_required'],
     };
 }
 

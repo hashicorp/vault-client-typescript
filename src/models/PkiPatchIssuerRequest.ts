@@ -24,79 +24,79 @@ export interface PkiPatchIssuerRequest {
      * @type {Array<string>}
      * @memberof PkiPatchIssuerRequest
      */
-    crlDistributionPoints?: Array<string>;
+    crl_distribution_points?: Array<string>;
     /**
      * Comma-separated list of URLs to be used for the Delta CRL distribution points attribute, also known as Freshest CRL distribution points attribute. See also RFC 5280 Section 4.2.1.15.
      * @type {Array<string>}
      * @memberof PkiPatchIssuerRequest
      */
-    deltaCrlDistributionPoints?: Array<string>;
+    delta_crl_distribution_points?: Array<string>;
     /**
      * Whether critical extension checks should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiPatchIssuerRequest
      */
-    disableCriticalExtensionChecks?: boolean;
+    disable_critical_extension_checks?: boolean;
     /**
      * Whether the issuer name check should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiPatchIssuerRequest
      */
-    disableNameChecks?: boolean;
+    disable_name_checks?: boolean;
     /**
      * Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiPatchIssuerRequest
      */
-    disableNameConstraintChecks?: boolean;
+    disable_name_constraint_checks?: boolean;
     /**
      * Whether max path length checks should be performed when issuing certificates. (Enterprise only)
      * @type {boolean}
      * @memberof PkiPatchIssuerRequest
      */
-    disablePathLengthChecks?: boolean;
+    disable_path_length_checks?: boolean;
     /**
      * Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}', '{{cluster_path}}', '{{cluster_aia_path}}' are available, but the addresses are not checked for URL validity until issuance time. Using '{{cluster_path}}' requires /config/cluster's 'path' member to be set on all PR Secondary clusters and using '{{cluster_aia_path}}' requires /config/cluster's 'aia_path' member to be set on all PR secondary clusters.
      * @type {boolean}
      * @memberof PkiPatchIssuerRequest
      */
-    enableAiaUrlTemplating?: boolean;
+    enable_aia_url_templating?: boolean;
     /**
      * Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
      * @type {string}
      * @memberof PkiPatchIssuerRequest
      */
-    issuerName?: string;
+    issuer_name?: string;
     /**
      * Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.
      * @type {Array<string>}
      * @memberof PkiPatchIssuerRequest
      */
-    issuingCertificates?: Array<string>;
+    issuing_certificates?: Array<string>;
     /**
      * Behavior of leaf's NotAfter fields: "err" to error if the computed NotAfter date exceeds that of this issuer; "truncate" to silently truncate to that of this issuer; or "permit" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use "truncate" for intermediate CAs and "permit" only for root CAs.
      * @type {string}
      * @memberof PkiPatchIssuerRequest
      */
-    leafNotAfterBehavior?: string;
+    leaf_not_after_behavior?: string;
     /**
      * Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.
      * @type {Array<string>}
      * @memberof PkiPatchIssuerRequest
      */
-    manualChain?: Array<string>;
+    manual_chain?: Array<string>;
     /**
      * Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.
      * @type {Array<string>}
      * @memberof PkiPatchIssuerRequest
      */
-    ocspServers?: Array<string>;
+    ocsp_servers?: Array<string>;
     /**
      * Which x509.SignatureAlgorithm name to use for signing CRLs. This parameter allows differentiation between PKCS#1v1.5 and PSS keys and choice of signature hash algorithm. The default (empty string) value is for Go to select the signature algorithm. This can fail if the underlying key does not support the requested signature algorithm, which may not be known at modification time (such as with PKCS#11 managed RSA keys).
      * @type {string}
      * @memberof PkiPatchIssuerRequest
      */
-    revocationSignatureAlgorithm?: string;
+    revocation_signature_algorithm?: string;
     /**
      * Comma-separated list (or string slice) of usages for this issuer; valid values are "read-only", "issuing-certificates", "crl-signing", and "ocsp-signing". Multiple values may be specified. Read-only is implicit and always set.
      * @type {Array<string>}
@@ -122,19 +122,19 @@ export function PkiPatchIssuerRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'crlDistributionPoints': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
-        'deltaCrlDistributionPoints': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
-        'disableCriticalExtensionChecks': json['disable_critical_extension_checks'] == null ? undefined : json['disable_critical_extension_checks'],
-        'disableNameChecks': json['disable_name_checks'] == null ? undefined : json['disable_name_checks'],
-        'disableNameConstraintChecks': json['disable_name_constraint_checks'] == null ? undefined : json['disable_name_constraint_checks'],
-        'disablePathLengthChecks': json['disable_path_length_checks'] == null ? undefined : json['disable_path_length_checks'],
-        'enableAiaUrlTemplating': json['enable_aia_url_templating'] == null ? undefined : json['enable_aia_url_templating'],
-        'issuerName': json['issuer_name'] == null ? undefined : json['issuer_name'],
-        'issuingCertificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
-        'leafNotAfterBehavior': json['leaf_not_after_behavior'] == null ? undefined : json['leaf_not_after_behavior'],
-        'manualChain': json['manual_chain'] == null ? undefined : json['manual_chain'],
-        'ocspServers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
-        'revocationSignatureAlgorithm': json['revocation_signature_algorithm'] == null ? undefined : json['revocation_signature_algorithm'],
+        'crl_distribution_points': json['crl_distribution_points'] == null ? undefined : json['crl_distribution_points'],
+        'delta_crl_distribution_points': json['delta_crl_distribution_points'] == null ? undefined : json['delta_crl_distribution_points'],
+        'disable_critical_extension_checks': json['disable_critical_extension_checks'] == null ? undefined : json['disable_critical_extension_checks'],
+        'disable_name_checks': json['disable_name_checks'] == null ? undefined : json['disable_name_checks'],
+        'disable_name_constraint_checks': json['disable_name_constraint_checks'] == null ? undefined : json['disable_name_constraint_checks'],
+        'disable_path_length_checks': json['disable_path_length_checks'] == null ? undefined : json['disable_path_length_checks'],
+        'enable_aia_url_templating': json['enable_aia_url_templating'] == null ? undefined : json['enable_aia_url_templating'],
+        'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'issuing_certificates': json['issuing_certificates'] == null ? undefined : json['issuing_certificates'],
+        'leaf_not_after_behavior': json['leaf_not_after_behavior'] == null ? undefined : json['leaf_not_after_behavior'],
+        'manual_chain': json['manual_chain'] == null ? undefined : json['manual_chain'],
+        'ocsp_servers': json['ocsp_servers'] == null ? undefined : json['ocsp_servers'],
+        'revocation_signature_algorithm': json['revocation_signature_algorithm'] == null ? undefined : json['revocation_signature_algorithm'],
         'usage': json['usage'] == null ? undefined : json['usage'],
     };
 }
@@ -150,19 +150,19 @@ export function PkiPatchIssuerRequestToJSONTyped(value?: PkiPatchIssuerRequest |
 
     return {
         
-        'crl_distribution_points': value['crlDistributionPoints'],
-        'delta_crl_distribution_points': value['deltaCrlDistributionPoints'],
-        'disable_critical_extension_checks': value['disableCriticalExtensionChecks'],
-        'disable_name_checks': value['disableNameChecks'],
-        'disable_name_constraint_checks': value['disableNameConstraintChecks'],
-        'disable_path_length_checks': value['disablePathLengthChecks'],
-        'enable_aia_url_templating': value['enableAiaUrlTemplating'],
-        'issuer_name': value['issuerName'],
-        'issuing_certificates': value['issuingCertificates'],
-        'leaf_not_after_behavior': value['leafNotAfterBehavior'],
-        'manual_chain': value['manualChain'],
-        'ocsp_servers': value['ocspServers'],
-        'revocation_signature_algorithm': value['revocationSignatureAlgorithm'],
+        'crl_distribution_points': value['crl_distribution_points'],
+        'delta_crl_distribution_points': value['delta_crl_distribution_points'],
+        'disable_critical_extension_checks': value['disable_critical_extension_checks'],
+        'disable_name_checks': value['disable_name_checks'],
+        'disable_name_constraint_checks': value['disable_name_constraint_checks'],
+        'disable_path_length_checks': value['disable_path_length_checks'],
+        'enable_aia_url_templating': value['enable_aia_url_templating'],
+        'issuer_name': value['issuer_name'],
+        'issuing_certificates': value['issuing_certificates'],
+        'leaf_not_after_behavior': value['leaf_not_after_behavior'],
+        'manual_chain': value['manual_chain'],
+        'ocsp_servers': value['ocsp_servers'],
+        'revocation_signature_algorithm': value['revocation_signature_algorithm'],
         'usage': value['usage'],
     };
 }

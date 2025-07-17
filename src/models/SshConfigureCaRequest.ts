@@ -24,43 +24,43 @@ export interface SshConfigureCaRequest {
      * @type {boolean}
      * @memberof SshConfigureCaRequest
      */
-    generateSigningKey?: boolean;
+    generate_signing_key?: boolean;
     /**
      * Specifies the desired key bits when generating variable-length keys (such as when key_type="ssh-rsa") or which NIST P-curve to use when key_type="ec" (256, 384, or 521).
      * @type {number}
      * @memberof SshConfigureCaRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * Specifies the desired key type when generating; could be a OpenSSH key type identifier (ssh-rsa, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521, or ssh-ed25519) or an algorithm (rsa, ec, ed25519).
      * @type {string}
      * @memberof SshConfigureCaRequest
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * The id of the managed key to use. When using a managed key, this field or managed_key_name is required.
      * @type {string}
      * @memberof SshConfigureCaRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use. When using a managed key, this field or managed_key_id is required.
      * @type {string}
      * @memberof SshConfigureCaRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
     /**
      * Private half of the SSH key that will be used to sign certificates.
      * @type {string}
      * @memberof SshConfigureCaRequest
      */
-    privateKey?: string;
+    private_key?: string;
     /**
      * Public half of the SSH key that will be used to sign certificates.
      * @type {string}
      * @memberof SshConfigureCaRequest
      */
-    publicKey?: string;
+    public_key?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function SshConfigureCaRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'generateSigningKey': json['generate_signing_key'] == null ? undefined : json['generate_signing_key'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
-        'privateKey': json['private_key'] == null ? undefined : json['private_key'],
-        'publicKey': json['public_key'] == null ? undefined : json['public_key'],
+        'generate_signing_key': json['generate_signing_key'] == null ? undefined : json['generate_signing_key'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'private_key': json['private_key'] == null ? undefined : json['private_key'],
+        'public_key': json['public_key'] == null ? undefined : json['public_key'],
     };
 }
 
@@ -101,13 +101,13 @@ export function SshConfigureCaRequestToJSONTyped(value?: SshConfigureCaRequest |
 
     return {
         
-        'generate_signing_key': value['generateSigningKey'],
-        'key_bits': value['keyBits'],
-        'key_type': value['keyType'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
-        'private_key': value['privateKey'],
-        'public_key': value['publicKey'],
+        'generate_signing_key': value['generate_signing_key'],
+        'key_bits': value['key_bits'],
+        'key_type': value['key_type'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
+        'private_key': value['private_key'],
+        'public_key': value['public_key'],
     };
 }
 

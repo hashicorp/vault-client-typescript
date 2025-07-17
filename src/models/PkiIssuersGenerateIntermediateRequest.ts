@@ -24,19 +24,19 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {boolean}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    addBasicConstraints?: boolean;
+    add_basic_constraints?: boolean;
     /**
      * The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    altNames?: string;
+    alt_names?: string;
     /**
      * The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    commonName?: string;
+    common_name?: string;
     /**
      * If set, Country will be set to this value.
      * @type {Array<string>}
@@ -48,7 +48,7 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {boolean}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    excludeCnFromSans?: boolean;
+    exclude_cn_from_sans?: boolean;
     /**
      * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
@@ -60,37 +60,37 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    ipSans?: Array<string>;
+    ip_sans?: Array<string>;
     /**
      * The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, 4096 or 8192; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
      * @type {number}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * Reference to a existing key; either "default" for the configured default key, an identifier or the name assigned to the key.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    keyRef?: string;
+    key_ref?: string;
     /**
      * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    keyType?: PkiIssuersGenerateIntermediateRequestKeyTypeEnum;
+    key_type?: PkiIssuersGenerateIntermediateRequestKeyTypeEnum;
     /**
      * Specifies key_usage to encode in the certificate signing request. This is a comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the "KeyUsage" part of the name. If not set, key usage will not appear on the CSR.
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    keyUsage?: Array<string>;
+    key_usage?: Array<string>;
     /**
      * If set, Locality will be set to this value.
      * @type {Array<string>}
@@ -102,25 +102,25 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
     /**
      * Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    notAfter?: string;
+    not_after?: string;
     /**
      * The duration before now which the certificate needs to be backdated by.
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    notBeforeDuration?: string;
+    not_before_duration?: string;
     /**
      * If set, O (Organization) will be set to this value.
      * @type {Array<string>}
@@ -132,7 +132,7 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    otherSans?: Array<string>;
+    other_sans?: Array<string>;
     /**
      * If set, OU (OrganizationalUnit) will be set to this value.
      * @type {Array<string>}
@@ -144,13 +144,13 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    postalCode?: Array<string>;
+    postal_code?: Array<string>;
     /**
      * Format for the returned private key. Generally the default will be controlled by the "format" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to "der".
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    privateKeyFormat?: PkiIssuersGenerateIntermediateRequestPrivateKeyFormatEnum;
+    private_key_format?: PkiIssuersGenerateIntermediateRequestPrivateKeyFormatEnum;
     /**
      * If set, Province will be set to this value.
      * @type {Array<string>}
@@ -162,19 +162,19 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    serialNumber?: string;
+    serial_number?: string;
     /**
      * The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
      * @type {number}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    signatureBits?: number;
+    signature_bits?: number;
     /**
      * If set, Street Address will be set to this value.
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    streetAddress?: Array<string>;
+    street_address?: Array<string>;
     /**
      * The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
      * @type {string}
@@ -186,7 +186,7 @@ export interface PkiIssuersGenerateIntermediateRequest {
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
-    uriSans?: Array<string>;
+    uri_sans?: Array<string>;
 }
 
 /**
@@ -236,34 +236,34 @@ export function PkiIssuersGenerateIntermediateRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'addBasicConstraints': json['add_basic_constraints'] == null ? undefined : json['add_basic_constraints'],
-        'altNames': json['alt_names'] == null ? undefined : json['alt_names'],
-        'commonName': json['common_name'] == null ? undefined : json['common_name'],
+        'add_basic_constraints': json['add_basic_constraints'] == null ? undefined : json['add_basic_constraints'],
+        'alt_names': json['alt_names'] == null ? undefined : json['alt_names'],
+        'common_name': json['common_name'] == null ? undefined : json['common_name'],
         'country': json['country'] == null ? undefined : json['country'],
-        'excludeCnFromSans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
+        'exclude_cn_from_sans': json['exclude_cn_from_sans'] == null ? undefined : json['exclude_cn_from_sans'],
         'format': json['format'] == null ? undefined : json['format'],
-        'ipSans': json['ip_sans'] == null ? undefined : json['ip_sans'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyRef': json['key_ref'] == null ? undefined : json['key_ref'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'keyUsage': json['key_usage'] == null ? undefined : json['key_usage'],
+        'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_ref': json['key_ref'] == null ? undefined : json['key_ref'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'key_usage': json['key_usage'] == null ? undefined : json['key_usage'],
         'locality': json['locality'] == null ? undefined : json['locality'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
-        'notAfter': json['not_after'] == null ? undefined : json['not_after'],
-        'notBeforeDuration': json['not_before_duration'] == null ? undefined : json['not_before_duration'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'not_after': json['not_after'] == null ? undefined : json['not_after'],
+        'not_before_duration': json['not_before_duration'] == null ? undefined : json['not_before_duration'],
         'organization': json['organization'] == null ? undefined : json['organization'],
-        'otherSans': json['other_sans'] == null ? undefined : json['other_sans'],
+        'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
         'ou': json['ou'] == null ? undefined : json['ou'],
-        'postalCode': json['postal_code'] == null ? undefined : json['postal_code'],
-        'privateKeyFormat': json['private_key_format'] == null ? undefined : json['private_key_format'],
+        'postal_code': json['postal_code'] == null ? undefined : json['postal_code'],
+        'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
         'province': json['province'] == null ? undefined : json['province'],
-        'serialNumber': json['serial_number'] == null ? undefined : json['serial_number'],
-        'signatureBits': json['signature_bits'] == null ? undefined : json['signature_bits'],
-        'streetAddress': json['street_address'] == null ? undefined : json['street_address'],
+        'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
+        'signature_bits': json['signature_bits'] == null ? undefined : json['signature_bits'],
+        'street_address': json['street_address'] == null ? undefined : json['street_address'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'uriSans': json['uri_sans'] == null ? undefined : json['uri_sans'],
+        'uri_sans': json['uri_sans'] == null ? undefined : json['uri_sans'],
     };
 }
 
@@ -278,34 +278,34 @@ export function PkiIssuersGenerateIntermediateRequestToJSONTyped(value?: PkiIssu
 
     return {
         
-        'add_basic_constraints': value['addBasicConstraints'],
-        'alt_names': value['altNames'],
-        'common_name': value['commonName'],
+        'add_basic_constraints': value['add_basic_constraints'],
+        'alt_names': value['alt_names'],
+        'common_name': value['common_name'],
         'country': value['country'],
-        'exclude_cn_from_sans': value['excludeCnFromSans'],
+        'exclude_cn_from_sans': value['exclude_cn_from_sans'],
         'format': value['format'],
-        'ip_sans': value['ipSans'],
-        'key_bits': value['keyBits'],
-        'key_name': value['keyName'],
-        'key_ref': value['keyRef'],
-        'key_type': value['keyType'],
-        'key_usage': value['keyUsage'],
+        'ip_sans': value['ip_sans'],
+        'key_bits': value['key_bits'],
+        'key_name': value['key_name'],
+        'key_ref': value['key_ref'],
+        'key_type': value['key_type'],
+        'key_usage': value['key_usage'],
         'locality': value['locality'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
-        'not_after': value['notAfter'],
-        'not_before_duration': value['notBeforeDuration'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
+        'not_after': value['not_after'],
+        'not_before_duration': value['not_before_duration'],
         'organization': value['organization'],
-        'other_sans': value['otherSans'],
+        'other_sans': value['other_sans'],
         'ou': value['ou'],
-        'postal_code': value['postalCode'],
-        'private_key_format': value['privateKeyFormat'],
+        'postal_code': value['postal_code'],
+        'private_key_format': value['private_key_format'],
         'province': value['province'],
-        'serial_number': value['serialNumber'],
-        'signature_bits': value['signatureBits'],
-        'street_address': value['streetAddress'],
+        'serial_number': value['serial_number'],
+        'signature_bits': value['signature_bits'],
+        'street_address': value['street_address'],
         'ttl': value['ttl'],
-        'uri_sans': value['uriSans'],
+        'uri_sans': value['uri_sans'],
     };
 }
 

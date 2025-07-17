@@ -24,21 +24,21 @@ export interface SamlWriteTokenRequest {
      * @type {string}
      * @memberof SamlWriteTokenRequest
      */
-    clientVerifier: string;
+    client_verifier: string;
     /**
      * The 'token_poll_id' value returned from the SSO Service URL API at the start of the authentication flow.
      * @type {string}
      * @memberof SamlWriteTokenRequest
      */
-    tokenPollId: string;
+    token_poll_id: string;
 }
 
 /**
  * Check if a given object implements the SamlWriteTokenRequest interface.
  */
 export function instanceOfSamlWriteTokenRequest(value: object): value is SamlWriteTokenRequest {
-    if (!('clientVerifier' in value) || value['clientVerifier'] === undefined) return false;
-    if (!('tokenPollId' in value) || value['tokenPollId'] === undefined) return false;
+    if (!('client_verifier' in value) || value['client_verifier'] === undefined) return false;
+    if (!('token_poll_id' in value) || value['token_poll_id'] === undefined) return false;
     return true;
 }
 
@@ -52,8 +52,8 @@ export function SamlWriteTokenRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'clientVerifier': json['client_verifier'],
-        'tokenPollId': json['token_poll_id'],
+        'client_verifier': json['client_verifier'],
+        'token_poll_id': json['token_poll_id'],
     };
 }
 
@@ -68,8 +68,8 @@ export function SamlWriteTokenRequestToJSONTyped(value?: SamlWriteTokenRequest |
 
     return {
         
-        'client_verifier': value['clientVerifier'],
-        'token_poll_id': value['tokenPollId'],
+        'client_verifier': value['client_verifier'],
+        'token_poll_id': value['token_poll_id'],
     };
 }
 

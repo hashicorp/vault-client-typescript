@@ -24,7 +24,7 @@ export interface AppRoleWriteCustomSecretIdRequest {
      * @type {Array<string>}
      * @memberof AppRoleWriteCustomSecretIdRequest
      */
-    cidrList?: Array<string>;
+    cidr_list?: Array<string>;
     /**
      * Metadata to be tied to the SecretID. This should be a JSON formatted string containing metadata in key value pairs.
      * @type {string}
@@ -36,19 +36,19 @@ export interface AppRoleWriteCustomSecretIdRequest {
      * @type {number}
      * @memberof AppRoleWriteCustomSecretIdRequest
      */
-    numUses?: number;
+    num_uses?: number;
     /**
      * SecretID to be attached to the role.
      * @type {string}
      * @memberof AppRoleWriteCustomSecretIdRequest
      */
-    secretId?: string;
+    secret_id?: string;
     /**
      * Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
      * @type {Array<string>}
      * @memberof AppRoleWriteCustomSecretIdRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role's secret_id_ttl.
      * @type {string}
@@ -74,11 +74,11 @@ export function AppRoleWriteCustomSecretIdRequestFromJSONTyped(json: any, ignore
     }
     return {
         
-        'cidrList': json['cidr_list'] == null ? undefined : json['cidr_list'],
+        'cidr_list': json['cidr_list'] == null ? undefined : json['cidr_list'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'numUses': json['num_uses'] == null ? undefined : json['num_uses'],
-        'secretId': json['secret_id'] == null ? undefined : json['secret_id'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
+        'secret_id': json['secret_id'] == null ? undefined : json['secret_id'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -94,11 +94,11 @@ export function AppRoleWriteCustomSecretIdRequestToJSONTyped(value?: AppRoleWrit
 
     return {
         
-        'cidr_list': value['cidrList'],
+        'cidr_list': value['cidr_list'],
         'metadata': value['metadata'],
-        'num_uses': value['numUses'],
-        'secret_id': value['secretId'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
+        'num_uses': value['num_uses'],
+        'secret_id': value['secret_id'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
         'ttl': value['ttl'],
     };
 }

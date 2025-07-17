@@ -24,7 +24,7 @@ export interface TransformEncodeRequest {
      * @type {Array<object>}
      * @memberof TransformEncodeRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The absolute expiration for the encoded token. This will be capped by the 'max_ttl' value on the transformation if set. Only valid for tokenization transformations. It is an error to specify both 'ttl' and 'expiration'.
      * @type {Date}
@@ -80,7 +80,7 @@ export function TransformEncodeRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'expiration': json['expiration'] == null ? undefined : (new Date(json['expiration'])),
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
         'transformation': json['transformation'] == null ? undefined : json['transformation'],
@@ -101,7 +101,7 @@ export function TransformEncodeRequestToJSONTyped(value?: TransformEncodeRequest
 
     return {
         
-        'batch_input': value['batchInput'],
+        'batch_input': value['batch_input'],
         'expiration': value['expiration'] == null ? undefined : ((value['expiration']).toISOString()),
         'metadata': value['metadata'],
         'transformation': value['transformation'],

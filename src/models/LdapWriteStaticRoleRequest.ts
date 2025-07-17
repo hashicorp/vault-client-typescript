@@ -30,13 +30,13 @@ export interface LdapWriteStaticRoleRequest {
      * @type {string}
      * @memberof LdapWriteStaticRoleRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * Skip the initial pasword rotation on import (has no effect on updates)
      * @type {boolean}
      * @memberof LdapWriteStaticRoleRequest
      */
-    skipImportRotation?: boolean;
+    skip_import_rotation?: boolean;
     /**
      * The username/logon name for the entry with which this role will be associated.
      * @type {string}
@@ -63,8 +63,8 @@ export function LdapWriteStaticRoleRequestFromJSONTyped(json: any, ignoreDiscrim
     return {
         
         'dn': json['dn'] == null ? undefined : json['dn'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'skipImportRotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'skip_import_rotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
         'username': json['username'] == null ? undefined : json['username'],
     };
 }
@@ -81,8 +81,8 @@ export function LdapWriteStaticRoleRequestToJSONTyped(value?: LdapWriteStaticRol
     return {
         
         'dn': value['dn'],
-        'rotation_period': value['rotationPeriod'],
-        'skip_import_rotation': value['skipImportRotation'],
+        'rotation_period': value['rotation_period'],
+        'skip_import_rotation': value['skip_import_rotation'],
         'username': value['username'],
     };
 }

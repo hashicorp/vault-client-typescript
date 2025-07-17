@@ -24,19 +24,19 @@ export interface SystemReadSyncDestinationsTypeNameAssociationsResponse {
      * @type {object}
      * @memberof SystemReadSyncDestinationsTypeNameAssociationsResponse
      */
-    associatedSecrets?: object;
+    associated_secrets?: object;
     /**
      * Name of this secrets store.
      * @type {string}
      * @memberof SystemReadSyncDestinationsTypeNameAssociationsResponse
      */
-    storeName?: string;
+    store_name?: string;
     /**
      * Type of this secrets store.
      * @type {string}
      * @memberof SystemReadSyncDestinationsTypeNameAssociationsResponse
      */
-    storeType?: string;
+    store_type?: string;
 }
 
 /**
@@ -56,9 +56,9 @@ export function SystemReadSyncDestinationsTypeNameAssociationsResponseFromJSONTy
     }
     return {
         
-        'associatedSecrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
-        'storeName': json['store_name'] == null ? undefined : json['store_name'],
-        'storeType': json['store_type'] == null ? undefined : json['store_type'],
+        'associated_secrets': json['associated_secrets'] == null ? undefined : json['associated_secrets'],
+        'store_name': json['store_name'] == null ? undefined : json['store_name'],
+        'store_type': json['store_type'] == null ? undefined : json['store_type'],
     };
 }
 
@@ -73,9 +73,9 @@ export function SystemReadSyncDestinationsTypeNameAssociationsResponseToJSONType
 
     return {
         
-        'associated_secrets': value['associatedSecrets'],
-        'store_name': value['storeName'],
-        'store_type': value['storeType'],
+        'associated_secrets': value['associated_secrets'],
+        'store_name': value['store_name'],
+        'store_type': value['store_type'],
     };
 }
 

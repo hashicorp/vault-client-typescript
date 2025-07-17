@@ -24,45 +24,45 @@ export interface TokenWriteRoleRequest {
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    allowedEntityAliases?: Array<string>;
+    allowed_entity_aliases?: Array<string>;
     /**
      * If set, tokens can be created with any subset of the policies in this list, rather than the normal semantics of tokens being a subset of the calling token's policies. The parameter is a comma-delimited string of policy names.
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    allowedPolicies?: Array<string>;
+    allowed_policies?: Array<string>;
     /**
      * If set, tokens can be created with any subset of glob matched policies in this list, rather than the normal semantics of tokens being a subset of the calling token's policies. The parameter is a comma-delimited string of policy name globs.
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    allowedPoliciesGlob?: Array<string>;
+    allowed_policies_glob?: Array<string>;
     /**
      * Use 'token_bound_cidrs' instead.
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      * @deprecated
      */
-    boundCidrs?: Array<string>;
+    bound_cidrs?: Array<string>;
     /**
      * If set, successful token creation via this role will require that no policies in the given list are requested. The parameter is a comma-delimited string of policy names.
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    disallowedPolicies?: Array<string>;
+    disallowed_policies?: Array<string>;
     /**
      * If set, successful token creation via this role will require that no requested policies glob match any of policies in this list. The parameter is a comma-delimited string of policy name globs.
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    disallowedPoliciesGlob?: Array<string>;
+    disallowed_policies_glob?: Array<string>;
     /**
      * Use 'token_explicit_max_ttl' instead.
      * @type {string}
      * @memberof TokenWriteRoleRequest
      * @deprecated
      */
-    explicitMaxTtl?: string;
+    explicit_max_ttl?: string;
     /**
      * If true, tokens created via this role will be orphan tokens (have no parent)
      * @type {boolean}
@@ -74,7 +74,7 @@ export interface TokenWriteRoleRequest {
      * @type {string}
      * @memberof TokenWriteRoleRequest
      */
-    pathSuffix?: string;
+    path_suffix?: string;
     /**
      * Use 'token_period' instead.
      * @type {string}
@@ -93,37 +93,37 @@ export interface TokenWriteRoleRequest {
      * @type {Array<string>}
      * @memberof TokenWriteRoleRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
      * @type {string}
      * @memberof TokenWriteRoleRequest
      */
-    tokenExplicitMaxTtl?: string;
+    token_explicit_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
      * @memberof TokenWriteRoleRequest
      */
-    tokenNoDefaultPolicy?: boolean;
+    token_no_default_policy?: boolean;
     /**
      * The maximum number of times a token may be used, a value of zero means unlimited
      * @type {number}
      * @memberof TokenWriteRoleRequest
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
     /**
      * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
      * @type {string}
      * @memberof TokenWriteRoleRequest
      */
-    tokenPeriod?: string;
+    token_period?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
      * @memberof TokenWriteRoleRequest
      */
-    tokenType?: string;
+    token_type?: string;
 }
 
 /**
@@ -143,23 +143,23 @@ export function TokenWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'allowedEntityAliases': json['allowed_entity_aliases'] == null ? undefined : json['allowed_entity_aliases'],
-        'allowedPolicies': json['allowed_policies'] == null ? undefined : json['allowed_policies'],
-        'allowedPoliciesGlob': json['allowed_policies_glob'] == null ? undefined : json['allowed_policies_glob'],
-        'boundCidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
-        'disallowedPolicies': json['disallowed_policies'] == null ? undefined : json['disallowed_policies'],
-        'disallowedPoliciesGlob': json['disallowed_policies_glob'] == null ? undefined : json['disallowed_policies_glob'],
-        'explicitMaxTtl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
+        'allowed_entity_aliases': json['allowed_entity_aliases'] == null ? undefined : json['allowed_entity_aliases'],
+        'allowed_policies': json['allowed_policies'] == null ? undefined : json['allowed_policies'],
+        'allowed_policies_glob': json['allowed_policies_glob'] == null ? undefined : json['allowed_policies_glob'],
+        'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
+        'disallowed_policies': json['disallowed_policies'] == null ? undefined : json['disallowed_policies'],
+        'disallowed_policies_glob': json['disallowed_policies_glob'] == null ? undefined : json['disallowed_policies_glob'],
+        'explicit_max_ttl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
         'orphan': json['orphan'] == null ? undefined : json['orphan'],
-        'pathSuffix': json['path_suffix'] == null ? undefined : json['path_suffix'],
+        'path_suffix': json['path_suffix'] == null ? undefined : json['path_suffix'],
         'period': json['period'] == null ? undefined : json['period'],
         'renewable': json['renewable'] == null ? undefined : json['renewable'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
-        'tokenExplicitMaxTtl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
-        'tokenNoDefaultPolicy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
-        'tokenPeriod': json['token_period'] == null ? undefined : json['token_period'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
+        'token_no_default_policy': json['token_no_default_policy'] == null ? undefined : json['token_no_default_policy'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_period': json['token_period'] == null ? undefined : json['token_period'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
     };
 }
 
@@ -174,23 +174,23 @@ export function TokenWriteRoleRequestToJSONTyped(value?: TokenWriteRoleRequest |
 
     return {
         
-        'allowed_entity_aliases': value['allowedEntityAliases'],
-        'allowed_policies': value['allowedPolicies'],
-        'allowed_policies_glob': value['allowedPoliciesGlob'],
-        'bound_cidrs': value['boundCidrs'],
-        'disallowed_policies': value['disallowedPolicies'],
-        'disallowed_policies_glob': value['disallowedPoliciesGlob'],
-        'explicit_max_ttl': value['explicitMaxTtl'],
+        'allowed_entity_aliases': value['allowed_entity_aliases'],
+        'allowed_policies': value['allowed_policies'],
+        'allowed_policies_glob': value['allowed_policies_glob'],
+        'bound_cidrs': value['bound_cidrs'],
+        'disallowed_policies': value['disallowed_policies'],
+        'disallowed_policies_glob': value['disallowed_policies_glob'],
+        'explicit_max_ttl': value['explicit_max_ttl'],
         'orphan': value['orphan'],
-        'path_suffix': value['pathSuffix'],
+        'path_suffix': value['path_suffix'],
         'period': value['period'],
         'renewable': value['renewable'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
-        'token_explicit_max_ttl': value['tokenExplicitMaxTtl'],
-        'token_no_default_policy': value['tokenNoDefaultPolicy'],
-        'token_num_uses': value['tokenNumUses'],
-        'token_period': value['tokenPeriod'],
-        'token_type': value['tokenType'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
+        'token_explicit_max_ttl': value['token_explicit_max_ttl'],
+        'token_no_default_policy': value['token_no_default_policy'],
+        'token_num_uses': value['token_num_uses'],
+        'token_period': value['token_period'],
+        'token_type': value['token_type'],
     };
 }
 

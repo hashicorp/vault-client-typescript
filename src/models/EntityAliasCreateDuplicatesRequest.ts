@@ -24,7 +24,7 @@ export interface EntityAliasCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntityAliasCreateDuplicatesRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * Metadata
      * @type {object}
@@ -36,7 +36,7 @@ export interface EntityAliasCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntityAliasCreateDuplicatesRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Name of the entities to create
      * @type {string}
@@ -48,7 +48,7 @@ export interface EntityAliasCreateDuplicatesRequest {
      * @type {string}
      * @memberof EntityAliasCreateDuplicatesRequest
      */
-    namespaceId?: string;
+    namespace_id?: string;
 }
 
 /**
@@ -68,11 +68,11 @@ export function EntityAliasCreateDuplicatesRequestFromJSONTyped(json: any, ignor
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
-        'namespaceId': json['namespace_id'] == null ? undefined : json['namespace_id'],
+        'namespace_id': json['namespace_id'] == null ? undefined : json['namespace_id'],
     };
 }
 
@@ -87,11 +87,11 @@ export function EntityAliasCreateDuplicatesRequestToJSONTyped(value?: EntityAlia
 
     return {
         
-        'canonical_id': value['canonicalId'],
+        'canonical_id': value['canonical_id'],
         'metadata': value['metadata'],
-        'mount_accessor': value['mountAccessor'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
-        'namespace_id': value['namespaceId'],
+        'namespace_id': value['namespace_id'],
     };
 }
 

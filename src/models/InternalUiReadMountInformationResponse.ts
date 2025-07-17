@@ -42,7 +42,7 @@ export interface InternalUiReadMountInformationResponse {
      * @type {boolean}
      * @memberof InternalUiReadMountInformationResponse
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * 
      * @type {boolean}
@@ -66,25 +66,25 @@ export interface InternalUiReadMountInformationResponse {
      * @type {string}
      * @memberof InternalUiReadMountInformationResponse
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof InternalUiReadMountInformationResponse
      */
-    runningPluginVersion?: string;
+    running_plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof InternalUiReadMountInformationResponse
      */
-    runningSha256?: string;
+    running_sha256?: string;
     /**
      * 
      * @type {boolean}
      * @memberof InternalUiReadMountInformationResponse
      */
-    sealWrap?: boolean;
+    seal_wrap?: boolean;
     /**
      * 
      * @type {string}
@@ -119,14 +119,14 @@ export function InternalUiReadMountInformationResponseFromJSONTyped(json: any, i
         'accessor': json['accessor'] == null ? undefined : json['accessor'],
         'config': json['config'] == null ? undefined : json['config'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
         'local': json['local'] == null ? undefined : json['local'],
         'options': json['options'] == null ? undefined : json['options'],
         'path': json['path'] == null ? undefined : json['path'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'runningPluginVersion': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
-        'runningSha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
-        'sealWrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'running_plugin_version': json['running_plugin_version'] == null ? undefined : json['running_plugin_version'],
+        'running_sha256': json['running_sha256'] == null ? undefined : json['running_sha256'],
+        'seal_wrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
         'type': json['type'] == null ? undefined : json['type'],
         'uuid': json['uuid'] == null ? undefined : json['uuid'],
     };
@@ -146,14 +146,14 @@ export function InternalUiReadMountInformationResponseToJSONTyped(value?: Intern
         'accessor': value['accessor'],
         'config': value['config'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
+        'external_entropy_access': value['external_entropy_access'],
         'local': value['local'],
         'options': value['options'],
         'path': value['path'],
-        'plugin_version': value['pluginVersion'],
-        'running_plugin_version': value['runningPluginVersion'],
-        'running_sha256': value['runningSha256'],
-        'seal_wrap': value['sealWrap'],
+        'plugin_version': value['plugin_version'],
+        'running_plugin_version': value['running_plugin_version'],
+        'running_sha256': value['running_sha256'],
+        'seal_wrap': value['seal_wrap'],
         'type': value['type'],
         'uuid': value['uuid'],
     };

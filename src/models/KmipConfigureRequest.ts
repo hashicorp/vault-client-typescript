@@ -24,55 +24,55 @@ export interface KmipConfigureRequest {
      * @type {number}
      * @memberof KmipConfigureRequest
      */
-    defaultTlsClientKeyBits?: number;
+    default_tls_client_key_bits?: number;
     /**
      * Client certificate key type, rsa or ec
      * @type {string}
      * @memberof KmipConfigureRequest
      */
-    defaultTlsClientKeyType?: KmipConfigureRequestDefaultTlsClientKeyTypeEnum;
+    default_tls_client_key_type?: KmipConfigureRequestDefaultTlsClientKeyTypeEnum;
     /**
      * Client certificate TTL in either an integer number of seconds (3600) or an integer time unit (1h)
      * @type {string}
      * @memberof KmipConfigureRequest
      */
-    defaultTlsClientTtl?: string;
+    default_tls_client_ttl?: string;
     /**
      * A list of address:port to listen on. A bare address without port may be provided, in which case port 5696 is assumed.
      * @type {Array<string>}
      * @memberof KmipConfigureRequest
      */
-    listenAddrs?: Array<string>;
+    listen_addrs?: Array<string>;
     /**
      * A list of hostnames to include in the server's TLS certificate as SAN DNS names. The first will be used as the common name (CN).
      * @type {Array<string>}
      * @memberof KmipConfigureRequest
      */
-    serverHostnames?: Array<string>;
+    server_hostnames?: Array<string>;
     /**
      * A list of IP to include in the server's TLS certificate as SAN IP addresses.
      * @type {Array<string>}
      * @memberof KmipConfigureRequest
      */
-    serverIps?: Array<string>;
+    server_ips?: Array<string>;
     /**
      * CA key bits, valid values depend on key type
      * @type {number}
      * @memberof KmipConfigureRequest
      */
-    tlsCaKeyBits?: number;
+    tls_ca_key_bits?: number;
     /**
      * CA key type, rsa or ec
      * @type {string}
      * @memberof KmipConfigureRequest
      */
-    tlsCaKeyType?: KmipConfigureRequestTlsCaKeyTypeEnum;
+    tls_ca_key_type?: KmipConfigureRequestTlsCaKeyTypeEnum;
     /**
      * Min TLS version
      * @type {string}
      * @memberof KmipConfigureRequest
      */
-    tlsMinVersion?: string;
+    tls_min_version?: string;
 }
 
 /**
@@ -110,15 +110,15 @@ export function KmipConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'defaultTlsClientKeyBits': json['default_tls_client_key_bits'] == null ? undefined : json['default_tls_client_key_bits'],
-        'defaultTlsClientKeyType': json['default_tls_client_key_type'] == null ? undefined : json['default_tls_client_key_type'],
-        'defaultTlsClientTtl': json['default_tls_client_ttl'] == null ? undefined : json['default_tls_client_ttl'],
-        'listenAddrs': json['listen_addrs'] == null ? undefined : json['listen_addrs'],
-        'serverHostnames': json['server_hostnames'] == null ? undefined : json['server_hostnames'],
-        'serverIps': json['server_ips'] == null ? undefined : json['server_ips'],
-        'tlsCaKeyBits': json['tls_ca_key_bits'] == null ? undefined : json['tls_ca_key_bits'],
-        'tlsCaKeyType': json['tls_ca_key_type'] == null ? undefined : json['tls_ca_key_type'],
-        'tlsMinVersion': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
+        'default_tls_client_key_bits': json['default_tls_client_key_bits'] == null ? undefined : json['default_tls_client_key_bits'],
+        'default_tls_client_key_type': json['default_tls_client_key_type'] == null ? undefined : json['default_tls_client_key_type'],
+        'default_tls_client_ttl': json['default_tls_client_ttl'] == null ? undefined : json['default_tls_client_ttl'],
+        'listen_addrs': json['listen_addrs'] == null ? undefined : json['listen_addrs'],
+        'server_hostnames': json['server_hostnames'] == null ? undefined : json['server_hostnames'],
+        'server_ips': json['server_ips'] == null ? undefined : json['server_ips'],
+        'tls_ca_key_bits': json['tls_ca_key_bits'] == null ? undefined : json['tls_ca_key_bits'],
+        'tls_ca_key_type': json['tls_ca_key_type'] == null ? undefined : json['tls_ca_key_type'],
+        'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
     };
 }
 
@@ -133,15 +133,15 @@ export function KmipConfigureRequestToJSONTyped(value?: KmipConfigureRequest | n
 
     return {
         
-        'default_tls_client_key_bits': value['defaultTlsClientKeyBits'],
-        'default_tls_client_key_type': value['defaultTlsClientKeyType'],
-        'default_tls_client_ttl': value['defaultTlsClientTtl'],
-        'listen_addrs': value['listenAddrs'],
-        'server_hostnames': value['serverHostnames'],
-        'server_ips': value['serverIps'],
-        'tls_ca_key_bits': value['tlsCaKeyBits'],
-        'tls_ca_key_type': value['tlsCaKeyType'],
-        'tls_min_version': value['tlsMinVersion'],
+        'default_tls_client_key_bits': value['default_tls_client_key_bits'],
+        'default_tls_client_key_type': value['default_tls_client_key_type'],
+        'default_tls_client_ttl': value['default_tls_client_ttl'],
+        'listen_addrs': value['listen_addrs'],
+        'server_hostnames': value['server_hostnames'],
+        'server_ips': value['server_ips'],
+        'tls_ca_key_bits': value['tls_ca_key_bits'],
+        'tls_ca_key_type': value['tls_ca_key_type'],
+        'tls_min_version': value['tls_min_version'],
     };
 }
 

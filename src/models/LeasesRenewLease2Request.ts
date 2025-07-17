@@ -30,7 +30,7 @@ export interface LeasesRenewLease2Request {
      * @type {string}
      * @memberof LeasesRenewLease2Request
      */
-    leaseId?: string;
+    lease_id?: string;
 }
 
 /**
@@ -51,7 +51,7 @@ export function LeasesRenewLease2RequestFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'increment': json['increment'] == null ? undefined : json['increment'],
-        'leaseId': json['lease_id'] == null ? undefined : json['lease_id'],
+        'lease_id': json['lease_id'] == null ? undefined : json['lease_id'],
     };
 }
 
@@ -67,7 +67,7 @@ export function LeasesRenewLease2RequestToJSONTyped(value?: LeasesRenewLease2Req
     return {
         
         'increment': value['increment'],
-        'lease_id': value['leaseId'],
+        'lease_id': value['lease_id'],
     };
 }
 

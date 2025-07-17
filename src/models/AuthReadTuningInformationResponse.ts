@@ -24,31 +24,31 @@ export interface AuthReadTuningInformationResponse {
      * @type {Array<string>}
      * @memberof AuthReadTuningInformationResponse
      */
-    allowedManagedKeys?: Array<string>;
+    allowed_managed_keys?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof AuthReadTuningInformationResponse
      */
-    allowedResponseHeaders?: Array<string>;
+    allowed_response_headers?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof AuthReadTuningInformationResponse
      */
-    auditNonHmacRequestKeys?: Array<string>;
+    audit_non_hmac_request_keys?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof AuthReadTuningInformationResponse
      */
-    auditNonHmacResponseKeys?: Array<string>;
+    audit_non_hmac_response_keys?: Array<string>;
     /**
      * 
      * @type {number}
      * @memberof AuthReadTuningInformationResponse
      */
-    defaultLeaseTtl?: number;
+    default_lease_ttl?: number;
     /**
      * 
      * @type {string}
@@ -60,31 +60,31 @@ export interface AuthReadTuningInformationResponse {
      * @type {boolean}
      * @memberof AuthReadTuningInformationResponse
      */
-    externalEntropyAccess?: boolean;
+    external_entropy_access?: boolean;
     /**
      * 
      * @type {boolean}
      * @memberof AuthReadTuningInformationResponse
      */
-    forceNoCache?: boolean;
+    force_no_cache?: boolean;
     /**
      * 
      * @type {string}
      * @memberof AuthReadTuningInformationResponse
      */
-    identityTokenKey?: string;
+    identity_token_key?: string;
     /**
      * 
      * @type {string}
      * @memberof AuthReadTuningInformationResponse
      */
-    listingVisibility?: string;
+    listing_visibility?: string;
     /**
      * 
      * @type {number}
      * @memberof AuthReadTuningInformationResponse
      */
-    maxLeaseTtl?: number;
+    max_lease_ttl?: number;
     /**
      * 
      * @type {object}
@@ -96,49 +96,49 @@ export interface AuthReadTuningInformationResponse {
      * @type {Array<string>}
      * @memberof AuthReadTuningInformationResponse
      */
-    passthroughRequestHeaders?: Array<string>;
+    passthrough_request_headers?: Array<string>;
     /**
      * 
      * @type {string}
      * @memberof AuthReadTuningInformationResponse
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * 
      * @type {string}
      * @memberof AuthReadTuningInformationResponse
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * 
      * @type {boolean}
      * @memberof AuthReadTuningInformationResponse
      */
-    trimRequestTrailingSlashes?: boolean;
+    trim_request_trailing_slashes?: boolean;
     /**
      * 
      * @type {number}
      * @memberof AuthReadTuningInformationResponse
      */
-    userLockoutCounterResetDuration?: number;
+    user_lockout_counter_reset_duration?: number;
     /**
      * 
      * @type {boolean}
      * @memberof AuthReadTuningInformationResponse
      */
-    userLockoutDisable?: boolean;
+    user_lockout_disable?: boolean;
     /**
      * 
      * @type {number}
      * @memberof AuthReadTuningInformationResponse
      */
-    userLockoutDuration?: number;
+    user_lockout_duration?: number;
     /**
      * 
      * @type {number}
      * @memberof AuthReadTuningInformationResponse
      */
-    userLockoutThreshold?: number;
+    user_lockout_threshold?: number;
 }
 
 /**
@@ -158,26 +158,26 @@ export function AuthReadTuningInformationResponseFromJSONTyped(json: any, ignore
     }
     return {
         
-        'allowedManagedKeys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
-        'allowedResponseHeaders': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
-        'auditNonHmacRequestKeys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
-        'auditNonHmacResponseKeys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
-        'defaultLeaseTtl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
+        'allowed_managed_keys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
+        'allowed_response_headers': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
+        'audit_non_hmac_request_keys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
+        'default_lease_ttl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
         'description': json['description'] == null ? undefined : json['description'],
-        'externalEntropyAccess': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
-        'forceNoCache': json['force_no_cache'] == null ? undefined : json['force_no_cache'],
-        'identityTokenKey': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
-        'listingVisibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
-        'maxLeaseTtl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
+        'external_entropy_access': json['external_entropy_access'] == null ? undefined : json['external_entropy_access'],
+        'force_no_cache': json['force_no_cache'] == null ? undefined : json['force_no_cache'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'listing_visibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
+        'max_lease_ttl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
         'options': json['options'] == null ? undefined : json['options'],
-        'passthroughRequestHeaders': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
-        'trimRequestTrailingSlashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
-        'userLockoutCounterResetDuration': json['user_lockout_counter_reset_duration'] == null ? undefined : json['user_lockout_counter_reset_duration'],
-        'userLockoutDisable': json['user_lockout_disable'] == null ? undefined : json['user_lockout_disable'],
-        'userLockoutDuration': json['user_lockout_duration'] == null ? undefined : json['user_lockout_duration'],
-        'userLockoutThreshold': json['user_lockout_threshold'] == null ? undefined : json['user_lockout_threshold'],
+        'passthrough_request_headers': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
+        'trim_request_trailing_slashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
+        'user_lockout_counter_reset_duration': json['user_lockout_counter_reset_duration'] == null ? undefined : json['user_lockout_counter_reset_duration'],
+        'user_lockout_disable': json['user_lockout_disable'] == null ? undefined : json['user_lockout_disable'],
+        'user_lockout_duration': json['user_lockout_duration'] == null ? undefined : json['user_lockout_duration'],
+        'user_lockout_threshold': json['user_lockout_threshold'] == null ? undefined : json['user_lockout_threshold'],
     };
 }
 
@@ -192,26 +192,26 @@ export function AuthReadTuningInformationResponseToJSONTyped(value?: AuthReadTun
 
     return {
         
-        'allowed_managed_keys': value['allowedManagedKeys'],
-        'allowed_response_headers': value['allowedResponseHeaders'],
-        'audit_non_hmac_request_keys': value['auditNonHmacRequestKeys'],
-        'audit_non_hmac_response_keys': value['auditNonHmacResponseKeys'],
-        'default_lease_ttl': value['defaultLeaseTtl'],
+        'allowed_managed_keys': value['allowed_managed_keys'],
+        'allowed_response_headers': value['allowed_response_headers'],
+        'audit_non_hmac_request_keys': value['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': value['audit_non_hmac_response_keys'],
+        'default_lease_ttl': value['default_lease_ttl'],
         'description': value['description'],
-        'external_entropy_access': value['externalEntropyAccess'],
-        'force_no_cache': value['forceNoCache'],
-        'identity_token_key': value['identityTokenKey'],
-        'listing_visibility': value['listingVisibility'],
-        'max_lease_ttl': value['maxLeaseTtl'],
+        'external_entropy_access': value['external_entropy_access'],
+        'force_no_cache': value['force_no_cache'],
+        'identity_token_key': value['identity_token_key'],
+        'listing_visibility': value['listing_visibility'],
+        'max_lease_ttl': value['max_lease_ttl'],
         'options': value['options'],
-        'passthrough_request_headers': value['passthroughRequestHeaders'],
-        'plugin_version': value['pluginVersion'],
-        'token_type': value['tokenType'],
-        'trim_request_trailing_slashes': value['trimRequestTrailingSlashes'],
-        'user_lockout_counter_reset_duration': value['userLockoutCounterResetDuration'],
-        'user_lockout_disable': value['userLockoutDisable'],
-        'user_lockout_duration': value['userLockoutDuration'],
-        'user_lockout_threshold': value['userLockoutThreshold'],
+        'passthrough_request_headers': value['passthrough_request_headers'],
+        'plugin_version': value['plugin_version'],
+        'token_type': value['token_type'],
+        'trim_request_trailing_slashes': value['trim_request_trailing_slashes'],
+        'user_lockout_counter_reset_duration': value['user_lockout_counter_reset_duration'],
+        'user_lockout_disable': value['user_lockout_disable'],
+        'user_lockout_duration': value['user_lockout_duration'],
+        'user_lockout_threshold': value['user_lockout_threshold'],
     };
 }
 

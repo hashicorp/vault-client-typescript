@@ -30,19 +30,19 @@ export interface PkiConfigureExternalPolicyRequest {
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    entityJmespath?: string;
+    entity_jmespath?: string;
     /**
      * The URL where the external policy service is accessible to vault
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    externalServiceUrl?: string;
+    external_service_url?: string;
     /**
      * A JMESPath search string that will extract the entity group information to be sent to the CIEPS service. If blank, none of the group entity metadata will be sent to the service.
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    groupJmespath?: string;
+    group_jmespath?: string;
     /**
      * This is how long any particular request should wait for a timeout
      * @type {string}
@@ -54,19 +54,19 @@ export interface PkiConfigureExternalPolicyRequest {
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    trustedCa?: string;
+    trusted_ca?: string;
     /**
      * This is the PEM of the leaf certificate(s) that vault will expect to do certificate pinning
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    trustedLeafCertificateBundle?: string;
+    trusted_leaf_certificate_bundle?: string;
     /**
      * The vault client certificate used to authenticate vault to the external policy engine, and theprivate key to use it.
      * @type {string}
      * @memberof PkiConfigureExternalPolicyRequest
      */
-    vaultClientCertBundle?: string;
+    vault_client_cert_bundle?: string;
 }
 
 /**
@@ -87,13 +87,13 @@ export function PkiConfigureExternalPolicyRequestFromJSONTyped(json: any, ignore
     return {
         
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'entityJmespath': json['entity_jmespath'] == null ? undefined : json['entity_jmespath'],
-        'externalServiceUrl': json['external_service_url'] == null ? undefined : json['external_service_url'],
-        'groupJmespath': json['group_jmespath'] == null ? undefined : json['group_jmespath'],
+        'entity_jmespath': json['entity_jmespath'] == null ? undefined : json['entity_jmespath'],
+        'external_service_url': json['external_service_url'] == null ? undefined : json['external_service_url'],
+        'group_jmespath': json['group_jmespath'] == null ? undefined : json['group_jmespath'],
         'timeout': json['timeout'] == null ? undefined : json['timeout'],
-        'trustedCa': json['trusted_ca'] == null ? undefined : json['trusted_ca'],
-        'trustedLeafCertificateBundle': json['trusted_leaf_certificate_bundle'] == null ? undefined : json['trusted_leaf_certificate_bundle'],
-        'vaultClientCertBundle': json['vault_client_cert_bundle'] == null ? undefined : json['vault_client_cert_bundle'],
+        'trusted_ca': json['trusted_ca'] == null ? undefined : json['trusted_ca'],
+        'trusted_leaf_certificate_bundle': json['trusted_leaf_certificate_bundle'] == null ? undefined : json['trusted_leaf_certificate_bundle'],
+        'vault_client_cert_bundle': json['vault_client_cert_bundle'] == null ? undefined : json['vault_client_cert_bundle'],
     };
 }
 
@@ -109,13 +109,13 @@ export function PkiConfigureExternalPolicyRequestToJSONTyped(value?: PkiConfigur
     return {
         
         'enabled': value['enabled'],
-        'entity_jmespath': value['entityJmespath'],
-        'external_service_url': value['externalServiceUrl'],
-        'group_jmespath': value['groupJmespath'],
+        'entity_jmespath': value['entity_jmespath'],
+        'external_service_url': value['external_service_url'],
+        'group_jmespath': value['group_jmespath'],
         'timeout': value['timeout'],
-        'trusted_ca': value['trustedCa'],
-        'trusted_leaf_certificate_bundle': value['trustedLeafCertificateBundle'],
-        'vault_client_cert_bundle': value['vaultClientCertBundle'],
+        'trusted_ca': value['trusted_ca'],
+        'trusted_leaf_certificate_bundle': value['trusted_leaf_certificate_bundle'],
+        'vault_client_cert_bundle': value['vault_client_cert_bundle'],
     };
 }
 

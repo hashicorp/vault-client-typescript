@@ -24,45 +24,45 @@ export interface LdapWriteDynamicRoleRequest {
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    creationLdif: string;
+    creation_ldif: string;
     /**
      * Default TTL for dynamic credentials
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    defaultTtl?: string;
+    default_ttl?: string;
     /**
      * LDIF string used to delete entities created within the LDAP system. This LDIF can be templated.
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    deletionLdif: string;
+    deletion_ldif: string;
     /**
      * Max TTL a dynamic credential can be extended to
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated.
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    rollbackLdif?: string;
+    rollback_ldif?: string;
     /**
      * The template used to create a username
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
      */
-    usernameTemplate?: string;
+    username_template?: string;
 }
 
 /**
  * Check if a given object implements the LdapWriteDynamicRoleRequest interface.
  */
 export function instanceOfLdapWriteDynamicRoleRequest(value: object): value is LdapWriteDynamicRoleRequest {
-    if (!('creationLdif' in value) || value['creationLdif'] === undefined) return false;
-    if (!('deletionLdif' in value) || value['deletionLdif'] === undefined) return false;
+    if (!('creation_ldif' in value) || value['creation_ldif'] === undefined) return false;
+    if (!('deletion_ldif' in value) || value['deletion_ldif'] === undefined) return false;
     return true;
 }
 
@@ -76,12 +76,12 @@ export function LdapWriteDynamicRoleRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'creationLdif': json['creation_ldif'],
-        'defaultTtl': json['default_ttl'] == null ? undefined : json['default_ttl'],
-        'deletionLdif': json['deletion_ldif'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'rollbackLdif': json['rollback_ldif'] == null ? undefined : json['rollback_ldif'],
-        'usernameTemplate': json['username_template'] == null ? undefined : json['username_template'],
+        'creation_ldif': json['creation_ldif'],
+        'default_ttl': json['default_ttl'] == null ? undefined : json['default_ttl'],
+        'deletion_ldif': json['deletion_ldif'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'rollback_ldif': json['rollback_ldif'] == null ? undefined : json['rollback_ldif'],
+        'username_template': json['username_template'] == null ? undefined : json['username_template'],
     };
 }
 
@@ -96,12 +96,12 @@ export function LdapWriteDynamicRoleRequestToJSONTyped(value?: LdapWriteDynamicR
 
     return {
         
-        'creation_ldif': value['creationLdif'],
-        'default_ttl': value['defaultTtl'],
-        'deletion_ldif': value['deletionLdif'],
-        'max_ttl': value['maxTtl'],
-        'rollback_ldif': value['rollbackLdif'],
-        'username_template': value['usernameTemplate'],
+        'creation_ldif': value['creation_ldif'],
+        'default_ttl': value['default_ttl'],
+        'deletion_ldif': value['deletion_ldif'],
+        'max_ttl': value['max_ttl'],
+        'rollback_ldif': value['rollback_ldif'],
+        'username_template': value['username_template'],
     };
 }
 

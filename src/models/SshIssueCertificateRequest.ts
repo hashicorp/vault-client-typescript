@@ -24,13 +24,13 @@ export interface SshIssueCertificateRequest {
      * @type {string}
      * @memberof SshIssueCertificateRequest
      */
-    certType?: string;
+    cert_type?: string;
     /**
      * Critical options that the certificate should be signed for.
      * @type {object}
      * @memberof SshIssueCertificateRequest
      */
-    criticalOptions?: object;
+    critical_options?: object;
     /**
      * Extensions that the certificate should be signed for.
      * @type {object}
@@ -42,19 +42,19 @@ export interface SshIssueCertificateRequest {
      * @type {number}
      * @memberof SshIssueCertificateRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * Key id that the created certificate should have. If not specified, the display name of the token will be used.
      * @type {string}
      * @memberof SshIssueCertificateRequest
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * Specifies the desired key type; must be `rsa`, `ed25519` or `ec`
      * @type {string}
      * @memberof SshIssueCertificateRequest
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL.
      * @type {string}
@@ -66,7 +66,7 @@ export interface SshIssueCertificateRequest {
      * @type {string}
      * @memberof SshIssueCertificateRequest
      */
-    validPrincipals?: string;
+    valid_principals?: string;
 }
 
 /**
@@ -86,14 +86,14 @@ export function SshIssueCertificateRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'certType': json['cert_type'] == null ? undefined : json['cert_type'],
-        'criticalOptions': json['critical_options'] == null ? undefined : json['critical_options'],
+        'cert_type': json['cert_type'] == null ? undefined : json['cert_type'],
+        'critical_options': json['critical_options'] == null ? undefined : json['critical_options'],
         'extensions': json['extensions'] == null ? undefined : json['extensions'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'validPrincipals': json['valid_principals'] == null ? undefined : json['valid_principals'],
+        'valid_principals': json['valid_principals'] == null ? undefined : json['valid_principals'],
     };
 }
 
@@ -108,14 +108,14 @@ export function SshIssueCertificateRequestToJSONTyped(value?: SshIssueCertificat
 
     return {
         
-        'cert_type': value['certType'],
-        'critical_options': value['criticalOptions'],
+        'cert_type': value['cert_type'],
+        'critical_options': value['critical_options'],
         'extensions': value['extensions'],
-        'key_bits': value['keyBits'],
-        'key_id': value['keyId'],
-        'key_type': value['keyType'],
+        'key_bits': value['key_bits'],
+        'key_id': value['key_id'],
+        'key_type': value['key_type'],
         'ttl': value['ttl'],
-        'valid_principals': value['validPrincipals'],
+        'valid_principals': value['valid_principals'],
     };
 }
 

@@ -30,19 +30,19 @@ export interface OidcWriteKeyRequest {
      * @type {Array<string>}
      * @memberof OidcWriteKeyRequest
      */
-    allowedClientIds?: Array<string>;
+    allowed_client_ids?: Array<string>;
     /**
      * How often to generate a new keypair.
      * @type {string}
      * @memberof OidcWriteKeyRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * Controls how long the public portion of a key will be available for verification after being rotated.
      * @type {string}
      * @memberof OidcWriteKeyRequest
      */
-    verificationTtl?: string;
+    verification_ttl?: string;
 }
 
 /**
@@ -63,9 +63,9 @@ export function OidcWriteKeyRequestFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'allowedClientIds': json['allowed_client_ids'] == null ? undefined : json['allowed_client_ids'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'verificationTtl': json['verification_ttl'] == null ? undefined : json['verification_ttl'],
+        'allowed_client_ids': json['allowed_client_ids'] == null ? undefined : json['allowed_client_ids'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'verification_ttl': json['verification_ttl'] == null ? undefined : json['verification_ttl'],
     };
 }
 
@@ -81,9 +81,9 @@ export function OidcWriteKeyRequestToJSONTyped(value?: OidcWriteKeyRequest | nul
     return {
         
         'algorithm': value['algorithm'],
-        'allowed_client_ids': value['allowedClientIds'],
-        'rotation_period': value['rotationPeriod'],
-        'verification_ttl': value['verificationTtl'],
+        'allowed_client_ids': value['allowed_client_ids'],
+        'rotation_period': value['rotation_period'],
+        'verification_ttl': value['verification_ttl'],
     };
 }
 

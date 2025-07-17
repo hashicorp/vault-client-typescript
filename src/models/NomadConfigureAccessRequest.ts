@@ -30,25 +30,25 @@ export interface NomadConfigureAccessRequest {
      * @type {string}
      * @memberof NomadConfigureAccessRequest
      */
-    caCert?: string;
+    ca_cert?: string;
     /**
      * Client certificate used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
      * @type {string}
      * @memberof NomadConfigureAccessRequest
      */
-    clientCert?: string;
+    client_cert?: string;
     /**
      * Client key used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
      * @type {string}
      * @memberof NomadConfigureAccessRequest
      */
-    clientKey?: string;
+    client_key?: string;
     /**
      * Max length for name of generated Nomad tokens
      * @type {number}
      * @memberof NomadConfigureAccessRequest
      */
-    maxTokenNameLength?: number;
+    max_token_name_length?: number;
     /**
      * Token for API calls
      * @type {string}
@@ -75,10 +75,10 @@ export function NomadConfigureAccessRequestFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'address': json['address'] == null ? undefined : json['address'],
-        'caCert': json['ca_cert'] == null ? undefined : json['ca_cert'],
-        'clientCert': json['client_cert'] == null ? undefined : json['client_cert'],
-        'clientKey': json['client_key'] == null ? undefined : json['client_key'],
-        'maxTokenNameLength': json['max_token_name_length'] == null ? undefined : json['max_token_name_length'],
+        'ca_cert': json['ca_cert'] == null ? undefined : json['ca_cert'],
+        'client_cert': json['client_cert'] == null ? undefined : json['client_cert'],
+        'client_key': json['client_key'] == null ? undefined : json['client_key'],
+        'max_token_name_length': json['max_token_name_length'] == null ? undefined : json['max_token_name_length'],
         'token': json['token'] == null ? undefined : json['token'],
     };
 }
@@ -95,10 +95,10 @@ export function NomadConfigureAccessRequestToJSONTyped(value?: NomadConfigureAcc
     return {
         
         'address': value['address'],
-        'ca_cert': value['caCert'],
-        'client_cert': value['clientCert'],
-        'client_key': value['clientKey'],
-        'max_token_name_length': value['maxTokenNameLength'],
+        'ca_cert': value['ca_cert'],
+        'client_cert': value['client_cert'],
+        'client_key': value['client_key'],
+        'max_token_name_length': value['max_token_name_length'],
         'token': value['token'],
     };
 }

@@ -24,7 +24,7 @@ export interface AppRoleWriteBoundCidrListRequest {
      * @type {Array<string>}
      * @memberof AppRoleWriteBoundCidrListRequest
      */
-    boundCidrList?: Array<string>;
+    bound_cidr_list?: Array<string>;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleWriteBoundCidrListRequestFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'boundCidrList': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
+        'bound_cidr_list': json['bound_cidr_list'] == null ? undefined : json['bound_cidr_list'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleWriteBoundCidrListRequestToJSONTyped(value?: AppRoleWrite
 
     return {
         
-        'bound_cidr_list': value['boundCidrList'],
+        'bound_cidr_list': value['bound_cidr_list'],
     };
 }
 

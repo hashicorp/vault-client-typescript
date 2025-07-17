@@ -24,19 +24,19 @@ export interface ConsulWriteRoleRequest {
      * @type {string}
      * @memberof ConsulWriteRoleRequest
      */
-    consulNamespace?: string;
+    consul_namespace?: string;
     /**
      * List of policies to attach to the token. Either "consul_policies" or "consul_roles" are required for Consul 1.5 and above, or just "consul_policies" if using Consul 1.4.
      * @type {Array<string>}
      * @memberof ConsulWriteRoleRequest
      */
-    consulPolicies?: Array<string>;
+    consul_policies?: Array<string>;
     /**
      * List of Consul roles to attach to the token. Either "policies" or "consul_roles" are required for Consul 1.5 and above.
      * @type {Array<string>}
      * @memberof ConsulWriteRoleRequest
      */
-    consulRoles?: Array<string>;
+    consul_roles?: Array<string>;
     /**
      * Use "ttl" instead.
      * @type {string}
@@ -55,13 +55,13 @@ export interface ConsulWriteRoleRequest {
      * @type {string}
      * @memberof ConsulWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * List of Node Identities to attach to the token. Available in Consul 1.8.1 or above.
      * @type {Array<string>}
      * @memberof ConsulWriteRoleRequest
      */
-    nodeIdentities?: Array<string>;
+    node_identities?: Array<string>;
     /**
      * Indicates which admin partition that the token will be created within. Defaults to 'default'. Available in Consul 1.11 and above.
      * @type {string}
@@ -87,14 +87,14 @@ export interface ConsulWriteRoleRequest {
      * @type {Array<string>}
      * @memberof ConsulWriteRoleRequest
      */
-    serviceIdentities?: Array<string>;
+    service_identities?: Array<string>;
     /**
      * Which type of token to create: 'client' or 'management'. If a 'management' token, the "policy", "policies", and "consul_roles" parameters are not required. Defaults to 'client'.
      * @type {string}
      * @memberof ConsulWriteRoleRequest
      * @deprecated
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * TTL for the Consul token created from the role.
      * @type {string}
@@ -120,18 +120,18 @@ export function ConsulWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'consulNamespace': json['consul_namespace'] == null ? undefined : json['consul_namespace'],
-        'consulPolicies': json['consul_policies'] == null ? undefined : json['consul_policies'],
-        'consulRoles': json['consul_roles'] == null ? undefined : json['consul_roles'],
+        'consul_namespace': json['consul_namespace'] == null ? undefined : json['consul_namespace'],
+        'consul_policies': json['consul_policies'] == null ? undefined : json['consul_policies'],
+        'consul_roles': json['consul_roles'] == null ? undefined : json['consul_roles'],
         'lease': json['lease'] == null ? undefined : json['lease'],
         'local': json['local'] == null ? undefined : json['local'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
-        'nodeIdentities': json['node_identities'] == null ? undefined : json['node_identities'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'node_identities': json['node_identities'] == null ? undefined : json['node_identities'],
         'partition': json['partition'] == null ? undefined : json['partition'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'policy': json['policy'] == null ? undefined : json['policy'],
-        'serviceIdentities': json['service_identities'] == null ? undefined : json['service_identities'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
+        'service_identities': json['service_identities'] == null ? undefined : json['service_identities'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -147,18 +147,18 @@ export function ConsulWriteRoleRequestToJSONTyped(value?: ConsulWriteRoleRequest
 
     return {
         
-        'consul_namespace': value['consulNamespace'],
-        'consul_policies': value['consulPolicies'],
-        'consul_roles': value['consulRoles'],
+        'consul_namespace': value['consul_namespace'],
+        'consul_policies': value['consul_policies'],
+        'consul_roles': value['consul_roles'],
         'lease': value['lease'],
         'local': value['local'],
-        'max_ttl': value['maxTtl'],
-        'node_identities': value['nodeIdentities'],
+        'max_ttl': value['max_ttl'],
+        'node_identities': value['node_identities'],
         'partition': value['partition'],
         'policies': value['policies'],
         'policy': value['policy'],
-        'service_identities': value['serviceIdentities'],
-        'token_type': value['tokenType'],
+        'service_identities': value['service_identities'],
+        'token_type': value['token_type'],
         'ttl': value['ttl'],
     };
 }

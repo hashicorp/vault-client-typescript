@@ -24,13 +24,13 @@ export interface TransitCreateKeyRequest {
      * @type {boolean}
      * @memberof TransitCreateKeyRequest
      */
-    allowPlaintextBackup?: boolean;
+    allow_plaintext_backup?: boolean;
     /**
      * Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    autoRotatePeriod?: string;
+    auto_rotate_period?: string;
     /**
      * Base64 encoded context for key derivation. When reading a key with key derivation enabled, if the key type supports public keys, this will return the public key for the given context.
      * @type {string}
@@ -42,7 +42,7 @@ export interface TransitCreateKeyRequest {
      * @type {boolean}
      * @memberof TransitCreateKeyRequest
      */
-    convergentEncryption?: boolean;
+    convergent_encryption?: boolean;
     /**
      * Enables key derivation mode. This allows for per-transaction unique keys for encryption operations.
      * @type {boolean}
@@ -60,39 +60,39 @@ export interface TransitCreateKeyRequest {
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    hybridKeyTypeEc?: string;
+    hybrid_key_type_ec?: string;
     /**
      * The key type of the post-quantum key to use for hybrid signature schemes. Supported types are: ML-DSA.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    hybridKeyTypePqc?: string;
+    hybrid_key_type_pqc?: string;
     /**
      * The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512
      * @type {number}
      * @memberof TransitCreateKeyRequest
      */
-    keySize?: number;
+    key_size?: number;
     /**
      * The UUID of the managed key to use for this transit key
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    managedKeyId?: string;
+    managed_key_id?: string;
     /**
      * The name of the managed key to use for this transit key
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    managedKeyName?: string;
+    managed_key_name?: string;
     /**
-     * The parameter set to use. Applies to ML-DSA and SLH-DSA key types. For ML-DSA key types, valid values are 44, 65, or 87.
+     * The parameter set to use. Applies to ML-DSA and SLH-DSA key types. For ML-DSA key types, valid values are 44, 65, or 87. For SLH-DSA key types, valid values are SLH-DSA-SHA2-128s, SLH-DSA-SHAKE-128s, SLH-DSA-SHA2-128f, SLH-DSA-SHAKE-128f, SLH-DSA-SHA2-192s, SLH-DSA-SHAKE-192s, SLH-DSA-SHA2-192f, SLH-DSA-SHAKE-192f, SLH-DSA-SHA2-256s, SLH-DSA-SHAKE-256s, SLH-DSA-SHA2-256f, SLH-DSA-SHAKE-256f
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    parameterSet?: string;
+    parameter_set?: string;
     /**
-     * The type of key to create. Currently, "aes128-gcm96" (symmetric), "aes256-gcm96" (symmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), "ed25519" (asymmetric), "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ml-dsa" (asymmetric) are supported. Defaults to "aes256-gcm96".
+     * The type of key to create. Currently, "aes128-gcm96" (symmetric), "aes256-gcm96" (symmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), "ed25519" (asymmetric), "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ml-dsa" (asymmetric), "slh-dsa" (asymmetric) are supported. Defaults to "aes256-gcm96".
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
@@ -116,18 +116,18 @@ export function TransitCreateKeyRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'allowPlaintextBackup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
-        'autoRotatePeriod': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
+        'allow_plaintext_backup': json['allow_plaintext_backup'] == null ? undefined : json['allow_plaintext_backup'],
+        'auto_rotate_period': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
         'context': json['context'] == null ? undefined : json['context'],
-        'convergentEncryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
+        'convergent_encryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
         'derived': json['derived'] == null ? undefined : json['derived'],
         'exportable': json['exportable'] == null ? undefined : json['exportable'],
-        'hybridKeyTypeEc': json['hybrid_key_type_ec'] == null ? undefined : json['hybrid_key_type_ec'],
-        'hybridKeyTypePqc': json['hybrid_key_type_pqc'] == null ? undefined : json['hybrid_key_type_pqc'],
-        'keySize': json['key_size'] == null ? undefined : json['key_size'],
-        'managedKeyId': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
-        'managedKeyName': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
-        'parameterSet': json['parameter_set'] == null ? undefined : json['parameter_set'],
+        'hybrid_key_type_ec': json['hybrid_key_type_ec'] == null ? undefined : json['hybrid_key_type_ec'],
+        'hybrid_key_type_pqc': json['hybrid_key_type_pqc'] == null ? undefined : json['hybrid_key_type_pqc'],
+        'key_size': json['key_size'] == null ? undefined : json['key_size'],
+        'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
+        'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'parameter_set': json['parameter_set'] == null ? undefined : json['parameter_set'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -143,18 +143,18 @@ export function TransitCreateKeyRequestToJSONTyped(value?: TransitCreateKeyReque
 
     return {
         
-        'allow_plaintext_backup': value['allowPlaintextBackup'],
-        'auto_rotate_period': value['autoRotatePeriod'],
+        'allow_plaintext_backup': value['allow_plaintext_backup'],
+        'auto_rotate_period': value['auto_rotate_period'],
         'context': value['context'],
-        'convergent_encryption': value['convergentEncryption'],
+        'convergent_encryption': value['convergent_encryption'],
         'derived': value['derived'],
         'exportable': value['exportable'],
-        'hybrid_key_type_ec': value['hybridKeyTypeEc'],
-        'hybrid_key_type_pqc': value['hybridKeyTypePqc'],
-        'key_size': value['keySize'],
-        'managed_key_id': value['managedKeyId'],
-        'managed_key_name': value['managedKeyName'],
-        'parameter_set': value['parameterSet'],
+        'hybrid_key_type_ec': value['hybrid_key_type_ec'],
+        'hybrid_key_type_pqc': value['hybrid_key_type_pqc'],
+        'key_size': value['key_size'],
+        'managed_key_id': value['managed_key_id'],
+        'managed_key_name': value['managed_key_name'],
+        'parameter_set': value['parameter_set'],
         'type': value['type'],
     };
 }

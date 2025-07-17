@@ -24,13 +24,13 @@ export interface CorsConfigureRequest {
      * @type {Array<string>}
      * @memberof CorsConfigureRequest
      */
-    allowedHeaders?: Array<string>;
+    allowed_headers?: Array<string>;
     /**
      * A comma-separated string or array of strings indicating origins that may make cross-origin requests.
      * @type {Array<string>}
      * @memberof CorsConfigureRequest
      */
-    allowedOrigins?: Array<string>;
+    allowed_origins?: Array<string>;
     /**
      * Enables or disables CORS headers on requests.
      * @type {boolean}
@@ -56,8 +56,8 @@ export function CorsConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'allowedHeaders': json['allowed_headers'] == null ? undefined : json['allowed_headers'],
-        'allowedOrigins': json['allowed_origins'] == null ? undefined : json['allowed_origins'],
+        'allowed_headers': json['allowed_headers'] == null ? undefined : json['allowed_headers'],
+        'allowed_origins': json['allowed_origins'] == null ? undefined : json['allowed_origins'],
         'enable': json['enable'] == null ? undefined : json['enable'],
     };
 }
@@ -73,8 +73,8 @@ export function CorsConfigureRequestToJSONTyped(value?: CorsConfigureRequest | n
 
     return {
         
-        'allowed_headers': value['allowedHeaders'],
-        'allowed_origins': value['allowedOrigins'],
+        'allowed_headers': value['allowed_headers'],
+        'allowed_origins': value['allowed_origins'],
         'enable': value['enable'],
     };
 }

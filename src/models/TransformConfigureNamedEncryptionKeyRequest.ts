@@ -24,19 +24,19 @@ export interface TransformConfigureNamedEncryptionKeyRequest {
      * @type {string}
      * @memberof TransformConfigureNamedEncryptionKeyRequest
      */
-    autoRotatePeriod?: string;
+    auto_rotate_period?: string;
     /**
      * If false, deletion of this transform is prevented.
      * @type {boolean}
      * @memberof TransformConfigureNamedEncryptionKeyRequest
      */
-    deletionAllowed?: boolean;
+    deletion_allowed?: boolean;
     /**
      * If set, the minimum version of the key allowed to be decrypted.
      * @type {number}
      * @memberof TransformConfigureNamedEncryptionKeyRequest
      */
-    minDecryptionVersion?: number;
+    min_decryption_version?: number;
 }
 
 /**
@@ -56,9 +56,9 @@ export function TransformConfigureNamedEncryptionKeyRequestFromJSONTyped(json: a
     }
     return {
         
-        'autoRotatePeriod': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
-        'deletionAllowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
-        'minDecryptionVersion': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
+        'auto_rotate_period': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
+        'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'min_decryption_version': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
     };
 }
 
@@ -73,9 +73,9 @@ export function TransformConfigureNamedEncryptionKeyRequestToJSONTyped(value?: T
 
     return {
         
-        'auto_rotate_period': value['autoRotatePeriod'],
-        'deletion_allowed': value['deletionAllowed'],
-        'min_decryption_version': value['minDecryptionVersion'],
+        'auto_rotate_period': value['auto_rotate_period'],
+        'deletion_allowed': value['deletion_allowed'],
+        'min_decryption_version': value['min_decryption_version'],
     };
 }
 

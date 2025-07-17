@@ -24,7 +24,7 @@ export interface SystemWritePoliciesEgpNameRequest {
      * @type {string}
      * @memberof SystemWritePoliciesEgpNameRequest
      */
-    enforcementLevel?: string;
+    enforcement_level?: string;
     /**
      * The paths on which the policy should be applied.
      * @type {Array<string>}
@@ -56,7 +56,7 @@ export function SystemWritePoliciesEgpNameRequestFromJSONTyped(json: any, ignore
     }
     return {
         
-        'enforcementLevel': json['enforcement_level'] == null ? undefined : json['enforcement_level'],
+        'enforcement_level': json['enforcement_level'] == null ? undefined : json['enforcement_level'],
         'paths': json['paths'] == null ? undefined : json['paths'],
         'policy': json['policy'] == null ? undefined : json['policy'],
     };
@@ -73,7 +73,7 @@ export function SystemWritePoliciesEgpNameRequestToJSONTyped(value?: SystemWrite
 
     return {
         
-        'enforcement_level': value['enforcementLevel'],
+        'enforcement_level': value['enforcement_level'],
         'paths': value['paths'],
         'policy': value['policy'],
     };

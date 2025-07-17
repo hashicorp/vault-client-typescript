@@ -24,7 +24,7 @@ export interface AppRoleReadTokenNumUsesResponse {
      * @type {number}
      * @memberof AppRoleReadTokenNumUsesResponse
      */
-    tokenNumUses?: number;
+    token_num_uses?: number;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AppRoleReadTokenNumUsesResponseFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'tokenNumUses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
+        'token_num_uses': json['token_num_uses'] == null ? undefined : json['token_num_uses'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AppRoleReadTokenNumUsesResponseToJSONTyped(value?: AppRoleReadTo
 
     return {
         
-        'token_num_uses': value['tokenNumUses'],
+        'token_num_uses': value['token_num_uses'],
     };
 }
 

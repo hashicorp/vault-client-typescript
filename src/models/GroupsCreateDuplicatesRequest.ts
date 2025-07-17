@@ -30,7 +30,7 @@ export interface GroupsCreateDuplicatesRequest {
      * @type {boolean}
      * @memberof GroupsCreateDuplicatesRequest
      */
-    differentCase?: boolean;
+    different_case?: boolean;
     /**
      * ID of the group. If set, updates the corresponding existing group.
      * @type {string}
@@ -42,13 +42,13 @@ export interface GroupsCreateDuplicatesRequest {
      * @type {Array<string>}
      * @memberof GroupsCreateDuplicatesRequest
      */
-    memberEntityIds?: Array<string>;
+    member_entity_ids?: Array<string>;
     /**
      * Group IDs to be assigned as group members.
      * @type {Array<string>}
      * @memberof GroupsCreateDuplicatesRequest
      */
-    memberGroupIds?: Array<string>;
+    member_group_ids?: Array<string>;
     /**
      * Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
      * @type {object}
@@ -66,7 +66,7 @@ export interface GroupsCreateDuplicatesRequest {
      * @type {string}
      * @memberof GroupsCreateDuplicatesRequest
      */
-    namespaceId?: string;
+    namespace_id?: string;
     /**
      * Policies to be tied to the group.
      * @type {Array<string>}
@@ -99,13 +99,13 @@ export function GroupsCreateDuplicatesRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'count': json['count'] == null ? undefined : json['count'],
-        'differentCase': json['different_case'] == null ? undefined : json['different_case'],
+        'different_case': json['different_case'] == null ? undefined : json['different_case'],
         'id': json['id'] == null ? undefined : json['id'],
-        'memberEntityIds': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
-        'memberGroupIds': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
+        'member_entity_ids': json['member_entity_ids'] == null ? undefined : json['member_entity_ids'],
+        'member_group_ids': json['member_group_ids'] == null ? undefined : json['member_group_ids'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
         'name': json['name'] == null ? undefined : json['name'],
-        'namespaceId': json['namespace_id'] == null ? undefined : json['namespace_id'],
+        'namespace_id': json['namespace_id'] == null ? undefined : json['namespace_id'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'type': json['type'] == null ? undefined : json['type'],
     };
@@ -123,13 +123,13 @@ export function GroupsCreateDuplicatesRequestToJSONTyped(value?: GroupsCreateDup
     return {
         
         'count': value['count'],
-        'different_case': value['differentCase'],
+        'different_case': value['different_case'],
         'id': value['id'],
-        'member_entity_ids': value['memberEntityIds'],
-        'member_group_ids': value['memberGroupIds'],
+        'member_entity_ids': value['member_entity_ids'],
+        'member_group_ids': value['member_group_ids'],
         'metadata': value['metadata'],
         'name': value['name'],
-        'namespace_id': value['namespaceId'],
+        'namespace_id': value['namespace_id'],
         'policies': value['policies'],
         'type': value['type'],
     };

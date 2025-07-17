@@ -24,13 +24,13 @@ export interface TransformWriteMaskingTransformationRequest {
      * @type {Array<string>}
      * @memberof TransformWriteMaskingTransformationRequest
      */
-    allowedRoles?: Array<string>;
+    allowed_roles?: Array<string>;
     /**
      * The character used to replace data when in masking mode
      * @type {string}
      * @memberof TransformWriteMaskingTransformationRequest
      */
-    maskingCharacter?: string;
+    masking_character?: string;
     /**
      * The name of the template to use.
      * @type {string}
@@ -56,8 +56,8 @@ export function TransformWriteMaskingTransformationRequestFromJSONTyped(json: an
     }
     return {
         
-        'allowedRoles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
-        'maskingCharacter': json['masking_character'] == null ? undefined : json['masking_character'],
+        'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
+        'masking_character': json['masking_character'] == null ? undefined : json['masking_character'],
         'template': json['template'] == null ? undefined : json['template'],
     };
 }
@@ -73,8 +73,8 @@ export function TransformWriteMaskingTransformationRequestToJSONTyped(value?: Tr
 
     return {
         
-        'allowed_roles': value['allowedRoles'],
-        'masking_character': value['maskingCharacter'],
+        'allowed_roles': value['allowed_roles'],
+        'masking_character': value['masking_character'],
         'template': value['template'],
     };
 }

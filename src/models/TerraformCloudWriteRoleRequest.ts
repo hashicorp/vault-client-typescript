@@ -24,7 +24,7 @@ export interface TerraformCloudWriteRoleRequest {
      * @type {string}
      * @memberof TerraformCloudWriteRoleRequest
      */
-    credentialType?: string;
+    credential_type?: string;
     /**
      * Description of the token created by the role
      * @type {string}
@@ -36,7 +36,7 @@ export interface TerraformCloudWriteRoleRequest {
      * @type {string}
      * @memberof TerraformCloudWriteRoleRequest
      */
-    maxTtl?: string;
+    max_ttl?: string;
     /**
      * Name of the Terraform Cloud or Enterprise organization
      * @type {string}
@@ -48,7 +48,7 @@ export interface TerraformCloudWriteRoleRequest {
      * @type {string}
      * @memberof TerraformCloudWriteRoleRequest
      */
-    teamId?: string;
+    team_id?: string;
     /**
      * Default lease for generated credentials. If not set or set to 0, will use system default.
      * @type {string}
@@ -60,7 +60,7 @@ export interface TerraformCloudWriteRoleRequest {
      * @type {string}
      * @memberof TerraformCloudWriteRoleRequest
      */
-    userId?: string;
+    user_id?: string;
 }
 
 /**
@@ -80,13 +80,13 @@ export function TerraformCloudWriteRoleRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
-        'credentialType': json['credential_type'] == null ? undefined : json['credential_type'],
+        'credential_type': json['credential_type'] == null ? undefined : json['credential_type'],
         'description': json['description'] == null ? undefined : json['description'],
-        'maxTtl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'organization': json['organization'] == null ? undefined : json['organization'],
-        'teamId': json['team_id'] == null ? undefined : json['team_id'],
+        'team_id': json['team_id'] == null ? undefined : json['team_id'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
+        'user_id': json['user_id'] == null ? undefined : json['user_id'],
     };
 }
 
@@ -101,13 +101,13 @@ export function TerraformCloudWriteRoleRequestToJSONTyped(value?: TerraformCloud
 
     return {
         
-        'credential_type': value['credentialType'],
+        'credential_type': value['credential_type'],
         'description': value['description'],
-        'max_ttl': value['maxTtl'],
+        'max_ttl': value['max_ttl'],
         'organization': value['organization'],
-        'team_id': value['teamId'],
+        'team_id': value['team_id'],
         'ttl': value['ttl'],
-        'user_id': value['userId'],
+        'user_id': value['user_id'],
     };
 }
 

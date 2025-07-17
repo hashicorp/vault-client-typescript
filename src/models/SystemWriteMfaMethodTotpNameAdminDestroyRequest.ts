@@ -24,7 +24,7 @@ export interface SystemWriteMfaMethodTotpNameAdminDestroyRequest {
      * @type {string}
      * @memberof SystemWriteMfaMethodTotpNameAdminDestroyRequest
      */
-    entityId?: string;
+    entity_id?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemWriteMfaMethodTotpNameAdminDestroyRequestFromJSONTyped(jso
     }
     return {
         
-        'entityId': json['entity_id'] == null ? undefined : json['entity_id'],
+        'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemWriteMfaMethodTotpNameAdminDestroyRequestToJSONTyped(value
 
     return {
         
-        'entity_id': value['entityId'],
+        'entity_id': value['entity_id'],
     };
 }
 

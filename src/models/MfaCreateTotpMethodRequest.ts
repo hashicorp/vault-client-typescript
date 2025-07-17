@@ -42,19 +42,19 @@ export interface MfaCreateTotpMethodRequest {
      * @type {number}
      * @memberof MfaCreateTotpMethodRequest
      */
-    keySize?: number;
+    key_size?: number;
     /**
      * Max number of allowed validation attempts.
      * @type {number}
      * @memberof MfaCreateTotpMethodRequest
      */
-    maxValidationAttempts?: number;
+    max_validation_attempts?: number;
     /**
      * The unique name identifier for this MFA method.
      * @type {string}
      * @memberof MfaCreateTotpMethodRequest
      */
-    methodName?: string;
+    method_name?: string;
     /**
      * The length of time used to generate a counter for the TOTP token calculation.
      * @type {string}
@@ -66,7 +66,7 @@ export interface MfaCreateTotpMethodRequest {
      * @type {number}
      * @memberof MfaCreateTotpMethodRequest
      */
-    qrSize?: number;
+    qr_size?: number;
     /**
      * The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1.
      * @type {number}
@@ -95,11 +95,11 @@ export function MfaCreateTotpMethodRequestFromJSONTyped(json: any, ignoreDiscrim
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
         'digits': json['digits'] == null ? undefined : json['digits'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
-        'keySize': json['key_size'] == null ? undefined : json['key_size'],
-        'maxValidationAttempts': json['max_validation_attempts'] == null ? undefined : json['max_validation_attempts'],
-        'methodName': json['method_name'] == null ? undefined : json['method_name'],
+        'key_size': json['key_size'] == null ? undefined : json['key_size'],
+        'max_validation_attempts': json['max_validation_attempts'] == null ? undefined : json['max_validation_attempts'],
+        'method_name': json['method_name'] == null ? undefined : json['method_name'],
         'period': json['period'] == null ? undefined : json['period'],
-        'qrSize': json['qr_size'] == null ? undefined : json['qr_size'],
+        'qr_size': json['qr_size'] == null ? undefined : json['qr_size'],
         'skew': json['skew'] == null ? undefined : json['skew'],
     };
 }
@@ -118,11 +118,11 @@ export function MfaCreateTotpMethodRequestToJSONTyped(value?: MfaCreateTotpMetho
         'algorithm': value['algorithm'],
         'digits': value['digits'],
         'issuer': value['issuer'],
-        'key_size': value['keySize'],
-        'max_validation_attempts': value['maxValidationAttempts'],
-        'method_name': value['methodName'],
+        'key_size': value['key_size'],
+        'max_validation_attempts': value['max_validation_attempts'],
+        'method_name': value['method_name'],
         'period': value['period'],
-        'qr_size': value['qrSize'],
+        'qr_size': value['qr_size'],
         'skew': value['skew'],
     };
 }

@@ -30,7 +30,7 @@ export interface SystemWriteReplicationDrSecondaryReindexRequest {
      * @type {string}
      * @memberof SystemWriteReplicationDrSecondaryReindexRequest
      */
-    drOperationToken?: string;
+    dr_operation_token?: string;
     /**
      * Forces a complete re-indexing which only scans data available in the storage. Defaults false.
      * @type {boolean}
@@ -42,7 +42,7 @@ export interface SystemWriteReplicationDrSecondaryReindexRequest {
      * @type {boolean}
      * @memberof SystemWriteReplicationDrSecondaryReindexRequest
      */
-    skipFlush?: boolean;
+    skip_flush?: boolean;
 }
 
 /**
@@ -63,9 +63,9 @@ export function SystemWriteReplicationDrSecondaryReindexRequestFromJSONTyped(jso
     return {
         
         'diff': json['diff'] == null ? undefined : json['diff'],
-        'drOperationToken': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
+        'dr_operation_token': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
         'force': json['force'] == null ? undefined : json['force'],
-        'skipFlush': json['skip_flush'] == null ? undefined : json['skip_flush'],
+        'skip_flush': json['skip_flush'] == null ? undefined : json['skip_flush'],
     };
 }
 
@@ -81,9 +81,9 @@ export function SystemWriteReplicationDrSecondaryReindexRequestToJSONTyped(value
     return {
         
         'diff': value['diff'],
-        'dr_operation_token': value['drOperationToken'],
+        'dr_operation_token': value['dr_operation_token'],
         'force': value['force'],
-        'skip_flush': value['skipFlush'],
+        'skip_flush': value['skip_flush'],
     };
 }
 

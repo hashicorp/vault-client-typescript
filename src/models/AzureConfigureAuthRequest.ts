@@ -24,19 +24,19 @@ export interface AzureConfigureAuthRequest {
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable.
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    clientSecret?: string;
+    client_secret?: string;
     /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof AzureConfigureAuthRequest
      */
-    disableAutomatedRotation?: boolean;
+    disable_automated_rotation?: boolean;
     /**
      * The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable.
      * @type {string}
@@ -48,25 +48,25 @@ export interface AzureConfigureAuthRequest {
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    identityTokenAudience?: string;
+    identity_token_audience?: string;
     /**
      * Time-to-live of plugin identity tokens
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    identityTokenTtl?: string;
+    identity_token_ttl?: string;
     /**
      * The maximum number of attempts a failed operation will be retried before producing an error.
      * @type {number}
      * @memberof AzureConfigureAuthRequest
      */
-    maxRetries?: number;
+    max_retries?: number;
     /**
      * The maximum delay allowed before retrying an operation.
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    maxRetryDelay?: string;
+    max_retry_delay?: string;
     /**
      * The resource URL for the vault application in Azure Active Directory. This value can also be provided with the AZURE_AD_RESOURCE environment variable.
      * @type {string}
@@ -78,37 +78,37 @@ export interface AzureConfigureAuthRequest {
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    retryDelay?: string;
+    retry_delay?: string;
     /**
      * The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds)
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    rootPasswordTtl?: string;
+    root_password_ttl?: string;
     /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    rotationPeriod?: string;
+    rotation_period?: string;
     /**
      * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    rotationSchedule?: string;
+    rotation_schedule?: string;
     /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    rotationWindow?: string;
+    rotation_window?: string;
     /**
      * The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable.
      * @type {string}
      * @memberof AzureConfigureAuthRequest
      */
-    tenantId?: string;
+    tenant_id?: string;
 }
 
 /**
@@ -128,21 +128,21 @@ export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
-        'clientSecret': json['client_secret'] == null ? undefined : json['client_secret'],
-        'disableAutomatedRotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
+        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'environment': json['environment'] == null ? undefined : json['environment'],
-        'identityTokenAudience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
-        'identityTokenTtl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
-        'maxRetries': json['max_retries'] == null ? undefined : json['max_retries'],
-        'maxRetryDelay': json['max_retry_delay'] == null ? undefined : json['max_retry_delay'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
+        'max_retries': json['max_retries'] == null ? undefined : json['max_retries'],
+        'max_retry_delay': json['max_retry_delay'] == null ? undefined : json['max_retry_delay'],
         'resource': json['resource'] == null ? undefined : json['resource'],
-        'retryDelay': json['retry_delay'] == null ? undefined : json['retry_delay'],
-        'rootPasswordTtl': json['root_password_ttl'] == null ? undefined : json['root_password_ttl'],
-        'rotationPeriod': json['rotation_period'] == null ? undefined : json['rotation_period'],
-        'rotationSchedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
-        'rotationWindow': json['rotation_window'] == null ? undefined : json['rotation_window'],
-        'tenantId': json['tenant_id'] == null ? undefined : json['tenant_id'],
+        'retry_delay': json['retry_delay'] == null ? undefined : json['retry_delay'],
+        'root_password_ttl': json['root_password_ttl'] == null ? undefined : json['root_password_ttl'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
     };
 }
 
@@ -157,21 +157,21 @@ export function AzureConfigureAuthRequestToJSONTyped(value?: AzureConfigureAuthR
 
     return {
         
-        'client_id': value['clientId'],
-        'client_secret': value['clientSecret'],
-        'disable_automated_rotation': value['disableAutomatedRotation'],
+        'client_id': value['client_id'],
+        'client_secret': value['client_secret'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
         'environment': value['environment'],
-        'identity_token_audience': value['identityTokenAudience'],
-        'identity_token_ttl': value['identityTokenTtl'],
-        'max_retries': value['maxRetries'],
-        'max_retry_delay': value['maxRetryDelay'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_ttl': value['identity_token_ttl'],
+        'max_retries': value['max_retries'],
+        'max_retry_delay': value['max_retry_delay'],
         'resource': value['resource'],
-        'retry_delay': value['retryDelay'],
-        'root_password_ttl': value['rootPasswordTtl'],
-        'rotation_period': value['rotationPeriod'],
-        'rotation_schedule': value['rotationSchedule'],
-        'rotation_window': value['rotationWindow'],
-        'tenant_id': value['tenantId'],
+        'retry_delay': value['retry_delay'],
+        'root_password_ttl': value['root_password_ttl'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
+        'tenant_id': value['tenant_id'],
     };
 }
 

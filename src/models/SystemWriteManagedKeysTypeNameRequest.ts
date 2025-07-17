@@ -24,7 +24,7 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    accessKey?: string;
+    access_key?: string;
     /**
      * The signature algorithm to use with this key
      * @type {string}
@@ -36,37 +36,37 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    allowGenerateKey?: boolean;
+    allow_generate_key?: boolean;
     /**
      * If true, allows users of the key to provide key material which may replace keys that were previously present. allow_store_key being false overrides this behavior.
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    allowReplaceKey?: boolean;
+    allow_replace_key?: boolean;
     /**
      * If true, allows users of the key to provide key material where none was present.
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    allowStoreKey?: boolean;
+    allow_store_key?: boolean;
     /**
      * If true, this key may be accessed by any mount without the mount's allowed_manage_keys field being set.
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    anyMount?: boolean;
+    any_mount?: boolean;
     /**
      * The client ID for credentials to invoke the Azure APIs.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    clientId?: string;
+    client_id?: string;
     /**
      * The client secret for credentials to invoke the Azure APIs.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    clientSecret?: string;
+    client_secret?: string;
     /**
      * The path for the GCP credential file
      * @type {string}
@@ -78,13 +78,13 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    cryptoKey?: string;
+    crypto_key?: string;
     /**
      * The key version of an existing key in GCP Cloud KMS
      * @type {number}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    cryptoKeyVersion?: number;
+    crypto_key_version?: number;
     /**
      * For ECDSA keys, the desired elliptic curve if the key is to be generated, either P256, P384, or P521.
      * @type {string}
@@ -108,7 +108,7 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {boolean}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    forceRwSession?: boolean;
+    force_rw_session?: boolean;
     /**
      * The desired key length in bits if the RSA key is to be generated, either 2048, 3072, or 4096.
      * @type {number}
@@ -120,43 +120,43 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {number}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyBits?: number;
+    key_bits?: number;
     /**
      * The id of a PKCS#11 key to use. As key ids are created by the HSM, it is an error if the key does not yet exist. This value or key_label must be specified.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyId?: string;
+    key_id?: string;
     /**
      * The label of a PKCS#11 key to use. If the key does not exist and generation is enabled, this is the label that will be given to the generated key. This value or key_id must be specified.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyLabel?: string;
+    key_label?: string;
     /**
      * The name of the Azure Key Vault Key.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyName?: string;
+    key_name?: string;
     /**
      * The name of the key ring in GCP Cloud KMS
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyRing?: string;
+    key_ring?: string;
     /**
      * The type of the Azure Key Vault Key. Currently only `RSA-HSM` is supported.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    keyType?: string;
+    key_type?: string;
     /**
      * An identifier for the AWS KMS key. If the key already exists, this can be either the AWS-generated key ID or an alias. If the key is to be generated and the field is non-empty, the provided value will be used to create an alias for the key.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    kmsKey?: string;
+    kms_key?: string;
     /**
      * The name of a managed key access library, as defined in the Vault server configuration.
      * @type {string}
@@ -168,7 +168,7 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {number}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    maxParallel?: number;
+    max_parallel?: number;
     /**
      * The mechanism for the given key, specified as a decimal or hexadecimal (prefixed by 0x) string.
      * @type {string}
@@ -204,7 +204,7 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    secretKey?: string;
+    secret_key?: string;
     /**
      * The slot number to use, specified as a string (e.g. "0").
      * @type {string}
@@ -216,13 +216,13 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    tenantId?: string;
+    tenant_id?: string;
     /**
      * The slot token label to use.
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    tokenLabel?: string;
+    token_label?: string;
     /**
      * A comma-delimited list of the allowed usages of this key. Valid values are encrypt, decrypt, sign, verify, wrap, unwrap, mac, and random.
      * @type {string}
@@ -234,7 +234,7 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
      */
-    vaultName?: string;
+    vault_name?: string;
 }
 
 /**
@@ -254,42 +254,42 @@ export function SystemWriteManagedKeysTypeNameRequestFromJSONTyped(json: any, ig
     }
     return {
         
-        'accessKey': json['access_key'] == null ? undefined : json['access_key'],
+        'access_key': json['access_key'] == null ? undefined : json['access_key'],
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
-        'allowGenerateKey': json['allow_generate_key'] == null ? undefined : json['allow_generate_key'],
-        'allowReplaceKey': json['allow_replace_key'] == null ? undefined : json['allow_replace_key'],
-        'allowStoreKey': json['allow_store_key'] == null ? undefined : json['allow_store_key'],
-        'anyMount': json['any_mount'] == null ? undefined : json['any_mount'],
-        'clientId': json['client_id'] == null ? undefined : json['client_id'],
-        'clientSecret': json['client_secret'] == null ? undefined : json['client_secret'],
+        'allow_generate_key': json['allow_generate_key'] == null ? undefined : json['allow_generate_key'],
+        'allow_replace_key': json['allow_replace_key'] == null ? undefined : json['allow_replace_key'],
+        'allow_store_key': json['allow_store_key'] == null ? undefined : json['allow_store_key'],
+        'any_mount': json['any_mount'] == null ? undefined : json['any_mount'],
+        'client_id': json['client_id'] == null ? undefined : json['client_id'],
+        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'credentials': json['credentials'] == null ? undefined : json['credentials'],
-        'cryptoKey': json['crypto_key'] == null ? undefined : json['crypto_key'],
-        'cryptoKeyVersion': json['crypto_key_version'] == null ? undefined : json['crypto_key_version'],
+        'crypto_key': json['crypto_key'] == null ? undefined : json['crypto_key'],
+        'crypto_key_version': json['crypto_key_version'] == null ? undefined : json['crypto_key_version'],
         'curve': json['curve'] == null ? undefined : json['curve'],
         'endpoint': json['endpoint'] == null ? undefined : json['endpoint'],
         'environment': json['environment'] == null ? undefined : json['environment'],
-        'forceRwSession': json['force_rw_session'] == null ? undefined : json['force_rw_session'],
+        'force_rw_session': json['force_rw_session'] == null ? undefined : json['force_rw_session'],
         'keyBitsDashed': json['key-bits'] == null ? undefined : json['key-bits'],
-        'keyBits': json['key_bits'] == null ? undefined : json['key_bits'],
-        'keyId': json['key_id'] == null ? undefined : json['key_id'],
-        'keyLabel': json['key_label'] == null ? undefined : json['key_label'],
-        'keyName': json['key_name'] == null ? undefined : json['key_name'],
-        'keyRing': json['key_ring'] == null ? undefined : json['key_ring'],
-        'keyType': json['key_type'] == null ? undefined : json['key_type'],
-        'kmsKey': json['kms_key'] == null ? undefined : json['kms_key'],
+        'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
+        'key_id': json['key_id'] == null ? undefined : json['key_id'],
+        'key_label': json['key_label'] == null ? undefined : json['key_label'],
+        'key_name': json['key_name'] == null ? undefined : json['key_name'],
+        'key_ring': json['key_ring'] == null ? undefined : json['key_ring'],
+        'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'kms_key': json['kms_key'] == null ? undefined : json['kms_key'],
         'library': json['library'] == null ? undefined : json['library'],
-        'maxParallel': json['max_parallel'] == null ? undefined : json['max_parallel'],
+        'max_parallel': json['max_parallel'] == null ? undefined : json['max_parallel'],
         'mechanism': json['mechanism'] == null ? undefined : json['mechanism'],
         'pin': json['pin'] == null ? undefined : json['pin'],
         'project': json['project'] == null ? undefined : json['project'],
         'region': json['region'] == null ? undefined : json['region'],
         'resource': json['resource'] == null ? undefined : json['resource'],
-        'secretKey': json['secret_key'] == null ? undefined : json['secret_key'],
+        'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
         'slot': json['slot'] == null ? undefined : json['slot'],
-        'tenantId': json['tenant_id'] == null ? undefined : json['tenant_id'],
-        'tokenLabel': json['token_label'] == null ? undefined : json['token_label'],
+        'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
+        'token_label': json['token_label'] == null ? undefined : json['token_label'],
         'usages': json['usages'] == null ? undefined : json['usages'],
-        'vaultName': json['vault_name'] == null ? undefined : json['vault_name'],
+        'vault_name': json['vault_name'] == null ? undefined : json['vault_name'],
     };
 }
 
@@ -304,42 +304,42 @@ export function SystemWriteManagedKeysTypeNameRequestToJSONTyped(value?: SystemW
 
     return {
         
-        'access_key': value['accessKey'],
+        'access_key': value['access_key'],
         'algorithm': value['algorithm'],
-        'allow_generate_key': value['allowGenerateKey'],
-        'allow_replace_key': value['allowReplaceKey'],
-        'allow_store_key': value['allowStoreKey'],
-        'any_mount': value['anyMount'],
-        'client_id': value['clientId'],
-        'client_secret': value['clientSecret'],
+        'allow_generate_key': value['allow_generate_key'],
+        'allow_replace_key': value['allow_replace_key'],
+        'allow_store_key': value['allow_store_key'],
+        'any_mount': value['any_mount'],
+        'client_id': value['client_id'],
+        'client_secret': value['client_secret'],
         'credentials': value['credentials'],
-        'crypto_key': value['cryptoKey'],
-        'crypto_key_version': value['cryptoKeyVersion'],
+        'crypto_key': value['crypto_key'],
+        'crypto_key_version': value['crypto_key_version'],
         'curve': value['curve'],
         'endpoint': value['endpoint'],
         'environment': value['environment'],
-        'force_rw_session': value['forceRwSession'],
+        'force_rw_session': value['force_rw_session'],
         'key-bits': value['keyBitsDashed'],
-        'key_bits': value['keyBits'],
-        'key_id': value['keyId'],
-        'key_label': value['keyLabel'],
-        'key_name': value['keyName'],
-        'key_ring': value['keyRing'],
-        'key_type': value['keyType'],
-        'kms_key': value['kmsKey'],
+        'key_bits': value['key_bits'],
+        'key_id': value['key_id'],
+        'key_label': value['key_label'],
+        'key_name': value['key_name'],
+        'key_ring': value['key_ring'],
+        'key_type': value['key_type'],
+        'kms_key': value['kms_key'],
         'library': value['library'],
-        'max_parallel': value['maxParallel'],
+        'max_parallel': value['max_parallel'],
         'mechanism': value['mechanism'],
         'pin': value['pin'],
         'project': value['project'],
         'region': value['region'],
         'resource': value['resource'],
-        'secret_key': value['secretKey'],
+        'secret_key': value['secret_key'],
         'slot': value['slot'],
-        'tenant_id': value['tenantId'],
-        'token_label': value['tokenLabel'],
+        'tenant_id': value['tenant_id'],
+        'token_label': value['token_label'],
         'usages': value['usages'],
-        'vault_name': value['vaultName'],
+        'vault_name': value['vault_name'],
     };
 }
 

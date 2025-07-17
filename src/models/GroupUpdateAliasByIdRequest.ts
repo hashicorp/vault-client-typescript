@@ -24,13 +24,13 @@ export interface GroupUpdateAliasByIdRequest {
      * @type {string}
      * @memberof GroupUpdateAliasByIdRequest
      */
-    canonicalId?: string;
+    canonical_id?: string;
     /**
      * Mount accessor to which this alias belongs to.
      * @type {string}
      * @memberof GroupUpdateAliasByIdRequest
      */
-    mountAccessor?: string;
+    mount_accessor?: string;
     /**
      * Alias of the group.
      * @type {string}
@@ -56,8 +56,8 @@ export function GroupUpdateAliasByIdRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'canonicalId': json['canonical_id'] == null ? undefined : json['canonical_id'],
-        'mountAccessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
+        'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
@@ -73,8 +73,8 @@ export function GroupUpdateAliasByIdRequestToJSONTyped(value?: GroupUpdateAliasB
 
     return {
         
-        'canonical_id': value['canonicalId'],
-        'mount_accessor': value['mountAccessor'],
+        'canonical_id': value['canonical_id'],
+        'mount_accessor': value['mount_accessor'],
         'name': value['name'],
     };
 }

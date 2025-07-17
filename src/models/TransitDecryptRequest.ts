@@ -24,13 +24,13 @@ export interface TransitDecryptRequest {
      * @type {string}
      * @memberof TransitDecryptRequest
      */
-    associatedData?: string;
+    associated_data?: string;
     /**
      * Specifies a list of items to be decrypted in a single batch. When this parameter is set, if the parameters 'ciphertext', 'context' and 'nonce' are also set, they will be ignored. Any batch output will preserve the order of the batch input.
      * @type {Array<object>}
      * @memberof TransitDecryptRequest
      */
-    batchInput?: Array<object>;
+    batch_input?: Array<object>;
     /**
      * The ciphertext to decrypt, provided as returned by encrypt.
      * @type {string}
@@ -54,13 +54,13 @@ export interface TransitDecryptRequest {
      * @type {string}
      * @memberof TransitDecryptRequest
      */
-    paddingScheme?: string;
+    padding_scheme?: string;
     /**
      * Ordinarily, if a batch item fails to decrypt due to a bad input, but other batch items succeed, the HTTP response code is 400 (Bad Request). Some applications may want to treat partial failures differently. Providing the parameter returns the given response code integer instead of a 400 in this case. If all values fail HTTP 400 is still returned.
      * @type {number}
      * @memberof TransitDecryptRequest
      */
-    partialFailureResponseCode?: number;
+    partial_failure_response_code?: number;
 }
 
 /**
@@ -80,13 +80,13 @@ export function TransitDecryptRequestFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'associatedData': json['associated_data'] == null ? undefined : json['associated_data'],
-        'batchInput': json['batch_input'] == null ? undefined : json['batch_input'],
+        'associated_data': json['associated_data'] == null ? undefined : json['associated_data'],
+        'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'context': json['context'] == null ? undefined : json['context'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
-        'paddingScheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
-        'partialFailureResponseCode': json['partial_failure_response_code'] == null ? undefined : json['partial_failure_response_code'],
+        'padding_scheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
+        'partial_failure_response_code': json['partial_failure_response_code'] == null ? undefined : json['partial_failure_response_code'],
     };
 }
 
@@ -101,13 +101,13 @@ export function TransitDecryptRequestToJSONTyped(value?: TransitDecryptRequest |
 
     return {
         
-        'associated_data': value['associatedData'],
-        'batch_input': value['batchInput'],
+        'associated_data': value['associated_data'],
+        'batch_input': value['batch_input'],
         'ciphertext': value['ciphertext'],
         'context': value['context'],
         'nonce': value['nonce'],
-        'padding_scheme': value['paddingScheme'],
-        'partial_failure_response_code': value['partialFailureResponseCode'],
+        'padding_scheme': value['padding_scheme'],
+        'partial_failure_response_code': value['partial_failure_response_code'],
     };
 }
 

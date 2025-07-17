@@ -24,37 +24,37 @@ export interface MountsTuneConfigurationParametersRequest {
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    allowedManagedKeys?: Array<string>;
+    allowed_managed_keys?: Array<string>;
     /**
      * A list of headers to whitelist and allow a plugin to set on responses.
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    allowedResponseHeaders?: Array<string>;
+    allowed_response_headers?: Array<string>;
     /**
      * The list of keys in the request data object that will not be HMAC'd by audit devices.
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    auditNonHmacRequestKeys?: Array<string>;
+    audit_non_hmac_request_keys?: Array<string>;
     /**
      * The list of keys in the response data object that will not be HMAC'd by audit devices.
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    auditNonHmacResponseKeys?: Array<string>;
+    audit_non_hmac_response_keys?: Array<string>;
     /**
      * The default lease TTL for this mount.
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    defaultLeaseTtl?: string;
+    default_lease_ttl?: string;
     /**
      * 
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    delegatedAuthAccessors?: Array<string>;
+    delegated_auth_accessors?: Array<string>;
     /**
      * User-friendly description for this credential backend.
      * @type {string}
@@ -66,19 +66,19 @@ export interface MountsTuneConfigurationParametersRequest {
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    identityTokenKey?: string;
+    identity_token_key?: string;
     /**
      * Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are 'unauth' and 'hidden', with the empty default ('') behaving like 'hidden'.
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    listingVisibility?: string;
+    listing_visibility?: string;
     /**
      * The max lease TTL for this mount.
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    maxLeaseTtl?: string;
+    max_lease_ttl?: string;
     /**
      * The options to pass into the backend. Should be a json object with string keys and values.
      * @type {object}
@@ -90,31 +90,31 @@ export interface MountsTuneConfigurationParametersRequest {
      * @type {Array<string>}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    passthroughRequestHeaders?: Array<string>;
+    passthrough_request_headers?: Array<string>;
     /**
      * The semantic version of the plugin to use, or image tag if oci_image is provided.
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    pluginVersion?: string;
+    plugin_version?: string;
     /**
      * The type of token to issue (service or batch).
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    tokenType?: string;
+    token_type?: string;
     /**
      * Whether to trim a trailing slash on incoming requests to this mount
      * @type {boolean}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    trimRequestTrailingSlashes?: boolean;
+    trim_request_trailing_slashes?: boolean;
     /**
      * The user lockout configuration to pass into the backend. Should be a json object with string keys and values.
      * @type {object}
      * @memberof MountsTuneConfigurationParametersRequest
      */
-    userLockoutConfig?: object;
+    user_lockout_config?: object;
 }
 
 /**
@@ -134,22 +134,22 @@ export function MountsTuneConfigurationParametersRequestFromJSONTyped(json: any,
     }
     return {
         
-        'allowedManagedKeys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
-        'allowedResponseHeaders': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
-        'auditNonHmacRequestKeys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
-        'auditNonHmacResponseKeys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
-        'defaultLeaseTtl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
-        'delegatedAuthAccessors': json['delegated_auth_accessors'] == null ? undefined : json['delegated_auth_accessors'],
+        'allowed_managed_keys': json['allowed_managed_keys'] == null ? undefined : json['allowed_managed_keys'],
+        'allowed_response_headers': json['allowed_response_headers'] == null ? undefined : json['allowed_response_headers'],
+        'audit_non_hmac_request_keys': json['audit_non_hmac_request_keys'] == null ? undefined : json['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': json['audit_non_hmac_response_keys'] == null ? undefined : json['audit_non_hmac_response_keys'],
+        'default_lease_ttl': json['default_lease_ttl'] == null ? undefined : json['default_lease_ttl'],
+        'delegated_auth_accessors': json['delegated_auth_accessors'] == null ? undefined : json['delegated_auth_accessors'],
         'description': json['description'] == null ? undefined : json['description'],
-        'identityTokenKey': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
-        'listingVisibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
-        'maxLeaseTtl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'listing_visibility': json['listing_visibility'] == null ? undefined : json['listing_visibility'],
+        'max_lease_ttl': json['max_lease_ttl'] == null ? undefined : json['max_lease_ttl'],
         'options': json['options'] == null ? undefined : json['options'],
-        'passthroughRequestHeaders': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
-        'pluginVersion': json['plugin_version'] == null ? undefined : json['plugin_version'],
-        'tokenType': json['token_type'] == null ? undefined : json['token_type'],
-        'trimRequestTrailingSlashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
-        'userLockoutConfig': json['user_lockout_config'] == null ? undefined : json['user_lockout_config'],
+        'passthrough_request_headers': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
+        'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'token_type': json['token_type'] == null ? undefined : json['token_type'],
+        'trim_request_trailing_slashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
+        'user_lockout_config': json['user_lockout_config'] == null ? undefined : json['user_lockout_config'],
     };
 }
 
@@ -164,22 +164,22 @@ export function MountsTuneConfigurationParametersRequestToJSONTyped(value?: Moun
 
     return {
         
-        'allowed_managed_keys': value['allowedManagedKeys'],
-        'allowed_response_headers': value['allowedResponseHeaders'],
-        'audit_non_hmac_request_keys': value['auditNonHmacRequestKeys'],
-        'audit_non_hmac_response_keys': value['auditNonHmacResponseKeys'],
-        'default_lease_ttl': value['defaultLeaseTtl'],
-        'delegated_auth_accessors': value['delegatedAuthAccessors'],
+        'allowed_managed_keys': value['allowed_managed_keys'],
+        'allowed_response_headers': value['allowed_response_headers'],
+        'audit_non_hmac_request_keys': value['audit_non_hmac_request_keys'],
+        'audit_non_hmac_response_keys': value['audit_non_hmac_response_keys'],
+        'default_lease_ttl': value['default_lease_ttl'],
+        'delegated_auth_accessors': value['delegated_auth_accessors'],
         'description': value['description'],
-        'identity_token_key': value['identityTokenKey'],
-        'listing_visibility': value['listingVisibility'],
-        'max_lease_ttl': value['maxLeaseTtl'],
+        'identity_token_key': value['identity_token_key'],
+        'listing_visibility': value['listing_visibility'],
+        'max_lease_ttl': value['max_lease_ttl'],
         'options': value['options'],
-        'passthrough_request_headers': value['passthroughRequestHeaders'],
-        'plugin_version': value['pluginVersion'],
-        'token_type': value['tokenType'],
-        'trim_request_trailing_slashes': value['trimRequestTrailingSlashes'],
-        'user_lockout_config': value['userLockoutConfig'],
+        'passthrough_request_headers': value['passthrough_request_headers'],
+        'plugin_version': value['plugin_version'],
+        'token_type': value['token_type'],
+        'trim_request_trailing_slashes': value['trim_request_trailing_slashes'],
+        'user_lockout_config': value['user_lockout_config'],
     };
 }
 

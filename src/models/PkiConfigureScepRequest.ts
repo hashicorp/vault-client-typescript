@@ -24,13 +24,13 @@ export interface PkiConfigureScepRequest {
      * @type {Array<string>}
      * @memberof PkiConfigureScepRequest
      */
-    allowedDigestAlgorithms?: PkiConfigureScepRequestAllowedDigestAlgorithmsEnum;
+    allowed_digest_algorithms?: PkiConfigureScepRequestAllowedDigestAlgorithmsEnum;
     /**
      * the list of allowed encryption algorithms for SCEP requests
      * @type {Array<string>}
      * @memberof PkiConfigureScepRequest
      */
-    allowedEncryptionAlgorithms?: PkiConfigureScepRequestAllowedEncryptionAlgorithmsEnum;
+    allowed_encryption_algorithms?: PkiConfigureScepRequestAllowedEncryptionAlgorithmsEnum;
     /**
      * A map of authentication type to authentication parameters
      * @type {object}
@@ -42,7 +42,7 @@ export interface PkiConfigureScepRequest {
      * @type {string}
      * @memberof PkiConfigureScepRequest
      */
-    defaultPathPolicy?: string;
+    default_path_policy?: string;
     /**
      * whether SCEP is enabled, defaults to false
      * @type {boolean}
@@ -54,13 +54,19 @@ export interface PkiConfigureScepRequest {
      * @type {object}
      * @memberof PkiConfigureScepRequest
      */
-    externalValidation?: object;
+    external_validation?: object;
+    /**
+     * the log level to use for logging SCEP-specific requests, reset to vault-default by setting this to the empty string
+     * @type {string}
+     * @memberof PkiConfigureScepRequest
+     */
+    log_level?: string;
     /**
      * if true, only return the issuer CA, otherwise the entire CA certificate chain will be returned if available from the PKI mount
      * @type {boolean}
      * @memberof PkiConfigureScepRequest
      */
-    restrictCaChainToIssuer?: boolean;
+    restrict_ca_chain_to_issuer?: boolean;
 }
 
 /**
@@ -94,13 +100,14 @@ export function PkiConfigureScepRequestFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'allowedDigestAlgorithms': json['allowed_digest_algorithms'] == null ? undefined : json['allowed_digest_algorithms'],
-        'allowedEncryptionAlgorithms': json['allowed_encryption_algorithms'] == null ? undefined : json['allowed_encryption_algorithms'],
+        'allowed_digest_algorithms': json['allowed_digest_algorithms'] == null ? undefined : json['allowed_digest_algorithms'],
+        'allowed_encryption_algorithms': json['allowed_encryption_algorithms'] == null ? undefined : json['allowed_encryption_algorithms'],
         'authenticators': json['authenticators'] == null ? undefined : json['authenticators'],
-        'defaultPathPolicy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
+        'default_path_policy': json['default_path_policy'] == null ? undefined : json['default_path_policy'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
-        'externalValidation': json['external_validation'] == null ? undefined : json['external_validation'],
-        'restrictCaChainToIssuer': json['restrict_ca_chain_to_issuer'] == null ? undefined : json['restrict_ca_chain_to_issuer'],
+        'external_validation': json['external_validation'] == null ? undefined : json['external_validation'],
+        'log_level': json['log_level'] == null ? undefined : json['log_level'],
+        'restrict_ca_chain_to_issuer': json['restrict_ca_chain_to_issuer'] == null ? undefined : json['restrict_ca_chain_to_issuer'],
     };
 }
 
@@ -115,13 +122,14 @@ export function PkiConfigureScepRequestToJSONTyped(value?: PkiConfigureScepReque
 
     return {
         
-        'allowed_digest_algorithms': value['allowedDigestAlgorithms'],
-        'allowed_encryption_algorithms': value['allowedEncryptionAlgorithms'],
+        'allowed_digest_algorithms': value['allowed_digest_algorithms'],
+        'allowed_encryption_algorithms': value['allowed_encryption_algorithms'],
         'authenticators': value['authenticators'],
-        'default_path_policy': value['defaultPathPolicy'],
+        'default_path_policy': value['default_path_policy'],
         'enabled': value['enabled'],
-        'external_validation': value['externalValidation'],
-        'restrict_ca_chain_to_issuer': value['restrictCaChainToIssuer'],
+        'external_validation': value['external_validation'],
+        'log_level': value['log_level'],
+        'restrict_ca_chain_to_issuer': value['restrict_ca_chain_to_issuer'],
     };
 }
 

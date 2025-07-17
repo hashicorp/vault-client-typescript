@@ -24,7 +24,7 @@ export interface AppRoleWriteSecretIdRequest {
      * @type {Array<string>}
      * @memberof AppRoleWriteSecretIdRequest
      */
-    cidrList?: Array<string>;
+    cidr_list?: Array<string>;
     /**
      * Metadata to be tied to the SecretID. This should be a JSON formatted string containing the metadata in key value pairs.
      * @type {string}
@@ -36,13 +36,13 @@ export interface AppRoleWriteSecretIdRequest {
      * @type {number}
      * @memberof AppRoleWriteSecretIdRequest
      */
-    numUses?: number;
+    num_uses?: number;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof AppRoleWriteSecretIdRequest
      */
-    tokenBoundCidrs?: Array<string>;
+    token_bound_cidrs?: Array<string>;
     /**
      * Duration in seconds after which this SecretID expires. Overrides secret_id_ttl role option when supplied. May not be longer than role's secret_id_ttl.
      * @type {string}
@@ -68,10 +68,10 @@ export function AppRoleWriteSecretIdRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
-        'cidrList': json['cidr_list'] == null ? undefined : json['cidr_list'],
+        'cidr_list': json['cidr_list'] == null ? undefined : json['cidr_list'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
-        'numUses': json['num_uses'] == null ? undefined : json['num_uses'],
-        'tokenBoundCidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
+        'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
+        'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
 }
@@ -87,10 +87,10 @@ export function AppRoleWriteSecretIdRequestToJSONTyped(value?: AppRoleWriteSecre
 
     return {
         
-        'cidr_list': value['cidrList'],
+        'cidr_list': value['cidr_list'],
         'metadata': value['metadata'],
-        'num_uses': value['numUses'],
-        'token_bound_cidrs': value['tokenBoundCidrs'],
+        'num_uses': value['num_uses'],
+        'token_bound_cidrs': value['token_bound_cidrs'],
         'ttl': value['ttl'],
     };
 }

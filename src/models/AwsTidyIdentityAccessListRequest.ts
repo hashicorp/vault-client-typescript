@@ -24,7 +24,7 @@ export interface AwsTidyIdentityAccessListRequest {
      * @type {string}
      * @memberof AwsTidyIdentityAccessListRequest
      */
-    safetyBuffer?: string;
+    safety_buffer?: string;
 }
 
 /**
@@ -44,7 +44,7 @@ export function AwsTidyIdentityAccessListRequestFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'safetyBuffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
+        'safety_buffer': json['safety_buffer'] == null ? undefined : json['safety_buffer'],
     };
 }
 
@@ -59,7 +59,7 @@ export function AwsTidyIdentityAccessListRequestToJSONTyped(value?: AwsTidyIdent
 
     return {
         
-        'safety_buffer': value['safetyBuffer'],
+        'safety_buffer': value['safety_buffer'],
     };
 }
 

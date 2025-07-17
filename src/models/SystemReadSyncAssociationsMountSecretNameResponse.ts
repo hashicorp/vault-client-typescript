@@ -24,7 +24,7 @@ export interface SystemReadSyncAssociationsMountSecretNameResponse {
      * @type {object}
      * @memberof SystemReadSyncAssociationsMountSecretNameResponse
      */
-    associatedDestinations?: object;
+    associated_destinations?: object;
 }
 
 /**
@@ -44,7 +44,7 @@ export function SystemReadSyncAssociationsMountSecretNameResponseFromJSONTyped(j
     }
     return {
         
-        'associatedDestinations': json['associated_destinations'] == null ? undefined : json['associated_destinations'],
+        'associated_destinations': json['associated_destinations'] == null ? undefined : json['associated_destinations'],
     };
 }
 
@@ -59,7 +59,7 @@ export function SystemReadSyncAssociationsMountSecretNameResponseToJSONTyped(val
 
     return {
         
-        'associated_destinations': value['associatedDestinations'],
+        'associated_destinations': value['associated_destinations'],
     };
 }
 

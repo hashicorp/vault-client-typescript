@@ -24,7 +24,7 @@ export interface UiConfigListCustomMessagesResponse {
      * @type {object}
      * @memberof UiConfigListCustomMessagesResponse
      */
-    keyInfo?: object;
+    key_info?: object;
     /**
      * 
      * @type {Array<string>}
@@ -50,7 +50,7 @@ export function UiConfigListCustomMessagesResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'keyInfo': json['key_info'] == null ? undefined : json['key_info'],
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
     };
 }
@@ -66,7 +66,7 @@ export function UiConfigListCustomMessagesResponseToJSONTyped(value?: UiConfigLi
 
     return {
         
-        'key_info': value['keyInfo'],
+        'key_info': value['key_info'],
         'keys': value['keys'],
     };
 }
