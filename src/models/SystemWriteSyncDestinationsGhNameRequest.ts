@@ -60,6 +60,12 @@ export interface SystemWriteSyncDestinationsGhNameRequest {
      */
     disable_strict_networking?: boolean;
     /**
+     * The URL of the GitHub Enterprise Server instance. If unset, defaults to the standard github.com API.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsGhNameRequest
+     */
+    enterprise_url?: string;
+    /**
      * The name of the repository environment that the secrets in GitHub will be available for. Only valid when the 'secrets_location' field is set to 'repository'.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGhNameRequest
@@ -150,6 +156,7 @@ export function SystemWriteSyncDestinationsGhNameRequestFromJSONTyped(json: any,
         'allowed_ports': json['allowed_ports'] == null ? undefined : json['allowed_ports'],
         'app_name': json['app_name'] == null ? undefined : json['app_name'],
         'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
+        'enterprise_url': json['enterprise_url'] == null ? undefined : json['enterprise_url'],
         'environment_name': json['environment_name'] == null ? undefined : json['environment_name'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
         'installation_id': json['installation_id'] == null ? undefined : json['installation_id'],
@@ -181,6 +188,7 @@ export function SystemWriteSyncDestinationsGhNameRequestToJSONTyped(value?: Syst
         'allowed_ports': value['allowed_ports'],
         'app_name': value['app_name'],
         'disable_strict_networking': value['disable_strict_networking'],
+        'enterprise_url': value['enterprise_url'],
         'environment_name': value['environment_name'],
         'granularity': value['granularity'],
         'installation_id': value['installation_id'],

@@ -68,6 +68,12 @@ export interface AppRoleReadRoleResponse {
      */
     secret_id_ttl?: number;
     /**
+     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof AppRoleReadRoleResponse
+     */
+    token_auth_metadata?: object;
+    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof AppRoleReadRoleResponse
@@ -75,16 +81,16 @@ export interface AppRoleReadRoleResponse {
     token_bound_cidrs?: Array<string>;
     /**
      * If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-     * @type {number}
+     * @type {string}
      * @memberof AppRoleReadRoleResponse
      */
-    token_explicit_max_ttl?: number;
+    token_explicit_max_ttl?: string;
     /**
      * The maximum lifetime of the generated token
-     * @type {number}
+     * @type {string}
      * @memberof AppRoleReadRoleResponse
      */
-    token_max_ttl?: number;
+    token_max_ttl?: string;
     /**
      * If true, the 'default' policy will not automatically be added to generated tokens
      * @type {boolean}
@@ -98,11 +104,11 @@ export interface AppRoleReadRoleResponse {
      */
     token_num_uses?: number;
     /**
-     * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value.
-     * @type {number}
+     * If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. "24h").
+     * @type {string}
      * @memberof AppRoleReadRoleResponse
      */
-    token_period?: number;
+    token_period?: string;
     /**
      * Comma-separated list of policies
      * @type {Array<string>}
@@ -111,10 +117,10 @@ export interface AppRoleReadRoleResponse {
     token_policies?: Array<string>;
     /**
      * The initial ttl of the token to generate
-     * @type {number}
+     * @type {string}
      * @memberof AppRoleReadRoleResponse
      */
-    token_ttl?: number;
+    token_ttl?: string;
     /**
      * The type of token to generate, service or batch
      * @type {string}
@@ -147,6 +153,7 @@ export function AppRoleReadRoleResponseFromJSONTyped(json: any, ignoreDiscrimina
         'secret_id_bound_cidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
         'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
         'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -177,6 +184,7 @@ export function AppRoleReadRoleResponseToJSONTyped(value?: AppRoleReadRoleRespon
         'secret_id_bound_cidrs': value['secret_id_bound_cidrs'],
         'secret_id_num_uses': value['secret_id_num_uses'],
         'secret_id_ttl': value['secret_id_ttl'],
+        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],
