@@ -1423,15 +1423,18 @@ export interface SecretsApiCubbyholeDeleteRequest {
 export interface SecretsApiCubbyholeListRequest {
     path: string;
     list: CubbyholeListListEnum;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiCubbyholeReadRequest {
     path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiCubbyholeWriteRequest {
     path: string;
     request_body: { [key: string]: any; };
+    recover_snapshot_id?: string;
 }
 
 export interface SecretsApiDatabaseConfigureConnectionOperationRequest {
@@ -2046,17 +2049,20 @@ export interface SecretsApiKvV1ListRequest {
     path: string;
     kv_v1_mount_path: string;
     list: KvV1ListListEnum;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiKvV1ReadRequest {
     path: string;
     kv_v1_mount_path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiKvV1WriteRequest {
     path: string;
     kv_v1_mount_path: string;
     request_body: { [key: string]: any; };
+    recover_snapshot_id?: string;
 }
 
 export interface SecretsApiKvV2ConfigureOperationRequest {
@@ -6291,6 +6297,10 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['list'] = requestParameters['list'];
         }
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -6307,8 +6317,8 @@ export class SecretsApi extends runtime.BaseAPI {
      * Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.
      * List secret entries at the specified location.
      */
-    async cubbyholeList(path: string, list: CubbyholeListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.cubbyholeListRaw({ path: path, list: list }, initOverrides);
+    async cubbyholeList(path: string, list: CubbyholeListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.cubbyholeListRaw({ path: path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -6325,6 +6335,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -6340,13 +6354,13 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Retrieve the secret at the specified location.
      */
-    async cubbyholeRead(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cubbyholeReadRaw({ path: path }, initOverrides);
+    async cubbyholeRead(path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cubbyholeReadRaw({ path: path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Store a secret at the specified location.
+     * Store a secret at the specified location, or (enterprise-only) recover it from given snapshot Id.
      */
     async cubbyholeWriteRaw(requestParameters: SecretsApiCubbyholeWriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -6365,6 +6379,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['recover_snapshot_id'] != null) {
+            queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
@@ -6381,10 +6399,10 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Store a secret at the specified location.
+     * Store a secret at the specified location, or (enterprise-only) recover it from given snapshot Id.
      */
-    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body }, initOverrides);
+    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body, recover_snapshot_id: recover_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -11216,6 +11234,10 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['list'] = requestParameters['list'];
         }
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -11230,8 +11252,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1List(path: string, kv_v1_mount_path: string, list: KvV1ListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.kvV1ListRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, list: list }, initOverrides);
+    async kvV1List(path: string, kv_v1_mount_path: string, list: KvV1ListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.kvV1ListRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -11254,6 +11276,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -11268,8 +11294,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1Read(path: string, kv_v1_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kvV1ReadRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path }, initOverrides);
+    async kvV1Read(path: string, kv_v1_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kvV1ReadRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -11299,6 +11325,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['recover_snapshot_id'] != null) {
+            queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
@@ -11316,8 +11346,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body }, initOverrides);
+    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id }, initOverrides);
         return await response.value();
     }
 

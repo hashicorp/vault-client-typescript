@@ -66,6 +66,12 @@ export interface RadiusConfigureRequest {
      */
     secret?: string;
     /**
+     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof RadiusConfigureRequest
+     */
+    token_auth_metadata?: object;
+    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof RadiusConfigureRequest
@@ -151,6 +157,7 @@ export function RadiusConfigureRequestFromJSONTyped(json: any, ignoreDiscriminat
         'port': json['port'] == null ? undefined : json['port'],
         'read_timeout': json['read_timeout'] == null ? undefined : json['read_timeout'],
         'secret': json['secret'] == null ? undefined : json['secret'],
+        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -182,6 +189,7 @@ export function RadiusConfigureRequestToJSONTyped(value?: RadiusConfigureRequest
         'port': value['port'],
         'read_timeout': value['read_timeout'],
         'secret': value['secret'],
+        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

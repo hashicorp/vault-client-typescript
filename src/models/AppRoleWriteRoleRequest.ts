@@ -81,6 +81,12 @@ export interface AppRoleWriteRoleRequest {
      */
     secret_id_ttl?: string;
     /**
+     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof AppRoleWriteRoleRequest
+     */
+    token_auth_metadata?: object;
+    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof AppRoleWriteRoleRequest
@@ -162,6 +168,7 @@ export function AppRoleWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrimina
         'secret_id_bound_cidrs': json['secret_id_bound_cidrs'] == null ? undefined : json['secret_id_bound_cidrs'],
         'secret_id_num_uses': json['secret_id_num_uses'] == null ? undefined : json['secret_id_num_uses'],
         'secret_id_ttl': json['secret_id_ttl'] == null ? undefined : json['secret_id_ttl'],
+        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -194,6 +201,7 @@ export function AppRoleWriteRoleRequestToJSONTyped(value?: AppRoleWriteRoleReque
         'secret_id_bound_cidrs': value['secret_id_bound_cidrs'],
         'secret_id_num_uses': value['secret_id_num_uses'],
         'secret_id_ttl': value['secret_id_ttl'],
+        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

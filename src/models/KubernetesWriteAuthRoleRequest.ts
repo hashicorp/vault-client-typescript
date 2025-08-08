@@ -89,6 +89,12 @@ export interface KubernetesWriteAuthRoleRequest {
      */
     policies?: Array<string>;
     /**
+     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof KubernetesWriteAuthRoleRequest
+     */
+    token_auth_metadata?: object;
+    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof KubernetesWriteAuthRoleRequest
@@ -178,6 +184,7 @@ export function KubernetesWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDis
         'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
+        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -212,6 +219,7 @@ export function KubernetesWriteAuthRoleRequestToJSONTyped(value?: KubernetesWrit
         'num_uses': value['num_uses'],
         'period': value['period'],
         'policies': value['policies'],
+        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

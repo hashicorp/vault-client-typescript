@@ -42,6 +42,12 @@ export interface KvV2WriteMetadataRequest {
      */
     delete_version_after?: string;
     /**
+     * If true, exclude keys where the current version is deleted when listing keys.
+     * @type {boolean}
+     * @memberof KvV2WriteMetadataRequest
+     */
+    exclude_deleted?: boolean;
+    /**
      * The number of versions to keep. If not set, the backend’s configured max version is used.
      * @type {number}
      * @memberof KvV2WriteMetadataRequest
@@ -69,6 +75,7 @@ export function KvV2WriteMetadataRequestFromJSONTyped(json: any, ignoreDiscrimin
         'cas_required': json['cas_required'] == null ? undefined : json['cas_required'],
         'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
         'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'exclude_deleted': json['exclude_deleted'] == null ? undefined : json['exclude_deleted'],
         'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
     };
 }
@@ -87,6 +94,7 @@ export function KvV2WriteMetadataRequestToJSONTyped(value?: KvV2WriteMetadataReq
         'cas_required': value['cas_required'],
         'custom_metadata': value['custom_metadata'],
         'delete_version_after': value['delete_version_after'],
+        'exclude_deleted': value['exclude_deleted'],
         'max_versions': value['max_versions'],
     };
 }
