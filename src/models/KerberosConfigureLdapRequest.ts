@@ -150,6 +150,12 @@ export interface KerberosConfigureLdapRequest {
      */
     tls_min_version?: KerberosConfigureLdapRequestTlsMinVersionEnum;
     /**
+     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof KerberosConfigureLdapRequest
+     */
+    token_auth_metadata?: object;
+    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof KerberosConfigureLdapRequest
@@ -323,6 +329,7 @@ export function KerberosConfigureLdapRequestFromJSONTyped(json: any, ignoreDiscr
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
         'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
         'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
+        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -375,6 +382,7 @@ export function KerberosConfigureLdapRequestToJSONTyped(value?: KerberosConfigur
         'starttls': value['starttls'],
         'tls_max_version': value['tls_max_version'],
         'tls_min_version': value['tls_min_version'],
+        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],
