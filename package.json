@@ -14,6 +14,7 @@
   "scripts": {
     "build": "tsc && tsc -p tsconfig.esm.json",
     "prepare": "npm run build",
+    "lint": "tsc --noEmit",
     "gen-client": "openapi-generator-cli generate -i openapi.json -g typescript-fetch --skip-validate-spec --minimal-update --template-dir ./templates --name-mappings key-bits=keyBitsDashed --additional-properties npmName=@hashicorp/vault-client-typescript,prefixParameterInterfaces=true,supportsES6=true,typescriptThreePlus=true,useSingleRequestParameter=false,useSquareBracketsInArrayNames=true,stringEnums=true,enumPropertyNaming=UPPERCASE,modelPropertyNaming=original,paramNaming=original",
     "gen-spec": "./scripts/gen-spec.sh"
   },
