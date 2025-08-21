@@ -2,7 +2,8 @@ name: Lint
 
 on:
   workflow_run:
-    workflows: [Generate Client]
+    workflows:
+      - Generate Client
     types:
       - completed
 
