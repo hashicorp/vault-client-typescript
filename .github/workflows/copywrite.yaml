@@ -2,8 +2,9 @@ name: Copyright Headers
 
 on:
   workflow_run:
-    workflows: ["Generate Client"]
-    types: [completed]
+    workflows: [Generate Client]
+    types:
+      - completed
 
 jobs:
   copywrite:
