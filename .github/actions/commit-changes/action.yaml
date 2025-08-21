@@ -1,0 +1,16 @@
+name: Commit Changes
+description: Commit and push changes to the repository
+
+inputs:
+  message:
+    description: Commit message for the changes
+    required: false
+    default: "auto: generated client updates"
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: ${{ inputs.message }}
