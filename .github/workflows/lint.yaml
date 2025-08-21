@@ -15,7 +15,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: ./.github/actions/setup-node@main
+      - uses: ./.github/actions/setup-node
 
       - name: Type-check ts files
         run: yarn lint

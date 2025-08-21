@@ -24,6 +24,6 @@ jobs:
       - name: Add copyright headers
         run: copywrite headers
 
-      - uses: ./.github/actions/commit-changes@main
+      - uses: ./.github/actions/commit-changes
         with:
           message: "auto: add copyright headers"

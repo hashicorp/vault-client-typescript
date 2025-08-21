@@ -23,7 +23,7 @@ jobs:
             exit 0
           fi
 
-      - uses: ./.github/actions/setup-node@main
+      - uses: ./.github/actions/setup-node
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -34,4 +34,4 @@ jobs:
       - name: Generate client
         run: yarn gen-client
 
-      - uses: ./.github/actions/commit-changes@main
+      - uses: ./.github/actions/commit-changes
