@@ -1,7 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- */
-
 /* tslint:disable */
 /* eslint-disable */
 export * from './AliCloudConfigureRequest';
