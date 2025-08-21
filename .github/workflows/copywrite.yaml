@@ -1,0 +1,29 @@
+name: Copyright Headers
+
+on:
+  workflow_run:
+    workflows: ["Generate Client"]
+    types: [completed]
+
+jobs:
+  copywrite:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Setup Copywrite
+        uses: hashicorp/setup-copywrite@v1.1.3
+
+      - name: Add copyright headers
+        run: copywrite headers
+
+      - uses: ./.github/actions/commit-changes@main
+        with:
+          message: "auto: add copyright headers"
