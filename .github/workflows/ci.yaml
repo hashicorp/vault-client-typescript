@@ -19,23 +19,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: yarn
 
       - name: Enable Corepack
         run: corepack enable
-        shell: bash
 
       - name: Install dependencies
         run: yarn install --immutable
-        shell: bash
 
       - name: Diff openapi.json with main
         id: diff_openapi
         run: |
           git fetch origin main
           if git diff --quiet origin/main -- ./openapi.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
