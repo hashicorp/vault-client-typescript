@@ -31,6 +31,8 @@ jobs:
         run: |
           git fetch origin main
           if git diff --quiet origin/main -- ./openapi.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
