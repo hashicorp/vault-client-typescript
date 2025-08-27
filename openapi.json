@@ -7587,6 +7587,216 @@
         }
       }
     },
+    "/auth/{spiffe_mount_path}/config": {
+      "description": "Configuration that is applicable to this SPIFFE backend.",
+      "parameters": [
+        {
+          "name": "spiffe_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "spiffe"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "spiffe-configure",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "spiffe-configure",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiffeConfigureRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/{spiffe_mount_path}/login": {
+      "parameters": [
+        {
+          "name": "spiffe_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "spiffe"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "post": {
+        "operationId": "spiffe-login",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiffeLoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{spiffe_mount_path}/role/": {
+      "description": "List all SPIFFE roles",
+      "parameters": [
+        {
+          "name": "spiffe_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "spiffe"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "spiffe-list-role",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/{spiffe_mount_path}/role/{name}": {
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the role to create or update",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "spiffe_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "spiffe"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "spiffe-read-role-name",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "spiffe-write-role-name",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiffeWriteRoleNameRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "spiffe-delete-role-name",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
     "/auth/{userpass_mount_path}/login/{username}": {
       "description": "Log in with a username and password.",
       "parameters": [
@@ -7899,6 +8109,14 @@
           {
             "name": "recover_snapshot_id",
             "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recover_source_path",
+            "description": "The source path to recover from. Only used if recover_snapshot_id parameter is also supplied. If not specified, the source path is assumed to be the same as the request path.",
             "in": "query",
             "schema": {
               "type": "string"
@@ -14003,6 +14221,63 @@
         }
       }
     },
+    "/sys/mounts/auth/{path}/tune": {
+      "description": "Tune the configuration parameters for an auth path.",
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Tune the configuration parameters for an auth path.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Reads the given auth path's configuration.",
+        "description": "This endpoint does NOT require sudo capability. For the sudo-required alternative, use the endpoint at `sys/auth/[auth-path]/tune`.",
+        "operationId": "mounts-auth-read-tuning-information",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MountsAuthReadTuningInformationResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Tune configuration parameters for a given auth path.",
+        "description": "This endpoint does NOT require sudo capability. The same functionality can be achieved with sudo via the `sys/auth/[auth-path]/tune` endpoint.",
+        "operationId": "mounts-auth-tune-configuration-parameters",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MountsAuthTuneConfigurationParametersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/mounts/{path}": {
       "description": "Mount a new backend at a new path.",
       "parameters": [
@@ -19195,6 +19470,16 @@
         "operationId": "generate-utilization-report",
         "tags": [
           "system"
+        ],
+        "parameters": [
+          {
+            "name": "namespace",
+            "description": "Namespace to generate the utilization report for. If not specified, the report will be generated for the root namespace.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -24389,6 +24674,14 @@
           {
             "name": "recover_snapshot_id",
             "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recover_source_path",
+            "description": "The source path to recover from. Only used if recover_snapshot_id parameter is also supplied. If not specified, the source path is assumed to be the same as the request path.",
             "in": "query",
             "schema": {
               "type": "string"
@@ -49862,6 +50155,11 @@
             "type": "string",
             "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
           },
+          "rotation_url": {
+            "type": "string",
+            "description": "LDAP URL to connect to for password rotation if it is different from the configured LDAP URL",
+            "default": ""
+          },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
@@ -50109,6 +50407,11 @@
             "description": "Timeout, in seconds, when attempting to connect to the LDAP server before trying the next URL in the configuration.",
             "format": "duration",
             "default": "30s"
+          },
+          "credential_type": {
+            "type": "string",
+            "description": "The type of credential to manage. Options include: 'password', 'phrase'. Defaults to 'password'.",
+            "default": 1
           },
           "deny_null_bind": {
             "type": "boolean",
@@ -50897,6 +51200,11 @@
             "description": "The number of digits in the generated TOTP token. This value can either be 6 or 8.",
             "default": 6
           },
+          "enable_self_enrollment": {
+            "type": "boolean",
+            "description": "If true, users are able to generate a TOTP Login MFA secret for themselves while logging in. Defaults to false.",
+            "default": false
+          },
           "issuer": {
             "type": "string",
             "description": "The name of the key's issuing organization."
@@ -51039,6 +51347,11 @@
             "type": "integer",
             "description": "The number of digits in the generated TOTP token. This value can either be 6 or 8.",
             "default": 6
+          },
+          "enable_self_enrollment": {
+            "type": "boolean",
+            "description": "If true, users are able to generate a TOTP Login MFA secret for themselves while logging in. Defaults to false.",
+            "default": false
           },
           "issuer": {
             "type": "string",
@@ -51209,6 +51522,164 @@
         "required": [
           "roles"
         ]
+      },
+      "MountsAuthReadTuningInformationResponse": {
+        "type": "object",
+        "properties": {
+          "allowed_managed_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "allowed_response_headers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audit_non_hmac_request_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audit_non_hmac_response_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "default_lease_ttl": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "external_entropy_access": {
+            "type": "boolean"
+          },
+          "force_no_cache": {
+            "type": "boolean"
+          },
+          "identity_token_key": {
+            "type": "string"
+          },
+          "listing_visibility": {
+            "type": "string"
+          },
+          "max_lease_ttl": {
+            "type": "integer"
+          },
+          "options": {
+            "type": "object",
+            "format": "map"
+          },
+          "passthrough_request_headers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "plugin_version": {
+            "type": "string"
+          },
+          "token_type": {
+            "type": "string"
+          },
+          "trim_request_trailing_slashes": {
+            "type": "boolean"
+          },
+          "user_lockout_counter_reset_duration": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_lockout_disable": {
+            "type": "boolean"
+          },
+          "user_lockout_duration": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "user_lockout_threshold": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "MountsAuthTuneConfigurationParametersRequest": {
+        "type": "object",
+        "properties": {
+          "allowed_response_headers": {
+            "type": "array",
+            "description": "A list of headers to whitelist and allow a plugin to set on responses.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audit_non_hmac_request_keys": {
+            "type": "array",
+            "description": "The list of keys in the request data object that will not be HMAC'd by audit devices.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audit_non_hmac_response_keys": {
+            "type": "array",
+            "description": "The list of keys in the response data object that will not be HMAC'd by audit devices.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "default_lease_ttl": {
+            "type": "string",
+            "description": "The default lease TTL for this mount."
+          },
+          "description": {
+            "type": "string",
+            "description": "User-friendly description for this credential backend."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "The name of the key used to sign plugin identity tokens. Defaults to the default key."
+          },
+          "listing_visibility": {
+            "type": "string",
+            "description": "Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are 'unauth' and 'hidden', with the empty default ('') behaving like 'hidden'."
+          },
+          "max_lease_ttl": {
+            "type": "string",
+            "description": "The max lease TTL for this mount."
+          },
+          "options": {
+            "type": "object",
+            "description": "The options to pass into the backend. Should be a json object with string keys and values.",
+            "format": "kvpairs"
+          },
+          "passthrough_request_headers": {
+            "type": "array",
+            "description": "A list of headers to whitelist and pass from the request to the plugin.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "plugin_version": {
+            "type": "string",
+            "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token to issue (service or batch)."
+          },
+          "trim_request_trailing_slashes": {
+            "type": "boolean"
+          },
+          "user_lockout_config": {
+            "type": "object",
+            "description": "The user lockout configuration to pass into the backend. Should be a json object with string keys and values.",
+            "format": "map"
+          }
+        }
       },
       "MountsEnableSecretsEngineRequest": {
         "type": "object",
@@ -65238,6 +65709,165 @@
           }
         }
       },
+      "SpiffeConfigureRequest": {
+        "type": "object",
+        "properties": {
+          "trust_domain": {
+            "type": "string",
+            "description": "The SPIFFE trust domain for this backend"
+          }
+        }
+      },
+      "SpiffeConfigureResponse": {
+        "type": "object",
+        "properties": {
+          "trust_domain": {
+            "type": "string",
+            "description": "The SPIFFE trust domain for this backend"
+          }
+        }
+      },
+      "SpiffeLoginRequest": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "The name of the SPIFFE role to authenticate against."
+          },
+          "type": {
+            "type": "string",
+            "description": "Force which SVID source to use for authentication. The default 'auto' will prefer JWT SVIDsif provided, otherwise it will fallback to SVIDs from the peer x509 certificate.",
+            "enum": [
+              "auto",
+              "jwt",
+              "cert"
+            ],
+            "default": "auto"
+          }
+        }
+      },
+      "SpiffeWriteRoleNameRequest": {
+        "type": "object",
+        "properties": {
+          "ca_cert": {
+            "type": "string",
+            "description": "A PEM-encoded CA certificate of an intermediate or root CA to validate the incoming certificate. Only one of ca_cert or ca_cert_url+ca_cert_url_trust_ca may be specified on a role."
+          },
+          "ca_cert_url": {
+            "type": "string",
+            "description": "A URL from which to fetch the CA certificate for cert validation. This URL must be HTTPS, and must be signed by ca_cert_url_trust_ca."
+          },
+          "ca_cert_url_trust_ca": {
+            "type": "string",
+            "description": "A CA certificate used to validate the server reached by ca_cert_url."
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The display name to use for clients using this role"
+          },
+          "token_auth_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Auth Metadata",
+              "group": "Tokens"
+            }
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
+              "group": "Tokens"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "string",
+            "description": "If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Explicit Maximum TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_max_ttl": {
+            "type": "string",
+            "description": "The maximum lifetime of the generated token",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Maximum TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "If true, the 'default' policy will not automatically be added to generated tokens",
+            "x-vault-displayAttrs": {
+              "name": "Do Not Attach 'default' Policy To Generated Tokens",
+              "group": "Tokens"
+            }
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "The maximum number of times a token may be used, a value of zero means unlimited",
+            "x-vault-displayAttrs": {
+              "name": "Maximum Uses of Generated Tokens",
+              "group": "Tokens"
+            }
+          },
+          "token_period": {
+            "type": "string",
+            "description": "If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Period",
+              "group": "Tokens"
+            }
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "Comma-separated list of policies",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
+              "group": "Tokens"
+            }
+          },
+          "token_ttl": {
+            "type": "string",
+            "description": "The initial ttl of the token to generate",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Initial TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token to generate, service or batch",
+            "default": "default-service",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Type",
+              "group": "Tokens"
+            }
+          },
+          "workload_id_patterns": {
+            "type": "array",
+            "description": "A comma separated list of regexps that match an incoming workload id to this role.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "SshConfigureCaRequest": {
         "type": "object",
         "properties": {
@@ -69840,6 +70470,10 @@
           "convergent_encryption": {
             "type": "boolean",
             "description": "This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security."
+          },
+          "iv": {
+            "type": "string",
+            "description": "Specifies a base64-encoded IV to use with AES-CBC. The length of the IV must be 16 bytes (128 bits).'"
           },
           "key_version": {
             "type": "integer",
