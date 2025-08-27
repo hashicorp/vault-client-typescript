@@ -1435,6 +1435,7 @@ export interface SecretsApiCubbyholeWriteRequest {
     path: string;
     request_body: { [key: string]: any; };
     recover_snapshot_id?: string;
+    recover_source_path?: string;
 }
 
 export interface SecretsApiDatabaseConfigureConnectionOperationRequest {
@@ -2063,6 +2064,7 @@ export interface SecretsApiKvV1WriteRequest {
     kv_v1_mount_path: string;
     request_body: { [key: string]: any; };
     recover_snapshot_id?: string;
+    recover_source_path?: string;
 }
 
 export interface SecretsApiKvV2ConfigureOperationRequest {
@@ -6383,6 +6385,10 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
         }
 
+        if (requestParameters['recover_source_path'] != null) {
+            queryParameters['recover_source_path'] = requestParameters['recover_source_path'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
@@ -6401,8 +6407,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Store a secret at the specified location, or (enterprise-only) recover it from given snapshot Id.
      */
-    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body, recover_snapshot_id: recover_snapshot_id }, initOverrides);
+    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, recover_source_path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, recover_source_path: recover_source_path }, initOverrides);
         return await response.value();
     }
 
@@ -11329,6 +11335,10 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
         }
 
+        if (requestParameters['recover_source_path'] != null) {
+            queryParameters['recover_source_path'] = requestParameters['recover_source_path'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
@@ -11346,8 +11356,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id }, initOverrides);
+    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, recover_source_path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, recover_source_path: recover_source_path }, initOverrides);
         return await response.value();
     }
 

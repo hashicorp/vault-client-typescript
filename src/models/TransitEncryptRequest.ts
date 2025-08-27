@@ -48,6 +48,12 @@ export interface TransitEncryptRequest {
      */
     convergent_encryption?: boolean;
     /**
+     * Specifies a base64-encoded IV to use with AES-CBC. The length of the IV must be 16 bytes (128 bits).'
+     * @type {string}
+     * @memberof TransitEncryptRequest
+     */
+    iv?: string;
+    /**
      * The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
      * @type {number}
      * @memberof TransitEncryptRequest
@@ -106,6 +112,7 @@ export function TransitEncryptRequestFromJSONTyped(json: any, ignoreDiscriminato
         'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'context': json['context'] == null ? undefined : json['context'],
         'convergent_encryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
+        'iv': json['iv'] == null ? undefined : json['iv'],
         'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'padding_scheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
@@ -130,6 +137,7 @@ export function TransitEncryptRequestToJSONTyped(value?: TransitEncryptRequest |
         'batch_input': value['batch_input'],
         'context': value['context'],
         'convergent_encryption': value['convergent_encryption'],
+        'iv': value['iv'],
         'key_version': value['key_version'],
         'nonce': value['nonce'],
         'padding_scheme': value['padding_scheme'],

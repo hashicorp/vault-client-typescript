@@ -259,6 +259,8 @@ src/models/MfaValidateRequest.ts
 src/models/MfaWriteLoginEnforcementRequest.ts
 src/models/MongoDbAtlasConfigureRequest.ts
 src/models/MongoDbAtlasWriteRoleRequest.ts
+src/models/MountsAuthReadTuningInformationResponse.ts
+src/models/MountsAuthTuneConfigurationParametersRequest.ts
 src/models/MountsEnableSecretsEngineRequest.ts
 src/models/MountsReadConfigurationResponse.ts
 src/models/MountsReadTuningInformationResponse.ts
@@ -611,6 +613,10 @@ src/models/SamlWriteTokenRequest.ts
 src/models/ScepLoginRequest.ts
 src/models/ScepWriteRoleRoleRequest.ts
 src/models/SealStatusResponse.ts
+src/models/SpiffeConfigureRequest.ts
+src/models/SpiffeConfigureResponse.ts
+src/models/SpiffeLoginRequest.ts
+src/models/SpiffeWriteRoleNameRequest.ts
 src/models/SshConfigureCaRequest.ts
 src/models/SshConfigureZeroAddressRequest.ts
 src/models/SshGenerateCredentialsRequest.ts
