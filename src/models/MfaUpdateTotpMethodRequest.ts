@@ -36,6 +36,12 @@ export interface MfaUpdateTotpMethodRequest {
      */
     digits?: number;
     /**
+     * If true, users are able to generate a TOTP Login MFA secret for themselves while logging in. Defaults to false.
+     * @type {boolean}
+     * @memberof MfaUpdateTotpMethodRequest
+     */
+    enable_self_enrollment?: boolean;
+    /**
      * The name of the key's issuing organization.
      * @type {string}
      * @memberof MfaUpdateTotpMethodRequest
@@ -98,6 +104,7 @@ export function MfaUpdateTotpMethodRequestFromJSONTyped(json: any, ignoreDiscrim
         
         'algorithm': json['algorithm'] == null ? undefined : json['algorithm'],
         'digits': json['digits'] == null ? undefined : json['digits'],
+        'enable_self_enrollment': json['enable_self_enrollment'] == null ? undefined : json['enable_self_enrollment'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
         'key_size': json['key_size'] == null ? undefined : json['key_size'],
         'max_validation_attempts': json['max_validation_attempts'] == null ? undefined : json['max_validation_attempts'],
@@ -121,6 +128,7 @@ export function MfaUpdateTotpMethodRequestToJSONTyped(value?: MfaUpdateTotpMetho
         
         'algorithm': value['algorithm'],
         'digits': value['digits'],
+        'enable_self_enrollment': value['enable_self_enrollment'],
         'issuer': value['issuer'],
         'key_size': value['key_size'],
         'max_validation_attempts': value['max_validation_attempts'],

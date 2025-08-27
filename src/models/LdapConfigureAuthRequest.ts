@@ -156,6 +156,12 @@ export interface LdapConfigureAuthRequest {
      */
     rotation_schedule?: string;
     /**
+     * LDAP URL to connect to for password rotation if it is different from the configured LDAP URL
+     * @type {string}
+     * @memberof LdapConfigureAuthRequest
+     */
+    rotation_url?: string;
+    /**
      * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
      * @type {string}
      * @memberof LdapConfigureAuthRequest
@@ -360,6 +366,7 @@ export function LdapConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimin
         'request_timeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
         'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_url': json['rotation_url'] == null ? undefined : json['rotation_url'],
         'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
         'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
@@ -418,6 +425,7 @@ export function LdapConfigureAuthRequestToJSONTyped(value?: LdapConfigureAuthReq
         'request_timeout': value['request_timeout'],
         'rotation_period': value['rotation_period'],
         'rotation_schedule': value['rotation_schedule'],
+        'rotation_url': value['rotation_url'],
         'rotation_window': value['rotation_window'],
         'starttls': value['starttls'],
         'tls_max_version': value['tls_max_version'],

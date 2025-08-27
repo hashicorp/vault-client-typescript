@@ -79,6 +79,8 @@ import type {
   LoggersUpdateVerbosityLevelForRequest,
   LoggersUpdateVerbosityLevelRequest,
   MfaValidateRequest,
+  MountsAuthReadTuningInformationResponse,
+  MountsAuthTuneConfigurationParametersRequest,
   MountsEnableSecretsEngineRequest,
   MountsReadConfigurationResponse,
   MountsReadTuningInformationResponse,
@@ -391,6 +393,10 @@ import {
     LoggersUpdateVerbosityLevelRequestToJSON,
     MfaValidateRequestFromJSON,
     MfaValidateRequestToJSON,
+    MountsAuthReadTuningInformationResponseFromJSON,
+    MountsAuthReadTuningInformationResponseToJSON,
+    MountsAuthTuneConfigurationParametersRequestFromJSON,
+    MountsAuthTuneConfigurationParametersRequestToJSON,
     MountsEnableSecretsEngineRequestFromJSON,
     MountsEnableSecretsEngineRequestToJSON,
     MountsReadConfigurationResponseFromJSON,
@@ -867,6 +873,10 @@ export interface SystemApiGenerateRandomWithSourceAndBytesOperationRequest {
     GenerateRandomWithSourceAndBytesRequest: GenerateRandomWithSourceAndBytesRequest;
 }
 
+export interface SystemApiGenerateUtilizationReportRequest {
+    namespace?: string;
+}
+
 export interface SystemApiInitializeOperationRequest {
     InitializeRequest: InitializeRequest;
 }
@@ -988,6 +998,15 @@ export interface SystemApiMfaValidateOperationRequest {
 export interface SystemApiMonitorRequest {
     log_format?: string;
     log_level?: string;
+}
+
+export interface SystemApiMountsAuthReadTuningInformationRequest {
+    path: string;
+}
+
+export interface SystemApiMountsAuthTuneConfigurationParametersOperationRequest {
+    path: string;
+    MountsAuthTuneConfigurationParametersRequest: MountsAuthTuneConfigurationParametersRequest;
 }
 
 export interface SystemApiMountsDisableSecretsEngineRequest {
@@ -3043,8 +3062,12 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateUtilizationReportRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateUtilizationReportResponse>> {
+    async generateUtilizationReportRaw(requestParameters: SystemApiGenerateUtilizationReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateUtilizationReportResponse>> {
         const queryParameters: any = {};
+
+        if (requestParameters['namespace'] != null) {
+            queryParameters['namespace'] = requestParameters['namespace'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
@@ -3060,8 +3083,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async generateUtilizationReport(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateUtilizationReportResponse> {
-        const response = await this.generateUtilizationReportRaw(initOverrides);
+    async generateUtilizationReport(namespace?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateUtilizationReportResponse> {
+        const response = await this.generateUtilizationReportRaw({ namespace: namespace }, initOverrides);
         return await response.value();
     }
 
@@ -4646,6 +4669,86 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async monitor(log_format?: string, log_level?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.monitorRaw({ log_format: log_format, log_level: log_level }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * This endpoint does NOT require sudo capability. For the sudo-required alternative, use the endpoint at `sys/auth/[auth-path]/tune`.
+     * Reads the given auth path\'s configuration.
+     */
+    async mountsAuthReadTuningInformationRaw(requestParameters: SystemApiMountsAuthReadTuningInformationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MountsAuthReadTuningInformationResponse>> {
+        if (requestParameters['path'] == null) {
+            throw new runtime.RequiredError(
+                'path',
+                'Required parameter "path" was null or undefined when calling mountsAuthReadTuningInformation().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => MountsAuthReadTuningInformationResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * This endpoint does NOT require sudo capability. For the sudo-required alternative, use the endpoint at `sys/auth/[auth-path]/tune`.
+     * Reads the given auth path\'s configuration.
+     */
+    async mountsAuthReadTuningInformation(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MountsAuthReadTuningInformationResponse> {
+        const response = await this.mountsAuthReadTuningInformationRaw({ path: path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * This endpoint does NOT require sudo capability. The same functionality can be achieved with sudo via the `sys/auth/[auth-path]/tune` endpoint.
+     * Tune configuration parameters for a given auth path.
+     */
+    async mountsAuthTuneConfigurationParametersRaw(requestParameters: SystemApiMountsAuthTuneConfigurationParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['path'] == null) {
+            throw new runtime.RequiredError(
+                'path',
+                'Required parameter "path" was null or undefined when calling mountsAuthTuneConfigurationParameters().'
+            );
+        }
+
+        if (requestParameters['MountsAuthTuneConfigurationParametersRequest'] == null) {
+            throw new runtime.RequiredError(
+                'MountsAuthTuneConfigurationParametersRequest',
+                'Required parameter "MountsAuthTuneConfigurationParametersRequest" was null or undefined when calling mountsAuthTuneConfigurationParameters().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: MountsAuthTuneConfigurationParametersRequestToJSON(requestParameters['MountsAuthTuneConfigurationParametersRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * This endpoint does NOT require sudo capability. The same functionality can be achieved with sudo via the `sys/auth/[auth-path]/tune` endpoint.
+     * Tune configuration parameters for a given auth path.
+     */
+    async mountsAuthTuneConfigurationParameters(path: string, MountsAuthTuneConfigurationParametersRequest: MountsAuthTuneConfigurationParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mountsAuthTuneConfigurationParametersRaw({ path: path, MountsAuthTuneConfigurationParametersRequest: MountsAuthTuneConfigurationParametersRequest }, initOverrides);
         return await response.value();
     }
 

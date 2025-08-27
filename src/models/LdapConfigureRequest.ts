@@ -72,6 +72,12 @@ export interface LdapConfigureRequest {
      */
     connection_timeout?: string;
     /**
+     * The type of credential to manage. Options include: 'password', 'phrase'. Defaults to 'password'.
+     * @type {string}
+     * @memberof LdapConfigureRequest
+     */
+    credential_type?: string;
+    /**
      * Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
      * @type {boolean}
      * @memberof LdapConfigureRequest
@@ -317,6 +323,7 @@ export function LdapConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
         'client_tls_cert': json['client_tls_cert'] == null ? undefined : json['client_tls_cert'],
         'client_tls_key': json['client_tls_key'] == null ? undefined : json['client_tls_key'],
         'connection_timeout': json['connection_timeout'] == null ? undefined : json['connection_timeout'],
+        'credential_type': json['credential_type'] == null ? undefined : json['credential_type'],
         'deny_null_bind': json['deny_null_bind'] == null ? undefined : json['deny_null_bind'],
         'dereference_aliases': json['dereference_aliases'] == null ? undefined : json['dereference_aliases'],
         'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
@@ -370,6 +377,7 @@ export function LdapConfigureRequestToJSONTyped(value?: LdapConfigureRequest | n
         'client_tls_cert': value['client_tls_cert'],
         'client_tls_key': value['client_tls_key'],
         'connection_timeout': value['connection_timeout'],
+        'credential_type': value['credential_type'],
         'deny_null_bind': value['deny_null_bind'],
         'dereference_aliases': value['dereference_aliases'],
         'disable_automated_rotation': value['disable_automated_rotation'],

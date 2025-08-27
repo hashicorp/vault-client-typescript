@@ -127,6 +127,10 @@ import type {
   SamlWriteTokenRequest,
   ScepLoginRequest,
   ScepWriteRoleRoleRequest,
+  SpiffeConfigureRequest,
+  SpiffeConfigureResponse,
+  SpiffeLoginRequest,
+  SpiffeWriteRoleNameRequest,
   StandardListResponse,
   TokenCreateAgainstRoleRequest,
   TokenCreateOrphanRequest,
@@ -363,6 +367,14 @@ import {
     ScepLoginRequestToJSON,
     ScepWriteRoleRoleRequestFromJSON,
     ScepWriteRoleRoleRequestToJSON,
+    SpiffeConfigureRequestFromJSON,
+    SpiffeConfigureRequestToJSON,
+    SpiffeConfigureResponseFromJSON,
+    SpiffeConfigureResponseToJSON,
+    SpiffeLoginRequestFromJSON,
+    SpiffeLoginRequestToJSON,
+    SpiffeWriteRoleNameRequestFromJSON,
+    SpiffeWriteRoleNameRequestToJSON,
     StandardListResponseFromJSON,
     StandardListResponseToJSON,
     TokenCreateAgainstRoleRequestFromJSON,
@@ -1621,6 +1633,41 @@ export interface AuthApiScepWriteRoleRoleOperationRequest {
     role: string;
     scep_mount_path: string;
     ScepWriteRoleRoleRequest: ScepWriteRoleRoleRequest;
+}
+
+export interface AuthApiSpiffeConfigureRequest {
+    spiffe_mount_path: string;
+}
+
+export interface AuthApiSpiffeConfigure0Request {
+    spiffe_mount_path: string;
+    SpiffeConfigureRequest: SpiffeConfigureRequest;
+}
+
+export interface AuthApiSpiffeDeleteRoleNameRequest {
+    name: string;
+    spiffe_mount_path: string;
+}
+
+export interface AuthApiSpiffeListRoleRequest {
+    spiffe_mount_path: string;
+    list: SpiffeListRoleListEnum;
+}
+
+export interface AuthApiSpiffeLoginOperationRequest {
+    spiffe_mount_path: string;
+    SpiffeLoginRequest: SpiffeLoginRequest;
+}
+
+export interface AuthApiSpiffeReadRoleNameRequest {
+    name: string;
+    spiffe_mount_path: string;
+}
+
+export interface AuthApiSpiffeWriteRoleNameOperationRequest {
+    name: string;
+    spiffe_mount_path: string;
+    SpiffeWriteRoleNameRequest: SpiffeWriteRoleNameRequest;
 }
 
 export interface AuthApiTokenCreateOperationRequest {
@@ -11570,6 +11617,285 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     */
+    async spiffeConfigureRaw(requestParameters: AuthApiSpiffeConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpiffeConfigureResponse>> {
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeConfigure().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SpiffeConfigureResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async spiffeConfigure(spiffe_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpiffeConfigureResponse> {
+        const response = await this.spiffeConfigureRaw({ spiffe_mount_path: spiffe_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeConfigure_1Raw(requestParameters: AuthApiSpiffeConfigure0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpiffeConfigureResponse>> {
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeConfigure_1().'
+            );
+        }
+
+        if (requestParameters['SpiffeConfigureRequest'] == null) {
+            throw new runtime.RequiredError(
+                'SpiffeConfigureRequest',
+                'Required parameter "SpiffeConfigureRequest" was null or undefined when calling spiffeConfigure_1().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SpiffeConfigureRequestToJSON(requestParameters['SpiffeConfigureRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SpiffeConfigureResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async spiffeConfigure_1(spiffe_mount_path: string, SpiffeConfigureRequest: SpiffeConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SpiffeConfigureResponse> {
+        const response = await this.spiffeConfigure_1Raw({ spiffe_mount_path: spiffe_mount_path, SpiffeConfigureRequest: SpiffeConfigureRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeDeleteRoleNameRaw(requestParameters: AuthApiSpiffeDeleteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling spiffeDeleteRoleName().'
+            );
+        }
+
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeDeleteRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async spiffeDeleteRoleName(name: string, spiffe_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.spiffeDeleteRoleNameRaw({ name: name, spiffe_mount_path: spiffe_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeListRoleRaw(requestParameters: AuthApiSpiffeListRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeListRole().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling spiffeListRole().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/role/`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async spiffeListRole(spiffe_mount_path: string, list: SpiffeListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.spiffeListRoleRaw({ spiffe_mount_path: spiffe_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeLoginRaw(requestParameters: AuthApiSpiffeLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeLogin().'
+            );
+        }
+
+        if (requestParameters['SpiffeLoginRequest'] == null) {
+            throw new runtime.RequiredError(
+                'SpiffeLoginRequest',
+                'Required parameter "SpiffeLoginRequest" was null or undefined when calling spiffeLogin().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/login`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SpiffeLoginRequestToJSON(requestParameters['SpiffeLoginRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async spiffeLogin(spiffe_mount_path: string, SpiffeLoginRequest: SpiffeLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.spiffeLoginRaw({ spiffe_mount_path: spiffe_mount_path, SpiffeLoginRequest: SpiffeLoginRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeReadRoleNameRaw(requestParameters: AuthApiSpiffeReadRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling spiffeReadRoleName().'
+            );
+        }
+
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeReadRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async spiffeReadRoleName(name: string, spiffe_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.spiffeReadRoleNameRaw({ name: name, spiffe_mount_path: spiffe_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async spiffeWriteRoleNameRaw(requestParameters: AuthApiSpiffeWriteRoleNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling spiffeWriteRoleName().'
+            );
+        }
+
+        if (requestParameters['spiffe_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'spiffe_mount_path',
+                'Required parameter "spiffe_mount_path" was null or undefined when calling spiffeWriteRoleName().'
+            );
+        }
+
+        if (requestParameters['SpiffeWriteRoleNameRequest'] == null) {
+            throw new runtime.RequiredError(
+                'SpiffeWriteRoleNameRequest',
+                'Required parameter "SpiffeWriteRoleNameRequest" was null or undefined when calling spiffeWriteRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SpiffeWriteRoleNameRequestToJSON(requestParameters['SpiffeWriteRoleNameRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async spiffeWriteRoleName(name: string, spiffe_mount_path: string, SpiffeWriteRoleNameRequest: SpiffeWriteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.spiffeWriteRoleNameRaw({ name: name, spiffe_mount_path: spiffe_mount_path, SpiffeWriteRoleNameRequest: SpiffeWriteRoleNameRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * The token create path is used to create new tokens.
      */
     async tokenCreateRaw(requestParameters: AuthApiTokenCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
@@ -12826,6 +13152,13 @@ export enum SamlListRoleListEnum {
   * @enum {string}
   */
 export enum ScepListAuthRolesListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SpiffeListRoleListEnum {
     TRUE = 'true'
 }
 /**
