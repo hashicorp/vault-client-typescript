@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface SamlWriteRoleNameRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof SamlWriteRoleNameRequest
+     */
+    alias_metadata?: object;
+    /**
      * Mapping of attribute names to values to assert exist in the SAML Response's Assertion.
      * @type {object}
      * @memberof SamlWriteRoleNameRequest
@@ -53,12 +59,6 @@ export interface SamlWriteRoleNameRequest {
      * @memberof SamlWriteRoleNameRequest
      */
     groups_attribute?: string;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof SamlWriteRoleNameRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -150,12 +150,12 @@ export function SamlWriteRoleNameRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'bound_attributes': json['bound_attributes'] == null ? undefined : json['bound_attributes'],
         'bound_attributes_type': json['bound_attributes_type'] == null ? undefined : json['bound_attributes_type'],
         'bound_subjects': json['bound_subjects'] == null ? undefined : json['bound_subjects'],
         'bound_subjects_type': json['bound_subjects_type'] == null ? undefined : json['bound_subjects_type'],
         'groups_attribute': json['groups_attribute'] == null ? undefined : json['groups_attribute'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -179,12 +179,12 @@ export function SamlWriteRoleNameRequestToJSONTyped(value?: SamlWriteRoleNameReq
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'bound_attributes': value['bound_attributes'],
         'bound_attributes_type': value['bound_attributes_type'],
         'bound_subjects': value['bound_subjects'],
         'bound_subjects_type': value['bound_subjects_type'],
         'groups_attribute': value['groups_attribute'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

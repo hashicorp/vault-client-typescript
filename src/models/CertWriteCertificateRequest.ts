@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface CertWriteCertificateRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof CertWriteCertificateRequest
+     */
+    alias_metadata?: object;
+    /**
      * A comma-separated list of names. At least one must exist in the Common Name. Supports globbing.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
@@ -161,12 +167,6 @@ export interface CertWriteCertificateRequest {
      */
     required_extensions?: Array<string>;
     /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof CertWriteCertificateRequest
-     */
-    token_auth_metadata?: object;
-    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof CertWriteCertificateRequest
@@ -246,6 +246,7 @@ export function CertWriteCertificateRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'allowed_common_names': json['allowed_common_names'] == null ? undefined : json['allowed_common_names'],
         'allowed_dns_sans': json['allowed_dns_sans'] == null ? undefined : json['allowed_dns_sans'],
         'allowed_email_sans': json['allowed_email_sans'] == null ? undefined : json['allowed_email_sans'],
@@ -268,7 +269,6 @@ export function CertWriteCertificateRequestFromJSONTyped(json: any, ignoreDiscri
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'required_extensions': json['required_extensions'] == null ? undefined : json['required_extensions'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -293,6 +293,7 @@ export function CertWriteCertificateRequestToJSONTyped(value?: CertWriteCertific
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'allowed_common_names': value['allowed_common_names'],
         'allowed_dns_sans': value['allowed_dns_sans'],
         'allowed_email_sans': value['allowed_email_sans'],
@@ -315,7 +316,6 @@ export function CertWriteCertificateRequestToJSONTyped(value?: CertWriteCertific
         'period': value['period'],
         'policies': value['policies'],
         'required_extensions': value['required_extensions'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

@@ -167,6 +167,10 @@ src/models/GroupsCreateDuplicatesRequest.ts
 src/models/HaStatusResponse.ts
 src/models/InitializeRequest.ts
 src/models/InternalClientActivityConfigureRequest.ts
+src/models/InternalClientActivityReadConfigurationResponse.ts
+src/models/InternalClientActivityReportCountsResponse.ts
+src/models/InternalClientActivityReportCountsThisMonthResponse.ts
+src/models/InternalClientActivityReportCumulativeCountsResponse.ts
 src/models/InternalCountEntitiesResponse.ts
 src/models/InternalGenerateOpenApiDocumentWithParametersRequest.ts
 src/models/InternalUiListEnabledFeatureFlagsResponse.ts
@@ -251,6 +255,7 @@ src/models/MfaCreateOktaMethodRequest.ts
 src/models/MfaCreatePingIdMethodRequest.ts
 src/models/MfaCreateTotpMethodRequest.ts
 src/models/MfaGenerateTotpSecretRequest.ts
+src/models/MfaSelfEnrollRequest.ts
 src/models/MfaUpdateDuoMethodRequest.ts
 src/models/MfaUpdateOktaMethodRequest.ts
 src/models/MfaUpdatePingIdMethodRequest.ts
@@ -437,6 +442,8 @@ src/models/PkiWriteAcmeOrderOrderIdFinalizeRequest.ts
 src/models/PkiWriteAcmeOrderOrderIdRequest.ts
 src/models/PkiWriteAcmeOrdersRequest.ts
 src/models/PkiWriteAcmeRevokeCertRequest.ts
+src/models/PkiWriteBatchCertsRequest.ts
+src/models/PkiWriteBatchCertsResponse.ts
 src/models/PkiWriteExternalPolicyAcmeAccountKidRequest.ts
 src/models/PkiWriteExternalPolicyAcmeAuthorizationAuthIdRequest.ts
 src/models/PkiWriteExternalPolicyAcmeChallengeAuthIdChallengeTypeRequest.ts
@@ -785,6 +792,7 @@ src/models/TransitGenerateCmacRequest.ts
 src/models/TransitGenerateCmacWithMacLengthRequest.ts
 src/models/TransitGenerateCsrForKeyRequest.ts
 src/models/TransitGenerateDataKeyRequest.ts
+src/models/TransitGenerateDerivedkeysRequest.ts
 src/models/TransitGenerateHmacRequest.ts
 src/models/TransitGenerateHmacWithAlgorithmRequest.ts
 src/models/TransitGenerateRandomRequest.ts

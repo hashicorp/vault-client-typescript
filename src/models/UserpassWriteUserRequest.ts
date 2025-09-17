@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface UserpassWriteUserRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof UserpassWriteUserRequest
+     */
+    alias_metadata?: object;
+    /**
      * Use "token_bound_cidrs" instead. If this and "token_bound_cidrs" are both specified, only "token_bound_cidrs" will be used.
      * @type {Array<string>}
      * @memberof UserpassWriteUserRequest
@@ -56,12 +62,6 @@ export interface UserpassWriteUserRequest {
      * @deprecated
      */
     policies?: Array<string>;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof UserpassWriteUserRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -142,12 +142,12 @@ export function UserpassWriteUserRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
         'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'password': json['password'] == null ? undefined : json['password'],
         'password_hash': json['password_hash'] == null ? undefined : json['password_hash'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -172,12 +172,12 @@ export function UserpassWriteUserRequestToJSONTyped(value?: UserpassWriteUserReq
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'bound_cidrs': value['bound_cidrs'],
         'max_ttl': value['max_ttl'],
         'password': value['password'],
         'password_hash': value['password_hash'],
         'policies': value['policies'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

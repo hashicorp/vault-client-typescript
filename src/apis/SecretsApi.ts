@@ -32,6 +32,8 @@ import type {
   AwsWriteStaticRolesNameResponse,
   AzureConfigureRequest,
   AzureWriteRoleRequest,
+  CertsRequest,
+  CertsResponse,
   ConsulConfigureAccessRequest,
   ConsulWriteRoleRequest,
   DatabaseConfigureConnectionRequest,
@@ -392,6 +394,7 @@ import type {
   TransitGenerateCmacWithMacLengthRequest,
   TransitGenerateCsrForKeyRequest,
   TransitGenerateDataKeyRequest,
+  TransitGenerateDerivedkeysRequest,
   TransitGenerateHmacRequest,
   TransitGenerateHmacWithAlgorithmRequest,
   TransitGenerateRandomRequest,
@@ -440,6 +443,10 @@ import {
     AzureConfigureRequestToJSON,
     AzureWriteRoleRequestFromJSON,
     AzureWriteRoleRequestToJSON,
+    CertsRequestFromJSON,
+    CertsRequestToJSON,
+    CertsResponseFromJSON,
+    CertsResponseToJSON,
     ConsulConfigureAccessRequestFromJSON,
     ConsulConfigureAccessRequestToJSON,
     ConsulWriteRoleRequestFromJSON,
@@ -1160,6 +1167,8 @@ import {
     TransitGenerateCsrForKeyRequestToJSON,
     TransitGenerateDataKeyRequestFromJSON,
     TransitGenerateDataKeyRequestToJSON,
+    TransitGenerateDerivedkeysRequestFromJSON,
+    TransitGenerateDerivedkeysRequestToJSON,
     TransitGenerateHmacRequestFromJSON,
     TransitGenerateHmacRequestToJSON,
     TransitGenerateHmacWithAlgorithmRequestFromJSON,
@@ -1435,7 +1444,8 @@ export interface SecretsApiCubbyholeWriteRequest {
     path: string;
     request_body: { [key: string]: any; };
     recover_snapshot_id?: string;
-    recover_source_path?: string;
+    X_Vault_Recover_Snapshot_Id?: string;
+    X_Vault_Recover_Source_Path?: string;
 }
 
 export interface SecretsApiDatabaseConfigureConnectionOperationRequest {
@@ -1477,6 +1487,7 @@ export interface SecretsApiDatabaseListRolesRequest {
 export interface SecretsApiDatabaseListStaticRolesRequest {
     database_mount_path: string;
     list: DatabaseListStaticRolesListEnum;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiDatabaseReadConnectionConfigurationRequest {
@@ -1492,11 +1503,13 @@ export interface SecretsApiDatabaseReadRoleRequest {
 export interface SecretsApiDatabaseReadStaticRoleRequest {
     name: string;
     database_mount_path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiDatabaseReadStaticRoleCredentialsRequest {
     name: string;
     database_mount_path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiDatabaseReloadPluginRequest {
@@ -1529,6 +1542,9 @@ export interface SecretsApiDatabaseWriteStaticRoleOperationRequest {
     name: string;
     database_mount_path: string;
     DatabaseWriteStaticRoleRequest: DatabaseWriteStaticRoleRequest;
+    recover_snapshot_id?: string;
+    X_Vault_Recover_Snapshot_Id?: string;
+    X_Vault_Recover_Source_Path?: string;
 }
 
 export interface SecretsApiGoogleCloudConfigureOperationRequest {
@@ -2064,7 +2080,8 @@ export interface SecretsApiKvV1WriteRequest {
     kv_v1_mount_path: string;
     request_body: { [key: string]: any; };
     recover_snapshot_id?: string;
-    recover_source_path?: string;
+    X_Vault_Recover_Snapshot_Id?: string;
+    X_Vault_Recover_Source_Path?: string;
 }
 
 export interface SecretsApiKvV2ConfigureOperationRequest {
@@ -3188,6 +3205,11 @@ export interface SecretsApiPkiWriteAcmeRevokeCertOperationRequest {
     PkiWriteAcmeRevokeCertRequest: PkiWriteAcmeRevokeCertRequest;
 }
 
+export interface SecretsApiPkiWriteBatchCertsRequest {
+    pki_mount_path: string;
+    body: CertsRequest;
+}
+
 export interface SecretsApiPkiWriteCmpRequest {
     pki_mount_path: string;
 }
@@ -3845,6 +3867,8 @@ export interface SecretsApiRabbitMqWriteRoleOperationRequest {
 export interface SecretsApiSshConfigureCaOperationRequest {
     ssh_mount_path: string;
     SshConfigureCaRequest: SshConfigureCaRequest;
+    recover_snapshot_id?: string;
+    X_Vault_Recover_Snapshot_Id?: string;
 }
 
 export interface SecretsApiSshConfigureZeroAddressOperationRequest {
@@ -3889,6 +3913,7 @@ export interface SecretsApiSshListRolesByIpOperationRequest {
 
 export interface SecretsApiSshReadCaConfigurationRequest {
     ssh_mount_path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiSshReadPublicKeyRequest {
@@ -4403,6 +4428,13 @@ export interface SecretsApiTransitGenerateDataKeyOperationRequest {
     plaintext: string;
     transit_mount_path: string;
     TransitGenerateDataKeyRequest: TransitGenerateDataKeyRequest;
+}
+
+export interface SecretsApiTransitGenerateDerivedkeysOperationRequest {
+    name: string;
+    type: string;
+    transit_mount_path: string;
+    TransitGenerateDerivedkeysRequest: TransitGenerateDerivedkeysRequest;
 }
 
 export interface SecretsApiTransitGenerateHmacOperationRequest {
@@ -6385,13 +6417,17 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
         }
 
-        if (requestParameters['recover_source_path'] != null) {
-            queryParameters['recover_source_path'] = requestParameters['recover_source_path'];
-        }
-
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['X_Vault_Recover_Snapshot_Id'] != null) {
+            headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
+        }
+
+        if (requestParameters['X_Vault_Recover_Source_Path'] != null) {
+            headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
+        }
 
         const response = await this.request({
             path: `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
@@ -6407,8 +6443,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Store a secret at the specified location, or (enterprise-only) recover it from given snapshot Id.
      */
-    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, recover_source_path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, recover_source_path: recover_source_path }, initOverrides);
+    async cubbyholeWrite(path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.cubbyholeWriteRaw({ path: path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
         return await response.value();
     }
 
@@ -6730,6 +6766,10 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['list'] = requestParameters['list'];
         }
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -6745,8 +6785,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the static roles that can be created with this backend.
      */
-    async databaseListStaticRoles(database_mount_path: string, list: DatabaseListStaticRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.databaseListStaticRolesRaw({ database_mount_path: database_mount_path, list: list }, initOverrides);
+    async databaseListStaticRoles(database_mount_path: string, list: DatabaseListStaticRolesListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.databaseListStaticRolesRaw({ database_mount_path: database_mount_path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -6848,6 +6888,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -6863,8 +6907,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the static roles that can be created with this backend.
      */
-    async databaseReadStaticRole(name: string, database_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.databaseReadStaticRoleRaw({ name: name, database_mount_path: database_mount_path }, initOverrides);
+    async databaseReadStaticRole(name: string, database_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.databaseReadStaticRoleRaw({ name: name, database_mount_path: database_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -6888,6 +6932,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -6903,8 +6951,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Request database credentials for a certain static role. These credentials are rotated periodically.
      */
-    async databaseReadStaticRoleCredentials(name: string, database_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.databaseReadStaticRoleCredentialsRaw({ name: name, database_mount_path: database_mount_path }, initOverrides);
+    async databaseReadStaticRoleCredentials(name: string, database_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.databaseReadStaticRoleCredentialsRaw({ name: name, database_mount_path: database_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -7141,9 +7189,21 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['recover_snapshot_id'] != null) {
+            queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['X_Vault_Recover_Snapshot_Id'] != null) {
+            headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
+        }
+
+        if (requestParameters['X_Vault_Recover_Source_Path'] != null) {
+            headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
+        }
 
         const response = await this.request({
             path: `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']))),
@@ -7159,8 +7219,8 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the static roles that can be created with this backend.
      */
-    async databaseWriteStaticRole(name: string, database_mount_path: string, DatabaseWriteStaticRoleRequest: DatabaseWriteStaticRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.databaseWriteStaticRoleRaw({ name: name, database_mount_path: database_mount_path, DatabaseWriteStaticRoleRequest: DatabaseWriteStaticRoleRequest }, initOverrides);
+    async databaseWriteStaticRole(name: string, database_mount_path: string, DatabaseWriteStaticRoleRequest: DatabaseWriteStaticRoleRequest, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.databaseWriteStaticRoleRaw({ name: name, database_mount_path: database_mount_path, DatabaseWriteStaticRoleRequest: DatabaseWriteStaticRoleRequest, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
         return await response.value();
     }
 
@@ -11335,13 +11395,17 @@ export class SecretsApi extends runtime.BaseAPI {
             queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
         }
 
-        if (requestParameters['recover_source_path'] != null) {
-            queryParameters['recover_source_path'] = requestParameters['recover_source_path'];
-        }
-
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['X_Vault_Recover_Snapshot_Id'] != null) {
+            headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
+        }
+
+        if (requestParameters['X_Vault_Recover_Source_Path'] != null) {
+            headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
+        }
 
         const response = await this.request({
             path: `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path']))),
@@ -11356,8 +11420,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, recover_source_path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, recover_source_path: recover_source_path }, initOverrides);
+    async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
         return await response.value();
     }
 
@@ -20224,6 +20288,47 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiWriteBatchCertsRaw(requestParameters: SecretsApiPkiWriteBatchCertsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CertsResponse>> {
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiWriteBatchCerts().'
+            );
+        }
+
+        if (requestParameters['body'] == null) {
+            throw new runtime.RequiredError(
+                'body',
+                'Required parameter "body" was null or undefined when calling pkiWriteBatchCerts().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/{pki_mount_path}/batch/certs`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: requestParameters['body'] as any,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CertsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiWriteBatchCerts(pki_mount_path: string, body: CertsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CertsResponse> {
+        const response = await this.pkiWriteBatchCertsRaw({ pki_mount_path: pki_mount_path, body: body }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiWriteCmpRaw(requestParameters: SecretsApiPkiWriteCmpRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['pki_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -25408,9 +25513,17 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['recover_snapshot_id'] != null) {
+            queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['X_Vault_Recover_Snapshot_Id'] != null) {
+            headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
+        }
 
         const response = await this.request({
             path: `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']))),
@@ -25425,8 +25538,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async sshConfigureCa(ssh_mount_path: string, SshConfigureCaRequest: SshConfigureCaRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.sshConfigureCaRaw({ ssh_mount_path: ssh_mount_path, SshConfigureCaRequest: SshConfigureCaRequest }, initOverrides);
+    async sshConfigureCa(ssh_mount_path: string, SshConfigureCaRequest: SshConfigureCaRequest, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.sshConfigureCaRaw({ ssh_mount_path: ssh_mount_path, SshConfigureCaRequest: SshConfigureCaRequest, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id }, initOverrides);
         return await response.value();
     }
 
@@ -25770,6 +25883,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
@@ -25784,8 +25901,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async sshReadCaConfiguration(ssh_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.sshReadCaConfigurationRaw({ ssh_mount_path: ssh_mount_path }, initOverrides);
+    async sshReadCaConfiguration(ssh_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.sshReadCaConfigurationRaw({ ssh_mount_path: ssh_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -29889,6 +30006,63 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async transitGenerateDataKey(name: string, plaintext: string, transit_mount_path: string, TransitGenerateDataKeyRequest: TransitGenerateDataKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.transitGenerateDataKeyRaw({ name: name, plaintext: plaintext, transit_mount_path: transit_mount_path, TransitGenerateDataKeyRequest: TransitGenerateDataKeyRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Generate data keys derived from the named key\'s HMAC key using the provided salt, info, and indices\'
+     */
+    async transitGenerateDerivedkeysRaw(requestParameters: SecretsApiTransitGenerateDerivedkeysOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling transitGenerateDerivedkeys().'
+            );
+        }
+
+        if (requestParameters['type'] == null) {
+            throw new runtime.RequiredError(
+                'type',
+                'Required parameter "type" was null or undefined when calling transitGenerateDerivedkeys().'
+            );
+        }
+
+        if (requestParameters['transit_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'transit_mount_path',
+                'Required parameter "transit_mount_path" was null or undefined when calling transitGenerateDerivedkeys().'
+            );
+        }
+
+        if (requestParameters['TransitGenerateDerivedkeysRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TransitGenerateDerivedkeysRequest',
+                'Required parameter "TransitGenerateDerivedkeysRequest" was null or undefined when calling transitGenerateDerivedkeys().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/{transit_mount_path}/derivedkeys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TransitGenerateDerivedkeysRequestToJSON(requestParameters['TransitGenerateDerivedkeysRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Generate data keys derived from the named key\'s HMAC key using the provided salt, info, and indices\'
+     */
+    async transitGenerateDerivedkeys(name: string, type: string, transit_mount_path: string, TransitGenerateDerivedkeysRequest: TransitGenerateDerivedkeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.transitGenerateDerivedkeysRaw({ name: name, type: type, transit_mount_path: transit_mount_path, TransitGenerateDerivedkeysRequest: TransitGenerateDerivedkeysRequest }, initOverrides);
         return await response.value();
     }
 

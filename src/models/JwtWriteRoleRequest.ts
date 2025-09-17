@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface JwtWriteRoleRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof JwtWriteRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * Comma-separated list of allowed values for redirect_uri
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
@@ -137,12 +143,6 @@ export interface JwtWriteRoleRequest {
      */
     role_type?: string;
     /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof JwtWriteRoleRequest
-     */
-    token_auth_metadata?: object;
-    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof JwtWriteRoleRequest
@@ -240,6 +240,7 @@ export function JwtWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'allowed_redirect_uris': json['allowed_redirect_uris'] == null ? undefined : json['allowed_redirect_uris'],
         'bound_audiences': json['bound_audiences'] == null ? undefined : json['bound_audiences'],
         'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
@@ -258,7 +259,6 @@ export function JwtWriteRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
         'role_type': json['role_type'] == null ? undefined : json['role_type'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -286,6 +286,7 @@ export function JwtWriteRoleRequestToJSONTyped(value?: JwtWriteRoleRequest | nul
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'allowed_redirect_uris': value['allowed_redirect_uris'],
         'bound_audiences': value['bound_audiences'],
         'bound_cidrs': value['bound_cidrs'],
@@ -304,7 +305,6 @@ export function JwtWriteRoleRequestToJSONTyped(value?: JwtWriteRoleRequest | nul
         'period': value['period'],
         'policies': value['policies'],
         'role_type': value['role_type'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

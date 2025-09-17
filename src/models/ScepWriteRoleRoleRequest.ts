@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface ScepWriteRoleRoleRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof ScepWriteRoleRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * The authentication type to use
      * @type {string}
      * @memberof ScepWriteRoleRoleRequest
@@ -41,12 +47,6 @@ export interface ScepWriteRoleRoleRequest {
      * @memberof ScepWriteRoleRoleRequest
      */
     display_name?: string;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof ScepWriteRoleRoleRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -130,10 +130,10 @@ export function ScepWriteRoleRoleRequestFromJSONTyped(json: any, ignoreDiscrimin
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'auth_type': json['auth_type'] == null ? undefined : json['auth_type'],
         'challenge': json['challenge'] == null ? undefined : json['challenge'],
         'display_name': json['display_name'] == null ? undefined : json['display_name'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -157,10 +157,10 @@ export function ScepWriteRoleRoleRequestToJSONTyped(value?: ScepWriteRoleRoleReq
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'auth_type': value['auth_type'],
         'challenge': value['challenge'],
         'display_name': value['display_name'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],
