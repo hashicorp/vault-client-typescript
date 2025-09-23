@@ -8112,12 +8112,21 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "X-Vault-Recover-Snapshot-Id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "header",
+            "schema": {
+              "type": "string"
             }
           },
           {
-            "name": "recover_source_path",
-            "description": "The source path to recover from. Only used if recover_snapshot_id parameter is also supplied. If not specified, the source path is assumed to be the same as the request path.",
-            "in": "query",
+            "name": "X-Vault-Recover-Source-Path",
+            "description": "The source path to recover from. Only used if a snapshot ID is also supplied. If not specified, the source path is assumed to be the same as the request path.",
+            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -9837,6 +9846,31 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/MfaGenerateTotpSecretRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/totp/self-enroll": {
+      "x-vault-unauthenticated": true,
+      "post": {
+        "summary": "Creates a TOTP Login MFA secret given an MFA method ID and MFA request ID.",
+        "operationId": "mfa-self-enroll",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaSelfEnrollRequest"
               }
             }
           }
@@ -12644,9 +12678,110 @@
         "tags": [
           "system"
         ],
+        "parameters": [
+          {
+            "name": "current_billing_period",
+            "description": "Query utilization for configured billing period",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "end_time",
+            "description": "End of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit_namespaces",
+            "description": "Limit query output by namespaces",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "start_time",
+            "description": "Start of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalClientActivityReportCountsResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sys/internal/counters/activity/cumulative": {
+      "description": "Cumulative count of clients under each namespace.",
+      "get": {
+        "summary": "Report the cumulative count of clients under this namespace, and all child namespaces.",
+        "operationId": "internal-client-activity-report-cumulative-counts",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "end_time",
+            "description": "End of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_time",
+            "description": "Start of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalClientActivityReportCumulativeCountsResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -12660,9 +12795,45 @@
         "tags": [
           "system"
         ],
+        "parameters": [
+          {
+            "name": "end_time",
+            "description": "End of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "description": "Format of the file. Either a CSV or a JSON file with an object per line.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "json"
+            }
+          },
+          {
+            "name": "start_time",
+            "description": "Start of query interval",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -12677,7 +12848,23 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalClientActivityReportCountsThisMonthResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -12715,9 +12902,52 @@
         "tags": [
           "system"
         ],
+        "parameters": [
+          {
+            "name": "default_report_months",
+            "description": "Number of months to report if no start date specified.",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 12
+            },
+            "deprecated": true
+          },
+          {
+            "name": "enabled",
+            "description": "Enable or disable collection of client count: enable, disable, or default.",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "default"
+            }
+          },
+          {
+            "name": "retention_months",
+            "description": "Number of months of client data to retain. Setting to 0 will clear all existing data.",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 48
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalClientActivityReadConfigurationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -12740,6 +12970,12 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -21421,6 +21657,16 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "read_snapshot_id",
+            "description": "Targets the read operation to the provided loaded snapshot Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -21460,6 +21706,14 @@
               ]
             },
             "required": true
+          },
+          {
+            "name": "read_snapshot_id",
+            "description": "Targets the read operation to the provided loaded snapshot Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -21506,6 +21760,16 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "read_snapshot_id",
+            "description": "Targets the read operation to the provided loaded snapshot Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -21517,6 +21781,33 @@
         "operationId": "database-write-static-role",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "recover_snapshot_id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "X-Vault-Recover-Snapshot-Id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Vault-Recover-Source-Path",
+            "description": "The source path to recover from. Only used if a snapshot ID is also supplied. If not specified, the source path is assumed to be the same as the request path.",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
@@ -24677,12 +24968,21 @@
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "X-Vault-Recover-Snapshot-Id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "header",
+            "schema": {
+              "type": "string"
             }
           },
           {
-            "name": "recover_source_path",
-            "description": "The source path to recover from. Only used if recover_snapshot_id parameter is also supplied. If not specified, the source path is assumed to be the same as the request path.",
-            "in": "query",
+            "name": "X-Vault-Recover-Source-Path",
+            "description": "The source path to recover from. Only used if a snapshot ID is also supplied. If not specified, the source path is assumed to be the same as the request path.",
+            "in": "header",
             "schema": {
               "type": "string"
             }
@@ -27441,6 +27741,49 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/batch/certs": {
+      "description": "Fetches a map of serial numbers to certificate (pem).",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-write-batch-certs",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiWriteBatchCertsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiWriteBatchCertsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -30597,6 +30940,56 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PkiWriteExternalPolicyPolicyAcmeRevokeCertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/integrations/guardium": {
+      "description": "Configuration of Guardium Integration Endpoint",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-displayAttrs": {
+        "name": "Guardium Integration"
+      },
+      "get": {
+        "operationId": "pki-read-integration-guardium",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-write-integration-guardium",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiWriteIntegrationGuardiumRequest"
               }
             }
           }
@@ -37946,6 +38339,16 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "read_snapshot_id",
+            "description": "Targets the read operation to the provided loaded snapshot Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -37956,6 +38359,25 @@
         "operationId": "ssh-configure-ca",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "recover_snapshot_id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "X-Vault-Recover-Snapshot-Id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
@@ -41153,6 +41575,61 @@
         }
       }
     },
+    "/{transit_mount_path}/derivedkeys/{type}/{name}": {
+      "description": "Generate data keys derived from the named key's HMAC key using the provided salt, info, and indices'",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The backend key used for encrypting the data key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "type",
+          "description": "\"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Generate data keys derived from the named key's HMAC key\nusing the provided salt, info, and indices'",
+        "operationId": "transit-generate-derivedkeys",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitGenerateDerivedkeysRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{transit_mount_path}/encrypt/{name}": {
       "description": "Encrypt a plaintext value or a batch of plaintext blocks using a named key",
       "parameters": [
@@ -42501,6 +42978,15 @@
       "AliCloudWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "arn": {
             "type": "string",
             "description": "ARN of the RAM to bind to this role."
@@ -42532,15 +43018,6 @@
               "type": "string"
             },
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -42944,6 +43421,15 @@
       "AppRoleReadRoleResponse": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bind_secret_id": {
             "type": "boolean",
             "description": "Impose secret ID to be presented when logging in using this role."
@@ -42981,15 +43467,6 @@
             "type": "integer",
             "description": "Duration in seconds after which the issued secret ID expires.",
             "format": "int64"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -43278,6 +43755,15 @@
       "AppRoleWriteRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bind_secret_id": {
             "type": "boolean",
             "description": "Impose secret_id to be presented when logging in using this role. Defaults to 'true'.",
@@ -43328,15 +43814,6 @@
             "type": "string",
             "description": "Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.",
             "format": "duration"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -43888,7 +44365,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "endpoint": {
             "type": "string",
@@ -43908,13 +44388,20 @@
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "max_retries": {
             "type": "integer",
@@ -43929,16 +44416,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "secret_key": {
             "type": "string",
@@ -44091,7 +44587,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "iam_endpoint": {
             "type": "string",
@@ -44100,13 +44599,20 @@
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "max_retries": {
             "type": "integer",
@@ -44124,16 +44630,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "secret_key": {
             "type": "string",
@@ -44344,6 +44859,15 @@
       "AwsWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "allow_instance_migration": {
             "type": "boolean",
             "description": "If set, allows migration of the underlying instance where the client resides. This keys off of pendingTime in the metadata document, so essentially, this disables the client nonce check whenever the instance is migrated to a new host and pendingTime is newer than the previously-remembered time. Use with caution. This is only checked when auth_type is ec2.",
@@ -44461,15 +44985,6 @@
             "type": "string",
             "description": "If set, enables the role tags for this role. The value set for this field should be the 'key' of the tag on the EC2 instance. The 'value' of the tag should be generated using 'role/<role>/tag' endpoint. Defaults to an empty string, meaning that role tags are disabled. This is only allowed if auth_type is ec2.",
             "default": ""
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -44799,7 +45314,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "environment": {
             "type": "string",
@@ -44808,13 +45326,20 @@
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "max_retries": {
             "type": "integer",
@@ -44846,16 +45371,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "tenant_id": {
             "type": "string",
@@ -44879,7 +45413,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "environment": {
             "type": "string",
@@ -44888,13 +45425,20 @@
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "root_password_ttl": {
             "type": "string",
@@ -44905,16 +45449,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "subscription_id": {
             "type": "string",
@@ -44962,6 +45515,15 @@
       "AzureWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bound_group_ids": {
             "type": "array",
             "description": "Comma-separated list of group ids that login is restricted to.",
@@ -45028,15 +45590,6 @@
               "type": "string"
             },
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -45226,6 +45779,15 @@
       "CertWriteCertificateRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "allowed_common_names": {
             "type": "array",
             "description": "A comma-separated list of names. At least one must exist in the Common Name. Supports globbing.",
@@ -45290,6 +45852,18 @@
             },
             "x-vault-displayAttrs": {
               "description": "A list of Organizational Units names. At least one must exist in the OU field.",
+              "group": "Constraints"
+            }
+          },
+          "allowed_organizations": {
+            "type": "array",
+            "description": "A comma-separated list of Organization names. At least one must exist in the O field. Supports globbing.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Allowed Organizations",
+              "description": "A list of Organization names.  At least one must exist in the O field.",
               "group": "Constraints"
             }
           },
@@ -45399,15 +45973,6 @@
             },
             "x-vault-displayAttrs": {
               "description": "A list of extensions formatted as 'oid:value'. Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on 'value'."
-            }
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
             }
           },
           "token_bound_cidrs": {
@@ -45710,6 +46275,15 @@
       "CloudFoundryWriteRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bound_application_ids": {
             "type": "array",
             "description": "Require that the client certificate presented has at least one of these app IDs.",
@@ -45790,15 +46364,6 @@
               "type": "string"
             },
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -46133,7 +46698,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "password_policy": {
             "type": "string",
@@ -46157,16 +46725,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "skip_static_role_import_rotation": {
             "type": "boolean",
@@ -46834,6 +47411,15 @@
       "GithubConfigureRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "base_url": {
             "type": "string",
             "description": "The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server.",
@@ -46856,15 +47442,6 @@
             "type": "integer",
             "description": "The ID of the organization users must be part of",
             "format": "int64"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -47006,7 +47583,10 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "gce_alias": {
             "type": "string",
@@ -47054,27 +47634,43 @@
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "service_account_email": {
             "type": "string",
@@ -47091,18 +47687,28 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_audience": {
             "type": "string",
             "description": "Audience of plugin identity tokens",
-            "default": ""
+            "default": "",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "identity_token_ttl": {
             "type": "string",
             "description": "Time-to-live of plugin identity tokens",
             "format": "duration",
-            "default": 3600
+            "default": 3600,
+            "x-vault-displayAttrs": {
+              "name": "Identity token TTL",
+              "group": "default"
+            }
           },
           "max_ttl": {
             "type": "string",
@@ -47112,16 +47718,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "service_account_email": {
             "type": "string",
@@ -47433,6 +48048,15 @@
             "description": "If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity's project. Requires IAM permission `resourcemanager.projects.get` on this project.",
             "default": false
           },
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "allow_gce_inference": {
             "type": "boolean",
             "description": "'iam' roles only. If false, Vault will not not allow GCE instances to login in against this role",
@@ -47527,15 +48151,6 @@
             "description": "Deprecated: use \"bound_service_accounts\" instead.",
             "items": {
               "type": "string"
-            }
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
             }
           },
           "token_bound_cidrs": {
@@ -47999,6 +48614,134 @@
           }
         }
       },
+      "InternalClientActivityReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "billing_start_timestamp": {
+            "type": "string",
+            "description": "The timestamp for the start of the billing period.",
+            "format": "date-time"
+          },
+          "enabled": {
+            "type": "string",
+            "description": "The current state of client count collection."
+          },
+          "minimum_retention_months": {
+            "type": "integer",
+            "description": "The minimum retention period required."
+          },
+          "queries_available": {
+            "type": "boolean",
+            "description": "Indicates if activity queries are available."
+          },
+          "reporting_enabled": {
+            "type": "boolean",
+            "description": "Indicates if automated license reporting is enabled."
+          },
+          "retention_months": {
+            "type": "integer",
+            "description": "The number of months of client data to retain."
+          }
+        }
+      },
+      "InternalClientActivityReportCountsResponse": {
+        "type": "object",
+        "properties": {
+          "by_namespace": {
+            "type": "array",
+            "description": "A list of usage counts broken down by namespace. Each element is an object containing namespace name, counts, and mounts.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "end_time": {
+            "type": "string",
+            "description": "The end time of the query interval.",
+            "format": "date-time"
+          },
+          "months": {
+            "type": "array",
+            "description": "A list of objects, each representing monthly client count data.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "start_time": {
+            "type": "string",
+            "description": "The start time of the query interval.",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "object",
+            "description": "Aggregated usage counts across all namespaces.",
+            "format": "map"
+          }
+        }
+      },
+      "InternalClientActivityReportCountsThisMonthResponse": {
+        "type": "object",
+        "properties": {
+          "acme_clients": {
+            "type": "integer",
+            "description": "The number of ACME clients for the month."
+          },
+          "by_namespace": {
+            "type": "array",
+            "description": "A list of usage counts broken down by namespace. Each element is an object containing namespace name, counts, and mounts.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "clients": {
+            "type": "integer",
+            "description": "The total number of unique clients for the month."
+          },
+          "entity_clients": {
+            "type": "integer",
+            "description": "The number of unique entity clients for the month."
+          },
+          "months": {
+            "type": "array",
+            "description": "A list of objects, each representing monthly client count data.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "non_entity_clients": {
+            "type": "integer",
+            "description": "The number of unique non-entity clients for the month."
+          },
+          "secret_syncs": {
+            "type": "integer",
+            "description": "The number of secret synchronizations for the month."
+          }
+        }
+      },
+      "InternalClientActivityReportCumulativeCountsResponse": {
+        "type": "object",
+        "properties": {
+          "by_namespace": {
+            "type": "object",
+            "description": "A map of namespace paths to their cumulative client counts.",
+            "format": "map"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "The end time of the query interval.",
+            "format": "date-time"
+          },
+          "start_time": {
+            "type": "string",
+            "description": "The start time of the query interval.",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "object",
+            "description": "Aggregated usage counts across all namespaces.",
+            "format": "map"
+          }
+        }
+      },
       "InternalCountEntitiesResponse": {
         "type": "object",
         "properties": {
@@ -48307,6 +49050,15 @@
       "JwtWriteRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "allowed_redirect_uris": {
             "type": "array",
             "description": "Comma-separated list of allowed values for redirect_uri",
@@ -48410,15 +49162,6 @@
           "role_type": {
             "type": "string",
             "description": "Type of the role, either 'jwt' or 'oidc'."
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -48528,26 +49271,38 @@
       "KerberosConfigureLdapRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "anonymous_group_search": {
             "type": "boolean",
             "description": "Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).",
             "default": false,
             "x-vault-displayAttrs": {
-              "name": "Anonymous group search"
+              "name": "Anonymous group search",
+              "group": "LDAP Options"
             }
           },
           "binddn": {
             "type": "string",
             "description": "LDAP DN for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "name": "Name of Object to bind (binddn)"
+              "name": "Name of Object to bind (binddn)",
+              "group": "Customize User Search"
             }
           },
           "bindpass": {
             "type": "string",
             "description": "LDAP password for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "sensitive": true
+              "sensitive": true,
+              "group": "Customize User Search"
             }
           },
           "case_sensitive_names": {
@@ -48559,6 +49314,7 @@
             "description": "CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "CA certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -48567,6 +49323,7 @@
             "description": "Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -48575,6 +49332,7 @@
             "description": "Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client key",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -48587,7 +49345,10 @@
           "deny_null_bind": {
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
-            "default": true
+            "default": true,
+            "x-vault-displayAttrs": {
+              "group": "LDAP Options"
+            }
           },
           "dereference_aliases": {
             "type": "string",
@@ -48604,7 +49365,8 @@
             "type": "boolean",
             "description": "Use anonymous bind to discover the bind DN of a user (optional)",
             "x-vault-displayAttrs": {
-              "name": "Discover DN"
+              "name": "Discover DN",
+              "group": "LDAP Options"
             }
           },
           "enable_samaccountname_login": {
@@ -48618,14 +49380,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "Group Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupdn": {
             "type": "string",
             "description": "LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "Group DN"
+              "name": "Group DN",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupfilter": {
@@ -48633,14 +49397,16 @@
             "description": "Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "default": "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "x-vault-displayAttrs": {
-              "name": "Group Filter"
+              "name": "Group Filter",
+              "group": "Customize Group Membership Search"
             }
           },
           "insecure_tls": {
             "type": "boolean",
             "description": "Skip LDAP server SSL Certificate verification - VERY insecure (optional)",
             "x-vault-displayAttrs": {
-              "name": "Insecure TLS"
+              "name": "Insecure TLS",
+              "group": "LDAP Options"
             }
           },
           "max_page_size": {
@@ -48658,7 +49424,8 @@
             "type": "boolean",
             "description": "Issue a StartTLS command after establishing unencrypted connection (optional)",
             "x-vault-displayAttrs": {
-              "name": "Issue StartTLS"
+              "name": "Issue StartTLS",
+              "group": "LDAP Options"
             }
           },
           "tls_max_version": {
@@ -48672,7 +49439,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Maximum TLS Version"
+              "name": "Maximum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "tls_min_version": {
@@ -48686,16 +49454,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Minimum TLS Version"
-            }
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
+              "name": "Minimum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "token_bound_cidrs": {
@@ -48787,7 +49547,8 @@
             "type": "string",
             "description": "Enables userPrincipalDomain login with [username]@UPNDomain (optional)",
             "x-vault-displayAttrs": {
-              "name": "User Principal (UPN) Domain"
+              "name": "User Principal (UPN) Domain",
+              "group": "LDAP Options"
             }
           },
           "url": {
@@ -48795,7 +49556,8 @@
             "description": "LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.",
             "default": "ldap://127.0.0.1",
             "x-vault-displayAttrs": {
-              "name": "URL"
+              "name": "URL",
+              "identifier": true
             }
           },
           "use_pre111_group_cn_behavior": {
@@ -48805,7 +49567,10 @@
           "use_token_groups": {
             "type": "boolean",
             "description": "If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.",
-            "default": false
+            "default": false,
+            "x-vault-displayAttrs": {
+              "group": "Customize Group Membership Search"
+            }
           },
           "userattr": {
             "type": "string",
@@ -48813,14 +49578,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "User Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "LDAP Options"
             }
           },
           "userdn": {
             "type": "string",
             "description": "LDAP domain to use for users (eg: ou=People,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "User DN"
+              "name": "User DN",
+              "group": "Customize User Search"
             }
           },
           "userfilter": {
@@ -48828,7 +49595,8 @@
             "description": "Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})",
             "default": "({{.UserAttr}}={{.Username}})",
             "x-vault-displayAttrs": {
-              "name": "User Search Filter"
+              "name": "User Search Filter",
+              "group": "Customize User Search"
             }
           },
           "username_as_alias": {
@@ -49502,6 +50270,15 @@
       "KubernetesWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "alias_name_source": {
             "type": "string",
             "description": "Source to use when deriving the Alias name. valid choices: \"serviceaccount_uid\" : <token.uid> e.g. 474b11b5-0f20-4f9d-8ca5-65715ab325e0 (most secure choice) \"serviceaccount_name\" : <namespace>/<serviceaccount> e.g. vault/vault-agent default: \"serviceaccount_uid\"",
@@ -49561,15 +50338,6 @@
               "type": "string"
             },
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -49882,6 +50650,11 @@
             "description": "The length of time before a version is deleted.",
             "format": "duration"
           },
+          "last_updated_by": {
+            "type": "object",
+            "description": "Attribution information of the last actor to update this secret",
+            "format": "map"
+          },
           "max_versions": {
             "type": "integer",
             "description": "The number of versions to keep",
@@ -50012,26 +50785,38 @@
       "LdapConfigureAuthRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "anonymous_group_search": {
             "type": "boolean",
             "description": "Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).",
             "default": false,
             "x-vault-displayAttrs": {
-              "name": "Anonymous group search"
+              "name": "Anonymous group search",
+              "group": "LDAP Options"
             }
           },
           "binddn": {
             "type": "string",
             "description": "LDAP DN for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "name": "Name of Object to bind (binddn)"
+              "name": "Name of Object to bind (binddn)",
+              "group": "Customize User Search"
             }
           },
           "bindpass": {
             "type": "string",
             "description": "LDAP password for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "sensitive": true
+              "sensitive": true,
+              "group": "Customize User Search"
             }
           },
           "case_sensitive_names": {
@@ -50043,6 +50828,7 @@
             "description": "CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "CA certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50051,6 +50837,7 @@
             "description": "Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50059,6 +50846,7 @@
             "description": "Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client key",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50071,7 +50859,10 @@
           "deny_null_bind": {
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
-            "default": true
+            "default": true,
+            "x-vault-displayAttrs": {
+              "group": "LDAP Options"
+            }
           },
           "dereference_aliases": {
             "type": "string",
@@ -50086,13 +50877,17 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "discoverdn": {
             "type": "boolean",
             "description": "Use anonymous bind to discover the bind DN of a user (optional)",
             "x-vault-displayAttrs": {
-              "name": "Discover DN"
+              "name": "Discover DN",
+              "group": "LDAP Options"
             }
           },
           "enable_samaccountname_login": {
@@ -50106,14 +50901,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "Group Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupdn": {
             "type": "string",
             "description": "LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "Group DN"
+              "name": "Group DN",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupfilter": {
@@ -50121,14 +50918,16 @@
             "description": "Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "default": "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "x-vault-displayAttrs": {
-              "name": "Group Filter"
+              "name": "Group Filter",
+              "group": "Customize Group Membership Search"
             }
           },
           "insecure_tls": {
             "type": "boolean",
             "description": "Skip LDAP server SSL Certificate verification - VERY insecure (optional)",
             "x-vault-displayAttrs": {
-              "name": "Insecure TLS"
+              "name": "Insecure TLS",
+              "group": "LDAP Options"
             }
           },
           "max_page_size": {
@@ -50149,11 +50948,17 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_url": {
             "type": "string",
@@ -50163,13 +50968,17 @@
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "starttls": {
             "type": "boolean",
             "description": "Issue a StartTLS command after establishing unencrypted connection (optional)",
             "x-vault-displayAttrs": {
-              "name": "Issue StartTLS"
+              "name": "Issue StartTLS",
+              "group": "LDAP Options"
             }
           },
           "tls_max_version": {
@@ -50183,7 +50992,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Maximum TLS Version"
+              "name": "Maximum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "tls_min_version": {
@@ -50197,16 +51007,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Minimum TLS Version"
-            }
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
+              "name": "Minimum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "token_bound_cidrs": {
@@ -50298,7 +51100,8 @@
             "type": "string",
             "description": "Enables userPrincipalDomain login with [username]@UPNDomain (optional)",
             "x-vault-displayAttrs": {
-              "name": "User Principal (UPN) Domain"
+              "name": "User Principal (UPN) Domain",
+              "group": "LDAP Options"
             }
           },
           "url": {
@@ -50306,7 +51109,8 @@
             "description": "LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.",
             "default": "ldap://127.0.0.1",
             "x-vault-displayAttrs": {
-              "name": "URL"
+              "name": "URL",
+              "identifier": true
             }
           },
           "use_pre111_group_cn_behavior": {
@@ -50316,7 +51120,10 @@
           "use_token_groups": {
             "type": "boolean",
             "description": "If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.",
-            "default": false
+            "default": false,
+            "x-vault-displayAttrs": {
+              "group": "Customize Group Membership Search"
+            }
           },
           "userattr": {
             "type": "string",
@@ -50324,14 +51131,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "User Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "LDAP Options"
             }
           },
           "userdn": {
             "type": "string",
             "description": "LDAP domain to use for users (eg: ou=People,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "User DN"
+              "name": "User DN",
+              "group": "Customize User Search"
             }
           },
           "userfilter": {
@@ -50339,7 +51148,8 @@
             "description": "Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})",
             "default": "({{.UserAttr}}={{.Username}})",
             "x-vault-displayAttrs": {
-              "name": "User Search Filter"
+              "name": "User Search Filter",
+              "group": "Customize User Search"
             }
           },
           "username_as_alias": {
@@ -50357,21 +51167,24 @@
             "description": "Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).",
             "default": false,
             "x-vault-displayAttrs": {
-              "name": "Anonymous group search"
+              "name": "Anonymous group search",
+              "group": "LDAP Options"
             }
           },
           "binddn": {
             "type": "string",
             "description": "LDAP DN for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "name": "Name of Object to bind (binddn)"
+              "name": "Name of Object to bind (binddn)",
+              "group": "Customize User Search"
             }
           },
           "bindpass": {
             "type": "string",
             "description": "LDAP password for searching for the user DN (optional)",
             "x-vault-displayAttrs": {
-              "sensitive": true
+              "sensitive": true,
+              "group": "Customize User Search"
             }
           },
           "case_sensitive_names": {
@@ -50383,6 +51196,7 @@
             "description": "CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "CA certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50391,6 +51205,7 @@
             "description": "Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client certificate",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50399,6 +51214,7 @@
             "description": "Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)",
             "x-vault-displayAttrs": {
               "name": "Client key",
+              "group": "LDAP Options",
               "editType": "file"
             }
           },
@@ -50416,7 +51232,10 @@
           "deny_null_bind": {
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
-            "default": true
+            "default": true,
+            "x-vault-displayAttrs": {
+              "group": "LDAP Options"
+            }
           },
           "dereference_aliases": {
             "type": "string",
@@ -50431,13 +51250,17 @@
           },
           "disable_automated_rotation": {
             "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "discoverdn": {
             "type": "boolean",
             "description": "Use anonymous bind to discover the bind DN of a user (optional)",
             "x-vault-displayAttrs": {
-              "name": "Discover DN"
+              "name": "Discover DN",
+              "group": "LDAP Options"
             }
           },
           "enable_samaccountname_login": {
@@ -50451,14 +51274,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "Group Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupdn": {
             "type": "string",
             "description": "LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "Group DN"
+              "name": "Group DN",
+              "group": "Customize Group Membership Search"
             }
           },
           "groupfilter": {
@@ -50466,14 +51291,16 @@
             "description": "Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "default": "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))",
             "x-vault-displayAttrs": {
-              "name": "Group Filter"
+              "name": "Group Filter",
+              "group": "Customize Group Membership Search"
             }
           },
           "insecure_tls": {
             "type": "boolean",
             "description": "Skip LDAP server SSL Certificate verification - VERY insecure (optional)",
             "x-vault-displayAttrs": {
-              "name": "Insecure TLS"
+              "name": "Insecure TLS",
+              "group": "LDAP Options"
             }
           },
           "length": {
@@ -50504,16 +51331,25 @@
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_schedule": {
             "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "rotation_window": {
             "type": "string",
             "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "schema": {
             "type": "string",
@@ -50528,7 +51364,8 @@
             "type": "boolean",
             "description": "Issue a StartTLS command after establishing unencrypted connection (optional)",
             "x-vault-displayAttrs": {
-              "name": "Issue StartTLS"
+              "name": "Issue StartTLS",
+              "group": "LDAP Options"
             }
           },
           "tls_max_version": {
@@ -50542,7 +51379,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Maximum TLS Version"
+              "name": "Maximum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "tls_min_version": {
@@ -50556,7 +51394,8 @@
             ],
             "default": "tls12",
             "x-vault-displayAttrs": {
-              "name": "Minimum TLS Version"
+              "name": "Minimum TLS Version",
+              "group": "LDAP Options"
             }
           },
           "ttl": {
@@ -50568,7 +51407,8 @@
             "type": "string",
             "description": "Enables userPrincipalDomain login with [username]@UPNDomain (optional)",
             "x-vault-displayAttrs": {
-              "name": "User Principal (UPN) Domain"
+              "name": "User Principal (UPN) Domain",
+              "group": "LDAP Options"
             }
           },
           "url": {
@@ -50576,7 +51416,8 @@
             "description": "LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.",
             "default": "ldap://127.0.0.1",
             "x-vault-displayAttrs": {
-              "name": "URL"
+              "name": "URL",
+              "identifier": true
             }
           },
           "use_pre111_group_cn_behavior": {
@@ -50586,7 +51427,10 @@
           "use_token_groups": {
             "type": "boolean",
             "description": "If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.",
-            "default": false
+            "default": false,
+            "x-vault-displayAttrs": {
+              "group": "Customize Group Membership Search"
+            }
           },
           "userattr": {
             "type": "string",
@@ -50594,14 +51438,16 @@
             "default": "cn",
             "x-vault-displayAttrs": {
               "name": "User Attribute",
-              "value": "cn"
+              "value": "cn",
+              "group": "LDAP Options"
             }
           },
           "userdn": {
             "type": "string",
             "description": "LDAP domain to use for users (eg: ou=People,dc=example,dc=org)",
             "x-vault-displayAttrs": {
-              "name": "User DN"
+              "name": "User DN",
+              "group": "Customize User Search"
             }
           },
           "userfilter": {
@@ -50609,7 +51455,8 @@
             "description": "Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})",
             "default": "({{.UserAttr}}={{.Username}})",
             "x-vault-displayAttrs": {
-              "name": "User Search Filter"
+              "name": "User Search Filter",
+              "group": "Customize User Search"
             }
           },
           "username_as_alias": {
@@ -51250,6 +52097,23 @@
         },
         "required": [
           "method_id"
+        ]
+      },
+      "MfaSelfEnrollRequest": {
+        "type": "object",
+        "properties": {
+          "mfa_method_id": {
+            "type": "string",
+            "description": "The ID of the TOTP MFA method to generate a credential for."
+          },
+          "mfa_request_id": {
+            "type": "string",
+            "description": "MFA request ID returned from the initial login attempt that triggered the MFA requirement."
+          }
+        },
+        "required": [
+          "mfa_method_id",
+          "mfa_request_id"
         ]
       },
       "MfaUpdateDuoMethodRequest": {
@@ -52053,20 +52917,20 @@
       "OciWriteRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "ocid_list": {
             "type": "array",
             "description": "A comma separated list of Group or Dynamic Group OCIDs that are allowed to take this role.",
             "items": {
               "type": "string"
-            }
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
             }
           },
           "token_bound_cidrs": {
@@ -52424,6 +53288,15 @@
       "OktaConfigureRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "api_token": {
             "type": "string",
             "description": "Okta API key.",
@@ -52472,15 +53345,6 @@
             "type": "string",
             "description": "Use api_token instead.",
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -57318,7 +58182,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.32473.1.2.4\",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -57604,7 +58468,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.32473.1.2.4\",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -58666,7 +59530,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.32473.1.2.4\",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -60867,6 +61731,29 @@
           }
         }
       },
+      "PkiWriteBatchCertsRequest": {
+        "type": "object",
+        "properties": {
+          "serial_numbers": {
+            "type": "array",
+            "description": "Serial numbers of certificates to be read.",
+            "items": {
+              "type": "string"
+            },
+            "default": ""
+          }
+        }
+      },
+      "PkiWriteBatchCertsResponse": {
+        "type": "object",
+        "properties": {
+          "certificates": {
+            "type": "object",
+            "description": "Map of serial numbers requested to certificate found in storage on this node",
+            "format": "map"
+          }
+        }
+      },
       "PkiWriteExternalPolicyAcmeAccountKidRequest": {
         "type": "object",
         "properties": {
@@ -61626,6 +62513,18 @@
             "description": "Serial Number"
           }
         }
+      },
+      "PkiWriteIntegrationGuardiumRequest": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL a user should be taken to when clicking in the Vault UI"
+          }
+        },
+        "required": [
+          "url"
+        ]
       },
       "PkiWriteIssuerIssuer_refAcmeAccountKidRequest": {
         "type": "object",
@@ -63223,7 +64122,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.32473.1.2.4\",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -63509,7 +64408,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.32473.1.2.4\",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -64335,6 +65234,15 @@
       "RadiusConfigureRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "dial_timeout": {
             "type": "string",
             "description": "Number of seconds before connect times out (default: 10)",
@@ -64388,15 +65296,6 @@
           "secret": {
             "type": "string",
             "description": "Secret shared with the RADIUS server"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -65335,6 +66234,15 @@
       "SamlWriteRoleNameRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bound_attributes": {
             "type": "object",
             "description": "Mapping of attribute names to values to assert exist in the SAML Response's Assertion.",
@@ -65366,15 +66274,6 @@
           "groups_attribute": {
             "type": "string",
             "description": "The attribute to use for Vault Identity group alias names."
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -65544,6 +66443,15 @@
       "ScepWriteRoleRoleRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "auth_type": {
             "type": "string",
             "description": "The authentication type to use",
@@ -65559,15 +66467,6 @@
           "display_name": {
             "type": "string",
             "description": "The display name to use for clients using this SCEP role"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -65712,6 +66611,43 @@
       "SpiffeConfigureRequest": {
         "type": "object",
         "properties": {
+          "audience": {
+            "type": "array",
+            "description": "A list of audience values allowed to match claims in JWT-SVIDs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bundle": {
+            "type": "string",
+            "description": "When profile is 'https_spiffe_bundle', the bootstrapping bundle in SPIFFE format; when profile is 'static', either a bundle in SPIFFE format or PEM-encoded CA certificate(s)"
+          },
+          "defer_bundle_fetch": {
+            "type": "boolean",
+            "description": "Don't attempt to fetch a bundle immediately; only applies when profile != static"
+          },
+          "endpoint_root_ca_truststore_pem": {
+            "type": "string",
+            "description": "PEM-encoded CA certificate(s) to validate the server reached by 'endpoint_url', if set this will override the default TLS trust store"
+          },
+          "endpoint_spiffe_id": {
+            "type": "string",
+            "description": "The server's SPIFFE ID to validate when profile is 'https_spiffe_bundle'"
+          },
+          "endpoint_url": {
+            "type": "string",
+            "description": "The URI to be used when profile is 'https_web_bundle' or 'https_spiffe_bundle'"
+          },
+          "profile": {
+            "type": "string",
+            "description": "The mechanism to fetch or embed the trust bundle to use",
+            "enum": [
+              "https_web_bundle",
+              "https_spiffe_bundle",
+              "https_web_pem",
+              "static"
+            ]
+          },
           "trust_domain": {
             "type": "string",
             "description": "The SPIFFE trust domain for this backend"
@@ -65721,6 +66657,43 @@
       "SpiffeConfigureResponse": {
         "type": "object",
         "properties": {
+          "audience": {
+            "type": "array",
+            "description": "A list of audience values allowed to match claims in JWT-SVIDs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bundle": {
+            "type": "string",
+            "description": "When profile is 'https_spiffe_bundle', the bootstrapping bundle in SPIFFE format; when profile is 'static', either a bundle in SPIFFE format or PEM-encoded CA certificate(s)"
+          },
+          "defer_bundle_fetch": {
+            "type": "boolean",
+            "description": "Don't attempt to fetch a bundle immediately; only applies when profile != static"
+          },
+          "endpoint_root_ca_truststore_pem": {
+            "type": "string",
+            "description": "PEM-encoded CA certificate(s) to validate the server reached by 'endpoint_url', if set this will override the default TLS trust store"
+          },
+          "endpoint_spiffe_id": {
+            "type": "string",
+            "description": "The server's SPIFFE ID to validate when profile is 'https_spiffe_bundle'"
+          },
+          "endpoint_url": {
+            "type": "string",
+            "description": "The URI to be used when profile is 'https_web_bundle' or 'https_spiffe_bundle'"
+          },
+          "profile": {
+            "type": "string",
+            "description": "The mechanism to fetch or embed the trust bundle to use",
+            "enum": [
+              "https_web_bundle",
+              "https_spiffe_bundle",
+              "https_web_pem",
+              "static"
+            ]
+          },
           "trust_domain": {
             "type": "string",
             "description": "The SPIFFE trust domain for this backend"
@@ -65749,30 +66722,18 @@
       "SpiffeWriteRoleNameRequest": {
         "type": "object",
         "properties": {
-          "ca_cert": {
-            "type": "string",
-            "description": "A PEM-encoded CA certificate of an intermediate or root CA to validate the incoming certificate. Only one of ca_cert or ca_cert_url+ca_cert_url_trust_ca may be specified on a role."
-          },
-          "ca_cert_url": {
-            "type": "string",
-            "description": "A URL from which to fetch the CA certificate for cert validation. This URL must be HTTPS, and must be signed by ca_cert_url_trust_ca."
-          },
-          "ca_cert_url_trust_ca": {
-            "type": "string",
-            "description": "A CA certificate used to validate the server reached by ca_cert_url."
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
           },
           "display_name": {
             "type": "string",
             "description": "The display name to use for clients using this role"
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -65861,7 +66822,7 @@
           },
           "workload_id_patterns": {
             "type": "array",
-            "description": "A comma separated list of regexps that match an incoming workload id to this role.",
+            "description": "A comma separated list of patterns that match an incoming workload id to this role. A workload id is the part that remains after stripping the trust domain prefix and the slash separator from a spiffe id.",
             "items": {
               "type": "string"
             }
@@ -68246,6 +69207,10 @@
       "SystemWriteStorageRaftSnapshotAutoConfigNameRequest": {
         "type": "object",
         "properties": {
+          "autoload_enabled": {
+            "type": "boolean",
+            "description": "Whether to automatically load the snapshot into the cluster"
+          },
           "aws_access_key_id": {
             "type": "string",
             "description": "AWS access key ID"
@@ -70589,6 +71554,36 @@
           }
         }
       },
+      "TransitGenerateDerivedkeysRequest": {
+        "type": "object",
+        "properties": {
+          "bits": {
+            "type": "integer",
+            "description": "Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.",
+            "default": 256
+          },
+          "info": {
+            "type": "string",
+            "description": "The info string input to derivation"
+          },
+          "key_index_from": {
+            "type": "integer",
+            "description": "The starting index for keys to return"
+          },
+          "key_index_to": {
+            "type": "integer",
+            "description": "The ending index (non-inclusive) for keys to return"
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "The version of the Vault key to use for encryption of the data key. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key."
+          },
+          "salt": {
+            "type": "string",
+            "description": "The salt input to derivation"
+          }
+        }
+      },
       "TransitGenerateHmacRequest": {
         "type": "object",
         "properties": {
@@ -71506,6 +72501,15 @@
       "UserpassWriteUserRequest": {
         "type": "object",
         "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
           "bound_cidrs": {
             "type": "array",
             "description": "Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.",
@@ -71541,15 +72545,6 @@
               "type": "string"
             },
             "deprecated": true
-          },
-          "token_auth_metadata": {
-            "type": "object",
-            "description": "The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs",
-            "format": "kvpairs",
-            "x-vault-displayAttrs": {
-              "name": "Token Auth Metadata",
-              "group": "Tokens"
-            }
           },
           "token_bound_cidrs": {
             "type": "array",
