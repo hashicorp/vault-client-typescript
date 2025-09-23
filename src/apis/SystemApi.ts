@@ -51,6 +51,10 @@ import type {
   HaStatusResponse,
   InitializeRequest,
   InternalClientActivityConfigureRequest,
+  InternalClientActivityReadConfigurationResponse,
+  InternalClientActivityReportCountsResponse,
+  InternalClientActivityReportCountsThisMonthResponse,
+  InternalClientActivityReportCumulativeCountsResponse,
   InternalCountEntitiesResponse,
   InternalGenerateOpenApiDocumentWithParametersRequest,
   InternalUiListEnabledFeatureFlagsResponse,
@@ -337,6 +341,14 @@ import {
     InitializeRequestToJSON,
     InternalClientActivityConfigureRequestFromJSON,
     InternalClientActivityConfigureRequestToJSON,
+    InternalClientActivityReadConfigurationResponseFromJSON,
+    InternalClientActivityReadConfigurationResponseToJSON,
+    InternalClientActivityReportCountsResponseFromJSON,
+    InternalClientActivityReportCountsResponseToJSON,
+    InternalClientActivityReportCountsThisMonthResponseFromJSON,
+    InternalClientActivityReportCountsThisMonthResponseToJSON,
+    InternalClientActivityReportCumulativeCountsResponseFromJSON,
+    InternalClientActivityReportCumulativeCountsResponseToJSON,
     InternalCountEntitiesResponseFromJSON,
     InternalCountEntitiesResponseToJSON,
     InternalGenerateOpenApiDocumentWithParametersRequestFromJSON,
@@ -883,6 +895,30 @@ export interface SystemApiInitializeOperationRequest {
 
 export interface SystemApiInternalClientActivityConfigureOperationRequest {
     InternalClientActivityConfigureRequest: InternalClientActivityConfigureRequest;
+}
+
+export interface SystemApiInternalClientActivityExportRequest {
+    end_time?: string;
+    format?: string;
+    start_time?: string;
+}
+
+export interface SystemApiInternalClientActivityReadConfigurationRequest {
+    default_report_months?: number;
+    enabled?: string;
+    retention_months?: number;
+}
+
+export interface SystemApiInternalClientActivityReportCountsRequest {
+    current_billing_period?: boolean;
+    end_time?: string;
+    limit_namespaces?: number;
+    start_time?: string;
+}
+
+export interface SystemApiInternalClientActivityReportCumulativeCountsRequest {
+    end_time?: string;
+    start_time?: string;
 }
 
 export interface SystemApiInternalGenerateOpenApiDocumentRequest {
@@ -3191,8 +3227,20 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Report the client count metrics, for this namespace and all child namespaces.
      */
-    async internalClientActivityExportRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async internalClientActivityExportRaw(requestParameters: SystemApiInternalClientActivityExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
+
+        if (requestParameters['end_time'] != null) {
+            queryParameters['end_time'] = requestParameters['end_time'];
+        }
+
+        if (requestParameters['format'] != null) {
+            queryParameters['format'] = requestParameters['format'];
+        }
+
+        if (requestParameters['start_time'] != null) {
+            queryParameters['start_time'] = requestParameters['start_time'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
@@ -3209,16 +3257,28 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Report the client count metrics, for this namespace and all child namespaces.
      */
-    async internalClientActivityExport(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalClientActivityExportRaw(initOverrides);
+    async internalClientActivityExport(end_time?: string, format?: string, start_time?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.internalClientActivityExportRaw({ end_time: end_time, format: format, start_time: start_time }, initOverrides);
         return await response.value();
     }
 
     /**
      * Read the client count tracking configuration.
      */
-    async internalClientActivityReadConfigurationRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async internalClientActivityReadConfigurationRaw(requestParameters: SystemApiInternalClientActivityReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InternalClientActivityReadConfigurationResponse>> {
         const queryParameters: any = {};
+
+        if (requestParameters['default_report_months'] != null) {
+            queryParameters['default_report_months'] = requestParameters['default_report_months'];
+        }
+
+        if (requestParameters['enabled'] != null) {
+            queryParameters['enabled'] = requestParameters['enabled'];
+        }
+
+        if (requestParameters['retention_months'] != null) {
+            queryParameters['retention_months'] = requestParameters['retention_months'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
@@ -3229,22 +3289,38 @@ export class SystemApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => InternalClientActivityReadConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
      * Read the client count tracking configuration.
      */
-    async internalClientActivityReadConfiguration(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalClientActivityReadConfigurationRaw(initOverrides);
+    async internalClientActivityReadConfiguration(default_report_months?: number, enabled?: string, retention_months?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InternalClientActivityReadConfigurationResponse> {
+        const response = await this.internalClientActivityReadConfigurationRaw({ default_report_months: default_report_months, enabled: enabled, retention_months: retention_months }, initOverrides);
         return await response.value();
     }
 
     /**
      * Report the client count metrics, for this namespace and all child namespaces.
      */
-    async internalClientActivityReportCountsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async internalClientActivityReportCountsRaw(requestParameters: SystemApiInternalClientActivityReportCountsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InternalClientActivityReportCountsResponse>> {
         const queryParameters: any = {};
+
+        if (requestParameters['current_billing_period'] != null) {
+            queryParameters['current_billing_period'] = requestParameters['current_billing_period'];
+        }
+
+        if (requestParameters['end_time'] != null) {
+            queryParameters['end_time'] = requestParameters['end_time'];
+        }
+
+        if (requestParameters['limit_namespaces'] != null) {
+            queryParameters['limit_namespaces'] = requestParameters['limit_namespaces'];
+        }
+
+        if (requestParameters['start_time'] != null) {
+            queryParameters['start_time'] = requestParameters['start_time'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
@@ -3255,21 +3331,28 @@ export class SystemApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => InternalClientActivityReportCountsResponseFromJSON(jsonValue));
     }
 
     /**
      * Report the client count metrics, for this namespace and all child namespaces.
      */
-    async internalClientActivityReportCounts(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.internalClientActivityReportCountsRaw(initOverrides);
-        return await response.value();
+    async internalClientActivityReportCounts(current_billing_period?: boolean, end_time?: string, limit_namespaces?: number, start_time?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InternalClientActivityReportCountsResponse | null | undefined > {
+        const response = await this.internalClientActivityReportCountsRaw({ current_billing_period: current_billing_period, end_time: end_time, limit_namespaces: limit_namespaces, start_time: start_time }, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
     }
 
     /**
      * Report the number of clients for this month, for this namespace and all child namespaces.
      */
-    async internalClientActivityReportCountsThisMonthRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async internalClientActivityReportCountsThisMonthRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InternalClientActivityReportCountsThisMonthResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -3281,15 +3364,63 @@ export class SystemApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => InternalClientActivityReportCountsThisMonthResponseFromJSON(jsonValue));
     }
 
     /**
      * Report the number of clients for this month, for this namespace and all child namespaces.
      */
-    async internalClientActivityReportCountsThisMonth(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async internalClientActivityReportCountsThisMonth(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InternalClientActivityReportCountsThisMonthResponse | null | undefined > {
         const response = await this.internalClientActivityReportCountsThisMonthRaw(initOverrides);
-        return await response.value();
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Report the cumulative count of clients under this namespace, and all child namespaces.
+     */
+    async internalClientActivityReportCumulativeCountsRaw(requestParameters: SystemApiInternalClientActivityReportCumulativeCountsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InternalClientActivityReportCumulativeCountsResponse>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['end_time'] != null) {
+            queryParameters['end_time'] = requestParameters['end_time'];
+        }
+
+        if (requestParameters['start_time'] != null) {
+            queryParameters['start_time'] = requestParameters['start_time'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/sys/internal/counters/activity/cumulative`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InternalClientActivityReportCumulativeCountsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Report the cumulative count of clients under this namespace, and all child namespaces.
+     */
+    async internalClientActivityReportCumulativeCounts(end_time?: string, start_time?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InternalClientActivityReportCumulativeCountsResponse | null | undefined > {
+        const response = await this.internalClientActivityReportCumulativeCountsRaw({ end_time: end_time, start_time: start_time }, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
     }
 
     /**

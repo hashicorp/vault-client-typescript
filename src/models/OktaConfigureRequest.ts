@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface OktaConfigureRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof OktaConfigureRequest
+     */
+    alias_metadata?: object;
+    /**
      * Okta API key.
      * @type {string}
      * @memberof OktaConfigureRequest
@@ -75,12 +81,6 @@ export interface OktaConfigureRequest {
      * @deprecated
      */
     token?: string;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof OktaConfigureRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -161,6 +161,7 @@ export function OktaConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'api_token': json['api_token'] == null ? undefined : json['api_token'],
         'base_url': json['base_url'] == null ? undefined : json['base_url'],
         'bypass_okta_mfa': json['bypass_okta_mfa'] == null ? undefined : json['bypass_okta_mfa'],
@@ -169,7 +170,6 @@ export function OktaConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
         'organization': json['organization'] == null ? undefined : json['organization'],
         'production': json['production'] == null ? undefined : json['production'],
         'token': json['token'] == null ? undefined : json['token'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -194,6 +194,7 @@ export function OktaConfigureRequestToJSONTyped(value?: OktaConfigureRequest | n
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'api_token': value['api_token'],
         'base_url': value['base_url'],
         'bypass_okta_mfa': value['bypass_okta_mfa'],
@@ -202,7 +203,6 @@ export function OktaConfigureRequestToJSONTyped(value?: OktaConfigureRequest | n
         'organization': value['organization'],
         'production': value['production'],
         'token': value['token'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

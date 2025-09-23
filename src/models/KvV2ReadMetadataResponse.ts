@@ -54,6 +54,12 @@ export interface KvV2ReadMetadataResponse {
      */
     delete_version_after?: string;
     /**
+     * Attribution information of the last actor to update this secret
+     * @type {object}
+     * @memberof KvV2ReadMetadataResponse
+     */
+    last_updated_by?: object;
+    /**
      * The number of versions to keep
      * @type {number}
      * @memberof KvV2ReadMetadataResponse
@@ -101,6 +107,7 @@ export function KvV2ReadMetadataResponseFromJSONTyped(json: any, ignoreDiscrimin
         'current_version': json['current_version'] == null ? undefined : json['current_version'],
         'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
         'delete_version_after': json['delete_version_after'] == null ? undefined : json['delete_version_after'],
+        'last_updated_by': json['last_updated_by'] == null ? undefined : json['last_updated_by'],
         'max_versions': json['max_versions'] == null ? undefined : json['max_versions'],
         'oldest_version': json['oldest_version'] == null ? undefined : json['oldest_version'],
         'updated_time': json['updated_time'] == null ? undefined : (new Date(json['updated_time'])),
@@ -124,6 +131,7 @@ export function KvV2ReadMetadataResponseToJSONTyped(value?: KvV2ReadMetadataResp
         'current_version': value['current_version'],
         'custom_metadata': value['custom_metadata'],
         'delete_version_after': value['delete_version_after'],
+        'last_updated_by': value['last_updated_by'],
         'max_versions': value['max_versions'],
         'oldest_version': value['oldest_version'],
         'updated_time': value['updated_time'] == null ? undefined : ((value['updated_time']).toISOString()),
