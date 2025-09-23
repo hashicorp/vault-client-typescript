@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface KubernetesWriteAuthRoleRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof KubernetesWriteAuthRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * Source to use when deriving the Alias name. valid choices: "serviceaccount_uid" : <token.uid> e.g. 474b11b5-0f20-4f9d-8ca5-65715ab325e0 (most secure choice) "serviceaccount_name" : <namespace>/<serviceaccount> e.g. vault/vault-agent default: "serviceaccount_uid"
      * @type {string}
      * @memberof KubernetesWriteAuthRoleRequest
@@ -88,12 +94,6 @@ export interface KubernetesWriteAuthRoleRequest {
      * @deprecated
      */
     policies?: Array<string>;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof KubernetesWriteAuthRoleRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -174,6 +174,7 @@ export function KubernetesWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDis
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'alias_name_source': json['alias_name_source'] == null ? undefined : json['alias_name_source'],
         'audience': json['audience'] == null ? undefined : json['audience'],
         'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
@@ -184,7 +185,6 @@ export function KubernetesWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDis
         'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -209,6 +209,7 @@ export function KubernetesWriteAuthRoleRequestToJSONTyped(value?: KubernetesWrit
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'alias_name_source': value['alias_name_source'],
         'audience': value['audience'],
         'bound_cidrs': value['bound_cidrs'],
@@ -219,7 +220,6 @@ export function KubernetesWriteAuthRoleRequestToJSONTyped(value?: KubernetesWrit
         'num_uses': value['num_uses'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

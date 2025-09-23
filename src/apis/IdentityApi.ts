@@ -46,6 +46,7 @@ import type {
   MfaCreatePingIdMethodRequest,
   MfaCreateTotpMethodRequest,
   MfaGenerateTotpSecretRequest,
+  MfaSelfEnrollRequest,
   MfaUpdateDuoMethodRequest,
   MfaUpdateOktaMethodRequest,
   MfaUpdatePingIdMethodRequest,
@@ -121,6 +122,8 @@ import {
     MfaCreateTotpMethodRequestToJSON,
     MfaGenerateTotpSecretRequestFromJSON,
     MfaGenerateTotpSecretRequestToJSON,
+    MfaSelfEnrollRequestFromJSON,
+    MfaSelfEnrollRequestToJSON,
     MfaUpdateDuoMethodRequestFromJSON,
     MfaUpdateDuoMethodRequestToJSON,
     MfaUpdateOktaMethodRequestFromJSON,
@@ -434,6 +437,10 @@ export interface IdentityApiMfaReadPingIdMethodRequest {
 
 export interface IdentityApiMfaReadTotpMethodRequest {
     method_id: string;
+}
+
+export interface IdentityApiMfaSelfEnrollOperationRequest {
+    MfaSelfEnrollRequest: MfaSelfEnrollRequest;
 }
 
 export interface IdentityApiMfaUpdateDuoMethodOperationRequest {
@@ -2982,6 +2989,42 @@ export class IdentityApi extends runtime.BaseAPI {
      */
     async mfaReadTotpMethod(method_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.mfaReadTotpMethodRaw({ method_id: method_id }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates a TOTP Login MFA secret given an MFA method ID and MFA request ID.
+     */
+    async mfaSelfEnrollRaw(requestParameters: IdentityApiMfaSelfEnrollOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['MfaSelfEnrollRequest'] == null) {
+            throw new runtime.RequiredError(
+                'MfaSelfEnrollRequest',
+                'Required parameter "MfaSelfEnrollRequest" was null or undefined when calling mfaSelfEnroll().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/identity/mfa/method/totp/self-enroll`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: MfaSelfEnrollRequestToJSON(requestParameters['MfaSelfEnrollRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Creates a TOTP Login MFA secret given an MFA method ID and MFA request ID.
+     */
+    async mfaSelfEnroll(MfaSelfEnrollRequest: MfaSelfEnrollRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.mfaSelfEnrollRaw({ MfaSelfEnrollRequest: MfaSelfEnrollRequest }, initOverrides);
         return await response.value();
     }
 

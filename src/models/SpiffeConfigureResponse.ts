@@ -24,12 +24,66 @@ import { mapValues } from '../runtime';
  */
 export interface SpiffeConfigureResponse {
     /**
+     * A list of audience values allowed to match claims in JWT-SVIDs
+     * @type {Array<string>}
+     * @memberof SpiffeConfigureResponse
+     */
+    audience?: Array<string>;
+    /**
+     * When profile is 'https_spiffe_bundle', the bootstrapping bundle in SPIFFE format; when profile is 'static', either a bundle in SPIFFE format or PEM-encoded CA certificate(s)
+     * @type {string}
+     * @memberof SpiffeConfigureResponse
+     */
+    bundle?: string;
+    /**
+     * Don't attempt to fetch a bundle immediately; only applies when profile != static
+     * @type {boolean}
+     * @memberof SpiffeConfigureResponse
+     */
+    defer_bundle_fetch?: boolean;
+    /**
+     * PEM-encoded CA certificate(s) to validate the server reached by 'endpoint_url', if set this will override the default TLS trust store
+     * @type {string}
+     * @memberof SpiffeConfigureResponse
+     */
+    endpoint_root_ca_truststore_pem?: string;
+    /**
+     * The server's SPIFFE ID to validate when profile is 'https_spiffe_bundle'
+     * @type {string}
+     * @memberof SpiffeConfigureResponse
+     */
+    endpoint_spiffe_id?: string;
+    /**
+     * The URI to be used when profile is 'https_web_bundle' or 'https_spiffe_bundle'
+     * @type {string}
+     * @memberof SpiffeConfigureResponse
+     */
+    endpoint_url?: string;
+    /**
+     * The mechanism to fetch or embed the trust bundle to use
+     * @type {string}
+     * @memberof SpiffeConfigureResponse
+     */
+    profile?: SpiffeConfigureResponseProfileEnum;
+    /**
      * The SPIFFE trust domain for this backend
      * @type {string}
      * @memberof SpiffeConfigureResponse
      */
     trust_domain?: string;
 }
+
+/**
+* @export
+* @enum {string}
+*/
+export enum SpiffeConfigureResponseProfileEnum {
+    HTTPS_WEB_BUNDLE = 'https_web_bundle',
+    HTTPS_SPIFFE_BUNDLE = 'https_spiffe_bundle',
+    HTTPS_WEB_PEM = 'https_web_pem',
+    STATIC = 'static'
+}
+
 
 /**
  * Check if a given object implements the SpiffeConfigureResponse interface.
@@ -48,6 +102,13 @@ export function SpiffeConfigureResponseFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
+        'audience': json['audience'] == null ? undefined : json['audience'],
+        'bundle': json['bundle'] == null ? undefined : json['bundle'],
+        'defer_bundle_fetch': json['defer_bundle_fetch'] == null ? undefined : json['defer_bundle_fetch'],
+        'endpoint_root_ca_truststore_pem': json['endpoint_root_ca_truststore_pem'] == null ? undefined : json['endpoint_root_ca_truststore_pem'],
+        'endpoint_spiffe_id': json['endpoint_spiffe_id'] == null ? undefined : json['endpoint_spiffe_id'],
+        'endpoint_url': json['endpoint_url'] == null ? undefined : json['endpoint_url'],
+        'profile': json['profile'] == null ? undefined : json['profile'],
         'trust_domain': json['trust_domain'] == null ? undefined : json['trust_domain'],
     };
 }
@@ -63,6 +124,13 @@ export function SpiffeConfigureResponseToJSONTyped(value?: SpiffeConfigureRespon
 
     return {
         
+        'audience': value['audience'],
+        'bundle': value['bundle'],
+        'defer_bundle_fetch': value['defer_bundle_fetch'],
+        'endpoint_root_ca_truststore_pem': value['endpoint_root_ca_truststore_pem'],
+        'endpoint_spiffe_id': value['endpoint_spiffe_id'],
+        'endpoint_url': value['endpoint_url'],
+        'profile': value['profile'],
         'trust_domain': value['trust_domain'],
     };
 }

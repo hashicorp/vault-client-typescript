@@ -246,7 +246,7 @@ export interface PkiPatchRoleResponse {
      */
     ou?: Array<string>;
     /**
-     * A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{"oid"="1.3.6.1.4.1.7.8","notice"="I am a user Notice"}, {"oid"="1.3.6.1.4.1.44947.1.2.4 ","cps"="https://example.com"}].
+     * A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{"oid"="1.3.6.1.4.1.7.8","notice"="I am a user Notice"}, {"oid"="1.3.6.1.4.1.32473.1.2.4","cps"="https://example.com"}].
      * @type {Array<string>}
      * @memberof PkiPatchRoleResponse
      */
