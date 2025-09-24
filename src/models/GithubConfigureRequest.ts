@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface GithubConfigureRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof GithubConfigureRequest
+     */
+    alias_metadata?: object;
+    /**
      * The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server.
      * @type {string}
      * @memberof GithubConfigureRequest
@@ -48,12 +54,6 @@ export interface GithubConfigureRequest {
      * @memberof GithubConfigureRequest
      */
     organization_id?: number;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof GithubConfigureRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -135,11 +135,11 @@ export function GithubConfigureRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'base_url': json['base_url'] == null ? undefined : json['base_url'],
         'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'organization': json['organization'],
         'organization_id': json['organization_id'] == null ? undefined : json['organization_id'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -164,11 +164,11 @@ export function GithubConfigureRequestToJSONTyped(value?: GithubConfigureRequest
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'base_url': value['base_url'],
         'max_ttl': value['max_ttl'],
         'organization': value['organization'],
         'organization_id': value['organization_id'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

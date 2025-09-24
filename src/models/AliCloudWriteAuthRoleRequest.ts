@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface AliCloudWriteAuthRoleRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof AliCloudWriteAuthRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * ARN of the RAM to bind to this role.
      * @type {string}
      * @memberof AliCloudWriteAuthRoleRequest
@@ -57,12 +63,6 @@ export interface AliCloudWriteAuthRoleRequest {
      * @deprecated
      */
     policies?: Array<string>;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof AliCloudWriteAuthRoleRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -143,12 +143,12 @@ export function AliCloudWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'arn': json['arn'] == null ? undefined : json['arn'],
         'bound_cidrs': json['bound_cidrs'] == null ? undefined : json['bound_cidrs'],
         'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -173,12 +173,12 @@ export function AliCloudWriteAuthRoleRequestToJSONTyped(value?: AliCloudWriteAut
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'arn': value['arn'],
         'bound_cidrs': value['bound_cidrs'],
         'max_ttl': value['max_ttl'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

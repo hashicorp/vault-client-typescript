@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface PoliciesWritePasswordPolicyRequest {
     /**
+     * The entropy source for generation
+     * @type {string}
+     * @memberof PoliciesWritePasswordPolicyRequest
+     */
+    entropy_source?: string;
+    /**
      * The password policy
      * @type {string}
      * @memberof PoliciesWritePasswordPolicyRequest
@@ -48,6 +54,7 @@ export function PoliciesWritePasswordPolicyRequestFromJSONTyped(json: any, ignor
     }
     return {
         
+        'entropy_source': json['entropy_source'] == null ? undefined : json['entropy_source'],
         'policy': json['policy'] == null ? undefined : json['policy'],
     };
 }
@@ -63,6 +70,7 @@ export function PoliciesWritePasswordPolicyRequestToJSONTyped(value?: PoliciesWr
 
     return {
         
+        'entropy_source': value['entropy_source'],
         'policy': value['policy'],
     };
 }

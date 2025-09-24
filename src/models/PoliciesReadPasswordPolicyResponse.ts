@@ -28,6 +28,12 @@ export interface PoliciesReadPasswordPolicyResponse {
      * @type {string}
      * @memberof PoliciesReadPasswordPolicyResponse
      */
+    entropy_source?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PoliciesReadPasswordPolicyResponse
+     */
     policy?: string;
 }
 
@@ -48,6 +54,7 @@ export function PoliciesReadPasswordPolicyResponseFromJSONTyped(json: any, ignor
     }
     return {
         
+        'entropy_source': json['entropy_source'] == null ? undefined : json['entropy_source'],
         'policy': json['policy'] == null ? undefined : json['policy'],
     };
 }
@@ -63,6 +70,7 @@ export function PoliciesReadPasswordPolicyResponseToJSONTyped(value?: PoliciesRe
 
     return {
         
+        'entropy_source': value['entropy_source'],
         'policy': value['policy'],
     };
 }
