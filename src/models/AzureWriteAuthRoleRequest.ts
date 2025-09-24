@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface AzureWriteAuthRoleRequest {
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof AzureWriteAuthRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * Comma-separated list of group ids that login is restricted to.
      * @type {Array<string>}
      * @memberof AzureWriteAuthRoleRequest
@@ -87,12 +93,6 @@ export interface AzureWriteAuthRoleRequest {
      * @deprecated
      */
     policies?: Array<string>;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof AzureWriteAuthRoleRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -173,6 +173,7 @@ export function AzureWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'bound_group_ids': json['bound_group_ids'] == null ? undefined : json['bound_group_ids'],
         'bound_locations': json['bound_locations'] == null ? undefined : json['bound_locations'],
         'bound_resource_groups': json['bound_resource_groups'] == null ? undefined : json['bound_resource_groups'],
@@ -183,7 +184,6 @@ export function AzureWriteAuthRoleRequestFromJSONTyped(json: any, ignoreDiscrimi
         'num_uses': json['num_uses'] == null ? undefined : json['num_uses'],
         'period': json['period'] == null ? undefined : json['period'],
         'policies': json['policies'] == null ? undefined : json['policies'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -208,6 +208,7 @@ export function AzureWriteAuthRoleRequestToJSONTyped(value?: AzureWriteAuthRoleR
 
     return {
         
+        'alias_metadata': value['alias_metadata'],
         'bound_group_ids': value['bound_group_ids'],
         'bound_locations': value['bound_locations'],
         'bound_resource_groups': value['bound_resource_groups'],
@@ -218,7 +219,6 @@ export function AzureWriteAuthRoleRequestToJSONTyped(value?: AzureWriteAuthRoleR
         'num_uses': value['num_uses'],
         'period': value['period'],
         'policies': value['policies'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

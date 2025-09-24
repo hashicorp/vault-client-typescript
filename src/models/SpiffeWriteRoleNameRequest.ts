@@ -24,35 +24,17 @@ import { mapValues } from '../runtime';
  */
 export interface SpiffeWriteRoleNameRequest {
     /**
-     * A PEM-encoded CA certificate of an intermediate or root CA to validate the incoming certificate. Only one of ca_cert or ca_cert_url+ca_cert_url_trust_ca may be specified on a role.
-     * @type {string}
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
      * @memberof SpiffeWriteRoleNameRequest
      */
-    ca_cert?: string;
-    /**
-     * A URL from which to fetch the CA certificate for cert validation. This URL must be HTTPS, and must be signed by ca_cert_url_trust_ca.
-     * @type {string}
-     * @memberof SpiffeWriteRoleNameRequest
-     */
-    ca_cert_url?: string;
-    /**
-     * A CA certificate used to validate the server reached by ca_cert_url.
-     * @type {string}
-     * @memberof SpiffeWriteRoleNameRequest
-     */
-    ca_cert_url_trust_ca?: string;
+    alias_metadata?: object;
     /**
      * The display name to use for clients using this role
      * @type {string}
      * @memberof SpiffeWriteRoleNameRequest
      */
     display_name?: string;
-    /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof SpiffeWriteRoleNameRequest
-     */
-    token_auth_metadata?: object;
     /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
@@ -108,7 +90,7 @@ export interface SpiffeWriteRoleNameRequest {
      */
     token_type?: string;
     /**
-     * A comma separated list of regexps that match an incoming workload id to this role.
+     * A comma separated list of patterns that match an incoming workload id to this role. A workload id is the part that remains after stripping the trust domain prefix and the slash separator from a spiffe id.
      * @type {Array<string>}
      * @memberof SpiffeWriteRoleNameRequest
      */
@@ -132,11 +114,8 @@ export function SpiffeWriteRoleNameRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
-        'ca_cert': json['ca_cert'] == null ? undefined : json['ca_cert'],
-        'ca_cert_url': json['ca_cert_url'] == null ? undefined : json['ca_cert_url'],
-        'ca_cert_url_trust_ca': json['ca_cert_url_trust_ca'] == null ? undefined : json['ca_cert_url_trust_ca'],
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'display_name': json['display_name'] == null ? undefined : json['display_name'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -161,11 +140,8 @@ export function SpiffeWriteRoleNameRequestToJSONTyped(value?: SpiffeWriteRoleNam
 
     return {
         
-        'ca_cert': value['ca_cert'],
-        'ca_cert_url': value['ca_cert_url'],
-        'ca_cert_url_trust_ca': value['ca_cert_url_trust_ca'],
+        'alias_metadata': value['alias_metadata'],
         'display_name': value['display_name'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

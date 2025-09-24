@@ -30,6 +30,12 @@ export interface GoogleCloudWriteRoleRequest {
      */
     add_group_aliases?: boolean;
     /**
+     * The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs
+     * @type {object}
+     * @memberof GoogleCloudWriteRoleRequest
+     */
+    alias_metadata?: object;
+    /**
      * 'iam' roles only. If false, Vault will not not allow GCE instances to login in against this role
      * @type {boolean}
      * @memberof GoogleCloudWriteRoleRequest
@@ -129,12 +135,6 @@ export interface GoogleCloudWriteRoleRequest {
      */
     service_accounts?: Array<string>;
     /**
-     * The metadata to be tied to generated tokens. This should be a list or map containing the metadata in key value pairs
-     * @type {object}
-     * @memberof GoogleCloudWriteRoleRequest
-     */
-    token_auth_metadata?: object;
-    /**
      * Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
      * @type {Array<string>}
      * @memberof GoogleCloudWriteRoleRequest
@@ -221,6 +221,7 @@ export function GoogleCloudWriteRoleRequestFromJSONTyped(json: any, ignoreDiscri
     return {
         
         'add_group_aliases': json['add_group_aliases'] == null ? undefined : json['add_group_aliases'],
+        'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
         'allow_gce_inference': json['allow_gce_inference'] == null ? undefined : json['allow_gce_inference'],
         'bound_instance_group': json['bound_instance_group'] == null ? undefined : json['bound_instance_group'],
         'bound_instance_groups': json['bound_instance_groups'] == null ? undefined : json['bound_instance_groups'],
@@ -237,7 +238,6 @@ export function GoogleCloudWriteRoleRequestFromJSONTyped(json: any, ignoreDiscri
         'policies': json['policies'] == null ? undefined : json['policies'],
         'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'service_accounts': json['service_accounts'] == null ? undefined : json['service_accounts'],
-        'token_auth_metadata': json['token_auth_metadata'] == null ? undefined : json['token_auth_metadata'],
         'token_bound_cidrs': json['token_bound_cidrs'] == null ? undefined : json['token_bound_cidrs'],
         'token_explicit_max_ttl': json['token_explicit_max_ttl'] == null ? undefined : json['token_explicit_max_ttl'],
         'token_max_ttl': json['token_max_ttl'] == null ? undefined : json['token_max_ttl'],
@@ -264,6 +264,7 @@ export function GoogleCloudWriteRoleRequestToJSONTyped(value?: GoogleCloudWriteR
     return {
         
         'add_group_aliases': value['add_group_aliases'],
+        'alias_metadata': value['alias_metadata'],
         'allow_gce_inference': value['allow_gce_inference'],
         'bound_instance_group': value['bound_instance_group'],
         'bound_instance_groups': value['bound_instance_groups'],
@@ -280,7 +281,6 @@ export function GoogleCloudWriteRoleRequestToJSONTyped(value?: GoogleCloudWriteR
         'policies': value['policies'],
         'project_id': value['project_id'],
         'service_accounts': value['service_accounts'],
-        'token_auth_metadata': value['token_auth_metadata'],
         'token_bound_cidrs': value['token_bound_cidrs'],
         'token_explicit_max_ttl': value['token_explicit_max_ttl'],
         'token_max_ttl': value['token_max_ttl'],

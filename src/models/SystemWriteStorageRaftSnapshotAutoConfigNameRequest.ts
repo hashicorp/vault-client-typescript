@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface SystemWriteStorageRaftSnapshotAutoConfigNameRequest {
     /**
+     * Whether to automatically load the snapshot into the cluster
+     * @type {boolean}
+     * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
+     */
+    autoload_enabled?: boolean;
+    /**
      * AWS access key ID
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
@@ -222,6 +228,7 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestFromJSONTyped
     }
     return {
         
+        'autoload_enabled': json['autoload_enabled'] == null ? undefined : json['autoload_enabled'],
         'aws_access_key_id': json['aws_access_key_id'] == null ? undefined : json['aws_access_key_id'],
         'aws_s3_bucket': json['aws_s3_bucket'] == null ? undefined : json['aws_s3_bucket'],
         'aws_s3_disable_tls': json['aws_s3_disable_tls'] == null ? undefined : json['aws_s3_disable_tls'],
@@ -264,6 +271,7 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestToJSONTyped(v
 
     return {
         
+        'autoload_enabled': value['autoload_enabled'],
         'aws_access_key_id': value['aws_access_key_id'],
         'aws_s3_bucket': value['aws_s3_bucket'],
         'aws_s3_disable_tls': value['aws_s3_disable_tls'],
