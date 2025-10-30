@@ -1,7 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- */
-
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -2064,7 +2060,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/audit-hash/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/audit-hash/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2097,7 +2093,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2130,7 +2126,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2172,7 +2168,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2215,7 +2211,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2301,7 +2297,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2334,7 +2330,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2377,7 +2373,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2436,7 +2432,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2470,7 +2466,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2514,7 +2510,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2915,7 +2911,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/tools/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']))),
+            path: `/sys/tools/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2990,7 +2986,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/tools/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']))),
+            path: `/sys/tools/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3031,7 +3027,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/tools/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))),
+            path: `/sys/tools/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3079,7 +3075,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/tools/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']))),
+            path: `/sys/tools/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3559,7 +3555,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/internal/inspect/router/{tag}`.replace(`{${"tag"}}`, encodeURIComponent(String(requestParameters['tag']))),
+            path: `/sys/internal/inspect/router/{tag}`.replace(`{${"tag"}}`, encodeURIComponent(String(requestParameters['tag']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3696,7 +3692,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/internal/ui/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/internal/ui/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3839,7 +3835,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/leases/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']))),
+            path: `/sys/leases/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3874,7 +3870,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']))),
+            path: `/sys/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3942,7 +3938,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/leases/lookup/{prefix}/`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']))),
+            path: `/sys/leases/lookup/{prefix}/`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4089,7 +4085,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
+            path: `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4132,7 +4128,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
+            path: `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4247,7 +4243,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
+            path: `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4290,7 +4286,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']))),
+            path: `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4333,7 +4329,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/leases/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']))),
+            path: `/sys/leases/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4376,7 +4372,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']))),
+            path: `/sys/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4493,7 +4489,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['alias_identifier']))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mount_accessor']))),
+            path: `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['alias_identifier']).replace(/\/+$/, ''))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mount_accessor']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4552,7 +4548,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4611,7 +4607,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4689,7 +4685,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4820,7 +4816,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4864,7 +4860,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4899,7 +4895,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4941,7 +4937,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4999,7 +4995,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5031,7 +5027,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5071,7 +5067,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5139,7 +5135,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/catalog/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5188,7 +5184,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5253,7 +5249,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5293,7 +5289,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5326,7 +5322,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5366,7 +5362,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5408,7 +5404,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5458,7 +5454,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5492,7 +5488,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5532,7 +5528,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5669,7 +5665,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5718,7 +5714,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5759,7 +5755,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5792,7 +5788,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5825,7 +5821,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5858,7 +5854,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5891,7 +5887,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/password/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/password/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6055,7 +6051,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6088,7 +6084,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6121,7 +6117,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6163,7 +6159,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6206,7 +6202,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6249,7 +6245,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6726,7 +6722,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6792,7 +6788,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6856,7 +6852,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6889,7 +6885,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6933,7 +6929,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/raw/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/raw/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6966,7 +6962,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7008,7 +7004,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7601,7 +7597,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/plugins/reload/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/plugins/reload/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7636,7 +7632,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']))),
+            path: `/sys/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7705,7 +7701,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migration_id']))),
+            path: `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migration_id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8077,7 +8073,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']))),
+            path: `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8117,7 +8113,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']))),
+            path: `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8281,7 +8277,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8313,7 +8309,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8346,7 +8342,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8379,7 +8375,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8412,7 +8408,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8444,7 +8440,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8476,7 +8472,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8509,7 +8505,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8541,7 +8537,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8572,7 +8568,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8604,7 +8600,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8637,7 +8633,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8693,7 +8689,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8724,7 +8720,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8755,7 +8751,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8786,7 +8782,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8817,7 +8813,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8848,7 +8844,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8879,7 +8875,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8921,7 +8917,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/managed-keys/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/managed-keys/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9288,7 +9284,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/sync/destinations/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9363,7 +9359,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9438,7 +9434,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9479,7 +9475,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9520,7 +9516,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9561,7 +9557,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9602,7 +9598,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9643,7 +9639,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -9762,7 +9758,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9794,7 +9790,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9827,7 +9823,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9860,7 +9856,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9893,7 +9889,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9926,7 +9922,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9958,7 +9954,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10018,7 +10014,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10051,7 +10047,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10083,7 +10079,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10162,7 +10158,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/replication/performance/primary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/replication/performance/primary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10193,7 +10189,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10224,7 +10220,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/replication/performance/secondary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/replication/performance/secondary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10330,7 +10326,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10363,7 +10359,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-auto/status/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/storage/raft/snapshot-auto/status/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10396,7 +10392,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10459,7 +10455,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secret_name']))),
+            path: `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']).replace(/\/+$/, ''))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secret_name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10514,7 +10510,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10545,7 +10541,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10576,7 +10572,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10607,7 +10603,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10638,7 +10634,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10676,7 +10672,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/{type}/{name}/associations`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/sync/destinations/{type}/{name}/associations`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10707,7 +10703,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10738,7 +10734,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10967,7 +10963,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11015,7 +11011,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/managed-keys/{type}/{name}/test/sign`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/managed-keys/{type}/{name}/test/sign`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11057,7 +11053,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11100,7 +11096,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11143,7 +11139,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11186,7 +11182,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11229,7 +11225,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}/admin-destroy`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}/admin-destroy`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11272,7 +11268,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/mfa/method/totp/{name}/admin-generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/mfa/method/totp/{name}/admin-generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11332,7 +11328,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/namespaces/api-lock/lock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/api-lock/lock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11410,7 +11406,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/namespaces/api-lock/unlock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/api-lock/unlock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11452,7 +11448,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))),
+            path: `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11494,7 +11490,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11537,7 +11533,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11579,7 +11575,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11762,7 +11758,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/replication/dr/secondary/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']))),
+            path: `/sys/replication/dr/secondary/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12241,7 +12237,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12861,7 +12857,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12903,7 +12899,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/storage/raft/snapshot-auto/snapshot-load/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/storage/raft/snapshot-auto/snapshot-load/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12970,7 +12966,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13011,7 +13007,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13052,7 +13048,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13093,7 +13089,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13134,7 +13130,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13182,7 +13178,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/{type}/{name}/associations/remove`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/sync/destinations/{type}/{name}/associations/remove`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13230,7 +13226,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/{type}/{name}/associations/set`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))),
+            path: `/sys/sync/destinations/{type}/{name}/associations/set`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13271,7 +13267,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13312,7 +13308,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13383,7 +13379,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13465,7 +13461,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13507,7 +13503,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13550,7 +13546,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13584,7 +13580,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13654,7 +13650,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']))),
+            path: `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13696,7 +13692,7 @@ export class SystemApi extends runtime.BaseAPI {
         headerParameters['Content-Type'] = 'application/json';
 
         const response = await this.request({
-            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13730,7 +13726,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13824,7 +13820,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -14023,7 +14019,7 @@ export class SystemApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/sys/well-known/{label}`.replace(`{${"label"}}`, encodeURIComponent(String(requestParameters['label']))),
+            path: `/sys/well-known/{label}`.replace(`{${"label"}}`, encodeURIComponent(String(requestParameters['label']).replace(/\/+$/, ''))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
