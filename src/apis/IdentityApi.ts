@@ -678,8 +678,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/alias`;
         const response = await this.request({
-            path: `/identity/alias`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -711,8 +712,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -747,8 +749,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/alias/id/`;
         const response = await this.request({
-            path: `/identity/alias/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -779,8 +782,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -819,8 +823,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -853,8 +858,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/duplicate/entities`;
         const response = await this.request({
-            path: `/identity/duplicate/entities`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -887,8 +893,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/duplicate/local-entity-alias`;
         const response = await this.request({
-            path: `/identity/duplicate/local-entity-alias`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -921,8 +928,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/duplicate/entity-aliases`;
         const response = await this.request({
-            path: `/identity/duplicate/entity-aliases`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -955,8 +963,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity/batch-delete`;
         const response = await this.request({
-            path: `/identity/entity/batch-delete`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -989,8 +998,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity`;
         const response = await this.request({
-            path: `/identity/entity`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1024,8 +1034,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity-alias`;
         const response = await this.request({
-            path: `/identity/entity-alias`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1057,8 +1068,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1088,8 +1100,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1119,8 +1132,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1155,8 +1169,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity-alias/id/`;
         const response = await this.request({
-            path: `/identity/entity-alias/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1191,8 +1206,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/id/`;
         const response = await this.request({
-            path: `/identity/entity/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1226,8 +1242,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/name/`;
         const response = await this.request({
-            path: `/identity/entity/name/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1261,8 +1278,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/from-storage/`;
         const response = await this.request({
-            path: `/identity/entity/from-storage/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1295,8 +1313,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/lookup/entity`;
         const response = await this.request({
-            path: `/identity/lookup/entity`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1330,8 +1349,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity/merge`;
         const response = await this.request({
-            path: `/identity/entity/merge`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1362,8 +1382,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1393,8 +1414,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1424,8 +1446,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1464,8 +1487,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1505,8 +1529,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1546,8 +1571,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/entity/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1580,8 +1606,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/group`;
         const response = await this.request({
-            path: `/identity/group`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1614,8 +1641,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/group-alias`;
         const response = await this.request({
-            path: `/identity/group-alias`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1646,8 +1674,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1677,8 +1706,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1708,8 +1738,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1744,8 +1775,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group-alias/id/`;
         const response = await this.request({
-            path: `/identity/group-alias/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1781,8 +1813,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/id/`;
         const response = await this.request({
-            path: `/identity/group/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1817,8 +1850,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/name/`;
         const response = await this.request({
-            path: `/identity/group/name/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1852,8 +1886,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/from-storage/`;
         const response = await this.request({
-            path: `/identity/group/from-storage/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1886,8 +1921,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/lookup/group`;
         const response = await this.request({
-            path: `/identity/lookup/group`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1919,8 +1955,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1950,8 +1987,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1981,8 +2019,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2021,8 +2060,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group-alias/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2062,8 +2102,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2103,8 +2144,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/group/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2137,8 +2179,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/duplicate/groups`;
         const response = await this.request({
-            path: `/identity/duplicate/groups`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2172,8 +2215,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp/admin-destroy`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp/admin-destroy`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2208,8 +2252,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp/admin-generate`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp/admin-generate`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2244,8 +2289,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/duo`;
         const response = await this.request({
-            path: `/identity/mfa/method/duo`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2280,8 +2326,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/okta`;
         const response = await this.request({
-            path: `/identity/mfa/method/okta`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2316,8 +2363,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/pingid`;
         const response = await this.request({
-            path: `/identity/mfa/method/pingid`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2352,8 +2400,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2386,8 +2435,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2419,8 +2469,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2452,8 +2503,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2485,8 +2537,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2518,8 +2571,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2553,8 +2607,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp/generate`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp/generate`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2591,8 +2646,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/duo/`;
         const response = await this.request({
-            path: `/identity/mfa/method/duo/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2628,8 +2684,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/login-enforcement/`;
         const response = await this.request({
-            path: `/identity/mfa/login-enforcement/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2665,8 +2722,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/`;
         const response = await this.request({
-            path: `/identity/mfa/method/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2702,8 +2760,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/okta/`;
         const response = await this.request({
-            path: `/identity/mfa/method/okta/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2739,8 +2798,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/pingid/`;
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2776,8 +2836,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/totp/`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2809,8 +2870,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2842,8 +2904,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2875,8 +2938,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2908,8 +2972,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2941,8 +3006,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2974,8 +3040,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3009,8 +3076,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp/self-enroll`;
         const response = await this.request({
-            path: `/identity/mfa/method/totp/self-enroll`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3052,8 +3120,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/duo/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3095,8 +3164,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/okta/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3138,8 +3208,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/pingid/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3181,8 +3252,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/method/totp/{method_id}`.replace(`{${"method_id"}}`, encodeURIComponent(String(requestParameters['method_id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3224,8 +3296,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/mfa/login-enforcement/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3259,8 +3332,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/config`;
         const response = await this.request({
-            path: `/identity/oidc/config`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3291,8 +3365,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3322,8 +3397,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3354,8 +3430,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3386,8 +3463,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3418,8 +3496,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3450,8 +3529,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -3482,8 +3562,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/token/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/token/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3517,8 +3598,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/introspect`;
         const response = await this.request({
-            path: `/identity/oidc/introspect`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3554,8 +3636,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/assignment/`;
         const response = await this.request({
-            path: `/identity/oidc/assignment/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3589,8 +3672,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/client/`;
         const response = await this.request({
-            path: `/identity/oidc/client/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3625,8 +3709,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/key/`;
         const response = await this.request({
-            path: `/identity/oidc/key/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3665,8 +3750,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/`;
         const response = await this.request({
-            path: `/identity/oidc/provider/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3701,8 +3787,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/role/`;
         const response = await this.request({
-            path: `/identity/oidc/role/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3737,8 +3824,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/scope/`;
         const response = await this.request({
-            path: `/identity/oidc/scope/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3804,8 +3892,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}/authorize`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/authorize`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3844,8 +3933,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/provider/{name}/authorize`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/authorize`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3885,8 +3975,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/provider/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3917,8 +4008,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}/userinfo`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/userinfo`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3948,8 +4040,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}/userinfo`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/userinfo`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3979,8 +4072,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4010,8 +4104,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4034,8 +4129,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/config`;
         const response = await this.request({
-            path: `/identity/oidc/config`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4066,8 +4162,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4099,8 +4196,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/{child}/.well-known/keys`.replace(`{${"child"}}`, encodeURIComponent(String(requestParameters['child']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/{child}/.well-known/keys`.replace(`{${"child"}}`, encodeURIComponent(String(requestParameters['child']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4132,8 +4230,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/{child}/.well-known/openid-configuration`.replace(`{${"child"}}`, encodeURIComponent(String(requestParameters['child']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/{child}/.well-known/openid-configuration`.replace(`{${"child"}}`, encodeURIComponent(String(requestParameters['child']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4158,8 +4257,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/.well-known/openid-configuration`;
         const response = await this.request({
-            path: `/identity/oidc/.well-known/openid-configuration`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4190,8 +4290,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4221,8 +4322,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}/.well-known/openid-configuration`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/.well-known/openid-configuration`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4252,8 +4354,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/provider/{name}/.well-known/keys`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}/.well-known/keys`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4277,8 +4380,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/.well-known/keys`;
         const response = await this.request({
-            path: `/identity/oidc/.well-known/keys`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4310,8 +4414,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4342,8 +4447,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4383,8 +4489,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/key/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/key/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4425,8 +4532,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/assignment/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4466,8 +4574,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/client/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4508,8 +4617,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4550,8 +4660,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/provider/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4592,8 +4703,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4634,8 +4746,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/oidc/scope/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4669,8 +4782,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/persona`;
         const response = await this.request({
-            path: `/identity/persona`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4702,8 +4816,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4738,8 +4853,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/persona/id/`;
         const response = await this.request({
-            path: `/identity/persona/id/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4770,8 +4886,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4810,8 +4927,9 @@ export class IdentityApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
-            path: `/identity/persona/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
