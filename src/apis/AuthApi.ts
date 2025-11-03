@@ -1810,8 +1810,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -1854,8 +1855,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1898,8 +1900,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{alicloud_mount_path}/roles/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/roles/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -1940,8 +1943,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{alicloud_mount_path}/login`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/login`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -1981,8 +1985,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2030,8 +2035,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/auth/{alicloud_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2070,8 +2076,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2108,8 +2115,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2146,8 +2154,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2184,8 +2193,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2222,8 +2232,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2260,8 +2271,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2298,8 +2310,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2336,8 +2349,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2374,8 +2388,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2412,8 +2427,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2450,8 +2466,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2488,8 +2505,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2535,8 +2553,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2578,8 +2597,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2625,8 +2645,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2668,8 +2689,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/destroy`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -2710,8 +2732,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2759,8 +2782,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id/`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2799,8 +2823,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/login`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/login`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2847,8 +2872,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2895,8 +2921,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-accessor/lookup`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -2934,8 +2961,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -2972,8 +3000,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3010,8 +3039,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/local-secret-ids`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/local-secret-ids`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3048,8 +3078,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3086,8 +3117,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3124,8 +3156,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3162,8 +3195,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3200,8 +3234,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3238,8 +3273,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3276,8 +3312,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3314,8 +3351,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3352,8 +3390,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3390,8 +3429,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3428,8 +3468,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -3459,8 +3500,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{approle_mount_path}/tidy/secret-id`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/tidy/secret-id`.replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3506,8 +3548,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bind-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3554,8 +3597,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/bound-cidr-list`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3602,8 +3646,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/custom-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/custom-secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3650,8 +3695,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/period`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3698,8 +3744,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/policies`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3746,8 +3793,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3794,8 +3842,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/role-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3842,8 +3891,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3890,8 +3940,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3938,8 +3989,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -3986,8 +4038,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/secret-id-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4034,8 +4087,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-bound-cidrs`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4082,8 +4136,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-max-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4130,8 +4185,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-num-uses`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4178,8 +4234,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path'])));
         const response = await this.request({
-            path: `/auth/{approle_mount_path}/role/{role_name}/token-ttl`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"approle_mount_path"}}`, encodeURIComponent(String(requestParameters['approle_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4226,8 +4283,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4267,8 +4325,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4308,8 +4367,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4349,8 +4409,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4390,8 +4451,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4431,8 +4493,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4472,8 +4535,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4511,8 +4575,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4549,8 +4614,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4580,8 +4646,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4618,8 +4685,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4649,8 +4717,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4687,8 +4756,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4718,8 +4788,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4756,8 +4827,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4787,8 +4859,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4825,8 +4898,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4856,8 +4930,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4894,8 +4969,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4936,8 +5012,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/role/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4978,8 +5055,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5020,8 +5098,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/certificates/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificates/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5062,8 +5141,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-accesslist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5104,8 +5184,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-whitelist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5146,8 +5227,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-blacklist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5188,8 +5270,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-denylist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5230,8 +5313,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/sts/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5270,8 +5354,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/login`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/login`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5309,8 +5394,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5347,8 +5433,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/certificate/{cert_name}`.replace(`{${"cert_name"}}`, encodeURIComponent(String(requestParameters['cert_name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5378,8 +5465,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/client`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5416,8 +5504,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-accesslist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5447,8 +5536,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5478,8 +5568,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/identity`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5516,8 +5607,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/identity-whitelist/{instance_id}`.replace(`{${"instance_id"}}`, encodeURIComponent(String(requestParameters['instance_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5547,8 +5639,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5585,8 +5678,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5616,8 +5710,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5654,8 +5749,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5685,8 +5781,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5723,8 +5820,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5754,8 +5852,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5794,8 +5893,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/identity-accesslist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5835,8 +5935,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/identity-whitelist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5876,8 +5977,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/roletag-blacklist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5917,8 +6019,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/tidy/roletag-denylist`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5965,8 +6068,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6013,8 +6117,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/role/{role}/tag`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/role/{role}/tag`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6052,8 +6157,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-blacklist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6090,8 +6196,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/roletag-denylist/{role_tag}`.replace(`{${"role_tag"}}`, encodeURIComponent(String(requestParameters['role_tag']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6137,8 +6244,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/auth/{aws_mount_path}/config/sts/{account_id}`.replace(`{${"account_id"}}`, encodeURIComponent(String(requestParameters['account_id']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6178,8 +6286,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6210,8 +6319,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6248,8 +6358,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6290,8 +6401,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/role/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6330,8 +6442,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{azure_mount_path}/login`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/login`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6362,8 +6475,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6400,8 +6514,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6431,8 +6546,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6478,8 +6594,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/auth/{azure_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6519,8 +6636,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6559,8 +6677,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6599,8 +6718,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6643,8 +6763,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/certs/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6686,8 +6807,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/crls/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6726,8 +6848,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cert_mount_path}/login`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/login`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6766,8 +6889,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6798,8 +6922,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/config`.replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6837,8 +6962,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6886,8 +7012,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/certs/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6936,8 +7063,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cert_mount_path}/crls/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"cert_mount_path"}}`, encodeURIComponent(String(requestParameters['cert_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6978,8 +7106,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7010,8 +7139,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7048,8 +7178,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7090,8 +7221,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cf_mount_path}/roles/`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7130,8 +7262,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cf_mount_path}/login`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/login`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7162,8 +7295,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/config`.replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7200,8 +7334,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7247,8 +7382,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path'])));
         const response = await this.request({
-            path: `/auth/{cf_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"cf_mount_path"}}`, encodeURIComponent(String(requestParameters['cf_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7288,8 +7424,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7328,8 +7465,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7368,8 +7506,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7412,8 +7551,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/teams/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7445,8 +7585,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/teams`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7489,8 +7630,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/users/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7522,8 +7664,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/users`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7563,8 +7706,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{github_mount_path}/login`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/login`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7595,8 +7739,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/config`.replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7634,8 +7779,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7674,8 +7820,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7723,8 +7870,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/teams/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7773,8 +7921,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path'])));
         const response = await this.request({
-            path: `/auth/{github_mount_path}/map/users/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"github_mount_path"}}`, encodeURIComponent(String(requestParameters['github_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7815,8 +7964,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7855,8 +8005,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7904,8 +8055,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{gcp_mount_path}/role/{name}/labels`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}/labels`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7954,8 +8106,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{gcp_mount_path}/role/{name}/service-accounts`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}/service-accounts`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7999,8 +8152,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/role/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8043,8 +8197,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/roles/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/roles/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8084,8 +8239,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{gcp_mount_path}/login`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/login`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8116,8 +8272,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8155,8 +8312,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8187,8 +8345,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8235,8 +8394,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/auth/{gcp_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8279,8 +8439,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8321,8 +8482,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8366,8 +8528,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{jwt_mount_path}/role/`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8409,8 +8572,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{jwt_mount_path}/login`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/login`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8455,8 +8619,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8497,8 +8662,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/callback`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8540,8 +8706,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{jwt_mount_path}/oidc/auth_url`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/oidc/auth_url`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8574,8 +8741,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/config`.replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8614,8 +8782,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8664,8 +8833,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path'])));
         const response = await this.request({
-            path: `/auth/{jwt_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"jwt_mount_path"}}`, encodeURIComponent(String(requestParameters['jwt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8707,8 +8877,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8748,8 +8919,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8787,8 +8959,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8829,8 +9002,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/groups/`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8869,8 +9043,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8901,8 +9076,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/login`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8932,8 +9108,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8970,8 +9147,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9001,8 +9179,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/config/ldap`.replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9048,8 +9227,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kerberos_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kerberos_mount_path"}}`, encodeURIComponent(String(requestParameters['kerberos_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9089,8 +9269,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9129,8 +9310,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9173,8 +9355,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kubernetes_mount_path}/role/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9215,8 +9398,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kubernetes_mount_path}/login`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/login`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9248,8 +9432,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9287,8 +9472,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9336,8 +9522,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/auth/{kubernetes_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9378,8 +9565,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9418,8 +9606,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9458,8 +9647,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9502,8 +9692,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/groups/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9546,8 +9737,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/users/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9595,8 +9787,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{ldap_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9628,8 +9821,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9667,8 +9861,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9707,8 +9902,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9739,8 +9935,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{ldap_mount_path}/config/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/config/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9787,8 +9984,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9837,8 +10035,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/auth/{ldap_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9879,8 +10078,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9911,8 +10111,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9950,8 +10151,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9994,8 +10196,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{oci_mount_path}/role/`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10043,8 +10246,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{oci_mount_path}/login/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/login/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10076,8 +10280,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/config`.replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10115,8 +10320,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10164,8 +10370,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path'])));
         const response = await this.request({
-            path: `/auth/{oci_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"oci_mount_path"}}`, encodeURIComponent(String(requestParameters['oci_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10206,8 +10413,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10246,8 +10454,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10286,8 +10495,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10330,8 +10540,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/groups/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10374,8 +10585,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/users/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10423,8 +10635,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{okta_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10456,8 +10669,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/config`.replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10495,8 +10709,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10535,8 +10750,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10574,8 +10790,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{okta_mount_path}/verify/{nonce}`.replace(`{${"nonce"}}`, encodeURIComponent(String(requestParameters['nonce']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/verify/{nonce}`.replace(`{${"nonce"}}`, encodeURIComponent(String(requestParameters['nonce']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10622,8 +10839,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/groups/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10672,8 +10890,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path'])));
         const response = await this.request({
-            path: `/auth/{okta_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"okta_mount_path"}}`, encodeURIComponent(String(requestParameters['okta_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10714,8 +10933,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10754,8 +10974,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10798,8 +11019,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{radius_mount_path}/users/`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10840,8 +11062,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{radius_mount_path}/login`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/login`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10890,8 +11113,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{radius_mount_path}/login/{urlusername}`.replace(`{${"urlusername"}}`, encodeURIComponent(String(requestParameters['urlusername']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/login/{urlusername}`.replace(`{${"urlusername"}}`, encodeURIComponent(String(requestParameters['urlusername']).replace(/\/+$/, ''))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10923,8 +11147,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/config`.replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10962,8 +11187,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11011,8 +11237,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path'])));
         const response = await this.request({
-            path: `/auth/{radius_mount_path}/users/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"radius_mount_path"}}`, encodeURIComponent(String(requestParameters['radius_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11052,8 +11279,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11096,8 +11324,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{saml_mount_path}/role/`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11129,8 +11358,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11169,8 +11399,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11211,8 +11442,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{saml_mount_path}/callback`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/callback`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11254,8 +11486,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/config`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11304,8 +11537,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11347,8 +11581,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{saml_mount_path}/sso_service_url`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/sso_service_url`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11390,8 +11625,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{saml_mount_path}/token`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path'])));
         const response = await this.request({
-            path: `/auth/{saml_mount_path}/token`.replace(`{${"saml_mount_path"}}`, encodeURIComponent(String(requestParameters['saml_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11430,8 +11666,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path'])));
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11472,8 +11709,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{scep_mount_path}/role/`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path'])));
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11512,8 +11750,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{scep_mount_path}/login`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path'])));
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/login`.replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11551,8 +11790,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path'])));
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11598,8 +11838,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path'])));
         const response = await this.request({
-            path: `/auth/{scep_mount_path}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scep_mount_path"}}`, encodeURIComponent(String(requestParameters['scep_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11630,8 +11871,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11670,8 +11912,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/config`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11709,8 +11952,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11751,8 +11995,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{spiffe_mount_path}/role/`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/role/`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11791,8 +12036,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{spiffe_mount_path}/login`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/login`.replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11830,8 +12076,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11877,8 +12124,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path'])));
         const response = await this.request({
-            path: `/auth/{spiffe_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"spiffe_mount_path"}}`, encodeURIComponent(String(requestParameters['spiffe_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11912,8 +12160,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/create`;
         const response = await this.request({
-            path: `/auth/token/create`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11955,8 +12204,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/create/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name'])));
         const response = await this.request({
-            path: `/auth/token/create/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11991,8 +12241,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/create-orphan`;
         const response = await this.request({
-            path: `/auth/token/create-orphan`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12024,8 +12275,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name'])));
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12060,8 +12312,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/accessors/`;
         const response = await this.request({
-            path: `/auth/token/accessors/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12097,8 +12350,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/roles/`;
         const response = await this.request({
-            path: `/auth/token/roles/`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12131,8 +12385,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/lookup`;
         const response = await this.request({
-            path: `/auth/token/lookup`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12160,8 +12415,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/lookup`;
         const response = await this.request({
-            path: `/auth/token/lookup`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12194,8 +12450,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/lookup-accessor`;
         const response = await this.request({
-            path: `/auth/token/lookup-accessor`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12220,8 +12477,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/lookup-self`;
         const response = await this.request({
-            path: `/auth/token/lookup-self`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12253,8 +12511,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/lookup-self`;
         const response = await this.request({
-            path: `/auth/token/lookup-self`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12285,8 +12544,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name'])));
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12319,8 +12579,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/renew`;
         const response = await this.request({
-            path: `/auth/token/renew`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12355,8 +12616,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/renew-accessor`;
         const response = await this.request({
-            path: `/auth/token/renew-accessor`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12391,8 +12653,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/renew-self`;
         const response = await this.request({
-            path: `/auth/token/renew-self`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12427,8 +12690,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/revoke`;
         const response = await this.request({
-            path: `/auth/token/revoke`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12463,8 +12727,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/revoke-accessor`;
         const response = await this.request({
-            path: `/auth/token/revoke-accessor`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12499,8 +12764,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/revoke-orphan`;
         const response = await this.request({
-            path: `/auth/token/revoke-orphan`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12526,8 +12792,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/revoke-self`;
         const response = await this.request({
-            path: `/auth/token/revoke-self`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12552,8 +12819,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/token/tidy`;
         const response = await this.request({
-            path: `/auth/token/tidy`,
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12593,8 +12861,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name'])));
         const response = await this.request({
-            path: `/auth/token/roles/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12633,8 +12902,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12677,8 +12947,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{userpass_mount_path}/users/`.replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/`.replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12726,8 +12997,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{userpass_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/login/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12767,8 +13039,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12816,8 +13089,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{userpass_mount_path}/users/{username}/password`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}/password`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12866,8 +13140,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{userpass_mount_path}/users/{username}/policies`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}/policies`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12916,8 +13191,9 @@ export class AuthApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path'])));
         const response = await this.request({
-            path: `/auth/{userpass_mount_path}/users/{username}`.replace(`{${"username"}}`, encodeURIComponent(String(requestParameters['username']).replace(/\/+$/, ''))).replace(`{${"userpass_mount_path"}}`, encodeURIComponent(String(requestParameters['userpass_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,

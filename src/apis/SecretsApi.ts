@@ -4620,8 +4620,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4652,8 +4653,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4691,8 +4693,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -4731,8 +4734,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4775,8 +4779,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/role/`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4807,8 +4812,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/config`.replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4846,8 +4852,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -4895,8 +4902,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path'])));
         const response = await this.request({
-            path: `/{alicloud_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"alicloud_mount_path"}}`, encodeURIComponent(String(requestParameters['alicloud_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4937,8 +4945,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/config/lease`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/config/lease`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -4978,8 +4987,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/config/root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/config/root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5018,8 +5028,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5057,8 +5068,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5107,8 +5119,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5154,8 +5167,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5205,8 +5219,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/sts/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/sts/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5252,8 +5267,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/sts/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/sts/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5296,8 +5312,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5339,8 +5356,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/static-roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/static-roles/`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5370,8 +5388,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/config/lease`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/config/lease`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5409,8 +5428,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5441,8 +5461,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/config/root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/config/root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5479,8 +5500,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/static-creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/static-creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5517,8 +5539,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5548,8 +5571,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/config/rotate-root`.replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5596,8 +5620,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5645,8 +5670,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path'])));
         const response = await this.request({
-            path: `/{aws_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"aws_mount_path"}}`, encodeURIComponent(String(requestParameters['aws_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5686,8 +5712,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5718,8 +5745,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5757,8 +5785,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -5801,8 +5830,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/roles/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/roles/`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5833,8 +5863,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/config`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5872,8 +5903,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5911,8 +5943,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -5942,8 +5975,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/rotate-root`.replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -5990,8 +6024,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path'])));
         const response = await this.request({
-            path: `/{azure_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"azure_mount_path"}}`, encodeURIComponent(String(requestParameters['azure_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6032,8 +6067,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{consul_mount_path}/config/access`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/config/access`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6071,8 +6107,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6109,8 +6146,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{consul_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6151,8 +6189,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{consul_mount_path}/roles/`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/roles/`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6182,8 +6221,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{consul_mount_path}/config/access`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/config/access`.replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6220,8 +6260,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6267,8 +6308,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path'])));
         const response = await this.request({
-            path: `/{consul_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"consul_mount_path"}}`, encodeURIComponent(String(requestParameters['consul_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6300,8 +6342,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
         const response = await this.request({
-            path: `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6349,8 +6392,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/cubbyhole/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
         const response = await this.request({
-            path: `/cubbyhole/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6387,8 +6431,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
         const response = await this.request({
-            path: `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6441,8 +6486,9 @@ export class SecretsApi extends runtime.BaseAPI {
             headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
         }
 
+        const builtPath = `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
         const response = await this.request({
-            path: `/cubbyhole/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6490,8 +6536,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -6529,8 +6576,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6568,8 +6616,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6608,8 +6657,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -6648,8 +6698,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6692,8 +6743,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/config/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/config/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6736,8 +6788,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/roles/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/roles/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6784,8 +6837,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/static-roles/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/static-roles/`.replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6823,8 +6877,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6862,8 +6917,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6906,8 +6962,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6950,8 +7007,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/static-creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/static-creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -6990,8 +7048,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/reload/{plugin_name}`.replace(`{${"plugin_name"}}`, encodeURIComponent(String(requestParameters['plugin_name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/reload/{plugin_name}`.replace(`{${"plugin_name"}}`, encodeURIComponent(String(requestParameters['plugin_name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7030,8 +7089,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/reset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/reset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7069,8 +7129,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/rotate-root/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/rotate-root/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7107,8 +7168,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{database_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7155,8 +7217,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7217,8 +7280,9 @@ export class SecretsApi extends runtime.BaseAPI {
             headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
         }
 
+        const builtPath = `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path'])));
         const response = await this.request({
-            path: `/{database_mount_path}/static-roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"database_mount_path"}}`, encodeURIComponent(String(requestParameters['database_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7259,8 +7323,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7298,8 +7363,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7336,8 +7402,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7374,8 +7441,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -7412,8 +7480,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7450,8 +7519,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7488,8 +7558,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{roleset}/token`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{roleset}/token`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7526,8 +7597,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{roleset}/token`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{roleset}/token`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7564,8 +7636,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/token/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/token/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7602,8 +7675,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/token/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/token/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7649,8 +7723,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/roleset/{roleset}/key`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{roleset}/key`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7700,8 +7775,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{roleset}/key`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{roleset}/key`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7747,8 +7823,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/key/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/key/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7798,8 +7875,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/key/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/key/{roleset}`.replace(`{${"roleset"}}`, encodeURIComponent(String(requestParameters['roleset']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7836,8 +7914,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7874,8 +7953,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}/token`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -7921,8 +8001,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}/key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}/key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -7972,8 +8053,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}/key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}/key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8012,8 +8094,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8060,8 +8143,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/keys/config/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/config/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8109,8 +8193,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/decrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/decrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8142,8 +8227,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8181,8 +8267,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8220,8 +8307,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/deregister/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/deregister/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8258,8 +8346,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/deregister/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/deregister/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8306,8 +8395,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/encrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/encrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8351,8 +8441,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8383,8 +8474,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/config`.replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8422,8 +8514,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8461,8 +8554,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/config/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/config/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8509,8 +8603,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/reencrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/reencrypt/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8559,8 +8654,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/keys/register/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/register/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8600,8 +8696,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/pubkey/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/pubkey/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8640,8 +8737,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/rotate/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/rotate/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8689,8 +8787,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/sign/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/sign/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8729,8 +8828,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/trim/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/trim/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8767,8 +8867,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcpkms_mount_path}/keys/trim/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/trim/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -8815,8 +8916,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/verify/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/verify/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8865,8 +8967,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path'])));
         const response = await this.request({
-            path: `/{gcpkms_mount_path}/keys/{key}`.replace(`{${"key"}}`, encodeURIComponent(String(requestParameters['key']).replace(/\/+$/, ''))).replace(`{${"gcpkms_mount_path"}}`, encodeURIComponent(String(requestParameters['gcpkms_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -8909,8 +9012,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8951,8 +9055,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-accounts/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-accounts/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -8993,8 +9098,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9035,8 +9141,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/rolesets/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/rolesets/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9077,8 +9184,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9119,8 +9227,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-accounts/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-accounts/`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9150,8 +9259,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/config`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9188,8 +9298,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9226,8 +9337,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9264,8 +9376,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9302,8 +9415,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9340,8 +9454,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/roleset/{name}/rotate-key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{name}/rotate-key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9371,8 +9486,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/config/rotate-root`.replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9409,8 +9525,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}/rotate-key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}/rotate-key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9456,8 +9573,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/impersonated-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9504,8 +9622,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/roleset/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9552,8 +9671,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path'])));
         const response = await this.request({
-            path: `/{gcp_mount_path}/static-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"gcp_mount_path"}}`, encodeURIComponent(String(requestParameters['gcp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9591,8 +9711,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9636,8 +9757,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']).replace(/\/+$/, ''))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9674,8 +9796,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -9728,8 +9851,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']).replace(/\/+$/, ''))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -9771,8 +9895,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/key/`.replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/`.replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9820,8 +9945,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}/key/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}/key/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9862,8 +9988,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/`.replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/`.replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9911,8 +10038,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/key/{name}/kms/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/{name}/kms/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9949,8 +10077,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -9994,8 +10123,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}/key/{key_name}`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']).replace(/\/+$/, ''))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10032,8 +10162,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10070,8 +10201,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{keymgmt_mount_path}/key/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10117,8 +10249,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/key/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10165,8 +10298,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path'])));
         const response = await this.request({
-            path: `/{keymgmt_mount_path}/kms/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10206,8 +10340,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/config`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/config`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10256,8 +10391,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10306,8 +10442,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10352,8 +10489,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -10408,8 +10546,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/generate`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/generate`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10465,8 +10604,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10514,8 +10654,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/`.replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10556,8 +10697,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10587,8 +10729,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/ca`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/ca`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10618,8 +10761,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/config`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/config`.replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10664,8 +10808,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10710,8 +10855,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/lookup`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/lookup`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10764,8 +10910,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/revoke`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/revoke`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10819,8 +10966,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/sign`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}/credential/sign`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10876,8 +11024,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path'])));
         const response = await this.request({
-            path: `/{kmip_mount_path}/scope/{scope}/role/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"scope"}}`, encodeURIComponent(String(requestParameters['scope']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10910,8 +11059,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/check`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/check`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -10950,8 +11100,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -10982,8 +11133,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11020,8 +11172,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11067,8 +11220,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kubernetes_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11110,8 +11264,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/roles/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/roles/`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11141,8 +11296,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/config`.replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11179,8 +11335,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11226,8 +11383,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path'])));
         const response = await this.request({
-            path: `/{kubernetes_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kubernetes_mount_path"}}`, encodeURIComponent(String(requestParameters['kubernetes_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11265,8 +11423,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11318,8 +11477,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v1_mount_path}/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v1_mount_path}/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11360,8 +11520,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11419,8 +11580,9 @@ export class SecretsApi extends runtime.BaseAPI {
             headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
         }
 
+        const builtPath = `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v1_mount_path}/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v1_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v1_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11461,8 +11623,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/config`.replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/config`.replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11501,8 +11664,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11539,8 +11703,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -11586,8 +11751,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/delete/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/delete/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11634,8 +11800,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/destroy/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/destroy/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -11684,8 +11851,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/metadata/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/metadata/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11731,8 +11899,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -11779,8 +11948,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -11818,8 +11988,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11850,8 +12021,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/config`.replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/config`.replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11889,8 +12061,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11927,8 +12100,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{kv_v2_mount_path}/subkeys/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/subkeys/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -11974,8 +12148,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/undelete/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/undelete/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12022,8 +12197,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12070,8 +12246,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path'])));
         const response = await this.request({
-            path: `/{kv_v2_mount_path}/metadata/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12111,8 +12288,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12143,8 +12321,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12181,8 +12360,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12219,8 +12399,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12267,8 +12448,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/library/{name}/check-in`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}/check-in`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12317,8 +12499,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/library/{name}/check-out`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}/check-out`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12358,8 +12541,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library/{name}/status`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}/status`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12407,8 +12591,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12448,8 +12633,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -12497,8 +12683,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/library/manage/{name}/check-in`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/manage/{name}/check-in`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -12541,8 +12728,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12590,8 +12778,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12639,8 +12828,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12678,8 +12868,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/library/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12721,8 +12912,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/role/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12770,8 +12962,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/role/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12819,8 +13012,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/role{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12868,8 +13062,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-role/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12917,8 +13112,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-role{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12959,8 +13155,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-role/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role/`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -12990,8 +13187,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/config`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13028,8 +13226,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13066,8 +13265,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13104,8 +13304,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13142,8 +13343,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/static-cred/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-cred/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13173,8 +13375,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ldap_mount_path}/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/rotate-root`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13220,8 +13423,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13268,8 +13472,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13316,8 +13521,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path'])));
         const response = await this.request({
-            path: `/{ldap_mount_path}/static-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13357,8 +13563,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{mongodbatlas_mount_path}/config`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/config`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13397,8 +13604,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13436,8 +13644,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13474,8 +13683,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13517,8 +13727,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/roles/`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/roles/`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13549,8 +13760,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/config`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/config`.replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13588,8 +13800,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13637,8 +13850,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path'])));
         const response = await this.request({
-            path: `/{mongodbatlas_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"mongodbatlas_mount_path"}}`, encodeURIComponent(String(requestParameters['mongodbatlas_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13679,8 +13893,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13720,8 +13935,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -13752,8 +13968,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13783,8 +14000,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13821,8 +14039,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -13859,8 +14078,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13901,8 +14121,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/role/`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/role/`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13932,8 +14153,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/access`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -13963,8 +14185,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/config/lease`.replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -14001,8 +14224,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -14048,8 +14272,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path'])));
         const response = await this.request({
-            path: `/{nomad_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"nomad_mount_path"}}`, encodeURIComponent(String(requestParameters['nomad_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14089,8 +14314,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/acme`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/acme`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14130,8 +14356,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/auto-tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/auto-tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14171,8 +14398,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/ca`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/ca`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14212,8 +14440,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/cluster`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/cluster`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14253,8 +14482,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14294,8 +14524,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14335,8 +14566,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/est`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/est`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14367,8 +14599,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/external-policy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/external-policy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -14407,8 +14640,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/external-policy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/external-policy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14448,8 +14682,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/issuers`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/issuers`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14489,8 +14724,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/keys`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/keys`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14530,8 +14766,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14571,8 +14808,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/config/urls`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/urls`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14612,8 +14850,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/intermediate/cross-sign`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/intermediate/cross-sign`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14651,8 +14890,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/eab/{key_id}`.replace(`{${"key_id"}}`, encodeURIComponent(String(requestParameters['key_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/eab/{key_id}`.replace(`{${"key_id"}}`, encodeURIComponent(String(requestParameters['key_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -14689,8 +14929,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -14727,8 +14968,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -14765,8 +15007,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -14796,8 +15039,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/root`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -14827,8 +15071,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/acme/new-eab`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/new-eab`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14865,8 +15110,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14910,8 +15156,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14948,8 +15195,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -14993,8 +15241,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-eab`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15031,8 +15280,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/new-eab`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/new-eab`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15062,8 +15312,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/new-eab`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/new-eab`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15100,8 +15351,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/new-eab`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/new-eab`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15140,8 +15392,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/keys/generate/exported`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/keys/generate/exported`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15188,8 +15441,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/intermediate/generate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/intermediate/generate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15229,8 +15483,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/keys/generate/internal`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/keys/generate/internal`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15270,8 +15525,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/keys/generate/kms`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/keys/generate/kms`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15318,8 +15574,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/root/generate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root/generate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15359,8 +15616,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/keys/import`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/keys/import`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15407,8 +15665,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issue/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issue/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15462,8 +15721,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/issue/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/issue/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -15501,8 +15761,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15539,8 +15800,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15577,8 +15839,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15615,8 +15878,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl/delta/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15653,8 +15917,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15691,8 +15956,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/crl/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/crl/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15729,8 +15995,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15767,8 +16034,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15805,8 +16073,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15843,8 +16112,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/delta/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15881,8 +16151,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15919,8 +16190,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/unified-crl/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -15966,8 +16238,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/resign-crls`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/resign-crls`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16014,8 +16287,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign-intermediate`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign-intermediate`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16062,8 +16336,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign-revocation-list`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign-revocation-list`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16110,8 +16385,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign-self-issued`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign-self-issued`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16158,8 +16434,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16213,8 +16490,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign-verbatim/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16268,8 +16546,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/sign/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/sign/{role}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16316,8 +16595,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuers/generate/intermediate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuers/generate/intermediate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16364,8 +16644,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuers/generate/root/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuers/generate/root/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16405,8 +16686,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuers/import/bundle`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuers/import/bundle`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16446,8 +16728,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuers/import/cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuers/import/cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -16489,8 +16772,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/acme/mgmt/account/keyid/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/mgmt/account/keyid/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16531,8 +16815,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert-metadata/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert-metadata/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16573,8 +16858,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/certs/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/certs/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16615,8 +16901,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/certs/revocation-queue/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/certs/revocation-queue/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16657,8 +16944,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/eab/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/eab/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16699,8 +16987,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuers/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuers/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16741,8 +17030,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/keys/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/keys/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16783,8 +17073,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/certs/revoked/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/certs/revoked/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16825,8 +17116,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16867,8 +17159,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/certs/unified-revoked/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/certs/unified-revoked/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -16914,8 +17207,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -16962,8 +17256,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
@@ -16994,8 +17289,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/ocsp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/ocsp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -17032,8 +17328,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/ocsp/{req}`.replace(`{${"req"}}`, encodeURIComponent(String(requestParameters['req']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/ocsp/{req}`.replace(`{${"req"}}`, encodeURIComponent(String(requestParameters['req']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17063,8 +17360,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-ocsp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-ocsp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -17101,8 +17399,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-ocsp/{req}`.replace(`{${"req"}}`, encodeURIComponent(String(requestParameters['req']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-ocsp/{req}`.replace(`{${"req"}}`, encodeURIComponent(String(requestParameters['req']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17132,8 +17431,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/acme`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/acme`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17163,8 +17463,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/acme/directory`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/directory`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17201,8 +17502,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/acme/mgmt/account/keyid/{keyid}`.replace(`{${"keyid"}}`, encodeURIComponent(String(requestParameters['keyid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/mgmt/account/keyid/{keyid}`.replace(`{${"keyid"}}`, encodeURIComponent(String(requestParameters['keyid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17232,8 +17534,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/acme/new-nonce`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/new-nonce`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17263,8 +17566,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/auto-tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/auto-tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17294,8 +17598,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/ca_chain`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/ca_chain`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17325,8 +17630,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/ca`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/ca`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17356,8 +17662,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/ca/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/ca/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17394,8 +17701,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/{serial}`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/{serial}`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17425,8 +17733,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/ca_chain`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/ca_chain`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17456,8 +17765,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17487,8 +17797,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/delta-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/delta-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17525,8 +17836,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert-metadata/{serial}`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert-metadata/{serial}`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17563,8 +17875,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/{serial}/raw`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/{serial}/raw`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17601,8 +17914,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/{serial}/raw/pem`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/{serial}/raw/pem`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17632,8 +17946,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/unified-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/unified-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17663,8 +17978,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cert/unified-delta-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cert/unified-delta-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17694,8 +18010,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/cluster`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/cluster`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17725,8 +18042,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17756,8 +18074,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17787,8 +18106,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl/delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl/delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17818,8 +18138,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl/delta/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl/delta/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17849,8 +18170,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17880,8 +18202,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17911,8 +18234,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/est/cacerts`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/est/cacerts`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17942,8 +18266,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/est`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/est`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -17973,8 +18298,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/directory`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/directory`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18004,8 +18330,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/new-nonce`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/new-nonce`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18042,8 +18369,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/directory`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/directory`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18080,8 +18408,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/new-nonce`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/new-nonce`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18111,8 +18440,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/integrations/guardium`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/integrations/guardium`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18149,8 +18479,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18187,8 +18518,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/der`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18225,8 +18557,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18263,8 +18596,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18301,8 +18635,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18339,8 +18674,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18384,8 +18720,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18429,8 +18766,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18474,8 +18812,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/directory`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18519,8 +18858,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-nonce`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18557,8 +18897,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/json`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/json`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18595,8 +18936,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/pem`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18626,8 +18968,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/issuers`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/issuers`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18664,8 +19007,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18695,8 +19039,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/keys`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/keys`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18733,8 +19078,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18771,8 +19117,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/directory`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/directory`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18809,8 +19156,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/new-nonce`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/new-nonce`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18847,8 +19195,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/est/cacerts`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/est/cacerts`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18885,8 +19234,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/scep`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/scep`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18923,8 +19273,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/scep/pkiclient.exe`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/scep/pkiclient.exe`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18954,8 +19305,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -18985,8 +19337,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19016,8 +19369,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/scep/pkiclient.exe`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/scep/pkiclient.exe`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19047,8 +19401,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-crl/delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-crl/delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19078,8 +19433,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-crl/delta/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-crl/delta/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19109,8 +19465,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-crl`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19140,8 +19497,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/unified-crl/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/unified-crl/pem`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19171,8 +19529,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/config/urls`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/config/urls`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19211,8 +19570,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/root/replace`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root/replace`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19252,8 +19612,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/revoke`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/revoke`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19291,8 +19652,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/revoke`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/revoke`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19331,8 +19693,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/revoke-with-key`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/revoke-with-key`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19372,8 +19735,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/root/sign-intermediate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root/sign-intermediate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19413,8 +19777,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/root/sign-self-issued`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root/sign-self-issued`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19445,8 +19810,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl/rotate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl/rotate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19476,8 +19842,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/crl/rotate-delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/crl/rotate-delta`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19523,8 +19890,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/root/rotate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/root/rotate/{exported}`.replace(`{${"exported"}}`, encodeURIComponent(String(requestParameters['exported']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19564,8 +19932,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/intermediate/set-signed`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/intermediate/set-signed`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19605,8 +19974,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/sign-verbatim`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/sign-verbatim`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19653,8 +20023,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/sign-verbatim/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/sign-verbatim/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19701,8 +20072,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/sign/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/sign/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19742,8 +20114,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/tidy`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19774,8 +20147,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/tidy-cancel`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/tidy-cancel`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19805,8 +20179,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/tidy-status`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/tidy-status`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -19852,8 +20227,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19900,8 +20276,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -19955,8 +20332,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20003,8 +20381,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/mgmt/account/keyid/{keyid}`.replace(`{${"keyid"}}`, encodeURIComponent(String(requestParameters['keyid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/mgmt/account/keyid/{keyid}`.replace(`{${"keyid"}}`, encodeURIComponent(String(requestParameters['keyid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20044,8 +20423,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/new-account`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/new-account`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20085,8 +20465,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/new-order`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/new-order`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20133,8 +20514,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20181,8 +20563,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20229,8 +20612,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20270,8 +20654,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/orders`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/orders`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20311,8 +20696,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/acme/revoke-cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/acme/revoke-cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20352,8 +20738,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/batch/certs`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/batch/certs`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20384,8 +20771,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/cmp`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20415,8 +20803,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/est/simpleenroll`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/est/simpleenroll`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20446,8 +20835,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/est/simplereenroll`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/est/simplereenroll`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20493,8 +20883,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20541,8 +20932,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20596,8 +20988,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20637,8 +21030,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/new-account`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/new-account`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20678,8 +21072,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/new-order`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/new-order`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20726,8 +21121,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20774,8 +21170,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20822,8 +21219,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20863,8 +21261,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/orders`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/orders`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20904,8 +21303,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/acme/revoke-cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/acme/revoke-cert`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20945,8 +21345,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/issue`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/issue`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -20993,8 +21394,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/issue/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/issue/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21048,8 +21450,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21103,8 +21506,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21165,8 +21569,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21213,8 +21618,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/new-account`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/new-account`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21261,8 +21667,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/new-order`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/new-order`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21316,8 +21723,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21371,8 +21779,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21426,8 +21835,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21474,8 +21884,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/orders`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/orders`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21522,8 +21933,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/{policy}/acme/revoke-cert`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/{policy}/acme/revoke-cert`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21563,8 +21975,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/sign`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/sign`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21604,8 +22017,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/sign-intermediate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/sign-intermediate`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21652,8 +22066,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/sign-intermediate/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/sign-intermediate/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21700,8 +22115,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/external-policy/sign/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/external-policy/sign/{policy}`.replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21741,8 +22157,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/integrations/guardium`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/integrations/guardium`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21789,8 +22206,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21844,8 +22262,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21899,8 +22318,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -21961,8 +22381,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22009,8 +22430,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22057,8 +22479,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22112,8 +22535,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22167,8 +22591,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22222,8 +22647,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22270,8 +22696,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22318,8 +22745,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22373,8 +22801,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22428,8 +22857,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22490,8 +22920,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22538,8 +22969,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22586,8 +23018,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22641,8 +23074,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22696,8 +23130,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22751,8 +23186,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22799,8 +23235,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22847,8 +23284,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22895,8 +23333,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/issue`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/issue`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -22950,8 +23389,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/issue/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/issue/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23012,8 +23452,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23074,8 +23515,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23143,8 +23585,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23198,8 +23641,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23253,8 +23697,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23315,8 +23760,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23377,8 +23823,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23439,8 +23886,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23494,8 +23942,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23549,8 +23998,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/{policy}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23597,8 +24047,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23645,8 +24096,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign-intermediate`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign-intermediate`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23700,8 +24152,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign-intermediate/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign-intermediate/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23755,8 +24208,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/external-policy/sign/{policy}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"policy"}}`, encodeURIComponent(String(requestParameters['policy']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23817,8 +24271,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/account/{kid}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23879,8 +24334,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -23948,8 +24404,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24003,8 +24460,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-account`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24058,8 +24516,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/new-order`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24120,8 +24579,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24182,8 +24642,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24244,8 +24705,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/order/{order_id}/finalize`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24299,8 +24761,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/orders`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24354,8 +24817,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/issuer/{issuer_ref}/roles/{role}/acme/revoke-cert`.replace(`{${"issuer_ref"}}`, encodeURIComponent(String(requestParameters['issuer_ref']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24402,8 +24866,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/key/{key_ref}`.replace(`{${"key_ref"}}`, encodeURIComponent(String(requestParameters['key_ref']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24450,8 +24915,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24505,8 +24971,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/account/{kid}`.replace(`{${"kid"}}`, encodeURIComponent(String(requestParameters['kid']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24560,8 +25027,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/authorization/{auth_id}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24622,8 +25090,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/challenge/{auth_id}/{challenge_type}`.replace(`{${"auth_id"}}`, encodeURIComponent(String(requestParameters['auth_id']).replace(/\/+$/, ''))).replace(`{${"challenge_type"}}`, encodeURIComponent(String(requestParameters['challenge_type']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24670,8 +25139,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/new-account`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/new-account`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24718,8 +25188,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/new-order`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/new-order`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24773,8 +25244,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24828,8 +25300,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/order/{order_id}/cert`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24883,8 +25356,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/order/{order_id}/finalize`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24931,8 +25405,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/orders`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/orders`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -24979,8 +25454,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/acme/revoke-cert`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/acme/revoke-cert`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25018,8 +25494,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/cmp`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/cmp`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25056,8 +25533,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/est/simpleenroll`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/est/simpleenroll`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25094,8 +25572,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/est/simplereenroll`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/est/simplereenroll`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25132,8 +25611,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/scep`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/scep`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25170,8 +25650,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/roles/{role}/scep/pkiclient.exe`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/roles/{role}/scep/pkiclient.exe`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25201,8 +25682,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/scep`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25232,8 +25714,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{pki_mount_path}/scep/pkiclient.exe`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path'])));
         const response = await this.request({
-            path: `/{pki_mount_path}/scep/pkiclient.exe`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25273,8 +25756,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{rabbitmq_mount_path}/config/connection`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/config/connection`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25315,8 +25799,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{rabbitmq_mount_path}/config/lease`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/config/lease`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25355,8 +25840,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -25399,8 +25885,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{rabbitmq_mount_path}/roles/`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/roles/`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -25431,8 +25918,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{rabbitmq_mount_path}/config/lease`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/config/lease`.replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -25470,8 +25958,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -25510,8 +25999,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{rabbitmq_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -25559,8 +26049,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path'])));
         const response = await this.request({
-            path: `/{rabbitmq_mount_path}/roles/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"rabbitmq_mount_path"}}`, encodeURIComponent(String(requestParameters['rabbitmq_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25609,8 +26100,9 @@ export class SecretsApi extends runtime.BaseAPI {
             headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
         }
 
+        const builtPath = `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25650,8 +26142,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25682,8 +26175,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -25721,8 +26215,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -25753,8 +26248,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -25801,8 +26297,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/creds/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25850,8 +26347,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/issue/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/issue/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25894,8 +26392,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/roles/`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/roles/`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -25936,8 +26435,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/lookup`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/lookup`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -25973,8 +26473,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/ca`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26005,8 +26506,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/public_key`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/public_key`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26045,8 +26547,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26077,8 +26580,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/config/zeroaddress`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26125,8 +26629,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/sign/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/sign/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26159,8 +26664,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{ssh_mount_path}/tidy/dynamic-keys`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/tidy/dynamic-keys`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -26201,8 +26707,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/verify`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/verify`.replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26251,8 +26758,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path'])));
         const response = await this.request({
-            path: `/{ssh_mount_path}/roles/{role}`.replace(`{${"role"}}`, encodeURIComponent(String(requestParameters['role']).replace(/\/+$/, ''))).replace(`{${"ssh_mount_path"}}`, encodeURIComponent(String(requestParameters['ssh_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26293,8 +26801,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26325,8 +26834,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -26363,8 +26873,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -26401,8 +26912,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26439,8 +26951,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/creds/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26481,8 +26994,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/role/`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/role/`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26512,8 +27026,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/config`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26550,8 +27065,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26588,8 +27104,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{terraform_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/rotate-role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26635,8 +27152,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path'])));
         const response = await this.request({
-            path: `/{terraform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26683,8 +27201,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26722,8 +27241,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -26760,8 +27280,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{totp_mount_path}/code/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/code/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26803,8 +27324,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{totp_mount_path}/keys/`.replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/keys/`.replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26842,8 +27364,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -26889,8 +27412,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{totp_mount_path}/code/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path'])));
         const response = await this.request({
-            path: `/{totp_mount_path}/code/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"totp_mount_path"}}`, encodeURIComponent(String(requestParameters['totp_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26937,8 +27461,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/stores/{name}/schema`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/stores/{name}/schema`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -26985,8 +27510,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/tokenized/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenized/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27024,8 +27550,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/tokenized/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenized/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27065,8 +27592,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/cache-config`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/cache-config`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27115,8 +27643,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/tokenization/keys/{name}/config`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenization/keys/{name}/config`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27164,8 +27693,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/fpe/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/fpe/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27212,8 +27742,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27260,8 +27791,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/decode/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/decode/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27315,8 +27847,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/decode/{role_name}/{decode_format}`.replace(`{${"decode_format"}}`, encodeURIComponent(String(requestParameters['decode_format']))).replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/decode/{role_name}/{decode_format}`.replace(`{${"decode_format"}}`, encodeURIComponent(String(requestParameters['decode_format']).replace(/\/+$/, ''))).replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27354,8 +27887,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27392,8 +27926,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27430,8 +27965,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27468,8 +28004,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27506,8 +28043,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27544,8 +28082,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27582,8 +28121,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27620,8 +28160,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -27667,8 +28208,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/encode/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/encode/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27715,8 +28257,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/export-decoded/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/export-decoded/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27763,8 +28306,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/{name}/import_version`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/{name}/import_version`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -27806,8 +28350,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/alphabet/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/alphabet/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -27848,8 +28393,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/fpe/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/fpe/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -27890,8 +28436,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/masking/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/masking/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -27932,8 +28479,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/role/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/role/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -27974,8 +28522,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/stores/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/stores/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28016,8 +28565,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/template/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/template/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28059,8 +28609,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/tokenization/keys/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenization/keys/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28102,8 +28653,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28144,8 +28696,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformation/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformation/`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28191,8 +28744,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/tokens/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokens/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28230,8 +28784,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/tokens/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokens/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -28268,8 +28823,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28300,8 +28856,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/cache-config`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/cache-config`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28339,8 +28896,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28377,8 +28935,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28415,8 +28974,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28453,8 +29013,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28491,8 +29052,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28530,8 +29092,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/tokenization/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenization/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28569,8 +29132,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28607,8 +29171,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28654,8 +29219,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/restore/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/restore/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28702,8 +29268,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/metadata/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/metadata/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28735,8 +29302,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/wrapping_key`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/wrapping_key`.replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -28775,8 +29343,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transform_mount_path}/tokenization/keys/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenization/keys/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28823,8 +29392,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/snapshot/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/snapshot/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28872,8 +29442,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/tokenization/keys/{name}/trim`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/tokenization/keys/{name}/trim`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28921,8 +29492,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/validate/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/validate/{role_name}`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -28969,8 +29541,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/alphabet/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29017,8 +29590,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/fpe/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29065,8 +29639,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/masking/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29113,8 +29688,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29161,8 +29737,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/stores/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29209,8 +29786,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/template/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29257,8 +29835,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformations/tokenization/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29305,8 +29884,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path'])));
         const response = await this.request({
-            path: `/{transform_mount_path}/transformation/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transform_mount_path"}}`, encodeURIComponent(String(requestParameters['transform_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29345,8 +29925,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/backup/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/backup/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -29392,8 +29973,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/byok-export/{destination}/{source}`.replace(`{${"destination"}}`, encodeURIComponent(String(requestParameters['destination']))).replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/byok-export/{destination}/{source}`.replace(`{${"destination"}}`, encodeURIComponent(String(requestParameters['destination']).replace(/\/+$/, ''))).replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -29446,8 +30028,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/byok-export/{destination}/{source}/{version}`.replace(`{${"destination"}}`, encodeURIComponent(String(requestParameters['destination']))).replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/byok-export/{destination}/{source}/{version}`.replace(`{${"destination"}}`, encodeURIComponent(String(requestParameters['destination']).replace(/\/+$/, ''))).replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -29488,8 +30071,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/cache-config`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/cache-config`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29538,8 +30122,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/config`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/config`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29580,8 +30165,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/config/keys`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/config/keys`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29628,8 +30214,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29677,8 +30264,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/decrypt/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/decrypt/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29717,8 +30305,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
@@ -29765,8 +30354,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/encrypt/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/encrypt/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29813,8 +30403,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/export/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/export/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -29867,8 +30458,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/export/{type}/{name}/{version}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))).replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/export/{type}/{name}/{version}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))).replace(`{${"version"}}`, encodeURIComponent(String(requestParameters['version']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -29915,8 +30507,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/cmac/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/cmac/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -29970,8 +30563,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/cmac/{name}/{url_mac_length}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"url_mac_length"}}`, encodeURIComponent(String(requestParameters['url_mac_length']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/cmac/{name}/{url_mac_length}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"url_mac_length"}}`, encodeURIComponent(String(requestParameters['url_mac_length']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30018,8 +30612,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/csr`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/csr`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30074,8 +30669,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/datakey/{plaintext}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"plaintext"}}`, encodeURIComponent(String(requestParameters['plaintext']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/datakey/{plaintext}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"plaintext"}}`, encodeURIComponent(String(requestParameters['plaintext']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30131,8 +30727,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/derivedkeys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/derivedkeys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30181,8 +30778,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/hmac/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/hmac/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30238,8 +30836,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/hmac/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/hmac/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30281,8 +30880,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/random`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/random`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30331,8 +30931,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30381,8 +30982,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30438,8 +31040,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30481,8 +31084,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/hash`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/hash`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30531,8 +31135,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30581,8 +31186,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30631,8 +31237,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/import_version`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/import_version`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30676,8 +31283,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/keys/`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -30709,8 +31317,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/cache-config`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/cache-config`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -30748,8 +31357,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -30779,8 +31389,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/config/keys`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/config/keys`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -30811,8 +31422,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
+        const builtPath = `/{transit_mount_path}/wrapping_key`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/wrapping_key`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -30860,8 +31472,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/restore/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/restore/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30903,8 +31516,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/restore`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/restore`.replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -30953,8 +31567,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/rewrap/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/rewrap/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31003,8 +31618,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/rotate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31052,8 +31668,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/set-certificate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/set-certificate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31101,8 +31718,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/sign/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/sign/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31158,8 +31776,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/sign/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/sign/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31208,8 +31827,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/keys/{name}/trim`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/keys/{name}/trim`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31258,8 +31878,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/verify/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/verify/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -31315,8 +31936,9 @@ export class SecretsApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        const builtPath = `/{transit_mount_path}/verify/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path'])));
         const response = await this.request({
-            path: `/{transit_mount_path}/verify/{name}/{urlalgorithm}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, ''))),
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
