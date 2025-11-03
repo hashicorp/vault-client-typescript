@@ -277,8 +277,9 @@ export class {{classname}} extends runtime.BaseAPI {
         {{/isArray}}
         {{/formParams}}
         {{/hasFormParams}}
+        const builtPath = `{{{path}}}`{{#pathParams}}.replace(`{${"{{baseName}}"}}`, encodeURIComponent(String(requestParameters['{{paramName}}']))){{/pathParams}};
         const response = await this.request({
-            path: `{{{path}}}`{{#pathParams}}.replace(`{${"{{baseName}}"}}`, encodeURIComponent(String(requestParameters['{{paramName}}']).replace(/\/+$/, ''))){{/pathParams}},
+            path: builtPath.replace(/\/\/+/g, '/'),
             method: '{{httpMethod}}',
             headers: headerParameters,
             query: queryParameters,
