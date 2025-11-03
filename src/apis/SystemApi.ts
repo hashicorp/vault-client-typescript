@@ -1,7 +1,3 @@
-/**
- * Copyright (c) HashiCorp, Inc.
- */
-
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -2067,7 +2063,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/audit-hash/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/audit-hash/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2101,7 +2097,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -2135,7 +2131,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -2178,7 +2174,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/audit/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2222,7 +2218,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2311,7 +2307,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/auditing/request-headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -2345,7 +2341,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -2389,7 +2385,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2450,7 +2446,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/auth/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -2485,7 +2481,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -2530,7 +2526,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2944,7 +2940,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/tools/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm'])));
+        const builtPath = `/sys/tools/hash/{urlalgorithm}`.replace(`{${"urlalgorithm"}}`, encodeURIComponent(String(requestParameters['urlalgorithm']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -3021,7 +3017,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/tools/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes'])));
+        const builtPath = `/sys/tools/random/{urlbytes}`.replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -3063,7 +3059,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/tools/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source'])));
+        const builtPath = `/sys/tools/random/{source}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -3112,7 +3108,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/tools/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes'])));
+        const builtPath = `/sys/tools/random/{source}/{urlbytes}`.replace(`{${"source"}}`, encodeURIComponent(String(requestParameters['source']).replace(/\/+$/, ''))).replace(`{${"urlbytes"}}`, encodeURIComponent(String(requestParameters['urlbytes']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -3606,7 +3602,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/internal/inspect/router/{tag}`.replace(`{${"tag"}}`, encodeURIComponent(String(requestParameters['tag'])));
+        const builtPath = `/sys/internal/inspect/router/{tag}`.replace(`{${"tag"}}`, encodeURIComponent(String(requestParameters['tag']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -3748,7 +3744,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/internal/ui/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/internal/ui/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -3896,7 +3892,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/leases/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix'])));
+        const builtPath = `/sys/leases/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -3932,7 +3928,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix'])));
+        const builtPath = `/sys/revoke-force/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4002,7 +3998,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/leases/lookup/{prefix}/`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix'])));
+        const builtPath = `/sys/leases/lookup/{prefix}/`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -4153,7 +4149,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id'])));
+        const builtPath = `/sys/leases/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4197,7 +4193,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id'])));
+        const builtPath = `/sys/renew/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4315,7 +4311,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id'])));
+        const builtPath = `/sys/leases/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4359,7 +4355,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id'])));
+        const builtPath = `/sys/revoke/{url_lease_id}`.replace(`{${"url_lease_id"}}`, encodeURIComponent(String(requestParameters['url_lease_id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4403,7 +4399,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/leases/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix'])));
+        const builtPath = `/sys/leases/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4447,7 +4443,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix'])));
+        const builtPath = `/sys/revoke-prefix/{prefix}`.replace(`{${"prefix"}}`, encodeURIComponent(String(requestParameters['prefix']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4568,7 +4564,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['alias_identifier']))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mount_accessor'])));
+        const builtPath = `/sys/locked-users/{mount_accessor}/unlock/{alias_identifier}`.replace(`{${"alias_identifier"}}`, encodeURIComponent(String(requestParameters['alias_identifier']).replace(/\/+$/, ''))).replace(`{${"mount_accessor"}}`, encodeURIComponent(String(requestParameters['mount_accessor']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4629,7 +4625,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -4690,7 +4686,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -4770,7 +4766,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/loggers/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4905,7 +4901,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -4950,7 +4946,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/auth/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -4986,7 +4982,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5029,7 +5025,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5089,7 +5085,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5122,7 +5118,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5163,7 +5159,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/mounts/{path}/tune`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5233,7 +5229,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/catalog/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/catalog/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5283,7 +5279,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5350,7 +5346,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5391,7 +5387,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/pins/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5425,7 +5421,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5466,7 +5462,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5509,7 +5505,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5560,7 +5556,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5595,7 +5591,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/plugins/catalog/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5636,7 +5632,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5777,7 +5773,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -5827,7 +5823,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -5869,7 +5865,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/runtimes/catalog/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5903,7 +5899,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5937,7 +5933,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -5971,7 +5967,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -6005,7 +6001,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/password/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/password/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -6174,7 +6170,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -6208,7 +6204,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -6242,7 +6238,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -6285,7 +6281,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/acl/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -6329,7 +6325,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policy/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -6373,7 +6369,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/password/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -6866,7 +6862,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -6934,7 +6930,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -7000,7 +6996,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/rate-limit/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -7034,7 +7030,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -7079,7 +7075,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/raw/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/raw/{path}/`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -7113,7 +7109,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -7156,7 +7152,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/raw/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -7769,7 +7765,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/plugins/reload/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/plugins/reload/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -7805,7 +7801,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem'])));
+        const builtPath = `/sys/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -7876,7 +7872,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migration_id'])));
+        const builtPath = `/sys/remount/status/{migration_id}`.replace(`{${"migration_id"}}`, encodeURIComponent(String(requestParameters['migration_id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -8260,7 +8256,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin'])));
+        const builtPath = `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -8301,7 +8297,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin'])));
+        const builtPath = `/sys/events/subscriptions/{plugin}/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"plugin"}}`, encodeURIComponent(String(requestParameters['plugin']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8470,7 +8466,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8503,7 +8499,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8537,7 +8533,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8571,7 +8567,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8605,7 +8601,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8638,7 +8634,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8671,7 +8667,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8705,7 +8701,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8738,7 +8734,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8770,7 +8766,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8803,7 +8799,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8837,7 +8833,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8895,7 +8891,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8927,7 +8923,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8959,7 +8955,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -8991,7 +8987,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -9023,7 +9019,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -9055,7 +9051,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -9087,7 +9083,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -9130,7 +9126,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/managed-keys/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/managed-keys/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -9507,7 +9503,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/sync/destinations/{type}/`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -9584,7 +9580,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9661,7 +9657,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9703,7 +9699,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9745,7 +9741,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9787,7 +9783,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9829,7 +9825,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9871,7 +9867,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'PATCH',
@@ -9994,7 +9990,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10027,7 +10023,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10061,7 +10057,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10095,7 +10091,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10129,7 +10125,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10163,7 +10159,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/mfa/method/totp/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}/generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10196,7 +10192,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10258,7 +10254,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10292,7 +10288,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10325,7 +10321,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10407,7 +10403,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/replication/performance/primary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/replication/performance/primary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10439,7 +10435,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10471,7 +10467,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/replication/performance/secondary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/replication/performance/secondary/dynamic-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10581,7 +10577,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10615,7 +10611,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/storage/raft/snapshot-auto/status/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/storage/raft/snapshot-auto/status/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10649,7 +10645,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/storage/raft/snapshot-load/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10714,7 +10710,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secret_name'])));
+        const builtPath = `/sys/sync/associations/{mount}/{secret_name}`.replace(`{${"mount"}}`, encodeURIComponent(String(requestParameters['mount']).replace(/\/+$/, ''))).replace(`{${"secret_name"}}`, encodeURIComponent(String(requestParameters['secret_name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10771,7 +10767,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10803,7 +10799,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10835,7 +10831,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10867,7 +10863,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10899,7 +10895,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10938,7 +10934,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/{type}/{name}/associations`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/sync/destinations/{type}/{name}/associations`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -10970,7 +10966,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -11002,7 +10998,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -11237,7 +11233,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/managed-keys/{type}/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11286,7 +11282,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/managed-keys/{type}/{name}/test/sign`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/managed-keys/{type}/{name}/test/sign`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11329,7 +11325,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/duo/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11373,7 +11369,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/okta/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11417,7 +11413,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/pingid/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11461,7 +11457,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11505,7 +11501,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/totp/{name}/admin-destroy`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}/admin-destroy`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11549,7 +11545,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/mfa/method/totp/{name}/admin-generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/mfa/method/totp/{name}/admin-generate`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11611,7 +11607,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/namespaces/api-lock/lock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/api-lock/lock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11691,7 +11687,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/namespaces/api-lock/unlock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/api-lock/unlock/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11734,7 +11730,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path'])));
+        const builtPath = `/sys/namespaces/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11777,7 +11773,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/egp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11821,7 +11817,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/policies/rgp/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -11864,7 +11860,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/quotas/lease-count/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -12053,7 +12049,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/replication/dr/secondary/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem'])));
+        const builtPath = `/sys/replication/dr/secondary/config/reload/{subsystem}`.replace(`{${"subsystem"}}`, encodeURIComponent(String(requestParameters['subsystem']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -12547,7 +12543,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/replication/performance/primary/paths-filter/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13187,7 +13183,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/storage/raft/snapshot-auto/config/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13230,7 +13226,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/storage/raft/snapshot-auto/snapshot-load/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/storage/raft/snapshot-auto/snapshot-load/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13299,7 +13295,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/aws-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13341,7 +13337,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/azure-kv/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13383,7 +13379,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gcp-sm/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13425,7 +13421,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/gh/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13467,7 +13463,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/in-mem/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13516,7 +13512,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/{type}/{name}/associations/remove`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/sync/destinations/{type}/{name}/associations/remove`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13565,7 +13561,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/{type}/{name}/associations/set`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type'])));
+        const builtPath = `/sys/sync/destinations/{type}/{name}/associations/set`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13607,7 +13603,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/destinations/vercel-project/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13649,7 +13645,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/sync/github-apps/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13722,7 +13718,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -13806,7 +13802,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -13849,7 +13845,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const builtPath = `/sys/config/ui/custom-messages/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13893,7 +13889,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -13928,7 +13924,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -14000,7 +13996,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header'])));
+        const builtPath = `/sys/config/ui/headers/{header}`.replace(`{${"header"}}`, encodeURIComponent(String(requestParameters['header']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -14043,7 +14039,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
-        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -14078,7 +14074,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'DELETE',
@@ -14175,7 +14171,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name'])));
+        const builtPath = `/sys/config/ui/login/default-auth/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
@@ -14380,7 +14376,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/well-known/{label}`.replace(`{${"label"}}`, encodeURIComponent(String(requestParameters['label'])));
+        const builtPath = `/sys/well-known/{label}`.replace(`{${"label"}}`, encodeURIComponent(String(requestParameters['label']).replace(/\/+$/, '')));
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'GET',
