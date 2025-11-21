@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 #v4
         with:
           ref: ${{ github.head_ref }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4
         with:
           node-version: "20"
 
@@ -38,7 +38,7 @@ jobs:
 
       - name: Setup Java
         if: steps.diff_openapi.outputs.changed == 'true'
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 #v4
         with:
           distribution: "temurin"
           java-version: "11"
@@ -48,13 +48,13 @@ jobs:
         run: yarn gen-client
 
       - name: Setup Copywrite
-        uses: hashicorp/setup-copywrite@v1.1.3
+        uses: hashicorp/setup-copywrite@32638da2d4e81d56a0764aa1547882fc4d209636 #v1.1.3
 
       - name: Add copyright headers
         run: copywrite headers
 
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 #v5
         with:
           commit_message: "auto: generated client updates"
 
