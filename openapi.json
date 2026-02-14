@@ -3,7 +3,7 @@
   "info": {
     "title": "HashiCorp Vault API",
     "description": "HTTP API that gives you full access to Vault. All API routes are prefixed with `/v1/`.",
-    "version": "1.22.0",
+    "version": "1.21.0",
     "license": {
       "name": "Mozilla Public License 2.0",
       "url": "https://www.mozilla.org/en-US/MPL/2.0"
@@ -11112,654 +11112,6 @@
         }
       }
     },
-    "/identity/scim/client/": {
-      "get": {
-        "operationId": "scim-list-client",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/scim/client/{client_name}": {
-      "parameters": [
-        {
-          "name": "client_name",
-          "description": "A unique, user-defined name for this SCIM client (e.g., 'Okta-Prod', 'SailPoint-Dev').",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "scim-read-client",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "scim-update-client",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ScimUpdateClientRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "scim-delete-client",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Groups": {
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "list",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "create",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Groups/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "description": "ID of the group. If set, updates the corresponding existing entity.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "read",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "update",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "patch": {
-        "operationId": "patch",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "delete",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Me": {
-      "get": {
-        "operationId": "identity-read-scim-v2-me",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "identity-write-scim-v2-me",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "patch": {
-        "operationId": "identity-patch-scim-v2-me",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "identity-delete-scim-v2-me",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/ResourceTypes": {
-      "get": {
-        "operationId": "read",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/ResourceTypes/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "description": "Resource Type ID (e.g., User, Group)",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "read",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Schemas": {
-      "get": {
-        "operationId": "identity-read-scim-v2-schemas",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Schemas/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "identity-read-scim-v2-schemas-id",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/ServiceProviderConfig": {
-      "x-vault-unauthenticated": true,
-      "get": {
-        "operationId": "read",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "identity-write-scim-v2-serviceproviderconfig",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "patch": {
-        "operationId": "identity-patch-scim-v2-serviceproviderconfig",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "identity-delete-scim-v2-serviceproviderconfig",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/ServiceProviderConfig/": {
-      "x-vault-unauthenticated": true,
-      "get": {
-        "operationId": "identity-list-scim-v2-serviceproviderconfig",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Users": {
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "list",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "filter",
-            "description": "An optional filter expression to limit the results.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "create",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/scim/v2/Users/{id}": {
-      "parameters": [
-        {
-          "name": "id",
-          "description": "ID of the entity. If set, updates the corresponding existing entity.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "read",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "filter",
-            "description": "An optional filter expression to limit the results.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "update",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "patch": {
-        "operationId": "patch",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "delete",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "count",
-            "description": "The desired number of results per page.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "filter",
-            "description": "An optional filter expression to limit the results.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "startIndex",
-            "description": "The 1-based index of the first result to return.",
-            "in": "query",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
     "/sys/activation-flags": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "x-vault-unauthenticated": true,
@@ -11777,21 +11129,6 @@
       }
     },
     "/sys/activation-flags/activation-test/activate": {
-      "description": "Returns information about Vault's features that require a one-time activation step.",
-      "post": {
-        "summary": "Activate a flagged feature.",
-        "operationId": "activation-flags-activate",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/activation-flags/enable-scim/activate": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "post": {
         "summary": "Activate a flagged feature.",
@@ -12095,37 +11432,6 @@
         "responses": {
           "204": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/billing/certificates": {
-      "description": "Count of PKI certificates issued and stored by PKI backends on this cluster",
-      "get": {
-        "summary": "Report the count of certificates issued and stored within the given time period",
-        "operationId": "system-read-billing-certificates",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SystemReadBillingCertificatesResponse"
-                }
-              }
-            }
-          },
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -16536,73 +15842,6 @@
         }
       }
     },
-    "/sys/policies/rotation/{name}": {
-      "description": "Read, Modify, or Delete a rotation retry policy.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name of the retry policy.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "summary": "Retrieve an existing retry policy.",
-        "operationId": "policies-read-rotation-policy",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PoliciesReadRotationPolicyResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "summary": "Add a new or update an existing rotation retry policy.",
-        "operationId": "policies-write-rotation-policy",
-        "tags": [
-          "system"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PoliciesWriteRotationPolicyRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a retry policy.",
-        "operationId": "policies-delete-rotation-policy",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/sys/policy": {
       "description": "List the configured access control policies.",
       "get": {
@@ -18531,34 +17770,6 @@
         }
       }
     },
-    "/sys/reporting/scan": {
-      "description": "Does a scan of secrets in Vault for reporting.",
-      "x-vault-sudo": true,
-      "post": {
-        "operationId": "scan-report",
-        "tags": [
-          "system"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ScanReportRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "202": {
-            "description": "Accepted"
-          }
-        }
-      }
-    },
     "/sys/revoke": {
       "description": "Revoke a leased secret immediately",
       "post": {
@@ -18738,28 +17949,6 @@
         "responses": {
           "204": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/rotation/orphans": {
-      "description": "Rotation manager orphans",
-      "get": {
-        "summary": "Get orphaned items in the rotation manager.",
-        "operationId": "system-read-rotation-orphans",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SystemReadRotationOrphansResponse"
-                }
-              }
-            }
           }
         }
       }
@@ -21808,41 +20997,6 @@
         }
       }
     },
-    "/{azure_mount_path}/rotate-role/{name}": {
-      "description": "Rotate the credentials for an Azure static role.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the static role.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "azure_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "azure"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "azure-write-rotate-role-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/{azure_mount_path}/rotate-root": {
       "description": "Attempt to rotate the root credentials used to communicate with Azure.",
       "parameters": [
@@ -21865,156 +21019,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/{azure_mount_path}/static-creds/{name}": {
-      "description": "Read the credentials stored in an Azure static role.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the static role. Must be a lowercase string.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "azure_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "azure"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "azure-read-static-creds-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/{azure_mount_path}/static-roles/": {
-      "description": "List existing roles for Azure Secrets.",
-      "parameters": [
-        {
-          "name": "azure_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "azure"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "azure-list-static-roles",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{azure_mount_path}/static-roles/{name}": {
-      "description": "Manage static roles for Azure Secrets.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the static role.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "azure_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "azure"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "azure-read-static-roles-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "azure-write-static-roles-name",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AzureWriteStaticRolesNameRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "azure-delete-static-roles-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
           }
         }
       }
@@ -25064,7 +24068,7 @@
       }
     },
     "/{kmip_mount_path}/ca": {
-      "description": "Configure an imported CA bundle.",
+      "description": "Configure the KMIP Backend.",
       "parameters": [
         {
           "name": "kmip_mount_path",
@@ -25078,314 +24082,10 @@
         }
       ],
       "get": {
-        "operationId": "kmip-read-configuration",
+        "operationId": "kmip-read-ca-pem",
         "tags": [
           "secrets"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "kmip-configure-ca",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KmipConfigureCaRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "kmip-delete-ca",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/": {
-      "description": "Configure an imported CA bundle.",
-      "parameters": [
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-list-ca",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/{name}": {
-      "description": "Configure an imported CA bundle.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name to identify the CA",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA Bundle name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-read-ca-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "kmip-configure-ca-name",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KmipConfigureCaNameRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "kmip-delete-ca-name",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/{name}/": {
-      "description": "Configure an imported CA bundle.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name to identify the CA",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA Bundle name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-list-ca-name",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/{name}/generate": {
-      "description": "Create a CA.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name to identify the CA",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "kmip-create-ca",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KmipCreateCaRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/{name}/import": {
-      "description": "Import a CA.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name to identify the CA",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "kmip-import-ca",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KmipImportCaRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -25437,123 +24137,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/listener/": {
-      "description": "List existing listeners",
-      "parameters": [
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-list-listeners",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/listener/{name}": {
-      "description": "Write and read named listener",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "listener name",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "Listener name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-write-listener",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "kmip-write-listener",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KmipWriteListenerRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "kmip-write-listener",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
           }
         }
       }
@@ -39737,347 +38320,6 @@
         }
       }
     },
-    "/{spiffe_mount_path}/^.well-known/keys$": {
-      "description": "Retrieve public keys",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ]
-    },
-    "/{spiffe_mount_path}/^.well-known/openid-configuration$": {
-      "description": "Query OIDC configurations",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ]
-    },
-    "/{spiffe_mount_path}/config": {
-      "description": "Configuration that is applicable to this SPIFFE backend.",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "spiffe-configure",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "spiffe-configure",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SpiffeConfigureRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{spiffe_mount_path}/role/": {
-      "description": "List all SPIFFE roles",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "spiffe-list-role",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{spiffe_mount_path}/role/{name}": {
-      "description": "Manage the roles that can be created with the SPIFFE backend.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name of the role",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "spiffe-configure",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "spiffe-configure",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SpiffeConfigureRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "spiffe-configure",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeConfigureResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{spiffe_mount_path}/role/{role}/mintjwt": {
-      "parameters": [
-        {
-          "name": "role",
-          "description": "The name of the role to use for minting the JWT",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "spiffe-create",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SpiffeCreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpiffeCreateResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{spiffe_mount_path}/rotate_jwks": {
-      "description": "Rotate the JWT signing key.",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "spiffe-rotate",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SpiffeRotateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/{spiffe_mount_path}/trust_bundle/web": {
-      "description": "Retrieve SPIFFE trust bundle.",
-      "parameters": [
-        {
-          "name": "spiffe_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "spiffe"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-unauthenticated": true,
-      "get": {
-        "operationId": "spiffe-read",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/{ssh_mount_path}/config/ca": {
       "description": "Set the SSH private key used for signing certificates.",
       "parameters": [
@@ -43287,61 +41529,6 @@
         }
       }
     },
-    "/{transit_mount_path}/datakeys/{type}/{name}": {
-      "description": "Generate multiple data keys",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The backend key used for encrypting the data key",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "type",
-          "description": "\"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "transit_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "transit"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "summary": "Generate multiple data keys",
-        "operationId": "transit-generate-data-key",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TransitGenerateDataKeyRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/{transit_mount_path}/decrypt/{name}": {
       "description": "Decrypt a ciphertext value using a named key",
       "parameters": [
@@ -46041,11 +44228,6 @@
             "type": "object",
             "format": "map"
           },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
-          },
           "passthrough_request_headers": {
             "type": "array",
             "items": {
@@ -46126,11 +44308,6 @@
             "type": "object",
             "description": "The options to pass into the backend. Should be a json object with string keys and values.",
             "format": "kvpairs"
-          },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
           },
           "passthrough_request_headers": {
             "type": "array",
@@ -46240,13 +44417,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -46461,13 +44631,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -47213,13 +45376,6 @@
               "group": "default"
             }
           },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
           "rotation_schedule": {
             "type": "string",
             "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
@@ -47294,13 +45450,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -47587,48 +45736,6 @@
             "format": "duration"
           }
         }
-      },
-      "AzureWriteStaticRolesNameRequest": {
-        "type": "object",
-        "properties": {
-          "application_object_id": {
-            "type": "string",
-            "description": "The Azure AD application object ID whose credentials Vault will manage."
-          },
-          "client_secret": {
-            "type": "string",
-            "description": "Client secret of the existing credential to import.",
-            "x-vault-displayAttrs": {
-              "sensitive": true
-            }
-          },
-          "expiration": {
-            "type": "string",
-            "description": "The expiration time of the existing credential to import.",
-            "format": "date-time"
-          },
-          "metadata": {
-            "type": "object",
-            "description": "A map of string key-value pairs to associate with the role.",
-            "format": "map"
-          },
-          "secret_id": {
-            "type": "string",
-            "description": "Secret ID of the existing credential to import."
-          },
-          "skip_import_rotation": {
-            "type": "boolean",
-            "description": "If true, Vault will not attempt to rotate the imported credential"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "The duration of time that the role's credential remains valid before expiration.",
-            "format": "duration"
-          }
-        },
-        "required": [
-          "application_object_id"
-        ]
       },
       "CertConfigureRequest": {
         "type": "object",
@@ -48579,23 +46686,6 @@
           "title"
         ]
       },
-      "CreateRequest": {
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "The desired number of results per page."
-          },
-          "id": {
-            "type": "string",
-            "description": "ID of the group. If set, updates the corresponding existing entity."
-          },
-          "startIndex": {
-            "type": "integer",
-            "description": "The 1-based index of the first result to return."
-          }
-        }
-      },
       "DatabaseConfigureConnectionRequest": {
         "type": "object",
         "properties": {
@@ -48612,10 +46702,6 @@
             "x-vault-displayAttrs": {
               "group": "default"
             }
-          },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "Enterprise only. If true, specified plugin_version will override the pinned plugin version."
           },
           "password_policy": {
             "type": "string",
@@ -48640,13 +46726,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -48981,10 +47060,6 @@
             "type": "boolean",
             "description": "If set true, tokens tied to this identity will not be able to be used (but will not be revoked)."
           },
-          "external_id": {
-            "type": "string",
-            "description": "External ID of the entity"
-          },
           "id": {
             "type": "string",
             "description": "ID of the entity. If set, updates the corresponding existing entity."
@@ -49004,10 +47079,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
           }
         }
       },
@@ -49096,10 +47167,6 @@
             "type": "boolean",
             "description": "If set true, tokens tied to this identity will not be able to be used (but will not be revoked)."
           },
-          "external_id": {
-            "type": "string",
-            "description": "External ID of the entity"
-          },
           "metadata": {
             "type": "object",
             "description": "Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
@@ -49115,10 +47182,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
           }
         }
       },
@@ -49128,10 +47191,6 @@
           "disabled": {
             "type": "boolean",
             "description": "If set true, tokens tied to this identity will not be able to be used (but will not be revoked)."
-          },
-          "external_id": {
-            "type": "string",
-            "description": "External ID of the entity"
           },
           "id": {
             "type": "string",
@@ -49148,10 +47207,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
           }
         }
       },
@@ -49217,11 +47272,6 @@
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
           },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
-          },
           "format": {
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
@@ -49244,11 +47294,6 @@
             "type": "integer",
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
-          },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
           },
           "format": {
             "type": "string",
@@ -49273,11 +47318,6 @@
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
           },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
-          },
           "format": {
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
@@ -49300,11 +47340,6 @@
             "type": "integer",
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
-          },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
           },
           "format": {
             "type": "string",
@@ -49622,13 +47657,6 @@
               "group": "default"
             }
           },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
           "rotation_schedule": {
             "type": "string",
             "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
@@ -49691,13 +47719,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -50337,10 +48358,6 @@
               "type": "string"
             }
           },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
-          },
           "type": {
             "type": "string",
             "description": "Type of the group, 'internal' or 'external'. Defaults to 'internal'"
@@ -50422,10 +48439,6 @@
               "type": "string"
             }
           },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
-          },
           "type": {
             "type": "string",
             "description": "Type of the group, 'internal' or 'external'. Defaults to 'internal'"
@@ -50464,10 +48477,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "scim_client_id": {
-            "type": "string",
-            "description": "SCIM Client ID of the entity"
           },
           "type": {
             "type": "string",
@@ -51337,7 +49346,6 @@
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
             "default": true,
-            "deprecated": true,
             "x-vault-displayAttrs": {
               "group": "LDAP Options"
             }
@@ -51729,92 +49737,6 @@
           "provider"
         ]
       },
-      "KmipConfigureCaNameRequest": {
-        "type": "object",
-        "properties": {
-          "role_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the role (e.g. UID)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Field"
-            }
-          },
-          "role_name": {
-            "type": "string",
-            "description": "The role name to associate with this CA bundle",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Name"
-            }
-          },
-          "scope_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the scope (e.g. OU)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Field"
-            }
-          },
-          "scope_name": {
-            "type": "string",
-            "description": "The scope name to associate with this CA bundle",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Name"
-            }
-          }
-        }
-      },
-      "KmipConfigureCaRequest": {
-        "type": "object",
-        "properties": {
-          "role_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the role (e.g. UID)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Field"
-            }
-          },
-          "role_name": {
-            "type": "string",
-            "description": "The role name to associate with this CA bundle",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Name"
-            }
-          },
-          "scope_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the scope (e.g. OU)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Field"
-            }
-          },
-          "scope_name": {
-            "type": "string",
-            "description": "The scope name to associate with this CA bundle",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Name"
-            }
-          }
-        }
-      },
       "KmipConfigureRequest": {
         "type": "object",
         "properties": {
@@ -51856,6 +49778,9 @@
             "items": {
               "type": "string"
             },
+            "default": [
+              "127.0.0.1:5696"
+            ],
             "x-vault-displayAttrs": {
               "value": "127.0.0.1:5696"
             }
@@ -51914,43 +49839,6 @@
           }
         }
       },
-      "KmipCreateCaRequest": {
-        "type": "object",
-        "properties": {
-          "key_bits": {
-            "type": "integer",
-            "description": "CA key bits, valid values depend on key type",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA Key bits"
-            }
-          },
-          "key_type": {
-            "type": "string",
-            "description": "CA key type, rsa or ec",
-            "enum": [
-              "rsa",
-              "ec"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "TLS CA Key type"
-            }
-          },
-          "ttl": {
-            "type": "string",
-            "description": "CA TTL in either an integer number of seconds (3600) or an integer time unit (1h)",
-            "format": "duration",
-            "default": "365d",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA TTL",
-              "value": "365d"
-            }
-          }
-        },
-        "required": [
-          "key_bits",
-          "key_type"
-        ]
-      },
       "KmipCreateScopeRequest": {
         "type": "object",
         "properties": {
@@ -51975,59 +49863,6 @@
             "default": "pem_bundle"
           }
         }
-      },
-      "KmipImportCaRequest": {
-        "type": "object",
-        "properties": {
-          "ca_pem": {
-            "type": "string",
-            "description": "CA in PEM format",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA PEM"
-            }
-          },
-          "role_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the role (e.g. UID)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Field"
-            }
-          },
-          "role_name": {
-            "type": "string",
-            "description": "The role name to associate with this CA",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Role Name"
-            }
-          },
-          "scope_field": {
-            "type": "string",
-            "description": "The field in the certificate to use for the scope (e.g. OU)",
-            "enum": [
-              "CN",
-              "OU",
-              "UID"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Field"
-            }
-          },
-          "scope_name": {
-            "type": "string",
-            "description": "The scope name to associate with this CA",
-            "x-vault-displayAttrs": {
-              "name": "KMIP Scope Name"
-            }
-          }
-        },
-        "required": [
-          "ca_pem"
-        ]
       },
       "KmipRevokeClientCertificateRequest": {
         "type": "object",
@@ -52061,109 +49896,9 @@
           }
         }
       },
-      "KmipWriteListenerRequest": {
-        "type": "object",
-        "properties": {
-          "additional_client_cas": {
-            "type": "array",
-            "description": "Names of additional TLS CAs to use to verify client certificates",
-            "items": {
-              "type": "string"
-            },
-            "x-vault-displayAttrs": {
-              "name": "mTLS client CA names"
-            }
-          },
-          "address": {
-            "type": "string",
-            "description": "host:port address to listen on",
-            "x-vault-displayAttrs": {
-              "name": "Listener address"
-            }
-          },
-          "also_use_legacy_ca": {
-            "type": "boolean",
-            "description": "Use the legacy unnamed CA for verifying client certificates as well",
-            "x-vault-displayAttrs": {
-              "name": "Also use legacy CA"
-            }
-          },
-          "ca": {
-            "type": "string",
-            "description": "Name of the CA to use to generate the server certificate and verify client certificates",
-            "x-vault-displayAttrs": {
-              "name": "CA name"
-            }
-          },
-          "server_hostnames": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "x-vault-displayAttrs": {
-              "name": "DNS SANs to include in listener certificate"
-            }
-          },
-          "server_ips": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "default": [
-              "127.0.0.1",
-              "::1"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "IP SANs to include in listener certificate"
-            }
-          },
-          "tls_cipher_suites": {
-            "type": "string",
-            "description": "TLS cipher suites to allow (does not apply to tls13+)",
-            "x-vault-displayAttrs": {
-              "name": "TLS Cipher Suites"
-            }
-          },
-          "tls_max_version": {
-            "type": "string",
-            "description": "Max TLS version",
-            "enum": [
-              "tls12",
-              "tls13"
-            ],
-            "x-vault-displayAttrs": {
-              "name": "Maximum TLS Version"
-            }
-          },
-          "tls_min_version": {
-            "type": "string",
-            "description": "Min TLS version",
-            "enum": [
-              "tls12",
-              "tls13"
-            ],
-            "default": "tls12",
-            "x-vault-displayAttrs": {
-              "name": "Minimum TLS Version",
-              "value": "tls12"
-            }
-          }
-        },
-        "required": [
-          "address",
-          "ca"
-        ]
-      },
       "KmipWriteRoleRequest": {
         "type": "object",
         "properties": {
-          "ca": {
-            "type": "string",
-            "description": "Name of the CA to use to sign client certificates",
-            "x-vault-displayAttrs": {
-              "name": "Named CA"
-            }
-          },
           "operation_activate": {
             "type": "boolean",
             "description": "Allow the \"Activate\" operation to be performed by this role",
@@ -53125,7 +50860,6 @@
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
             "default": true,
-            "deprecated": true,
             "x-vault-displayAttrs": {
               "group": "LDAP Options"
             }
@@ -53215,13 +50949,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -53506,7 +51233,6 @@
             "type": "boolean",
             "description": "Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true",
             "default": true,
-            "deprecated": true,
             "x-vault-displayAttrs": {
               "group": "LDAP Options"
             }
@@ -53606,13 +51332,6 @@
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
             "format": "duration",
-            "x-vault-displayAttrs": {
-              "group": "default"
-            }
-          },
-          "rotation_policy": {
-            "type": "string",
-            "description": "Defines the rotation policy to use when performing automated rotations.",
             "x-vault-displayAttrs": {
               "group": "default"
             }
@@ -54720,11 +52439,6 @@
             "type": "object",
             "format": "map"
           },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
-          },
           "passthrough_request_headers": {
             "type": "array",
             "items": {
@@ -54805,11 +52519,6 @@
             "type": "object",
             "description": "The options to pass into the backend. Should be a json object with string keys and values.",
             "format": "kvpairs"
-          },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
           },
           "passthrough_request_headers": {
             "type": "array",
@@ -55001,11 +52710,6 @@
             "description": "The options to pass into the backend. Should be a json object with string keys and values.",
             "format": "kvpairs"
           },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
-          },
           "passthrough_request_headers": {
             "type": "array",
             "items": {
@@ -55100,11 +52804,6 @@
             "type": "object",
             "description": "The options to pass into the backend. Should be a json object with string keys and values.",
             "format": "kvpairs"
-          },
-          "override_pinned_version": {
-            "type": "boolean",
-            "description": "If true, plugin_version will override the pinned version",
-            "default": false
           },
           "passthrough_request_headers": {
             "type": "array",
@@ -55792,19 +53491,6 @@
             "items": {
               "type": "string"
             }
-          }
-        }
-      },
-      "PatchRequest": {
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "The desired number of results per page."
-          },
-          "startIndex": {
-            "type": "integer",
-            "description": "The 1-based index of the first result to return."
           }
         }
       },
@@ -57977,10 +55663,6 @@
       "PkiIssueWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -58137,10 +55819,6 @@
       "PkiIssuerIssueWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -58888,10 +56566,6 @@
       "PkiIssuerSignVerbatimResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -59086,10 +56760,6 @@
       "PkiIssuerSignVerbatimWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -59243,10 +56913,6 @@
       "PkiIssuerSignWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -60065,32 +57731,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}', '{{cluster_path}}', '{{cluster_aia_path}}' are available, but the addresses are not checked for URL validity until issuance time. Using '{{cluster_path}}' requires /config/cluster's 'path' member to be set on all PR Secondary clusters and using '{{cluster_aia_path}}' requires /config/cluster's 'aia_path' member to be set on all PR secondary clusters.",
-            "default": false
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
             "default": false
           },
           "issuer_name": {
@@ -60173,32 +57834,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not templating is enabled for AIA fields"
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
-            "default": false
           },
           "issuer_id": {
             "type": "string",
@@ -60961,10 +58617,6 @@
       "PkiReadCaChainPemResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -60991,10 +58643,6 @@
       "PkiReadCaDerResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61021,10 +58669,6 @@
       "PkiReadCaPemResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61051,10 +58695,6 @@
       "PkiReadCertCaChainResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61081,10 +58721,6 @@
       "PkiReadCertCrlResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61111,10 +58747,6 @@
       "PkiReadCertDeltaCrlResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61166,10 +58798,6 @@
       "PkiReadCertRawDerResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61196,10 +58824,6 @@
       "PkiReadCertRawPemResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61226,10 +58850,6 @@
       "PkiReadCertResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61256,10 +58876,6 @@
       "PkiReadCertUnifiedCrlResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61286,10 +58902,6 @@
       "PkiReadCertUnifiedDeltaCrlResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61389,10 +59001,6 @@
       "PkiReadCrlDeltaPemResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61419,10 +59027,6 @@
       "PkiReadCrlDeltaResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61449,10 +59053,6 @@
       "PkiReadCrlDerResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61479,10 +59079,6 @@
       "PkiReadCrlPemResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "string",
             "description": "Issuing CA Chain"
@@ -61608,32 +59204,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not templating is enabled for AIA fields"
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
-            "default": false
           },
           "issuer_id": {
             "type": "string",
@@ -62091,32 +59682,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not templating is enabled for AIA fields"
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
-            "default": false
           },
           "issuer_id": {
             "type": "string",
@@ -63218,10 +60804,6 @@
       "PkiSignVerbatimResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -63421,10 +61003,6 @@
       "PkiSignVerbatimWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -63583,10 +61161,6 @@
       "PkiSignWithRoleResponse": {
         "type": "object",
         "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "AuthorityKeyID of certificate"
-          },
           "ca_chain": {
             "type": "array",
             "description": "Certificate Chain",
@@ -66071,32 +63645,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not to enabling templating of the above AIA fields. When templating is enabled the special values '{{issuer_id}}', '{{cluster_path}}', '{{cluster_aia_path}}' are available, but the addresses are not checked for URL validity until issuance time. Using '{{cluster_path}}' requires /config/cluster's 'path' member to be set on all PR Secondary clusters and using '{{cluster_aia_path}}' requires /config/cluster's 'aia_path' member to be set on all PR secondary clusters.",
-            "default": false
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
             "default": false
           },
           "issuer_name": {
@@ -66179,32 +63748,27 @@
           },
           "disable_critical_extension_checks": {
             "type": "boolean",
-            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether critical extension checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_checks": {
             "type": "boolean",
-            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode",
+            "description": "Whether the issuer name check should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_name_constraint_checks": {
             "type": "boolean",
-            "description": "Whether name constraint checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether name contraint checks shoul be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "disable_path_length_checks": {
             "type": "boolean",
-            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only); over-ridden to be false in common criteria mode.",
+            "description": "Whether max path length checks should be performed when issuing certificates. (Enterprise only)",
             "default": false
           },
           "enable_aia_url_templating": {
             "type": "boolean",
             "description": "Whether or not templating is enabled for AIA fields"
-          },
-          "enable_time_checks": {
-            "type": "boolean",
-            "description": "Whether the issuer time check should be performed when issuing certificates. (Enterprise only); over-ridden to be true in common criteria mode.",
-            "default": false
           },
           "issuer_id": {
             "type": "string",
@@ -67498,14 +65062,6 @@
           }
         }
       },
-      "PoliciesReadRotationPolicyResponse": {
-        "type": "object",
-        "properties": {
-          "policy": {
-            "type": "string"
-          }
-        }
-      },
       "PoliciesWriteAclPolicy2Request": {
         "type": "object",
         "properties": {
@@ -67539,15 +65095,6 @@
           "policy": {
             "type": "string",
             "description": "The password policy"
-          }
-        }
-      },
-      "PoliciesWriteRotationPolicyRequest": {
-        "type": "object",
-        "properties": {
-          "policy": {
-            "type": "string",
-            "description": "The retry policy in JSON"
           }
         }
       },
@@ -68871,15 +66418,6 @@
           "token_poll_id"
         ]
       },
-      "ScanReportRequest": {
-        "type": "object",
-        "properties": {
-          "async": {
-            "type": "boolean",
-            "description": "If the scan is asynchronous or not (default false). For either option, this endpoint return with the directory location, and if the scan is set to asynchronous, this may be before the scan is complete."
-          }
-        }
-      },
       "ScepLoginRequest": {
         "type": "object",
         "properties": {
@@ -69021,27 +66559,6 @@
               "name": "Generated Token's Type",
               "group": "Tokens"
             }
-          }
-        }
-      },
-      "ScimUpdateClientRequest": {
-        "type": "object",
-        "properties": {
-          "access_grant_principal": {
-            "type": "string",
-            "description": "The specific principal (e.g., Entity ID, role name) within the auth method that represents the SCIM client and will be granted SCIM permissions."
-          },
-          "alias_mount_accessor": {
-            "type": "string",
-            "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. Typically used for 'IdP' role clients."
-          },
-          "client_role": {
-            "type": "string",
-            "description": "The role of the SCIM client, which determines its authoritative power. Must be either 'IGA' or 'IdP'.",
-            "enum": [
-              "idp",
-              "iga"
-            ]
           }
         }
       },
@@ -69190,24 +66707,6 @@
           }
         }
       },
-      "SpiffeCreateRequest": {
-        "type": "object",
-        "properties": {
-          "audience": {
-            "type": "string",
-            "description": "The audience claim to use"
-          }
-        }
-      },
-      "SpiffeCreateResponse": {
-        "type": "object",
-        "properties": {
-          "token": {
-            "type": "string",
-            "description": "Compact serialized JWT"
-          }
-        }
-      },
       "SpiffeLoginRequest": {
         "type": "object",
         "properties": {
@@ -69224,16 +66723,6 @@
               "cert"
             ],
             "default": "auto"
-          }
-        }
-      },
-      "SpiffeRotateRequest": {
-        "type": "object",
-        "properties": {
-          "expire_keys": {
-            "type": "boolean",
-            "description": "Stop publishing current keys in trust bundle and JWKS endpoint, breaking any extant SVIDs",
-            "default": false
           }
         }
       },
@@ -69932,11 +67421,6 @@
             "type": "string",
             "description": "Unique string used as a condition for extra security when assuming the AWS IAM role. Optional. Ignored if the role ARN is not set."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -70048,11 +67532,6 @@
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -70151,11 +67630,6 @@
           "disable_strict_networking": {
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
-          },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
           },
           "global_kms_key": {
             "type": "string",
@@ -70275,11 +67749,6 @@
             "type": "string",
             "description": "The name of the repository environment that the secrets in GitHub will be available for. Only valid when the 'secrets_location' field is set to 'repository'."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -70387,11 +67856,6 @@
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -70478,11 +67942,6 @@
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -70538,36 +67997,12 @@
           }
         }
       },
-      "SystemReadBillingCertificatesResponse": {
-        "type": "object",
-        "properties": {
-          "months": {
-            "type": "array",
-            "description": "The certificates issued by PKI mounts on this cluster by month",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
       "SystemReadConfigGroupPolicyApplicationResponse": {
         "type": "object",
         "properties": {
           "group_policy_application_mode": {
             "type": "string",
             "description": "The current-set group_policy_application_mode. Will be either within_namespace_hierarchy or any."
-          }
-        }
-      },
-      "SystemReadRotationOrphansResponse": {
-        "type": "object",
-        "properties": {
-          "orphans": {
-            "type": "array",
-            "description": "Orphaned items.",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -71996,11 +69431,6 @@
             "type": "string",
             "description": "Unique string used as a condition for extra security when assuming the AWS IAM role. Optional. Ignored if the role ARN is not set."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -72112,11 +69542,6 @@
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -72215,11 +69640,6 @@
           "disable_strict_networking": {
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
-          },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
           },
           "global_kms_key": {
             "type": "string",
@@ -72339,11 +69759,6 @@
             "type": "string",
             "description": "The name of the repository environment that the secrets in GitHub will be available for. Only valid when the 'secrets_location' field is set to 'repository'."
           },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
-          },
           "granularity": {
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
@@ -72450,11 +69865,6 @@
           "disable_strict_networking": {
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
-          },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
           },
           "granularity": {
             "type": "string",
@@ -72587,11 +69997,6 @@
           "disable_strict_networking": {
             "type": "boolean",
             "description": "Allows all IP addresses and ports to be connected to for syncing secrets."
-          },
-          "force_delete": {
-            "type": "boolean",
-            "description": "Force deletes destination without trying to unsync secrets from the destination.",
-            "default": false
           },
           "granularity": {
             "type": "string",
@@ -74138,13 +71543,21 @@
             "description": "Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.",
             "default": 256
           },
-          "count": {
-            "type": "integer",
-            "description": "Number of keys to return"
+          "context": {
+            "type": "string",
+            "description": "Context for key derivation. Required for derived keys."
           },
           "key_version": {
             "type": "integer",
             "description": "The version of the Vault key to use for encryption of the data key. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "Nonce for when convergent encryption v1 is used (only in Vault 0.6.1)"
+          },
+          "padding_scheme": {
+            "type": "string",
+            "description": "The padding scheme to use for decrypt. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'"
           }
         }
       },
@@ -74236,11 +71649,6 @@
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
           },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
-          },
           "format": {
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
@@ -74255,11 +71663,6 @@
             "type": "integer",
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
-          },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
           },
           "format": {
             "type": "string",
@@ -74276,11 +71679,6 @@
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
           },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
-          },
           "format": {
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
@@ -74295,11 +71693,6 @@
             "type": "integer",
             "description": "The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).",
             "default": 32
-          },
-          "drbg": {
-            "type": "string",
-            "description": "If set, seed a secure DRBG from the source and use it to generate the bytes. This can be more performant when using the seal source. Possible values are unset (don't use a DRBG), \"auto\" and \"hmacdrbg\" which are equivalent.",
-            "default": ""
           },
           "format": {
             "type": "string",
@@ -75064,19 +72457,6 @@
         "properties": {
           "token": {
             "type": "string"
-          }
-        }
-      },
-      "UpdateRequest": {
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "The desired number of results per page."
-          },
-          "startIndex": {
-            "type": "integer",
-            "description": "The 1-based index of the first result to return."
           }
         }
       },

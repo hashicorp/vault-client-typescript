@@ -1,5 +1,5 @@
 /**
- * Copyright IBM Corp. 2026
+ * Copyright (c) HashiCorp, Inc.
  */
 
 /* tslint:disable */

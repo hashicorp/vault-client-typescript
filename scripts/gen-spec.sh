@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright IBM Corp. 2026
+# Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: BUSL-1.1
 
 # This script generates the OpenAPI spec locally for Vault Enterprise and moves it to the vault-client-typescript root directory.
