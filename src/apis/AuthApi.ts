@@ -420,12 +420,12 @@ export interface AuthApiAliCloudDeleteAuthRoleRequest {
 
 export interface AuthApiAliCloudListAuthRolesRequest {
     alicloud_mount_path: string;
-    list: AliCloudListAuthRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAliCloudListAuthRoles2Request {
     alicloud_mount_path: string;
-    list: AliCloudListAuthRoles2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAliCloudLoginOperationRequest {
@@ -530,13 +530,13 @@ export interface AuthApiAppRoleDestroySecretIdByAccessor2Request {
 
 export interface AuthApiAppRoleListRolesRequest {
     approle_mount_path: string;
-    list: AppRoleListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAppRoleListSecretIdsRequest {
     role_name: string;
     approle_mount_path: string;
-    list: AppRoleListSecretIdsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAppRoleLoginOperationRequest {
@@ -813,42 +813,42 @@ export interface AuthApiAwsDeleteStsRoleRequest {
 
 export interface AuthApiAwsListAuthRolesRequest {
     aws_mount_path: string;
-    list: AwsListAuthRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListAuthRoles2Request {
     aws_mount_path: string;
-    list: AwsListAuthRoles2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListCertificateConfigurationsRequest {
     aws_mount_path: string;
-    list: AwsListCertificateConfigurationsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListIdentityAccessListRequest {
     aws_mount_path: string;
-    list: AwsListIdentityAccessListListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListIdentityWhitelistRequest {
     aws_mount_path: string;
-    list: AwsListIdentityWhitelistListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListRoleTagBlacklistsRequest {
     aws_mount_path: string;
-    list: AwsListRoleTagBlacklistsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListRoleTagDenyListsRequest {
     aws_mount_path: string;
-    list: AwsListRoleTagDenyListsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsListStsRoleRelationshipsRequest {
     aws_mount_path: string;
-    list: AwsListStsRoleRelationshipsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAwsLoginOperationRequest {
@@ -983,7 +983,7 @@ export interface AuthApiAzureDeleteAuthRoleRequest {
 
 export interface AuthApiAzureListAuthRolesRequest {
     azure_mount_path: string;
-    list: AzureListAuthRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiAzureLoginOperationRequest {
@@ -1027,12 +1027,12 @@ export interface AuthApiCertDeleteCrlRequest {
 
 export interface AuthApiCertListCertificatesRequest {
     cert_mount_path: string;
-    list: CertListCertificatesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiCertListCrlsRequest {
     cert_mount_path: string;
-    list: CertListCrlsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiCertLoginOperationRequest {
@@ -1082,7 +1082,7 @@ export interface AuthApiCloudFoundryDeleteRoleRequest {
 
 export interface AuthApiCloudFoundryListRolesRequest {
     cf_mount_path: string;
-    list: CloudFoundryListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiCloudFoundryLoginOperationRequest {
@@ -1122,7 +1122,7 @@ export interface AuthApiGithubDeleteUserMappingRequest {
 
 export interface AuthApiGithubListTeamsRequest {
     github_mount_path: string;
-    list: GithubListTeamsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiGithubListTeams2Request {
@@ -1131,7 +1131,7 @@ export interface AuthApiGithubListTeams2Request {
 
 export interface AuthApiGithubListUsersRequest {
     github_mount_path: string;
-    list: GithubListUsersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiGithubListUsers2Request {
@@ -1193,12 +1193,12 @@ export interface AuthApiGoogleCloudEditServiceAccountsForRoleOperationRequest {
 
 export interface AuthApiGoogleCloudListRolesRequest {
     gcp_mount_path: string;
-    list: GoogleCloudListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiGoogleCloudListRoles2Request {
     gcp_mount_path: string;
-    list: GoogleCloudListRoles2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiGoogleCloudLoginOperationRequest {
@@ -1237,7 +1237,7 @@ export interface AuthApiJwtDeleteRoleRequest {
 
 export interface AuthApiJwtListRolesRequest {
     jwt_mount_path: string;
-    list: JwtListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiJwtLoginOperationRequest {
@@ -1294,7 +1294,7 @@ export interface AuthApiKerberosDeleteGroupRequest {
 
 export interface AuthApiKerberosListGroupsRequest {
     kerberos_mount_path: string;
-    list: KerberosListGroupsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiKerberosLoginOperationRequest {
@@ -1337,7 +1337,7 @@ export interface AuthApiKubernetesDeleteAuthRoleRequest {
 
 export interface AuthApiKubernetesListAuthRolesRequest {
     kubernetes_mount_path: string;
-    list: KubernetesListAuthRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiKubernetesLoginOperationRequest {
@@ -1377,12 +1377,12 @@ export interface AuthApiLdapDeleteUserRequest {
 
 export interface AuthApiLdapListGroupsRequest {
     ldap_mount_path: string;
-    list: LdapListGroupsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiLdapListUsersRequest {
     ldap_mount_path: string;
-    list: LdapListUsersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiLdapLoginOperationRequest {
@@ -1437,7 +1437,7 @@ export interface AuthApiOciDeleteRoleRequest {
 
 export interface AuthApiOciListRolesRequest {
     oci_mount_path: string;
-    list: OciListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiOciLoginOperationRequest {
@@ -1478,12 +1478,12 @@ export interface AuthApiOktaDeleteUserRequest {
 
 export interface AuthApiOktaListGroupsRequest {
     okta_mount_path: string;
-    list: OktaListGroupsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiOktaListUsersRequest {
     okta_mount_path: string;
-    list: OktaListUsersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiOktaLoginOperationRequest {
@@ -1535,7 +1535,7 @@ export interface AuthApiRadiusDeleteUserRequest {
 
 export interface AuthApiRadiusListUsersRequest {
     radius_mount_path: string;
-    list: RadiusListUsersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiRadiusLoginOperationRequest {
@@ -1571,7 +1571,7 @@ export interface AuthApiSamlDeleteRoleNameRequest {
 
 export interface AuthApiSamlListRoleRequest {
     saml_mount_path: string;
-    list: SamlListRoleListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiSamlReadConfigRequest {
@@ -1616,7 +1616,7 @@ export interface AuthApiScepDeleteRoleRoleRequest {
 
 export interface AuthApiScepListAuthRolesRequest {
     scep_mount_path: string;
-    list: ScepListAuthRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiScepLoginOperationRequest {
@@ -1651,7 +1651,7 @@ export interface AuthApiSpiffeDeleteRoleNameRequest {
 
 export interface AuthApiSpiffeListRoleRequest {
     spiffe_mount_path: string;
-    list: SpiffeListRoleListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiSpiffeLoginOperationRequest {
@@ -1688,11 +1688,11 @@ export interface AuthApiTokenDeleteRoleRequest {
 }
 
 export interface AuthApiTokenListAccessorsRequest {
-    list: TokenListAccessorsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiTokenListRolesRequest {
-    list: TokenListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiTokenLookUpOperationRequest {
@@ -1751,7 +1751,7 @@ export interface AuthApiUserpassDeleteUserRequest {
 
 export interface AuthApiUserpassListUsersRequest {
     userpass_mount_path: string;
-    list: UserpassListUsersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface AuthApiUserpassLoginOperationRequest {
@@ -1869,7 +1869,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async aliCloudListAuthRoles(alicloud_mount_path: string, list: AliCloudListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async aliCloudListAuthRoles(alicloud_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliCloudListAuthRolesRaw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -1914,7 +1914,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async aliCloudListAuthRoles2(alicloud_mount_path: string, list: AliCloudListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async aliCloudListAuthRoles2(alicloud_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliCloudListAuthRoles2Raw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -2745,7 +2745,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleListRoles(approle_mount_path: string, list: AppRoleListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async appRoleListRoles(approle_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.appRoleListRolesRaw({ approle_mount_path: approle_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -2795,7 +2795,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async appRoleListSecretIds(role_name: string, approle_mount_path: string, list: AppRoleListSecretIdsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async appRoleListSecretIds(role_name: string, approle_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.appRoleListSecretIdsRaw({ role_name: role_name, approle_mount_path: approle_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5025,7 +5025,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListAuthRoles(aws_mount_path: string, list: AwsListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListAuthRoles(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListAuthRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5068,7 +5068,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListAuthRoles2(aws_mount_path: string, list: AwsListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListAuthRoles2(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListAuthRoles2Raw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5111,7 +5111,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListCertificateConfigurations(aws_mount_path: string, list: AwsListCertificateConfigurationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListCertificateConfigurations(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListCertificateConfigurationsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5154,7 +5154,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListIdentityAccessList(aws_mount_path: string, list: AwsListIdentityAccessListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListIdentityAccessList(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListIdentityAccessListRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5197,7 +5197,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListIdentityWhitelist(aws_mount_path: string, list: AwsListIdentityWhitelistListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListIdentityWhitelist(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListIdentityWhitelistRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5240,7 +5240,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListRoleTagBlacklists(aws_mount_path: string, list: AwsListRoleTagBlacklistsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListRoleTagBlacklists(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListRoleTagBlacklistsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5283,7 +5283,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListRoleTagDenyLists(aws_mount_path: string, list: AwsListRoleTagDenyListsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListRoleTagDenyLists(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListRoleTagDenyListsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5326,7 +5326,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListStsRoleRelationships(aws_mount_path: string, list: AwsListStsRoleRelationshipsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListStsRoleRelationships(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListStsRoleRelationshipsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6414,7 +6414,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureListAuthRoles(azure_mount_path: string, list: AzureListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async azureListAuthRoles(azure_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.azureListAuthRolesRaw({ azure_mount_path: azure_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6777,7 +6777,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage trusted certificates used for authentication.
      */
-    async certListCertificates(cert_mount_path: string, list: CertListCertificatesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async certListCertificates(cert_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.certListCertificatesRaw({ cert_mount_path: cert_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6820,7 +6820,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async certListCrls(cert_mount_path: string, list: CertListCrlsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async certListCrls(cert_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.certListCrlsRaw({ cert_mount_path: cert_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -7234,7 +7234,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async cloudFoundryListRoles(cf_mount_path: string, list: CloudFoundryListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async cloudFoundryListRoles(cf_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.cloudFoundryListRolesRaw({ cf_mount_path: cf_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -7565,7 +7565,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for teams
      */
-    async githubListTeams(github_mount_path: string, list: GithubListTeamsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async githubListTeams(github_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.githubListTeamsRaw({ github_mount_path: github_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -7644,7 +7644,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Read mappings for users
      */
-    async githubListUsers(github_mount_path: string, list: GithubListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async githubListUsers(github_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.githubListUsersRaw({ github_mount_path: github_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -8166,7 +8166,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async googleCloudListRoles(gcp_mount_path: string, list: GoogleCloudListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListRoles(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListRolesRaw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -8211,7 +8211,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async googleCloudListRoles2(gcp_mount_path: string, list: GoogleCloudListRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListRoles2(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListRoles2Raw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -8543,7 +8543,7 @@ export class AuthApi extends runtime.BaseAPI {
      * The list will contain the names of the roles.
      * Lists all the roles registered with the backend.
      */
-    async jwtListRoles(jwt_mount_path: string, list: JwtListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async jwtListRoles(jwt_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.jwtListRolesRaw({ jwt_mount_path: jwt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9015,7 +9015,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async kerberosListGroups(kerberos_mount_path: string, list: KerberosListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kerberosListGroups(kerberos_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kerberosListGroupsRaw({ kerberos_mount_path: kerberos_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9369,7 +9369,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles registered with the backend.
      */
-    async kubernetesListAuthRoles(kubernetes_mount_path: string, list: KubernetesListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kubernetesListAuthRoles(kubernetes_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kubernetesListAuthRolesRaw({ kubernetes_mount_path: kubernetes_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9706,7 +9706,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async ldapListGroups(ldap_mount_path: string, list: LdapListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListGroups(ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListGroupsRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9751,7 +9751,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async ldapListUsers(ldap_mount_path: string, list: LdapListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListUsers(ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListUsersRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10210,7 +10210,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Lists all the roles that are registered with Vault.
      */
-    async ociListRoles(oci_mount_path: string, list: OciListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ociListRoles(oci_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ociListRolesRaw({ oci_mount_path: oci_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10554,7 +10554,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async oktaListGroups(okta_mount_path: string, list: OktaListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oktaListGroups(okta_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oktaListGroupsRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10599,7 +10599,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage additional groups for users allowed to authenticate.
      */
-    async oktaListUsers(okta_mount_path: string, list: OktaListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oktaListUsers(okta_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oktaListUsersRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11033,7 +11033,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async radiusListUsers(radius_mount_path: string, list: RadiusListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async radiusListUsers(radius_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.radiusListUsersRaw({ radius_mount_path: radius_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11338,7 +11338,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * List all roles.
      */
-    async samlListRole(saml_mount_path: string, list: SamlListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async samlListRole(saml_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.samlListRoleRaw({ saml_mount_path: saml_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11722,7 +11722,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async scepListAuthRoles(scep_mount_path: string, list: ScepListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async scepListAuthRoles(scep_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.scepListAuthRolesRaw({ scep_mount_path: scep_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -12008,7 +12008,7 @@ export class AuthApi extends runtime.BaseAPI {
 
     /**
      */
-    async spiffeListRole(spiffe_mount_path: string, list: SpiffeListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async spiffeListRole(spiffe_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.spiffeListRoleRaw({ spiffe_mount_path: spiffe_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -12326,7 +12326,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires \'sudo\' capability in addition to \'list\'.
      */
-    async tokenListAccessors(list: TokenListAccessorsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async tokenListAccessors(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.tokenListAccessorsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -12364,7 +12364,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * This endpoint lists configured roles.
      */
-    async tokenListRoles(list: TokenListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async tokenListRoles(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.tokenListRolesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -12961,7 +12961,7 @@ export class AuthApi extends runtime.BaseAPI {
     /**
      * Manage users allowed to authenticate.
      */
-    async userpassListUsers(userpass_mount_path: string, list: UserpassListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async userpassListUsers(userpass_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.userpassListUsersRaw({ userpass_mount_path: userpass_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13213,248 +13213,38 @@ export class AuthApi extends runtime.BaseAPI {
 
 }
 
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AliCloudListAuthRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AliCloudListAuthRoles2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AppRoleListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AppRoleListSecretIdsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListAuthRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListAuthRoles2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListCertificateConfigurationsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListIdentityAccessListListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListIdentityWhitelistListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListRoleTagBlacklistsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListRoleTagDenyListsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListStsRoleRelationshipsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AzureListAuthRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum CertListCertificatesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum CertListCrlsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum CloudFoundryListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GithubListTeamsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GithubListUsersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListRoles2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum JwtListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KerberosListGroupsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KubernetesListAuthRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListGroupsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListUsersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OciListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OktaListGroupsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OktaListUsersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum RadiusListUsersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum SamlListRoleListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ScepListAuthRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum SpiffeListRoleListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TokenListAccessorsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TokenListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum UserpassListUsersListEnum {
-    TRUE = 'true'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

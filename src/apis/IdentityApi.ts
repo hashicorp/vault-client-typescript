@@ -198,7 +198,7 @@ export interface IdentityApiAliasDeleteByIdRequest {
 }
 
 export interface IdentityApiAliasListByIdRequest {
-    list: AliasListByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiAliasReadByIdRequest {
@@ -255,19 +255,19 @@ export interface IdentityApiEntityDeleteByNameRequest {
 }
 
 export interface IdentityApiEntityListAliasesByIdRequest {
-    list: EntityListAliasesByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiEntityListByIdRequest {
-    list: EntityListByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiEntityListByNameRequest {
-    list: EntityListByNameListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiEntityListFromStorageRequest {
-    list: EntityListFromStorageListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiEntityLookUpOperationRequest {
@@ -326,19 +326,19 @@ export interface IdentityApiGroupDeleteByNameRequest {
 }
 
 export interface IdentityApiGroupListAliasesByIdRequest {
-    list: GroupListAliasesByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiGroupListByIdRequest {
-    list: GroupListByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiGroupListByNameRequest {
-    list: GroupListByNameListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiGroupListFromStorageRequest {
-    list: GroupListFromStorageListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiGroupLookUpOperationRequest {
@@ -377,7 +377,7 @@ export interface IdentityApiGroupsCreateDuplicatesOperationRequest {
 }
 
 export interface IdentityApiIdentityListScimV2ServiceproviderconfigRequest {
-    list: IdentityListScimV2ServiceproviderconfigListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiIdentityReadScimV2SchemasIdRequest {
@@ -444,27 +444,27 @@ export interface IdentityApiMfaGenerateTotpSecretOperationRequest {
 }
 
 export interface IdentityApiMfaListDuoMethodsRequest {
-    list: MfaListDuoMethodsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaListLoginEnforcementsRequest {
-    list: MfaListLoginEnforcementsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaListMethodsRequest {
-    list: MfaListMethodsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaListOktaMethodsRequest {
-    list: MfaListOktaMethodsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaListPingIdMethodsRequest {
-    list: MfaListPingIdMethodsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaListTotpMethodsRequest {
-    list: MfaListTotpMethodsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiMfaReadDuoMethodRequest {
@@ -557,28 +557,28 @@ export interface IdentityApiOidcIntrospectOperationRequest {
 }
 
 export interface IdentityApiOidcListAssignmentsRequest {
-    list: OidcListAssignmentsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiOidcListClientsRequest {
-    list: OidcListClientsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiOidcListKeysRequest {
-    list: OidcListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiOidcListProvidersRequest {
-    list: OidcListProvidersListEnum;
+    list: runtime.ListEnum;
     allowed_client_id?: string;
 }
 
 export interface IdentityApiOidcListRolesRequest {
-    list: OidcListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiOidcListScopesRequest {
-    list: OidcListScopesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiOidcProviderAuthorizeRequest {
@@ -706,7 +706,7 @@ export interface IdentityApiPersonaDeleteByIdRequest {
 }
 
 export interface IdentityApiPersonaListByIdRequest {
-    list: PersonaListByIdListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiPersonaReadByIdRequest {
@@ -740,7 +740,7 @@ export interface IdentityApiScimDeleteClientRequest {
 }
 
 export interface IdentityApiScimListClientRequest {
-    list: ScimListClientListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface IdentityApiScimReadClientRequest {
@@ -953,7 +953,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List all the alias IDs.
      */
-    async aliasListById(list: AliasListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async aliasListById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliasListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -1443,7 +1443,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List all the alias IDs.
      */
-    async entityListAliasesById(list: EntityListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListAliasesById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.entityListAliasesByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -1479,7 +1479,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityListById(list: EntityListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.entityListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -1515,7 +1515,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityListByName(list: EntityListByNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListByName(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.entityListByNameRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -1551,7 +1551,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityListFromStorage(list: EntityListFromStorageListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListFromStorage(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.entityListFromStorageRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2049,7 +2049,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List all the group alias IDs.
      */
-    async groupListAliasesById(list: GroupListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListAliasesById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.groupListAliasesByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2087,7 +2087,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List all the group IDs.
      */
-    async groupListById(list: GroupListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.groupListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2123,7 +2123,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupListByName(list: GroupListByNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListByName(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.groupListByNameRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2159,7 +2159,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async groupListFromStorage(list: GroupListFromStorageListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListFromStorage(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.groupListFromStorageRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2539,7 +2539,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async identityListScimV2Serviceproviderconfig(list: IdentityListScimV2ServiceproviderconfigListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async identityListScimV2Serviceproviderconfig(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.identityListScimV2ServiceproviderconfigRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3258,7 +3258,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for the given MFA method
      */
-    async mfaListDuoMethods(list: MfaListDuoMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListDuoMethods(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListDuoMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3296,7 +3296,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List login enforcements
      */
-    async mfaListLoginEnforcements(list: MfaListLoginEnforcementsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListLoginEnforcements(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListLoginEnforcementsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3334,7 +3334,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for all MFA methods
      */
-    async mfaListMethods(list: MfaListMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListMethods(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3372,7 +3372,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for the given MFA method
      */
-    async mfaListOktaMethods(list: MfaListOktaMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListOktaMethods(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListOktaMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3410,7 +3410,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for the given MFA method
      */
-    async mfaListPingIdMethods(list: MfaListPingIdMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListPingIdMethods(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListPingIdMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3448,7 +3448,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for the given MFA method
      */
-    async mfaListTotpMethods(list: MfaListTotpMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListTotpMethods(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mfaListTotpMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4247,7 +4247,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListAssignments(list: OidcListAssignmentsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListAssignments(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListAssignmentsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4283,7 +4283,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListClients(list: OidcListClientsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListClients(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListClientsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4321,7 +4321,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List OIDC keys
      */
-    async oidcListKeys(list: OidcListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListKeys(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListKeysRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4361,7 +4361,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListProviders(list: OidcListProvidersListEnum, allowed_client_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListProviders(list: runtime.ListEnum, allowed_client_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListProvidersRaw({ list: list, allowed_client_id: allowed_client_id }, initOverrides);
         return await response.value();
     }
@@ -4399,7 +4399,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List configured OIDC roles
      */
-    async oidcListRoles(list: OidcListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListRoles(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListRolesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4435,7 +4435,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListScopes(list: OidcListScopesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListScopes(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oidcListScopesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -5549,7 +5549,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List all the alias IDs.
      */
-    async personaListById(list: PersonaListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async personaListById(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.personaListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -5857,7 +5857,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async scimListClient(list: ScimListClientListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async scimListClient(list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.scimListClientRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -6022,171 +6022,27 @@ export class IdentityApi extends runtime.BaseAPI {
 
 }
 
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AliasListByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum EntityListAliasesByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum EntityListByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum EntityListByNameListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum EntityListFromStorageListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GroupListAliasesByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GroupListByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GroupListByNameListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GroupListFromStorageListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum IdentityListScimV2ServiceproviderconfigListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListDuoMethodsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListLoginEnforcementsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListMethodsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListOktaMethodsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListPingIdMethodsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MfaListTotpMethodsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListAssignmentsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListClientsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListProvidersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum OidcListScopesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PersonaListByIdListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ScimListClientListEnum {
-    TRUE = 'true'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

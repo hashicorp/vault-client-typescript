@@ -1268,7 +1268,7 @@ export interface SecretsApiAliCloudGenerateCredentialsRequest {
 
 export interface SecretsApiAliCloudListRolesRequest {
     alicloud_mount_path: string;
-    list: AliCloudListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiAliCloudReadConfigurationRequest {
@@ -1336,12 +1336,12 @@ export interface SecretsApiAwsGenerateStsCredentialsWithParametersOperationReque
 
 export interface SecretsApiAwsListRolesRequest {
     aws_mount_path: string;
-    list: AwsListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiAwsListStaticRolesRequest {
     aws_mount_path: string;
-    list: AwsListStaticRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiAwsReadLeaseConfigurationRequest {
@@ -1404,12 +1404,12 @@ export interface SecretsApiAzureDeleteStaticRolesNameRequest {
 
 export interface SecretsApiAzureListRolesRequest {
     azure_mount_path: string;
-    list: AzureListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiAzureListStaticRolesRequest {
     azure_mount_path: string;
-    list: AzureListStaticRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiAzureReadConfigurationRequest {
@@ -1474,7 +1474,7 @@ export interface SecretsApiConsulGenerateCredentialsRequest {
 
 export interface SecretsApiConsulListRolesRequest {
     consul_mount_path: string;
-    list: ConsulListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiConsulReadAccessConfigurationRequest {
@@ -1498,7 +1498,7 @@ export interface SecretsApiCubbyholeDeleteRequest {
 
 export interface SecretsApiCubbyholeListRequest {
     path: string;
-    list: CubbyholeListListEnum;
+    list: runtime.ListEnum;
     read_snapshot_id?: string;
 }
 
@@ -1543,17 +1543,17 @@ export interface SecretsApiDatabaseGenerateCredentialsRequest {
 
 export interface SecretsApiDatabaseListConnectionsRequest {
     database_mount_path: string;
-    list: DatabaseListConnectionsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiDatabaseListRolesRequest {
     database_mount_path: string;
-    list: DatabaseListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiDatabaseListStaticRolesRequest {
     database_mount_path: string;
-    list: DatabaseListStaticRolesListEnum;
+    list: runtime.ListEnum;
     read_snapshot_id?: string;
 }
 
@@ -1760,7 +1760,7 @@ export interface SecretsApiGoogleCloudKmsEncryptOperationRequest {
 
 export interface SecretsApiGoogleCloudKmsListKeysRequest {
     gcpkms_mount_path: string;
-    list: GoogleCloudKmsListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudKmsReadConfigurationRequest {
@@ -1829,32 +1829,32 @@ export interface SecretsApiGoogleCloudKmsWriteKeyOperationRequest {
 
 export interface SecretsApiGoogleCloudListImpersonatedAccountsRequest {
     gcp_mount_path: string;
-    list: GoogleCloudListImpersonatedAccountsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudListImpersonatedAccounts2Request {
     gcp_mount_path: string;
-    list: GoogleCloudListImpersonatedAccounts2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudListRolesetsRequest {
     gcp_mount_path: string;
-    list: GoogleCloudListRolesetsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudListRolesets2Request {
     gcp_mount_path: string;
-    list: GoogleCloudListRolesets2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudListStaticAccountsRequest {
     gcp_mount_path: string;
-    list: GoogleCloudListStaticAccountsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudListStaticAccounts2Request {
     gcp_mount_path: string;
-    list: GoogleCloudListStaticAccounts2ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiGoogleCloudReadConfigurationRequest {
@@ -1938,24 +1938,24 @@ export interface SecretsApiKeyManagementDistributeKeyInKmsProviderOperationReque
 
 export interface SecretsApiKeyManagementListKeysRequest {
     keymgmt_mount_path: string;
-    list: KeyManagementListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKeyManagementListKeysInKmsProviderRequest {
     name: string;
     keymgmt_mount_path: string;
-    list: KeyManagementListKeysInKmsProviderListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKeyManagementListKmsProvidersRequest {
     keymgmt_mount_path: string;
-    list: KeyManagementListKmsProvidersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKeyManagementListKmsProvidersForKeyRequest {
     name: string;
     keymgmt_mount_path: string;
-    list: KeyManagementListKmsProvidersForKeyListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKeyManagementReadKeyRequest {
@@ -2055,36 +2055,36 @@ export interface SecretsApiKmipImportCaOperationRequest {
 
 export interface SecretsApiKmipListCaRequest {
     kmip_mount_path: string;
-    list: KmipListCaListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipListCaNameRequest {
     name: string;
     kmip_mount_path: string;
-    list: KmipListCaNameListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipListClientCertificatesRequest {
     role: string;
     scope: string;
     kmip_mount_path: string;
-    list: KmipListClientCertificatesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipListListenersRequest {
     kmip_mount_path: string;
-    list: KmipListListenersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipListRolesRequest {
     scope: string;
     kmip_mount_path: string;
-    list: KmipListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipListScopesRequest {
     kmip_mount_path: string;
-    list: KmipListScopesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKmipReadCaNameRequest {
@@ -2175,7 +2175,7 @@ export interface SecretsApiKubernetesGenerateCredentialsOperationRequest {
 
 export interface SecretsApiKubernetesListRolesRequest {
     kubernetes_mount_path: string;
-    list: KubernetesListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKubernetesReadConfigurationRequest {
@@ -2201,7 +2201,7 @@ export interface SecretsApiKvV1DeleteRequest {
 export interface SecretsApiKvV1ListRequest {
     path: string;
     kv_v1_mount_path: string;
-    list: KvV1ListListEnum;
+    list: runtime.ListEnum;
     read_snapshot_id?: string;
 }
 
@@ -2250,7 +2250,7 @@ export interface SecretsApiKvV2DestroyVersionsOperationRequest {
 export interface SecretsApiKvV2ListRequest {
     path: string;
     kv_v2_mount_path: string;
-    list: KvV2ListListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiKvV2PatchOperationRequest {
@@ -2357,19 +2357,19 @@ export interface SecretsApiLdapLibraryForceCheckInOperationRequest {
 
 export interface SecretsApiLdapLibraryListRequest {
     ldap_mount_path: string;
-    list: LdapLibraryListListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapLibraryListLibraryPathRequest {
     path: string;
     ldap_mount_path: string;
-    list: LdapLibraryListLibraryPathListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapLibraryListLibraryPath0Request {
     path: string;
     ldap_mount_path: string;
-    list: LdapLibraryListLibraryPath0ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapLibraryReadRequest {
@@ -2379,36 +2379,36 @@ export interface SecretsApiLdapLibraryReadRequest {
 
 export interface SecretsApiLdapListDynamicRolesRequest {
     ldap_mount_path: string;
-    list: LdapListDynamicRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapListRolePathRequest {
     path: string;
     ldap_mount_path: string;
-    list: LdapListRolePathListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapListRolePath0Request {
     path: string;
     ldap_mount_path: string;
-    list: LdapListRolePath0ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapListStaticRolePathRequest {
     path: string;
     ldap_mount_path: string;
-    list: LdapListStaticRolePathListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapListStaticRolePath0Request {
     path: string;
     ldap_mount_path: string;
-    list: LdapListStaticRolePath0ListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapListStaticRolesRequest {
     ldap_mount_path: string;
-    list: LdapListStaticRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiLdapReadConfigurationRequest {
@@ -2479,7 +2479,7 @@ export interface SecretsApiMongoDbAtlasGenerateCredentials2Request {
 
 export interface SecretsApiMongoDbAtlasListRolesRequest {
     mongodbatlas_mount_path: string;
-    list: MongoDbAtlasListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiMongoDbAtlasReadConfigurationRequest {
@@ -2527,7 +2527,7 @@ export interface SecretsApiNomadGenerateCredentialsRequest {
 
 export interface SecretsApiNomadListRolesRequest {
     nomad_mount_path: string;
-    list: NomadListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiNomadReadAccessConfigurationRequest {
@@ -2855,52 +2855,52 @@ export interface SecretsApiPkiIssuersImportCertOperationRequest {
 
 export interface SecretsApiPkiListAcmeAccountKeysRequest {
     pki_mount_path: string;
-    list: PkiListAcmeAccountKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListCertMetadataRequest {
     pki_mount_path: string;
-    list: PkiListCertMetadataListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListCertsRequest {
     pki_mount_path: string;
-    list: PkiListCertsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListCertsRevocationQueueRequest {
     pki_mount_path: string;
-    list: PkiListCertsRevocationQueueListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListEabKeysRequest {
     pki_mount_path: string;
-    list: PkiListEabKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListIssuersRequest {
     pki_mount_path: string;
-    list: PkiListIssuersListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListKeysRequest {
     pki_mount_path: string;
-    list: PkiListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListRevokedCertsRequest {
     pki_mount_path: string;
-    list: PkiListRevokedCertsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListRolesRequest {
     pki_mount_path: string;
-    list: PkiListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiListUnifiedRevokedCertsRequest {
     pki_mount_path: string;
-    list: PkiListUnifiedRevokedCertsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiPkiPatchIssuerOperationRequest {
@@ -3986,7 +3986,7 @@ export interface SecretsApiRabbitMqDeleteRoleRequest {
 
 export interface SecretsApiRabbitMqListRolesRequest {
     rabbitmq_mount_path: string;
-    list: RabbitMqListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiRabbitMqReadLeaseConfigurationRequest {
@@ -4042,7 +4042,7 @@ export interface SecretsApiSpiffeCreateOperationRequest {
 
 export interface SecretsApiSpiffeListRoleRequest {
     spiffe_mount_path: string;
-    list: SpiffeListRoleListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiSpiffeReadRequest {
@@ -4093,7 +4093,7 @@ export interface SecretsApiSshIssueCertificateOperationRequest {
 
 export interface SecretsApiSshListRolesRequest {
     ssh_mount_path: string;
-    list: SshListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiSshListRolesByIpOperationRequest {
@@ -4166,7 +4166,7 @@ export interface SecretsApiTerraformCloudGenerateCredentials2Request {
 
 export interface SecretsApiTerraformCloudListRolesRequest {
     terraform_mount_path: string;
-    list: TerraformCloudListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTerraformCloudReadConfigurationRequest {
@@ -4207,7 +4207,7 @@ export interface SecretsApiTotpGenerateCodeRequest {
 
 export interface SecretsApiTotpListKeysRequest {
     totp_mount_path: string;
-    list: TotpListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTotpReadKeyRequest {
@@ -4334,47 +4334,47 @@ export interface SecretsApiTransformImportKeyVersionIntoTokenizationTransformati
 
 export interface SecretsApiTransformListAlphabetsRequest {
     transform_mount_path: string;
-    list: TransformListAlphabetsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListFpeTransformationsRequest {
     transform_mount_path: string;
-    list: TransformListFpeTransformationsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListMaskingTransformationsRequest {
     transform_mount_path: string;
-    list: TransformListMaskingTransformationsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListRolesRequest {
     transform_mount_path: string;
-    list: TransformListRolesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListStoresRequest {
     transform_mount_path: string;
-    list: TransformListStoresListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListTemplatesRequest {
     transform_mount_path: string;
-    list: TransformListTemplatesListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListTokenizationKeysRequest {
     transform_mount_path: string;
-    list: TransformListTokenizationKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListTokenizationTransformationsRequest {
     transform_mount_path: string;
-    list: TransformListTokenizationTransformationsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformListTransformationsRequest {
     transform_mount_path: string;
-    list: TransformListTransformationsListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransformLookUpTokenOperationRequest {
@@ -4696,7 +4696,7 @@ export interface SecretsApiTransitImportKeyVersionOperationRequest {
 
 export interface SecretsApiTransitListKeysRequest {
     transit_mount_path: string;
-    list: TransitListKeysListEnum;
+    list: runtime.ListEnum;
 }
 
 export interface SecretsApiTransitReadCacheConfigurationRequest {
@@ -4978,7 +4978,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * List the existing roles in this backend.
      */
-    async aliCloudListRoles(alicloud_mount_path: string, list: AliCloudListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async aliCloudListRoles(alicloud_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliCloudListRolesRaw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5511,7 +5511,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * List the existing roles in this backend
      */
-    async awsListRoles(aws_mount_path: string, list: AwsListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListRoles(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -5554,7 +5554,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async awsListStaticRoles(aws_mount_path: string, list: AwsListStaticRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async awsListStaticRoles(aws_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListStaticRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6068,7 +6068,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * List existing roles.
      */
-    async azureListRoles(azure_mount_path: string, list: AzureListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async azureListRoles(azure_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.azureListRolesRaw({ azure_mount_path: azure_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6111,7 +6111,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async azureListStaticRoles(azure_mount_path: string, list: AzureListStaticRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async azureListStaticRoles(azure_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.azureListStaticRolesRaw({ azure_mount_path: azure_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6635,7 +6635,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async consulListRoles(consul_mount_path: string, list: ConsulListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async consulListRoles(consul_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.consulListRolesRaw({ consul_mount_path: consul_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -6840,7 +6840,7 @@ export class SecretsApi extends runtime.BaseAPI {
      * Folders are suffixed with /. The input must be a folder; list on a file will not return a value. The values themselves are not accessible via this command.
      * List secret entries at the specified location.
      */
-    async cubbyholeList(path: string, list: CubbyholeListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async cubbyholeList(path: string, list: runtime.ListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.cubbyholeListRaw({ path: path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
@@ -7190,7 +7190,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Configure connection details to a database plugin.
      */
-    async databaseListConnections(database_mount_path: string, list: DatabaseListConnectionsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async databaseListConnections(database_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.databaseListConnectionsRaw({ database_mount_path: database_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -7235,7 +7235,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the roles that can be created with this backend.
      */
-    async databaseListRoles(database_mount_path: string, list: DatabaseListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async databaseListRoles(database_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.databaseListRolesRaw({ database_mount_path: database_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -7284,7 +7284,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the static roles that can be created with this backend.
      */
-    async databaseListStaticRoles(database_mount_path: string, list: DatabaseListStaticRolesListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async databaseListStaticRoles(database_mount_path: string, list: runtime.ListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.databaseListStaticRolesRaw({ database_mount_path: database_mount_path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
@@ -8888,7 +8888,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * List named keys
      */
-    async googleCloudKmsListKeys(gcpkms_mount_path: string, list: GoogleCloudKmsListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudKmsListKeys(gcpkms_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudKmsListKeysRaw({ gcpkms_mount_path: gcpkms_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9458,7 +9458,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListImpersonatedAccounts(gcp_mount_path: string, list: GoogleCloudListImpersonatedAccountsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListImpersonatedAccounts(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListImpersonatedAccountsRaw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9501,7 +9501,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListImpersonatedAccounts2(gcp_mount_path: string, list: GoogleCloudListImpersonatedAccounts2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListImpersonatedAccounts2(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListImpersonatedAccounts2Raw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9544,7 +9544,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListRolesets(gcp_mount_path: string, list: GoogleCloudListRolesetsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListRolesets(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListRolesetsRaw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9587,7 +9587,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListRolesets2(gcp_mount_path: string, list: GoogleCloudListRolesets2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListRolesets2(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListRolesets2Raw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9630,7 +9630,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListStaticAccounts(gcp_mount_path: string, list: GoogleCloudListStaticAccountsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListStaticAccounts(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListStaticAccountsRaw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -9673,7 +9673,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async googleCloudListStaticAccounts2(gcp_mount_path: string, list: GoogleCloudListStaticAccounts2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async googleCloudListStaticAccounts2(gcp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudListStaticAccounts2Raw({ gcp_mount_path: gcp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10341,7 +10341,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async keyManagementListKeys(keymgmt_mount_path: string, list: KeyManagementListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async keyManagementListKeys(keymgmt_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.keyManagementListKeysRaw({ keymgmt_mount_path: keymgmt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10391,7 +10391,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async keyManagementListKeysInKmsProvider(name: string, keymgmt_mount_path: string, list: KeyManagementListKeysInKmsProviderListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async keyManagementListKeysInKmsProvider(name: string, keymgmt_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.keyManagementListKeysInKmsProviderRaw({ name: name, keymgmt_mount_path: keymgmt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10434,7 +10434,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async keyManagementListKmsProviders(keymgmt_mount_path: string, list: KeyManagementListKmsProvidersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async keyManagementListKmsProviders(keymgmt_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.keyManagementListKmsProvidersRaw({ keymgmt_mount_path: keymgmt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -10484,7 +10484,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async keyManagementListKmsProvidersForKey(name: string, keymgmt_mount_path: string, list: KeyManagementListKmsProvidersForKeyListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async keyManagementListKmsProvidersForKey(name: string, keymgmt_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.keyManagementListKmsProvidersForKeyRaw({ name: name, keymgmt_mount_path: keymgmt_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11296,7 +11296,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListCa(kmip_mount_path: string, list: KmipListCaListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListCa(kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListCaRaw({ kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11346,7 +11346,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListCaName(name: string, kmip_mount_path: string, list: KmipListCaNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListCaName(name: string, kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListCaNameRaw({ name: name, kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11403,7 +11403,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListClientCertificates(role: string, scope: string, kmip_mount_path: string, list: KmipListClientCertificatesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListClientCertificates(role: string, scope: string, kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListClientCertificatesRaw({ role: role, scope: scope, kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11446,7 +11446,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListListeners(kmip_mount_path: string, list: KmipListListenersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListListeners(kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListListenersRaw({ kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11496,7 +11496,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListRoles(scope: string, kmip_mount_path: string, list: KmipListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListRoles(scope: string, kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListRolesRaw({ scope: scope, kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -11539,7 +11539,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListScopes(kmip_mount_path: string, list: KmipListScopesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kmipListScopes(kmip_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kmipListScopesRaw({ kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -12272,7 +12272,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kubernetesListRoles(kubernetes_mount_path: string, list: KubernetesListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kubernetesListRoles(kubernetes_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kubernetesListRolesRaw({ kubernetes_mount_path: kubernetes_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -12485,7 +12485,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV1List(path: string, kv_v1_mount_path: string, list: KvV1ListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kvV1List(path: string, kv_v1_mount_path: string, list: runtime.ListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kvV1ListRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
@@ -12859,7 +12859,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV2List(path: string, kv_v2_mount_path: string, list: KvV2ListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kvV2List(path: string, kv_v2_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.kvV2ListRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13736,7 +13736,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapLibraryList(ldap_mount_path: string, list: LdapLibraryListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapLibraryList(ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapLibraryListRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13786,7 +13786,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapLibraryListLibraryPath(path: string, ldap_mount_path: string, list: LdapLibraryListLibraryPathListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapLibraryListLibraryPath(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapLibraryListLibraryPathRaw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13836,7 +13836,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapLibraryListLibraryPath_4(path: string, ldap_mount_path: string, list: LdapLibraryListLibraryPath0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapLibraryListLibraryPath_4(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapLibraryListLibraryPath_4Raw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13920,7 +13920,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListDynamicRoles(ldap_mount_path: string, list: LdapListDynamicRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListDynamicRoles(ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListDynamicRolesRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -13970,7 +13970,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListRolePath(path: string, ldap_mount_path: string, list: LdapListRolePathListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListRolePath(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListRolePathRaw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -14020,7 +14020,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListRolePath_5(path: string, ldap_mount_path: string, list: LdapListRolePath0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListRolePath_5(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListRolePath_5Raw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -14070,7 +14070,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListStaticRolePath(path: string, ldap_mount_path: string, list: LdapListStaticRolePathListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListStaticRolePath(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListStaticRolePathRaw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -14120,7 +14120,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListStaticRolePath_6(path: string, ldap_mount_path: string, list: LdapListStaticRolePath0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListStaticRolePath_6(path: string, ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListStaticRolePath_6Raw({ path: path, ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -14163,7 +14163,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async ldapListStaticRoles(ldap_mount_path: string, list: LdapListStaticRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async ldapListStaticRoles(ldap_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.ldapListStaticRolesRaw({ ldap_mount_path: ldap_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -14736,7 +14736,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * List the existing roles in this backend
      */
-    async mongoDbAtlasListRoles(mongodbatlas_mount_path: string, list: MongoDbAtlasListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mongoDbAtlasListRoles(mongodbatlas_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.mongoDbAtlasListRolesRaw({ mongodbatlas_mount_path: mongodbatlas_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -15129,7 +15129,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async nomadListRoles(nomad_mount_path: string, list: NomadListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async nomadListRoles(nomad_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.nomadListRolesRaw({ nomad_mount_path: nomad_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17780,7 +17780,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListAcmeAccountKeys(pki_mount_path: string, list: PkiListAcmeAccountKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListAcmeAccountKeys(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListAcmeAccountKeysRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17823,7 +17823,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListCertMetadata(pki_mount_path: string, list: PkiListCertMetadataListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListCertMetadata(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListCertMetadataRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17866,7 +17866,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListCerts(pki_mount_path: string, list: PkiListCertsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListCerts(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListCertsRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17909,7 +17909,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListCertsRevocationQueue(pki_mount_path: string, list: PkiListCertsRevocationQueueListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListCertsRevocationQueue(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListCertsRevocationQueueRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17952,7 +17952,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListEabKeys(pki_mount_path: string, list: PkiListEabKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListEabKeysResponse> {
+    async pkiListEabKeys(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListEabKeysResponse> {
         const response = await this.pkiListEabKeysRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17995,7 +17995,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListIssuers(pki_mount_path: string, list: PkiListIssuersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListIssuersResponse> {
+    async pkiListIssuers(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListIssuersResponse> {
         const response = await this.pkiListIssuersRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -18038,7 +18038,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListKeys(pki_mount_path: string, list: PkiListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListKeysResponse> {
+    async pkiListKeys(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListKeysResponse> {
         const response = await this.pkiListKeysRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -18081,7 +18081,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListRevokedCerts(pki_mount_path: string, list: PkiListRevokedCertsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListRevokedCerts(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListRevokedCertsRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -18124,7 +18124,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListRoles(pki_mount_path: string, list: PkiListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiListRoles(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiListRolesRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -18167,7 +18167,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiListUnifiedRevokedCerts(pki_mount_path: string, list: PkiListUnifiedRevokedCertsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListUnifiedRevokedCertsResponse> {
+    async pkiListUnifiedRevokedCerts(pki_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListUnifiedRevokedCertsResponse> {
         const response = await this.pkiListUnifiedRevokedCertsRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -26894,7 +26894,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the roles that can be created with this backend.
      */
-    async rabbitMqListRoles(rabbitmq_mount_path: string, list: RabbitMqListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async rabbitMqListRoles(rabbitmq_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.rabbitMqListRolesRaw({ rabbitmq_mount_path: rabbitmq_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -27352,7 +27352,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async spiffeListRole(spiffe_mount_path: string, list: SpiffeListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async spiffeListRole(spiffe_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.spiffeListRoleRaw({ spiffe_mount_path: spiffe_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -27768,7 +27768,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the \'roles\' that can be created with this backend.
      */
-    async sshListRoles(ssh_mount_path: string, list: SshListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async sshListRoles(ssh_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.sshListRolesRaw({ ssh_mount_path: ssh_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -28369,7 +28369,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async terraformCloudListRoles(terraform_mount_path: string, list: TerraformCloudListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async terraformCloudListRoles(terraform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.terraformCloudListRolesRaw({ terraform_mount_path: terraform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -28700,7 +28700,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Manage the keys that can be created with this backend.
      */
-    async totpListKeys(totp_mount_path: string, list: TotpListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async totpListKeys(totp_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.totpListKeysRaw({ totp_mount_path: totp_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29725,7 +29725,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListAlphabets(transform_mount_path: string, list: TransformListAlphabetsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListAlphabets(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListAlphabetsRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29768,7 +29768,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListFpeTransformations(transform_mount_path: string, list: TransformListFpeTransformationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListFpeTransformations(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListFpeTransformationsRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29811,7 +29811,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListMaskingTransformations(transform_mount_path: string, list: TransformListMaskingTransformationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListMaskingTransformations(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListMaskingTransformationsRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29854,7 +29854,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListRoles(transform_mount_path: string, list: TransformListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListRoles(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListRolesRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29897,7 +29897,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListStores(transform_mount_path: string, list: TransformListStoresListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListStores(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListStoresRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29940,7 +29940,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListTemplates(transform_mount_path: string, list: TransformListTemplatesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListTemplates(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListTemplatesRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -29985,7 +29985,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Managed named encryption keys
      */
-    async transformListTokenizationKeys(transform_mount_path: string, list: TransformListTokenizationKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListTokenizationKeys(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListTokenizationKeysRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -30028,7 +30028,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListTokenizationTransformations(transform_mount_path: string, list: TransformListTokenizationTransformationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListTokenizationTransformations(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListTokenizationTransformationsRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -30071,7 +30071,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transformListTransformations(transform_mount_path: string, list: TransformListTransformationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transformListTransformations(transform_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transformListTransformationsRaw({ transform_mount_path: transform_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -32717,7 +32717,7 @@ export class SecretsApi extends runtime.BaseAPI {
     /**
      * Managed named encryption keys
      */
-    async transitListKeys(transit_mount_path: string, list: TransitListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async transitListKeys(transit_mount_path: string, list: runtime.ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.transitListKeysRaw({ transit_mount_path: transit_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -33378,293 +33378,47 @@ export class SecretsApi extends runtime.BaseAPI {
 
 }
 
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AliCloudListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AwsListStaticRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AzureListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum AzureListStaticRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum ConsulListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum CubbyholeListListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum DatabaseListConnectionsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum DatabaseListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum DatabaseListStaticRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudKmsListKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListImpersonatedAccountsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListImpersonatedAccounts2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListRolesetsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListRolesets2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListStaticAccountsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum GoogleCloudListStaticAccounts2ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KeyManagementListKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KeyManagementListKeysInKmsProviderListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KeyManagementListKmsProvidersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KeyManagementListKmsProvidersForKeyListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListCaListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListCaNameListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListClientCertificatesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListListenersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KmipListScopesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KubernetesListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KvV1ListListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum KvV2ListListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapLibraryListListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapLibraryListLibraryPathListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapLibraryListLibraryPath0ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListDynamicRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListRolePathListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListRolePath0ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListStaticRolePathListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListStaticRolePath0ListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum LdapListStaticRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum MongoDbAtlasListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum NomadListRolesListEnum {
-    TRUE = 'true'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
   * @export
   * @enum {string}
@@ -33701,76 +33455,16 @@ export enum PkiIssuersGenerateRootExportedEnum {
     EXTERNAL = 'external',
     KMS = 'kms'
 }
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListAcmeAccountKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListCertMetadataListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListCertsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListCertsRevocationQueueListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListEabKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListIssuersListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListRevokedCertsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum PkiListUnifiedRevokedCertsListEnum {
-    TRUE = 'true'
-}
+
+
+
+
+
+
+
+
+
+
 /**
   * @export
   * @enum {string}
@@ -33780,108 +33474,18 @@ export enum PkiRotateRootExportedEnum {
     EXTERNAL = 'external',
     KMS = 'kms'
 }
-/**
-  * @export
-  * @enum {string}
-  */
-export enum RabbitMqListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum SpiffeListRoleListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum SshListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TerraformCloudListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TotpListKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListAlphabetsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListFpeTransformationsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListMaskingTransformationsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListRolesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListStoresListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListTemplatesListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListTokenizationKeysListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListTokenizationTransformationsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransformListTransformationsListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
-export enum TransitListKeysListEnum {
-    TRUE = 'true'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -458,3 +458,7 @@ export class TextApiResponse {
         return await this.raw.text();
     };
 }
+
+export enum ListEnum {
+  TRUE = 'true'
+};
