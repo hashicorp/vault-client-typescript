@@ -11,7 +11,7 @@ const ENUM_PATTERN =
   /\/\*\*[\s\*\@]+export[\s\*\@]+enum \{string\}\s+\*\/\s+export enum \w+ListEnum \{[\s\n]+TRUE = 'true'[\s\n]+\}/g;
 // regex to match references to the generated list enums (e.g. TransitListKeysListEnum)
 const REFERENCE_PATTERN = /\b\w+ListEnum\b/g;
-// the single shared enum definition to be added to index.ts
+// the single shared enum definition to be added to runtime.ts
 const LIST_ENUM = `export enum ListEnum {
   TRUE = 'true'
 };
