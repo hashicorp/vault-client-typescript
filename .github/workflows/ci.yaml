@@ -47,6 +47,9 @@ jobs:
         if: steps.diff_openapi.outputs.changed == 'true'
         run: yarn gen-client
 
+      - name: Normalize list enums
+        run: yarn normalize-list-enums
+
       - name: Setup Copywrite
         uses: hashicorp/setup-copywrite@32638da2d4e81d56a0764aa1547882fc4d209636 #v1.1.3
 
