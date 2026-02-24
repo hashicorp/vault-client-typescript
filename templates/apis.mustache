@@ -70,7 +70,7 @@ export interface {{classname}}Interface {
      {{/isDeprecated}}
      */
     {{^useSingleRequestParameter}}
-    {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{#isNullable}} | null{{/isNullable}}{{/isEnum}}, {{/allParams}}initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{{{returnType}}}{{#returnType}}{{#isResponseOptional}} | null | undefined {{/isResponseOptional}}{{/returnType}}{{^returnType}}runtime.VoidResponse{{/returnType}}>;
+    {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{#isEnum}}{{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{#isNullable}} | null{{/isNullable}}{{/isEnum}}, {{/allParams}}initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{{{returnType}}}{{#returnType}}{{#isResponseOptional}} | null | undefined {{/isResponseOptional}}{{/returnType}}{{^returnType}}runtime.VoidResponse{{/returnType}}>;
     {{/useSingleRequestParameter}}
     {{#useSingleRequestParameter}}
     {{nickname}}({{#allParams.0}}requestParameters: {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{operationIdCamelCase}}Request, {{/allParams.0}}initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{{{returnType}}}{{#returnType}}{{#isResponseOptional}} | null | undefined {{/isResponseOptional}}{{/returnType}}{{^returnType}}runtime.VoidResponse{{/returnType}}>;
@@ -365,7 +365,7 @@ export class {{classname}} extends runtime.BaseAPI {
      {{/isDeprecated}}
      */
     {{^useSingleRequestParameter}}
-    async {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{#isNullable}} | null{{/isNullable}}{{/isEnum}}, {{/allParams}}initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{{{returnType}}}{{#returnType}}{{#isResponseOptional}} | null | undefined {{/isResponseOptional}}{{/returnType}}{{^returnType}}runtime.VoidResponse{{/returnType}}> {
+    async {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{#isEnum}}{{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{#isNullable}} | null{{/isNullable}}{{/isEnum}}, {{/allParams}}initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<{{{returnType}}}{{#returnType}}{{#isResponseOptional}} | null | undefined {{/isResponseOptional}}{{/returnType}}{{^returnType}}runtime.VoidResponse{{/returnType}}> {
         const response = await this.{{nickname}}Raw({{#allParams.0}}{ {{#allParams}}{{paramName}}: {{paramName}}{{^-last}}, {{/-last}}{{/allParams}} }, {{/allParams.0}}initOverrides);
         {{#isResponseOptional}}
         switch (response.raw.status) {
@@ -421,7 +421,7 @@ export class {{classname}} extends runtime.BaseAPI {
   */
 {{! there is an issue with operationIdCamelCase where Operation was being added as the suffix }}
 {{! changing to use dataTypeWithEnum since that is what is referenced in the interfaces }}
-export enum {{datatypeWithEnum}} {
+export enum {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{datatypeWithEnum}} {
 {{#allowableValues}}
     {{#enumVars}}
     {{{name}}} = {{{value}}}{{^-last}},{{/-last}}
@@ -434,15 +434,15 @@ export enum {{datatypeWithEnum}} {
  * @export
  */
 {{! there is an issue with operationIdCamelCase where Operation was being added as the suffix }}
-{{!  }}
-export const {{dataTypeWithEnum}} = {
+{{! changing to use dataTypeWithEnum since that is what is referenced in the interfaces }}
+export const {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{dataTypeWithEnum}} = {
 {{#allowableValues}}
     {{#enumVars}}
     {{{name}}}: {{{value}}}{{^-last}},{{/-last}}
     {{/enumVars}}
 {{/allowableValues}}
 } as const;
-export type {{dataTypeWithEnum}} = typeof {{dataTypeWithEnum}}[keyof typeof {{dataTypeWithEnum}}];
+export type {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{dataTypeWithEnum}} = typeof {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{dataTypeWithEnum}}[keyof typeof {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterInterfaces}}{{dataTypeWithEnum}}];
 {{/stringEnums}}
 {{/isEnum}}
 {{/allParams}}
