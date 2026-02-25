@@ -1,5 +1,5 @@
 /**
- * Copyright IBM Corp. 2026
+ * Copyright IBM Corp. 2025, 2026
  */
 
 /* tslint:disable */
@@ -963,7 +963,7 @@ export interface SystemApiLeasesForceRevokeLeaseWithPrefix2Request {
 
 export interface SystemApiLeasesLookUpRequest {
     prefix: string;
-    list: LeasesLookUpListEnum;
+    list: SystemApiLeasesLookUpListEnum;
 }
 
 export interface SystemApiLeasesReadLeaseOperationRequest {
@@ -1084,7 +1084,7 @@ export interface SystemApiMountsTuneConfigurationParametersOperationRequest {
 
 export interface SystemApiPluginsCatalogListPluginsWithTypeRequest {
     type: string;
-    list: PluginsCatalogListPluginsWithTypeListEnum;
+    list: SystemApiPluginsCatalogListPluginsWithTypeListEnum;
 }
 
 export interface SystemApiPluginsCatalogPinsCreatePinnedVersionOperationRequest {
@@ -1137,7 +1137,7 @@ export interface SystemApiPluginsReloadBackendsOperationRequest {
 }
 
 export interface SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request {
-    list: PluginsRuntimesCatalogListPluginsRuntimes0ListEnum;
+    list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum;
 }
 
 export interface SystemApiPluginsRuntimesCatalogReadPluginRuntimeConfigurationRequest {
@@ -1177,15 +1177,15 @@ export interface SystemApiPoliciesGeneratePasswordFromPasswordPolicyRequest {
 }
 
 export interface SystemApiPoliciesListAclPoliciesRequest {
-    list: PoliciesListAclPoliciesListEnum;
+    list: SystemApiPoliciesListAclPoliciesListEnum;
 }
 
 export interface SystemApiPoliciesListAclPolicies3Request {
-    list: PoliciesListAclPolicies3ListEnum;
+    list: SystemApiPoliciesListAclPolicies3ListEnum;
 }
 
 export interface SystemApiPoliciesListPasswordPoliciesRequest {
-    list: PoliciesListPasswordPoliciesListEnum;
+    list: SystemApiPoliciesListPasswordPoliciesListEnum;
 }
 
 export interface SystemApiPoliciesReadAclPolicyRequest {
@@ -1245,7 +1245,7 @@ export interface SystemApiRateLimitQuotasDeleteRequest {
 }
 
 export interface SystemApiRateLimitQuotasListRequest {
-    list: RateLimitQuotasListListEnum;
+    list: SystemApiRateLimitQuotasListListEnum;
 }
 
 export interface SystemApiRateLimitQuotasReadRequest {
@@ -1263,7 +1263,7 @@ export interface SystemApiRawDeleteRequest {
 
 export interface SystemApiRawListRequest {
     path: string;
-    list: RawListListEnum;
+    list: SystemApiRawListListEnum;
 }
 
 export interface SystemApiRawReadRequest {
@@ -1344,7 +1344,7 @@ export interface SystemApiSubscriptionsCreate0Request {
 }
 
 export interface SystemApiSubscriptionsListEventsSubscriptionsRequest {
-    list: SubscriptionsListEventsSubscriptionsListEnum;
+    list: SystemApiSubscriptionsListEventsSubscriptionsListEnum;
 }
 
 export interface SystemApiSubscriptionsWriteEventsSubscriptionsOperationRequest {
@@ -1430,52 +1430,52 @@ export interface SystemApiSystemDeleteSyncGithubAppsNameRequest {
 
 export interface SystemApiSystemListManagedKeysTypeRequest {
     type: string;
-    list: SystemListManagedKeysTypeListEnum;
+    list: SystemApiSystemListManagedKeysTypeListEnum;
 }
 
 export interface SystemApiSystemListMfaMethodRequest {
-    list: SystemListMfaMethodListEnum;
+    list: SystemApiSystemListMfaMethodListEnum;
 }
 
 export interface SystemApiSystemListNamespacesRequest {
-    list: SystemListNamespacesListEnum;
+    list: SystemApiSystemListNamespacesListEnum;
 }
 
 export interface SystemApiSystemListPoliciesEgpRequest {
-    list: SystemListPoliciesEgpListEnum;
+    list: SystemApiSystemListPoliciesEgpListEnum;
 }
 
 export interface SystemApiSystemListPoliciesRgpRequest {
-    list: SystemListPoliciesRgpListEnum;
+    list: SystemApiSystemListPoliciesRgpListEnum;
 }
 
 export interface SystemApiSystemListQuotasLeaseCountRequest {
-    list: SystemListQuotasLeaseCountListEnum;
+    list: SystemApiSystemListQuotasLeaseCountListEnum;
 }
 
 export interface SystemApiSystemListStorageRaftSnapshotAutoConfigRequest {
-    list: SystemListStorageRaftSnapshotAutoConfigListEnum;
+    list: SystemApiSystemListStorageRaftSnapshotAutoConfigListEnum;
 }
 
 export interface SystemApiSystemListStorageRaftSnapshotLoadRequest {
-    list: SystemListStorageRaftSnapshotLoadListEnum;
+    list: SystemApiSystemListStorageRaftSnapshotLoadListEnum;
 }
 
 export interface SystemApiSystemListSyncAssociationsRequest {
-    list: SystemListSyncAssociationsListEnum;
+    list: SystemApiSystemListSyncAssociationsListEnum;
 }
 
 export interface SystemApiSystemListSyncDestinationsRequest {
-    list: SystemListSyncDestinationsListEnum;
+    list: SystemApiSystemListSyncDestinationsListEnum;
 }
 
 export interface SystemApiSystemListSyncDestinationsTypeRequest {
     type: string;
-    list: SystemListSyncDestinationsTypeListEnum;
+    list: SystemApiSystemListSyncDestinationsTypeListEnum;
 }
 
 export interface SystemApiSystemListSyncGithubAppsRequest {
-    list: SystemListSyncGithubAppsListEnum;
+    list: SystemApiSystemListSyncGithubAppsListEnum;
 }
 
 export interface SystemApiSystemPatchNamespacesPathOperationRequest {
@@ -1890,7 +1890,7 @@ export interface SystemApiUiConfigDeleteCustomMessageRequest {
 }
 
 export interface SystemApiUiConfigListCustomMessagesRequest {
-    list: UiConfigListCustomMessagesListEnum;
+    list: SystemApiUiConfigListCustomMessagesListEnum;
     active?: boolean;
     authenticated?: boolean;
     type?: string;
@@ -1915,7 +1915,7 @@ export interface SystemApiUiHeadersDeleteConfigurationRequest {
 }
 
 export interface SystemApiUiHeadersListRequest {
-    list: UiHeadersListListEnum;
+    list: SystemApiUiHeadersListListEnum;
 }
 
 export interface SystemApiUiHeadersReadConfigurationRequest {
@@ -1932,7 +1932,7 @@ export interface SystemApiUiLoginDefaultAuthDeleteConfigurationRequest {
 }
 
 export interface SystemApiUiLoginDefaultAuthListRequest {
-    list: UiLoginDefaultAuthListListEnum;
+    list: SystemApiUiLoginDefaultAuthListListEnum;
 }
 
 export interface SystemApiUiLoginDefaultAuthReadConfigurationRequest {
@@ -1948,11 +1948,11 @@ export interface SystemApiUnwrapOperationRequest {
 }
 
 export interface SystemApiVersionHistoryRequest {
-    list: VersionHistoryListEnum;
+    list: SystemApiVersionHistoryListEnum;
 }
 
 export interface SystemApiWellKnownListLabelsRequest {
-    list: WellKnownListLabelsListEnum;
+    list: SystemApiWellKnownListLabelsListEnum;
 }
 
 export interface SystemApiWellKnownReadLabelRequest {
@@ -4074,7 +4074,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async leasesLookUp(prefix: string, list: LeasesLookUpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LeasesLookUpResponse> {
+    async leasesLookUp(prefix: string, list: SystemApiLeasesLookUpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LeasesLookUpResponse> {
         const response = await this.leasesLookUpRaw({ prefix: prefix, list: list }, initOverrides);
         return await response.value();
     }
@@ -5306,7 +5306,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List the plugins in the catalog.
      */
-    async pluginsCatalogListPluginsWithType(type: string, list: PluginsCatalogListPluginsWithTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsCatalogListPluginsWithTypeResponse> {
+    async pluginsCatalogListPluginsWithType(type: string, list: SystemApiPluginsCatalogListPluginsWithTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsCatalogListPluginsWithTypeResponse> {
         const response = await this.pluginsCatalogListPluginsWithTypeRaw({ type: type, list: list }, initOverrides);
         return await response.value();
     }
@@ -5809,7 +5809,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_5(list: PluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
+    async pluginsRuntimesCatalogListPluginsRuntimes_5(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
         const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_5Raw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -6148,7 +6148,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async policiesListAclPolicies(list: PoliciesListAclPoliciesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PoliciesListAclPoliciesResponse> {
+    async policiesListAclPolicies(list: SystemApiPoliciesListAclPoliciesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PoliciesListAclPoliciesResponse> {
         const response = await this.policiesListAclPoliciesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -6209,7 +6209,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async policiesListAclPolicies3(list: PoliciesListAclPolicies3ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PoliciesListAclPolicies3Response> {
+    async policiesListAclPolicies3(list: SystemApiPoliciesListAclPolicies3ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PoliciesListAclPolicies3Response> {
         const response = await this.policiesListAclPolicies3Raw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -6247,7 +6247,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List the existing password policies.
      */
-    async policiesListPasswordPolicies(list: PoliciesListPasswordPoliciesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async policiesListPasswordPolicies(list: SystemApiPoliciesListPasswordPoliciesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.policiesListPasswordPoliciesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -7086,7 +7086,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async rateLimitQuotasList(list: RateLimitQuotasListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async rateLimitQuotasList(list: SystemApiRateLimitQuotasListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.rateLimitQuotasListRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -7264,7 +7264,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Return a list keys for a given path prefix.
      */
-    async rawList(path: string, list: RawListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async rawList(path: string, list: SystemApiRawListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.rawListRaw({ path: path, list: list }, initOverrides);
         return await response.value();
     }
@@ -8559,7 +8559,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Listing event notifications subscriptions
      */
-    async subscriptionsListEventsSubscriptions(list: SubscriptionsListEventsSubscriptionsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SubscriptionsListEventsSubscriptionsResponse> {
+    async subscriptionsListEventsSubscriptions(list: SystemApiSubscriptionsListEventsSubscriptionsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SubscriptionsListEventsSubscriptionsResponse> {
         const response = await this.subscriptionsListEventsSubscriptionsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9349,7 +9349,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListManagedKeysType(type: string, list: SystemListManagedKeysTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListManagedKeysType(type: string, list: SystemApiSystemListManagedKeysTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListManagedKeysTypeRaw({ type: type, list: list }, initOverrides);
         return await response.value();
     }
@@ -9387,7 +9387,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Lists all the available MFA methods by their name.
      */
-    async systemListMfaMethod(list: SystemListMfaMethodListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListMfaMethod(list: SystemApiSystemListMfaMethodListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListMfaMethodRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9423,7 +9423,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListNamespaces(list: SystemListNamespacesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListNamespaces(list: SystemApiSystemListNamespacesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListNamespacesRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9461,7 +9461,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List the configured access control policies.
      */
-    async systemListPoliciesEgp(list: SystemListPoliciesEgpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListPoliciesEgp(list: SystemApiSystemListPoliciesEgpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListPoliciesEgpRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9499,7 +9499,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List the configured access control policies.
      */
-    async systemListPoliciesRgp(list: SystemListPoliciesRgpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListPoliciesRgp(list: SystemApiSystemListPoliciesRgpListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListPoliciesRgpRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9535,7 +9535,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListQuotasLeaseCount(list: SystemListQuotasLeaseCountListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListQuotasLeaseCount(list: SystemApiSystemListQuotasLeaseCountListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListQuotasLeaseCountRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9573,7 +9573,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List automated raft snapshot configurations
      */
-    async systemListStorageRaftSnapshotAutoConfig(list: SystemListStorageRaftSnapshotAutoConfigListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListStorageRaftSnapshotAutoConfig(list: SystemApiSystemListStorageRaftSnapshotAutoConfigListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListStorageRaftSnapshotAutoConfigRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9611,7 +9611,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * List recovery snapshots
      */
-    async systemListStorageRaftSnapshotLoad(list: SystemListStorageRaftSnapshotLoadListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async systemListStorageRaftSnapshotLoad(list: SystemApiSystemListStorageRaftSnapshotLoadListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.systemListStorageRaftSnapshotLoadRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9647,7 +9647,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListSyncAssociations(list: SystemListSyncAssociationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncAssociationsResponse> {
+    async systemListSyncAssociations(list: SystemApiSystemListSyncAssociationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncAssociationsResponse> {
         const response = await this.systemListSyncAssociationsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9683,7 +9683,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListSyncDestinations(list: SystemListSyncDestinationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncDestinationsResponse> {
+    async systemListSyncDestinations(list: SystemApiSystemListSyncDestinationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncDestinationsResponse> {
         const response = await this.systemListSyncDestinationsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -9726,7 +9726,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListSyncDestinationsType(type: string, list: SystemListSyncDestinationsTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncDestinationsTypeResponse> {
+    async systemListSyncDestinationsType(type: string, list: SystemApiSystemListSyncDestinationsTypeListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncDestinationsTypeResponse> {
         const response = await this.systemListSyncDestinationsTypeRaw({ type: type, list: list }, initOverrides);
         return await response.value();
     }
@@ -9762,7 +9762,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async systemListSyncGithubApps(list: SystemListSyncGithubAppsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncGithubAppsResponse> {
+    async systemListSyncGithubApps(list: SystemApiSystemListSyncGithubAppsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemListSyncGithubAppsResponse> {
         const response = await this.systemListSyncGithubAppsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -14053,7 +14053,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Lists custom messages
      */
-    async uiConfigListCustomMessages(list: UiConfigListCustomMessagesListEnum, active?: boolean, authenticated?: boolean, type?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiConfigListCustomMessagesResponse> {
+    async uiConfigListCustomMessages(list: SystemApiUiConfigListCustomMessagesListEnum, active?: boolean, authenticated?: boolean, type?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiConfigListCustomMessagesResponse> {
         const response = await this.uiConfigListCustomMessagesRaw({ list: list, active: active, authenticated: authenticated, type: type }, initOverrides);
         return await response.value();
     }
@@ -14247,7 +14247,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Return a list of configured UI headers.
      */
-    async uiHeadersList(list: UiHeadersListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiHeadersListResponse> {
+    async uiHeadersList(list: SystemApiUiHeadersListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiHeadersListResponse> {
         const response = await this.uiHeadersListRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -14397,7 +14397,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Return a list of configured default auth methods for the UI.
      */
-    async uiLoginDefaultAuthList(list: UiLoginDefaultAuthListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiLoginDefaultAuthListResponse> {
+    async uiLoginDefaultAuthList(list: SystemApiUiLoginDefaultAuthListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiLoginDefaultAuthListResponse> {
         const response = await this.uiLoginDefaultAuthListRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -14566,7 +14566,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Returns map of historical version change entries
      */
-    async versionHistory(list: VersionHistoryListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionHistoryResponse> {
+    async versionHistory(list: SystemApiVersionHistoryListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionHistoryResponse> {
         const response = await this.versionHistoryRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -14602,7 +14602,7 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async wellKnownListLabels(list: WellKnownListLabelsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WellKnownListLabelsResponse> {
+    async wellKnownListLabels(list: SystemApiWellKnownListLabelsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WellKnownListLabelsResponse> {
         const response = await this.wellKnownListLabelsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -14707,181 +14707,181 @@ export class SystemApi extends runtime.BaseAPI {
   * @export
   * @enum {string}
   */
-export enum LeasesLookUpListEnum {
+export enum SystemApiLeasesLookUpListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum PluginsCatalogListPluginsWithTypeListEnum {
+export enum SystemApiPluginsCatalogListPluginsWithTypeListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum PluginsRuntimesCatalogListPluginsRuntimes0ListEnum {
+export enum SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum PoliciesListAclPoliciesListEnum {
+export enum SystemApiPoliciesListAclPoliciesListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum PoliciesListAclPolicies3ListEnum {
+export enum SystemApiPoliciesListAclPolicies3ListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum PoliciesListPasswordPoliciesListEnum {
+export enum SystemApiPoliciesListPasswordPoliciesListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum RateLimitQuotasListListEnum {
+export enum SystemApiRateLimitQuotasListListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum RawListListEnum {
+export enum SystemApiRawListListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SubscriptionsListEventsSubscriptionsListEnum {
+export enum SystemApiSubscriptionsListEventsSubscriptionsListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListManagedKeysTypeListEnum {
+export enum SystemApiSystemListManagedKeysTypeListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListMfaMethodListEnum {
+export enum SystemApiSystemListMfaMethodListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListNamespacesListEnum {
+export enum SystemApiSystemListNamespacesListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListPoliciesEgpListEnum {
+export enum SystemApiSystemListPoliciesEgpListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListPoliciesRgpListEnum {
+export enum SystemApiSystemListPoliciesRgpListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListQuotasLeaseCountListEnum {
+export enum SystemApiSystemListQuotasLeaseCountListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListStorageRaftSnapshotAutoConfigListEnum {
+export enum SystemApiSystemListStorageRaftSnapshotAutoConfigListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListStorageRaftSnapshotLoadListEnum {
+export enum SystemApiSystemListStorageRaftSnapshotLoadListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListSyncAssociationsListEnum {
+export enum SystemApiSystemListSyncAssociationsListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListSyncDestinationsListEnum {
+export enum SystemApiSystemListSyncDestinationsListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListSyncDestinationsTypeListEnum {
+export enum SystemApiSystemListSyncDestinationsTypeListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum SystemListSyncGithubAppsListEnum {
+export enum SystemApiSystemListSyncGithubAppsListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum UiConfigListCustomMessagesListEnum {
+export enum SystemApiUiConfigListCustomMessagesListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum UiHeadersListListEnum {
+export enum SystemApiUiHeadersListListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum UiLoginDefaultAuthListListEnum {
+export enum SystemApiUiLoginDefaultAuthListListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum VersionHistoryListEnum {
+export enum SystemApiVersionHistoryListEnum {
     TRUE = 'true'
 }
 /**
   * @export
   * @enum {string}
   */
-export enum WellKnownListLabelsListEnum {
+export enum SystemApiWellKnownListLabelsListEnum {
     TRUE = 'true'
 }
