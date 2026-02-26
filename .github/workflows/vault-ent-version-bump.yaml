@@ -1,0 +1,46 @@
+name: Vault Enterprise Version Bump
+
+on:
+  workflow_dispatch:
+  # eventually we want to trigger this on merges to main when the client has been updated
+  # automated PR's sent from Vault Enterprise with spec changes will have the label automated-spec-label update
+  # ideally merged PR's with that label would trigger this workflow
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout vault-enterprise repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          repository: hashicorp/vault-enterprise
+          token: ${{ secrets.GITHUB_TOKEN }} # need to use the ELEVATED_GITHUB_TOKEN
+          ref: main
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          run_install: false
+          package_json_file: "./ui/package.json"
+
+      - name: Setup Node
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: "./ui/package.json"
+          cache: pnpm
+          cache-dependency-path: ui/pnpm-lock.yaml
+
+      - name: Bump vault-client-typescript version
+        run: cd ui && pnpm up @hashicorp/vault-client-typescript
+
+      - name: Commit and Create PR on External Repo
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
+        with:
+          branch: ui/automated-client-bump-${{ github.run_id }}
+          token: ${{ secrets.GITHUB_TOKEN }} # need to use the ELEVATED_GITHUB_TOKEN
+          title: "[UI][Automated] Bump vault-client-typescript version" # nice to have version number once we add in release automation
+          body: |
+            This is an automated PR created from the vault-client-typescript repository to bump the version of the @hashicorp/vault-client-typescript dependency.
+          commit-message: "auto: bump @hashicorp/vault-client-typescript version"
+          base: main
+          labels: ui, no-changelog
