@@ -3,6 +3,7 @@ name: Spec Dispatch Receiver
 on:
   repository_dispatch:
     types: [spec-change]
+  pull_request: # temporary trigger for testing, to be removed once verified working
 
 jobs:
   receive_spec:
