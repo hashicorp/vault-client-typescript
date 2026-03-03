@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 #v4
 
       - name: Download Artifact from Vault Enterprise Repo
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 #v8
         with:
           artifact-ids: ${{ github.event.client_payload.artifact_id }}
           run-id: ${{ github.event.client_payload.run_id }}
