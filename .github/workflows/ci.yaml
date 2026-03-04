@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 #v4
         with:
           ref: ${{ github.head_ref }}
+          fetch-depth: 0 # needed for copywrite to effectively get the correct dates for the headers
 
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4
