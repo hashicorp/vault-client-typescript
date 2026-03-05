@@ -84,6 +84,24 @@ export interface SystemWriteSyncDestinationsAzureKvNameRequest {
      */
     granularity?: string;
     /**
+     * Audience of WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
+     */
+    identity_token_audience?: string;
+    /**
+     * Key used to sign WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
+     */
+    identity_token_key?: string;
+    /**
+     * The time-to-live (TTL) for the WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
+     */
+    identity_token_ttl?: string;
+    /**
      * URI of the Azure Key Vault to access.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsAzureKvNameRequest
@@ -142,6 +160,9 @@ export function SystemWriteSyncDestinationsAzureKvNameRequestFromJSONTyped(json:
         'disable_strict_networking': json['disable_strict_networking'] == null ? undefined : json['disable_strict_networking'],
         'force_delete': json['force_delete'] == null ? undefined : json['force_delete'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
         'key_vault_uri': json['key_vault_uri'] == null ? undefined : json['key_vault_uri'],
         'purge': json['purge'] == null ? undefined : json['purge'],
         'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
@@ -171,6 +192,9 @@ export function SystemWriteSyncDestinationsAzureKvNameRequestToJSONTyped(value?:
         'disable_strict_networking': value['disable_strict_networking'],
         'force_delete': value['force_delete'],
         'granularity': value['granularity'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_key': value['identity_token_key'],
+        'identity_token_ttl': value['identity_token_ttl'],
         'key_vault_uri': value['key_vault_uri'],
         'purge': value['purge'],
         'secret_name_template': value['secret_name_template'],

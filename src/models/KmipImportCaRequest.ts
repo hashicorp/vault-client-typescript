@@ -61,6 +61,7 @@ export interface KmipImportCaRequest {
 */
 export enum KmipImportCaRequestRoleFieldEnum {
     CN = 'CN',
+    O = 'O',
     OU = 'OU',
     UID = 'UID'
 }
@@ -70,6 +71,7 @@ export enum KmipImportCaRequestRoleFieldEnum {
 */
 export enum KmipImportCaRequestScopeFieldEnum {
     CN = 'CN',
+    O = 'O',
     OU = 'OU',
     UID = 'UID'
 }

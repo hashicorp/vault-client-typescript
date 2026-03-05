@@ -182,6 +182,7 @@ import type {
   SystemPatchSyncDestinationsVercelProjectNameRequest,
   SystemPatchSyncDestinationsVercelProjectNameResponse,
   SystemReadBillingCertificatesResponse,
+  SystemReadBillingOverviewResponse,
   SystemReadConfigGroupPolicyApplicationResponse,
   SystemReadRotationOrphansResponse,
   SystemReadStorageRaftSnapshotLoadIdResponse,
@@ -608,6 +609,8 @@ import {
     SystemPatchSyncDestinationsVercelProjectNameResponseToJSON,
     SystemReadBillingCertificatesResponseFromJSON,
     SystemReadBillingCertificatesResponseToJSON,
+    SystemReadBillingOverviewResponseFromJSON,
+    SystemReadBillingOverviewResponseToJSON,
     SystemReadConfigGroupPolicyApplicationResponseFromJSON,
     SystemReadConfigGroupPolicyApplicationResponseToJSON,
     SystemReadRotationOrphansResponseFromJSON,
@@ -1515,6 +1518,10 @@ export interface SystemApiSystemPatchSyncDestinationsInMemNameOperationRequest {
 export interface SystemApiSystemPatchSyncDestinationsVercelProjectNameOperationRequest {
     name: string;
     SystemPatchSyncDestinationsVercelProjectNameRequest: SystemPatchSyncDestinationsVercelProjectNameRequest;
+}
+
+export interface SystemApiSystemReadBillingOverviewRequest {
+    refresh_data?: boolean;
 }
 
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
@@ -10120,6 +10127,44 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadBillingCertificates(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingCertificatesResponse | null | undefined > {
         const response = await this.systemReadBillingCertificatesRaw(initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Reports consumption billing metrics for the current and previous months.
+     */
+    async systemReadBillingOverviewRaw(requestParameters: SystemApiSystemReadBillingOverviewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemReadBillingOverviewResponse>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['refresh_data'] != null) {
+            queryParameters['refresh_data'] = requestParameters['refresh_data'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/billing/overview`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SystemReadBillingOverviewResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Reports consumption billing metrics for the current and previous months.
+     */
+    async systemReadBillingOverview(refresh_data?: boolean, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingOverviewResponse | null | undefined > {
+        const response = await this.systemReadBillingOverviewRaw({ refresh_data: refresh_data }, initOverrides);
         switch (response.raw.status) {
             case 200:
                 return await response.value();
