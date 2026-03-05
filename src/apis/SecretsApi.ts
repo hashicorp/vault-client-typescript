@@ -120,6 +120,13 @@ import type {
   PkiConfigureUrlsResponse,
   PkiCrossSignIntermediateRequest,
   PkiCrossSignIntermediateResponse,
+  PkiExternalCaCreateConfigAcmeAccountNameImportRequest,
+  PkiExternalCaWriteConfigAcmeAccountNameRequest,
+  PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest,
+  PkiExternalCaWriteRoleNameNewOrderRequest,
+  PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest,
+  PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest,
+  PkiExternalCaWriteRoleNameRequest,
   PkiGenerateEabKeyForIssuerAndRoleResponse,
   PkiGenerateEabKeyForIssuerResponse,
   PkiGenerateEabKeyForRoleResponse,
@@ -353,6 +360,9 @@ import type {
   RabbitMqConfigureConnectionRequest,
   RabbitMqConfigureLeaseRequest,
   RabbitMqWriteRoleRequest,
+  RegisterCreateRequest,
+  RegistrationUpdateByIdRequest,
+  RegistrationUpdateByNameRequest,
   SpiffeConfigureRequest,
   SpiffeConfigureResponse,
   SpiffeCreateRequest,
@@ -631,6 +641,20 @@ import {
     PkiCrossSignIntermediateRequestToJSON,
     PkiCrossSignIntermediateResponseFromJSON,
     PkiCrossSignIntermediateResponseToJSON,
+    PkiExternalCaCreateConfigAcmeAccountNameImportRequestFromJSON,
+    PkiExternalCaCreateConfigAcmeAccountNameImportRequestToJSON,
+    PkiExternalCaWriteConfigAcmeAccountNameRequestFromJSON,
+    PkiExternalCaWriteConfigAcmeAccountNameRequestToJSON,
+    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestFromJSON,
+    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestToJSON,
+    PkiExternalCaWriteRoleNameNewOrderRequestFromJSON,
+    PkiExternalCaWriteRoleNameNewOrderRequestToJSON,
+    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestFromJSON,
+    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestToJSON,
+    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestFromJSON,
+    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestToJSON,
+    PkiExternalCaWriteRoleNameRequestFromJSON,
+    PkiExternalCaWriteRoleNameRequestToJSON,
     PkiGenerateEabKeyForIssuerAndRoleResponseFromJSON,
     PkiGenerateEabKeyForIssuerAndRoleResponseToJSON,
     PkiGenerateEabKeyForIssuerResponseFromJSON,
@@ -1097,6 +1121,12 @@ import {
     RabbitMqConfigureLeaseRequestToJSON,
     RabbitMqWriteRoleRequestFromJSON,
     RabbitMqWriteRoleRequestToJSON,
+    RegisterCreateRequestFromJSON,
+    RegisterCreateRequestToJSON,
+    RegistrationUpdateByIdRequestFromJSON,
+    RegistrationUpdateByIdRequestToJSON,
+    RegistrationUpdateByNameRequestFromJSON,
+    RegistrationUpdateByNameRequestToJSON,
     SpiffeConfigureRequestFromJSON,
     SpiffeConfigureRequestToJSON,
     SpiffeConfigureResponseFromJSON,
@@ -2058,12 +2088,6 @@ export interface SecretsApiKmipListCaRequest {
     list: SecretsApiKmipListCaListEnum;
 }
 
-export interface SecretsApiKmipListCaNameRequest {
-    name: string;
-    kmip_mount_path: string;
-    list: SecretsApiKmipListCaNameListEnum;
-}
-
 export interface SecretsApiKmipListClientCertificatesRequest {
     role: string;
     scope: string;
@@ -2640,6 +2664,124 @@ export interface SecretsApiPkiDeleteRoleRequest {
 
 export interface SecretsApiPkiDeleteRootRequest {
     pki_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaCreateConfigAcmeAccountNameImportOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest;
+}
+
+export interface SecretsApiPkiExternalCaDeleteConfigAcmeAccountNameRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaDeleteRoleNameRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaListConfigAcmeAccountRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigAcmeAccountListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListLookupOrdersRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListLookupOrdersListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListRoleRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListRoleListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListRoleNameActiveOrdersRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum;
+}
+
+export interface SecretsApiPkiExternalCaReadConfigAcmeAccountNameRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadLookupCertSerialRequest {
+    serial: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadLookupOrderOrderIdRequest {
+    order_id: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadRoleNameRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadRoleNameCachedRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdChallengeRequest {
+    name: string;
+    order_id: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdFetchCertRequest {
+    name: string;
+    order_id: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdStatusRequest {
+    name: string;
+    order_id: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountNameOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountNameRotateKeyOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteRoleNameOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteRoleNameNewOrderOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeOperationRequest {
+    name: string;
+    order_id: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdRevokeOperationRequest {
+    name: string;
+    order_id: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest;
 }
 
 export interface SecretsApiPkiGenerateEabKeyRequest {
@@ -4007,6 +4149,58 @@ export interface SecretsApiRabbitMqWriteRoleOperationRequest {
     name: string;
     rabbitmq_mount_path: string;
     RabbitMqWriteRoleRequest: RabbitMqWriteRoleRequest;
+}
+
+export interface SecretsApiRegisterCreateOperationRequest {
+    agent_registry_mount_path: string;
+    RegisterCreateRequest: RegisterCreateRequest;
+}
+
+export interface SecretsApiRegistrationDeleteByIdRequest {
+    id: string;
+    agent_registry_mount_path: string;
+}
+
+export interface SecretsApiRegistrationDeleteByNameRequest {
+    display_name: string;
+    agent_registry_mount_path: string;
+}
+
+export interface SecretsApiRegistrationListByIdRequest {
+    agent_registry_mount_path: string;
+    list: SecretsApiRegistrationListByIdListEnum;
+}
+
+export interface SecretsApiRegistrationListByNameRequest {
+    agent_registry_mount_path: string;
+    list: SecretsApiRegistrationListByNameListEnum;
+}
+
+export interface SecretsApiRegistrationReadByEntityIdRequest {
+    entity_id: string;
+    agent_registry_mount_path: string;
+}
+
+export interface SecretsApiRegistrationReadByIdRequest {
+    id: string;
+    agent_registry_mount_path: string;
+}
+
+export interface SecretsApiRegistrationReadByNameRequest {
+    display_name: string;
+    agent_registry_mount_path: string;
+}
+
+export interface SecretsApiRegistrationUpdateByIdOperationRequest {
+    id: string;
+    agent_registry_mount_path: string;
+    RegistrationUpdateByIdRequest: RegistrationUpdateByIdRequest;
+}
+
+export interface SecretsApiRegistrationUpdateByNameOperationRequest {
+    display_name: string;
+    agent_registry_mount_path: string;
+    RegistrationUpdateByNameRequest: RegistrationUpdateByNameRequest;
 }
 
 export interface SecretsApiSpiffeConfigureRequest {
@@ -11303,56 +11497,6 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kmipListCaNameRaw(requestParameters: SecretsApiKmipListCaNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
-        if (requestParameters['name'] == null) {
-            throw new runtime.RequiredError(
-                'name',
-                'Required parameter "name" was null or undefined when calling kmipListCaName().'
-            );
-        }
-
-        if (requestParameters['kmip_mount_path'] == null) {
-            throw new runtime.RequiredError(
-                'kmip_mount_path',
-                'Required parameter "kmip_mount_path" was null or undefined when calling kmipListCaName().'
-            );
-        }
-
-        if (requestParameters['list'] == null) {
-            throw new runtime.RequiredError(
-                'list',
-                'Required parameter "list" was null or undefined when calling kmipListCaName().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['list'] != null) {
-            queryParameters['list'] = requestParameters['list'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/{kmip_mount_path}/ca/{name}/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"kmip_mount_path"}}`, encodeURIComponent(String(requestParameters['kmip_mount_path']).replace(/\/+$/, '')));
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async kmipListCaName(name: string, kmip_mount_path: string, list: SecretsApiKmipListCaNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.kmipListCaNameRaw({ name: name, kmip_mount_path: kmip_mount_path, list: list }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
     async kmipListClientCertificatesRaw(requestParameters: SecretsApiKmipListClientCertificatesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['role'] == null) {
             throw new runtime.RequiredError(
@@ -16049,6 +16193,953 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiDeleteRoot(pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiDeleteRootRaw({ pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaCreateConfigAcmeAccountNameImportRaw(requestParameters: SecretsApiPkiExternalCaCreateConfigAcmeAccountNameImportOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaCreateConfigAcmeAccountNameImportRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaCreateConfigAcmeAccountNameImportRequest',
+                'Required parameter "PkiExternalCaCreateConfigAcmeAccountNameImportRequest" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/{name}/import`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaCreateConfigAcmeAccountNameImportRequestToJSON(requestParameters['PkiExternalCaCreateConfigAcmeAccountNameImportRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaCreateConfigAcmeAccountNameImport(name: string, pki_external_ca_mount_path: string, PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaCreateConfigAcmeAccountNameImportRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaDeleteConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccountName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccountName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteRoleNameRaw(requestParameters: SecretsApiPkiExternalCaDeleteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteRoleName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteRoleName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigAcmeAccountRaw(requestParameters: SecretsApiPkiExternalCaListConfigAcmeAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigAcmeAccount().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigAcmeAccount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigAcmeAccount(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigAcmeAccountListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigAcmeAccountRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListLookupOrdersRaw(requestParameters: SecretsApiPkiExternalCaListLookupOrdersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListLookupOrders().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListLookupOrders().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/lookup/orders/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListLookupOrders(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListLookupOrdersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListLookupOrdersRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListRoleRaw(requestParameters: SecretsApiPkiExternalCaListRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListRole().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListRole().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListRole(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListRoleListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListRoleRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListRoleNameActiveOrdersRaw(requestParameters: SecretsApiPkiExternalCaListRoleNameActiveOrdersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/active-orders/`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListRoleNameActiveOrders(name: string, pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListRoleNameActiveOrdersRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaReadConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigAcmeAccountName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigAcmeAccountName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadLookupCertSerialRaw(requestParameters: SecretsApiPkiExternalCaReadLookupCertSerialRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['serial'] == null) {
+            throw new runtime.RequiredError(
+                'serial',
+                'Required parameter "serial" was null or undefined when calling pkiExternalCaReadLookupCertSerial().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupCertSerial().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/lookup/cert/{serial}`.replace(`{${"serial"}}`, encodeURIComponent(String(requestParameters['serial']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadLookupCertSerial(serial: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadLookupCertSerialRaw({ serial: serial, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadLookupOrderOrderIdRaw(requestParameters: SecretsApiPkiExternalCaReadLookupOrderOrderIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadLookupOrderOrderId().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupOrderOrderId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/lookup/order/{order_id}`.replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadLookupOrderOrderId(order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadLookupOrderOrderIdRaw({ order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameCachedRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameCachedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameCached().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameCached().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/cached`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameCached(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadRoleNameCachedRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdChallengeRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+            );
+        }
+
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/challenge`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdFetchCertRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdFetchCertRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+            );
+        }
+
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/fetch-cert`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdFetchCert(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdFetchCertRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdStatusRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+            );
+        }
+
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/status`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaReadRoleNameOrderOrderIdStatus(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdStatusRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigAcmeAccountNameRequest',
+                'Required parameter "PkiExternalCaWriteConfigAcmeAccountNameRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigAcmeAccountNameRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigAcmeAccountNameRotateKeyRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountNameRotateKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest',
+                'Required parameter "PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/acme-account/{name}/rotate-key`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigAcmeAccountNameRotateKey(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteConfigAcmeAccountNameRotateKeyRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleName().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleName().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteRoleNameRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteRoleNameRequest',
+                'Required parameter "PkiExternalCaWriteRoleNameRequest" was null or undefined when calling pkiExternalCaWriteRoleName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteRoleNameRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleName(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameNewOrderRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameNewOrderOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteRoleNameNewOrderRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteRoleNameNewOrderRequest',
+                'Required parameter "PkiExternalCaWriteRoleNameNewOrderRequest" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/new-order`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteRoleNameNewOrderRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameNewOrderRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameNewOrder(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleNameNewOrderRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+            );
+        }
+
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest',
+                'Required parameter "PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/fulfilled-challenge`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameOrderOrderIdRevokeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdRevokeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+            );
+        }
+
+        if (requestParameters['order_id'] == null) {
+            throw new runtime.RequiredError(
+                'order_id',
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest',
+                'Required parameter "PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/revoke`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"order_id"}}`, encodeURIComponent(String(requestParameters['order_id']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteRoleNameOrderOrderIdRevoke(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleNameOrderOrderIdRevokeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -27066,6 +28157,427 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async registerCreateRaw(requestParameters: SecretsApiRegisterCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registerCreate().'
+            );
+        }
+
+        if (requestParameters['RegisterCreateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RegisterCreateRequest',
+                'Required parameter "RegisterCreateRequest" was null or undefined when calling registerCreate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{agent_registry_mount_path}/register`.replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RegisterCreateRequestToJSON(requestParameters['RegisterCreateRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registerCreate(agent_registry_mount_path: string, RegisterCreateRequest: RegisterCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registerCreateRaw({ agent_registry_mount_path: agent_registry_mount_path, RegisterCreateRequest: RegisterCreateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationDeleteByIdRaw(requestParameters: SecretsApiRegistrationDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling registrationDeleteById().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationDeleteById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationDeleteById(id: string, agent_registry_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationDeleteByIdRaw({ id: id, agent_registry_mount_path: agent_registry_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationDeleteByNameRaw(requestParameters: SecretsApiRegistrationDeleteByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['display_name'] == null) {
+            throw new runtime.RequiredError(
+                'display_name',
+                'Required parameter "display_name" was null or undefined when calling registrationDeleteByName().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationDeleteByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/display-name/{display_name}`.replace(`{${"display_name"}}`, encodeURIComponent(String(requestParameters['display_name']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationDeleteByName(display_name: string, agent_registry_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationDeleteByNameRaw({ display_name: display_name, agent_registry_mount_path: agent_registry_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationListByIdRaw(requestParameters: SecretsApiRegistrationListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationListById().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling registrationListById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/id/`.replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async registrationListById(agent_registry_mount_path: string, list: SecretsApiRegistrationListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.registrationListByIdRaw({ agent_registry_mount_path: agent_registry_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationListByNameRaw(requestParameters: SecretsApiRegistrationListByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationListByName().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling registrationListByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/display-name/`.replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async registrationListByName(agent_registry_mount_path: string, list: SecretsApiRegistrationListByNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.registrationListByNameRaw({ agent_registry_mount_path: agent_registry_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationReadByEntityIdRaw(requestParameters: SecretsApiRegistrationReadByEntityIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['entity_id'] == null) {
+            throw new runtime.RequiredError(
+                'entity_id',
+                'Required parameter "entity_id" was null or undefined when calling registrationReadByEntityId().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationReadByEntityId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/entity-id/{entity_id}`.replace(`{${"entity_id"}}`, encodeURIComponent(String(requestParameters['entity_id']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationReadByEntityId(entity_id: string, agent_registry_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationReadByEntityIdRaw({ entity_id: entity_id, agent_registry_mount_path: agent_registry_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationReadByIdRaw(requestParameters: SecretsApiRegistrationReadByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling registrationReadById().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationReadById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationReadById(id: string, agent_registry_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationReadByIdRaw({ id: id, agent_registry_mount_path: agent_registry_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationReadByNameRaw(requestParameters: SecretsApiRegistrationReadByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['display_name'] == null) {
+            throw new runtime.RequiredError(
+                'display_name',
+                'Required parameter "display_name" was null or undefined when calling registrationReadByName().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationReadByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{agent_registry_mount_path}/registration/display-name/{display_name}`.replace(`{${"display_name"}}`, encodeURIComponent(String(requestParameters['display_name']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationReadByName(display_name: string, agent_registry_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationReadByNameRaw({ display_name: display_name, agent_registry_mount_path: agent_registry_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationUpdateByIdRaw(requestParameters: SecretsApiRegistrationUpdateByIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling registrationUpdateById().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationUpdateById().'
+            );
+        }
+
+        if (requestParameters['RegistrationUpdateByIdRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RegistrationUpdateByIdRequest',
+                'Required parameter "RegistrationUpdateByIdRequest" was null or undefined when calling registrationUpdateById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{agent_registry_mount_path}/registration/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RegistrationUpdateByIdRequestToJSON(requestParameters['RegistrationUpdateByIdRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationUpdateById(id: string, agent_registry_mount_path: string, RegistrationUpdateByIdRequest: RegistrationUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationUpdateByIdRaw({ id: id, agent_registry_mount_path: agent_registry_mount_path, RegistrationUpdateByIdRequest: RegistrationUpdateByIdRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async registrationUpdateByNameRaw(requestParameters: SecretsApiRegistrationUpdateByNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['display_name'] == null) {
+            throw new runtime.RequiredError(
+                'display_name',
+                'Required parameter "display_name" was null or undefined when calling registrationUpdateByName().'
+            );
+        }
+
+        if (requestParameters['agent_registry_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'agent_registry_mount_path',
+                'Required parameter "agent_registry_mount_path" was null or undefined when calling registrationUpdateByName().'
+            );
+        }
+
+        if (requestParameters['RegistrationUpdateByNameRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RegistrationUpdateByNameRequest',
+                'Required parameter "RegistrationUpdateByNameRequest" was null or undefined when calling registrationUpdateByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{agent_registry_mount_path}/registration/display-name/{display_name}`.replace(`{${"display_name"}}`, encodeURIComponent(String(requestParameters['display_name']).replace(/\/+$/, ''))).replace(`{${"agent_registry_mount_path"}}`, encodeURIComponent(String(requestParameters['agent_registry_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RegistrationUpdateByNameRequestToJSON(requestParameters['RegistrationUpdateByNameRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async registrationUpdateByName(display_name: string, agent_registry_mount_path: string, RegistrationUpdateByNameRequest: RegistrationUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.registrationUpdateByNameRaw({ display_name: display_name, agent_registry_mount_path: agent_registry_mount_path, RegistrationUpdateByNameRequest: RegistrationUpdateByNameRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async spiffeConfigureRaw(requestParameters: SecretsApiSpiffeConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SpiffeConfigureResponse>> {
         if (requestParameters['spiffe_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -33536,13 +35048,6 @@ export enum SecretsApiKmipListCaListEnum {
   * @export
   * @enum {string}
   */
-export enum SecretsApiKmipListCaNameListEnum {
-    TRUE = 'true'
-}
-/**
-  * @export
-  * @enum {string}
-  */
 export enum SecretsApiKmipListClientCertificatesListEnum {
     TRUE = 'true'
 }
@@ -33669,6 +35174,34 @@ export enum SecretsApiNomadListRolesListEnum {
   * @export
   * @enum {string}
   */
+export enum SecretsApiPkiExternalCaListConfigAcmeAccountListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListLookupOrdersListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListRoleListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
 export enum SecretsApiPkiGenerateIntermediateExportedEnum {
     INTERNAL = 'internal',
     EXTERNAL = 'external',
@@ -33785,6 +35318,20 @@ export enum SecretsApiPkiRotateRootExportedEnum {
   * @enum {string}
   */
 export enum SecretsApiRabbitMqListRolesListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiRegistrationListByIdListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiRegistrationListByNameListEnum {
     TRUE = 'true'
 }
 /**

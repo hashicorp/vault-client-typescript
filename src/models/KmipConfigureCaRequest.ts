@@ -55,6 +55,7 @@ export interface KmipConfigureCaRequest {
 */
 export enum KmipConfigureCaRequestRoleFieldEnum {
     CN = 'CN',
+    O = 'O',
     OU = 'OU',
     UID = 'UID'
 }
@@ -64,6 +65,7 @@ export enum KmipConfigureCaRequestRoleFieldEnum {
 */
 export enum KmipConfigureCaRequestScopeFieldEnum {
     CN = 'CN',
+    O = 'O',
     OU = 'OU',
     UID = 'UID'
 }

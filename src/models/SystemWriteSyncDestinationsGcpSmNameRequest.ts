@@ -78,6 +78,24 @@ export interface SystemWriteSyncDestinationsGcpSmNameRequest {
      */
     granularity?: string;
     /**
+     * Audience of WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     */
+    identity_token_audience?: string;
+    /**
+     * Key used to sign WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     */
+    identity_token_key?: string;
+    /**
+     * The time-to-live (TTL) for the WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     */
+    identity_token_ttl?: string;
+    /**
      * A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.
      * @type {object}
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
@@ -107,6 +125,12 @@ export interface SystemWriteSyncDestinationsGcpSmNameRequest {
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
      */
     secret_name_template?: string;
+    /**
+     * The service account email to impersonate, used with GCP destinations. Optional.
+     * @type {Array<string>}
+     * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     */
+    service_account_email?: Array<string>;
     /**
      * List of custom tags to remove for patch requests. This field is ignored on create and update requests.
      * @type {Array<string>}
@@ -141,11 +165,15 @@ export function SystemWriteSyncDestinationsGcpSmNameRequestFromJSONTyped(json: a
         'force_delete': json['force_delete'] == null ? undefined : json['force_delete'],
         'global_kms_key': json['global_kms_key'] == null ? undefined : json['global_kms_key'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
         'locational_kms_keys': json['locational_kms_keys'] == null ? undefined : json['locational_kms_keys'],
         'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
         'replication_locations': json['replication_locations'] == null ? undefined : json['replication_locations'],
         'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
+        'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
         'tags_to_remove': json['tags_to_remove'] == null ? undefined : json['tags_to_remove'],
     };
 }
@@ -170,11 +198,15 @@ export function SystemWriteSyncDestinationsGcpSmNameRequestToJSONTyped(value?: S
         'force_delete': value['force_delete'],
         'global_kms_key': value['global_kms_key'],
         'granularity': value['granularity'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_key': value['identity_token_key'],
+        'identity_token_ttl': value['identity_token_ttl'],
         'locational_kms_keys': value['locational_kms_keys'],
         'project_id': value['project_id'],
         'purge': value['purge'],
         'replication_locations': value['replication_locations'],
         'secret_name_template': value['secret_name_template'],
+        'service_account_email': value['service_account_email'],
         'tags_to_remove': value['tags_to_remove'],
     };
 }

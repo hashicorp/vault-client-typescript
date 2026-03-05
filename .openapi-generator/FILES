@@ -323,6 +323,13 @@ src/models/PkiConfigureUrlsRequest.ts
 src/models/PkiConfigureUrlsResponse.ts
 src/models/PkiCrossSignIntermediateRequest.ts
 src/models/PkiCrossSignIntermediateResponse.ts
+src/models/PkiExternalCaCreateConfigAcmeAccountNameImportRequest.ts
+src/models/PkiExternalCaWriteConfigAcmeAccountNameRequest.ts
+src/models/PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest.ts
+src/models/PkiExternalCaWriteRoleNameNewOrderRequest.ts
+src/models/PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest.ts
+src/models/PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest.ts
+src/models/PkiExternalCaWriteRoleNameRequest.ts
 src/models/PkiGenerateEabKeyForIssuerAndRoleResponse.ts
 src/models/PkiGenerateEabKeyForIssuerResponse.ts
 src/models/PkiGenerateEabKeyForRoleResponse.ts
@@ -598,6 +605,9 @@ src/models/RawWriteRequest.ts
 src/models/ReadWrappingProperties2Response.ts
 src/models/ReadWrappingPropertiesRequest.ts
 src/models/ReadWrappingPropertiesResponse.ts
+src/models/RegisterCreateRequest.ts
+src/models/RegistrationUpdateByIdRequest.ts
+src/models/RegistrationUpdateByNameRequest.ts
 src/models/RekeyAttemptInitializeRequest.ts
 src/models/RekeyAttemptInitializeResponse.ts
 src/models/RekeyAttemptReadProgressResponse.ts
@@ -676,6 +686,7 @@ src/models/SystemPatchSyncDestinationsInMemNameResponse.ts
 src/models/SystemPatchSyncDestinationsVercelProjectNameRequest.ts
 src/models/SystemPatchSyncDestinationsVercelProjectNameResponse.ts
 src/models/SystemReadBillingCertificatesResponse.ts
+src/models/SystemReadBillingOverviewResponse.ts
 src/models/SystemReadConfigGroupPolicyApplicationResponse.ts
 src/models/SystemReadRotationOrphansResponse.ts
 src/models/SystemReadStorageRaftSnapshotLoadIdResponse.ts
