@@ -139,6 +139,12 @@ export interface KerberosConfigureLdapRequest {
      */
     request_timeout?: string;
     /**
+     * LDAP schema type: 'ad' for Active Directory, 'openldap' for OpenLDAP. Determines root password rotation behavior.
+     * @type {string}
+     * @memberof KerberosConfigureLdapRequest
+     */
+    schema?: string;
+    /**
      * Issue a StartTLS command after establishing unencrypted connection (optional)
      * @type {boolean}
      * @memberof KerberosConfigureLdapRequest
@@ -328,6 +334,7 @@ export function KerberosConfigureLdapRequestFromJSONTyped(json: any, ignoreDiscr
         'insecure_tls': json['insecure_tls'] == null ? undefined : json['insecure_tls'],
         'max_page_size': json['max_page_size'] == null ? undefined : json['max_page_size'],
         'request_timeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
+        'schema': json['schema'] == null ? undefined : json['schema'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
         'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
         'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
@@ -381,6 +388,7 @@ export function KerberosConfigureLdapRequestToJSONTyped(value?: KerberosConfigur
         'insecure_tls': value['insecure_tls'],
         'max_page_size': value['max_page_size'],
         'request_timeout': value['request_timeout'],
+        'schema': value['schema'],
         'starttls': value['starttls'],
         'tls_max_version': value['tls_max_version'],
         'tls_min_version': value['tls_min_version'],

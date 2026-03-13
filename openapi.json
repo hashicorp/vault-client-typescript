@@ -12130,6 +12130,46 @@
         }
       }
     },
+    "/sys/billing/overview": {
+      "get": {
+        "summary": "Reports consumption billing metrics for the current and previous months.",
+        "operationId": "system-read-billing-overview",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "refresh_data",
+            "description": "If set, updates the billing counts for the current month before returning. This is an expensive operation with potential performance impact and should be used sparingly.",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemReadBillingOverviewResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/sys/capabilities": {
       "description": "Fetches the capabilities of the given token on the given path.",
       "post": {
@@ -20804,6 +20844,300 @@
         }
       }
     },
+    "/{agent_registry_mount_path}/register": {
+      "parameters": [
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "register-create",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{agent_registry_mount_path}/registration/display-name/": {
+      "parameters": [
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "registration-list-by-name",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{agent_registry_mount_path}/registration/display-name/{display_name}": {
+      "parameters": [
+        {
+          "name": "display_name",
+          "description": "Human readable name of the registration.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "registration-read-by-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "registration-update-by-name",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationUpdateByNameRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "registration-delete-by-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{agent_registry_mount_path}/registration/entity-id/{entity_id}": {
+      "parameters": [
+        {
+          "name": "entity_id",
+          "description": "Entity ID representing this agent.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "registration-read-by-entity-id",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{agent_registry_mount_path}/registration/id/": {
+      "parameters": [
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "registration-list-by-id",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{agent_registry_mount_path}/registration/id/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "description": "ID of the registration. If set, updates the corresponding existing registration.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "agent_registry_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "agent-registry"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "registration-read-by-id",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "registration-update-by-id",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationUpdateByIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "registration-delete-by-id",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
     "/{alicloud_mount_path}/config": {
       "description": "Configure the access key and secret to use for RAM and STS calls.",
       "parameters": [
@@ -25122,7 +25456,7 @@
       }
     },
     "/{kmip_mount_path}/ca/": {
-      "description": "Configure an imported CA bundle.",
+      "description": "Read default CA certificates. List CA bundles",
       "parameters": [
         {
           "name": "kmip_mount_path",
@@ -25234,65 +25568,6 @@
         "responses": {
           "204": {
             "description": "empty body"
-          }
-        }
-      }
-    },
-    "/{kmip_mount_path}/ca/{name}/": {
-      "description": "Configure an imported CA bundle.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "The name to identify the CA",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "x-vault-displayAttrs": {
-              "name": "TLS CA Bundle name"
-            }
-          },
-          "required": true
-        },
-        {
-          "name": "kmip_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "kmip"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "kmip-list-ca-name",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
           }
         }
       }
@@ -28535,6 +28810,817 @@
         "responses": {
           "204": {
             "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/acme-account/": {
+      "description": "List ACME accounts",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-acme-account",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/acme-account/{name}": {
+      "description": "ACME Account configuration",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the account",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-config-acme-account-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-config-acme-account-name",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountNameRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-config-acme-account-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/acme-account/{name}/import": {
+      "description": "Create an account by importing an existing account key registered on the ACME server",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the account",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "pki-external-ca-create-config-acme-account-name-import",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaCreateConfigAcmeAccountNameImportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/acme-account/{name}/rotate-key": {
+      "description": "Rotate the ACME account key",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the account",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-external-ca-write-config-acme-account-name-rotate-key",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/lookup/cert/{serial}": {
+      "description": "Return information about a certificate",
+      "parameters": [
+        {
+          "name": "serial",
+          "description": "Serial number",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-lookup-cert-serial",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/lookup/order/{order_id}": {
+      "description": "Check order status",
+      "parameters": [
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-lookup-order-order_id",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/lookup/orders/": {
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-lookup-orders",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/": {
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-role",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}": {
+      "description": "Role configuration",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-role-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-role-name",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-role-name",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/active-orders/": {
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-role-name-active-orders",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/cached": {
+      "description": "Retrieve a previously issued certificate from cache",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-role-name-cached",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/new-order": {
+      "description": "Create a new ACME order for a role",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-external-ca-write-role-name-new-order",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameNewOrderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/challenge": {
+      "description": "Get challenge for one of order's identifiers",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-role-name-order-order_id-challenge",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/fetch-cert": {
+      "description": "Report ready challenge for one of order's identifiers",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-role-name-order-order_id-fetch-cert",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/fulfilled-challenge": {
+      "description": "Report ready challenge for one of order's identifiers",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-external-ca-write-role-name-order-order_id-fulfilled-challenge",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameOrderOrder_idFulfilledChallengeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/revoke": {
+      "description": "Revoke an order's certificate with a specified reason",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-external-ca-write-role-name-order-order_id-revoke",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameOrderOrder_idRevokeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/status": {
+      "description": "Check order status",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "order_id",
+          "description": "Order ID",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-read-role-name-order-order_id-status",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -51412,6 +52498,11 @@
             "format": "duration",
             "default": "90s"
           },
+          "schema": {
+            "type": "string",
+            "description": "LDAP schema type: 'ad' for Active Directory, 'openldap' for OpenLDAP. Determines root password rotation behavior.",
+            "default": "openldap"
+          },
           "starttls": {
             "type": "boolean",
             "description": "Issue a StartTLS command after establishing unencrypted connection (optional)",
@@ -51737,6 +52828,7 @@
             "description": "The field in the certificate to use for the role (e.g. UID)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -51756,6 +52848,7 @@
             "description": "The field in the certificate to use for the scope (e.g. OU)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -51780,6 +52873,7 @@
             "description": "The field in the certificate to use for the role (e.g. UID)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -51799,6 +52893,7 @@
             "description": "The field in the certificate to use for the scope (e.g. OU)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -51991,6 +53086,7 @@
             "description": "The field in the certificate to use for the role (e.g. UID)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -52010,6 +53106,7 @@
             "description": "The field in the certificate to use for the scope (e.g. OU)",
             "enum": [
               "CN",
+              "O",
               "OU",
               "UID"
             ],
@@ -53245,6 +54342,11 @@
             "x-vault-displayAttrs": {
               "group": "default"
             }
+          },
+          "schema": {
+            "type": "string",
+            "description": "LDAP schema type: 'ad' for Active Directory, 'openldap' for OpenLDAP. Determines root password rotation behavior.",
+            "default": "openldap"
           },
           "starttls": {
             "type": "boolean",
@@ -56935,6 +58037,225 @@
             "description": "Specifies the format used for marshaling the private key."
           }
         }
+      },
+      "PkiExternalCaCreateConfigAcmeAccountNameImportRequest": {
+        "type": "object",
+        "properties": {
+          "account_key": {
+            "type": "string",
+            "description": "PEM encoded private key for the ACME account"
+          },
+          "directory_url": {
+            "type": "string",
+            "description": "ACME Directory URL"
+          },
+          "trusted_ca": {
+            "type": "string",
+            "description": "Trusted CA certificates for the ACME server"
+          }
+        },
+        "required": [
+          "account_key",
+          "directory_url"
+        ]
+      },
+      "PkiExternalCaWriteConfigAcmeAccountNameRequest": {
+        "type": "object",
+        "properties": {
+          "directory_url": {
+            "type": "string",
+            "description": "ACME Directory URL"
+          },
+          "eab_key": {
+            "type": "string",
+            "description": "A standard base64 encoded external binding token to create the initial account"
+          },
+          "eab_kid": {
+            "type": "string",
+            "description": "The external binding key id to create the initial account"
+          },
+          "email_contacts": {
+            "type": "array",
+            "description": "EmailContacts email addresses",
+            "items": {
+              "type": "string"
+            }
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Key type to generate for the account key",
+            "enum": [
+              "ec-256",
+              "ec-384",
+              "ec-521",
+              "rsa-2048",
+              "rsa-4096",
+              "rsa-8192"
+            ],
+            "default": "ec-256"
+          },
+          "trusted_ca": {
+            "type": "string",
+            "description": "Trusted CA certificates for the ACME server"
+          }
+        },
+        "required": [
+          "directory_url",
+          "email_contacts"
+        ]
+      },
+      "PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest": {
+        "type": "object",
+        "properties": {
+          "force": {
+            "type": "boolean",
+            "description": "Force the rotation of an account if orders are still pending"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Key type to generate for the new account key",
+            "enum": [
+              "ec-256",
+              "ec-384",
+              "ec-521",
+              "rsa-2048",
+              "rsa-4096",
+              "rsa-8192"
+            ],
+            "default": "ec-256"
+          }
+        }
+      },
+      "PkiExternalCaWriteRoleNameNewOrderRequest": {
+        "type": "object",
+        "properties": {
+          "csr": {
+            "type": "string",
+            "description": "CSR containing identifiers for the new order"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of identifiers for the new order",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PkiExternalCaWriteRoleNameOrderOrder_idFulfilledChallengeRequest": {
+        "type": "object",
+        "properties": {
+          "challenge_type": {
+            "type": "string",
+            "description": "Challenge type, one of dns-01 or http-01 or tls-alpn-01"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Identifier being challenged"
+          }
+        },
+        "required": [
+          "challenge_type",
+          "identifier"
+        ]
+      },
+      "PkiExternalCaWriteRoleNameOrderOrder_idRevokeRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Revocation reason",
+            "enum": [
+              "unspecified",
+              "key-compromise",
+              "ca-compromise",
+              "affiliation-changed",
+              "superseded",
+              "cessation-of-operation",
+              "certificate-hold",
+              "remove-from-crl",
+              "privilege-withdrawn",
+              "aa-compromise"
+            ]
+          }
+        },
+        "required": [
+          "reason"
+        ]
+      },
+      "PkiExternalCaWriteRoleNameRequest": {
+        "type": "object",
+        "properties": {
+          "acme_account_name": {
+            "type": "string",
+            "description": "The ACME account to use when validating certificates"
+          },
+          "allowed_challenge_types": {
+            "type": "array",
+            "description": "The list of challenge types that are allowed to be used.",
+            "items": {
+              "type": "string"
+            },
+            "enum": [
+              "http-01",
+              "dns-01",
+              "tls-alpn-01"
+            ],
+            "default": [
+              "http-01",
+              "dns-01",
+              "tls-alpn-01"
+            ]
+          },
+          "allowed_domain_options": {
+            "type": "array",
+            "description": "A list of keyword options that influence how values within allowed_domains are interpreted against the requested set of identifiers from the client.",
+            "items": {
+              "type": "string"
+            },
+            "enum": [
+              "bare_domains",
+              "subdomains",
+              "wildcards",
+              "globs"
+            ]
+          },
+          "allowed_domains": {
+            "type": "array",
+            "description": "A list of domains the role will accept certificates for. May contain templates, as with ACL Path Templating.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "csr_generate_key_type": {
+            "type": "string",
+            "description": "The key type and size/parameters to use when we generate a new key if running in the identifier workflow.",
+            "enum": [
+              "ec-256",
+              "ec-384",
+              "ec-521",
+              "rsa-2048",
+              "rsa-4096"
+            ],
+            "default": "ec-256"
+          },
+          "csr_identifier_population": {
+            "type": "string",
+            "description": "The technique used to populate a CSR from the provided identifiers in the identifier workflow.",
+            "enum": [
+              "cn_first",
+              "sans_only"
+            ],
+            "default": "cn_first"
+          },
+          "force": {
+            "type": "boolean",
+            "description": "Force deletion even when active orders exist"
+          }
+        },
+        "required": [
+          "acme_account_name"
+        ]
       },
       "PkiGenerateEabKeyForIssuerAndRoleResponse": {
         "type": "object",
@@ -68092,6 +69413,60 @@
           }
         }
       },
+      "RegisterCreateRequest": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Human readable name of the registration."
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID representing this agent."
+          },
+          "id": {
+            "type": "string",
+            "description": "ID of the registration. If set, updates the corresponding existing registration."
+          }
+        },
+        "required": [
+          "display_name",
+          "entity_id"
+        ]
+      },
+      "RegistrationUpdateByIdRequest": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Human readable name of the registration."
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID representing this agent."
+          }
+        },
+        "required": [
+          "display_name",
+          "entity_id"
+        ]
+      },
+      "RegistrationUpdateByNameRequest": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID representing this agent."
+          },
+          "id": {
+            "type": "string",
+            "description": "ID of the registration. If set, updates the corresponding existing registration."
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      },
       "RekeyAttemptInitializeRequest": {
         "type": "object",
         "properties": {
@@ -69941,6 +71316,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -70057,6 +71445,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "key_vault_uri": {
             "type": "string",
             "description": "URI of the Azure Key Vault to access."
@@ -70165,6 +71566,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -70189,6 +71603,13 @@
             "type": "string",
             "description": "Template describing how to generate external secret names. Supports a subset of the Go Template syntax.",
             "default": ""
+          },
+          "service_account_email": {
+            "type": "array",
+            "description": "The service account email to impersonate, used with GCP destinations. Optional.",
+            "items": {
+              "type": "string"
+            }
           },
           "tags_to_remove": {
             "type": "array",
@@ -70544,6 +71965,18 @@
           "months": {
             "type": "array",
             "description": "The certificates issued by PKI mounts on this cluster by month",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "SystemReadBillingOverviewResponse": {
+        "type": "object",
+        "properties": {
+          "months": {
+            "type": "array",
+            "description": "List of monthly billing data, including the current and previous months.",
             "items": {
               "type": "object"
             }
@@ -72005,6 +73438,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -72121,6 +73567,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "key_vault_uri": {
             "type": "string",
             "description": "URI of the Azure Key Vault to access."
@@ -72229,6 +73688,19 @@
             "type": "string",
             "description": "Determines what level of information is synced as a distinct resource at the destination. Supports `secret-path` and `secret-key`."
           },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of WIF identity tokens. Optional."
+          },
+          "identity_token_key": {
+            "type": "string",
+            "description": "Key used to sign WIF identity tokens. Optional."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
+            "format": "duration"
+          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -72253,6 +73725,13 @@
             "type": "string",
             "description": "Template describing how to generate external secret names. Supports a subset of the Go Template syntax.",
             "default": ""
+          },
+          "service_account_email": {
+            "type": "array",
+            "description": "The service account email to impersonate, used with GCP destinations. Optional.",
+            "items": {
+              "type": "string"
+            }
           },
           "tags_to_remove": {
             "type": "array",

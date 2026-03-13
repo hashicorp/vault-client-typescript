@@ -78,6 +78,24 @@ export interface SystemPatchSyncDestinationsAwsSmNameRequest {
      */
     granularity?: string;
     /**
+     * Audience of WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemPatchSyncDestinationsAwsSmNameRequest
+     */
+    identity_token_audience?: string;
+    /**
+     * Key used to sign WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemPatchSyncDestinationsAwsSmNameRequest
+     */
+    identity_token_key?: string;
+    /**
+     * The time-to-live (TTL) for the WIF identity tokens. Optional.
+     * @type {string}
+     * @memberof SystemPatchSyncDestinationsAwsSmNameRequest
+     */
+    identity_token_ttl?: string;
+    /**
      * Asynchronously unsyncs all associated secrets with the destination then deletes the destination config.
      * @type {boolean}
      * @memberof SystemPatchSyncDestinationsAwsSmNameRequest
@@ -141,6 +159,9 @@ export function SystemPatchSyncDestinationsAwsSmNameRequestFromJSONTyped(json: a
         'external_id': json['external_id'] == null ? undefined : json['external_id'],
         'force_delete': json['force_delete'] == null ? undefined : json['force_delete'],
         'granularity': json['granularity'] == null ? undefined : json['granularity'],
+        'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
+        'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
+        'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
         'purge': json['purge'] == null ? undefined : json['purge'],
         'region': json['region'] == null ? undefined : json['region'],
         'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
@@ -170,6 +191,9 @@ export function SystemPatchSyncDestinationsAwsSmNameRequestToJSONTyped(value?: S
         'external_id': value['external_id'],
         'force_delete': value['force_delete'],
         'granularity': value['granularity'],
+        'identity_token_audience': value['identity_token_audience'],
+        'identity_token_key': value['identity_token_key'],
+        'identity_token_ttl': value['identity_token_ttl'],
         'purge': value['purge'],
         'region': value['region'],
         'role_arn': value['role_arn'],

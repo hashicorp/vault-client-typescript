@@ -181,6 +181,12 @@ export interface LdapConfigureAuthRequest {
      */
     rotation_window?: string;
     /**
+     * LDAP schema type: 'ad' for Active Directory, 'openldap' for OpenLDAP. Determines root password rotation behavior.
+     * @type {string}
+     * @memberof LdapConfigureAuthRequest
+     */
+    schema?: string;
+    /**
      * Issue a StartTLS command after establishing unencrypted connection (optional)
      * @type {boolean}
      * @memberof LdapConfigureAuthRequest
@@ -377,6 +383,7 @@ export function LdapConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimin
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
         'rotation_url': json['rotation_url'] == null ? undefined : json['rotation_url'],
         'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'schema': json['schema'] == null ? undefined : json['schema'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
         'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
         'tls_min_version': json['tls_min_version'] == null ? undefined : json['tls_min_version'],
@@ -437,6 +444,7 @@ export function LdapConfigureAuthRequestToJSONTyped(value?: LdapConfigureAuthReq
         'rotation_schedule': value['rotation_schedule'],
         'rotation_url': value['rotation_url'],
         'rotation_window': value['rotation_window'],
+        'schema': value['schema'],
         'starttls': value['starttls'],
         'tls_max_version': value['tls_max_version'],
         'tls_min_version': value['tls_min_version'],
