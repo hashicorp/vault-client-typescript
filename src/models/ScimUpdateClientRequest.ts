@@ -30,28 +30,12 @@ export interface ScimUpdateClientRequest {
      */
     access_grant_principal?: string;
     /**
-     * Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. Typically used for 'IdP' role clients.
+     * Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user.
      * @type {string}
      * @memberof ScimUpdateClientRequest
      */
     alias_mount_accessor?: string;
-    /**
-     * The role of the SCIM client, which determines its authoritative power. Must be either 'IGA' or 'IdP'.
-     * @type {string}
-     * @memberof ScimUpdateClientRequest
-     */
-    client_role?: ScimUpdateClientRequestClientRoleEnum;
 }
-
-/**
-* @export
-* @enum {string}
-*/
-export enum ScimUpdateClientRequestClientRoleEnum {
-    IDP = 'idp',
-    IGA = 'iga'
-}
-
 
 /**
  * Check if a given object implements the ScimUpdateClientRequest interface.
@@ -72,7 +56,6 @@ export function ScimUpdateClientRequestFromJSONTyped(json: any, ignoreDiscrimina
         
         'access_grant_principal': json['access_grant_principal'] == null ? undefined : json['access_grant_principal'],
         'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
-        'client_role': json['client_role'] == null ? undefined : json['client_role'],
     };
 }
 
@@ -89,7 +72,6 @@ export function ScimUpdateClientRequestToJSONTyped(value?: ScimUpdateClientReque
         
         'access_grant_principal': value['access_grant_principal'],
         'alias_mount_accessor': value['alias_mount_accessor'],
-        'client_role': value['client_role'],
     };
 }
 

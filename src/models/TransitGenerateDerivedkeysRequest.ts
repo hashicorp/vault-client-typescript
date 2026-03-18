@@ -30,6 +30,12 @@ export interface TransitGenerateDerivedkeysRequest {
      */
     bits?: number;
     /**
+     * Context for key derivation. Required for derived keys.
+     * @type {string}
+     * @memberof TransitGenerateDerivedkeysRequest
+     */
+    context?: string;
+    /**
      * The info string input to derivation
      * @type {string}
      * @memberof TransitGenerateDerivedkeysRequest
@@ -79,6 +85,7 @@ export function TransitGenerateDerivedkeysRequestFromJSONTyped(json: any, ignore
     return {
         
         'bits': json['bits'] == null ? undefined : json['bits'],
+        'context': json['context'] == null ? undefined : json['context'],
         'info': json['info'] == null ? undefined : json['info'],
         'key_index_from': json['key_index_from'] == null ? undefined : json['key_index_from'],
         'key_index_to': json['key_index_to'] == null ? undefined : json['key_index_to'],
@@ -99,6 +106,7 @@ export function TransitGenerateDerivedkeysRequestToJSONTyped(value?: TransitGene
     return {
         
         'bits': value['bits'],
+        'context': value['context'],
         'info': value['info'],
         'key_index_from': value['key_index_from'],
         'key_index_to': value['key_index_to'],

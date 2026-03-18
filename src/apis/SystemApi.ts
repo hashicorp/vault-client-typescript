@@ -134,6 +134,14 @@ import type {
   RekeyAttemptUpdateResponse,
   RekeyReadBackupKeyResponse,
   RekeyReadBackupRecoveryKeyResponse,
+  RekeyRecoveryKeyAttemptInitializeRequest,
+  RekeyRecoveryKeyAttemptInitializeResponse,
+  RekeyRecoveryKeyAttemptReadProgressResponse,
+  RekeyRecoveryKeyAttemptUpdateRequest,
+  RekeyRecoveryKeyAttemptUpdateResponse,
+  RekeyRecoveryKeyVerificationReadProgressResponse,
+  RekeyRecoveryKeyVerificationUpdateRequest,
+  RekeyRecoveryKeyVerificationUpdateResponse,
   RekeyVerificationCancelResponse,
   RekeyVerificationReadProgressResponse,
   RekeyVerificationUpdateRequest,
@@ -513,6 +521,22 @@ import {
     RekeyReadBackupKeyResponseToJSON,
     RekeyReadBackupRecoveryKeyResponseFromJSON,
     RekeyReadBackupRecoveryKeyResponseToJSON,
+    RekeyRecoveryKeyAttemptInitializeRequestFromJSON,
+    RekeyRecoveryKeyAttemptInitializeRequestToJSON,
+    RekeyRecoveryKeyAttemptInitializeResponseFromJSON,
+    RekeyRecoveryKeyAttemptInitializeResponseToJSON,
+    RekeyRecoveryKeyAttemptReadProgressResponseFromJSON,
+    RekeyRecoveryKeyAttemptReadProgressResponseToJSON,
+    RekeyRecoveryKeyAttemptUpdateRequestFromJSON,
+    RekeyRecoveryKeyAttemptUpdateRequestToJSON,
+    RekeyRecoveryKeyAttemptUpdateResponseFromJSON,
+    RekeyRecoveryKeyAttemptUpdateResponseToJSON,
+    RekeyRecoveryKeyVerificationReadProgressResponseFromJSON,
+    RekeyRecoveryKeyVerificationReadProgressResponseToJSON,
+    RekeyRecoveryKeyVerificationUpdateRequestFromJSON,
+    RekeyRecoveryKeyVerificationUpdateRequestToJSON,
+    RekeyRecoveryKeyVerificationUpdateResponseFromJSON,
+    RekeyRecoveryKeyVerificationUpdateResponseToJSON,
     RekeyVerificationCancelResponseFromJSON,
     RekeyVerificationCancelResponseToJSON,
     RekeyVerificationReadProgressResponseFromJSON,
@@ -1292,6 +1316,18 @@ export interface SystemApiRekeyAttemptInitializeOperationRequest {
 
 export interface SystemApiRekeyAttemptUpdateOperationRequest {
     RekeyAttemptUpdateRequest: RekeyAttemptUpdateRequest;
+}
+
+export interface SystemApiRekeyRecoveryKeyAttemptInitializeOperationRequest {
+    RekeyRecoveryKeyAttemptInitializeRequest: RekeyRecoveryKeyAttemptInitializeRequest;
+}
+
+export interface SystemApiRekeyRecoveryKeyAttemptUpdateOperationRequest {
+    RekeyRecoveryKeyAttemptUpdateRequest: RekeyRecoveryKeyAttemptUpdateRequest;
+}
+
+export interface SystemApiRekeyRecoveryKeyVerificationUpdateOperationRequest {
+    RekeyRecoveryKeyVerificationUpdateRequest: RekeyRecoveryKeyVerificationUpdateRequest;
 }
 
 export interface SystemApiRekeyVerificationUpdateOperationRequest {
@@ -7819,6 +7855,231 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async rekeyReadBackupRecoveryKey(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyReadBackupRecoveryKeyResponse> {
         const response = await this.rekeyReadBackupRecoveryKeyRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * This clears the recovery key rekey settings as well as any progress made.
+     * Cancels any in-progress recovery key rekey.
+     */
+    async rekeyRecoveryKeyAttemptCancelRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/rekey-recovery-key/init`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * This clears the recovery key rekey settings as well as any progress made.
+     * Cancels any in-progress recovery key rekey.
+     */
+    async rekeyRecoveryKeyAttemptCancel(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rekeyRecoveryKeyAttemptCancelRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Only a single recovery key rekey attempt can take place at a time.
+     * Initializes a new recovery key rekey attempt.
+     */
+    async rekeyRecoveryKeyAttemptInitializeRaw(requestParameters: SystemApiRekeyRecoveryKeyAttemptInitializeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyRecoveryKeyAttemptInitializeResponse>> {
+        if (requestParameters['RekeyRecoveryKeyAttemptInitializeRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RekeyRecoveryKeyAttemptInitializeRequest',
+                'Required parameter "RekeyRecoveryKeyAttemptInitializeRequest" was null or undefined when calling rekeyRecoveryKeyAttemptInitialize().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/rekey-recovery-key/init`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RekeyRecoveryKeyAttemptInitializeRequestToJSON(requestParameters['RekeyRecoveryKeyAttemptInitializeRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RekeyRecoveryKeyAttemptInitializeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Only a single recovery key rekey attempt can take place at a time.
+     * Initializes a new recovery key rekey attempt.
+     */
+    async rekeyRecoveryKeyAttemptInitialize(RekeyRecoveryKeyAttemptInitializeRequest: RekeyRecoveryKeyAttemptInitializeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyRecoveryKeyAttemptInitializeResponse> {
+        const response = await this.rekeyRecoveryKeyAttemptInitializeRaw({ RekeyRecoveryKeyAttemptInitializeRequest: RekeyRecoveryKeyAttemptInitializeRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Reads the configuration and progress of the current recovery key rekey attempt.
+     */
+    async rekeyRecoveryKeyAttemptReadProgressRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyRecoveryKeyAttemptReadProgressResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/rekey-recovery-key/init`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RekeyRecoveryKeyAttemptReadProgressResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Reads the configuration and progress of the current recovery key rekey attempt.
+     */
+    async rekeyRecoveryKeyAttemptReadProgress(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyRecoveryKeyAttemptReadProgressResponse> {
+        const response = await this.rekeyRecoveryKeyAttemptReadProgressRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Enter a single recovery key share to progress the rekey of the Vault.
+     */
+    async rekeyRecoveryKeyAttemptUpdateRaw(requestParameters: SystemApiRekeyRecoveryKeyAttemptUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyRecoveryKeyAttemptUpdateResponse>> {
+        if (requestParameters['RekeyRecoveryKeyAttemptUpdateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RekeyRecoveryKeyAttemptUpdateRequest',
+                'Required parameter "RekeyRecoveryKeyAttemptUpdateRequest" was null or undefined when calling rekeyRecoveryKeyAttemptUpdate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/rekey-recovery-key/update`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RekeyRecoveryKeyAttemptUpdateRequestToJSON(requestParameters['RekeyRecoveryKeyAttemptUpdateRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RekeyRecoveryKeyAttemptUpdateResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Enter a single recovery key share to progress the rekey of the Vault.
+     */
+    async rekeyRecoveryKeyAttemptUpdate(RekeyRecoveryKeyAttemptUpdateRequest: RekeyRecoveryKeyAttemptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyRecoveryKeyAttemptUpdateResponse> {
+        const response = await this.rekeyRecoveryKeyAttemptUpdateRaw({ RekeyRecoveryKeyAttemptUpdateRequest: RekeyRecoveryKeyAttemptUpdateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * This clears any progress made and resets the nonce.
+     * Cancel any in-progress recovery key rekey verification operation.
+     */
+    async rekeyRecoveryKeyVerificationCancelRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/rekey-recovery-key/verify`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * This clears any progress made and resets the nonce.
+     * Cancel any in-progress recovery key rekey verification operation.
+     */
+    async rekeyRecoveryKeyVerificationCancel(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.rekeyRecoveryKeyVerificationCancelRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Read the configuration and progress of the current recovery key rekey verification attempt.
+     */
+    async rekeyRecoveryKeyVerificationReadProgressRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyRecoveryKeyVerificationReadProgressResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/rekey-recovery-key/verify`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RekeyRecoveryKeyVerificationReadProgressResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Read the configuration and progress of the current recovery key rekey verification attempt.
+     */
+    async rekeyRecoveryKeyVerificationReadProgress(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyRecoveryKeyVerificationReadProgressResponse> {
+        const response = await this.rekeyRecoveryKeyVerificationReadProgressRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Enter a single new recovery key share to progress the rekey verification operation.
+     */
+    async rekeyRecoveryKeyVerificationUpdateRaw(requestParameters: SystemApiRekeyRecoveryKeyVerificationUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RekeyRecoveryKeyVerificationUpdateResponse>> {
+        if (requestParameters['RekeyRecoveryKeyVerificationUpdateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'RekeyRecoveryKeyVerificationUpdateRequest',
+                'Required parameter "RekeyRecoveryKeyVerificationUpdateRequest" was null or undefined when calling rekeyRecoveryKeyVerificationUpdate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/rekey-recovery-key/verify`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RekeyRecoveryKeyVerificationUpdateRequestToJSON(requestParameters['RekeyRecoveryKeyVerificationUpdateRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RekeyRecoveryKeyVerificationUpdateResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Enter a single new recovery key share to progress the rekey verification operation.
+     */
+    async rekeyRecoveryKeyVerificationUpdate(RekeyRecoveryKeyVerificationUpdateRequest: RekeyRecoveryKeyVerificationUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RekeyRecoveryKeyVerificationUpdateResponse> {
+        const response = await this.rekeyRecoveryKeyVerificationUpdateRaw({ RekeyRecoveryKeyVerificationUpdateRequest: RekeyRecoveryKeyVerificationUpdateRequest }, initOverrides);
         return await response.value();
     }
 

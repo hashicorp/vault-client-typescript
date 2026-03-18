@@ -2004,6 +2004,12 @@ export interface SecretsApiKeyManagementReadKmsProviderRequest {
     keymgmt_mount_path: string;
 }
 
+export interface SecretsApiKeyManagementReplicateKeyReplicateInKmsProviderRequest {
+    key_name: string;
+    name: string;
+    keymgmt_mount_path: string;
+}
+
 export interface SecretsApiKeyManagementRotateKeyRequest {
     name: string;
     keymgmt_mount_path: string;
@@ -2435,12 +2441,20 @@ export interface SecretsApiLdapListStaticRolesRequest {
     list: SecretsApiLdapListStaticRolesListEnum;
 }
 
+export interface SecretsApiLdapMigrateRequest {
+    ldap_mount_path: string;
+}
+
 export interface SecretsApiLdapReadConfigurationRequest {
     ldap_mount_path: string;
 }
 
 export interface SecretsApiLdapReadDynamicRoleRequest {
     name: string;
+    ldap_mount_path: string;
+}
+
+export interface SecretsApiLdapReadMigrationRequest {
     ldap_mount_path: string;
 }
 
@@ -2467,6 +2481,10 @@ export interface SecretsApiLdapRotateStaticRoleOperationRequest {
     name: string;
     ldap_mount_path: string;
     LdapRotateStaticRoleRequest: LdapRotateStaticRoleRequest;
+}
+
+export interface SecretsApiLdapStopMigrationRequest {
+    ldap_mount_path: string;
 }
 
 export interface SecretsApiLdapWriteDynamicRoleOperationRequest {
@@ -10809,6 +10827,52 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async keyManagementReplicateKeyReplicateInKmsProviderRaw(requestParameters: SecretsApiKeyManagementReplicateKeyReplicateInKmsProviderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['key_name'] == null) {
+            throw new runtime.RequiredError(
+                'key_name',
+                'Required parameter "key_name" was null or undefined when calling keyManagementReplicateKeyReplicateInKmsProvider().'
+            );
+        }
+
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling keyManagementReplicateKeyReplicateInKmsProvider().'
+            );
+        }
+
+        if (requestParameters['keymgmt_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'keymgmt_mount_path',
+                'Required parameter "keymgmt_mount_path" was null or undefined when calling keyManagementReplicateKeyReplicateInKmsProvider().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{keymgmt_mount_path}/kms/{name}/key/{key_name}/replicate`.replace(`{${"key_name"}}`, encodeURIComponent(String(requestParameters['key_name']).replace(/\/+$/, ''))).replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"keymgmt_mount_path"}}`, encodeURIComponent(String(requestParameters['keymgmt_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async keyManagementReplicateKeyReplicateInKmsProvider(key_name: string, name: string, keymgmt_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.keyManagementReplicateKeyReplicateInKmsProviderRaw({ key_name: key_name, name: name, keymgmt_mount_path: keymgmt_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async keyManagementRotateKeyRaw(requestParameters: SecretsApiKeyManagementRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
@@ -14314,6 +14378,38 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async ldapMigrateRaw(requestParameters: SecretsApiLdapMigrateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapMigrate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/static-migration`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async ldapMigrate(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapMigrateRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async ldapReadConfigurationRaw(requestParameters: SecretsApiLdapReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['ldap_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -14380,6 +14476,38 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async ldapReadDynamicRole(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.ldapReadDynamicRoleRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async ldapReadMigrationRaw(requestParameters: SecretsApiLdapReadMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadMigration().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/static-migration`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async ldapReadMigration(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadMigrationRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -14578,6 +14706,38 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async ldapRotateStaticRole(name: string, ldap_mount_path: string, LdapRotateStaticRoleRequest: LdapRotateStaticRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.ldapRotateStaticRoleRaw({ name: name, ldap_mount_path: ldap_mount_path, LdapRotateStaticRoleRequest: LdapRotateStaticRoleRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async ldapStopMigrationRaw(requestParameters: SecretsApiLdapStopMigrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapStopMigration().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/static-migration/stop`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async ldapStopMigration(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapStopMigrationRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 

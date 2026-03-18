@@ -30,6 +30,12 @@ export interface RekeyAttemptInitializeRequest {
      */
     backup?: boolean;
     /**
+     * Specifies the nonce of the rekey operation. If the rekey was initialized within the last 10 minutes, you must provide the nonce to cancel the operation.
+     * @type {string}
+     * @memberof RekeyAttemptInitializeRequest
+     */
+    nonce?: string;
+    /**
      * Specifies an array of PGP public keys used to encrypt the output unseal keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as secret_shares.
      * @type {Array<string>}
      * @memberof RekeyAttemptInitializeRequest
@@ -53,6 +59,12 @@ export interface RekeyAttemptInitializeRequest {
      * @memberof RekeyAttemptInitializeRequest
      */
     secret_threshold?: number;
+    /**
+     * Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as secret_shares.
+     * @type {number}
+     * @memberof RekeyAttemptInitializeRequest
+     */
+    stored_shares?: number;
 }
 
 /**
@@ -73,10 +85,12 @@ export function RekeyAttemptInitializeRequestFromJSONTyped(json: any, ignoreDisc
     return {
         
         'backup': json['backup'] == null ? undefined : json['backup'],
+        'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'pgp_keys': json['pgp_keys'] == null ? undefined : json['pgp_keys'],
         'require_verification': json['require_verification'] == null ? undefined : json['require_verification'],
         'secret_shares': json['secret_shares'] == null ? undefined : json['secret_shares'],
         'secret_threshold': json['secret_threshold'] == null ? undefined : json['secret_threshold'],
+        'stored_shares': json['stored_shares'] == null ? undefined : json['stored_shares'],
     };
 }
 
@@ -92,10 +106,12 @@ export function RekeyAttemptInitializeRequestToJSONTyped(value?: RekeyAttemptIni
     return {
         
         'backup': value['backup'],
+        'nonce': value['nonce'],
         'pgp_keys': value['pgp_keys'],
         'require_verification': value['require_verification'],
         'secret_shares': value['secret_shares'],
         'secret_threshold': value['secret_threshold'],
+        'stored_shares': value['stored_shares'],
     };
 }
 

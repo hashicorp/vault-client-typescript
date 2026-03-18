@@ -615,6 +615,14 @@ src/models/RekeyAttemptUpdateRequest.ts
 src/models/RekeyAttemptUpdateResponse.ts
 src/models/RekeyReadBackupKeyResponse.ts
 src/models/RekeyReadBackupRecoveryKeyResponse.ts
+src/models/RekeyRecoveryKeyAttemptInitializeRequest.ts
+src/models/RekeyRecoveryKeyAttemptInitializeResponse.ts
+src/models/RekeyRecoveryKeyAttemptReadProgressResponse.ts
+src/models/RekeyRecoveryKeyAttemptUpdateRequest.ts
+src/models/RekeyRecoveryKeyAttemptUpdateResponse.ts
+src/models/RekeyRecoveryKeyVerificationReadProgressResponse.ts
+src/models/RekeyRecoveryKeyVerificationUpdateRequest.ts
+src/models/RekeyRecoveryKeyVerificationUpdateResponse.ts
 src/models/RekeyVerificationCancelResponse.ts
 src/models/RekeyVerificationReadProgressResponse.ts
 src/models/RekeyVerificationUpdateRequest.ts

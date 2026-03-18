@@ -194,6 +194,12 @@ export interface LdapConfigureRequest {
      */
     schema?: string;
     /**
+     * If true, Vault performs rotations by authenticating as this account using its current password (no privileged bind DN). Immutable after creation. Requires password on create.
+     * @type {boolean}
+     * @memberof LdapConfigureRequest
+     */
+    self_managed?: boolean;
+    /**
      * Whether to skip the 'import' rotation.
      * @type {boolean}
      * @memberof LdapConfigureRequest
@@ -350,6 +356,7 @@ export function LdapConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
         'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'schema': json['schema'] == null ? undefined : json['schema'],
+        'self_managed': json['self_managed'] == null ? undefined : json['self_managed'],
         'skip_static_role_import_rotation': json['skip_static_role_import_rotation'] == null ? undefined : json['skip_static_role_import_rotation'],
         'starttls': json['starttls'] == null ? undefined : json['starttls'],
         'tls_max_version': json['tls_max_version'] == null ? undefined : json['tls_max_version'],
@@ -405,6 +412,7 @@ export function LdapConfigureRequestToJSONTyped(value?: LdapConfigureRequest | n
         'rotation_schedule': value['rotation_schedule'],
         'rotation_window': value['rotation_window'],
         'schema': value['schema'],
+        'self_managed': value['self_managed'],
         'skip_static_role_import_rotation': value['skip_static_role_import_rotation'],
         'starttls': value['starttls'],
         'tls_max_version': value['tls_max_version'],

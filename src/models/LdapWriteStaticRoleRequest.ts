@@ -24,17 +24,47 @@ import { mapValues } from '../runtime';
  */
 export interface LdapWriteStaticRoleRequest {
     /**
-     * The distinguished name of the entry to manage.
+     * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
+     * @type {boolean}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    disable_automated_rotation?: boolean;
+    /**
+     * The distinguished name of the entry to manage. Required for self-managed static roles.
      * @type {string}
      * @memberof LdapWriteStaticRoleRequest
      */
     dn?: string;
     /**
-     * Period for automatic credential rotation of the given entry.
+     * Password for the static role. This is required for Vault to manage an existing account and enable rotation.
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    password?: string;
+    /**
+     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof LdapWriteStaticRoleRequest
      */
     rotation_period?: string;
+    /**
+     * Defines the rotation policy to use when performing automated rotations.
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    rotation_policy?: string;
+    /**
+     * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    rotation_schedule?: string;
+    /**
+     * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    rotation_window?: string;
     /**
      * Skip the initial pasword rotation on import (has no effect on updates)
      * @type {boolean}
@@ -66,8 +96,13 @@ export function LdapWriteStaticRoleRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'dn': json['dn'] == null ? undefined : json['dn'],
+        'password': json['password'] == null ? undefined : json['password'],
         'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'skip_import_rotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
         'username': json['username'] == null ? undefined : json['username'],
     };
@@ -84,8 +119,13 @@ export function LdapWriteStaticRoleRequestToJSONTyped(value?: LdapWriteStaticRol
 
     return {
         
+        'disable_automated_rotation': value['disable_automated_rotation'],
         'dn': value['dn'],
+        'password': value['password'],
         'rotation_period': value['rotation_period'],
+        'rotation_policy': value['rotation_policy'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
         'skip_import_rotation': value['skip_import_rotation'],
         'username': value['username'],
     };

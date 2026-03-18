@@ -24,7 +24,7 @@ import { mapValues } from '../runtime';
  */
 export interface LdapRotateStaticRoleRequest {
     /**
-     * The distinguished name of the entry to manage.
+     * The distinguished name of the entry to manage. Required for self-managed static roles.
      * @type {string}
      * @memberof LdapRotateStaticRoleRequest
      */

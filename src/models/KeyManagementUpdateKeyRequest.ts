@@ -36,6 +36,12 @@ export interface KeyManagementUpdateKeyRequest {
      */
     min_enabled_version?: number;
     /**
+     * Comma-separated list of valid AWS regions where the key should be replicated when distributed to an AWS KMS provider with multi-region support. Only applicable for AWS KMS. Must be valid AWS regions that support KMS multi-region keys (e.g., us-east-1, us-west-2, eu-west-1). This parameter can only be specified during key creation.
+     * @type {Array<string>}
+     * @memberof KeyManagementUpdateKeyRequest
+     */
+    replica_regions?: Array<string>;
+    /**
      * Specifies the type of key to create. Currently, "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), and "aes256-gcm96" (symmetric) are supported. The default is "rsa-2048". This parameter cannot be modified by an update operation after creation.
      * @type {string}
      * @memberof KeyManagementUpdateKeyRequest
@@ -77,6 +83,7 @@ export function KeyManagementUpdateKeyRequestFromJSONTyped(json: any, ignoreDisc
         
         'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
         'min_enabled_version': json['min_enabled_version'] == null ? undefined : json['min_enabled_version'],
+        'replica_regions': json['replica_regions'] == null ? undefined : json['replica_regions'],
         'type': json['type'] == null ? undefined : json['type'],
     };
 }
@@ -94,6 +101,7 @@ export function KeyManagementUpdateKeyRequestToJSONTyped(value?: KeyManagementUp
         
         'deletion_allowed': value['deletion_allowed'],
         'min_enabled_version': value['min_enabled_version'],
+        'replica_regions': value['replica_regions'],
         'type': value['type'],
     };
 }
