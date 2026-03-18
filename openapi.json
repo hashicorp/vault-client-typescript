@@ -17279,6 +17279,164 @@
         }
       }
     },
+    "/sys/rekey-recovery-key/init": {
+      "get": {
+        "summary": "Reads the configuration and progress of the current recovery key rekey attempt.",
+        "operationId": "rekey-recovery-key-attempt-read-progress",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RekeyRecoveryKeyAttemptReadProgressResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Initializes a new recovery key rekey attempt.",
+        "description": "Only a single recovery key rekey attempt can take place at a time.",
+        "operationId": "rekey-recovery-key-attempt-initialize",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RekeyRecoveryKeyAttemptInitializeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RekeyRecoveryKeyAttemptInitializeResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancels any in-progress recovery key rekey.",
+        "description": "This clears the recovery key rekey settings as well as any progress made.",
+        "operationId": "rekey-recovery-key-attempt-cancel",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/rekey-recovery-key/update": {
+      "post": {
+        "summary": "Enter a single recovery key share to progress the rekey of the Vault.",
+        "operationId": "rekey-recovery-key-attempt-update",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RekeyRecoveryKeyAttemptUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RekeyRecoveryKeyAttemptUpdateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/rekey-recovery-key/verify": {
+      "get": {
+        "summary": "Read the configuration and progress of the current recovery key rekey verification attempt.",
+        "operationId": "rekey-recovery-key-verification-read-progress",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RekeyRecoveryKeyVerificationReadProgressResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Enter a single new recovery key share to progress the rekey verification operation.",
+        "operationId": "rekey-recovery-key-verification-update",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RekeyRecoveryKeyVerificationUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RekeyRecoveryKeyVerificationUpdateResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancel any in-progress recovery key rekey verification operation.",
+        "description": "This clears any progress made and resets the nonce.",
+        "operationId": "rekey-recovery-key-verification-cancel",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/rekey/backup": {
       "description": "Allows fetching or deleting the backup of the rotated unseal keys.",
       "get": {
@@ -17314,7 +17472,6 @@
       }
     },
     "/sys/rekey/init": {
-      "x-vault-unauthenticated": true,
       "get": {
         "summary": "Reads the configuration and progress of the current rekey attempt.",
         "operationId": "rekey-attempt-read-progress",
@@ -17411,7 +17568,6 @@
       }
     },
     "/sys/rekey/update": {
-      "x-vault-unauthenticated": true,
       "post": {
         "summary": "Enter a single unseal key share to progress the rekey of the Vault.",
         "operationId": "rekey-attempt-update",
@@ -17443,7 +17599,6 @@
       }
     },
     "/sys/rekey/verify": {
-      "x-vault-unauthenticated": true,
       "get": {
         "summary": "Read the configuration and progress of the current rekey verification attempt.",
         "operationId": "rekey-verification-read-progress",
@@ -25397,6 +25552,50 @@
         }
       }
     },
+    "/{keymgmt_mount_path}/kms/{name}/key/{key_name}/replicate": {
+      "description": "Replicate a multi-region key to additional regions.",
+      "parameters": [
+        {
+          "name": "key_name",
+          "description": "The name of the key.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "name",
+          "description": "The name of the KMS.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "keymgmt_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "keymgmt"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "key-management-replicate-key-replicate-in-kms-provider",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{kmip_mount_path}/ca": {
       "description": "Configure an imported CA bundle.",
       "parameters": [
@@ -28103,6 +28302,71 @@
       ],
       "get": {
         "operationId": "ldap-request-static-role-credentials",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{ldap_mount_path}/static-migration": {
+      "description": "Migrate static roles from the LDAP secrets engine's internal rotation queue onto Vault Enterprise Rotation Manager.",
+      "parameters": [
+        {
+          "name": "ldap_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "ldap"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "ldap-read-migration",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "ldap-migrate",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{ldap_mount_path}/static-migration/stop": {
+      "description": "Stops an in-progress migration of static roles if currently running.",
+      "parameters": [
+        {
+          "name": "ldap_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "ldap"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "ldap-stop-migration",
         "tags": [
           "secrets"
         ],
@@ -52777,6 +53041,13 @@
             "type": "integer",
             "description": "Specifies the minimum version of the key that is enabled. All versions less than the specified value will be disabled. If set to zero, all versions of the key will be enabled. This parameter can only be specified during an update operation."
           },
+          "replica_regions": {
+            "type": "array",
+            "description": "Comma-separated list of valid AWS regions where the key should be replicated when distributed to an AWS KMS provider with multi-region support. Only applicable for AWS KMS. Must be valid AWS regions that support KMS multi-region keys (e.g., us-east-1, us-west-2, eu-west-1). This parameter can only be specified during key creation.",
+            "items": {
+              "type": "string"
+            }
+          },
           "type": {
             "type": "string",
             "description": "Specifies the type of key to create. Currently, \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), and \"aes256-gcm96\" (symmetric) are supported. The default is \"rsa-2048\". This parameter cannot be modified by an update operation after creation.",
@@ -54739,6 +55010,11 @@
             "description": "The desired LDAP schema used when modifying user account passwords.",
             "default": "openldap"
           },
+          "self_managed": {
+            "type": "boolean",
+            "description": "If true, Vault performs rotations by authenticating as this account using its current password (no privileged bind DN). Immutable after creation. Requires password on create.",
+            "default": false
+          },
           "skip_static_role_import_rotation": {
             "type": "boolean",
             "description": "Whether to skip the 'import' rotation."
@@ -54926,7 +55202,7 @@
         "properties": {
           "dn": {
             "type": "string",
-            "description": "The distinguished name of the entry to manage."
+            "description": "The distinguished name of the entry to manage. Required for self-managed static roles."
           },
           "username": {
             "type": "string",
@@ -54987,14 +55263,53 @@
       "LdapWriteStaticRoleRequest": {
         "type": "object",
         "properties": {
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
           "dn": {
             "type": "string",
-            "description": "The distinguished name of the entry to manage."
+            "description": "The distinguished name of the entry to manage. Required for self-managed static roles."
+          },
+          "password": {
+            "type": "string",
+            "description": "Password for the static role. This is required for Vault to manage an existing account and enable rotation.",
+            "x-vault-displayAttrs": {
+              "sensitive": true
+            }
           },
           "rotation_period": {
             "type": "string",
-            "description": "Period for automatic credential rotation of the given entry.",
-            "format": "duration"
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Defines the rotation policy to use when performing automated rotations.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "skip_import_rotation": {
             "type": "boolean",
@@ -61968,7 +62283,8 @@
           },
           "allow_token_displayname": {
             "type": "boolean",
-            "description": "Whether to allow \"localhost\" and \"localdomain\" as a valid common name in a request, independent of allowed_domains value."
+            "description": "Deprecated. If set, clients can request certificates matching the value of Display Name from the requesting token. Remember, this stacks with the other CN options, including allow_subdomains. Defaults to false.",
+            "deprecated": true
           },
           "allow_wildcard_certificates": {
             "type": "boolean",
@@ -63095,7 +63411,8 @@
           },
           "allow_token_displayname": {
             "type": "boolean",
-            "description": "Whether to allow \"localhost\" and \"localdomain\" as a valid common name in a request, independent of allowed_domains value."
+            "description": "Deprecated. If set, clients can request certificates matching the value of Display Name from the requesting token. Remember, this stacks with the other CN options, including allow_subdomains. Defaults to false.",
+            "deprecated": true
           },
           "allow_wildcard_certificates": {
             "type": "boolean",
@@ -68000,7 +68317,8 @@
           },
           "allow_token_displayname": {
             "type": "boolean",
-            "description": "Whether to allow \"localhost\" and \"localdomain\" as a valid common name in a request, independent of allowed_domains value."
+            "description": "Deprecated. If set, clients can request certificates matching the value of Display Name from the requesting token. Remember, this stacks with the other CN options, including allow_subdomains. Defaults to false.",
+            "deprecated": true
           },
           "allow_wildcard_certificates": {
             "type": "boolean",
@@ -69474,6 +69792,10 @@
             "type": "boolean",
             "description": "Specifies if using PGP-encrypted keys, whether Vault should also store a plaintext backup of the PGP-encrypted keys."
           },
+          "nonce": {
+            "type": "string",
+            "description": "Specifies the nonce of the rekey operation. If the rekey was initialized within the last 10 minutes, you must provide the nonce to cancel the operation."
+          },
           "pgp_keys": {
             "type": "array",
             "description": "Specifies an array of PGP public keys used to encrypt the output unseal keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as secret_shares.",
@@ -69492,6 +69814,10 @@
           "secret_threshold": {
             "type": "integer",
             "description": "Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as secret_shares."
+          },
+          "stored_shares": {
+            "type": "integer",
+            "description": "Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as secret_shares."
           }
         }
       },
@@ -69663,6 +69989,209 @@
           "keys_base64": {
             "type": "object",
             "format": "map"
+          },
+          "nonce": {
+            "type": "string"
+          }
+        }
+      },
+      "RekeyRecoveryKeyAttemptInitializeRequest": {
+        "type": "object",
+        "properties": {
+          "backup": {
+            "type": "boolean",
+            "description": "Specifies if using PGP-encrypted keys, whether Vault should also store a plaintext backup of the PGP-encrypted keys."
+          },
+          "pgp_keys": {
+            "type": "array",
+            "description": "Specifies an array of PGP public keys used to encrypt the output recovery keys.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "require_verification": {
+            "type": "boolean",
+            "description": "Turns on verification functionality"
+          },
+          "secret_shares": {
+            "type": "integer",
+            "description": "Specifies the number of shares to split the recovery key into."
+          },
+          "secret_threshold": {
+            "type": "integer",
+            "description": "Specifies the number of shares required to reconstruct the recovery key."
+          },
+          "stored_shares": {
+            "type": "integer",
+            "description": "Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as `secret_shares`."
+          }
+        }
+      },
+      "RekeyRecoveryKeyAttemptInitializeResponse": {
+        "type": "object",
+        "properties": {
+          "backup": {
+            "type": "boolean"
+          },
+          "n": {
+            "type": "integer"
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "pgp_fingerprints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "progress": {
+            "type": "integer"
+          },
+          "required": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "boolean"
+          },
+          "t": {
+            "type": "integer"
+          },
+          "verification_nonce": {
+            "type": "string"
+          },
+          "verification_required": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RekeyRecoveryKeyAttemptReadProgressResponse": {
+        "type": "object",
+        "properties": {
+          "backup": {
+            "type": "boolean"
+          },
+          "n": {
+            "type": "integer"
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "pgp_fingerprints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "progress": {
+            "type": "integer"
+          },
+          "required": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "boolean"
+          },
+          "t": {
+            "type": "integer"
+          },
+          "verification_nonce": {
+            "type": "string"
+          },
+          "verification_required": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RekeyRecoveryKeyAttemptUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Specifies a single recovery key share."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "Specifies the nonce of the rekey attempt."
+          }
+        }
+      },
+      "RekeyRecoveryKeyAttemptUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "backup": {
+            "type": "boolean"
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "keys_base64": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "pgp_fingerprints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_nonce": {
+            "type": "string"
+          },
+          "verification_required": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RekeyRecoveryKeyVerificationReadProgressResponse": {
+        "type": "object",
+        "properties": {
+          "n": {
+            "type": "integer"
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "progress": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "boolean"
+          },
+          "t": {
+            "type": "integer"
+          }
+        }
+      },
+      "RekeyRecoveryKeyVerificationUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Specifies a single recovery key share from the new set of shares."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "Specifies the nonce of the rekey verification operation."
+          }
+        }
+      },
+      "RekeyRecoveryKeyVerificationUpdateResponse": {
+        "type": "object",
+        "properties": {
+          "complete": {
+            "type": "boolean"
           },
           "nonce": {
             "type": "string"
@@ -70408,15 +70937,7 @@
           },
           "alias_mount_accessor": {
             "type": "string",
-            "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. Typically used for 'IdP' role clients."
-          },
-          "client_role": {
-            "type": "string",
-            "description": "The role of the SCIM client, which determines its authoritative power. Must be either 'IGA' or 'IdP'.",
-            "enum": [
-              "idp",
-              "iga"
-            ]
+            "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user."
           }
         }
       },
@@ -75617,6 +76138,10 @@
             "description": "Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.",
             "default": 256
           },
+          "context": {
+            "type": "string",
+            "description": "Context for key derivation. Required for derived keys."
+          },
           "count": {
             "type": "integer",
             "description": "Number of keys to return"
@@ -75634,6 +76159,10 @@
             "type": "integer",
             "description": "Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.",
             "default": 256
+          },
+          "context": {
+            "type": "string",
+            "description": "Context for key derivation. Required for derived keys."
           },
           "info": {
             "type": "string",
