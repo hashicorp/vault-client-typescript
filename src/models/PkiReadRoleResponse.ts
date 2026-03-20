@@ -60,9 +60,10 @@ export interface PkiReadRoleResponse {
      */
     allow_subdomains?: boolean;
     /**
-     * Whether to allow "localhost" and "localdomain" as a valid common name in a request, independent of allowed_domains value.
+     * Deprecated. If set, clients can request certificates matching the value of Display Name from the requesting token. Remember, this stacks with the other CN options, including allow_subdomains. Defaults to false.
      * @type {boolean}
      * @memberof PkiReadRoleResponse
+     * @deprecated
      */
     allow_token_displayname?: boolean;
     /**
