@@ -70366,6 +70366,10 @@
               "type": "string"
             }
           },
+          "description": {
+            "type": "string",
+            "description": "Human readable description of the registration."
+          },
           "display_name": {
             "type": "string",
             "description": "Human readable name of the registration."
@@ -70380,7 +70384,7 @@
           },
           "no_default_ceiling_policy": {
             "type": "boolean",
-            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
+            "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           }
         },
         "required": [
@@ -70398,6 +70402,10 @@
               "type": "string"
             }
           },
+          "description": {
+            "type": "string",
+            "description": "Human readable description of the registration."
+          },
           "display_name": {
             "type": "string",
             "description": "Human readable name of the registration."
@@ -70408,7 +70416,7 @@
           },
           "no_default_ceiling_policy": {
             "type": "boolean",
-            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
+            "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           }
         },
         "required": [
@@ -70426,6 +70434,10 @@
               "type": "string"
             }
           },
+          "description": {
+            "type": "string",
+            "description": "Human readable description of the registration."
+          },
           "entity_id": {
             "type": "string",
             "description": "Entity ID representing this agent."
@@ -70436,7 +70448,7 @@
           },
           "no_default_ceiling_policy": {
             "type": "boolean",
-            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
+            "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           }
         },
         "required": [
