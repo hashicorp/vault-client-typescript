@@ -3,7 +3,7 @@
   "info": {
     "title": "HashiCorp Vault API",
     "description": "HTTP API that gives you full access to Vault. All API routes are prefixed with `/v1/`.",
-    "version": "1.22.0",
+    "version": "3.0.0",
     "license": {
       "name": "Mozilla Public License 2.0",
       "url": "https://www.mozilla.org/en-US/MPL/2.0"
@@ -11821,6 +11821,36 @@
         }
       }
     },
+    "/sys/activation-flags/oauth-resource-server/activate": {
+      "description": "Returns information about Vault's features that require a one-time activation step.",
+      "x-vault-sudo": true,
+      "post": {
+        "summary": "Activate a flagged feature.",
+        "operationId": "activation-flags-activate",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/activation-flags/oauth-resource-server/deactivate": {
+      "x-vault-sudo": true,
+      "post": {
+        "operationId": "system-write-activation-flags-oauth-resource-server-deactivate",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/activation-flags/secrets-import/activate": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "post": {
@@ -12057,7 +12087,7 @@
       "x-vault-sudo": true,
       "get": {
         "summary": "Reads the given auth path's configuration.",
-        "description": "This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.",
+        "description": "This endpoint requires sudo capability on the final path. The equivalent endpoint at `sys/mounts/auth/[auth-path]/tune` also requires sudo capability.",
         "operationId": "auth-read-tuning-information",
         "tags": [
           "system"
@@ -12077,7 +12107,7 @@
       },
       "post": {
         "summary": "Tune configuration parameters for a given auth path.",
-        "description": "This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.",
+        "description": "This endpoint requires sudo capabilities on the final path. The equivalent endpoint at `sys/mounts/auth/[auth-path]/tune` also requires sudo capabilities.",
         "operationId": "auth-tune-configuration-parameters",
         "tags": [
           "system"
@@ -12472,6 +12502,116 @@
         },
         "responses": {
           "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/config/oauth-resource-server/": {
+      "description": "This path responds to the following HTTP methods. LIST / Returns a list of all configured OAuth Resource Server configuration profile names.",
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "List all OAuth Resource Server validation profiles.",
+        "description": "Returns a list of all configured OAuth Resource Server Configuration profile names.",
+        "operationId": "oauth-resource-server-list-profiles",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerListProfilesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/config/oauth-resource-server/{name}": {
+      "description": "This path responds to the following HTTP methods. GET /<profile_name> Returns the configuration of a specific OAuth Resource Server Configuration profile. POST /<profile_name> Creates or updates an OAuth Resource Server Configuration profile. DELETE /<profile_name> Deletes an OAuth Resource Server Configuration profile.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the OAuth Resource Server Configuration profile.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "x-vault-createSupported": true,
+      "get": {
+        "summary": "Read a OAuth Resource Server Configuration profile.",
+        "description": "Returns the configuration of a specific OAuth Resource Server Configuration profile.",
+        "operationId": "oauth-resource-server-read-profile",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerReadProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Update an existing OAuth Resource Server Configuration profile.",
+        "description": "Updates an existing OAuth Resource Server Configuration profile with the specified configuration.",
+        "operationId": "oauth-resource-server-update-profile",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OauthResourceServerUpdateProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a OAuth Resource Server Configuration profile.",
+        "description": "Deletes an existing OAuth Resource Server Configuration profile.",
+        "operationId": "oauth-resource-server-delete-profile",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "204": {
             "description": "OK"
           }
         }
@@ -13165,7 +13305,6 @@
     },
     "/sys/generate-root/attempt": {
       "description": "Reads, generates, or deletes a root token regeneration process.",
-      "x-vault-unauthenticated": true,
       "get": {
         "summary": "Read the configuration and progress of the current root generation attempt.",
         "operationId": "root-token-generation-read-progress",
@@ -13230,7 +13369,6 @@
     },
     "/sys/generate-root/update": {
       "description": "Reads, generates, or deletes a root token regeneration process.",
-      "x-vault-unauthenticated": true,
       "post": {
         "summary": "Enter a single unseal key share to progress the root generation attempt.",
         "description": "If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.",
@@ -15204,9 +15342,10 @@
           "required": true
         }
       ],
+      "x-vault-sudo": true,
       "get": {
         "summary": "Reads the given auth path's configuration.",
-        "description": "This endpoint does NOT require sudo capability. For the sudo-required alternative, use the endpoint at `sys/auth/[auth-path]/tune`.",
+        "description": "This endpoint requires sudo capability on the final path. The equivalent endpoint at `sys/auth/[auth-path]/tune` also requires sudo capability.",
         "operationId": "mounts-auth-read-tuning-information",
         "tags": [
           "system"
@@ -15226,7 +15365,7 @@
       },
       "post": {
         "summary": "Tune configuration parameters for a given auth path.",
-        "description": "This endpoint does NOT require sudo capability. The same functionality can be achieved with sudo via the `sys/auth/[auth-path]/tune` endpoint.",
+        "description": "This endpoint requires sudo capability on the final path. The equivalent endpoint at `sys/auth/[auth-path]/tune` also requires sudo capability.",
         "operationId": "mounts-auth-tune-configuration-parameters",
         "tags": [
           "system"
@@ -17951,6 +18090,78 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SystemWriteReplicationDrSecondaryEnableRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/replication/dr/secondary/generate-operation-token/attempt": {
+      "get": {
+        "summary": "Read the configuration and progress of the current generate-operation-token attempt.",
+        "operationId": "replication-dr-secondary-generate-operation-token-read-progress",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Initialize a new generate-operation-token attempt.",
+        "operationId": "replication-dr-secondary-generate-operation-token-initialize",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplicationDrSecondaryGenerateOperationTokenInitializeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Cancel any in-progress generate-operation-token attempt.",
+        "operationId": "replication-dr-secondary-generate-operation-token-cancel",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/sys/replication/dr/secondary/generate-operation-token/update": {
+      "post": {
+        "summary": "Enter a single unseal key share to progress the generate-operation-token attempt.",
+        "operationId": "replication-dr-secondary-generate-operation-token-update",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplicationDrSecondaryGenerateOperationTokenUpdateRequest"
               }
             }
           }
@@ -22504,6 +22715,52 @@
         "responses": {
           "204": {
             "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{azure_mount_path}/static-roles/{name}/import": {
+      "description": "Import an existing Azure application credential for a static role.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the static role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "azure_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "azure"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "azure-write-static-roles-name-import",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AzureWriteStaticRolesNameImportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -28343,6 +28600,16 @@
         "tags": [
           "secrets"
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LdapMigrateRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -35011,6 +35278,61 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PkiReadIssuerDerResponse"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not Modified"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/issuer/{issuer_ref}/export-private": {
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-write-issuer-issuer_ref-export-private",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiWriteIssuerIssuer_refExportPrivateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiWriteIssuerIssuer_refExportPrivateResponse"
                 }
               }
             }
@@ -46316,9 +46638,17 @@
             "type": "string",
             "description": "Entity ID to which this alias belongs to. This field is deprecated in favor of 'canonical_id'."
           },
+          "external_id": {
+            "type": "string",
+            "description": "Unique external identifier from external IdP."
+          },
           "id": {
             "type": "string",
             "description": "ID of the alias"
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuer name associated with this alias."
           },
           "mount_accessor": {
             "type": "string",
@@ -48492,12 +48822,16 @@
             "type": "string",
             "description": "The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.",
             "x-vault-displayAttrs": {
-              "name": "Client ID"
+              "name": "Client ID",
+              "group": "Azure Options"
             }
           },
           "client_secret": {
             "type": "string",
-            "description": "The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable."
+            "description": "The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable.",
+            "x-vault-displayAttrs": {
+              "group": "Azure Options"
+            }
           },
           "disable_automated_rotation": {
             "type": "boolean",
@@ -48910,6 +49244,11 @@
             "description": "Maximum time a service principal. If not set or set to 0, will use system default.",
             "format": "duration"
           },
+          "metadata": {
+            "type": "object",
+            "description": "A map of string key-value pairs to associate with the role.",
+            "format": "map"
+          },
           "permanently_delete": {
             "type": "boolean",
             "description": "Indicates whether new application objects should be permanently deleted. If not set, objects will not be permanently deleted.",
@@ -48938,7 +49277,7 @@
           }
         }
       },
-      "AzureWriteStaticRolesNameRequest": {
+      "AzureWriteStaticRolesNameImportRequest": {
         "type": "object",
         "properties": {
           "application_object_id": {
@@ -48952,11 +49291,6 @@
               "sensitive": true
             }
           },
-          "expiration": {
-            "type": "string",
-            "description": "The expiration time of the existing credential to import.",
-            "format": "date-time"
-          },
           "metadata": {
             "type": "object",
             "description": "A map of string key-value pairs to associate with the role.",
@@ -48968,7 +49302,58 @@
           },
           "skip_import_rotation": {
             "type": "boolean",
-            "description": "If true, Vault will not attempt to rotate the imported credential"
+            "description": "If true and no client_secret is provided, Vault will record the existing credential without rotating it. The credential cannot be read until it is rotated."
+          },
+          "ttl": {
+            "type": "string",
+            "description": "The duration of time that the role's credential remains valid before expiration.",
+            "format": "duration"
+          }
+        },
+        "required": [
+          "application_object_id",
+          "secret_id"
+        ]
+      },
+      "AzureWriteStaticRolesNameRequest": {
+        "type": "object",
+        "properties": {
+          "application_object_id": {
+            "type": "string",
+            "description": "The Azure AD application object ID whose credentials Vault will manage."
+          },
+          "client_secret": {
+            "type": "string",
+            "description": "Client secret of the existing credential to import.",
+            "deprecated": true,
+            "x-vault-displayAttrs": {
+              "sensitive": true
+            }
+          },
+          "defer_initial_creds": {
+            "type": "boolean",
+            "description": "If true, Vault creates the static role without provisioning an initial credential."
+          },
+          "expiration": {
+            "type": "string",
+            "description": "The expiration time of the existing credential to import.",
+            "format": "date-time",
+            "deprecated": true
+          },
+          "metadata": {
+            "type": "object",
+            "description": "A map of string key-value pairs to associate with the role.",
+            "format": "map"
+          },
+          "secret_id": {
+            "type": "string",
+            "description": "Secret ID of the existing credential to import.",
+            "deprecated": true
+          },
+          "skip_import_rotation": {
+            "type": "boolean",
+            "description": "If true, Vault will not attempt to rotate the imported credential",
+            "deprecated": true
           },
           "ttl": {
             "type": "string",
@@ -50310,9 +50695,17 @@
             "type": "string",
             "description": "Entity ID to which this alias belongs. This field is deprecated, use canonical_id."
           },
+          "external_id": {
+            "type": "string",
+            "description": "Unique external identifier from external IdP."
+          },
           "id": {
             "type": "string",
             "description": "ID of the entity alias. If set, updates the corresponding entity alias."
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuer name associated with this alias."
           },
           "mount_accessor": {
             "type": "string",
@@ -50428,6 +50821,14 @@
           "entity_id": {
             "type": "string",
             "description": "Entity ID to which this alias belongs to. This field is deprecated, use canonical_id."
+          },
+          "external_id": {
+            "type": "string",
+            "description": "Unique external identifier from external IdP."
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuer name associated with this alias."
           },
           "mount_accessor": {
             "type": "string",
@@ -55197,6 +55598,15 @@
           }
         }
       },
+      "LdapMigrateRequest": {
+        "type": "object",
+        "properties": {
+          "include_role_names": {
+            "type": "boolean",
+            "description": "Flag for whether to include role names in the static migration read information."
+          }
+        }
+      },
       "LdapRotateStaticRoleRequest": {
         "type": "object",
         "properties": {
@@ -56614,6 +57024,154 @@
           }
         }
       },
+      "OauthResourceServerListProfilesResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OauthResourceServerReadProfileResponse": {
+        "type": "object",
+        "properties": {
+          "audiences": {
+            "type": "array",
+            "description": "List of allowed audiences (aud claim).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "clock_skew_leeway": {
+            "type": "string",
+            "description": "Leeway for clock skew in seconds.",
+            "format": "duration"
+          },
+          "config_id": {
+            "type": "string",
+            "description": "Stable unique identifier for this OAuth Resource Server Configuration profile."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this profile is enabled for JWT validation. Disabled profiles are ignored"
+          },
+          "issuer_id": {
+            "type": "string",
+            "description": "The issuer ID (iss claim) to validate against."
+          },
+          "jwks_ca_pem": {
+            "type": "string",
+            "description": "Optional CA certificate for JWKS URI TLS validation."
+          },
+          "jwt_type": {
+            "type": "string",
+            "description": "The JWT type: 'access_token' or 'transaction_token'."
+          },
+          "no_default_policy": {
+            "type": "boolean",
+            "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
+          },
+          "profile_name": {
+            "type": "string",
+            "description": "The name of the OAuth Resource Server Configuration profile."
+          },
+          "public_keys": {
+            "type": "array",
+            "description": "List of static public keys with key_id and pem fields",
+            "items": {
+              "type": "object"
+            }
+          },
+          "supported_algorithms": {
+            "type": "array",
+            "description": "List of supported signing algorithms.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "use_jwks": {
+            "type": "boolean",
+            "description": "If true, use JWKS URI for key validation profile names."
+          },
+          "user_claim": {
+            "type": "string",
+            "description": "The claim to use as the user identifier (default: sub)."
+          }
+        }
+      },
+      "OauthResourceServerUpdateProfileRequest": {
+        "type": "object",
+        "properties": {
+          "audiences": {
+            "type": "array",
+            "description": "List of allowed audiences (aud claim).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "clock_skew_leeway": {
+            "type": "string",
+            "description": "Leeway for clock skew in seconds.",
+            "format": "duration"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this profile is enabled for JWT validation. Disabled profiles are ignored. Default: true.",
+            "default": true
+          },
+          "issuer_id": {
+            "type": "string",
+            "description": "The issuer ID (iss claim) to validate against."
+          },
+          "jwks_ca_pem": {
+            "type": "string",
+            "description": "Optional CA certificate for JWKS URI TLS validation."
+          },
+          "jwks_uri": {
+            "type": "string",
+            "description": "The JWKS URI to fetch public keys from (required if use_jwks=true)."
+          },
+          "jwt_type": {
+            "type": "string",
+            "description": "The JWT type: 'access_token' or 'transaction_token'.",
+            "default": "access_token"
+          },
+          "no_default_policy": {
+            "type": "boolean",
+            "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
+          },
+          "public_keys": {
+            "type": "array",
+            "description": "List of static public keys with key_id and pem fields (required if use_jwks=false).",
+            "items": {
+              "type": "object"
+            }
+          },
+          "supported_algorithms": {
+            "type": "array",
+            "description": "List of supported signing algorithms (e.g., RS256, ES256).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "use_jwks": {
+            "type": "boolean",
+            "description": "If true, use JWKS URI for key validation; if false, use static public keys.",
+            "default": true
+          },
+          "user_claim": {
+            "type": "string",
+            "description": "The claim to use as the user identifier (default: sub).",
+            "default": "sub"
+          }
+        },
+        "required": [
+          "issuer_id"
+        ]
+      },
       "OciConfigureRequest": {
         "type": "object",
         "properties": {
@@ -57300,6 +57858,22 @@
             "default": [
               "*"
             ]
+          },
+          "challenge_excluded_ip_ranges": {
+            "type": "array",
+            "description": "List of CIDR blocks that are excluded from ACME challenge validation. IPs within these ranges will be rejected for validation. Can be individual IPs or CIDR notation. This list takes precedence over challenge_permitted_ip_ranges.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "challenge_permitted_ip_ranges": {
+            "type": "array",
+            "description": "List of CIDR blocks that are permitted for ACME challenge validation. If set, only IPs within these ranges will be allowed for validation. Can be individual IPs or CIDR notation.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
           },
           "default_directory_policy": {
             "type": "string",
@@ -58383,7 +58957,7 @@
           },
           "eab_key": {
             "type": "string",
-            "description": "A standard base64 encoded external binding token to create the initial account"
+            "description": "A base64 URL encoded external binding token to create the initial account"
           },
           "eab_kid": {
             "type": "string",
@@ -66760,6 +67334,49 @@
           }
         }
       },
+      "PkiWriteIssuerIssuer_refExportPrivateRequest": {
+        "type": "object",
+        "properties": {
+          "pgp_keys": {
+            "type": "array",
+            "description": "PGP/GPG which will be used to encrypt the issuer private key",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PkiWriteIssuerIssuer_refExportPrivateResponse": {
+        "type": "object",
+        "properties": {
+          "ca_chain": {
+            "type": "array",
+            "description": "CA Chain",
+            "items": {
+              "type": "string"
+            }
+          },
+          "certificate": {
+            "type": "string",
+            "description": "Certificate"
+          },
+          "issuer_id": {
+            "type": "string",
+            "description": "Issuer Id"
+          },
+          "issuer_name": {
+            "type": "string",
+            "description": "Issuer Name"
+          },
+          "private_key": {
+            "type": "array",
+            "description": "CA Private Key encrypted by one or more provided PGP/GPG keys",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "PkiWriteIssuerIssuer_refExternalPolicyAcmeAccountKidRequest": {
         "type": "object",
         "properties": {
@@ -69184,11 +69801,19 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
-          "policy": {
-            "type": "string",
-            "description": "The retry policy in JSON"
+          "max_retries_per_cycle": {
+            "type": "integer",
+            "description": "The maximum number of retries per cycle allowed for rotation."
+          },
+          "max_retry_cycles": {
+            "type": "integer",
+            "description": "The maximum number of retry cycles allowed for rotation."
           }
-        }
+        },
+        "required": [
+          "max_retries_per_cycle",
+          "max_retry_cycles"
+        ]
       },
       "QueryTokenAccessorCapabilitiesRequest": {
         "type": "object",
@@ -69734,6 +70359,13 @@
       "RegisterCreateRequest": {
         "type": "object",
         "properties": {
+          "ceiling_policy_identifiers": {
+            "type": "array",
+            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "items": {
+              "type": "string"
+            }
+          },
           "display_name": {
             "type": "string",
             "description": "Human readable name of the registration."
@@ -69745,6 +70377,10 @@
           "id": {
             "type": "string",
             "description": "ID of the registration. If set, updates the corresponding existing registration."
+          },
+          "no_default_ceiling_policy": {
+            "type": "boolean",
+            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
           }
         },
         "required": [
@@ -69755,6 +70391,13 @@
       "RegistrationUpdateByIdRequest": {
         "type": "object",
         "properties": {
+          "ceiling_policy_identifiers": {
+            "type": "array",
+            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "items": {
+              "type": "string"
+            }
+          },
           "display_name": {
             "type": "string",
             "description": "Human readable name of the registration."
@@ -69762,6 +70405,10 @@
           "entity_id": {
             "type": "string",
             "description": "Entity ID representing this agent."
+          },
+          "no_default_ceiling_policy": {
+            "type": "boolean",
+            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
           }
         },
         "required": [
@@ -69772,6 +70419,13 @@
       "RegistrationUpdateByNameRequest": {
         "type": "object",
         "properties": {
+          "ceiling_policy_identifiers": {
+            "type": "array",
+            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "items": {
+              "type": "string"
+            }
+          },
           "entity_id": {
             "type": "string",
             "description": "Entity ID representing this agent."
@@ -69779,6 +70433,10 @@
           "id": {
             "type": "string",
             "description": "ID of the registration. If set, updates the corresponding existing registration."
+          },
+          "no_default_ceiling_policy": {
+            "type": "boolean",
+            "description": "Opt out of automatically adding the default-ceiling policy to this agent registration."
           }
         },
         "required": [
@@ -70309,6 +70967,28 @@
           "migration_info": {
             "type": "object",
             "format": "map"
+          }
+        }
+      },
+      "ReplicationDrSecondaryGenerateOperationTokenInitializeRequest": {
+        "type": "object",
+        "properties": {
+          "pgp_key": {
+            "type": "string",
+            "description": "Specifies a base64-encoded PGP public key."
+          }
+        }
+      },
+      "ReplicationDrSecondaryGenerateOperationTokenUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Specifies a single unseal key share."
+          },
+          "nonce": {
+            "type": "string",
+            "description": "Specifies the nonce of the attempt."
           }
         }
       },
@@ -72126,11 +72806,8 @@
             "default": ""
           },
           "service_account_email": {
-            "type": "array",
-            "description": "The service account email to impersonate, used with GCP destinations. Optional.",
-            "items": {
-              "type": "string"
-            }
+            "type": "string",
+            "description": "The service account email to impersonate, used with GCP destinations. Optional."
           },
           "tags_to_remove": {
             "type": "array",
@@ -74248,11 +74925,8 @@
             "default": ""
           },
           "service_account_email": {
-            "type": "array",
-            "description": "The service account email to impersonate, used with GCP destinations. Optional.",
-            "items": {
-              "type": "string"
-            }
+            "type": "string",
+            "description": "The service account email to impersonate, used with GCP destinations. Optional."
           },
           "tags_to_remove": {
             "type": "array",

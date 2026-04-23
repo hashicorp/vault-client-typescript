@@ -89,6 +89,7 @@ src/models/AzureConfigureRequest.ts
 src/models/AzureLoginRequest.ts
 src/models/AzureWriteAuthRoleRequest.ts
 src/models/AzureWriteRoleRequest.ts
+src/models/AzureWriteStaticRolesNameImportRequest.ts
 src/models/AzureWriteStaticRolesNameRequest.ts
 src/models/CertConfigureRequest.ts
 src/models/CertLoginRequest.ts
@@ -232,6 +233,7 @@ src/models/LdapLibraryCheckOutRequest.ts
 src/models/LdapLibraryConfigureRequest.ts
 src/models/LdapLibraryForceCheckInRequest.ts
 src/models/LdapLoginRequest.ts
+src/models/LdapMigrateRequest.ts
 src/models/LdapRotateStaticRoleRequest.ts
 src/models/LdapWriteDynamicRoleRequest.ts
 src/models/LdapWriteGroupRequest.ts
@@ -280,6 +282,9 @@ src/models/MountsTuneConfigurationParametersRequest.ts
 src/models/NomadConfigureAccessRequest.ts
 src/models/NomadConfigureLeaseRequest.ts
 src/models/NomadWriteRoleRequest.ts
+src/models/OauthResourceServerListProfilesResponse.ts
+src/models/OauthResourceServerReadProfileResponse.ts
+src/models/OauthResourceServerUpdateProfileRequest.ts
 src/models/OciConfigureRequest.ts
 src/models/OciLoginRequest.ts
 src/models/OciWriteRoleRequest.ts
@@ -502,6 +507,8 @@ src/models/PkiWriteIssuerIssuerRefAcmeOrderOrderIdFinalizeRequest.ts
 src/models/PkiWriteIssuerIssuerRefAcmeOrderOrderIdRequest.ts
 src/models/PkiWriteIssuerIssuerRefAcmeOrdersRequest.ts
 src/models/PkiWriteIssuerIssuerRefAcmeRevokeCertRequest.ts
+src/models/PkiWriteIssuerIssuerRefExportPrivateRequest.ts
+src/models/PkiWriteIssuerIssuerRefExportPrivateResponse.ts
 src/models/PkiWriteIssuerIssuerRefExternalPolicyAcmeAccountKidRequest.ts
 src/models/PkiWriteIssuerIssuerRefExternalPolicyAcmeAuthorizationAuthIdRequest.ts
 src/models/PkiWriteIssuerIssuerRefExternalPolicyAcmeChallengeAuthIdChallengeTypeRequest.ts
@@ -632,6 +639,8 @@ src/models/ReloadPluginsResponse.ts
 src/models/RemountRequest.ts
 src/models/RemountResponse.ts
 src/models/RemountStatusResponse.ts
+src/models/ReplicationDrSecondaryGenerateOperationTokenInitializeRequest.ts
+src/models/ReplicationDrSecondaryGenerateOperationTokenUpdateRequest.ts
 src/models/RewrapRequest.ts
 src/models/RootTokenGenerationInitialize2Request.ts
 src/models/RootTokenGenerationInitialize2Response.ts
