@@ -30,6 +30,12 @@ export interface RegisterCreateRequest {
      */
     ceiling_policy_identifiers?: Array<string>;
     /**
+     * Human readable description of the registration.
+     * @type {string}
+     * @memberof RegisterCreateRequest
+     */
+    description?: string;
+    /**
      * Human readable name of the registration.
      * @type {string}
      * @memberof RegisterCreateRequest
@@ -48,7 +54,7 @@ export interface RegisterCreateRequest {
      */
     id?: string;
     /**
-     * Opt out of automatically adding the default-ceiling policy to this agent registration.
+     * Opt out of automatically adding the default ceiling policies to this agent registration.
      * @type {boolean}
      * @memberof RegisterCreateRequest
      */
@@ -75,6 +81,7 @@ export function RegisterCreateRequestFromJSONTyped(json: any, ignoreDiscriminato
     return {
         
         'ceiling_policy_identifiers': json['ceiling_policy_identifiers'] == null ? undefined : json['ceiling_policy_identifiers'],
+        'description': json['description'] == null ? undefined : json['description'],
         'display_name': json['display_name'],
         'entity_id': json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
@@ -94,6 +101,7 @@ export function RegisterCreateRequestToJSONTyped(value?: RegisterCreateRequest |
     return {
         
         'ceiling_policy_identifiers': value['ceiling_policy_identifiers'],
+        'description': value['description'],
         'display_name': value['display_name'],
         'entity_id': value['entity_id'],
         'id': value['id'],

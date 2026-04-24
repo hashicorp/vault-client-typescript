@@ -288,6 +288,8 @@ export * from './OciLoginRequest';
 export * from './OciWriteRoleRequest';
 export * from './OidcConfigureRequest';
 export * from './OidcIntrospectRequest';
+export * from './OidcListClientsResponse';
+export * from './OidcListProvidersResponse';
 export * from './OidcProviderAuthorizeWithParametersRequest';
 export * from './OidcProviderTokenRequest';
 export * from './OidcRotateKeyRequest';

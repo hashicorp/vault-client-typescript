@@ -55,6 +55,8 @@ import type {
   MfaWriteLoginEnforcementRequest,
   OidcConfigureRequest,
   OidcIntrospectRequest,
+  OidcListClientsResponse,
+  OidcListProvidersResponse,
   OidcProviderAuthorizeWithParametersRequest,
   OidcProviderTokenRequest,
   OidcRotateKeyRequest,
@@ -144,6 +146,10 @@ import {
     OidcConfigureRequestToJSON,
     OidcIntrospectRequestFromJSON,
     OidcIntrospectRequestToJSON,
+    OidcListClientsResponseFromJSON,
+    OidcListClientsResponseToJSON,
+    OidcListProvidersResponseFromJSON,
+    OidcListProvidersResponseToJSON,
     OidcProviderAuthorizeWithParametersRequestFromJSON,
     OidcProviderAuthorizeWithParametersRequestToJSON,
     OidcProviderTokenRequestFromJSON,
@@ -4254,7 +4260,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListClientsRaw(requestParameters: IdentityApiOidcListClientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async oidcListClientsRaw(requestParameters: IdentityApiOidcListClientsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OidcListClientsResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -4278,12 +4284,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => OidcListClientsResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async oidcListClients(list: IdentityApiOidcListClientsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListClients(list: IdentityApiOidcListClientsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OidcListClientsResponse> {
         const response = await this.oidcListClientsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -4328,7 +4334,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async oidcListProvidersRaw(requestParameters: IdentityApiOidcListProvidersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async oidcListProvidersRaw(requestParameters: IdentityApiOidcListProvidersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OidcListProvidersResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -4356,12 +4362,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => OidcListProvidersResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async oidcListProviders(list: IdentityApiOidcListProvidersListEnum, allowed_client_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async oidcListProviders(list: IdentityApiOidcListProvidersListEnum, allowed_client_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OidcListProvidersResponse> {
         const response = await this.oidcListProvidersRaw({ list: list, allowed_client_id: allowed_client_id }, initOverrides);
         return await response.value();
     }
