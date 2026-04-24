@@ -30,6 +30,12 @@ export interface RegistrationUpdateByNameRequest {
      */
     ceiling_policy_identifiers?: Array<string>;
     /**
+     * Human readable description of the registration.
+     * @type {string}
+     * @memberof RegistrationUpdateByNameRequest
+     */
+    description?: string;
+    /**
      * Entity ID representing this agent.
      * @type {string}
      * @memberof RegistrationUpdateByNameRequest
@@ -42,7 +48,7 @@ export interface RegistrationUpdateByNameRequest {
      */
     id?: string;
     /**
-     * Opt out of automatically adding the default-ceiling policy to this agent registration.
+     * Opt out of automatically adding the default ceiling policies to this agent registration.
      * @type {boolean}
      * @memberof RegistrationUpdateByNameRequest
      */
@@ -68,6 +74,7 @@ export function RegistrationUpdateByNameRequestFromJSONTyped(json: any, ignoreDi
     return {
         
         'ceiling_policy_identifiers': json['ceiling_policy_identifiers'] == null ? undefined : json['ceiling_policy_identifiers'],
+        'description': json['description'] == null ? undefined : json['description'],
         'entity_id': json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
@@ -86,6 +93,7 @@ export function RegistrationUpdateByNameRequestToJSONTyped(value?: RegistrationU
     return {
         
         'ceiling_policy_identifiers': value['ceiling_policy_identifiers'],
+        'description': value['description'],
         'entity_id': value['entity_id'],
         'id': value['id'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],

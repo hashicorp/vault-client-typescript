@@ -10752,7 +10752,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Reports consumption billing metrics for the current and previous months.
+     * Reports consumption billing metrics for 37 months (current month + previous 36 months).
      */
     async systemReadBillingOverviewRaw(requestParameters: SystemApiSystemReadBillingOverviewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemReadBillingOverviewResponse>> {
         const queryParameters: any = {};
@@ -10775,7 +10775,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Reports consumption billing metrics for the current and previous months.
+     * Reports consumption billing metrics for 37 months (current month + previous 36 months).
      */
     async systemReadBillingOverview(refresh_data?: boolean, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingOverviewResponse | null | undefined > {
         const response = await this.systemReadBillingOverviewRaw({ refresh_data: refresh_data }, initOverrides);
