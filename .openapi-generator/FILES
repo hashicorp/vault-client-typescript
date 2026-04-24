@@ -290,6 +290,8 @@ src/models/OciLoginRequest.ts
 src/models/OciWriteRoleRequest.ts
 src/models/OidcConfigureRequest.ts
 src/models/OidcIntrospectRequest.ts
+src/models/OidcListClientsResponse.ts
+src/models/OidcListProvidersResponse.ts
 src/models/OidcProviderAuthorizeWithParametersRequest.ts
 src/models/OidcProviderTokenRequest.ts
 src/models/OidcRotateKeyRequest.ts
