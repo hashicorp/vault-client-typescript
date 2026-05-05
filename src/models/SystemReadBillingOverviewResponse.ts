@@ -24,7 +24,7 @@ import { mapValues } from '../runtime';
  */
 export interface SystemReadBillingOverviewResponse {
     /**
-     * List of monthly billing data for 37 months (current month + previous 36 months).
+     * List of monthly billing data.
      * @type {Array<object>}
      * @memberof SystemReadBillingOverviewResponse
      */

@@ -24,11 +24,11 @@ import { mapValues } from '../runtime';
  */
 export interface RegistrationUpdateByIdRequest {
     /**
-     * Ceiling policy identifiers applied to this agent registration.
+     * Ceiling policies applied to this agent registration.
      * @type {Array<string>}
      * @memberof RegistrationUpdateByIdRequest
      */
-    ceiling_policy_identifiers?: Array<string>;
+    ceiling_policies?: Array<string>;
     /**
      * Human readable description of the registration.
      * @type {string}
@@ -74,7 +74,7 @@ export function RegistrationUpdateByIdRequestFromJSONTyped(json: any, ignoreDisc
     }
     return {
         
-        'ceiling_policy_identifiers': json['ceiling_policy_identifiers'] == null ? undefined : json['ceiling_policy_identifiers'],
+        'ceiling_policies': json['ceiling_policies'] == null ? undefined : json['ceiling_policies'],
         'description': json['description'] == null ? undefined : json['description'],
         'display_name': json['display_name'],
         'entity_id': json['entity_id'],
@@ -93,7 +93,7 @@ export function RegistrationUpdateByIdRequestToJSONTyped(value?: RegistrationUpd
 
     return {
         
-        'ceiling_policy_identifiers': value['ceiling_policy_identifiers'],
+        'ceiling_policies': value['ceiling_policies'],
         'description': value['description'],
         'display_name': value['display_name'],
         'entity_id': value['entity_id'],
