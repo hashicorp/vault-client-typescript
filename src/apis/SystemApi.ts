@@ -1597,7 +1597,9 @@ export interface SystemApiSystemPatchSyncDestinationsVercelProjectNameOperationR
 }
 
 export interface SystemApiSystemReadBillingOverviewRequest {
+    end_month?: string;
     refresh_data?: boolean;
+    start_month?: string;
 }
 
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
@@ -10752,13 +10754,21 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Reports consumption billing metrics for 37 months (current month + previous 36 months).
+     * Reports consumption billing metrics on a monthly granularity.
      */
     async systemReadBillingOverviewRaw(requestParameters: SystemApiSystemReadBillingOverviewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemReadBillingOverviewResponse>> {
         const queryParameters: any = {};
 
+        if (requestParameters['end_month'] != null) {
+            queryParameters['end_month'] = requestParameters['end_month'];
+        }
+
         if (requestParameters['refresh_data'] != null) {
             queryParameters['refresh_data'] = requestParameters['refresh_data'];
+        }
+
+        if (requestParameters['start_month'] != null) {
+            queryParameters['start_month'] = requestParameters['start_month'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -10775,10 +10785,10 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Reports consumption billing metrics for 37 months (current month + previous 36 months).
+     * Reports consumption billing metrics on a monthly granularity.
      */
-    async systemReadBillingOverview(refresh_data?: boolean, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingOverviewResponse | null | undefined > {
-        const response = await this.systemReadBillingOverviewRaw({ refresh_data: refresh_data }, initOverrides);
+    async systemReadBillingOverview(end_month?: string, refresh_data?: boolean, start_month?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingOverviewResponse | null | undefined > {
+        const response = await this.systemReadBillingOverviewRaw({ end_month: end_month, refresh_data: refresh_data, start_month: start_month }, initOverrides);
         switch (response.raw.status) {
             case 200:
                 return await response.value();
