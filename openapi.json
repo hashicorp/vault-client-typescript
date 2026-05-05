@@ -8722,6 +8722,7 @@
     },
     "/identity/entity/merge": {
       "description": "Merge two or more entities together",
+      "x-vault-sudo": true,
       "post": {
         "operationId": "entity-merge",
         "tags": [
@@ -12162,18 +12163,34 @@
     },
     "/sys/billing/overview": {
       "get": {
-        "summary": "Reports consumption billing metrics for 37 months (current month + previous 36 months).",
+        "summary": "Reports consumption billing metrics on a monthly granularity.",
         "operationId": "system-read-billing-overview",
         "tags": [
           "system"
         ],
         "parameters": [
           {
+            "name": "end_month",
+            "description": "End month in YYYY-MM format (inclusive). If not specified, defaults to the current month.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "refresh_data",
             "description": "If set, updates the billing counts for the current month before returning. This is an expensive operation with potential performance impact and should be used sparingly.",
             "in": "query",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "start_month",
+            "description": "Start month in YYYY-MM format (inclusive). If not specified, defaults to the oldest available month within BillingRetentionMonths.",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -70393,9 +70410,9 @@
       "RegisterCreateRequest": {
         "type": "object",
         "properties": {
-          "ceiling_policy_identifiers": {
+          "ceiling_policies": {
             "type": "array",
-            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "description": "Ceiling policies applied to this agent registration.",
             "items": {
               "type": "string"
             }
@@ -70429,9 +70446,9 @@
       "RegistrationUpdateByIdRequest": {
         "type": "object",
         "properties": {
-          "ceiling_policy_identifiers": {
+          "ceiling_policies": {
             "type": "array",
-            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "description": "Ceiling policies applied to this agent registration.",
             "items": {
               "type": "string"
             }
@@ -70461,9 +70478,9 @@
       "RegistrationUpdateByNameRequest": {
         "type": "object",
         "properties": {
-          "ceiling_policy_identifiers": {
+          "ceiling_policies": {
             "type": "array",
-            "description": "Ceiling policy identifiers applied to this agent registration.",
+            "description": "Ceiling policies applied to this agent registration.",
             "items": {
               "type": "string"
             }
@@ -73220,7 +73237,7 @@
         "properties": {
           "months": {
             "type": "array",
-            "description": "List of monthly billing data for 37 months (current month + previous 36 months).",
+            "description": "List of monthly billing data.",
             "items": {
               "type": "object"
             }
