@@ -8655,7 +8655,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/EntityListByIdResponse"
                 }
               }
             }
@@ -9014,7 +9014,6 @@
     "/identity/group/id/": {
       "description": "List all the group IDs.",
       "get": {
-        "summary": "List all the group IDs.",
         "operationId": "group-list-by-id",
         "tags": [
           "identity"
@@ -9039,7 +9038,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/GroupListByIdResponse"
                 }
               }
             }
@@ -50771,6 +50770,23 @@
           }
         }
       },
+      "EntityListByIdResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Entity details keyed by the entity id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of entity ids",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "EntityLookUpRequest": {
         "type": "object",
         "properties": {
@@ -52112,6 +52128,23 @@
           "type": {
             "type": "string",
             "description": "Type of the group, 'internal' or 'external'. Defaults to 'internal'"
+          }
+        }
+      },
+      "GroupListByIdResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Entity details keyed by the entity id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of entity ids",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -58764,7 +58797,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\" or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -59392,7 +59425,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\" or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -59789,11 +59822,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -59956,6 +59990,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Permitted URI domains"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "postal_code": {
@@ -60142,11 +60196,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60180,6 +60235,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -60307,11 +60382,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60340,6 +60416,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -60653,11 +60749,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60782,6 +60879,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Permitted URI domains"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "postal_code": {
@@ -61033,11 +61150,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61078,6 +61196,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -61231,11 +61369,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61276,6 +61415,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -61413,11 +61572,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61446,6 +61606,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -61569,7 +61749,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\" or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -61854,11 +62034,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -62021,6 +62202,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Permitted URI domains"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "postal_code": {
@@ -64589,11 +64790,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -64723,6 +64925,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Permitted URI domains"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "postal_code": {
@@ -64969,11 +65191,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65136,6 +65359,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Permitted URI domains"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "postal_code": {
@@ -65360,11 +65603,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65410,6 +65654,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -65563,11 +65827,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65613,6 +65878,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -65750,11 +66035,12 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
-              "pem_bundle"
+              "pem_bundle",
+              "pkcs12_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65788,6 +66074,26 @@
             },
             "x-vault-displayAttrs": {
               "name": "Other SANs"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -66618,7 +66924,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -66648,6 +66954,26 @@
             "default": "rsa",
             "x-vault-displayAttrs": {
               "value": "rsa"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -66713,7 +67039,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -66743,6 +67069,26 @@
             "default": "rsa",
             "x-vault-displayAttrs": {
               "value": "rsa"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -66982,7 +67328,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -66991,6 +67337,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           }
         },
@@ -67037,7 +67403,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67046,6 +67412,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           }
         },
@@ -67092,7 +67478,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67101,6 +67487,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "remove_roots_from_chain": {
@@ -67152,7 +67558,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67161,6 +67567,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "remove_roots_from_chain": {
@@ -67603,7 +68029,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67633,6 +68059,26 @@
             "default": "rsa",
             "x-vault-displayAttrs": {
               "value": "rsa"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -67698,7 +68144,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67728,6 +68174,26 @@
             "default": "rsa",
             "x-vault-displayAttrs": {
               "value": "rsa"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "private_key_format": {
@@ -67967,7 +68433,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67976,6 +68442,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           }
         },
@@ -68022,7 +68508,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68031,6 +68517,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           }
         },
@@ -68077,7 +68583,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68086,6 +68592,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "remove_roots_from_chain": {
@@ -68137,7 +68663,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68146,6 +68672,26 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "pkcs12_encoder": {
+            "type": "string",
+            "description": "Encoder profile to use for PKCS#12 archives when format is set to \"pkcs12_bundle\". Valid values are \"modern2026\" and \"modern2023\". Defaults to \"modern2026\", which uses the newer PKCS#12 integrity format (PBMAC1).",
+            "enum": [
+              "modern2026",
+              "modern2023"
+            ],
+            "default": "modern2026",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Encoder Profile"
+            }
+          },
+          "pkcs12_password": {
+            "type": "string",
+            "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "PKCS#12 Password"
             }
           },
           "remove_roots_from_chain": {
