@@ -48,7 +48,7 @@ export interface PkiIssueWithRoleRequest {
      */
     exclude_cn_from_sans?: boolean;
     /**
-     * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der", "pem_bundle" or "pkcs12_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der" or "pkcs12_bundle", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiIssueWithRoleRequest
      */
@@ -77,6 +77,18 @@ export interface PkiIssueWithRoleRequest {
      * @memberof PkiIssueWithRoleRequest
      */
     other_sans?: Array<string>;
+    /**
+     * Encoder profile to use for PKCS#12 archives when format is set to "pkcs12_bundle". Valid values are "modern2026" and "modern2023". Defaults to "modern2026", which uses the newer PKCS#12 integrity format (PBMAC1).
+     * @type {string}
+     * @memberof PkiIssueWithRoleRequest
+     */
+    pkcs12_encoder?: PkiIssueWithRoleRequestPkcs12EncoderEnum;
+    /**
+     * Password for encrypting the PKCS#12 archive when format is set to "pkcs12_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
+     * @type {string}
+     * @memberof PkiIssueWithRoleRequest
+     */
+    pkcs12_password?: string;
     /**
      * Format for the returned private key. Generally the default will be controlled by the "format" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to "der".
      * @type {string}
@@ -122,7 +134,16 @@ export interface PkiIssueWithRoleRequest {
 export enum PkiIssueWithRoleRequestFormatEnum {
     PEM = 'pem',
     DER = 'der',
-    PEM_BUNDLE = 'pem_bundle'
+    PEM_BUNDLE = 'pem_bundle',
+    PKCS12_BUNDLE = 'pkcs12_bundle'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum PkiIssueWithRoleRequestPkcs12EncoderEnum {
+    MODERN2026 = 'modern2026',
+    MODERN2023 = 'modern2023'
 }
 /**
 * @export
@@ -162,6 +183,8 @@ export function PkiIssueWithRoleRequestFromJSONTyped(json: any, ignoreDiscrimina
         'issuer_ref': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
         'not_after': json['not_after'] == null ? undefined : json['not_after'],
         'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
+        'pkcs12_encoder': json['pkcs12_encoder'] == null ? undefined : json['pkcs12_encoder'],
+        'pkcs12_password': json['pkcs12_password'] == null ? undefined : json['pkcs12_password'],
         'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
         'remove_roots_from_chain': json['remove_roots_from_chain'] == null ? undefined : json['remove_roots_from_chain'],
         'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
@@ -191,6 +214,8 @@ export function PkiIssueWithRoleRequestToJSONTyped(value?: PkiIssueWithRoleReque
         'issuer_ref': value['issuer_ref'],
         'not_after': value['not_after'],
         'other_sans': value['other_sans'],
+        'pkcs12_encoder': value['pkcs12_encoder'],
+        'pkcs12_password': value['pkcs12_password'],
         'private_key_format': value['private_key_format'],
         'remove_roots_from_chain': value['remove_roots_from_chain'],
         'serial_number': value['serial_number'],

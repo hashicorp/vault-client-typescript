@@ -84,7 +84,7 @@ export interface PkiIssuerSignIntermediateRequest {
      */
     excluded_uri_domains?: Array<string>;
     /**
-     * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der", "pem_bundle" or "pkcs12_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der" or "pkcs12_bundle", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiIssuerSignIntermediateRequest
      */
@@ -174,6 +174,18 @@ export interface PkiIssuerSignIntermediateRequest {
      */
     permitted_uri_domains?: Array<string>;
     /**
+     * Encoder profile to use for PKCS#12 archives when format is set to "pkcs12_bundle". Valid values are "modern2026" and "modern2023". Defaults to "modern2026", which uses the newer PKCS#12 integrity format (PBMAC1).
+     * @type {string}
+     * @memberof PkiIssuerSignIntermediateRequest
+     */
+    pkcs12_encoder?: PkiIssuerSignIntermediateRequestPkcs12EncoderEnum;
+    /**
+     * Password for encrypting the PKCS#12 archive when format is set to "pkcs12_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
+     * @type {string}
+     * @memberof PkiIssuerSignIntermediateRequest
+     */
+    pkcs12_password?: string;
+    /**
      * If set, Postal Code will be set to this value.
      * @type {Array<string>}
      * @memberof PkiIssuerSignIntermediateRequest
@@ -248,7 +260,16 @@ export interface PkiIssuerSignIntermediateRequest {
 export enum PkiIssuerSignIntermediateRequestFormatEnum {
     PEM = 'pem',
     DER = 'der',
-    PEM_BUNDLE = 'pem_bundle'
+    PEM_BUNDLE = 'pem_bundle',
+    PKCS12_BUNDLE = 'pkcs12_bundle'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum PkiIssuerSignIntermediateRequestPkcs12EncoderEnum {
+    MODERN2026 = 'modern2026',
+    MODERN2023 = 'modern2023'
 }
 /**
 * @export
@@ -304,6 +325,8 @@ export function PkiIssuerSignIntermediateRequestFromJSONTyped(json: any, ignoreD
         'permitted_email_addresses': json['permitted_email_addresses'] == null ? undefined : json['permitted_email_addresses'],
         'permitted_ip_ranges': json['permitted_ip_ranges'] == null ? undefined : json['permitted_ip_ranges'],
         'permitted_uri_domains': json['permitted_uri_domains'] == null ? undefined : json['permitted_uri_domains'],
+        'pkcs12_encoder': json['pkcs12_encoder'] == null ? undefined : json['pkcs12_encoder'],
+        'pkcs12_password': json['pkcs12_password'] == null ? undefined : json['pkcs12_password'],
         'postal_code': json['postal_code'] == null ? undefined : json['postal_code'],
         'private_key_format': json['private_key_format'] == null ? undefined : json['private_key_format'],
         'province': json['province'] == null ? undefined : json['province'],
@@ -354,6 +377,8 @@ export function PkiIssuerSignIntermediateRequestToJSONTyped(value?: PkiIssuerSig
         'permitted_email_addresses': value['permitted_email_addresses'],
         'permitted_ip_ranges': value['permitted_ip_ranges'],
         'permitted_uri_domains': value['permitted_uri_domains'],
+        'pkcs12_encoder': value['pkcs12_encoder'],
+        'pkcs12_password': value['pkcs12_password'],
         'postal_code': value['postal_code'],
         'private_key_format': value['private_key_format'],
         'province': value['province'],

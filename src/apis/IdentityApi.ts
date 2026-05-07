@@ -28,6 +28,7 @@ import type {
   EntityBatchDeleteRequest,
   EntityCreateAliasRequest,
   EntityCreateRequest,
+  EntityListByIdResponse,
   EntityLookUpRequest,
   EntityMergeRequest,
   EntityUpdateAliasByIdRequest,
@@ -35,6 +36,7 @@ import type {
   EntityUpdateByNameRequest,
   GroupCreateAliasRequest,
   GroupCreateRequest,
+  GroupListByIdResponse,
   GroupLookUpRequest,
   GroupUpdateAliasByIdRequest,
   GroupUpdateByIdRequest,
@@ -92,6 +94,8 @@ import {
     EntityCreateAliasRequestToJSON,
     EntityCreateRequestFromJSON,
     EntityCreateRequestToJSON,
+    EntityListByIdResponseFromJSON,
+    EntityListByIdResponseToJSON,
     EntityLookUpRequestFromJSON,
     EntityLookUpRequestToJSON,
     EntityMergeRequestFromJSON,
@@ -106,6 +110,8 @@ import {
     GroupCreateAliasRequestToJSON,
     GroupCreateRequestFromJSON,
     GroupCreateRequestToJSON,
+    GroupListByIdResponseFromJSON,
+    GroupListByIdResponseToJSON,
     GroupLookUpRequestFromJSON,
     GroupLookUpRequestToJSON,
     GroupUpdateAliasByIdRequestFromJSON,
@@ -1456,7 +1462,7 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async entityListByIdRaw(requestParameters: IdentityApiEntityListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async entityListByIdRaw(requestParameters: IdentityApiEntityListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntityListByIdResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -1480,12 +1486,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntityListByIdResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async entityListById(list: IdentityApiEntityListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListById(list: IdentityApiEntityListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntityListByIdResponse> {
         const response = await this.entityListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2061,9 +2067,8 @@ export class IdentityApi extends runtime.BaseAPI {
     }
 
     /**
-     * List all the group IDs.
      */
-    async groupListByIdRaw(requestParameters: IdentityApiGroupListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async groupListByIdRaw(requestParameters: IdentityApiGroupListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupListByIdResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -2087,13 +2092,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupListByIdResponseFromJSON(jsonValue));
     }
 
     /**
-     * List all the group IDs.
      */
-    async groupListById(list: IdentityApiGroupListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListById(list: IdentityApiGroupListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupListByIdResponse> {
         const response = await this.groupListByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }

@@ -54,7 +54,7 @@ export interface PkiIssuersGenerateIntermediateRequest {
      */
     exclude_cn_from_sans?: boolean;
     /**
-     * Format for returned data. Can be "pem", "der", or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der" or "pem_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der", the value will be base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiIssuersGenerateIntermediateRequest
      */
