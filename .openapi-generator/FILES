@@ -117,6 +117,7 @@ src/models/EntityAliasesCreateDuplicatesRequest.ts
 src/models/EntityBatchDeleteRequest.ts
 src/models/EntityCreateAliasRequest.ts
 src/models/EntityCreateRequest.ts
+src/models/EntityListByIdResponse.ts
 src/models/EntityLookUpRequest.ts
 src/models/EntityMergeRequest.ts
 src/models/EntityUpdateAliasByIdRequest.ts
@@ -162,6 +163,7 @@ src/models/GoogleCloudWriteRolesetRequest.ts
 src/models/GoogleCloudWriteStaticAccountRequest.ts
 src/models/GroupCreateAliasRequest.ts
 src/models/GroupCreateRequest.ts
+src/models/GroupListByIdResponse.ts
 src/models/GroupLookUpRequest.ts
 src/models/GroupUpdateAliasByIdRequest.ts
 src/models/GroupUpdateByIdRequest.ts
