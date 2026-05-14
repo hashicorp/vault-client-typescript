@@ -30,6 +30,12 @@ export interface RadiusConfigureRequest {
      */
     alias_metadata?: object;
     /**
+     * If true, Vault normalizes usernames to lowercase. This affects local user-to-policy lookups, how usernames are stored and managed through the users CRUD endpoints, and the username used for login alias and metadata. Enable this when usernames should be treated case-insensitively across the auth method (default: false).
+     * @type {boolean}
+     * @memberof RadiusConfigureRequest
+     */
+    case_insensitive_names?: boolean;
+    /**
      * Number of seconds before connect times out (default: 10)
      * @type {string}
      * @memberof RadiusConfigureRequest
@@ -151,6 +157,7 @@ export function RadiusConfigureRequestFromJSONTyped(json: any, ignoreDiscriminat
     return {
         
         'alias_metadata': json['alias_metadata'] == null ? undefined : json['alias_metadata'],
+        'case_insensitive_names': json['case_insensitive_names'] == null ? undefined : json['case_insensitive_names'],
         'dial_timeout': json['dial_timeout'] == null ? undefined : json['dial_timeout'],
         'host': json['host'] == null ? undefined : json['host'],
         'nas_identifier': json['nas_identifier'] == null ? undefined : json['nas_identifier'],
@@ -183,6 +190,7 @@ export function RadiusConfigureRequestToJSONTyped(value?: RadiusConfigureRequest
     return {
         
         'alias_metadata': value['alias_metadata'],
+        'case_insensitive_names': value['case_insensitive_names'],
         'dial_timeout': value['dial_timeout'],
         'host': value['host'],
         'nas_identifier': value['nas_identifier'],
