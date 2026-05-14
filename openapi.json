@@ -70564,6 +70564,14 @@
               "group": "Tokens"
             }
           },
+          "case_insensitive_names": {
+            "type": "boolean",
+            "description": "If true, Vault normalizes usernames to lowercase. This affects local user-to-policy lookups, how usernames are stored and managed through the users CRUD endpoints, and the username used for login alias and metadata. Enable this when usernames should be treated case-insensitively across the auth method (default: false).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Case Insensitive Names"
+            }
+          },
           "dial_timeout": {
             "type": "string",
             "description": "Number of seconds before connect times out (default: 10)",
