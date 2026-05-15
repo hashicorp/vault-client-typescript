@@ -48,4 +48,4 @@ mv "$SCRIPTS_DIR/openapi.json" "./openapi.json"
 
 
 echo "OpenAPI spec moved successfully!"
-echo "You can now run 'yarn gen-client' to generate the typescript client from the OpenAPI spec."
+echo "You can now run 'pnpm gen-client' to generate the typescript client from the OpenAPI spec."
