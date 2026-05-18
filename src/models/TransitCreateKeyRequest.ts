@@ -60,19 +60,19 @@ export interface TransitCreateKeyRequest {
      */
     exportable?: boolean;
     /**
-     * The key type of the elliptic curve key to use for hybrid signature schemes. Supported types are: ecdsa-p256, ecdsa-p384, ecdsa-p521, and ed25519.
+     * The elliptic curve key type to use for hybrid signature schemes. Supported types are: ecdsa-p256, ecdsa-p384, ecdsa-p521, and ed25519.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    hybrid_key_type_ec?: string;
+    hybrid_key_type_ec?: TransitCreateKeyRequestHybridKeyTypeEcEnum;
     /**
-     * The key type of the post-quantum key to use for hybrid signature schemes. Supported types are: ML-DSA.
+     * The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    hybrid_key_type_pqc?: string;
+    hybrid_key_type_pqc?: TransitCreateKeyRequestHybridKeyTypePqcEnum;
     /**
-     * The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512
+     * The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512.
      * @type {number}
      * @memberof TransitCreateKeyRequest
      */
@@ -90,18 +90,84 @@ export interface TransitCreateKeyRequest {
      */
     managed_key_name?: string;
     /**
-     * The parameter set to use. Applies to ML-DSA and SLH-DSA key types. For ML-DSA key types, valid values are 44, 65, or 87. For SLH-DSA key types, valid values are SLH-DSA-SHA2-128s, SLH-DSA-SHAKE-128s, SLH-DSA-SHA2-128f, SLH-DSA-SHAKE-128f, SLH-DSA-SHA2-192s, SLH-DSA-SHAKE-192s, SLH-DSA-SHA2-192f, SLH-DSA-SHAKE-192f, SLH-DSA-SHA2-256s, SLH-DSA-SHAKE-256s, SLH-DSA-SHA2-256f, SLH-DSA-SHAKE-256f
+     * The parameter set to use for post-quantum key types. For ML-DSA, valid values are 44, 65, or 87. For SLH-DSA, valid values are the full parameter set identifiers (e.g. "slh-dsa-sha2-128s"). Applies to ML-DSA, SLH-DSA, and Hybrid key types.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    parameter_set?: string;
+    parameter_set?: TransitCreateKeyRequestParameterSetEnum;
     /**
-     * The type of key to create. Currently, "aes128-gcm96" (symmetric), "aes256-gcm96" (symmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric), "ecdsa-p521" (asymmetric), "ed25519" (asymmetric), "rsa-2048" (asymmetric), "rsa-3072" (asymmetric), "rsa-4096" (asymmetric), "ml-dsa" (asymmetric), "slh-dsa" (asymmetric) are supported. Defaults to "aes256-gcm96".
+     * The type of key. Symmetric types: "aes128-gcm96", "aes256-gcm96", "chacha20-poly1305", "aes128-cbc", "aes256-cbc", "aes128-cmac", "aes192-cmac", "aes256-cmac". Asymmetric types: "ecdsa-p256", "ecdsa-p384", "ecdsa-p521", "ed25519", "rsa-2048", "rsa-3072", "rsa-4096", "ml-dsa", "slh-dsa", "hybrid". Defaults to "aes256-gcm96"
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
-    type?: string;
+    type?: TransitCreateKeyRequestTypeEnum;
 }
+
+/**
+* @export
+* @enum {string}
+*/
+export enum TransitCreateKeyRequestHybridKeyTypeEcEnum {
+    ECDSA_P256 = 'ecdsa-p256',
+    ECDSA_P384 = 'ecdsa-p384',
+    ECDSA_P521 = 'ecdsa-p521',
+    ED25519 = 'ed25519'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum TransitCreateKeyRequestHybridKeyTypePqcEnum {
+    ML_DSA = 'ml-dsa'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum TransitCreateKeyRequestParameterSetEnum {
+    _44 = '44',
+    _65 = '65',
+    _87 = '87',
+    SLH_DSA_SHA2_128S = 'slh-dsa-sha2-128s',
+    SLH_DSA_SHAKE128S = 'slh-dsa-shake128s',
+    SLH_DSA_SHA2_128F = 'slh-dsa-sha2-128f',
+    SLH_DSA_SHAKE128F = 'slh-dsa-shake128f',
+    SLH_DSA_SHA2_192S = 'slh-dsa-sha2-192s',
+    SLH_DSA_SHAKE192S = 'slh-dsa-shake192s',
+    SLH_DSA_SHA2_192F = 'slh-dsa-sha2-192f',
+    SLH_DSA_SHAKE192F = 'slh-dsa-shake192f',
+    SLH_DSA_SHA2_256S = 'slh-dsa-sha2-256s',
+    SLH_DSA_SHAKE256S = 'slh-dsa-shake256s',
+    SLH_DSA_SHA2_256F = 'slh-dsa-sha2-256f',
+    SLH_DSA_SHAKE256F = 'slh-dsa-shake256f'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum TransitCreateKeyRequestTypeEnum {
+    AES128_GCM96 = 'aes128-gcm96',
+    AES256_GCM96 = 'aes256-gcm96',
+    CHACHA20_POLY1305 = 'chacha20-poly1305',
+    AES128_CBC = 'aes128-cbc',
+    AES256_CBC = 'aes256-cbc',
+    AES128_CMAC = 'aes128-cmac',
+    AES192_CMAC = 'aes192-cmac',
+    AES256_CMAC = 'aes256-cmac',
+    ECDSA_P256 = 'ecdsa-p256',
+    ECDSA_P384 = 'ecdsa-p384',
+    ECDSA_P521 = 'ecdsa-p521',
+    ED25519 = 'ed25519',
+    RSA_2048 = 'rsa-2048',
+    RSA_3072 = 'rsa-3072',
+    RSA_4096 = 'rsa-4096',
+    HMAC = 'hmac',
+    MANAGED_KEY = 'managed_key',
+    ML_DSA = 'ml-dsa',
+    SLH_DSA = 'slh-dsa',
+    HYBRID = 'hybrid'
+}
+
 
 /**
  * Check if a given object implements the TransitCreateKeyRequest interface.

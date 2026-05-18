@@ -431,6 +431,7 @@ import type {
   TransitHashWithAlgorithmRequest,
   TransitImportKeyRequest,
   TransitImportKeyVersionRequest,
+  TransitReadKeyResponse,
   TransitRestoreAndRenameKeyRequest,
   TransitRestoreKeyRequest,
   TransitRewrapRequest,
@@ -1267,6 +1268,8 @@ import {
     TransitImportKeyRequestToJSON,
     TransitImportKeyVersionRequestFromJSON,
     TransitImportKeyVersionRequestToJSON,
+    TransitReadKeyResponseFromJSON,
+    TransitReadKeyResponseToJSON,
     TransitRestoreAndRenameKeyRequestFromJSON,
     TransitRestoreAndRenameKeyRequestToJSON,
     TransitRestoreKeyRequestFromJSON,
@@ -34563,7 +34566,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async transitReadKeyRaw(requestParameters: SecretsApiTransitReadKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async transitReadKeyRaw(requestParameters: SecretsApiTransitReadKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TransitReadKeyResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -34590,12 +34593,12 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => TransitReadKeyResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async transitReadKey(name: string, transit_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async transitReadKey(name: string, transit_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TransitReadKeyResponse> {
         const response = await this.transitReadKeyRaw({ name: name, transit_mount_path: transit_mount_path }, initOverrides);
         return await response.value();
     }

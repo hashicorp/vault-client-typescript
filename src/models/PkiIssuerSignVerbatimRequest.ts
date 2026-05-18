@@ -66,7 +66,7 @@ export interface PkiIssuerSignVerbatimRequest {
      */
     ext_key_usage_oids?: Array<string>;
     /**
-     * Format for returned data. Can be "pem", "der", "pem_bundle" or "pkcs12_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der" or "pkcs12_bundle", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der", "pem_bundle", "pkcs12_bundle" or "jks_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. Formats "der", "pkcs12_bundle" or "jks_bundle" are base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiIssuerSignVerbatimRequest
      */
@@ -77,6 +77,18 @@ export interface PkiIssuerSignVerbatimRequest {
      * @memberof PkiIssuerSignVerbatimRequest
      */
     ip_sans?: Array<string>;
+    /**
+     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
+     * @type {string}
+     * @memberof PkiIssuerSignVerbatimRequest
+     */
+    jks_alias?: string;
+    /**
+     * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
+     * @type {string}
+     * @memberof PkiIssuerSignVerbatimRequest
+     */
+    jks_password?: string;
     /**
      * A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the "KeyUsage" part of the name. To remove all key usages from being set, set this value to an empty list.
      * @type {Array<string>}
@@ -165,7 +177,8 @@ export enum PkiIssuerSignVerbatimRequestFormatEnum {
     PEM = 'pem',
     DER = 'der',
     PEM_BUNDLE = 'pem_bundle',
-    PKCS12_BUNDLE = 'pkcs12_bundle'
+    PKCS12_BUNDLE = 'pkcs12_bundle',
+    JKS_BUNDLE = 'jks_bundle'
 }
 /**
 * @export
@@ -213,6 +226,8 @@ export function PkiIssuerSignVerbatimRequestFromJSONTyped(json: any, ignoreDiscr
         'ext_key_usage_oids': json['ext_key_usage_oids'] == null ? undefined : json['ext_key_usage_oids'],
         'format': json['format'] == null ? undefined : json['format'],
         'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
+        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
+        'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
         'key_usage': json['key_usage'] == null ? undefined : json['key_usage'],
         'not_after': json['not_after'] == null ? undefined : json['not_after'],
         'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
@@ -249,6 +264,8 @@ export function PkiIssuerSignVerbatimRequestToJSONTyped(value?: PkiIssuerSignVer
         'ext_key_usage_oids': value['ext_key_usage_oids'],
         'format': value['format'],
         'ip_sans': value['ip_sans'],
+        'jks_alias': value['jks_alias'],
+        'jks_password': value['jks_password'],
         'key_usage': value['key_usage'],
         'not_after': value['not_after'],
         'other_sans': value['other_sans'],
