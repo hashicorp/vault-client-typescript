@@ -84,7 +84,7 @@ export interface PkiIssuerSignIntermediateRequest {
      */
     excluded_uri_domains?: Array<string>;
     /**
-     * Format for returned data. Can be "pem", "der", "pem_bundle" or "pkcs12_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der" or "pkcs12_bundle", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der", "pem_bundle", "pkcs12_bundle" or "jks_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. Formats "der", "pkcs12_bundle" or "jks_bundle" are base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiIssuerSignIntermediateRequest
      */
@@ -101,6 +101,18 @@ export interface PkiIssuerSignIntermediateRequest {
      * @memberof PkiIssuerSignIntermediateRequest
      */
     issuer_name?: string;
+    /**
+     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
+     * @type {string}
+     * @memberof PkiIssuerSignIntermediateRequest
+     */
+    jks_alias?: string;
+    /**
+     * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
+     * @type {string}
+     * @memberof PkiIssuerSignIntermediateRequest
+     */
+    jks_password?: string;
     /**
      * This list of key usages (not extended key usages) will be added to the existing set of key usages, CRL,CertSign, on the generated certificate. Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the "KeyUsage" part of the name. To use the issuer for CMPv2, DigitalSignature must be set.
      * @type {Array<string>}
@@ -261,7 +273,8 @@ export enum PkiIssuerSignIntermediateRequestFormatEnum {
     PEM = 'pem',
     DER = 'der',
     PEM_BUNDLE = 'pem_bundle',
-    PKCS12_BUNDLE = 'pkcs12_bundle'
+    PKCS12_BUNDLE = 'pkcs12_bundle',
+    JKS_BUNDLE = 'jks_bundle'
 }
 /**
 * @export
@@ -313,6 +326,8 @@ export function PkiIssuerSignIntermediateRequestFromJSONTyped(json: any, ignoreD
         'format': json['format'] == null ? undefined : json['format'],
         'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
         'issuer_name': json['issuer_name'] == null ? undefined : json['issuer_name'],
+        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
+        'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
         'key_usage': json['key_usage'] == null ? undefined : json['key_usage'],
         'locality': json['locality'] == null ? undefined : json['locality'],
         'max_path_length': json['max_path_length'] == null ? undefined : json['max_path_length'],
@@ -365,6 +380,8 @@ export function PkiIssuerSignIntermediateRequestToJSONTyped(value?: PkiIssuerSig
         'format': value['format'],
         'ip_sans': value['ip_sans'],
         'issuer_name': value['issuer_name'],
+        'jks_alias': value['jks_alias'],
+        'jks_password': value['jks_password'],
         'key_usage': value['key_usage'],
         'locality': value['locality'],
         'max_path_length': value['max_path_length'],

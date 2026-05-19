@@ -31,11 +31,23 @@ export interface PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequest {
      */
     csr: string;
     /**
-     * Format for returned data. Can be "pem", "der", "pem_bundle", or "pkcs12_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. If "der" or "pkcs12_bundle", the value will be base64 encoded. Defaults to "pem".
+     * Format for returned data. Can be "pem", "der", "pem_bundle", "pkcs12_bundle" or "jks_bundle". If "pem_bundle", any private key and issuing cert will be appended to the certificate pem. Formats "der", "pkcs12_bundle" or "jks_bundle" are base64 encoded. Defaults to "pem".
      * @type {string}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequest
      */
     format?: PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequestFormatEnum;
+    /**
+     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
+     * @type {string}
+     * @memberof PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequest
+     */
+    jks_alias?: string;
+    /**
+     * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
+     * @type {string}
+     * @memberof PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequest
+     */
+    jks_password?: string;
     /**
      * Encoder profile to use for PKCS#12 archives when format is set to "pkcs12_bundle". Valid values are "modern2026" and "modern2023". Defaults to "modern2026", which uses the newer PKCS#12 integrity format (PBMAC1).
      * @type {string}
@@ -90,6 +102,8 @@ export function PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequestFrom
             ...json,
         'csr': json['csr'],
         'format': json['format'] == null ? undefined : json['format'],
+        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
+        'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
         'pkcs12_encoder': json['pkcs12_encoder'] == null ? undefined : json['pkcs12_encoder'],
         'pkcs12_password': json['pkcs12_password'] == null ? undefined : json['pkcs12_password'],
     };
@@ -109,6 +123,8 @@ export function PkiWriteIssuerIssuerRefExternalPolicySignIntermediateRequestToJS
             ...value,
         'csr': value['csr'],
         'format': value['format'],
+        'jks_alias': value['jks_alias'],
+        'jks_password': value['jks_password'],
         'pkcs12_encoder': value['pkcs12_encoder'],
         'pkcs12_password': value['pkcs12_password'],
     };

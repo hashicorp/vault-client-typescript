@@ -9270,7 +9270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/MfaListLoginEnforcementsResponse"
                 }
               }
             }
@@ -9364,7 +9364,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/MfaListMethodsResponse"
                 }
               }
             }
@@ -45514,7 +45514,7 @@
       "parameters": [
         {
           "name": "name",
-          "description": "Name of the key",
+          "description": "Name of the key.",
           "in": "path",
           "schema": {
             "type": "string"
@@ -45539,7 +45539,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransitReadKeyResponse"
+                }
+              }
+            }
           }
         }
       },
@@ -56257,6 +56264,40 @@
           "method_id"
         ]
       },
+      "MfaListLoginEnforcementsResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Login enforcement details keyed by the id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of login enforcement keys",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "MfaListMethodsResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "MFA method configurations details keyed by the id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of mfa method configurations keys",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "MfaSelfEnrollRequest": {
         "type": "object",
         "properties": {
@@ -59822,12 +59863,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -59847,6 +59889,22 @@
           "issuer_name": {
             "type": "string",
             "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_bits": {
             "type": "integer",
@@ -60001,7 +60059,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -60009,7 +60067,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "postal_code": {
@@ -60196,12 +60254,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60222,6 +60281,22 @@
             "type": "string",
             "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
             "default": "default"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "not_after": {
             "type": "string",
@@ -60246,7 +60321,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -60254,7 +60329,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -60382,12 +60457,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60402,6 +60478,22 @@
             },
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "not_after": {
@@ -60427,7 +60519,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -60435,7 +60527,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -60749,12 +60841,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -60774,6 +60867,22 @@
           "issuer_name": {
             "type": "string",
             "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_usage": {
             "type": "array",
@@ -60890,7 +60999,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -60898,7 +61007,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "postal_code": {
@@ -61150,12 +61259,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61170,6 +61280,22 @@
             },
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_usage": {
@@ -61207,7 +61333,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -61215,7 +61341,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -61369,12 +61495,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61389,6 +61516,22 @@
             },
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_usage": {
@@ -61426,7 +61569,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -61434,7 +61577,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -61572,12 +61715,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -61592,6 +61736,22 @@
             },
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "not_after": {
@@ -61617,7 +61777,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -61625,7 +61785,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -62034,12 +62194,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -62059,6 +62220,22 @@
           "issuer_name": {
             "type": "string",
             "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_bits": {
             "type": "integer",
@@ -62213,7 +62390,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -62221,7 +62398,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "postal_code": {
@@ -64790,12 +64967,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -64820,6 +64998,22 @@
             "type": "string",
             "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
             "default": "default"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_usage": {
             "type": "array",
@@ -64936,7 +65130,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -64944,7 +65138,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "postal_code": {
@@ -65191,12 +65385,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65216,6 +65411,22 @@
           "issuer_name": {
             "type": "string",
             "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_bits": {
             "type": "integer",
@@ -65370,7 +65581,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -65378,7 +65589,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "postal_code": {
@@ -65603,12 +65814,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65629,6 +65841,22 @@
             "type": "string",
             "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
             "default": "default"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_usage": {
             "type": "array",
@@ -65665,7 +65893,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -65673,7 +65901,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -65827,12 +66055,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -65853,6 +66082,22 @@
             "type": "string",
             "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
             "default": "default"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "key_usage": {
             "type": "array",
@@ -65889,7 +66134,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -65897,7 +66142,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -66035,12 +66280,13 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\" or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
               "pem_bundle",
-              "pkcs12_bundle"
+              "pkcs12_bundle",
+              "jks_bundle"
             ],
             "default": "pem",
             "x-vault-displayAttrs": {
@@ -66061,6 +66307,22 @@
             "type": "string",
             "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
             "default": "default"
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
+            }
           },
           "not_after": {
             "type": "string",
@@ -66085,7 +66347,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -66093,7 +66355,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -66924,7 +67186,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -66933,6 +67195,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_bits": {
@@ -66965,7 +67243,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -66973,7 +67251,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -67039,7 +67317,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67048,6 +67326,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_bits": {
@@ -67080,7 +67374,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -67088,7 +67382,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -67328,7 +67622,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67337,6 +67631,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -67348,7 +67658,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -67356,7 +67666,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           }
         },
@@ -67403,7 +67713,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67412,6 +67722,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -67423,7 +67749,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -67431,7 +67757,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           }
         },
@@ -67478,7 +67804,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67487,6 +67813,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -67498,7 +67840,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -67506,7 +67848,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "remove_roots_from_chain": {
@@ -67558,7 +67900,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -67567,6 +67909,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -67578,7 +67936,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -67586,7 +67944,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "remove_roots_from_chain": {
@@ -68029,7 +68387,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68038,6 +68396,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_bits": {
@@ -68070,7 +68444,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68078,7 +68452,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -68144,7 +68518,7 @@
         "properties": {
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68153,6 +68527,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "key_bits": {
@@ -68185,7 +68575,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68193,7 +68583,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "private_key_format": {
@@ -68433,7 +68823,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68442,6 +68832,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -68453,7 +68859,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68461,7 +68867,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           }
         },
@@ -68508,7 +68914,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68517,6 +68923,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -68528,7 +68950,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68536,7 +68958,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           }
         },
@@ -68583,7 +69005,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68592,6 +69014,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -68603,7 +69041,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68611,7 +69049,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "remove_roots_from_chain": {
@@ -68663,7 +69101,7 @@
           },
           "format": {
             "type": "string",
-            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", or \"pkcs12_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\" or \"pkcs12_bundle\", the value will be base64 encoded. Defaults to \"pem\".",
+            "description": "Format for returned data. Can be \"pem\", \"der\", \"pem_bundle\", \"pkcs12_bundle\" or \"jks_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. Formats \"der\", \"pkcs12_bundle\" or \"jks_bundle\" are base64 encoded. Defaults to \"pem\".",
             "enum": [
               "pem",
               "der",
@@ -68672,6 +69110,22 @@
             "default": "pem",
             "x-vault-displayAttrs": {
               "value": "pem"
+            }
+          },
+          "jks_alias": {
+            "type": "string",
+            "description": "The entry alias in the Java keystore (JKS) when format is set to \"jks_bundle\" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to \"1\". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at \"1\".",
+            "default": "1",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore alias"
+            }
+          },
+          "jks_password": {
+            "type": "string",
+            "description": "Password for encrypting the Java keystore when format is set to \"jks_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
+            "default": "changeit",
+            "x-vault-displayAttrs": {
+              "name": "Java keystore password"
             }
           },
           "pkcs12_encoder": {
@@ -68683,7 +69137,7 @@
             ],
             "default": "modern2026",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Encoder Profile"
+              "name": "PKCS#12 encoder profile"
             }
           },
           "pkcs12_password": {
@@ -68691,7 +69145,7 @@
             "description": "Password for encrypting the PKCS#12 archive when format is set to \"pkcs12_bundle\". If not provided, defaults to \"changeit\". It is recommended to use the default password and protect the file using other means or use a high-entropy password.",
             "default": "changeit",
             "x-vault-displayAttrs": {
-              "name": "PKCS#12 Password"
+              "name": "PKCS#12 password"
             }
           },
           "remove_roots_from_chain": {
@@ -77241,15 +77695,24 @@
           },
           "hybrid_key_type_ec": {
             "type": "string",
-            "description": "The key type of the elliptic curve key to use for hybrid signature schemes. Supported types are: ecdsa-p256, ecdsa-p384, ecdsa-p521, and ed25519."
+            "description": "The elliptic curve key type to use for hybrid signature schemes. Supported types are: ecdsa-p256, ecdsa-p384, ecdsa-p521, and ed25519.",
+            "enum": [
+              "ecdsa-p256",
+              "ecdsa-p384",
+              "ecdsa-p521",
+              "ed25519"
+            ]
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The key type of the post-quantum key to use for hybrid signature schemes. Supported types are: ML-DSA."
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "enum": [
+              "ml-dsa"
+            ]
           },
           "key_size": {
             "type": "integer",
-            "description": "The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512",
+            "description": "The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512.",
             "default": 0
           },
           "managed_key_id": {
@@ -77262,11 +77725,50 @@
           },
           "parameter_set": {
             "type": "string",
-            "description": "The parameter set to use. Applies to ML-DSA and SLH-DSA key types. For ML-DSA key types, valid values are 44, 65, or 87. For SLH-DSA key types, valid values are SLH-DSA-SHA2-128s, SLH-DSA-SHAKE-128s, SLH-DSA-SHA2-128f, SLH-DSA-SHAKE-128f, SLH-DSA-SHA2-192s, SLH-DSA-SHAKE-192s, SLH-DSA-SHA2-192f, SLH-DSA-SHAKE-192f, SLH-DSA-SHA2-256s, SLH-DSA-SHAKE-256s, SLH-DSA-SHA2-256f, SLH-DSA-SHAKE-256f"
+            "description": "The parameter set to use for post-quantum key types. For ML-DSA, valid values are 44, 65, or 87. For SLH-DSA, valid values are the full parameter set identifiers (e.g. \"slh-dsa-sha2-128s\"). Applies to ML-DSA, SLH-DSA, and Hybrid key types.",
+            "enum": [
+              "44",
+              "65",
+              "87",
+              "slh-dsa-sha2-128s",
+              "slh-dsa-shake128s",
+              "slh-dsa-sha2-128f",
+              "slh-dsa-shake128f",
+              "slh-dsa-sha2-192s",
+              "slh-dsa-shake192s",
+              "slh-dsa-sha2-192f",
+              "slh-dsa-shake192f",
+              "slh-dsa-sha2-256s",
+              "slh-dsa-shake256s",
+              "slh-dsa-sha2-256f",
+              "slh-dsa-shake256f"
+            ]
           },
           "type": {
             "type": "string",
-            "description": "The type of key to create. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric), \"ml-dsa\" (asymmetric), \"slh-dsa\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".",
+            "description": "The type of key. Symmetric types: \"aes128-gcm96\", \"aes256-gcm96\", \"chacha20-poly1305\", \"aes128-cbc\", \"aes256-cbc\", \"aes128-cmac\", \"aes192-cmac\", \"aes256-cmac\". Asymmetric types: \"ecdsa-p256\", \"ecdsa-p384\", \"ecdsa-p521\", \"ed25519\", \"rsa-2048\", \"rsa-3072\", \"rsa-4096\", \"ml-dsa\", \"slh-dsa\", \"hybrid\". Defaults to \"aes256-gcm96\"",
+            "enum": [
+              "aes128-gcm96",
+              "aes256-gcm96",
+              "chacha20-poly1305",
+              "aes128-cbc",
+              "aes256-cbc",
+              "aes128-cmac",
+              "aes192-cmac",
+              "aes256-cmac",
+              "ecdsa-p256",
+              "ecdsa-p384",
+              "ecdsa-p521",
+              "ed25519",
+              "rsa-2048",
+              "rsa-3072",
+              "rsa-4096",
+              "hmac",
+              "managed_key",
+              "ml-dsa",
+              "slh-dsa",
+              "hybrid"
+            ],
             "default": "aes256-gcm96"
           }
         }
@@ -77713,6 +78215,185 @@
           "version": {
             "type": "integer",
             "description": "Key version to be updated, if left empty, a new version will be created unless a private key is specified and the 'Latest' key is missing a private key."
+          }
+        }
+      },
+      "TransitReadKeyResponse": {
+        "type": "object",
+        "properties": {
+          "allow_plaintext_backup": {
+            "type": "boolean",
+            "description": "Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled."
+          },
+          "auto_rotate_period": {
+            "type": "string",
+            "description": "Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.",
+            "format": "duration",
+            "default": 0
+          },
+          "backup_info": {
+            "type": "object",
+            "description": "Information about the most recent backup of this key. Contains \"time\" and \"version\" fields. Only present if the key has been backed up.",
+            "format": "map"
+          },
+          "convergent_encryption": {
+            "type": "boolean",
+            "description": "Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security."
+          },
+          "convergent_encryption_version": {
+            "type": "integer",
+            "description": "The version of convergent encryption. Only present if convergent encryption is enabled."
+          },
+          "deletion_allowed": {
+            "type": "boolean",
+            "description": "Whether deletion of the key is allowed."
+          },
+          "derived": {
+            "type": "boolean",
+            "description": "Enables key derivation mode. This allows for per-transaction unique keys for encryption operations."
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported."
+          },
+          "hybrid_key_type_ec": {
+            "type": "string",
+            "description": "The elliptic curve key type to use for hybrid signature schemes. Supported types are: ecdsa-p256, ecdsa-p384, ecdsa-p521, and ed25519.",
+            "enum": [
+              "ecdsa-p256",
+              "ecdsa-p384",
+              "ecdsa-p521",
+              "ed25519"
+            ]
+          },
+          "hybrid_key_type_pqc": {
+            "type": "string",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "enum": [
+              "ml-dsa"
+            ]
+          },
+          "imported_key": {
+            "type": "boolean",
+            "description": "Whether this key was imported rather than generated by Vault."
+          },
+          "imported_key_allow_rotation": {
+            "type": "boolean",
+            "description": "Whether rotation is allowed for this imported key. Only present if the key was imported."
+          },
+          "kdf": {
+            "type": "string",
+            "description": "The key derivation function used. Only present if key derivation is enabled.",
+            "enum": [
+              "hmac-sha256-counter",
+              "hkdf_sha256"
+            ]
+          },
+          "kdf_mode": {
+            "type": "string",
+            "description": "The key derivation function mode. Only present if KDF is \"hmac-sha256-counter\".",
+            "enum": [
+              "hmac-sha256-counter"
+            ]
+          },
+          "key_size": {
+            "type": "integer",
+            "description": "The key size in bytes for the algorithm. Only applies to HMAC and must be no fewer than 32 bytes and no more than 512.",
+            "default": 0
+          },
+          "keys": {
+            "type": "object",
+            "description": "A map of active key versions. For memory efficiency, transit keeps a working set of versions from \"min_decryption_version\" through the latest version. Older versions may still be retained in archived storage if they are at or above \"min_available_version\". Versions older than \"min_available_version\" are permanently deleted. Not present for hmac, managed_key, and CMAC key types.",
+            "format": "map"
+          },
+          "latest_version": {
+            "type": "integer",
+            "description": "The latest (current) version of the key."
+          },
+          "min_available_version": {
+            "type": "integer",
+            "description": "The minimum version of the key available for use. Versions below this have been permanently deleted."
+          },
+          "min_decryption_version": {
+            "type": "integer",
+            "description": "The minimum version of the key allowed for decryption. For signing keys, the minimum version allowed for verification."
+          },
+          "min_encryption_version": {
+            "type": "integer",
+            "description": "The minimum version of the key allowed for encryption. For signing keys, the minimum version allowed for signing. If set to 0, only the latest version is allowed."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the key."
+          },
+          "parameter_set": {
+            "type": "string",
+            "description": "The parameter set to use for post-quantum key types. For ML-DSA, valid values are 44, 65, or 87. For SLH-DSA, valid values are the full parameter set identifiers (e.g. \"slh-dsa-sha2-128s\"). Applies to ML-DSA, SLH-DSA, and Hybrid key types.",
+            "enum": [
+              "44",
+              "65",
+              "87",
+              "slh-dsa-sha2-128s",
+              "slh-dsa-shake128s",
+              "slh-dsa-sha2-128f",
+              "slh-dsa-shake128f",
+              "slh-dsa-sha2-192s",
+              "slh-dsa-shake192s",
+              "slh-dsa-sha2-192f",
+              "slh-dsa-shake192f",
+              "slh-dsa-sha2-256s",
+              "slh-dsa-shake256s",
+              "slh-dsa-sha2-256f",
+              "slh-dsa-shake256f"
+            ]
+          },
+          "restore_info": {
+            "type": "object",
+            "description": "Information about when this key was restored from backup. Contains \"time\" and \"version\" fields. Only present if the key has been restored.",
+            "format": "map"
+          },
+          "supports_decryption": {
+            "type": "boolean",
+            "description": "Whether this key type supports decryption operations."
+          },
+          "supports_derivation": {
+            "type": "boolean",
+            "description": "Whether this key type supports key derivation."
+          },
+          "supports_encryption": {
+            "type": "boolean",
+            "description": "Whether this key type supports encryption operations."
+          },
+          "supports_signing": {
+            "type": "boolean",
+            "description": "Whether this key type supports signing operations."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of key. Symmetric types: \"aes128-gcm96\", \"aes256-gcm96\", \"chacha20-poly1305\", \"aes128-cbc\", \"aes256-cbc\", \"aes128-cmac\", \"aes192-cmac\", \"aes256-cmac\". Asymmetric types: \"ecdsa-p256\", \"ecdsa-p384\", \"ecdsa-p521\", \"ed25519\", \"rsa-2048\", \"rsa-3072\", \"rsa-4096\", \"ml-dsa\", \"slh-dsa\", \"hybrid\". Defaults to \"aes256-gcm96\"",
+            "enum": [
+              "aes128-gcm96",
+              "aes256-gcm96",
+              "chacha20-poly1305",
+              "aes128-cbc",
+              "aes256-cbc",
+              "aes128-cmac",
+              "aes192-cmac",
+              "aes256-cmac",
+              "ecdsa-p256",
+              "ecdsa-p384",
+              "ecdsa-p521",
+              "ed25519",
+              "rsa-2048",
+              "rsa-3072",
+              "rsa-4096",
+              "hmac",
+              "managed_key",
+              "ml-dsa",
+              "slh-dsa",
+              "hybrid"
+            ],
+            "default": "aes256-gcm96"
           }
         }
       },

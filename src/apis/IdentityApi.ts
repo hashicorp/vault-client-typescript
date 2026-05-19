@@ -49,6 +49,8 @@ import type {
   MfaCreatePingIdMethodRequest,
   MfaCreateTotpMethodRequest,
   MfaGenerateTotpSecretRequest,
+  MfaListLoginEnforcementsResponse,
+  MfaListMethodsResponse,
   MfaSelfEnrollRequest,
   MfaUpdateDuoMethodRequest,
   MfaUpdateOktaMethodRequest,
@@ -136,6 +138,10 @@ import {
     MfaCreateTotpMethodRequestToJSON,
     MfaGenerateTotpSecretRequestFromJSON,
     MfaGenerateTotpSecretRequestToJSON,
+    MfaListLoginEnforcementsResponseFromJSON,
+    MfaListLoginEnforcementsResponseToJSON,
+    MfaListMethodsResponseFromJSON,
+    MfaListMethodsResponseToJSON,
     MfaSelfEnrollRequestFromJSON,
     MfaSelfEnrollRequestToJSON,
     MfaUpdateDuoMethodRequestFromJSON,
@@ -3276,7 +3282,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List login enforcements
      */
-    async mfaListLoginEnforcementsRaw(requestParameters: IdentityApiMfaListLoginEnforcementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async mfaListLoginEnforcementsRaw(requestParameters: IdentityApiMfaListLoginEnforcementsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MfaListLoginEnforcementsResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -3300,13 +3306,13 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => MfaListLoginEnforcementsResponseFromJSON(jsonValue));
     }
 
     /**
      * List login enforcements
      */
-    async mfaListLoginEnforcements(list: IdentityApiMfaListLoginEnforcementsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListLoginEnforcements(list: IdentityApiMfaListLoginEnforcementsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MfaListLoginEnforcementsResponse> {
         const response = await this.mfaListLoginEnforcementsRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -3314,7 +3320,7 @@ export class IdentityApi extends runtime.BaseAPI {
     /**
      * List MFA method configurations for all MFA methods
      */
-    async mfaListMethodsRaw(requestParameters: IdentityApiMfaListMethodsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async mfaListMethodsRaw(requestParameters: IdentityApiMfaListMethodsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MfaListMethodsResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -3338,13 +3344,13 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => MfaListMethodsResponseFromJSON(jsonValue));
     }
 
     /**
      * List MFA method configurations for all MFA methods
      */
-    async mfaListMethods(list: IdentityApiMfaListMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async mfaListMethods(list: IdentityApiMfaListMethodsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MfaListMethodsResponse> {
         const response = await this.mfaListMethodsRaw({ list: list }, initOverrides);
         return await response.value();
     }

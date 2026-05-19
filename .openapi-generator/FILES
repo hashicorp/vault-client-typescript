@@ -266,6 +266,8 @@ src/models/MfaCreateOktaMethodRequest.ts
 src/models/MfaCreatePingIdMethodRequest.ts
 src/models/MfaCreateTotpMethodRequest.ts
 src/models/MfaGenerateTotpSecretRequest.ts
+src/models/MfaListLoginEnforcementsResponse.ts
+src/models/MfaListMethodsResponse.ts
 src/models/MfaSelfEnrollRequest.ts
 src/models/MfaUpdateDuoMethodRequest.ts
 src/models/MfaUpdateOktaMethodRequest.ts
@@ -853,6 +855,7 @@ src/models/TransitHashRequest.ts
 src/models/TransitHashWithAlgorithmRequest.ts
 src/models/TransitImportKeyRequest.ts
 src/models/TransitImportKeyVersionRequest.ts
+src/models/TransitReadKeyResponse.ts
 src/models/TransitRestoreAndRenameKeyRequest.ts
 src/models/TransitRestoreKeyRequest.ts
 src/models/TransitRewrapRequest.ts
