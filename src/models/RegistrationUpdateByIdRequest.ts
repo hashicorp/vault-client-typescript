@@ -53,6 +53,12 @@ export interface RegistrationUpdateByIdRequest {
      * @memberof RegistrationUpdateByIdRequest
      */
     no_default_ceiling_policy?: boolean;
+    /**
+     * Owner of the registration.
+     * @type {string}
+     * @memberof RegistrationUpdateByIdRequest
+     */
+    owner?: string;
 }
 
 /**
@@ -79,6 +85,7 @@ export function RegistrationUpdateByIdRequestFromJSONTyped(json: any, ignoreDisc
         'display_name': json['display_name'],
         'entity_id': json['entity_id'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
+        'owner': json['owner'] == null ? undefined : json['owner'],
     };
 }
 
@@ -98,6 +105,7 @@ export function RegistrationUpdateByIdRequestToJSONTyped(value?: RegistrationUpd
         'display_name': value['display_name'],
         'entity_id': value['entity_id'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],
+        'owner': value['owner'],
     };
 }
 

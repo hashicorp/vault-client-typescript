@@ -59,6 +59,12 @@ export interface RegisterCreateRequest {
      * @memberof RegisterCreateRequest
      */
     no_default_ceiling_policy?: boolean;
+    /**
+     * Owner of the registration.
+     * @type {string}
+     * @memberof RegisterCreateRequest
+     */
+    owner?: string;
 }
 
 /**
@@ -86,6 +92,7 @@ export function RegisterCreateRequestFromJSONTyped(json: any, ignoreDiscriminato
         'entity_id': json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
+        'owner': json['owner'] == null ? undefined : json['owner'],
     };
 }
 
@@ -106,6 +113,7 @@ export function RegisterCreateRequestToJSONTyped(value?: RegisterCreateRequest |
         'entity_id': value['entity_id'],
         'id': value['id'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],
+        'owner': value['owner'],
     };
 }
 

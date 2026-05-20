@@ -71444,6 +71444,10 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner of the registration."
           }
         },
         "required": [
@@ -71476,6 +71480,10 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner of the registration."
           }
         },
         "required": [
@@ -71508,6 +71516,10 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner of the registration."
           }
         },
         "required": [
