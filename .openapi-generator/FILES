@@ -709,6 +709,7 @@ src/models/SystemPatchSyncDestinationsInMemNameResponse.ts
 src/models/SystemPatchSyncDestinationsVercelProjectNameRequest.ts
 src/models/SystemPatchSyncDestinationsVercelProjectNameResponse.ts
 src/models/SystemReadBillingCertificatesResponse.ts
+src/models/SystemReadBillingConfigResponse.ts
 src/models/SystemReadBillingOverviewResponse.ts
 src/models/SystemReadConfigGroupPolicyApplicationResponse.ts
 src/models/SystemReadRotationOrphansResponse.ts
@@ -724,6 +725,7 @@ src/models/SystemReadSyncDestinationsInMemNameResponse.ts
 src/models/SystemReadSyncDestinationsTypeNameAssociationsResponse.ts
 src/models/SystemReadSyncDestinationsVercelProjectNameResponse.ts
 src/models/SystemReadSyncGithubAppsNameResponse.ts
+src/models/SystemWriteBillingConfigRequest.ts
 src/models/SystemWriteConfigControlGroupRequest.ts
 src/models/SystemWriteConfigGroupPolicyApplicationRequest.ts
 src/models/SystemWriteControlGroupAuthorizeRequest.ts

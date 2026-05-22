@@ -24,11 +24,23 @@ import { mapValues } from '../runtime';
  */
 export interface UpdateRequest {
     /**
+     * A comma-separated list of attribute names to include in the response.
+     * @type {Array<string>}
+     * @memberof UpdateRequest
+     */
+    attributes?: Array<string>;
+    /**
      * The desired number of results per page.
      * @type {number}
      * @memberof UpdateRequest
      */
     count?: number;
+    /**
+     * A comma-separated list of attribute names to exclude from the response.
+     * @type {Array<string>}
+     * @memberof UpdateRequest
+     */
+    excludedAttributes?: Array<string>;
     /**
      * The 1-based index of the first result to return.
      * @type {number}
@@ -54,7 +66,9 @@ export function UpdateRequestFromJSONTyped(json: any, ignoreDiscriminator: boole
     }
     return {
         
+        'attributes': json['attributes'] == null ? undefined : json['attributes'],
         'count': json['count'] == null ? undefined : json['count'],
+        'excludedAttributes': json['excludedAttributes'] == null ? undefined : json['excludedAttributes'],
         'startIndex': json['startIndex'] == null ? undefined : json['startIndex'],
     };
 }
@@ -70,7 +84,9 @@ export function UpdateRequestToJSONTyped(value?: UpdateRequest | null, ignoreDis
 
     return {
         
+        'attributes': value['attributes'],
         'count': value['count'],
+        'excludedAttributes': value['excludedAttributes'],
         'startIndex': value['startIndex'],
     };
 }
