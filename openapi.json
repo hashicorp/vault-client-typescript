@@ -11212,11 +11212,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -11275,11 +11291,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -11346,11 +11378,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -11579,11 +11627,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -11650,11 +11714,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -11729,11 +11809,27 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
+            }
+          },
+          {
             "name": "count",
             "description": "The desired number of results per page.",
             "in": "query",
             "schema": {
               "type": "integer"
+            }
+          },
+          {
+            "name": "excludedAttributes",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "in": "query",
+            "schema": {
+              "type": "array"
             }
           },
           {
@@ -12147,6 +12243,67 @@
                 }
               }
             }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/sys/billing/config": {
+      "get": {
+        "summary": "Read the billing data retention configuration.",
+        "operationId": "system-read-billing-config",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemReadBillingConfigResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Configure the billing data retention period.",
+        "operationId": "system-write-billing-config",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemWriteBillingConfigRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "204": {
             "description": "No Content"
@@ -50340,9 +50497,23 @@
       "CreateRequest": {
         "type": "object",
         "properties": {
+          "attributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "items": {
+              "type": "string"
+            }
+          },
           "count": {
             "type": "integer",
             "description": "The desired number of results per page."
+          },
+          "excludedAttributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "items": {
+              "type": "string"
+            }
           },
           "id": {
             "type": "string",
@@ -57898,9 +58069,23 @@
       "PatchRequest": {
         "type": "object",
         "properties": {
+          "attributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "items": {
+              "type": "string"
+            }
+          },
           "count": {
             "type": "integer",
             "description": "The desired number of results per page."
+          },
+          "excludedAttributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "items": {
+              "type": "string"
+            }
           },
           "startIndex": {
             "type": "integer",
@@ -74252,6 +74437,15 @@
           }
         }
       },
+      "SystemReadBillingConfigResponse": {
+        "type": "object",
+        "properties": {
+          "retention_months": {
+            "type": "integer",
+            "description": "Number of months of billing data to retain."
+          }
+        }
+      },
       "SystemReadBillingOverviewResponse": {
         "type": "object",
         "properties": {
@@ -74579,6 +74773,15 @@
           "name": {
             "type": "string",
             "description": "The name of the GitHub app. Used to identify the application when configuring the GitHub destination"
+          }
+        }
+      },
+      "SystemWriteBillingConfigRequest": {
+        "type": "object",
+        "properties": {
+          "retention_months": {
+            "type": "integer",
+            "description": "Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months."
           }
         }
       },
@@ -79062,9 +79265,23 @@
       "UpdateRequest": {
         "type": "object",
         "properties": {
+          "attributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to include in the response.",
+            "items": {
+              "type": "string"
+            }
+          },
           "count": {
             "type": "integer",
             "description": "The desired number of results per page."
+          },
+          "excludedAttributes": {
+            "type": "array",
+            "description": "A comma-separated list of attribute names to exclude from the response.",
+            "items": {
+              "type": "string"
+            }
           },
           "startIndex": {
             "type": "integer",
