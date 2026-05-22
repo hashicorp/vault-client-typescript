@@ -196,13 +196,17 @@ import {
 
 export interface IdentityApiDeleteRequest {
     id: string;
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     startIndex?: number;
 }
 
 export interface IdentityApiDelete0Request {
     id: string;
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     filter?: string;
     startIndex?: number;
 }
@@ -403,12 +407,16 @@ export interface IdentityApiIdentityReadScimV2SchemasIdRequest {
 }
 
 export interface IdentityApiListRequest {
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     startIndex?: number;
 }
 
 export interface IdentityApiList0Request {
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     filter?: string;
     startIndex?: number;
 }
@@ -738,7 +746,9 @@ export interface IdentityApiPersonaUpdateByIdOperationRequest {
 
 export interface IdentityApiReadRequest {
     id: string;
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     startIndex?: number;
 }
 
@@ -748,7 +758,9 @@ export interface IdentityApiRead1Request {
 
 export interface IdentityApiRead3Request {
     id: string;
+    attributes?: Array<string>;
     count?: number;
+    excludedAttributes?: Array<string>;
     filter?: string;
     startIndex?: number;
 }
@@ -797,8 +809,16 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['startIndex'] != null) {
@@ -820,8 +840,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async _delete(id: string, count?: number, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this._deleteRaw({ id: id, count: count, startIndex: startIndex }, initOverrides);
+    async _delete(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this._deleteRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -837,8 +857,16 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['filter'] != null) {
@@ -864,8 +892,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async _delete_1(id: string, count?: number, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this._delete_1Raw({ id: id, count: count, filter: filter, startIndex: startIndex }, initOverrides);
+    async _delete_1(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this._delete_1Raw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -2747,8 +2775,16 @@ export class IdentityApi extends runtime.BaseAPI {
     async listRaw(requestParameters: IdentityApiListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['startIndex'] != null) {
@@ -2770,8 +2806,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async list(count?: number, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.listRaw({ count: count, startIndex: startIndex }, initOverrides);
+    async list(attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.listRaw({ attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -2780,8 +2816,16 @@ export class IdentityApi extends runtime.BaseAPI {
     async list_3Raw(requestParameters: IdentityApiList0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['filter'] != null) {
@@ -2807,8 +2851,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async list_3(count?: number, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.list_3Raw({ count: count, filter: filter, startIndex: startIndex }, initOverrides);
+    async list_3(attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.list_3Raw({ attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -5656,8 +5700,16 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['startIndex'] != null) {
@@ -5679,8 +5731,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async read(id: string, count?: number, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.readRaw({ id: id, count: count, startIndex: startIndex }, initOverrides);
+    async read(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.readRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -5778,8 +5830,16 @@ export class IdentityApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['attributes'] != null) {
+            queryParameters['attributes'] = requestParameters['attributes'];
+        }
+
         if (requestParameters['count'] != null) {
             queryParameters['count'] = requestParameters['count'];
+        }
+
+        if (requestParameters['excludedAttributes'] != null) {
+            queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
         if (requestParameters['filter'] != null) {
@@ -5805,8 +5865,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async read_8(id: string, count?: number, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.read_8Raw({ id: id, count: count, filter: filter, startIndex: startIndex }, initOverrides);
+    async read_8(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.read_8Raw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 

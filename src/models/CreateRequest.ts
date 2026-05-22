@@ -24,11 +24,23 @@ import { mapValues } from '../runtime';
  */
 export interface CreateRequest {
     /**
+     * A comma-separated list of attribute names to include in the response.
+     * @type {Array<string>}
+     * @memberof CreateRequest
+     */
+    attributes?: Array<string>;
+    /**
      * The desired number of results per page.
      * @type {number}
      * @memberof CreateRequest
      */
     count?: number;
+    /**
+     * A comma-separated list of attribute names to exclude from the response.
+     * @type {Array<string>}
+     * @memberof CreateRequest
+     */
+    excludedAttributes?: Array<string>;
     /**
      * ID of the group. If set, updates the corresponding existing entity.
      * @type {string}
@@ -60,7 +72,9 @@ export function CreateRequestFromJSONTyped(json: any, ignoreDiscriminator: boole
     }
     return {
         
+        'attributes': json['attributes'] == null ? undefined : json['attributes'],
         'count': json['count'] == null ? undefined : json['count'],
+        'excludedAttributes': json['excludedAttributes'] == null ? undefined : json['excludedAttributes'],
         'id': json['id'] == null ? undefined : json['id'],
         'startIndex': json['startIndex'] == null ? undefined : json['startIndex'],
     };
@@ -77,7 +91,9 @@ export function CreateRequestToJSONTyped(value?: CreateRequest | null, ignoreDis
 
     return {
         
+        'attributes': value['attributes'],
         'count': value['count'],
+        'excludedAttributes': value['excludedAttributes'],
         'id': value['id'],
         'startIndex': value['startIndex'],
     };

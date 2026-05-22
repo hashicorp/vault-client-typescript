@@ -195,6 +195,7 @@ import type {
   SystemPatchSyncDestinationsVercelProjectNameRequest,
   SystemPatchSyncDestinationsVercelProjectNameResponse,
   SystemReadBillingCertificatesResponse,
+  SystemReadBillingConfigResponse,
   SystemReadBillingOverviewResponse,
   SystemReadConfigGroupPolicyApplicationResponse,
   SystemReadRotationOrphansResponse,
@@ -210,6 +211,7 @@ import type {
   SystemReadSyncDestinationsTypeNameAssociationsResponse,
   SystemReadSyncDestinationsVercelProjectNameResponse,
   SystemReadSyncGithubAppsNameResponse,
+  SystemWriteBillingConfigRequest,
   SystemWriteConfigControlGroupRequest,
   SystemWriteConfigGroupPolicyApplicationRequest,
   SystemWriteControlGroupAuthorizeRequest,
@@ -648,6 +650,8 @@ import {
     SystemPatchSyncDestinationsVercelProjectNameResponseToJSON,
     SystemReadBillingCertificatesResponseFromJSON,
     SystemReadBillingCertificatesResponseToJSON,
+    SystemReadBillingConfigResponseFromJSON,
+    SystemReadBillingConfigResponseToJSON,
     SystemReadBillingOverviewResponseFromJSON,
     SystemReadBillingOverviewResponseToJSON,
     SystemReadConfigGroupPolicyApplicationResponseFromJSON,
@@ -678,6 +682,8 @@ import {
     SystemReadSyncDestinationsVercelProjectNameResponseToJSON,
     SystemReadSyncGithubAppsNameResponseFromJSON,
     SystemReadSyncGithubAppsNameResponseToJSON,
+    SystemWriteBillingConfigRequestFromJSON,
+    SystemWriteBillingConfigRequestToJSON,
     SystemWriteConfigControlGroupRequestFromJSON,
     SystemWriteConfigControlGroupRequestToJSON,
     SystemWriteConfigGroupPolicyApplicationRequestFromJSON,
@@ -1703,6 +1709,10 @@ export interface SystemApiSystemReadSyncDestinationsVercelProjectNameRequest {
 
 export interface SystemApiSystemReadSyncGithubAppsNameRequest {
     name: string;
+}
+
+export interface SystemApiSystemWriteBillingConfigOperationRequest {
+    SystemWriteBillingConfigRequest: SystemWriteBillingConfigRequest;
 }
 
 export interface SystemApiSystemWriteConfigControlGroupOperationRequest {
@@ -10754,6 +10764,40 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the billing data retention configuration.
+     */
+    async systemReadBillingConfigRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemReadBillingConfigResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/billing/config`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SystemReadBillingConfigResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Read the billing data retention configuration.
+     */
+    async systemReadBillingConfig(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadBillingConfigResponse | null | undefined > {
+        const response = await this.systemReadBillingConfigRaw(initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
      * Reports consumption billing metrics on a monthly granularity.
      */
     async systemReadBillingOverviewRaw(requestParameters: SystemApiSystemReadBillingOverviewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SystemReadBillingOverviewResponse>> {
@@ -11978,6 +12022,43 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemWriteActivationFlagsOauthResourceServerDeactivate(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.systemWriteActivationFlagsOauthResourceServerDeactivateRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Configure the billing data retention period.
+     */
+    async systemWriteBillingConfigRaw(requestParameters: SystemApiSystemWriteBillingConfigOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['SystemWriteBillingConfigRequest'] == null) {
+            throw new runtime.RequiredError(
+                'SystemWriteBillingConfigRequest',
+                'Required parameter "SystemWriteBillingConfigRequest" was null or undefined when calling systemWriteBillingConfig().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/billing/config`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SystemWriteBillingConfigRequestToJSON(requestParameters['SystemWriteBillingConfigRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Configure the billing data retention period.
+     */
+    async systemWriteBillingConfig(SystemWriteBillingConfigRequest: SystemWriteBillingConfigRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemWriteBillingConfigRaw({ SystemWriteBillingConfigRequest: SystemWriteBillingConfigRequest }, initOverrides);
         return await response.value();
     }
 
