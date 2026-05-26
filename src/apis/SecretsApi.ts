@@ -377,6 +377,7 @@ import type {
   SshGenerateCredentialsRequest,
   SshIssueCertificateRequest,
   SshListRolesByIpRequest,
+  SshListRolesResponse,
   SshSignCertificateRequest,
   SshVerifyOtpRequest,
   SshWriteRoleRequest,
@@ -1160,6 +1161,8 @@ import {
     SshIssueCertificateRequestToJSON,
     SshListRolesByIpRequestFromJSON,
     SshListRolesByIpRequestToJSON,
+    SshListRolesResponseFromJSON,
+    SshListRolesResponseToJSON,
     SshSignCertificateRequestFromJSON,
     SshSignCertificateRequestToJSON,
     SshVerifyOtpRequestFromJSON,
@@ -29537,9 +29540,8 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage the \'roles\' that can be created with this backend.
      */
-    async sshListRolesRaw(requestParameters: SecretsApiSshListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async sshListRolesRaw(requestParameters: SecretsApiSshListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SshListRolesResponse>> {
         if (requestParameters['ssh_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'ssh_mount_path',
@@ -29570,13 +29572,12 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => SshListRolesResponseFromJSON(jsonValue));
     }
 
     /**
-     * Manage the \'roles\' that can be created with this backend.
      */
-    async sshListRoles(ssh_mount_path: string, list: SecretsApiSshListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async sshListRoles(ssh_mount_path: string, list: SecretsApiSshListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SshListRolesResponse> {
         const response = await this.sshListRolesRaw({ ssh_mount_path: ssh_mount_path, list: list }, initOverrides);
         return await response.value();
     }

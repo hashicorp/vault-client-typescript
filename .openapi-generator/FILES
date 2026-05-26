@@ -678,6 +678,7 @@ src/models/SshConfigureZeroAddressRequest.ts
 src/models/SshGenerateCredentialsRequest.ts
 src/models/SshIssueCertificateRequest.ts
 src/models/SshListRolesByIpRequest.ts
+src/models/SshListRolesResponse.ts
 src/models/SshSignCertificateRequest.ts
 src/models/SshVerifyOtpRequest.ts
 src/models/SshWriteRoleRequest.ts

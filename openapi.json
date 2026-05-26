@@ -42239,7 +42239,6 @@
         }
       ],
       "get": {
-        "summary": "Manage the 'roles' that can be created with this backend.",
         "operationId": "ssh-list-roles",
         "tags": [
           "secrets"
@@ -42264,7 +42263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/SshListRolesResponse"
                 }
               }
             }
@@ -73301,6 +73300,23 @@
           "ip": {
             "type": "string",
             "description": "[Required] IP address of remote host"
+          }
+        }
+      },
+      "SshListRolesResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "SSH role details keyed by the role name",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of SSH role keys",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

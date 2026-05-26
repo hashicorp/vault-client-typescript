@@ -676,6 +676,7 @@ export * from './SshConfigureZeroAddressRequest';
 export * from './SshGenerateCredentialsRequest';
 export * from './SshIssueCertificateRequest';
 export * from './SshListRolesByIpRequest';
+export * from './SshListRolesResponse';
 export * from './SshSignCertificateRequest';
 export * from './SshVerifyOtpRequest';
 export * from './SshWriteRoleRequest';
