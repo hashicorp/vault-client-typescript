@@ -72,12 +72,6 @@ export interface PkiSignWithRoleRequest {
      */
     issuer_ref?: string;
     /**
-     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
-     * @type {string}
-     * @memberof PkiSignWithRoleRequest
-     */
-    jks_alias?: string;
-    /**
      * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
      * @type {string}
      * @memberof PkiSignWithRoleRequest
@@ -201,7 +195,6 @@ export function PkiSignWithRoleRequestFromJSONTyped(json: any, ignoreDiscriminat
         'format': json['format'] == null ? undefined : json['format'],
         'ip_sans': json['ip_sans'] == null ? undefined : json['ip_sans'],
         'issuer_ref': json['issuer_ref'] == null ? undefined : json['issuer_ref'],
-        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
         'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
         'not_after': json['not_after'] == null ? undefined : json['not_after'],
         'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
@@ -235,7 +228,6 @@ export function PkiSignWithRoleRequestToJSONTyped(value?: PkiSignWithRoleRequest
         'format': value['format'],
         'ip_sans': value['ip_sans'],
         'issuer_ref': value['issuer_ref'],
-        'jks_alias': value['jks_alias'],
         'jks_password': value['jks_password'],
         'not_after': value['not_after'],
         'other_sans': value['other_sans'],

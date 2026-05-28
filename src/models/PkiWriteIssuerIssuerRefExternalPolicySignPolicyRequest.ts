@@ -37,12 +37,6 @@ export interface PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequest {
      */
     format?: PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequestFormatEnum;
     /**
-     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
-     * @type {string}
-     * @memberof PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequest
-     */
-    jks_alias?: string;
-    /**
      * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
      * @type {string}
      * @memberof PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequest
@@ -108,7 +102,6 @@ export function PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequestFromJSONTy
             ...json,
         'csr': json['csr'],
         'format': json['format'] == null ? undefined : json['format'],
-        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
         'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
         'pkcs12_encoder': json['pkcs12_encoder'] == null ? undefined : json['pkcs12_encoder'],
         'pkcs12_password': json['pkcs12_password'] == null ? undefined : json['pkcs12_password'],
@@ -130,7 +123,6 @@ export function PkiWriteIssuerIssuerRefExternalPolicySignPolicyRequestToJSONType
             ...value,
         'csr': value['csr'],
         'format': value['format'],
-        'jks_alias': value['jks_alias'],
         'jks_password': value['jks_password'],
         'pkcs12_encoder': value['pkcs12_encoder'],
         'pkcs12_password': value['pkcs12_password'],
