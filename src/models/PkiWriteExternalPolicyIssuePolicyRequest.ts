@@ -31,17 +31,17 @@ export interface PkiWriteExternalPolicyIssuePolicyRequest {
      */
     format?: PkiWriteExternalPolicyIssuePolicyRequestFormatEnum;
     /**
-     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return multiple TrustedCertificateEntry values (trust stores), and entry aliases are assigned incrementing numeric strings starting at "1".
-     * @type {string}
-     * @memberof PkiWriteExternalPolicyIssuePolicyRequest
-     */
-    jks_alias?: string;
-    /**
      * Password for encrypting the Java keystore when format is set to "jks_bundle". If not provided, defaults to "changeit". It is recommended to use the default password and protect the file using other means or use a high-entropy password.
      * @type {string}
      * @memberof PkiWriteExternalPolicyIssuePolicyRequest
      */
     jks_password?: string;
+    /**
+     * The entry alias in the Java keystore (JKS) when format is set to "jks_bundle" and bundle contains a single PrivateKeyEntry. This field is case-sensitive, but relying on case-only differences for unique aliases is not recommended. Defaults to "1". This parameter is ignored by endpoints that return TrustedCertificateEntry values (trust stores), and instead entries are assigned incrementing numeric strings aliases starting at "1".
+     * @type {string}
+     * @memberof PkiWriteExternalPolicyIssuePolicyRequest
+     */
+    jks_private_key_alias?: string;
     /**
      * The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
      * @type {number}
@@ -136,8 +136,8 @@ export function PkiWriteExternalPolicyIssuePolicyRequestFromJSONTyped(json: any,
         
             ...json,
         'format': json['format'] == null ? undefined : json['format'],
-        'jks_alias': json['jks_alias'] == null ? undefined : json['jks_alias'],
         'jks_password': json['jks_password'] == null ? undefined : json['jks_password'],
+        'jks_private_key_alias': json['jks_private_key_alias'] == null ? undefined : json['jks_private_key_alias'],
         'key_bits': json['key_bits'] == null ? undefined : json['key_bits'],
         'key_type': json['key_type'] == null ? undefined : json['key_type'],
         'pkcs12_encoder': json['pkcs12_encoder'] == null ? undefined : json['pkcs12_encoder'],
@@ -160,8 +160,8 @@ export function PkiWriteExternalPolicyIssuePolicyRequestToJSONTyped(value?: PkiW
         
             ...value,
         'format': value['format'],
-        'jks_alias': value['jks_alias'],
         'jks_password': value['jks_password'],
+        'jks_private_key_alias': value['jks_private_key_alias'],
         'key_bits': value['key_bits'],
         'key_type': value['key_type'],
         'pkcs12_encoder': value['pkcs12_encoder'],
