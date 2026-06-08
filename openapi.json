@@ -57335,6 +57335,10 @@
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
           },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory."
+          },
           "profile_name": {
             "type": "string",
             "description": "The name of the OAuth Resource Server Configuration profile."
@@ -57403,6 +57407,10 @@
           "no_default_policy": {
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
+          },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory."
           },
           "public_keys": {
             "type": "array",
@@ -71501,6 +71509,10 @@
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
+          },
           "owner": {
             "type": "string",
             "description": "Owner of the registration."
@@ -71537,6 +71549,10 @@
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
+          },
           "owner": {
             "type": "string",
             "description": "Owner of the registration."
@@ -71572,6 +71588,10 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
+          },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
           },
           "owner": {
             "type": "string",
