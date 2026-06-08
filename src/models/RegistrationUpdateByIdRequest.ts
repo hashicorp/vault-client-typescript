@@ -54,6 +54,12 @@ export interface RegistrationUpdateByIdRequest {
      */
     no_default_ceiling_policy?: boolean;
     /**
+     * Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality.
+     * @type {boolean}
+     * @memberof RegistrationUpdateByIdRequest
+     */
+    optional_authorization_details?: boolean;
+    /**
      * Owner of the registration.
      * @type {string}
      * @memberof RegistrationUpdateByIdRequest
@@ -85,6 +91,7 @@ export function RegistrationUpdateByIdRequestFromJSONTyped(json: any, ignoreDisc
         'display_name': json['display_name'],
         'entity_id': json['entity_id'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
+        'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'owner': json['owner'] == null ? undefined : json['owner'],
     };
 }
@@ -105,6 +112,7 @@ export function RegistrationUpdateByIdRequestToJSONTyped(value?: RegistrationUpd
         'display_name': value['display_name'],
         'entity_id': value['entity_id'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],
+        'optional_authorization_details': value['optional_authorization_details'],
         'owner': value['owner'],
     };
 }

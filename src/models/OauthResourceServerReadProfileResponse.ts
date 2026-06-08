@@ -72,6 +72,12 @@ export interface OauthResourceServerReadProfileResponse {
      */
     no_default_policy?: boolean;
     /**
+     * If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory.
+     * @type {boolean}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    optional_authorization_details?: boolean;
+    /**
      * The name of the OAuth Resource Server Configuration profile.
      * @type {string}
      * @memberof OauthResourceServerReadProfileResponse
@@ -128,6 +134,7 @@ export function OauthResourceServerReadProfileResponseFromJSONTyped(json: any, i
         'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
+        'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
         'supported_algorithms': json['supported_algorithms'] == null ? undefined : json['supported_algorithms'],
@@ -155,6 +162,7 @@ export function OauthResourceServerReadProfileResponseToJSONTyped(value?: OauthR
         'jwks_ca_pem': value['jwks_ca_pem'],
         'jwt_type': value['jwt_type'],
         'no_default_policy': value['no_default_policy'],
+        'optional_authorization_details': value['optional_authorization_details'],
         'profile_name': value['profile_name'],
         'public_keys': value['public_keys'],
         'supported_algorithms': value['supported_algorithms'],

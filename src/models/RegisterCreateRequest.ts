@@ -60,6 +60,12 @@ export interface RegisterCreateRequest {
      */
     no_default_ceiling_policy?: boolean;
     /**
+     * Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality.
+     * @type {boolean}
+     * @memberof RegisterCreateRequest
+     */
+    optional_authorization_details?: boolean;
+    /**
      * Owner of the registration.
      * @type {string}
      * @memberof RegisterCreateRequest
@@ -92,6 +98,7 @@ export function RegisterCreateRequestFromJSONTyped(json: any, ignoreDiscriminato
         'entity_id': json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
+        'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'owner': json['owner'] == null ? undefined : json['owner'],
     };
 }
@@ -113,6 +120,7 @@ export function RegisterCreateRequestToJSONTyped(value?: RegisterCreateRequest |
         'entity_id': value['entity_id'],
         'id': value['id'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],
+        'optional_authorization_details': value['optional_authorization_details'],
         'owner': value['owner'],
     };
 }

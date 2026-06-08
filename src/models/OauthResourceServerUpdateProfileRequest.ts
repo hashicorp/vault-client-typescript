@@ -72,6 +72,12 @@ export interface OauthResourceServerUpdateProfileRequest {
      */
     no_default_policy?: boolean;
     /**
+     * If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory.
+     * @type {boolean}
+     * @memberof OauthResourceServerUpdateProfileRequest
+     */
+    optional_authorization_details?: boolean;
+    /**
      * List of static public keys with key_id and pem fields (required if use_jwks=false).
      * @type {Array<object>}
      * @memberof OauthResourceServerUpdateProfileRequest
@@ -123,6 +129,7 @@ export function OauthResourceServerUpdateProfileRequestFromJSONTyped(json: any, 
         'jwks_uri': json['jwks_uri'] == null ? undefined : json['jwks_uri'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
+        'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
         'supported_algorithms': json['supported_algorithms'] == null ? undefined : json['supported_algorithms'],
         'use_jwks': json['use_jwks'] == null ? undefined : json['use_jwks'],
@@ -149,6 +156,7 @@ export function OauthResourceServerUpdateProfileRequestToJSONTyped(value?: Oauth
         'jwks_uri': value['jwks_uri'],
         'jwt_type': value['jwt_type'],
         'no_default_policy': value['no_default_policy'],
+        'optional_authorization_details': value['optional_authorization_details'],
         'public_keys': value['public_keys'],
         'supported_algorithms': value['supported_algorithms'],
         'use_jwks': value['use_jwks'],
