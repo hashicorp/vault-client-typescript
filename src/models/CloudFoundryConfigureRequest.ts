@@ -78,6 +78,12 @@ export interface CloudFoundryConfigureRequest {
      */
     cf_username?: string;
     /**
+     * When set to true, forces creation of a new CF client for every login request instead of using a cached shared client.
+     * @type {boolean}
+     * @memberof CloudFoundryConfigureRequest
+     */
+    force_new_client?: boolean;
+    /**
      * The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.
      * @type {Array<string>}
      * @memberof CloudFoundryConfigureRequest
@@ -151,6 +157,7 @@ export function CloudFoundryConfigureRequestFromJSONTyped(json: any, ignoreDiscr
         'cf_password': json['cf_password'] == null ? undefined : json['cf_password'],
         'cf_timeout': json['cf_timeout'] == null ? undefined : json['cf_timeout'],
         'cf_username': json['cf_username'] == null ? undefined : json['cf_username'],
+        'force_new_client': json['force_new_client'] == null ? undefined : json['force_new_client'],
         'identity_ca_certificates': json['identity_ca_certificates'] == null ? undefined : json['identity_ca_certificates'],
         'login_max_seconds_not_after': json['login_max_seconds_not_after'] == null ? undefined : json['login_max_seconds_not_after'],
         'login_max_seconds_not_before': json['login_max_seconds_not_before'] == null ? undefined : json['login_max_seconds_not_before'],
@@ -181,6 +188,7 @@ export function CloudFoundryConfigureRequestToJSONTyped(value?: CloudFoundryConf
         'cf_password': value['cf_password'],
         'cf_timeout': value['cf_timeout'],
         'cf_username': value['cf_username'],
+        'force_new_client': value['force_new_client'],
         'identity_ca_certificates': value['identity_ca_certificates'],
         'login_max_seconds_not_after': value['login_max_seconds_not_after'],
         'login_max_seconds_not_before': value['login_max_seconds_not_before'],
