@@ -49967,6 +49967,14 @@
               "value": "admin"
             }
           },
+          "force_new_client": {
+            "type": "boolean",
+            "description": "When set to true, forces creation of a new CF client for every login request instead of using a cached shared client.",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Force New Client"
+            }
+          },
           "identity_ca_certificates": {
             "type": "array",
             "description": "The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.",
