@@ -28,6 +28,7 @@ import type {
   EntityBatchDeleteRequest,
   EntityCreateAliasRequest,
   EntityCreateRequest,
+  EntityListAliasesByIdResponse,
   EntityListByIdResponse,
   EntityLookUpRequest,
   EntityMergeRequest,
@@ -36,6 +37,7 @@ import type {
   EntityUpdateByNameRequest,
   GroupCreateAliasRequest,
   GroupCreateRequest,
+  GroupListAliasesByIdResponse,
   GroupListByIdResponse,
   GroupLookUpRequest,
   GroupUpdateAliasByIdRequest,
@@ -96,6 +98,8 @@ import {
     EntityCreateAliasRequestToJSON,
     EntityCreateRequestFromJSON,
     EntityCreateRequestToJSON,
+    EntityListAliasesByIdResponseFromJSON,
+    EntityListAliasesByIdResponseToJSON,
     EntityListByIdResponseFromJSON,
     EntityListByIdResponseToJSON,
     EntityLookUpRequestFromJSON,
@@ -112,6 +116,8 @@ import {
     GroupCreateAliasRequestToJSON,
     GroupCreateRequestFromJSON,
     GroupCreateRequestToJSON,
+    GroupListAliasesByIdResponseFromJSON,
+    GroupListAliasesByIdResponseToJSON,
     GroupListByIdResponseFromJSON,
     GroupListByIdResponseToJSON,
     GroupLookUpRequestFromJSON,
@@ -1457,9 +1463,8 @@ export class IdentityApi extends runtime.BaseAPI {
     }
 
     /**
-     * List all the alias IDs.
      */
-    async entityListAliasesByIdRaw(requestParameters: IdentityApiEntityListAliasesByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async entityListAliasesByIdRaw(requestParameters: IdentityApiEntityListAliasesByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntityListAliasesByIdResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -1483,13 +1488,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntityListAliasesByIdResponseFromJSON(jsonValue));
     }
 
     /**
-     * List all the alias IDs.
      */
-    async entityListAliasesById(list: IdentityApiEntityListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async entityListAliasesById(list: IdentityApiEntityListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntityListAliasesByIdResponse> {
         const response = await this.entityListAliasesByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }
@@ -2063,9 +2067,8 @@ export class IdentityApi extends runtime.BaseAPI {
     }
 
     /**
-     * List all the group alias IDs.
      */
-    async groupListAliasesByIdRaw(requestParameters: IdentityApiGroupListAliasesByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async groupListAliasesByIdRaw(requestParameters: IdentityApiGroupListAliasesByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GroupListAliasesByIdResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
@@ -2089,13 +2092,12 @@ export class IdentityApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GroupListAliasesByIdResponseFromJSON(jsonValue));
     }
 
     /**
-     * List all the group alias IDs.
      */
-    async groupListAliasesById(list: IdentityApiGroupListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async groupListAliasesById(list: IdentityApiGroupListAliasesByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GroupListAliasesByIdResponse> {
         const response = await this.groupListAliasesByIdRaw({ list: list }, initOverrides);
         return await response.value();
     }

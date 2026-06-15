@@ -8480,7 +8480,6 @@
     "/identity/entity-alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
-        "summary": "List all the alias IDs.",
         "operationId": "entity-list-aliases-by-id",
         "tags": [
           "identity"
@@ -8505,7 +8504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/EntityListAliasesByIdResponse"
                 }
               }
             }
@@ -8888,7 +8887,6 @@
     "/identity/group-alias/id/": {
       "description": "List all the group alias IDs.",
       "get": {
-        "summary": "List all the group alias IDs.",
         "operationId": "group-list-aliases-by-id",
         "tags": [
           "identity"
@@ -8913,7 +8911,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/GroupListAliasesByIdResponse"
                 }
               }
             }
@@ -50955,6 +50953,23 @@
           }
         }
       },
+      "EntityListAliasesByIdResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Alias details keyed by the alias id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of alias ids",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "EntityListByIdResponse": {
         "type": "object",
         "properties": {
@@ -52313,6 +52328,23 @@
           "type": {
             "type": "string",
             "description": "Type of the group, 'internal' or 'external'. Defaults to 'internal'"
+          }
+        }
+      },
+      "GroupListAliasesByIdResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Group alias details keyed by the group alias id",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "A list of group alias ids",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
