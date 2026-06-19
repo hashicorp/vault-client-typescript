@@ -633,6 +633,7 @@ export * from './ReadWrappingProperties2Response';
 export * from './ReadWrappingPropertiesRequest';
 export * from './ReadWrappingPropertiesResponse';
 export * from './RegisterCreateRequest';
+export * from './RegistrationListByIdResponse';
 export * from './RegistrationUpdateByIdRequest';
 export * from './RegistrationUpdateByNameRequest';
 export * from './RekeyAttemptInitializeRequest';

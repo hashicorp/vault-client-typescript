@@ -635,6 +635,7 @@ src/models/ReadWrappingProperties2Response.ts
 src/models/ReadWrappingPropertiesRequest.ts
 src/models/ReadWrappingPropertiesResponse.ts
 src/models/RegisterCreateRequest.ts
+src/models/RegistrationListByIdResponse.ts
 src/models/RegistrationUpdateByIdRequest.ts
 src/models/RegistrationUpdateByNameRequest.ts
 src/models/RekeyAttemptInitializeRequest.ts
