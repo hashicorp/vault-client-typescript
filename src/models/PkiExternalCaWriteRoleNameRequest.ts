@@ -60,6 +60,18 @@ export interface PkiExternalCaWriteRoleNameRequest {
      */
     csr_identifier_population?: PkiExternalCaWriteRoleNameRequestCsrIdentifierPopulationEnum;
     /**
+     * The DNS provider configuration to use for DNS-01 challenges (optional)
+     * @type {string}
+     * @memberof PkiExternalCaWriteRoleNameRequest
+     */
+    dns_provider_name?: string;
+    /**
+     * The DNS provider type (required when dns_provider_name is provided)
+     * @type {string}
+     * @memberof PkiExternalCaWriteRoleNameRequest
+     */
+    dns_provider_type?: string;
+    /**
      * Force deletion even when active orders exist
      * @type {boolean}
      * @memberof PkiExternalCaWriteRoleNameRequest
@@ -124,6 +136,8 @@ export function PkiExternalCaWriteRoleNameRequestFromJSONTyped(json: any, ignore
         'allowed_domains': json['allowed_domains'] == null ? undefined : json['allowed_domains'],
         'csr_generate_key_type': json['csr_generate_key_type'] == null ? undefined : json['csr_generate_key_type'],
         'csr_identifier_population': json['csr_identifier_population'] == null ? undefined : json['csr_identifier_population'],
+        'dns_provider_name': json['dns_provider_name'] == null ? undefined : json['dns_provider_name'],
+        'dns_provider_type': json['dns_provider_type'] == null ? undefined : json['dns_provider_type'],
         'force': json['force'] == null ? undefined : json['force'],
     };
 }
@@ -145,6 +159,8 @@ export function PkiExternalCaWriteRoleNameRequestToJSONTyped(value?: PkiExternal
         'allowed_domains': value['allowed_domains'],
         'csr_generate_key_type': value['csr_generate_key_type'],
         'csr_identifier_population': value['csr_identifier_population'],
+        'dns_provider_name': value['dns_provider_name'],
+        'dns_provider_type': value['dns_provider_type'],
         'force': value['force'],
     };
 }

@@ -123,8 +123,22 @@ import type {
   PkiCrossSignIntermediateRequest,
   PkiCrossSignIntermediateResponse,
   PkiExternalCaCreateConfigAcmeAccountNameImportRequest,
+  PkiExternalCaReadConfigDnsAwsRoute53Response,
+  PkiExternalCaReadConfigDnsAzureDnsResponse,
+  PkiExternalCaReadConfigDnsGoogleCloudDnsResponse,
+  PkiExternalCaReadConfigDnsRfc2136Response,
   PkiExternalCaWriteConfigAcmeAccountNameRequest,
   PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest,
+  PkiExternalCaWriteConfigDnsAwsRoute53Request,
+  PkiExternalCaWriteConfigDnsAwsRoute53Response,
+  PkiExternalCaWriteConfigDnsAzureDnsRequest,
+  PkiExternalCaWriteConfigDnsAzureDnsResponse,
+  PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest,
+  PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse,
+  PkiExternalCaWriteConfigDnsRfc2136Request,
+  PkiExternalCaWriteConfigDnsRfc2136Response,
+  PkiExternalCaWriteDnsTestWorkflowRequest,
+  PkiExternalCaWriteDnsTestWorkflowResponse,
   PkiExternalCaWriteRoleNameNewOrderRequest,
   PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest,
   PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest,
@@ -653,10 +667,38 @@ import {
     PkiCrossSignIntermediateResponseToJSON,
     PkiExternalCaCreateConfigAcmeAccountNameImportRequestFromJSON,
     PkiExternalCaCreateConfigAcmeAccountNameImportRequestToJSON,
+    PkiExternalCaReadConfigDnsAwsRoute53ResponseFromJSON,
+    PkiExternalCaReadConfigDnsAwsRoute53ResponseToJSON,
+    PkiExternalCaReadConfigDnsAzureDnsResponseFromJSON,
+    PkiExternalCaReadConfigDnsAzureDnsResponseToJSON,
+    PkiExternalCaReadConfigDnsGoogleCloudDnsResponseFromJSON,
+    PkiExternalCaReadConfigDnsGoogleCloudDnsResponseToJSON,
+    PkiExternalCaReadConfigDnsRfc2136ResponseFromJSON,
+    PkiExternalCaReadConfigDnsRfc2136ResponseToJSON,
     PkiExternalCaWriteConfigAcmeAccountNameRequestFromJSON,
     PkiExternalCaWriteConfigAcmeAccountNameRequestToJSON,
     PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestFromJSON,
     PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestToJSON,
+    PkiExternalCaWriteConfigDnsAwsRoute53RequestFromJSON,
+    PkiExternalCaWriteConfigDnsAwsRoute53RequestToJSON,
+    PkiExternalCaWriteConfigDnsAwsRoute53ResponseFromJSON,
+    PkiExternalCaWriteConfigDnsAwsRoute53ResponseToJSON,
+    PkiExternalCaWriteConfigDnsAzureDnsRequestFromJSON,
+    PkiExternalCaWriteConfigDnsAzureDnsRequestToJSON,
+    PkiExternalCaWriteConfigDnsAzureDnsResponseFromJSON,
+    PkiExternalCaWriteConfigDnsAzureDnsResponseToJSON,
+    PkiExternalCaWriteConfigDnsGoogleCloudDnsRequestFromJSON,
+    PkiExternalCaWriteConfigDnsGoogleCloudDnsRequestToJSON,
+    PkiExternalCaWriteConfigDnsGoogleCloudDnsResponseFromJSON,
+    PkiExternalCaWriteConfigDnsGoogleCloudDnsResponseToJSON,
+    PkiExternalCaWriteConfigDnsRfc2136RequestFromJSON,
+    PkiExternalCaWriteConfigDnsRfc2136RequestToJSON,
+    PkiExternalCaWriteConfigDnsRfc2136ResponseFromJSON,
+    PkiExternalCaWriteConfigDnsRfc2136ResponseToJSON,
+    PkiExternalCaWriteDnsTestWorkflowRequestFromJSON,
+    PkiExternalCaWriteDnsTestWorkflowRequestToJSON,
+    PkiExternalCaWriteDnsTestWorkflowResponseFromJSON,
+    PkiExternalCaWriteDnsTestWorkflowResponseToJSON,
     PkiExternalCaWriteRoleNameNewOrderRequestFromJSON,
     PkiExternalCaWriteRoleNameNewOrderRequestToJSON,
     PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestFromJSON,
@@ -2720,6 +2762,26 @@ export interface SecretsApiPkiExternalCaDeleteConfigAcmeAccountNameRequest {
     pki_external_ca_mount_path: string;
 }
 
+export interface SecretsApiPkiExternalCaDeleteConfigDnsAwsRoute53Request {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaDeleteConfigDnsAzureDnsRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaDeleteConfigDnsGoogleCloudDnsRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaDeleteConfigDnsRfc2136Request {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
 export interface SecretsApiPkiExternalCaDeleteRoleNameRequest {
     name: string;
     pki_external_ca_mount_path: string;
@@ -2728,6 +2790,31 @@ export interface SecretsApiPkiExternalCaDeleteRoleNameRequest {
 export interface SecretsApiPkiExternalCaListConfigAcmeAccountRequest {
     pki_external_ca_mount_path: string;
     list: SecretsApiPkiExternalCaListConfigAcmeAccountListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListConfigDnsRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigDnsListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListConfigDnsAwsRoute53Request {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigDnsAwsRoute53ListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListConfigDnsAzureDnsRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigDnsAzureDnsListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListConfigDnsGoogleCloudDnsRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigDnsGoogleCloudDnsListEnum;
+}
+
+export interface SecretsApiPkiExternalCaListConfigDnsRfc2136Request {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListConfigDnsRfc2136ListEnum;
 }
 
 export interface SecretsApiPkiExternalCaListLookupOrdersRequest {
@@ -2747,6 +2834,26 @@ export interface SecretsApiPkiExternalCaListRoleNameActiveOrdersRequest {
 }
 
 export interface SecretsApiPkiExternalCaReadConfigAcmeAccountNameRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadConfigDnsAwsRoute53Request {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadConfigDnsAzureDnsRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadConfigDnsGoogleCloudDnsRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+}
+
+export interface SecretsApiPkiExternalCaReadConfigDnsRfc2136Request {
     name: string;
     pki_external_ca_mount_path: string;
 }
@@ -2799,6 +2906,35 @@ export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountNameRotateKeyOpera
     name: string;
     pki_external_ca_mount_path: string;
     PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigDnsAwsRoute53OperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigDnsAwsRoute53Request: PkiExternalCaWriteConfigDnsAwsRoute53Request;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigDnsAzureDnsOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigDnsAzureDnsRequest: PkiExternalCaWriteConfigDnsAzureDnsRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigDnsGoogleCloudDnsOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest: PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigDnsRfc2136OperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigDnsRfc2136Request: PkiExternalCaWriteConfigDnsRfc2136Request;
+}
+
+export interface SecretsApiPkiExternalCaWriteDnsTestWorkflowOperationRequest {
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteDnsTestWorkflowRequest: PkiExternalCaWriteDnsTestWorkflowRequest;
 }
 
 export interface SecretsApiPkiExternalCaWriteRoleNameOperationRequest {
@@ -16536,6 +16672,162 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiExternalCaDeleteConfigDnsAwsRoute53Raw(requestParameters: SecretsApiPkiExternalCaDeleteConfigDnsAwsRoute53Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigDnsAwsRoute53().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigDnsAwsRoute53().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/aws-route53/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsAwsRoute53(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigDnsAwsRoute53Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsAzureDnsRaw(requestParameters: SecretsApiPkiExternalCaDeleteConfigDnsAzureDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigDnsAzureDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigDnsAzureDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/azure-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsAzureDns(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigDnsAzureDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsGoogleCloudDnsRaw(requestParameters: SecretsApiPkiExternalCaDeleteConfigDnsGoogleCloudDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsGoogleCloudDns(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigDnsGoogleCloudDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsRfc2136Raw(requestParameters: SecretsApiPkiExternalCaDeleteConfigDnsRfc2136Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigDnsRfc2136().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigDnsRfc2136().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/rfc2136/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiExternalCaDeleteConfigDnsRfc2136(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigDnsRfc2136Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiExternalCaDeleteRoleNameRaw(requestParameters: SecretsApiPkiExternalCaDeleteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
@@ -16613,6 +16905,221 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiExternalCaListConfigAcmeAccount(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigAcmeAccountListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.pkiExternalCaListConfigAcmeAccountRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsRaw(requestParameters: SecretsApiPkiExternalCaListConfigDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigDns().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDns(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigDnsRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsAwsRoute53Raw(requestParameters: SecretsApiPkiExternalCaListConfigDnsAwsRoute53Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigDnsAwsRoute53().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigDnsAwsRoute53().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/aws-route53/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsAwsRoute53(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsAwsRoute53ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigDnsAwsRoute53Raw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsAzureDnsRaw(requestParameters: SecretsApiPkiExternalCaListConfigDnsAzureDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigDnsAzureDns().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigDnsAzureDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/azure-dns/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsAzureDns(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsAzureDnsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigDnsAzureDnsRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsGoogleCloudDnsRaw(requestParameters: SecretsApiPkiExternalCaListConfigDnsGoogleCloudDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsGoogleCloudDns(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsGoogleCloudDnsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigDnsGoogleCloudDnsRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsRfc2136Raw(requestParameters: SecretsApiPkiExternalCaListConfigDnsRfc2136Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListConfigDnsRfc2136().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListConfigDnsRfc2136().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/rfc2136/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListConfigDnsRfc2136(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsRfc2136ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListConfigDnsRfc2136Raw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
@@ -16788,6 +17295,162 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiExternalCaReadConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiExternalCaReadConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsAwsRoute53Raw(requestParameters: SecretsApiPkiExternalCaReadConfigDnsAwsRoute53Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadConfigDnsAwsRoute53Response>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigDnsAwsRoute53().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigDnsAwsRoute53().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/aws-route53/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadConfigDnsAwsRoute53ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsAwsRoute53(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadConfigDnsAwsRoute53Response> {
+        const response = await this.pkiExternalCaReadConfigDnsAwsRoute53Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsAzureDnsRaw(requestParameters: SecretsApiPkiExternalCaReadConfigDnsAzureDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadConfigDnsAzureDnsResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigDnsAzureDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigDnsAzureDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/azure-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadConfigDnsAzureDnsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsAzureDns(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadConfigDnsAzureDnsResponse> {
+        const response = await this.pkiExternalCaReadConfigDnsAzureDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsGoogleCloudDnsRaw(requestParameters: SecretsApiPkiExternalCaReadConfigDnsGoogleCloudDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadConfigDnsGoogleCloudDnsResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadConfigDnsGoogleCloudDnsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsGoogleCloudDns(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadConfigDnsGoogleCloudDnsResponse> {
+        const response = await this.pkiExternalCaReadConfigDnsGoogleCloudDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsRfc2136Raw(requestParameters: SecretsApiPkiExternalCaReadConfigDnsRfc2136Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadConfigDnsRfc2136Response>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigDnsRfc2136().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigDnsRfc2136().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/rfc2136/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadConfigDnsRfc2136ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaReadConfigDnsRfc2136(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadConfigDnsRfc2136Response> {
+        const response = await this.pkiExternalCaReadConfigDnsRfc2136Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -17180,6 +17843,244 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiExternalCaWriteConfigAcmeAccountNameRotateKey(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiExternalCaWriteConfigAcmeAccountNameRotateKeyRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsAwsRoute53Raw(requestParameters: SecretsApiPkiExternalCaWriteConfigDnsAwsRoute53OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteConfigDnsAwsRoute53Response>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigDnsAwsRoute53().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigDnsAwsRoute53().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigDnsAwsRoute53Request'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigDnsAwsRoute53Request',
+                'Required parameter "PkiExternalCaWriteConfigDnsAwsRoute53Request" was null or undefined when calling pkiExternalCaWriteConfigDnsAwsRoute53().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/aws-route53/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigDnsAwsRoute53RequestToJSON(requestParameters['PkiExternalCaWriteConfigDnsAwsRoute53Request']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteConfigDnsAwsRoute53ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsAwsRoute53(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigDnsAwsRoute53Request: PkiExternalCaWriteConfigDnsAwsRoute53Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteConfigDnsAwsRoute53Response> {
+        const response = await this.pkiExternalCaWriteConfigDnsAwsRoute53Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigDnsAwsRoute53Request: PkiExternalCaWriteConfigDnsAwsRoute53Request }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsAzureDnsRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigDnsAzureDnsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteConfigDnsAzureDnsResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigDnsAzureDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigDnsAzureDns().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigDnsAzureDnsRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigDnsAzureDnsRequest',
+                'Required parameter "PkiExternalCaWriteConfigDnsAzureDnsRequest" was null or undefined when calling pkiExternalCaWriteConfigDnsAzureDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/azure-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigDnsAzureDnsRequestToJSON(requestParameters['PkiExternalCaWriteConfigDnsAzureDnsRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteConfigDnsAzureDnsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsAzureDns(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigDnsAzureDnsRequest: PkiExternalCaWriteConfigDnsAzureDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteConfigDnsAzureDnsResponse> {
+        const response = await this.pkiExternalCaWriteConfigDnsAzureDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigDnsAzureDnsRequest: PkiExternalCaWriteConfigDnsAzureDnsRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsGoogleCloudDnsRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigDnsGoogleCloudDnsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest',
+                'Required parameter "PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest" was null or undefined when calling pkiExternalCaWriteConfigDnsGoogleCloudDns().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigDnsGoogleCloudDnsRequestToJSON(requestParameters['PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteConfigDnsGoogleCloudDnsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsGoogleCloudDns(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest: PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse> {
+        const response = await this.pkiExternalCaWriteConfigDnsGoogleCloudDnsRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest: PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsRfc2136Raw(requestParameters: SecretsApiPkiExternalCaWriteConfigDnsRfc2136OperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteConfigDnsRfc2136Response>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigDnsRfc2136().'
+            );
+        }
+
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigDnsRfc2136().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteConfigDnsRfc2136Request'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteConfigDnsRfc2136Request',
+                'Required parameter "PkiExternalCaWriteConfigDnsRfc2136Request" was null or undefined when calling pkiExternalCaWriteConfigDnsRfc2136().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/config/dns/rfc2136/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteConfigDnsRfc2136RequestToJSON(requestParameters['PkiExternalCaWriteConfigDnsRfc2136Request']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteConfigDnsRfc2136ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteConfigDnsRfc2136(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigDnsRfc2136Request: PkiExternalCaWriteConfigDnsRfc2136Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteConfigDnsRfc2136Response> {
+        const response = await this.pkiExternalCaWriteConfigDnsRfc2136Raw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigDnsRfc2136Request: PkiExternalCaWriteConfigDnsRfc2136Request }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteDnsTestWorkflowRaw(requestParameters: SecretsApiPkiExternalCaWriteDnsTestWorkflowOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteDnsTestWorkflowResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteDnsTestWorkflow().'
+            );
+        }
+
+        if (requestParameters['PkiExternalCaWriteDnsTestWorkflowRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiExternalCaWriteDnsTestWorkflowRequest',
+                'Required parameter "PkiExternalCaWriteDnsTestWorkflowRequest" was null or undefined when calling pkiExternalCaWriteDnsTestWorkflow().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_external_ca_mount_path}/dns/test/workflow`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiExternalCaWriteDnsTestWorkflowRequestToJSON(requestParameters['PkiExternalCaWriteDnsTestWorkflowRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteDnsTestWorkflowResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaWriteDnsTestWorkflow(pki_external_ca_mount_path: string, PkiExternalCaWriteDnsTestWorkflowRequest: PkiExternalCaWriteDnsTestWorkflowRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteDnsTestWorkflowResponse> {
+        const response = await this.pkiExternalCaWriteDnsTestWorkflowRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteDnsTestWorkflowRequest: PkiExternalCaWriteDnsTestWorkflowRequest }, initOverrides);
         return await response.value();
     }
 
@@ -35472,6 +36373,41 @@ export enum SecretsApiNomadListRolesListEnum {
   * @enum {string}
   */
 export enum SecretsApiPkiExternalCaListConfigAcmeAccountListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListConfigDnsListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListConfigDnsAwsRoute53ListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListConfigDnsAzureDnsListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListConfigDnsGoogleCloudDnsListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiExternalCaListConfigDnsRfc2136ListEnum {
     TRUE = 'true'
 }
 /**
