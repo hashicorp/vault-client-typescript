@@ -379,6 +379,7 @@ import type {
   RabbitMqConfigureLeaseRequest,
   RabbitMqWriteRoleRequest,
   RegisterCreateRequest,
+  RegistrationListByIdResponse,
   RegistrationUpdateByIdRequest,
   RegistrationUpdateByNameRequest,
   SpiffeConfigureRequest,
@@ -1179,6 +1180,8 @@ import {
     RabbitMqWriteRoleRequestToJSON,
     RegisterCreateRequestFromJSON,
     RegisterCreateRequestToJSON,
+    RegistrationListByIdResponseFromJSON,
+    RegistrationListByIdResponseToJSON,
     RegistrationUpdateByIdRequestFromJSON,
     RegistrationUpdateByIdRequestToJSON,
     RegistrationUpdateByNameRequestFromJSON,
@@ -29477,7 +29480,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async registrationListByIdRaw(requestParameters: SecretsApiRegistrationListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async registrationListByIdRaw(requestParameters: SecretsApiRegistrationListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RegistrationListByIdResponse>> {
         if (requestParameters['agent_registry_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'agent_registry_mount_path',
@@ -29508,12 +29511,12 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RegistrationListByIdResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async registrationListById(agent_registry_mount_path: string, list: SecretsApiRegistrationListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async registrationListById(agent_registry_mount_path: string, list: SecretsApiRegistrationListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RegistrationListByIdResponse> {
         const response = await this.registrationListByIdRaw({ agent_registry_mount_path: agent_registry_mount_path, list: list }, initOverrides);
         return await response.value();
     }

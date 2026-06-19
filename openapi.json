@@ -21601,7 +21601,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/RegistrationListByIdResponse"
                 }
               }
             }
@@ -72780,6 +72780,23 @@
           "display_name",
           "entity_id"
         ]
+      },
+      "RegistrationListByIdResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Map of registration ID to registration info, including display_name and entity_id.",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "List of registration IDs.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
       },
       "RegistrationUpdateByIdRequest": {
         "type": "object",
