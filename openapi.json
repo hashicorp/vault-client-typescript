@@ -29722,6 +29722,612 @@
         }
       }
     },
+    "/{pki_external_ca_mount_path}/config/dns/": {
+      "description": "List all DNS configurations",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-dns",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/aws-route53/": {
+      "description": "List aws-route53 DNS configurations",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-dns-aws-route53",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/aws-route53/{name}": {
+      "description": "Configure AWS Route53 DNS provider for DNS-01 ACME challenges",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the aws-route53 DNS configuration",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-config-dns-aws-route53",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsAwsRoute53Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-config-dns-aws-route53",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAwsRoute53Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAwsRoute53Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-config-dns-aws-route53",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - Successfully deleted"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/azure-dns/": {
+      "description": "List azure-dns DNS configurations",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-dns-azure-dns",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/azure-dns/{name}": {
+      "description": "Configure Azure DNS provider for DNS-01 ACME challenges",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the azure-dns DNS configuration",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-config-dns-azure-dns",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsAzureDnsResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-config-dns-azure-dns",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAzureDnsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAzureDnsResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-config-dns-azure-dns",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - Successfully deleted"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/": {
+      "description": "List google-cloud-dns DNS configurations",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-dns-google-cloud-dns",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/{name}": {
+      "description": "Configure Google Cloud DNS provider for DNS-01 ACME challenges",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the google-cloud-dns DNS configuration",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-config-dns-google-cloud-dns",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsGoogleCloudDnsResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-config-dns-google-cloud-dns",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-config-dns-google-cloud-dns",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - Successfully deleted"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/rfc2136/": {
+      "description": "List rfc2136 DNS configurations",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-external-ca-list-config-dns-rfc2136",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/config/dns/rfc2136/{name}": {
+      "description": "Configure RFC2136 DNS provider for DNS-01 ACME challenges",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the rfc2136 DNS configuration",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "pki-external-ca-read-config-dns-rfc2136",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsRfc2136Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "pki-external-ca-write-config-dns-rfc2136",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsRfc2136Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsRfc2136Response"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-external-ca-delete-config-dns-rfc2136",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content - Successfully deleted"
+          }
+        }
+      }
+    },
+    "/{pki_external_ca_mount_path}/dns/test/workflow": {
+      "description": "Tests a DNS provider by creating a TXT record",
+      "parameters": [
+        {
+          "name": "pki_external_ca_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki-external-ca"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-external-ca-write-dns-test-workflow",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiExternalCaWriteDnsTestWorkflowRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiExternalCaWriteDnsTestWorkflowResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/{pki_external_ca_mount_path}/lookup/cert/{serial}": {
       "description": "Return information about a certificate",
       "parameters": [
@@ -59305,6 +59911,202 @@
           "directory_url"
         ]
       },
+      "PkiExternalCaReadConfigDnsAwsRoute53Response": {
+        "type": "object",
+        "properties": {
+          "access_key_id": {
+            "type": "string",
+            "description": "AWS access key ID for Route53 API access"
+          },
+          "assume_role_arn": {
+            "type": "string",
+            "description": "AWS IAM role ARN to assume for Route53 operations"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "external_id": {
+            "type": "string",
+            "description": "External ID for AWS STS AssumeRole"
+          },
+          "hosted_zone_id": {
+            "type": "string",
+            "description": "AWS Route53 hosted zone ID"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the aws-route53 DNS configuration"
+          },
+          "region": {
+            "type": "string",
+            "description": "AWS region for Route53 operations"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
+      "PkiExternalCaReadConfigDnsAzureDnsResponse": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Azure service principal client ID"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the azure-dns DNS configuration"
+          },
+          "resource_group_name": {
+            "type": "string",
+            "description": "Azure resource group name containing the DNS zone"
+          },
+          "subscription_id": {
+            "type": "string",
+            "description": "Azure subscription ID"
+          },
+          "tenant_id": {
+            "type": "string",
+            "description": "Azure tenant ID"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "1m"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "Azure DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaReadConfigDnsGoogleCloudDnsResponse": {
+        "type": "object",
+        "properties": {
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "impersonate_service_account": {
+            "type": "string",
+            "description": "Service account email to impersonate"
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the google-cloud-dns DNS configuration"
+          },
+          "project": {
+            "type": "string",
+            "description": "GCP project name"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "10s"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "GCP DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaReadConfigDnsRfc2136Response": {
+        "type": "object",
+        "properties": {
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the rfc2136 DNS configuration"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
+          "tsig_algorithm": {
+            "type": "string",
+            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
+          },
+          "tsig_key_name": {
+            "type": "string",
+            "description": "TSIG key name for authenticated DNS updates"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
       "PkiExternalCaWriteConfigAcmeAccountNameRequest": {
         "type": "object",
         "properties": {
@@ -59369,6 +60171,414 @@
               "rsa-8192"
             ],
             "default": "ec-256"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsAwsRoute53Request": {
+        "type": "object",
+        "properties": {
+          "access_key_id": {
+            "type": "string",
+            "description": "AWS access key ID for Route53 API access"
+          },
+          "assume_role_arn": {
+            "type": "string",
+            "description": "AWS IAM role ARN to assume for Route53 operations"
+          },
+          "external_id": {
+            "type": "string",
+            "description": "External ID for AWS STS AssumeRole"
+          },
+          "hosted_zone_id": {
+            "type": "string",
+            "description": "AWS Route53 hosted zone ID"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "region": {
+            "type": "string",
+            "description": "AWS region for Route53 operations"
+          },
+          "secret_access_key": {
+            "type": "string",
+            "description": "AWS secret access key for Route53 API access"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsAwsRoute53Response": {
+        "type": "object",
+        "properties": {
+          "access_key_id": {
+            "type": "string",
+            "description": "AWS access key ID for Route53 API access"
+          },
+          "assume_role_arn": {
+            "type": "string",
+            "description": "AWS IAM role ARN to assume for Route53 operations"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "external_id": {
+            "type": "string",
+            "description": "External ID for AWS STS AssumeRole"
+          },
+          "hosted_zone_id": {
+            "type": "string",
+            "description": "AWS Route53 hosted zone ID"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the aws-route53 DNS configuration"
+          },
+          "region": {
+            "type": "string",
+            "description": "AWS region for Route53 operations"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsAzureDnsRequest": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Azure service principal client ID"
+          },
+          "client_secret": {
+            "type": "string",
+            "description": "Azure service principal client secret"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "resource_group_name": {
+            "type": "string",
+            "description": "Azure resource group name containing the DNS zone"
+          },
+          "subscription_id": {
+            "type": "string",
+            "description": "Azure subscription ID"
+          },
+          "tenant_id": {
+            "type": "string",
+            "description": "Azure tenant ID"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "1m"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "Azure DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsAzureDnsResponse": {
+        "type": "object",
+        "properties": {
+          "client_id": {
+            "type": "string",
+            "description": "Azure service principal client ID"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the azure-dns DNS configuration"
+          },
+          "resource_group_name": {
+            "type": "string",
+            "description": "Azure resource group name containing the DNS zone"
+          },
+          "subscription_id": {
+            "type": "string",
+            "description": "Azure subscription ID"
+          },
+          "tenant_id": {
+            "type": "string",
+            "description": "Azure tenant ID"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "1m"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "Azure DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest": {
+        "type": "object",
+        "properties": {
+          "credentials": {
+            "type": "string",
+            "description": "GCP service account credentials as JSON content"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "impersonate_service_account": {
+            "type": "string",
+            "description": "Service account email to impersonate"
+          },
+          "project": {
+            "type": "string",
+            "description": "GCP project name"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "10s"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "GCP DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse": {
+        "type": "object",
+        "properties": {
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "impersonate_service_account": {
+            "type": "string",
+            "description": "Service account email to impersonate"
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the google-cloud-dns DNS configuration"
+          },
+          "project": {
+            "type": "string",
+            "description": "GCP project name"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "10s"
+          },
+          "zone_name": {
+            "type": "string",
+            "description": "GCP DNS zone name"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsRfc2136Request": {
+        "type": "object",
+        "properties": {
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
+          "tsig_algorithm": {
+            "type": "string",
+            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
+          },
+          "tsig_key_name": {
+            "type": "string",
+            "description": "TSIG key name for authenticated DNS updates"
+          },
+          "tsig_secret": {
+            "type": "string",
+            "description": "TSIG secret (base64 encoded) for authenticated DNS updates"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
+      "PkiExternalCaWriteConfigDnsRfc2136Response": {
+        "type": "object",
+        "properties": {
+          "creation_date": {
+            "type": "string",
+            "description": "Configuration creation timestamp",
+            "format": "date-time"
+          },
+          "identifiers": {
+            "type": "array",
+            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_update_date": {
+            "type": "string",
+            "description": "Configuration last update timestamp",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the rfc2136 DNS configuration"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
+          "tsig_algorithm": {
+            "type": "string",
+            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
+          },
+          "tsig_key_name": {
+            "type": "string",
+            "description": "TSIG key name for authenticated DNS updates"
+          },
+          "ttl": {
+            "type": "string",
+            "description": "TTL for DNS TXT records used in DNS-01 challenges",
+            "format": "duration",
+            "default": "60s"
+          }
+        }
+      },
+      "PkiExternalCaWriteDnsTestWorkflowRequest": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "The DNS identifier (domain name) to test with"
+          },
+          "omit_cleanup": {
+            "type": "boolean",
+            "description": "Do not perform any cleanup operations, useful for testing and manual validation a record was created within the DNS provider",
+            "default": false
+          },
+          "provider_name": {
+            "type": "string",
+            "description": "The name of the DNS provider configuration to test"
+          },
+          "provider_type": {
+            "type": "string",
+            "description": "The DNS provider type"
+          }
+        },
+        "required": [
+          "identifier",
+          "provider_name",
+          "provider_type"
+        ]
+      },
+      "PkiExternalCaWriteDnsTestWorkflowResponse": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "The identifier that was tested"
+          },
+          "message": {
+            "type": "string",
+            "description": "Status message describing the test result"
+          },
+          "provider_name": {
+            "type": "string",
+            "description": "The provider name that was tested"
+          },
+          "provider_type": {
+            "type": "string",
+            "description": "The provider type that was tested"
+          },
+          "record_name": {
+            "type": "string",
+            "description": "The DNS record name that was created"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the test was successful"
           }
         }
       },
@@ -59493,6 +60703,14 @@
               "sans_only"
             ],
             "default": "cn_first"
+          },
+          "dns_provider_name": {
+            "type": "string",
+            "description": "The DNS provider configuration to use for DNS-01 challenges (optional)"
+          },
+          "dns_provider_type": {
+            "type": "string",
+            "description": "The DNS provider type (required when dns_provider_name is provided)"
           },
           "force": {
             "type": "boolean",
