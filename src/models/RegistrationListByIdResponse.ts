@@ -24,7 +24,7 @@ import { mapValues } from '../runtime';
  */
 export interface RegistrationListByIdResponse {
     /**
-     * Map of registration ID to registration info, including display_name and entity_id.
+     * Map of registration ID to registration info, including display_name, entity_id, creation_time, last_updated_time, and no_default_ceiling_policy.
      * @type {object}
      * @memberof RegistrationListByIdResponse
      */
