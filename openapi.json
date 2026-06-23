@@ -72786,7 +72786,7 @@
         "properties": {
           "key_info": {
             "type": "object",
-            "description": "Map of registration ID to registration info, including display_name and entity_id.",
+            "description": "Map of registration ID to registration info, including display_name, entity_id, creation_time, last_updated_time, and no_default_ceiling_policy.",
             "format": "map"
           },
           "keys": {
