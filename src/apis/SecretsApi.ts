@@ -122,13 +122,25 @@ import type {
   PkiConfigureUrlsResponse,
   PkiCrossSignIntermediateRequest,
   PkiCrossSignIntermediateResponse,
-  PkiExternalCaCreateConfigAcmeAccountNameImportRequest,
+  PkiExternalCaCreateConfigAcmeAccountImportRequest,
+  PkiExternalCaCreateConfigAcmeAccountImportResponse,
+  PkiExternalCaListConfigDnsResponse,
+  PkiExternalCaListLookupOrdersRecentResponse,
+  PkiExternalCaReadConfigAcmeAccountResponse,
   PkiExternalCaReadConfigDnsAwsRoute53Response,
   PkiExternalCaReadConfigDnsAzureDnsResponse,
   PkiExternalCaReadConfigDnsGoogleCloudDnsResponse,
   PkiExternalCaReadConfigDnsRfc2136Response,
-  PkiExternalCaWriteConfigAcmeAccountNameRequest,
-  PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest,
+  PkiExternalCaReadLookupCertResponse,
+  PkiExternalCaReadLookupOrderResponse,
+  PkiExternalCaReadRoleCachedResponse,
+  PkiExternalCaReadRoleOrderChallengeResponse,
+  PkiExternalCaReadRoleOrderFetchCertResponse,
+  PkiExternalCaReadRoleOrderStatusResponse,
+  PkiExternalCaReadRoleResponse,
+  PkiExternalCaWriteConfigAcmeAccountRequest,
+  PkiExternalCaWriteConfigAcmeAccountResponse,
+  PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest,
   PkiExternalCaWriteConfigDnsAwsRoute53Request,
   PkiExternalCaWriteConfigDnsAwsRoute53Response,
   PkiExternalCaWriteConfigDnsAzureDnsRequest,
@@ -139,10 +151,12 @@ import type {
   PkiExternalCaWriteConfigDnsRfc2136Response,
   PkiExternalCaWriteDnsTestWorkflowRequest,
   PkiExternalCaWriteDnsTestWorkflowResponse,
-  PkiExternalCaWriteRoleNameNewOrderRequest,
-  PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest,
-  PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest,
-  PkiExternalCaWriteRoleNameRequest,
+  PkiExternalCaWriteRoleNewOrderRequest,
+  PkiExternalCaWriteRoleNewOrderResponse,
+  PkiExternalCaWriteRoleOrderFulfilledChallengeRequest,
+  PkiExternalCaWriteRoleOrderRevokeRequest,
+  PkiExternalCaWriteRoleRequest,
+  PkiExternalCaWriteRoleResponse,
   PkiGenerateEabKeyForIssuerAndRoleResponse,
   PkiGenerateEabKeyForIssuerResponse,
   PkiGenerateEabKeyForRoleResponse,
@@ -666,8 +680,16 @@ import {
     PkiCrossSignIntermediateRequestToJSON,
     PkiCrossSignIntermediateResponseFromJSON,
     PkiCrossSignIntermediateResponseToJSON,
-    PkiExternalCaCreateConfigAcmeAccountNameImportRequestFromJSON,
-    PkiExternalCaCreateConfigAcmeAccountNameImportRequestToJSON,
+    PkiExternalCaCreateConfigAcmeAccountImportRequestFromJSON,
+    PkiExternalCaCreateConfigAcmeAccountImportRequestToJSON,
+    PkiExternalCaCreateConfigAcmeAccountImportResponseFromJSON,
+    PkiExternalCaCreateConfigAcmeAccountImportResponseToJSON,
+    PkiExternalCaListConfigDnsResponseFromJSON,
+    PkiExternalCaListConfigDnsResponseToJSON,
+    PkiExternalCaListLookupOrdersRecentResponseFromJSON,
+    PkiExternalCaListLookupOrdersRecentResponseToJSON,
+    PkiExternalCaReadConfigAcmeAccountResponseFromJSON,
+    PkiExternalCaReadConfigAcmeAccountResponseToJSON,
     PkiExternalCaReadConfigDnsAwsRoute53ResponseFromJSON,
     PkiExternalCaReadConfigDnsAwsRoute53ResponseToJSON,
     PkiExternalCaReadConfigDnsAzureDnsResponseFromJSON,
@@ -676,10 +698,26 @@ import {
     PkiExternalCaReadConfigDnsGoogleCloudDnsResponseToJSON,
     PkiExternalCaReadConfigDnsRfc2136ResponseFromJSON,
     PkiExternalCaReadConfigDnsRfc2136ResponseToJSON,
-    PkiExternalCaWriteConfigAcmeAccountNameRequestFromJSON,
-    PkiExternalCaWriteConfigAcmeAccountNameRequestToJSON,
-    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestFromJSON,
-    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestToJSON,
+    PkiExternalCaReadLookupCertResponseFromJSON,
+    PkiExternalCaReadLookupCertResponseToJSON,
+    PkiExternalCaReadLookupOrderResponseFromJSON,
+    PkiExternalCaReadLookupOrderResponseToJSON,
+    PkiExternalCaReadRoleCachedResponseFromJSON,
+    PkiExternalCaReadRoleCachedResponseToJSON,
+    PkiExternalCaReadRoleOrderChallengeResponseFromJSON,
+    PkiExternalCaReadRoleOrderChallengeResponseToJSON,
+    PkiExternalCaReadRoleOrderFetchCertResponseFromJSON,
+    PkiExternalCaReadRoleOrderFetchCertResponseToJSON,
+    PkiExternalCaReadRoleOrderStatusResponseFromJSON,
+    PkiExternalCaReadRoleOrderStatusResponseToJSON,
+    PkiExternalCaReadRoleResponseFromJSON,
+    PkiExternalCaReadRoleResponseToJSON,
+    PkiExternalCaWriteConfigAcmeAccountRequestFromJSON,
+    PkiExternalCaWriteConfigAcmeAccountRequestToJSON,
+    PkiExternalCaWriteConfigAcmeAccountResponseFromJSON,
+    PkiExternalCaWriteConfigAcmeAccountResponseToJSON,
+    PkiExternalCaWriteConfigAcmeAccountRotateKeyRequestFromJSON,
+    PkiExternalCaWriteConfigAcmeAccountRotateKeyRequestToJSON,
     PkiExternalCaWriteConfigDnsAwsRoute53RequestFromJSON,
     PkiExternalCaWriteConfigDnsAwsRoute53RequestToJSON,
     PkiExternalCaWriteConfigDnsAwsRoute53ResponseFromJSON,
@@ -700,14 +738,18 @@ import {
     PkiExternalCaWriteDnsTestWorkflowRequestToJSON,
     PkiExternalCaWriteDnsTestWorkflowResponseFromJSON,
     PkiExternalCaWriteDnsTestWorkflowResponseToJSON,
-    PkiExternalCaWriteRoleNameNewOrderRequestFromJSON,
-    PkiExternalCaWriteRoleNameNewOrderRequestToJSON,
-    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestFromJSON,
-    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestToJSON,
-    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestFromJSON,
-    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestToJSON,
-    PkiExternalCaWriteRoleNameRequestFromJSON,
-    PkiExternalCaWriteRoleNameRequestToJSON,
+    PkiExternalCaWriteRoleNewOrderRequestFromJSON,
+    PkiExternalCaWriteRoleNewOrderRequestToJSON,
+    PkiExternalCaWriteRoleNewOrderResponseFromJSON,
+    PkiExternalCaWriteRoleNewOrderResponseToJSON,
+    PkiExternalCaWriteRoleOrderFulfilledChallengeRequestFromJSON,
+    PkiExternalCaWriteRoleOrderFulfilledChallengeRequestToJSON,
+    PkiExternalCaWriteRoleOrderRevokeRequestFromJSON,
+    PkiExternalCaWriteRoleOrderRevokeRequestToJSON,
+    PkiExternalCaWriteRoleRequestFromJSON,
+    PkiExternalCaWriteRoleRequestToJSON,
+    PkiExternalCaWriteRoleResponseFromJSON,
+    PkiExternalCaWriteRoleResponseToJSON,
     PkiGenerateEabKeyForIssuerAndRoleResponseFromJSON,
     PkiGenerateEabKeyForIssuerAndRoleResponseToJSON,
     PkiGenerateEabKeyForIssuerResponseFromJSON,
@@ -2754,13 +2796,13 @@ export interface SecretsApiPkiDeleteRootRequest {
     pki_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaCreateConfigAcmeAccountNameImportOperationRequest {
+export interface SecretsApiPkiExternalCaCreateConfigAcmeAccountImportOperationRequest {
     name: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest;
+    PkiExternalCaCreateConfigAcmeAccountImportRequest: PkiExternalCaCreateConfigAcmeAccountImportRequest;
 }
 
-export interface SecretsApiPkiExternalCaDeleteConfigAcmeAccountNameRequest {
+export interface SecretsApiPkiExternalCaDeleteConfigAcmeAccountRequest {
     name: string;
     pki_external_ca_mount_path: string;
 }
@@ -2785,7 +2827,7 @@ export interface SecretsApiPkiExternalCaDeleteConfigDnsRfc2136Request {
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaDeleteRoleNameRequest {
+export interface SecretsApiPkiExternalCaDeleteRoleRequest {
     name: string;
     pki_external_ca_mount_path: string;
 }
@@ -2825,18 +2867,23 @@ export interface SecretsApiPkiExternalCaListLookupOrdersRequest {
     list: SecretsApiPkiExternalCaListLookupOrdersListEnum;
 }
 
+export interface SecretsApiPkiExternalCaListLookupOrdersRecentRequest {
+    pki_external_ca_mount_path: string;
+    list: SecretsApiPkiExternalCaListLookupOrdersRecentListEnum;
+}
+
 export interface SecretsApiPkiExternalCaListRoleRequest {
     pki_external_ca_mount_path: string;
     list: SecretsApiPkiExternalCaListRoleListEnum;
 }
 
-export interface SecretsApiPkiExternalCaListRoleNameActiveOrdersRequest {
+export interface SecretsApiPkiExternalCaListRoleActiveOrdersRequest {
     name: string;
     pki_external_ca_mount_path: string;
-    list: SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum;
+    list: SecretsApiPkiExternalCaListRoleActiveOrdersListEnum;
 }
 
-export interface SecretsApiPkiExternalCaReadConfigAcmeAccountNameRequest {
+export interface SecretsApiPkiExternalCaReadConfigAcmeAccountRequest {
     name: string;
     pki_external_ca_mount_path: string;
 }
@@ -2861,54 +2908,54 @@ export interface SecretsApiPkiExternalCaReadConfigDnsRfc2136Request {
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadLookupCertSerialRequest {
+export interface SecretsApiPkiExternalCaReadLookupCertRequest {
     serial: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadLookupOrderOrderIdRequest {
+export interface SecretsApiPkiExternalCaReadLookupOrderRequest {
     order_id: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadRoleNameRequest {
+export interface SecretsApiPkiExternalCaReadRoleRequest {
     name: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadRoleNameCachedRequest {
+export interface SecretsApiPkiExternalCaReadRoleCachedRequest {
     name: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdChallengeRequest {
-    name: string;
-    order_id: string;
-    pki_external_ca_mount_path: string;
-}
-
-export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdFetchCertRequest {
+export interface SecretsApiPkiExternalCaReadRoleOrderChallengeRequest {
     name: string;
     order_id: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaReadRoleNameOrderOrderIdStatusRequest {
+export interface SecretsApiPkiExternalCaReadRoleOrderFetchCertRequest {
     name: string;
     order_id: string;
     pki_external_ca_mount_path: string;
 }
 
-export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountNameOperationRequest {
+export interface SecretsApiPkiExternalCaReadRoleOrderStatusRequest {
     name: string;
+    order_id: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest;
 }
 
-export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountNameRotateKeyOperationRequest {
+export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountOperationRequest {
     name: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest;
+    PkiExternalCaWriteConfigAcmeAccountRequest: PkiExternalCaWriteConfigAcmeAccountRequest;
+}
+
+export interface SecretsApiPkiExternalCaWriteConfigAcmeAccountRotateKeyOperationRequest {
+    name: string;
+    pki_external_ca_mount_path: string;
+    PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest;
 }
 
 export interface SecretsApiPkiExternalCaWriteConfigDnsAwsRoute53OperationRequest {
@@ -2940,30 +2987,30 @@ export interface SecretsApiPkiExternalCaWriteDnsTestWorkflowOperationRequest {
     PkiExternalCaWriteDnsTestWorkflowRequest: PkiExternalCaWriteDnsTestWorkflowRequest;
 }
 
-export interface SecretsApiPkiExternalCaWriteRoleNameOperationRequest {
+export interface SecretsApiPkiExternalCaWriteRoleOperationRequest {
     name: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest;
+    PkiExternalCaWriteRoleRequest: PkiExternalCaWriteRoleRequest;
 }
 
-export interface SecretsApiPkiExternalCaWriteRoleNameNewOrderOperationRequest {
+export interface SecretsApiPkiExternalCaWriteRoleNewOrderOperationRequest {
     name: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest;
+    PkiExternalCaWriteRoleNewOrderRequest: PkiExternalCaWriteRoleNewOrderRequest;
 }
 
-export interface SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeOperationRequest {
+export interface SecretsApiPkiExternalCaWriteRoleOrderFulfilledChallengeOperationRequest {
     name: string;
     order_id: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest;
+    PkiExternalCaWriteRoleOrderFulfilledChallengeRequest: PkiExternalCaWriteRoleOrderFulfilledChallengeRequest;
 }
 
-export interface SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdRevokeOperationRequest {
+export interface SecretsApiPkiExternalCaWriteRoleOrderRevokeOperationRequest {
     name: string;
     order_id: string;
     pki_external_ca_mount_path: string;
-    PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest;
+    PkiExternalCaWriteRoleOrderRevokeRequest: PkiExternalCaWriteRoleOrderRevokeRequest;
 }
 
 export interface SecretsApiPkiGenerateEabKeyRequest {
@@ -16587,25 +16634,25 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaCreateConfigAcmeAccountNameImportRaw(requestParameters: SecretsApiPkiExternalCaCreateConfigAcmeAccountNameImportOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaCreateConfigAcmeAccountImportRaw(requestParameters: SecretsApiPkiExternalCaCreateConfigAcmeAccountImportOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaCreateConfigAcmeAccountImportResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountImport().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountImport().'
             );
         }
 
-        if (requestParameters['PkiExternalCaCreateConfigAcmeAccountNameImportRequest'] == null) {
+        if (requestParameters['PkiExternalCaCreateConfigAcmeAccountImportRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaCreateConfigAcmeAccountNameImportRequest',
-                'Required parameter "PkiExternalCaCreateConfigAcmeAccountNameImportRequest" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountNameImport().'
+                'PkiExternalCaCreateConfigAcmeAccountImportRequest',
+                'Required parameter "PkiExternalCaCreateConfigAcmeAccountImportRequest" was null or undefined when calling pkiExternalCaCreateConfigAcmeAccountImport().'
             );
         }
 
@@ -16621,33 +16668,33 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaCreateConfigAcmeAccountNameImportRequestToJSON(requestParameters['PkiExternalCaCreateConfigAcmeAccountNameImportRequest']),
+            body: PkiExternalCaCreateConfigAcmeAccountImportRequestToJSON(requestParameters['PkiExternalCaCreateConfigAcmeAccountImportRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaCreateConfigAcmeAccountImportResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaCreateConfigAcmeAccountNameImport(name: string, pki_external_ca_mount_path: string, PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaCreateConfigAcmeAccountNameImportRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaCreateConfigAcmeAccountNameImportRequest: PkiExternalCaCreateConfigAcmeAccountNameImportRequest }, initOverrides);
+    async pkiExternalCaCreateConfigAcmeAccountImport(name: string, pki_external_ca_mount_path: string, PkiExternalCaCreateConfigAcmeAccountImportRequest: PkiExternalCaCreateConfigAcmeAccountImportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaCreateConfigAcmeAccountImportResponse> {
+        const response = await this.pkiExternalCaCreateConfigAcmeAccountImportRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaCreateConfigAcmeAccountImportRequest: PkiExternalCaCreateConfigAcmeAccountImportRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaDeleteConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaDeleteConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaDeleteConfigAcmeAccountRaw(requestParameters: SecretsApiPkiExternalCaDeleteConfigAcmeAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccountName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccount().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccountName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteConfigAcmeAccount().'
             );
         }
 
@@ -16668,8 +16715,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaDeleteConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaDeleteConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaDeleteConfigAcmeAccount(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteConfigAcmeAccountRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -16831,18 +16878,18 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaDeleteRoleNameRaw(requestParameters: SecretsApiPkiExternalCaDeleteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaDeleteRoleRaw(requestParameters: SecretsApiPkiExternalCaDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteRoleName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaDeleteRole().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteRoleName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaDeleteRole().'
             );
         }
 
@@ -16863,8 +16910,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaDeleteRoleName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaDeleteRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaDeleteRole(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaDeleteRoleRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -16913,7 +16960,7 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaListConfigDnsRaw(requestParameters: SecretsApiPkiExternalCaListConfigDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async pkiExternalCaListConfigDnsRaw(requestParameters: SecretsApiPkiExternalCaListConfigDnsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaListConfigDnsResponse>> {
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
@@ -16944,12 +16991,12 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaListConfigDnsResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaListConfigDns(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async pkiExternalCaListConfigDns(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListConfigDnsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaListConfigDnsResponse> {
         const response = await this.pkiExternalCaListConfigDnsRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
         return await response.value();
     }
@@ -17171,6 +17218,49 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiExternalCaListLookupOrdersRecentRaw(requestParameters: SecretsApiPkiExternalCaListLookupOrdersRecentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaListLookupOrdersRecentResponse>> {
+        if (requestParameters['pki_external_ca_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_external_ca_mount_path',
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListLookupOrdersRecent().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListLookupOrdersRecent().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_external_ca_mount_path}/lookup/orders/recent/`.replace(`{${"pki_external_ca_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_external_ca_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaListLookupOrdersRecentResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiExternalCaListLookupOrdersRecent(pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListLookupOrdersRecentListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaListLookupOrdersRecentResponse> {
+        const response = await this.pkiExternalCaListLookupOrdersRecentRaw({ pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiExternalCaListRoleRaw(requestParameters: SecretsApiPkiExternalCaListRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -17214,25 +17304,25 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaListRoleNameActiveOrdersRaw(requestParameters: SecretsApiPkiExternalCaListRoleNameActiveOrdersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async pkiExternalCaListRoleActiveOrdersRaw(requestParameters: SecretsApiPkiExternalCaListRoleActiveOrdersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaListRoleActiveOrders().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaListRoleActiveOrders().'
             );
         }
 
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
-                'Required parameter "list" was null or undefined when calling pkiExternalCaListRoleNameActiveOrders().'
+                'Required parameter "list" was null or undefined when calling pkiExternalCaListRoleActiveOrders().'
             );
         }
 
@@ -17257,25 +17347,25 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaListRoleNameActiveOrders(name: string, pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
-        const response = await this.pkiExternalCaListRoleNameActiveOrdersRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
+    async pkiExternalCaListRoleActiveOrders(name: string, pki_external_ca_mount_path: string, list: SecretsApiPkiExternalCaListRoleActiveOrdersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.pkiExternalCaListRoleActiveOrdersRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaReadConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadConfigAcmeAccountRaw(requestParameters: SecretsApiPkiExternalCaReadConfigAcmeAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadConfigAcmeAccountResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigAcmeAccountName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadConfigAcmeAccount().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigAcmeAccountName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadConfigAcmeAccount().'
             );
         }
 
@@ -17291,13 +17381,13 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadConfigAcmeAccountResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadConfigAcmeAccount(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadConfigAcmeAccountResponse> {
+        const response = await this.pkiExternalCaReadConfigAcmeAccountRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -17459,18 +17549,18 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaReadLookupCertSerialRaw(requestParameters: SecretsApiPkiExternalCaReadLookupCertSerialRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadLookupCertRaw(requestParameters: SecretsApiPkiExternalCaReadLookupCertRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadLookupCertResponse>> {
         if (requestParameters['serial'] == null) {
             throw new runtime.RequiredError(
                 'serial',
-                'Required parameter "serial" was null or undefined when calling pkiExternalCaReadLookupCertSerial().'
+                'Required parameter "serial" was null or undefined when calling pkiExternalCaReadLookupCert().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupCertSerial().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupCert().'
             );
         }
 
@@ -17486,30 +17576,30 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadLookupCertResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadLookupCertSerial(serial: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadLookupCertSerialRaw({ serial: serial, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadLookupCert(serial: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadLookupCertResponse> {
+        const response = await this.pkiExternalCaReadLookupCertRaw({ serial: serial, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadLookupOrderOrderIdRaw(requestParameters: SecretsApiPkiExternalCaReadLookupOrderOrderIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadLookupOrderRaw(requestParameters: SecretsApiPkiExternalCaReadLookupOrderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadLookupOrderResponse>> {
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadLookupOrderOrderId().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadLookupOrder().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupOrderOrderId().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadLookupOrder().'
             );
         }
 
@@ -17525,30 +17615,30 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadLookupOrderResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadLookupOrderOrderId(order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadLookupOrderOrderIdRaw({ order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadLookupOrder(order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadLookupOrderResponse> {
+        const response = await this.pkiExternalCaReadLookupOrderRaw({ order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadRoleRaw(requestParameters: SecretsApiPkiExternalCaReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadRoleResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRole().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRole().'
             );
         }
 
@@ -17564,30 +17654,30 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadRoleResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadRoleName(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadRole(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadRoleResponse> {
+        const response = await this.pkiExternalCaReadRoleRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameCachedRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameCachedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadRoleCachedRaw(requestParameters: SecretsApiPkiExternalCaReadRoleCachedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadRoleCachedResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameCached().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleCached().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameCached().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleCached().'
             );
         }
 
@@ -17603,37 +17693,37 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadRoleCachedResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameCached(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadRoleNameCachedRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadRoleCached(name: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadRoleCachedResponse> {
+        const response = await this.pkiExternalCaReadRoleCachedRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdChallengeRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadRoleOrderChallengeRaw(requestParameters: SecretsApiPkiExternalCaReadRoleOrderChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadRoleOrderChallengeResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleOrderChallenge().'
             );
         }
 
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleOrderChallenge().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdChallenge().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleOrderChallenge().'
             );
         }
 
@@ -17649,37 +17739,37 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadRoleOrderChallengeResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadRoleOrderChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadRoleOrderChallengeResponse> {
+        const response = await this.pkiExternalCaReadRoleOrderChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdFetchCertRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdFetchCertRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadRoleOrderFetchCertRaw(requestParameters: SecretsApiPkiExternalCaReadRoleOrderFetchCertRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadRoleOrderFetchCertResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleOrderFetchCert().'
             );
         }
 
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleOrderFetchCert().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdFetchCert().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleOrderFetchCert().'
             );
         }
 
@@ -17695,37 +17785,37 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadRoleOrderFetchCertResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdFetchCert(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdFetchCertRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadRoleOrderFetchCert(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadRoleOrderFetchCertResponse> {
+        const response = await this.pkiExternalCaReadRoleOrderFetchCertRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdStatusRaw(requestParameters: SecretsApiPkiExternalCaReadRoleNameOrderOrderIdStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaReadRoleOrderStatusRaw(requestParameters: SecretsApiPkiExternalCaReadRoleOrderStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaReadRoleOrderStatusResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaReadRoleOrderStatus().'
             );
         }
 
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaReadRoleOrderStatus().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleNameOrderOrderIdStatus().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaReadRoleOrderStatus().'
             );
         }
 
@@ -17741,37 +17831,37 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaReadRoleOrderStatusResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaReadRoleNameOrderOrderIdStatus(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaReadRoleNameOrderOrderIdStatusRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
+    async pkiExternalCaReadRoleOrderStatus(name: string, order_id: string, pki_external_ca_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaReadRoleOrderStatusResponse> {
+        const response = await this.pkiExternalCaReadRoleOrderStatusRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaWriteConfigAcmeAccountNameRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteConfigAcmeAccountRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteConfigAcmeAccountResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccount().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccount().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteConfigAcmeAccountNameRequest',
-                'Required parameter "PkiExternalCaWriteConfigAcmeAccountNameRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountName().'
+                'PkiExternalCaWriteConfigAcmeAccountRequest',
+                'Required parameter "PkiExternalCaWriteConfigAcmeAccountRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccount().'
             );
         }
 
@@ -17787,40 +17877,40 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteConfigAcmeAccountNameRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRequest']),
+            body: PkiExternalCaWriteConfigAcmeAccountRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteConfigAcmeAccountResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaWriteConfigAcmeAccountName(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteConfigAcmeAccountNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountNameRequest: PkiExternalCaWriteConfigAcmeAccountNameRequest }, initOverrides);
+    async pkiExternalCaWriteConfigAcmeAccount(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountRequest: PkiExternalCaWriteConfigAcmeAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteConfigAcmeAccountResponse> {
+        const response = await this.pkiExternalCaWriteConfigAcmeAccountRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountRequest: PkiExternalCaWriteConfigAcmeAccountRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaWriteConfigAcmeAccountNameRotateKeyRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountNameRotateKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteConfigAcmeAccountRotateKeyRaw(requestParameters: SecretsApiPkiExternalCaWriteConfigAcmeAccountRotateKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountRotateKey().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountRotateKey().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest',
-                'Required parameter "PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountNameRotateKey().'
+                'PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest',
+                'Required parameter "PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest" was null or undefined when calling pkiExternalCaWriteConfigAcmeAccountRotateKey().'
             );
         }
 
@@ -17836,7 +17926,7 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest']),
+            body: PkiExternalCaWriteConfigAcmeAccountRotateKeyRequestToJSON(requestParameters['PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -17844,8 +17934,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaWriteConfigAcmeAccountNameRotateKey(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteConfigAcmeAccountNameRotateKeyRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest }, initOverrides);
+    async pkiExternalCaWriteConfigAcmeAccountRotateKey(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteConfigAcmeAccountRotateKeyRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest: PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest }, initOverrides);
         return await response.value();
     }
 
@@ -18089,25 +18179,25 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaWriteRoleNameRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteRoleRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteRoleResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleName().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRole().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleName().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRole().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteRoleNameRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteRoleRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteRoleNameRequest',
-                'Required parameter "PkiExternalCaWriteRoleNameRequest" was null or undefined when calling pkiExternalCaWriteRoleName().'
+                'PkiExternalCaWriteRoleRequest',
+                'Required parameter "PkiExternalCaWriteRoleRequest" was null or undefined when calling pkiExternalCaWriteRole().'
             );
         }
 
@@ -18123,40 +18213,40 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteRoleNameRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameRequest']),
+            body: PkiExternalCaWriteRoleRequestToJSON(requestParameters['PkiExternalCaWriteRoleRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteRoleResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaWriteRoleName(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteRoleNameRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameRequest: PkiExternalCaWriteRoleNameRequest }, initOverrides);
+    async pkiExternalCaWriteRole(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleRequest: PkiExternalCaWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteRoleResponse> {
+        const response = await this.pkiExternalCaWriteRoleRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleRequest: PkiExternalCaWriteRoleRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaWriteRoleNameNewOrderRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameNewOrderOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteRoleNewOrderRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNewOrderOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiExternalCaWriteRoleNewOrderResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNewOrder().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNewOrder().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteRoleNameNewOrderRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteRoleNewOrderRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteRoleNameNewOrderRequest',
-                'Required parameter "PkiExternalCaWriteRoleNameNewOrderRequest" was null or undefined when calling pkiExternalCaWriteRoleNameNewOrder().'
+                'PkiExternalCaWriteRoleNewOrderRequest',
+                'Required parameter "PkiExternalCaWriteRoleNewOrderRequest" was null or undefined when calling pkiExternalCaWriteRoleNewOrder().'
             );
         }
 
@@ -18172,47 +18262,47 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteRoleNameNewOrderRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameNewOrderRequest']),
+            body: PkiExternalCaWriteRoleNewOrderRequestToJSON(requestParameters['PkiExternalCaWriteRoleNewOrderRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiExternalCaWriteRoleNewOrderResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async pkiExternalCaWriteRoleNameNewOrder(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteRoleNameNewOrderRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameNewOrderRequest: PkiExternalCaWriteRoleNameNewOrderRequest }, initOverrides);
+    async pkiExternalCaWriteRoleNewOrder(name: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNewOrderRequest: PkiExternalCaWriteRoleNewOrderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiExternalCaWriteRoleNewOrderResponse> {
+        const response = await this.pkiExternalCaWriteRoleNewOrderRaw({ name: name, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNewOrderRequest: PkiExternalCaWriteRoleNewOrderRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteRoleOrderFulfilledChallengeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleOrderFulfilledChallengeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleOrderFulfilledChallenge().'
             );
         }
 
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleOrderFulfilledChallenge().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleOrderFulfilledChallenge().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteRoleOrderFulfilledChallengeRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest',
-                'Required parameter "PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge().'
+                'PkiExternalCaWriteRoleOrderFulfilledChallengeRequest',
+                'Required parameter "PkiExternalCaWriteRoleOrderFulfilledChallengeRequest" was null or undefined when calling pkiExternalCaWriteRoleOrderFulfilledChallenge().'
             );
         }
 
@@ -18228,7 +18318,7 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest']),
+            body: PkiExternalCaWriteRoleOrderFulfilledChallengeRequestToJSON(requestParameters['PkiExternalCaWriteRoleOrderFulfilledChallengeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -18236,39 +18326,39 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest: PkiExternalCaWriteRoleNameOrderOrderIdFulfilledChallengeRequest }, initOverrides);
+    async pkiExternalCaWriteRoleOrderFulfilledChallenge(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleOrderFulfilledChallengeRequest: PkiExternalCaWriteRoleOrderFulfilledChallengeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleOrderFulfilledChallengeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleOrderFulfilledChallengeRequest: PkiExternalCaWriteRoleOrderFulfilledChallengeRequest }, initOverrides);
         return await response.value();
     }
 
     /**
      */
-    async pkiExternalCaWriteRoleNameOrderOrderIdRevokeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleNameOrderOrderIdRevokeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async pkiExternalCaWriteRoleOrderRevokeRaw(requestParameters: SecretsApiPkiExternalCaWriteRoleOrderRevokeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
-                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+                'Required parameter "name" was null or undefined when calling pkiExternalCaWriteRoleOrderRevoke().'
             );
         }
 
         if (requestParameters['order_id'] == null) {
             throw new runtime.RequiredError(
                 'order_id',
-                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+                'Required parameter "order_id" was null or undefined when calling pkiExternalCaWriteRoleOrderRevoke().'
             );
         }
 
         if (requestParameters['pki_external_ca_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'pki_external_ca_mount_path',
-                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+                'Required parameter "pki_external_ca_mount_path" was null or undefined when calling pkiExternalCaWriteRoleOrderRevoke().'
             );
         }
 
-        if (requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest'] == null) {
+        if (requestParameters['PkiExternalCaWriteRoleOrderRevokeRequest'] == null) {
             throw new runtime.RequiredError(
-                'PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest',
-                'Required parameter "PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest" was null or undefined when calling pkiExternalCaWriteRoleNameOrderOrderIdRevoke().'
+                'PkiExternalCaWriteRoleOrderRevokeRequest',
+                'Required parameter "PkiExternalCaWriteRoleOrderRevokeRequest" was null or undefined when calling pkiExternalCaWriteRoleOrderRevoke().'
             );
         }
 
@@ -18284,7 +18374,7 @@ export class SecretsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequestToJSON(requestParameters['PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest']),
+            body: PkiExternalCaWriteRoleOrderRevokeRequestToJSON(requestParameters['PkiExternalCaWriteRoleOrderRevokeRequest']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -18292,8 +18382,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async pkiExternalCaWriteRoleNameOrderOrderIdRevoke(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.pkiExternalCaWriteRoleNameOrderOrderIdRevokeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest: PkiExternalCaWriteRoleNameOrderOrderIdRevokeRequest }, initOverrides);
+    async pkiExternalCaWriteRoleOrderRevoke(name: string, order_id: string, pki_external_ca_mount_path: string, PkiExternalCaWriteRoleOrderRevokeRequest: PkiExternalCaWriteRoleOrderRevokeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiExternalCaWriteRoleOrderRevokeRaw({ name: name, order_id: order_id, pki_external_ca_mount_path: pki_external_ca_mount_path, PkiExternalCaWriteRoleOrderRevokeRequest: PkiExternalCaWriteRoleOrderRevokeRequest }, initOverrides);
         return await response.value();
     }
 
@@ -36424,6 +36514,13 @@ export enum SecretsApiPkiExternalCaListLookupOrdersListEnum {
   * @export
   * @enum {string}
   */
+export enum SecretsApiPkiExternalCaListLookupOrdersRecentListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
 export enum SecretsApiPkiExternalCaListRoleListEnum {
     TRUE = 'true'
 }
@@ -36431,7 +36528,7 @@ export enum SecretsApiPkiExternalCaListRoleListEnum {
   * @export
   * @enum {string}
   */
-export enum SecretsApiPkiExternalCaListRoleNameActiveOrdersListEnum {
+export enum SecretsApiPkiExternalCaListRoleActiveOrdersListEnum {
     TRUE = 'true'
 }
 /**

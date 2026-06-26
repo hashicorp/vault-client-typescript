@@ -48,11 +48,11 @@ export interface PkiExternalCaWriteConfigDnsAzureDnsResponse {
      */
     identifiers?: Array<string>;
     /**
-     * Configuration last update timestamp
+     * Configuration last updated timestamp
      * @type {Date}
      * @memberof PkiExternalCaWriteConfigDnsAzureDnsResponse
      */
-    last_update_date?: Date;
+    last_updated_date?: Date;
     /**
      * Name of the azure-dns DNS configuration
      * @type {string}
@@ -112,7 +112,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsResponseFromJSONTyped(json: a
         'creation_date': json['creation_date'] == null ? undefined : (new Date(json['creation_date'])),
         'environment': json['environment'] == null ? undefined : json['environment'],
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
-        'last_update_date': json['last_update_date'] == null ? undefined : (new Date(json['last_update_date'])),
+        'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
         'resource_group_name': json['resource_group_name'] == null ? undefined : json['resource_group_name'],
         'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
@@ -137,7 +137,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsResponseToJSONTyped(value?: P
         'creation_date': value['creation_date'] == null ? undefined : ((value['creation_date']).toISOString()),
         'environment': value['environment'],
         'identifiers': value['identifiers'],
-        'last_update_date': value['last_update_date'] == null ? undefined : ((value['last_update_date']).toISOString()),
+        'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
         'resource_group_name': value['resource_group_name'],
         'subscription_id': value['subscription_id'],

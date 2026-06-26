@@ -77,6 +77,9 @@ import type {
   PersonaUpdateByIdRequest,
   ScimUpdateClientRequest,
   StandardListResponse,
+  TpmCreateRequest,
+  TpmUpdateByIdRequest,
+  TpmUpdateByNameRequest,
   UpdateRequest,
 } from '../models/index';
 import {
@@ -196,6 +199,12 @@ import {
     ScimUpdateClientRequestToJSON,
     StandardListResponseFromJSON,
     StandardListResponseToJSON,
+    TpmCreateRequestFromJSON,
+    TpmCreateRequestToJSON,
+    TpmUpdateByIdRequestFromJSON,
+    TpmUpdateByIdRequestToJSON,
+    TpmUpdateByNameRequestFromJSON,
+    TpmUpdateByNameRequestToJSON,
     UpdateRequestFromJSON,
     UpdateRequestToJSON,
 } from '../models/index';
@@ -786,6 +795,44 @@ export interface IdentityApiScimReadClientRequest {
 export interface IdentityApiScimUpdateClientOperationRequest {
     client_name: string;
     ScimUpdateClientRequest: ScimUpdateClientRequest;
+}
+
+export interface IdentityApiTpmCreateOperationRequest {
+    TpmCreateRequest: TpmCreateRequest;
+}
+
+export interface IdentityApiTpmDeleteByIdRequest {
+    id: string;
+}
+
+export interface IdentityApiTpmDeleteByNameRequest {
+    name: string;
+}
+
+export interface IdentityApiTpmListByIdRequest {
+    list: IdentityApiTpmListByIdListEnum;
+}
+
+export interface IdentityApiTpmListByNameRequest {
+    list: IdentityApiTpmListByNameListEnum;
+}
+
+export interface IdentityApiTpmReadByIdRequest {
+    id: string;
+}
+
+export interface IdentityApiTpmReadByNameRequest {
+    name: string;
+}
+
+export interface IdentityApiTpmUpdateByIdOperationRequest {
+    id: string;
+    TpmUpdateByIdRequest: TpmUpdateByIdRequest;
+}
+
+export interface IdentityApiTpmUpdateByNameOperationRequest {
+    name: string;
+    TpmUpdateByNameRequest: TpmUpdateByNameRequest;
 }
 
 export interface IdentityApiUpdateOperationRequest {
@@ -6016,6 +6063,325 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
+    async tpmCreateRaw(requestParameters: IdentityApiTpmCreateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['TpmCreateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmCreateRequest',
+                'Required parameter "TpmCreateRequest" was null or undefined when calling tpmCreate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/identity/tpm`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmCreateRequestToJSON(requestParameters['TpmCreateRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmCreate(TpmCreateRequest: TpmCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmCreateRaw({ TpmCreateRequest: TpmCreateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmDeleteByIdRaw(requestParameters: IdentityApiTpmDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling tpmDeleteById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmDeleteById(id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmDeleteByIdRaw({ id: id }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmDeleteByNameRaw(requestParameters: IdentityApiTpmDeleteByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmDeleteByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmDeleteByName(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmDeleteByNameRaw({ name: name }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmListByIdRaw(requestParameters: IdentityApiTpmListByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling tpmListById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/id/`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async tpmListById(list: IdentityApiTpmListByIdListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.tpmListByIdRaw({ list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmListByNameRaw(requestParameters: IdentityApiTpmListByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling tpmListByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/name/`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async tpmListByName(list: IdentityApiTpmListByNameListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.tpmListByNameRaw({ list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmReadByIdRaw(requestParameters: IdentityApiTpmReadByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling tpmReadById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmReadById(id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmReadByIdRaw({ id: id }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmReadByNameRaw(requestParameters: IdentityApiTpmReadByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmReadByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/identity/tpm/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmReadByName(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmReadByNameRaw({ name: name }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmUpdateByIdRaw(requestParameters: IdentityApiTpmUpdateByIdOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling tpmUpdateById().'
+            );
+        }
+
+        if (requestParameters['TpmUpdateByIdRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmUpdateByIdRequest',
+                'Required parameter "TpmUpdateByIdRequest" was null or undefined when calling tpmUpdateById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/identity/tpm/id/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmUpdateByIdRequestToJSON(requestParameters['TpmUpdateByIdRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmUpdateById(id: string, TpmUpdateByIdRequest: TpmUpdateByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmUpdateByIdRaw({ id: id, TpmUpdateByIdRequest: TpmUpdateByIdRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmUpdateByNameRaw(requestParameters: IdentityApiTpmUpdateByNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmUpdateByName().'
+            );
+        }
+
+        if (requestParameters['TpmUpdateByNameRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmUpdateByNameRequest',
+                'Required parameter "TpmUpdateByNameRequest" was null or undefined when calling tpmUpdateByName().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/identity/tpm/name/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmUpdateByNameRequestToJSON(requestParameters['TpmUpdateByNameRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmUpdateByName(name: string, TpmUpdateByNameRequest: TpmUpdateByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmUpdateByNameRaw({ name: name, TpmUpdateByNameRequest: TpmUpdateByNameRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async updateRaw(requestParameters: IdentityApiUpdateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError(
@@ -6266,5 +6632,19 @@ export enum IdentityApiPersonaListByIdListEnum {
   * @enum {string}
   */
 export enum IdentityApiScimListClientListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum IdentityApiTpmListByIdListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum IdentityApiTpmListByNameListEnum {
     TRUE = 'true'
 }
