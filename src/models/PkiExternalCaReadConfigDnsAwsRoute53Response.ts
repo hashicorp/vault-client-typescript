@@ -60,11 +60,11 @@ export interface PkiExternalCaReadConfigDnsAwsRoute53Response {
      */
     identifiers?: Array<string>;
     /**
-     * Configuration last update timestamp
+     * Configuration last updated timestamp
      * @type {Date}
      * @memberof PkiExternalCaReadConfigDnsAwsRoute53Response
      */
-    last_update_date?: Date;
+    last_updated_date?: Date;
     /**
      * Name of the aws-route53 DNS configuration
      * @type {string}
@@ -108,7 +108,7 @@ export function PkiExternalCaReadConfigDnsAwsRoute53ResponseFromJSONTyped(json: 
         'external_id': json['external_id'] == null ? undefined : json['external_id'],
         'hosted_zone_id': json['hosted_zone_id'] == null ? undefined : json['hosted_zone_id'],
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
-        'last_update_date': json['last_update_date'] == null ? undefined : (new Date(json['last_update_date'])),
+        'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
         'region': json['region'] == null ? undefined : json['region'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -132,7 +132,7 @@ export function PkiExternalCaReadConfigDnsAwsRoute53ResponseToJSONTyped(value?: 
         'external_id': value['external_id'],
         'hosted_zone_id': value['hosted_zone_id'],
         'identifiers': value['identifiers'],
-        'last_update_date': value['last_update_date'] == null ? undefined : ((value['last_update_date']).toISOString()),
+        'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
         'region': value['region'],
         'ttl': value['ttl'],

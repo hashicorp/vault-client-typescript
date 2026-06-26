@@ -42,11 +42,11 @@ export interface PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse {
      */
     impersonate_service_account?: string;
     /**
-     * Configuration last update timestamp
+     * Configuration last updated timestamp
      * @type {Date}
      * @memberof PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse
      */
-    last_update_date?: Date;
+    last_updated_date?: Date;
     /**
      * Name of the google-cloud-dns DNS configuration
      * @type {string}
@@ -93,7 +93,7 @@ export function PkiExternalCaWriteConfigDnsGoogleCloudDnsResponseFromJSONTyped(j
         'creation_date': json['creation_date'] == null ? undefined : (new Date(json['creation_date'])),
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
         'impersonate_service_account': json['impersonate_service_account'] == null ? undefined : json['impersonate_service_account'],
-        'last_update_date': json['last_update_date'] == null ? undefined : (new Date(json['last_update_date'])),
+        'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
         'project': json['project'] == null ? undefined : json['project'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -115,7 +115,7 @@ export function PkiExternalCaWriteConfigDnsGoogleCloudDnsResponseToJSONTyped(val
         'creation_date': value['creation_date'] == null ? undefined : ((value['creation_date']).toISOString()),
         'identifiers': value['identifiers'],
         'impersonate_service_account': value['impersonate_service_account'],
-        'last_update_date': value['last_update_date'] == null ? undefined : ((value['last_update_date']).toISOString()),
+        'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
         'project': value['project'],
         'ttl': value['ttl'],

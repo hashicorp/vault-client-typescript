@@ -36,11 +36,11 @@ export interface PkiExternalCaReadConfigDnsRfc2136Response {
      */
     identifiers?: Array<string>;
     /**
-     * Configuration last update timestamp
+     * Configuration last updated timestamp
      * @type {Date}
      * @memberof PkiExternalCaReadConfigDnsRfc2136Response
      */
-    last_update_date?: Date;
+    last_updated_date?: Date;
     /**
      * Name of the rfc2136 DNS configuration
      * @type {string}
@@ -92,7 +92,7 @@ export function PkiExternalCaReadConfigDnsRfc2136ResponseFromJSONTyped(json: any
         
         'creation_date': json['creation_date'] == null ? undefined : (new Date(json['creation_date'])),
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
-        'last_update_date': json['last_update_date'] == null ? undefined : (new Date(json['last_update_date'])),
+        'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
         'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'tsig_algorithm': json['tsig_algorithm'] == null ? undefined : json['tsig_algorithm'],
@@ -114,7 +114,7 @@ export function PkiExternalCaReadConfigDnsRfc2136ResponseToJSONTyped(value?: Pki
         
         'creation_date': value['creation_date'] == null ? undefined : ((value['creation_date']).toISOString()),
         'identifiers': value['identifiers'],
-        'last_update_date': value['last_update_date'] == null ? undefined : ((value['last_update_date']).toISOString()),
+        'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
         'nameserver': value['nameserver'],
         'tsig_algorithm': value['tsig_algorithm'],
