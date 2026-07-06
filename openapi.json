@@ -12062,6 +12062,214 @@
         }
       }
     },
+    "/identity/tpmgroup": {
+      "description": "Create a new TPMGroup or update an existing TPMGroup.",
+      "post": {
+        "operationId": "tpmgroup-create",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmgroupCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/tpmgroup/id/": {
+      "description": "List all TPMGroup IDs.",
+      "get": {
+        "operationId": "tpmgroup-list-by-id",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/tpmgroup/id/{id}": {
+      "description": "Update, read or delete a TPMGroup using TPMGroup ID.",
+      "parameters": [
+        {
+          "name": "id",
+          "description": "ID of the TPMGroup",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "tpmgroup-read-by-id",
+        "tags": [
+          "identity"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "tpmgroup-update-by-id",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmgroupUpdateByIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "tpmgroup-delete-by-id",
+        "tags": [
+          "identity"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/identity/tpmgroup/name/": {
+      "description": "List all TPMGroup names.",
+      "get": {
+        "operationId": "tpmgroup-list-by-name",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/tpmgroup/name/{name}": {
+      "description": "Update, read or delete a TPMGroup using TPMGroup name.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the TPMGroup",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "tpmgroup-read-by-name",
+        "tags": [
+          "identity"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "tpmgroup-update-by-name",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmgroupUpdateByNameRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "tpmgroup-delete-by-name",
+        "tags": [
+          "identity"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
     "/sys/activation-flags": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "x-vault-unauthenticated": true,
@@ -79463,6 +79671,69 @@
           "tpm_ek_public_key": {
             "type": "string",
             "description": "PEM-encoded TPM Endorsement Key (EK) public key."
+          }
+        }
+      },
+      "TpmgroupCreateRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the TPMGroup. If set, updates the corresponding existing TPMGroup."
+          },
+          "member_tpm_ids": {
+            "type": "array",
+            "description": "TPM IDs to be assigned as group members.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata to be associated with the TPMGroup. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
+            "format": "kvpairs"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the TPMGroup."
+          }
+        }
+      },
+      "TpmgroupUpdateByIdRequest": {
+        "type": "object",
+        "properties": {
+          "member_tpm_ids": {
+            "type": "array",
+            "description": "TPM IDs to be assigned as group members.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata to be associated with the TPMGroup.",
+            "format": "kvpairs"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the TPMGroup."
+          }
+        }
+      },
+      "TpmgroupUpdateByNameRequest": {
+        "type": "object",
+        "properties": {
+          "member_tpm_ids": {
+            "type": "array",
+            "description": "TPM IDs to be assigned as group members.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata to be associated with the TPMGroup.",
+            "format": "kvpairs"
           }
         }
       },

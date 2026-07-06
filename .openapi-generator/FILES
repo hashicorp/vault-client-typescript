@@ -846,6 +846,9 @@ src/models/TotpValidateCodeRequest.ts
 src/models/TpmCreateRequest.ts
 src/models/TpmUpdateByIdRequest.ts
 src/models/TpmUpdateByNameRequest.ts
+src/models/TpmgroupCreateRequest.ts
+src/models/TpmgroupUpdateByIdRequest.ts
+src/models/TpmgroupUpdateByNameRequest.ts
 src/models/TransformApplyStoreSchemaRequest.ts
 src/models/TransformCheckTokenizedRequest.ts
 src/models/TransformConfigureCacheRequest.ts
