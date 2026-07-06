@@ -6330,7 +6330,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Delete a retry policy.
+     * Delete a rotation policy.
      */
     async policiesDeleteRotationPolicyRaw(requestParameters: SystemApiPoliciesDeleteRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -6356,7 +6356,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Delete a retry policy.
+     * Delete a rotation policy.
      */
     async policiesDeleteRotationPolicy(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.policiesDeleteRotationPolicyRaw({ name: name }, initOverrides);
@@ -6635,7 +6635,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Retrieve an existing retry policy.
+     * Retrieve an existing rotation policy.
      */
     async policiesReadRotationPolicyRaw(requestParameters: SystemApiPoliciesReadRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PoliciesReadRotationPolicyResponse>> {
         if (requestParameters['name'] == null) {
@@ -6661,7 +6661,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Retrieve an existing retry policy.
+     * Retrieve an existing rotation policy.
      */
     async policiesReadRotationPolicy(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PoliciesReadRotationPolicyResponse> {
         const response = await this.policiesReadRotationPolicyRaw({ name: name }, initOverrides);
@@ -6801,7 +6801,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Add a new or update an existing rotation retry policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicyRaw(requestParameters: SystemApiPoliciesWriteRotationPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -6837,7 +6837,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Add a new or update an existing rotation retry policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicy(name: string, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.policiesWriteRotationPolicyRaw({ name: name, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest }, initOverrides);

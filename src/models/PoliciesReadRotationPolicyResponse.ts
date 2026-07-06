@@ -24,11 +24,41 @@ import { mapValues } from '../runtime';
  */
 export interface PoliciesReadRotationPolicyResponse {
     /**
-     * 
+     * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
+     * @type {boolean}
+     * @memberof PoliciesReadRotationPolicyResponse
+     */
+    disable_automated_rotation?: boolean;
+    /**
+     * The maximum number of retries per cycle allowed for rotation.
+     * @type {number}
+     * @memberof PoliciesReadRotationPolicyResponse
+     */
+    max_retries_per_cycle?: number;
+    /**
+     * The maximum number of retry cycles allowed for rotation.
+     * @type {number}
+     * @memberof PoliciesReadRotationPolicyResponse
+     */
+    max_retry_cycles?: number;
+    /**
+     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof PoliciesReadRotationPolicyResponse
      */
-    policy?: string;
+    rotation_period?: string;
+    /**
+     * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
+     * @type {string}
+     * @memberof PoliciesReadRotationPolicyResponse
+     */
+    rotation_schedule?: string;
+    /**
+     * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
+     * @type {string}
+     * @memberof PoliciesReadRotationPolicyResponse
+     */
+    rotation_window?: string;
 }
 
 /**
@@ -48,7 +78,12 @@ export function PoliciesReadRotationPolicyResponseFromJSONTyped(json: any, ignor
     }
     return {
         
-        'policy': json['policy'] == null ? undefined : json['policy'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'max_retries_per_cycle': json['max_retries_per_cycle'] == null ? undefined : json['max_retries_per_cycle'],
+        'max_retry_cycles': json['max_retry_cycles'] == null ? undefined : json['max_retry_cycles'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
     };
 }
 
@@ -63,7 +98,12 @@ export function PoliciesReadRotationPolicyResponseToJSONTyped(value?: PoliciesRe
 
     return {
         
-        'policy': value['policy'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
+        'max_retries_per_cycle': value['max_retries_per_cycle'],
+        'max_retry_cycles': value['max_retry_cycles'],
+        'rotation_period': value['rotation_period'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
     };
 }
 
