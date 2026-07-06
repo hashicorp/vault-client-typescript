@@ -17303,11 +17303,11 @@
       }
     },
     "/sys/policies/rotation/{name}": {
-      "description": "Read, Modify, or Delete a rotation retry policy.",
+      "description": "Read, Modify, or Delete a rotation policy.",
       "parameters": [
         {
           "name": "name",
-          "description": "The name of the retry policy.",
+          "description": "The name of the rotation policy.",
           "in": "path",
           "schema": {
             "type": "string"
@@ -17316,7 +17316,7 @@
         }
       ],
       "get": {
-        "summary": "Retrieve an existing retry policy.",
+        "summary": "Retrieve an existing rotation policy.",
         "operationId": "policies-read-rotation-policy",
         "tags": [
           "system"
@@ -17335,7 +17335,7 @@
         }
       },
       "post": {
-        "summary": "Add a new or update an existing rotation retry policy.",
+        "summary": "Create a new or update an existing rotation policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
@@ -17357,7 +17357,7 @@
         }
       },
       "delete": {
-        "summary": "Delete a retry policy.",
+        "summary": "Delete a rotation policy.",
         "operationId": "policies-delete-rotation-policy",
         "tags": [
           "system"
@@ -73333,8 +73333,31 @@
       "PoliciesReadRotationPolicyResponse": {
         "type": "object",
         "properties": {
-          "policy": {
-            "type": "string"
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+          },
+          "max_retries_per_cycle": {
+            "type": "integer",
+            "description": "The maximum number of retries per cycle allowed for rotation."
+          },
+          "max_retry_cycles": {
+            "type": "integer",
+            "description": "The maximum number of retry cycles allowed for rotation."
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration"
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
+            "format": "duration"
           }
         }
       },
@@ -73377,6 +73400,10 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
+          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -73384,6 +73411,20 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration"
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
+            "format": "duration"
           }
         },
         "required": [
