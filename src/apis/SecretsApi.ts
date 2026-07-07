@@ -2409,6 +2409,7 @@ export interface SecretsApiKvV2PatchMetadataPathOperationRequest {
 export interface SecretsApiKvV2ReadRequest {
     path: string;
     kv_v2_mount_path: string;
+    read_snapshot_id?: string;
 }
 
 export interface SecretsApiKvV2ReadConfigurationRequest {
@@ -2435,6 +2436,9 @@ export interface SecretsApiKvV2WriteOperationRequest {
     path: string;
     kv_v2_mount_path: string;
     KvV2WriteRequest: KvV2WriteRequest;
+    recover_snapshot_id?: string;
+    X_Vault_Recover_Snapshot_Id?: string;
+    X_Vault_Recover_Source_Path?: string;
 }
 
 export interface SecretsApiKvV2WriteMetadataOperationRequest {
@@ -13455,6 +13459,10 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['read_snapshot_id'] != null) {
+            queryParameters['read_snapshot_id'] = requestParameters['read_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, '')));
@@ -13470,8 +13478,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV2Read(path: string, kv_v2_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ReadResponse> {
-        const response = await this.kvV2ReadRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path }, initOverrides);
+    async kvV2Read(path: string, kv_v2_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ReadResponse> {
+        const response = await this.kvV2ReadRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
@@ -13662,9 +13670,21 @@ export class SecretsApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['recover_snapshot_id'] != null) {
+            queryParameters['recover_snapshot_id'] = requestParameters['recover_snapshot_id'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['X_Vault_Recover_Snapshot_Id'] != null) {
+            headerParameters['X-Vault-Recover-Snapshot-Id'] = String(requestParameters['X_Vault_Recover_Snapshot_Id']);
+        }
+
+        if (requestParameters['X_Vault_Recover_Source_Path'] != null) {
+            headerParameters['X-Vault-Recover-Source-Path'] = String(requestParameters['X_Vault_Recover_Source_Path']);
+        }
 
         const builtPath = `/{kv_v2_mount_path}/data/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, ''))).replace(`{${"kv_v2_mount_path"}}`, encodeURIComponent(String(requestParameters['kv_v2_mount_path']).replace(/\/+$/, '')));
         const response = await this.request({
@@ -13680,8 +13700,8 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
-    async kvV2Write(path: string, kv_v2_mount_path: string, KvV2WriteRequest: KvV2WriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2WriteResponse> {
-        const response = await this.kvV2WriteRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2WriteRequest: KvV2WriteRequest }, initOverrides);
+    async kvV2Write(path: string, kv_v2_mount_path: string, KvV2WriteRequest: KvV2WriteRequest, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2WriteResponse> {
+        const response = await this.kvV2WriteRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2WriteRequest: KvV2WriteRequest, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
         return await response.value();
     }
 

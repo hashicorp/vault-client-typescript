@@ -27915,6 +27915,16 @@
         "tags": [
           "secrets"
         ],
+        "parameters": [
+          {
+            "name": "read_snapshot_id",
+            "description": "Targets the read operation to the provided loaded snapshot Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -27932,6 +27942,33 @@
         "operationId": "kv-v2-write",
         "tags": [
           "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "recover_snapshot_id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "X-Vault-Recover-Snapshot-Id",
+            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Vault-Recover-Source-Path",
+            "description": "The source path to recover from. Only used if a snapshot ID is also supplied. If not specified, the source path is assumed to be the same as the request path.",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "required": true,
@@ -76225,6 +76262,10 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
+          "kms_key_id": {
+            "type": "string",
+            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
+          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -76232,6 +76273,11 @@
           "region": {
             "type": "string",
             "description": "AWS region where to manage secrets."
+          },
+          "regional_kms_keys": {
+            "type": "object",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "format": "kvpairs"
           },
           "role_arn": {
             "type": "string",
@@ -76475,6 +76521,10 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
+          "kms_key_id": {
+            "type": "string",
+            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
+          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -76487,6 +76537,11 @@
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
+          },
+          "regional_kms_keys": {
+            "type": "object",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
@@ -78362,6 +78417,10 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
+          "kms_key_id": {
+            "type": "string",
+            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
+          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -78369,6 +78428,11 @@
           "region": {
             "type": "string",
             "description": "AWS region where to manage secrets."
+          },
+          "regional_kms_keys": {
+            "type": "object",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "format": "kvpairs"
           },
           "role_arn": {
             "type": "string",
@@ -78612,6 +78676,10 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
+          "kms_key_id": {
+            "type": "string",
+            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
+          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -78624,6 +78692,11 @@
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
+          },
+          "regional_kms_keys": {
+            "type": "object",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
