@@ -96,6 +96,12 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      */
     identity_token_ttl?: string;
     /**
+     * KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional.
+     * @type {string}
+     * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
+     */
+    kms_key_id?: string;
+    /**
      * A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.
      * @type {object}
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
@@ -113,6 +119,12 @@ export interface SystemPatchSyncDestinationsGcpSmNameRequest {
      * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
      */
     purge?: boolean;
+    /**
+     * A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.
+     * @type {object}
+     * @memberof SystemPatchSyncDestinationsGcpSmNameRequest
+     */
+    regional_kms_keys?: object;
     /**
      * The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.
      * @type {Array<string>}
@@ -168,9 +180,11 @@ export function SystemPatchSyncDestinationsGcpSmNameRequestFromJSONTyped(json: a
         'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
         'identity_token_key': json['identity_token_key'] == null ? undefined : json['identity_token_key'],
         'identity_token_ttl': json['identity_token_ttl'] == null ? undefined : json['identity_token_ttl'],
+        'kms_key_id': json['kms_key_id'] == null ? undefined : json['kms_key_id'],
         'locational_kms_keys': json['locational_kms_keys'] == null ? undefined : json['locational_kms_keys'],
         'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
+        'regional_kms_keys': json['regional_kms_keys'] == null ? undefined : json['regional_kms_keys'],
         'replication_locations': json['replication_locations'] == null ? undefined : json['replication_locations'],
         'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
         'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
@@ -201,9 +215,11 @@ export function SystemPatchSyncDestinationsGcpSmNameRequestToJSONTyped(value?: S
         'identity_token_audience': value['identity_token_audience'],
         'identity_token_key': value['identity_token_key'],
         'identity_token_ttl': value['identity_token_ttl'],
+        'kms_key_id': value['kms_key_id'],
         'locational_kms_keys': value['locational_kms_keys'],
         'project_id': value['project_id'],
         'purge': value['purge'],
+        'regional_kms_keys': value['regional_kms_keys'],
         'replication_locations': value['replication_locations'],
         'secret_name_template': value['secret_name_template'],
         'service_account_email': value['service_account_email'],
