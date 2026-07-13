@@ -223,6 +223,7 @@ export interface IdentityApiDeleteRequest {
     attributes?: Array<string>;
     count?: number;
     excludedAttributes?: Array<string>;
+    filter?: string;
     startIndex?: number;
 }
 
@@ -434,6 +435,7 @@ export interface IdentityApiListRequest {
     attributes?: Array<string>;
     count?: number;
     excludedAttributes?: Array<string>;
+    filter?: string;
     startIndex?: number;
 }
 
@@ -773,6 +775,7 @@ export interface IdentityApiReadRequest {
     attributes?: Array<string>;
     count?: number;
     excludedAttributes?: Array<string>;
+    filter?: string;
     startIndex?: number;
 }
 
@@ -921,6 +924,10 @@ export class IdentityApi extends runtime.BaseAPI {
             queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
+        if (requestParameters['filter'] != null) {
+            queryParameters['filter'] = requestParameters['filter'];
+        }
+
         if (requestParameters['startIndex'] != null) {
             queryParameters['startIndex'] = requestParameters['startIndex'];
         }
@@ -940,8 +947,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async _delete(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this._deleteRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
+    async _delete(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this._deleteRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -2883,6 +2890,10 @@ export class IdentityApi extends runtime.BaseAPI {
             queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
+        if (requestParameters['filter'] != null) {
+            queryParameters['filter'] = requestParameters['filter'];
+        }
+
         if (requestParameters['startIndex'] != null) {
             queryParameters['startIndex'] = requestParameters['startIndex'];
         }
@@ -2902,8 +2913,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async list(attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.listRaw({ attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
+    async list(attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.listRaw({ attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
@@ -5808,6 +5819,10 @@ export class IdentityApi extends runtime.BaseAPI {
             queryParameters['excludedAttributes'] = requestParameters['excludedAttributes'];
         }
 
+        if (requestParameters['filter'] != null) {
+            queryParameters['filter'] = requestParameters['filter'];
+        }
+
         if (requestParameters['startIndex'] != null) {
             queryParameters['startIndex'] = requestParameters['startIndex'];
         }
@@ -5827,8 +5842,8 @@ export class IdentityApi extends runtime.BaseAPI {
 
     /**
      */
-    async read(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.readRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, startIndex: startIndex }, initOverrides);
+    async read(id: string, attributes?: Array<string>, count?: number, excludedAttributes?: Array<string>, filter?: string, startIndex?: number, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.readRaw({ id: id, attributes: attributes, count: count, excludedAttributes: excludedAttributes, filter: filter, startIndex: startIndex }, initOverrides);
         return await response.value();
     }
 
