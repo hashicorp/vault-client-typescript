@@ -11234,6 +11234,14 @@
             }
           },
           {
+            "name": "filter",
+            "description": "An optional filter expression to limit the results.",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "startIndex",
             "description": "The 1-based index of the first result to return.",
             "in": "query",
@@ -11310,6 +11318,14 @@
             "in": "query",
             "schema": {
               "type": "array"
+            }
+          },
+          {
+            "name": "filter",
+            "description": "An optional filter expression to limit the results.",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -11397,6 +11413,14 @@
             "in": "query",
             "schema": {
               "type": "array"
+            }
+          },
+          {
+            "name": "filter",
+            "description": "An optional filter expression to limit the results.",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -13125,6 +13149,41 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OauthResourceServerListProfilesResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/config/oauth-resource-server/id/{config_id}": {
+      "description": "This path responds to the following HTTP methods. GET /id/<config_id> Returns the configuration of a specific OAuth Resource Server Configuration profile identified by its stable config_id.",
+      "parameters": [
+        {
+          "name": "config_id",
+          "description": "The stable unique identifier (config_id) of the OAuth Resource Server Configuration profile.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-sudo": true,
+      "get": {
+        "summary": "Read an OAuth Resource Server Configuration profile by config ID.",
+        "description": "Returns the configuration of an OAuth Resource Server Configuration profile identified by its stable config_id.",
+        "operationId": "oauth-resource-server-read-profile-by-id",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerReadProfileByIdResponse"
                 }
               }
             }
@@ -51713,6 +51772,10 @@
               "type": "string"
             }
           },
+          "filter": {
+            "type": "string",
+            "description": "An optional filter expression to limit the results."
+          },
           "id": {
             "type": "string",
             "description": "ID of the group. If set, updates the corresponding existing entity."
@@ -58529,6 +58592,81 @@
           }
         }
       },
+      "OauthResourceServerReadProfileByIdResponse": {
+        "type": "object",
+        "properties": {
+          "audiences": {
+            "type": "array",
+            "description": "List of allowed audiences (aud claim).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "clock_skew_leeway": {
+            "type": "string",
+            "description": "Leeway for clock skew in seconds.",
+            "format": "duration"
+          },
+          "config_id": {
+            "type": "string",
+            "description": "Stable unique identifier for this OAuth Resource Server Configuration profile."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this profile is enabled for JWT validation."
+          },
+          "issuer_id": {
+            "type": "string",
+            "description": "The issuer ID (iss claim) to validate against."
+          },
+          "jwks_ca_pem": {
+            "type": "string",
+            "description": "Optional CA certificate for JWKS URI TLS validation."
+          },
+          "jwks_uri": {
+            "type": "string",
+            "description": "The JWKS URI to fetch public keys from."
+          },
+          "jwt_type": {
+            "type": "string",
+            "description": "The JWT type: 'access_token' or 'transaction_token'."
+          },
+          "no_default_policy": {
+            "type": "boolean",
+            "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
+          },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server."
+          },
+          "profile_name": {
+            "type": "string",
+            "description": "The name of the OAuth Resource Server Configuration profile."
+          },
+          "public_keys": {
+            "type": "array",
+            "description": "List of static public keys with key_id and pem fields.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "supported_algorithms": {
+            "type": "array",
+            "description": "List of supported signing algorithms.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "use_jwks": {
+            "type": "boolean",
+            "description": "If true, use JWKS URI for key validation."
+          },
+          "user_claim": {
+            "type": "string",
+            "description": "The claim to use as the user identifier."
+          }
+        }
+      },
       "OauthResourceServerReadProfileResponse": {
         "type": "object",
         "properties": {
@@ -59326,6 +59464,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "filter": {
+            "type": "string",
+            "description": "An optional filter expression to limit the results."
           },
           "startIndex": {
             "type": "integer",
@@ -81915,6 +82057,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "filter": {
+            "type": "string",
+            "description": "An optional filter expression to limit the results."
           },
           "startIndex": {
             "type": "integer",
