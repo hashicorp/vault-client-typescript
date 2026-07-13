@@ -2522,6 +2522,10 @@ export interface SecretsApiLdapLibraryReadRequest {
     ldap_mount_path: string;
 }
 
+export interface SecretsApiLdapLibraryReadCountRequest {
+    ldap_mount_path: string;
+}
+
 export interface SecretsApiLdapListDynamicRolesRequest {
     ldap_mount_path: string;
     list: SecretsApiLdapListDynamicRolesListEnum;
@@ -2574,8 +2578,16 @@ export interface SecretsApiLdapReadMigrationRequest {
     ldap_mount_path: string;
 }
 
+export interface SecretsApiLdapReadRoleCountRequest {
+    ldap_mount_path: string;
+}
+
 export interface SecretsApiLdapReadStaticRoleRequest {
     name: string;
+    ldap_mount_path: string;
+}
+
+export interface SecretsApiLdapReadStaticRoleCountRequest {
     ldap_mount_path: string;
 }
 
@@ -14377,6 +14389,42 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Returns the current count of LDAP service account library sets across all hierarchical paths.
+     * Read the total count of library sets
+     */
+    async ldapLibraryReadCountRaw(requestParameters: SecretsApiLdapLibraryReadCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapLibraryReadCount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/library-count`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Returns the current count of LDAP service account library sets across all hierarchical paths.
+     * Read the total count of library sets
+     */
+    async ldapLibraryReadCount(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapLibraryReadCountRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      */
     async ldapListDynamicRolesRaw(requestParameters: SecretsApiLdapListDynamicRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['ldap_mount_path'] == null) {
@@ -14808,6 +14856,42 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Returns the current count of LDAP dynamic roles across all hierarchical paths.
+     * Read the total count of dynamic roles
+     */
+    async ldapReadRoleCountRaw(requestParameters: SecretsApiLdapReadRoleCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadRoleCount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/role-count`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Returns the current count of LDAP dynamic roles across all hierarchical paths.
+     * Read the total count of dynamic roles
+     */
+    async ldapReadRoleCount(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadRoleCountRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      */
     async ldapReadStaticRoleRaw(requestParameters: SecretsApiLdapReadStaticRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -14843,6 +14927,42 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async ldapReadStaticRole(name: string, ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.ldapReadStaticRoleRaw({ name: name, ldap_mount_path: ldap_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns the current count of LDAP static roles across all hierarchical paths.
+     * Read the total count of static roles
+     */
+    async ldapReadStaticRoleCountRaw(requestParameters: SecretsApiLdapReadStaticRoleCountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ldap_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'ldap_mount_path',
+                'Required parameter "ldap_mount_path" was null or undefined when calling ldapReadStaticRoleCount().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{ldap_mount_path}/static-role-count`.replace(`{${"ldap_mount_path"}}`, encodeURIComponent(String(requestParameters['ldap_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Returns the current count of LDAP static roles across all hierarchical paths.
+     * Read the total count of static roles
+     */
+    async ldapReadStaticRoleCount(ldap_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.ldapReadStaticRoleCountRaw({ ldap_mount_path: ldap_mount_path }, initOverrides);
         return await response.value();
     }
 

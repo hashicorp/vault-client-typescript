@@ -42,6 +42,12 @@ export interface UpdateRequest {
      */
     excludedAttributes?: Array<string>;
     /**
+     * An optional filter expression to limit the results.
+     * @type {string}
+     * @memberof UpdateRequest
+     */
+    filter?: string;
+    /**
      * The 1-based index of the first result to return.
      * @type {number}
      * @memberof UpdateRequest
@@ -69,6 +75,7 @@ export function UpdateRequestFromJSONTyped(json: any, ignoreDiscriminator: boole
         'attributes': json['attributes'] == null ? undefined : json['attributes'],
         'count': json['count'] == null ? undefined : json['count'],
         'excludedAttributes': json['excludedAttributes'] == null ? undefined : json['excludedAttributes'],
+        'filter': json['filter'] == null ? undefined : json['filter'],
         'startIndex': json['startIndex'] == null ? undefined : json['startIndex'],
     };
 }
@@ -87,6 +94,7 @@ export function UpdateRequestToJSONTyped(value?: UpdateRequest | null, ignoreDis
         'attributes': value['attributes'],
         'count': value['count'],
         'excludedAttributes': value['excludedAttributes'],
+        'filter': value['filter'],
         'startIndex': value['startIndex'],
     };
 }

@@ -289,6 +289,7 @@ src/models/NomadConfigureAccessRequest.ts
 src/models/NomadConfigureLeaseRequest.ts
 src/models/NomadWriteRoleRequest.ts
 src/models/OauthResourceServerListProfilesResponse.ts
+src/models/OauthResourceServerReadProfileByIdResponse.ts
 src/models/OauthResourceServerReadProfileResponse.ts
 src/models/OauthResourceServerUpdateProfileRequest.ts
 src/models/OciConfigureRequest.ts
@@ -671,6 +672,7 @@ src/models/RekeyVerificationCancelResponse.ts
 src/models/RekeyVerificationReadProgressResponse.ts
 src/models/RekeyVerificationUpdateRequest.ts
 src/models/RekeyVerificationUpdateResponse.ts
+src/models/ReleaseInfoReadReadResponse.ts
 src/models/ReloadPluginsRequest.ts
 src/models/ReloadPluginsResponse.ts
 src/models/RemountRequest.ts

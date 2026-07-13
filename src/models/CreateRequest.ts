@@ -42,6 +42,12 @@ export interface CreateRequest {
      */
     excludedAttributes?: Array<string>;
     /**
+     * An optional filter expression to limit the results.
+     * @type {string}
+     * @memberof CreateRequest
+     */
+    filter?: string;
+    /**
      * ID of the group. If set, updates the corresponding existing entity.
      * @type {string}
      * @memberof CreateRequest
@@ -75,6 +81,7 @@ export function CreateRequestFromJSONTyped(json: any, ignoreDiscriminator: boole
         'attributes': json['attributes'] == null ? undefined : json['attributes'],
         'count': json['count'] == null ? undefined : json['count'],
         'excludedAttributes': json['excludedAttributes'] == null ? undefined : json['excludedAttributes'],
+        'filter': json['filter'] == null ? undefined : json['filter'],
         'id': json['id'] == null ? undefined : json['id'],
         'startIndex': json['startIndex'] == null ? undefined : json['startIndex'],
     };
@@ -94,6 +101,7 @@ export function CreateRequestToJSONTyped(value?: CreateRequest | null, ignoreDis
         'attributes': value['attributes'],
         'count': value['count'],
         'excludedAttributes': value['excludedAttributes'],
+        'filter': value['filter'],
         'id': value['id'],
         'startIndex': value['startIndex'],
     };

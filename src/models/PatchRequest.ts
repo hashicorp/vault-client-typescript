@@ -42,6 +42,12 @@ export interface PatchRequest {
      */
     excludedAttributes?: Array<string>;
     /**
+     * An optional filter expression to limit the results.
+     * @type {string}
+     * @memberof PatchRequest
+     */
+    filter?: string;
+    /**
      * The 1-based index of the first result to return.
      * @type {number}
      * @memberof PatchRequest
@@ -69,6 +75,7 @@ export function PatchRequestFromJSONTyped(json: any, ignoreDiscriminator: boolea
         'attributes': json['attributes'] == null ? undefined : json['attributes'],
         'count': json['count'] == null ? undefined : json['count'],
         'excludedAttributes': json['excludedAttributes'] == null ? undefined : json['excludedAttributes'],
+        'filter': json['filter'] == null ? undefined : json['filter'],
         'startIndex': json['startIndex'] == null ? undefined : json['startIndex'],
     };
 }
@@ -87,6 +94,7 @@ export function PatchRequestToJSONTyped(value?: PatchRequest | null, ignoreDiscr
         'attributes': value['attributes'],
         'count': value['count'],
         'excludedAttributes': value['excludedAttributes'],
+        'filter': value['filter'],
         'startIndex': value['startIndex'],
     };
 }
