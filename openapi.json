@@ -3,7 +3,7 @@
   "info": {
     "title": "HashiCorp Vault API",
     "description": "HTTP API that gives you full access to Vault. All API routes are prefixed with `/v1/`.",
-    "version": "2.1.0",
+    "version": "3.0.0",
     "license": {
       "name": "Mozilla Public License 2.0",
       "url": "https://www.mozilla.org/en-US/MPL/2.0"
@@ -8480,6 +8480,7 @@
     "/identity/entity-alias/id/": {
       "description": "List all the alias IDs.",
       "get": {
+        "summary": "List all the alias IDs.",
         "operationId": "entity-list-aliases-by-id",
         "tags": [
           "identity"
@@ -8504,7 +8505,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EntityListAliasesByIdResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -8887,6 +8888,7 @@
     "/identity/group-alias/id/": {
       "description": "List all the group alias IDs.",
       "get": {
+        "summary": "List all the group alias IDs.",
         "operationId": "group-list-aliases-by-id",
         "tags": [
           "identity"
@@ -8911,7 +8913,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GroupListAliasesByIdResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -11846,422 +11848,6 @@
               "type": "integer"
             }
           }
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/tpm": {
-      "description": "Create a new TPM record.",
-      "post": {
-        "operationId": "tpm-create",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmCreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/tpm/id/": {
-      "description": "List all TPM record IDs.",
-      "get": {
-        "operationId": "tpm-list-by-id",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/tpm/id/{id}": {
-      "description": "Update, read or delete a TPM record using TPM ID.",
-      "parameters": [
-        {
-          "name": "id",
-          "description": "ID of the TPM record. If set, updates the corresponding existing TPM.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "tpm-read-by-id",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "tpm-update-by-id",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmUpdateByIdRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "tpm-delete-by-id",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/tpm/name/": {
-      "description": "List all TPM record names.",
-      "get": {
-        "operationId": "tpm-list-by-name",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/tpm/name/{name}": {
-      "description": "Update, read or delete a TPM record using TPM name.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the TPM record.",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "tpm-read-by-name",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "tpm-update-by-name",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmUpdateByNameRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "tpm-delete-by-name",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/tpmgroup": {
-      "description": "Create a new TPMGroup or update an existing TPMGroup.",
-      "post": {
-        "operationId": "tpmgroup-create",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmgroupCreateRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/identity/tpmgroup/id/": {
-      "description": "List all TPMGroup IDs.",
-      "get": {
-        "operationId": "tpmgroup-list-by-id",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/tpmgroup/id/{id}": {
-      "description": "Update, read or delete a TPMGroup using TPMGroup ID.",
-      "parameters": [
-        {
-          "name": "id",
-          "description": "ID of the TPMGroup",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "tpmgroup-read-by-id",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "tpmgroup-update-by-id",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmgroupUpdateByIdRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "tpmgroup-delete-by-id",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "204": {
-            "description": "empty body"
-          }
-        }
-      }
-    },
-    "/identity/tpmgroup/name/": {
-      "description": "List all TPMGroup names.",
-      "get": {
-        "operationId": "tpmgroup-list-by-name",
-        "tags": [
-          "identity"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/identity/tpmgroup/name/{name}": {
-      "description": "Update, read or delete a TPMGroup using TPMGroup name.",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the TPMGroup",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "tpmgroup-read-by-name",
-        "tags": [
-          "identity"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "operationId": "tpmgroup-update-by-name",
-        "tags": [
-          "identity"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TpmgroupUpdateByNameRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "operationId": "tpmgroup-delete-by-name",
-        "tags": [
-          "identity"
         ],
         "responses": {
           "204": {
@@ -17303,11 +16889,11 @@
       }
     },
     "/sys/policies/rotation/{name}": {
-      "description": "Read, Modify, or Delete a rotation policy.",
+      "description": "Read, Modify, or Delete a rotation retry policy.",
       "parameters": [
         {
           "name": "name",
-          "description": "The name of the rotation policy.",
+          "description": "The name of the retry policy.",
           "in": "path",
           "schema": {
             "type": "string"
@@ -17316,7 +16902,7 @@
         }
       ],
       "get": {
-        "summary": "Retrieve an existing rotation policy.",
+        "summary": "Retrieve an existing retry policy.",
         "operationId": "policies-read-rotation-policy",
         "tags": [
           "system"
@@ -17335,7 +16921,7 @@
         }
       },
       "post": {
-        "summary": "Create a new or update an existing rotation policy.",
+        "summary": "Add a new or update an existing rotation retry policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
@@ -17357,7 +16943,7 @@
         }
       },
       "delete": {
-        "summary": "Delete a rotation policy.",
+        "summary": "Delete a retry policy.",
         "operationId": "policies-delete-rotation-policy",
         "tags": [
           "system"
@@ -18387,6 +17973,29 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RekeyVerificationCancelResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/release-info": {
+      "description": "Fetch release information",
+      "get": {
+        "summary": "Fetch release information from GitHub",
+        "description": "Returns parsed release information including breaking changes, new behavior, and known issues for each version.",
+        "operationId": "release-info-read-read",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReleaseInfoReadReadResponse"
                 }
               }
             }
@@ -22017,7 +21626,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegistrationListByIdResponse"
+                  "$ref": "#/components/schemas/StandardListResponse"
                 }
               }
             }
@@ -27915,16 +27524,6 @@
         "tags": [
           "secrets"
         ],
-        "parameters": [
-          {
-            "name": "read_snapshot_id",
-            "description": "Targets the read operation to the provided loaded snapshot Id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -27942,33 +27541,6 @@
         "operationId": "kv-v2-write",
         "tags": [
           "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "recover_snapshot_id",
-            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": true
-          },
-          {
-            "name": "X-Vault-Recover-Snapshot-Id",
-            "description": "Triggers a recover operation using the given snapshot ID. Request body is ignored when a recover operation is requested.",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "X-Vault-Recover-Source-Path",
-            "description": "The source path to recover from. Only used if a snapshot ID is also supplied. If not specified, the source path is assumed to be the same as the request path.",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "required": true,
@@ -30041,25 +29613,18 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "operationId": "pki-external-ca-read-config-acme-account",
+        "operationId": "pki-external-ca-read-config-acme-account-name",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadConfigAcmeAccountResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "post": {
-        "operationId": "pki-external-ca-write-config-acme-account",
+        "operationId": "pki-external-ca-write-config-acme-account-name",
         "tags": [
           "secrets"
         ],
@@ -30068,32 +29633,25 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountRequest"
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountNameRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "delete": {
-        "operationId": "pki-external-ca-delete-config-acme-account",
+        "operationId": "pki-external-ca-delete-config-acme-account-name",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "empty body"
           }
         }
       }
@@ -30123,7 +29681,7 @@
       ],
       "x-vault-createSupported": true,
       "post": {
-        "operationId": "pki-external-ca-create-config-acme-account-import",
+        "operationId": "pki-external-ca-create-config-acme-account-name-import",
         "tags": [
           "secrets"
         ],
@@ -30132,21 +29690,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaCreateConfigAcmeAccountImportRequest"
+                "$ref": "#/components/schemas/PkiExternalCaCreateConfigAcmeAccountNameImportRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaCreateConfigAcmeAccountImportResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -30175,7 +29726,7 @@
         }
       ],
       "post": {
-        "operationId": "pki-external-ca-write-config-acme-account-rotate-key",
+        "operationId": "pki-external-ca-write-config-acme-account-name-rotate-key",
         "tags": [
           "secrets"
         ],
@@ -30184,620 +29735,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/": {
-      "description": "List all DNS configurations",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-config-dns",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaListConfigDnsResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/aws-route53/": {
-      "description": "List aws-route53 DNS configurations",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-config-dns-aws-route53",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/aws-route53/{name}": {
-      "description": "Configure AWS Route53 DNS provider for DNS-01 ACME challenges",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the aws-route53 DNS configuration",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "pki-external-ca-read-config-dns-aws-route53",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsAwsRoute53Response"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "pki-external-ca-write-config-dns-aws-route53",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAwsRoute53Request"
+                "$ref": "#/components/schemas/PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAwsRoute53Response"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "pki-external-ca-delete-config-dns-aws-route53",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/azure-dns/": {
-      "description": "List azure-dns DNS configurations",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-config-dns-azure-dns",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/azure-dns/{name}": {
-      "description": "Configure Azure DNS provider for DNS-01 ACME challenges",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the azure-dns DNS configuration",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "pki-external-ca-read-config-dns-azure-dns",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsAzureDnsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "pki-external-ca-write-config-dns-azure-dns",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAzureDnsRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsAzureDnsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "pki-external-ca-delete-config-dns-azure-dns",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/": {
-      "description": "List google-cloud-dns DNS configurations",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-config-dns-google-cloud-dns",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/google-cloud-dns/{name}": {
-      "description": "Configure Google Cloud DNS provider for DNS-01 ACME challenges",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the google-cloud-dns DNS configuration",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "pki-external-ca-read-config-dns-google-cloud-dns",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsGoogleCloudDnsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "pki-external-ca-write-config-dns-google-cloud-dns",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "pki-external-ca-delete-config-dns-google-cloud-dns",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/rfc2136/": {
-      "description": "List rfc2136 DNS configurations",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-config-dns-rfc2136",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/config/dns/rfc2136/{name}": {
-      "description": "Configure RFC2136 DNS provider for DNS-01 ACME challenges",
-      "parameters": [
-        {
-          "name": "name",
-          "description": "Name of the rfc2136 DNS configuration",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        },
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "x-vault-createSupported": true,
-      "get": {
-        "operationId": "pki-external-ca-read-config-dns-rfc2136",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadConfigDnsRfc2136Response"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "pki-external-ca-write-config-dns-rfc2136",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsRfc2136Request"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteConfigDnsRfc2136Response"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "pki-external-ca-delete-config-dns-rfc2136",
-        "tags": [
-          "secrets"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      }
-    },
-    "/{pki_external_ca_mount_path}/dns/test/workflow": {
-      "description": "Tests a DNS provider by creating a TXT record",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "post": {
-        "operationId": "pki-external-ca-write-dns-test-workflow",
-        "tags": [
-          "secrets"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteDnsTestWorkflowRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteDnsTestWorkflowResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -30826,20 +29771,13 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-lookup-cert",
+        "operationId": "pki-external-ca-read-lookup-cert-serial",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadLookupCertResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -30868,26 +29806,18 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-lookup-order",
+        "operationId": "pki-external-ca-read-lookup-order-order_id",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadLookupOrderResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/{pki_external_ca_mount_path}/lookup/orders/": {
-      "description": "List all orders",
       "parameters": [
         {
           "name": "pki_external_ca_mount_path",
@@ -30933,55 +29863,7 @@
         }
       }
     },
-    "/{pki_external_ca_mount_path}/lookup/orders/recent/": {
-      "description": "List recently created orders within a specified time window",
-      "parameters": [
-        {
-          "name": "pki_external_ca_mount_path",
-          "description": "Path that the backend was mounted at",
-          "in": "path",
-          "schema": {
-            "type": "string",
-            "default": "pki-external-ca"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "pki-external-ca-list-lookup-orders-recent",
-        "tags": [
-          "secrets"
-        ],
-        "parameters": [
-          {
-            "name": "list",
-            "description": "Must be set to `true`",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "true"
-              ]
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaListLookupOrdersRecentResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/{pki_external_ca_mount_path}/role/": {
-      "description": "List all roles",
       "parameters": [
         {
           "name": "pki_external_ca_mount_path",
@@ -31052,25 +29934,18 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "operationId": "pki-external-ca-read-role",
+        "operationId": "pki-external-ca-read-role-name",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadRoleResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "post": {
-        "operationId": "pki-external-ca-write-role",
+        "operationId": "pki-external-ca-write-role-name",
         "tags": [
           "secrets"
         ],
@@ -31079,38 +29954,30 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteRoleRequest"
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteRoleResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "delete": {
-        "operationId": "pki-external-ca-delete-role",
+        "operationId": "pki-external-ca-delete-role-name",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "empty body"
           }
         }
       }
     },
     "/{pki_external_ca_mount_path}/role/{name}/active-orders/": {
-      "description": "List active orders for a role",
       "parameters": [
         {
           "name": "name",
@@ -31133,7 +30000,7 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-list-role-active-orders",
+        "operationId": "pki-external-ca-list-role-name-active-orders",
         "tags": [
           "secrets"
         ],
@@ -31189,20 +30056,13 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-role-cached",
+        "operationId": "pki-external-ca-read-role-name-cached",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadRoleCachedResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -31231,7 +30091,7 @@
         }
       ],
       "post": {
-        "operationId": "pki-external-ca-write-role-new-order",
+        "operationId": "pki-external-ca-write-role-name-new-order",
         "tags": [
           "secrets"
         ],
@@ -31240,21 +30100,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNewOrderRequest"
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameNewOrderRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaWriteRoleNewOrderResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -31292,26 +30145,19 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-role-order-challenge",
+        "operationId": "pki-external-ca-read-role-name-order-order_id-challenge",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadRoleOrderChallengeResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
     },
     "/{pki_external_ca_mount_path}/role/{name}/order/{order_id}/fetch-cert": {
-      "description": "Fetch the certificate for a completed order",
+      "description": "Report ready challenge for one of order's identifiers",
       "parameters": [
         {
           "name": "name",
@@ -31343,20 +30189,13 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-role-order-fetch-cert",
+        "operationId": "pki-external-ca-read-role-name-order-order_id-fetch-cert",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadRoleOrderFetchCertResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -31394,7 +30233,7 @@
         }
       ],
       "post": {
-        "operationId": "pki-external-ca-write-role-order-fulfilled-challenge",
+        "operationId": "pki-external-ca-write-role-name-order-order_id-fulfilled-challenge",
         "tags": [
           "secrets"
         ],
@@ -31403,14 +30242,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteRoleOrderFulfilledChallengeRequest"
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameOrderOrder_idFulfilledChallengeRequest"
               }
             }
           }
         },
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -31448,7 +30287,7 @@
         }
       ],
       "post": {
-        "operationId": "pki-external-ca-write-role-order-revoke",
+        "operationId": "pki-external-ca-write-role-name-order-order_id-revoke",
         "tags": [
           "secrets"
         ],
@@ -31457,14 +30296,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PkiExternalCaWriteRoleOrderRevokeRequest"
+                "$ref": "#/components/schemas/PkiExternalCaWriteRoleNameOrderOrder_idRevokeRequest"
               }
             }
           }
         },
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -31502,20 +30341,13 @@
         }
       ],
       "get": {
-        "operationId": "pki-external-ca-read-role-order-status",
+        "operationId": "pki-external-ca-read-role-name-order-order_id-status",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PkiExternalCaReadRoleOrderStatusResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -51158,14 +49990,6 @@
               "value": "admin"
             }
           },
-          "force_new_client": {
-            "type": "boolean",
-            "description": "When set to true, forces creation of a new CF client for every login request instead of using a cached shared client.",
-            "default": false,
-            "x-vault-displayAttrs": {
-              "name": "Force New Client"
-            }
-          },
           "identity_ca_certificates": {
             "type": "array",
             "description": "The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.",
@@ -52143,23 +50967,6 @@
           "scim_client_id": {
             "type": "string",
             "description": "SCIM Client ID of the entity"
-          }
-        }
-      },
-      "EntityListAliasesByIdResponse": {
-        "type": "object",
-        "properties": {
-          "key_info": {
-            "type": "object",
-            "description": "Alias details keyed by the alias id",
-            "format": "map"
-          },
-          "keys": {
-            "type": "array",
-            "description": "A list of alias ids",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -53521,23 +52328,6 @@
           "type": {
             "type": "string",
             "description": "Type of the group, 'internal' or 'external'. Defaults to 'internal'"
-          }
-        }
-      },
-      "GroupListAliasesByIdResponse": {
-        "type": "object",
-        "properties": {
-          "key_info": {
-            "type": "object",
-            "description": "Group alias details keyed by the group alias id",
-            "format": "map"
-          },
-          "keys": {
-            "type": "array",
-            "description": "A list of group alias ids",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -58568,10 +57358,6 @@
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
           },
-          "optional_authorization_details": {
-            "type": "boolean",
-            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory."
-          },
           "profile_name": {
             "type": "string",
             "description": "The name of the OAuth Resource Server Configuration profile."
@@ -58640,10 +57426,6 @@
           "no_default_policy": {
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
-          },
-          "optional_authorization_details": {
-            "type": "boolean",
-            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory."
           },
           "public_keys": {
             "type": "array",
@@ -60477,26 +59259,20 @@
           }
         }
       },
-      "PkiExternalCaCreateConfigAcmeAccountImportRequest": {
+      "PkiExternalCaCreateConfigAcmeAccountNameImportRequest": {
         "type": "object",
         "properties": {
           "account_key": {
             "type": "string",
-            "description": "PEM-encoded private key for the existing ACME account."
+            "description": "PEM encoded private key for the ACME account"
           },
           "directory_url": {
             "type": "string",
-            "description": "The ACME directory URL where you registered the account.",
-            "x-vault-displayAttrs": {
-              "name": "Directory URL"
-            }
+            "description": "ACME Directory URL"
           },
           "trusted_ca": {
             "type": "string",
-            "description": "PEM-encoded trusted CA certificates for the ACME server.",
-            "x-vault-displayAttrs": {
-              "name": "Trusted CA"
-            }
+            "description": "Trusted CA certificates for the ACME server"
           }
         },
         "required": [
@@ -60504,696 +59280,24 @@
           "directory_url"
         ]
       },
-      "PkiExternalCaCreateConfigAcmeAccountImportResponse": {
-        "type": "object",
-        "properties": {
-          "account_keys": {
-            "type": "object",
-            "description": "Map of account key versions with their metadata (key_type, key_version, key_creation_date)",
-            "format": "map"
-          },
-          "active_key_version": {
-            "type": "integer",
-            "description": "The currently active key version for this ACME account"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "directory_url": {
-            "type": "string",
-            "description": "The ACME directory URL where you registered the account.",
-            "x-vault-displayAttrs": {
-              "name": "Directory URL"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the account"
-          },
-          "trusted_ca": {
-            "type": "string",
-            "description": "PEM-encoded trusted CA certificates for the ACME server.",
-            "x-vault-displayAttrs": {
-              "name": "Trusted CA"
-            }
-          }
-        }
-      },
-      "PkiExternalCaListConfigDnsResponse": {
-        "type": "object",
-        "properties": {
-          "key_info": {
-            "type": "object",
-            "description": "Name and type for each DNS provider configuration",
-            "format": "map"
-          },
-          "keys": {
-            "type": "array",
-            "description": "List of DNS provider configurations in format 'type/name'",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiExternalCaListLookupOrdersRecentResponse": {
-        "type": "object",
-        "properties": {
-          "key_info": {
-            "type": "object",
-            "description": "Key info with order metadata.",
-            "format": "map"
-          },
-          "keys": {
-            "type": "array",
-            "description": "A list of order IDs",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "PkiExternalCaReadConfigAcmeAccountResponse": {
-        "type": "object",
-        "properties": {
-          "account_keys": {
-            "type": "object",
-            "description": "Map of account key versions with their metadata (key_type, key_version, key_creation_date)",
-            "format": "map"
-          },
-          "active_key_version": {
-            "type": "integer",
-            "description": "The currently active key version for this ACME account"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "directory_url": {
-            "type": "string",
-            "description": "The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)"
-          },
-          "email_contacts": {
-            "type": "array",
-            "description": "List of email addresses for account notifications. You must provide at least one email.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the account"
-          },
-          "trusted_ca": {
-            "type": "string",
-            "description": "PEM-encoded trusted CA certificates for validating the TLS certificate provided by the ACME server. Use trusted_ca for private ACME servers with custom CAs.",
-            "x-vault-displayAttrs": {
-              "name": "Trusted CA"
-            }
-          }
-        }
-      },
-      "PkiExternalCaReadConfigDnsAwsRoute53Response": {
-        "type": "object",
-        "properties": {
-          "access_key_id": {
-            "type": "string",
-            "description": "AWS access key ID for Route53 API access"
-          },
-          "assume_role_arn": {
-            "type": "string",
-            "description": "AWS IAM role ARN to assume for Route53 operations"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "external_id": {
-            "type": "string",
-            "description": "External ID for AWS STS AssumeRole"
-          },
-          "hosted_zone_id": {
-            "type": "string",
-            "description": "AWS Route53 hosted zone ID"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the aws-route53 DNS configuration"
-          },
-          "region": {
-            "type": "string",
-            "description": "AWS region for Route53 operations"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaReadConfigDnsAzureDnsResponse": {
-        "type": "object",
-        "properties": {
-          "client_id": {
-            "type": "string",
-            "description": "Azure service principal client ID"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "environment": {
-            "type": "string",
-            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the azure-dns DNS configuration"
-          },
-          "resource_group_name": {
-            "type": "string",
-            "description": "Azure resource group name containing the DNS zone"
-          },
-          "subscription_id": {
-            "type": "string",
-            "description": "Azure subscription ID"
-          },
-          "tenant_id": {
-            "type": "string",
-            "description": "Azure tenant ID"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "1m"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "Azure DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaReadConfigDnsGoogleCloudDnsResponse": {
-        "type": "object",
-        "properties": {
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "impersonate_service_account": {
-            "type": "string",
-            "description": "Service account email to impersonate"
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the google-cloud-dns DNS configuration"
-          },
-          "project": {
-            "type": "string",
-            "description": "GCP project name"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "10s"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "GCP DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaReadConfigDnsRfc2136Response": {
-        "type": "object",
-        "properties": {
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the rfc2136 DNS configuration"
-          },
-          "nameserver": {
-            "type": "string",
-            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
-          },
-          "tsig_algorithm": {
-            "type": "string",
-            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
-          },
-          "tsig_key_name": {
-            "type": "string",
-            "description": "TSIG key name for authenticated DNS updates"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaReadLookupCertResponse": {
-        "type": "object",
-        "properties": {
-          "identifiers": {
-            "type": "array",
-            "description": "List of identifiers in the certificate",
-            "items": {
-              "type": "string"
-            }
-          },
-          "not_after": {
-            "type": "string",
-            "description": "Certificate validity end time (RFC3339)"
-          },
-          "not_before": {
-            "type": "string",
-            "description": "Certificate validity start time (RFC3339)"
-          },
-          "order_id": {
-            "type": "string",
-            "description": "ID of the order that issued this certificate"
-          },
-          "order_status": {
-            "type": "string",
-            "description": "Status of the order that issued this certificate"
-          },
-          "role_name": {
-            "type": "string",
-            "description": "Name of the role used for this certificate"
-          }
-        }
-      },
-      "PkiExternalCaReadLookupOrderResponse": {
-        "type": "object",
-        "properties": {
-          "challenges": {
-            "type": "object",
-            "description": "Map of identifier to challenge details",
-            "format": "map"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Order creation timestamp (RFC3339)"
-          },
-          "csr": {
-            "type": "string",
-            "description": "CSR used for the order (if CSR workflow)"
-          },
-          "expires": {
-            "type": "string",
-            "description": "Order expiration timestamp (RFC3339)"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of identifiers in the order",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_error": {
-            "type": "string",
-            "description": "Last error message, if any"
-          },
-          "last_update": {
-            "type": "string",
-            "description": "Last update timestamp (RFC3339)"
-          },
-          "next_work_date": {
-            "type": "string",
-            "description": "Next scheduled work timestamp (RFC3339)"
-          },
-          "order_status": {
-            "type": "string",
-            "description": "Current status of the order"
-          },
-          "role_name": {
-            "type": "string",
-            "description": "Name of the role"
-          },
-          "serial_number": {
-            "type": "string",
-            "description": "Certificate serial number (if completed)"
-          }
-        }
-      },
-      "PkiExternalCaReadRoleCachedResponse": {
-        "type": "object",
-        "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "Authority key identifier"
-          },
-          "ca_chain": {
-            "type": "array",
-            "description": "CA certificate chain",
-            "items": {
-              "type": "string"
-            }
-          },
-          "certificate": {
-            "type": "string",
-            "description": "The certificate in the requested format"
-          },
-          "certificate_format": {
-            "type": "string",
-            "description": "Format of the returned certificate"
-          },
-          "not_after": {
-            "type": "string",
-            "description": "Certificate validity end time (RFC3339)"
-          },
-          "not_before": {
-            "type": "string",
-            "description": "Certificate validity start time (RFC3339)"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key (only for identifier-based workflows)"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type (only for identifier-based workflows)"
-          },
-          "serial_number": {
-            "type": "string",
-            "description": "Certificate serial number"
-          }
-        }
-      },
-      "PkiExternalCaReadRoleOrderChallengeResponse": {
-        "type": "object",
-        "properties": {
-          "challenge_auth": {
-            "type": "string",
-            "description": "Challenge authorization value to be used for validation"
-          },
-          "challenge_status": {
-            "type": "string",
-            "description": "Current status of the challenge"
-          },
-          "challenge_token": {
-            "type": "string",
-            "description": "ACME challenge token"
-          },
-          "expires": {
-            "type": "string",
-            "description": "Challenge expiration timestamp (RFC3339)"
-          }
-        }
-      },
-      "PkiExternalCaReadRoleOrderFetchCertResponse": {
-        "type": "object",
-        "properties": {
-          "authority_key_id": {
-            "type": "string",
-            "description": "Authority key identifier"
-          },
-          "ca_chain": {
-            "type": "array",
-            "description": "CA certificate chain",
-            "items": {
-              "type": "string"
-            }
-          },
-          "certificate": {
-            "type": "string",
-            "description": "The certificate in the requested format"
-          },
-          "certificate_format": {
-            "type": "string",
-            "description": "Format of the returned certificate"
-          },
-          "not_after": {
-            "type": "string",
-            "description": "Certificate validity end time (RFC3339)"
-          },
-          "not_before": {
-            "type": "string",
-            "description": "Certificate validity start time (RFC3339)"
-          },
-          "private_key": {
-            "type": "string",
-            "description": "Private key (only for identifier-based workflows)"
-          },
-          "private_key_type": {
-            "type": "string",
-            "description": "Private key type (only for identifier-based workflows)"
-          },
-          "serial_number": {
-            "type": "string",
-            "description": "Certificate serial number"
-          }
-        }
-      },
-      "PkiExternalCaReadRoleOrderStatusResponse": {
-        "type": "object",
-        "properties": {
-          "challenges": {
-            "type": "object",
-            "description": "Map of identifier to challenge details",
-            "format": "map"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Order creation timestamp (RFC3339)"
-          },
-          "csr": {
-            "type": "string",
-            "description": "CSR used for the order (if CSR workflow)"
-          },
-          "expires": {
-            "type": "string",
-            "description": "Order expiration timestamp (RFC3339)"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of identifiers in the order",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_error": {
-            "type": "string",
-            "description": "Last error message, if any"
-          },
-          "last_update": {
-            "type": "string",
-            "description": "Order's last update timestamp (RFC3339)"
-          },
-          "next_work_date": {
-            "type": "string",
-            "description": "Next scheduled work timestamp (RFC3339)"
-          },
-          "order_status": {
-            "type": "string",
-            "description": "Current status of the order"
-          },
-          "role_name": {
-            "type": "string",
-            "description": "Name of the role"
-          },
-          "serial_number": {
-            "type": "string",
-            "description": "Certificate serial number (if completed)"
-          }
-        }
-      },
-      "PkiExternalCaReadRoleResponse": {
-        "type": "object",
-        "properties": {
-          "acme_account_name": {
-            "type": "string",
-            "description": "The ACME account to use when validating certificates"
-          },
-          "allowed_challenge_types": {
-            "type": "array",
-            "description": "The list of challenge types that are allowed to be used.",
-            "items": {
-              "type": "string"
-            },
-            "enum": [
-              "http-01",
-              "dns-01",
-              "tls-alpn-01"
-            ],
-            "default": [
-              "http-01",
-              "dns-01",
-              "tls-alpn-01"
-            ]
-          },
-          "allowed_domain_options": {
-            "type": "array",
-            "description": "A list of keyword options that influence how values within allowed_domains are interpreted against the requested set of identifiers from the client.",
-            "items": {
-              "type": "string"
-            },
-            "enum": [
-              "bare_domains",
-              "subdomains",
-              "wildcards",
-              "globs"
-            ]
-          },
-          "allowed_domains": {
-            "type": "array",
-            "description": "A list of domains the role will accept certificates for. May contain templates, as with ACL Path Templating.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "csr_generate_key_type": {
-            "type": "string",
-            "description": "The key type and size/parameters to use when we generate a new key if running in the identifier workflow.",
-            "enum": [
-              "ec-256",
-              "ec-384",
-              "ec-521",
-              "rsa-2048",
-              "rsa-4096"
-            ],
-            "default": "ec-256",
-            "x-vault-displayAttrs": {
-              "name": "CSR generated key type"
-            }
-          },
-          "csr_identifier_population": {
-            "type": "string",
-            "description": "The technique used to populate a CSR from the provided identifiers in the identifier workflow.",
-            "enum": [
-              "cn_first",
-              "sans_only"
-            ],
-            "default": "cn_first",
-            "x-vault-displayAttrs": {
-              "name": "CSR identifier population"
-            }
-          },
-          "dns_provider_name": {
-            "type": "string",
-            "description": "The DNS provider configuration to use for DNS-01 challenges (optional)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider name"
-            }
-          },
-          "dns_provider_type": {
-            "type": "string",
-            "description": "The DNS provider type (required when dns_provider_name is provided)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider type"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the role"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigAcmeAccountRequest": {
+      "PkiExternalCaWriteConfigAcmeAccountNameRequest": {
         "type": "object",
         "properties": {
           "directory_url": {
             "type": "string",
-            "description": "The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)"
+            "description": "ACME Directory URL"
           },
           "eab_key": {
             "type": "string",
-            "description": "External Account Binding (EAB) key (base64 URL encoded) Some ACME servers require an EAB key for account registration.",
-            "x-vault-displayAttrs": {
-              "name": "EAB Key"
-            }
+            "description": "A base64 URL encoded external binding token to create the initial account"
           },
           "eab_kid": {
             "type": "string",
-            "description": "External Account Binding (EAB) key identifier. Some ACME servers require an EAB key identifier for account registration.",
-            "x-vault-displayAttrs": {
-              "name": "EAB Key ID"
-            }
+            "description": "The external binding key id to create the initial account"
           },
           "email_contacts": {
             "type": "array",
-            "description": "List of email addresses for account notifications. You must provide at least one email.",
+            "description": "EmailContacts email addresses",
             "items": {
               "type": "string"
             }
@@ -61213,10 +59317,7 @@
           },
           "trusted_ca": {
             "type": "string",
-            "description": "PEM-encoded trusted CA certificates for validating the TLS certificate provided by the ACME server. Use trusted_ca for private ACME servers with custom CAs.",
-            "x-vault-displayAttrs": {
-              "name": "Trusted CA"
-            }
+            "description": "Trusted CA certificates for the ACME server"
           }
         },
         "required": [
@@ -61224,62 +59325,16 @@
           "email_contacts"
         ]
       },
-      "PkiExternalCaWriteConfigAcmeAccountResponse": {
-        "type": "object",
-        "properties": {
-          "account_keys": {
-            "type": "object",
-            "description": "Map of account key versions with their metadata (key_type, key_version, key_creation_date)",
-            "format": "map"
-          },
-          "active_key_version": {
-            "type": "integer",
-            "description": "The currently active key version for this ACME account"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "directory_url": {
-            "type": "string",
-            "description": "The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)"
-          },
-          "email_contacts": {
-            "type": "array",
-            "description": "List of email addresses for account notifications. You must provide at least one email.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the account"
-          },
-          "trusted_ca": {
-            "type": "string",
-            "description": "PEM-encoded trusted CA certificates for validating the TLS certificate provided by the ACME server. Use trusted_ca for private ACME servers with custom CAs.",
-            "x-vault-displayAttrs": {
-              "name": "Trusted CA"
-            }
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigAcmeAccountRotateKeyRequest": {
+      "PkiExternalCaWriteConfigAcmeAccountNameRotateKeyRequest": {
         "type": "object",
         "properties": {
           "force": {
             "type": "boolean",
-            "description": "Force the rotation of an account if orders are still pending."
+            "description": "Force the rotation of an account if orders are still pending"
           },
           "key_type": {
             "type": "string",
-            "description": "Key type to generate for the new account key.",
+            "description": "Key type to generate for the new account key",
             "enum": [
               "ec-256",
               "ec-384",
@@ -61292,415 +59347,7 @@
           }
         }
       },
-      "PkiExternalCaWriteConfigDnsAwsRoute53Request": {
-        "type": "object",
-        "properties": {
-          "access_key_id": {
-            "type": "string",
-            "description": "AWS access key ID for Route53 API access"
-          },
-          "assume_role_arn": {
-            "type": "string",
-            "description": "AWS IAM role ARN to assume for Route53 operations"
-          },
-          "external_id": {
-            "type": "string",
-            "description": "External ID for AWS STS AssumeRole"
-          },
-          "hosted_zone_id": {
-            "type": "string",
-            "description": "AWS Route53 hosted zone ID"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "region": {
-            "type": "string",
-            "description": "AWS region for Route53 operations"
-          },
-          "secret_access_key": {
-            "type": "string",
-            "description": "AWS secret access key for Route53 API access"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsAwsRoute53Response": {
-        "type": "object",
-        "properties": {
-          "access_key_id": {
-            "type": "string",
-            "description": "AWS access key ID for Route53 API access"
-          },
-          "assume_role_arn": {
-            "type": "string",
-            "description": "AWS IAM role ARN to assume for Route53 operations"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "external_id": {
-            "type": "string",
-            "description": "External ID for AWS STS AssumeRole"
-          },
-          "hosted_zone_id": {
-            "type": "string",
-            "description": "AWS Route53 hosted zone ID"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the aws-route53 DNS configuration"
-          },
-          "region": {
-            "type": "string",
-            "description": "AWS region for Route53 operations"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsAzureDnsRequest": {
-        "type": "object",
-        "properties": {
-          "client_id": {
-            "type": "string",
-            "description": "Azure service principal client ID"
-          },
-          "client_secret": {
-            "type": "string",
-            "description": "Azure service principal client secret"
-          },
-          "environment": {
-            "type": "string",
-            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "resource_group_name": {
-            "type": "string",
-            "description": "Azure resource group name containing the DNS zone"
-          },
-          "subscription_id": {
-            "type": "string",
-            "description": "Azure subscription ID"
-          },
-          "tenant_id": {
-            "type": "string",
-            "description": "Azure tenant ID"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "1m"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "Azure DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsAzureDnsResponse": {
-        "type": "object",
-        "properties": {
-          "client_id": {
-            "type": "string",
-            "description": "Azure service principal client ID"
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "environment": {
-            "type": "string",
-            "description": "Azure cloud environment (AzurePublic, AzureChina, AzureGovernment; default: AzurePublic)"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the azure-dns DNS configuration"
-          },
-          "resource_group_name": {
-            "type": "string",
-            "description": "Azure resource group name containing the DNS zone"
-          },
-          "subscription_id": {
-            "type": "string",
-            "description": "Azure subscription ID"
-          },
-          "tenant_id": {
-            "type": "string",
-            "description": "Azure tenant ID"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "1m"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "Azure DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest": {
-        "type": "object",
-        "properties": {
-          "credentials": {
-            "type": "string",
-            "description": "GCP service account credentials as JSON content"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "impersonate_service_account": {
-            "type": "string",
-            "description": "Service account email to impersonate"
-          },
-          "project": {
-            "type": "string",
-            "description": "GCP project name"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "10s"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "GCP DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsGoogleCloudDnsResponse": {
-        "type": "object",
-        "properties": {
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "impersonate_service_account": {
-            "type": "string",
-            "description": "Service account email to impersonate"
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the google-cloud-dns DNS configuration"
-          },
-          "project": {
-            "type": "string",
-            "description": "GCP project name"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "10s"
-          },
-          "zone_name": {
-            "type": "string",
-            "description": "GCP DNS zone name"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsRfc2136Request": {
-        "type": "object",
-        "properties": {
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "nameserver": {
-            "type": "string",
-            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
-          },
-          "tsig_algorithm": {
-            "type": "string",
-            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
-          },
-          "tsig_key_name": {
-            "type": "string",
-            "description": "TSIG key name for authenticated DNS updates"
-          },
-          "tsig_secret": {
-            "type": "string",
-            "description": "TSIG secret (base64 encoded) for authenticated DNS updates"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaWriteConfigDnsRfc2136Response": {
-        "type": "object",
-        "properties": {
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "identifiers": {
-            "type": "array",
-            "description": "List of DNS identifiers this provider can be used for. Supports wildcard patterns with leftmost * (e.g., *.example.com)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the rfc2136 DNS configuration"
-          },
-          "nameserver": {
-            "type": "string",
-            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
-          },
-          "tsig_algorithm": {
-            "type": "string",
-            "description": "TSIG algorithm (e.g., hmac-sha256, hmac-sha512). Defaults to hmac-sha256"
-          },
-          "tsig_key_name": {
-            "type": "string",
-            "description": "TSIG key name for authenticated DNS updates"
-          },
-          "ttl": {
-            "type": "string",
-            "description": "TTL for DNS TXT records used in DNS-01 challenges",
-            "format": "duration",
-            "default": "60s"
-          }
-        }
-      },
-      "PkiExternalCaWriteDnsTestWorkflowRequest": {
-        "type": "object",
-        "properties": {
-          "identifier": {
-            "type": "string",
-            "description": "The DNS identifier (domain name) to test with"
-          },
-          "omit_cleanup": {
-            "type": "boolean",
-            "description": "Do not perform any cleanup operations, useful for testing and manual validation a record was created within the DNS provider",
-            "default": false
-          },
-          "provider_name": {
-            "type": "string",
-            "description": "The name of the DNS provider configuration to test"
-          },
-          "provider_type": {
-            "type": "string",
-            "description": "The DNS provider type"
-          }
-        },
-        "required": [
-          "identifier",
-          "provider_name",
-          "provider_type"
-        ]
-      },
-      "PkiExternalCaWriteDnsTestWorkflowResponse": {
-        "type": "object",
-        "properties": {
-          "identifier": {
-            "type": "string",
-            "description": "The identifier that was tested"
-          },
-          "message": {
-            "type": "string",
-            "description": "Status message describing the test result"
-          },
-          "provider_name": {
-            "type": "string",
-            "description": "The provider name that was tested"
-          },
-          "provider_type": {
-            "type": "string",
-            "description": "The provider type that was tested"
-          },
-          "record_name": {
-            "type": "string",
-            "description": "The DNS record name that was created"
-          },
-          "success": {
-            "type": "boolean",
-            "description": "Whether the test was successful"
-          }
-        }
-      },
-      "PkiExternalCaWriteRoleNewOrderRequest": {
+      "PkiExternalCaWriteRoleNameNewOrderRequest": {
         "type": "object",
         "properties": {
           "csr": {
@@ -61716,16 +59363,7 @@
           }
         }
       },
-      "PkiExternalCaWriteRoleNewOrderResponse": {
-        "type": "object",
-        "properties": {
-          "order_id": {
-            "type": "string",
-            "description": "The ID of the newly created order"
-          }
-        }
-      },
-      "PkiExternalCaWriteRoleOrderFulfilledChallengeRequest": {
+      "PkiExternalCaWriteRoleNameOrderOrder_idFulfilledChallengeRequest": {
         "type": "object",
         "properties": {
           "challenge_type": {
@@ -61742,7 +59380,7 @@
           "identifier"
         ]
       },
-      "PkiExternalCaWriteRoleOrderRevokeRequest": {
+      "PkiExternalCaWriteRoleNameOrderOrder_idRevokeRequest": {
         "type": "object",
         "properties": {
           "reason": {
@@ -61766,7 +59404,7 @@
           "reason"
         ]
       },
-      "PkiExternalCaWriteRoleRequest": {
+      "PkiExternalCaWriteRoleNameRequest": {
         "type": "object",
         "properties": {
           "acme_account_name": {
@@ -61820,10 +59458,7 @@
               "rsa-2048",
               "rsa-4096"
             ],
-            "default": "ec-256",
-            "x-vault-displayAttrs": {
-              "name": "CSR generated key type"
-            }
+            "default": "ec-256"
           },
           "csr_identifier_population": {
             "type": "string",
@@ -61832,24 +59467,7 @@
               "cn_first",
               "sans_only"
             ],
-            "default": "cn_first",
-            "x-vault-displayAttrs": {
-              "name": "CSR identifier population"
-            }
-          },
-          "dns_provider_name": {
-            "type": "string",
-            "description": "The DNS provider configuration to use for DNS-01 challenges (optional)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider name"
-            }
-          },
-          "dns_provider_type": {
-            "type": "string",
-            "description": "The DNS provider type (required when dns_provider_name is provided)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider type"
-            }
+            "default": "cn_first"
           },
           "force": {
             "type": "boolean",
@@ -61859,107 +59477,6 @@
         "required": [
           "acme_account_name"
         ]
-      },
-      "PkiExternalCaWriteRoleResponse": {
-        "type": "object",
-        "properties": {
-          "acme_account_name": {
-            "type": "string",
-            "description": "The ACME account to use when validating certificates"
-          },
-          "allowed_challenge_types": {
-            "type": "array",
-            "description": "The list of challenge types that are allowed to be used.",
-            "items": {
-              "type": "string"
-            },
-            "enum": [
-              "http-01",
-              "dns-01",
-              "tls-alpn-01"
-            ],
-            "default": [
-              "http-01",
-              "dns-01",
-              "tls-alpn-01"
-            ]
-          },
-          "allowed_domain_options": {
-            "type": "array",
-            "description": "A list of keyword options that influence how values within allowed_domains are interpreted against the requested set of identifiers from the client.",
-            "items": {
-              "type": "string"
-            },
-            "enum": [
-              "bare_domains",
-              "subdomains",
-              "wildcards",
-              "globs"
-            ]
-          },
-          "allowed_domains": {
-            "type": "array",
-            "description": "A list of domains the role will accept certificates for. May contain templates, as with ACL Path Templating.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "creation_date": {
-            "type": "string",
-            "description": "Configuration creation timestamp",
-            "format": "date-time"
-          },
-          "csr_generate_key_type": {
-            "type": "string",
-            "description": "The key type and size/parameters to use when we generate a new key if running in the identifier workflow.",
-            "enum": [
-              "ec-256",
-              "ec-384",
-              "ec-521",
-              "rsa-2048",
-              "rsa-4096"
-            ],
-            "default": "ec-256",
-            "x-vault-displayAttrs": {
-              "name": "CSR generated key type"
-            }
-          },
-          "csr_identifier_population": {
-            "type": "string",
-            "description": "The technique used to populate a CSR from the provided identifiers in the identifier workflow.",
-            "enum": [
-              "cn_first",
-              "sans_only"
-            ],
-            "default": "cn_first",
-            "x-vault-displayAttrs": {
-              "name": "CSR identifier population"
-            }
-          },
-          "dns_provider_name": {
-            "type": "string",
-            "description": "The DNS provider configuration to use for DNS-01 challenges (optional)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider name"
-            }
-          },
-          "dns_provider_type": {
-            "type": "string",
-            "description": "The DNS provider type (required when dns_provider_name is provided)",
-            "x-vault-displayAttrs": {
-              "name": "DNS provider type"
-            }
-          },
-          "last_updated_date": {
-            "type": "string",
-            "description": "Configuration last updated timestamp",
-            "format": "date-time"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the role"
-          }
-        }
       },
       "PkiGenerateEabKeyForIssuerAndRoleResponse": {
         "type": "object",
@@ -73370,31 +70887,8 @@
       "PoliciesReadRotationPolicyResponse": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
-          "max_retries_per_cycle": {
-            "type": "integer",
-            "description": "The maximum number of retries per cycle allowed for rotation."
-          },
-          "max_retry_cycles": {
-            "type": "integer",
-            "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
+          "policy": {
+            "type": "string"
           }
         }
       },
@@ -73437,10 +70931,6 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -73448,20 +70938,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         },
         "required": [
@@ -74048,10 +71524,6 @@
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
           },
-          "optional_authorization_details": {
-            "type": "boolean",
-            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
-          },
           "owner": {
             "type": "string",
             "description": "Owner of the registration."
@@ -74061,23 +71533,6 @@
           "display_name",
           "entity_id"
         ]
-      },
-      "RegistrationListByIdResponse": {
-        "type": "object",
-        "properties": {
-          "key_info": {
-            "type": "object",
-            "description": "Map of registration ID to registration info, including display_name, entity_id, creation_time, last_updated_time, and no_default_ceiling_policy.",
-            "format": "map"
-          },
-          "keys": {
-            "type": "array",
-            "description": "List of registration IDs.",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
       },
       "RegistrationUpdateByIdRequest": {
         "type": "object",
@@ -74104,10 +71559,6 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
-          },
-          "optional_authorization_details": {
-            "type": "boolean",
-            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
           },
           "owner": {
             "type": "string",
@@ -74144,10 +71595,6 @@
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
-          },
-          "optional_authorization_details": {
-            "type": "boolean",
-            "description": "Allow authorization_details to be optional for JWTs used for OAuth Resource Server functionality."
           },
           "owner": {
             "type": "string",
@@ -74632,6 +72079,18 @@
           },
           "nonce": {
             "type": "string"
+          }
+        }
+      },
+      "ReleaseInfoReadReadResponse": {
+        "type": "object",
+        "properties": {
+          "versions": {
+            "type": "array",
+            "description": "Array of version information objects containing breaking changes, new behavior, known issues, and rollback steps",
+            "items": {
+              "type": "object"
+            }
           }
         }
       },
@@ -76262,10 +73721,6 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
-          "kms_key_id": {
-            "type": "string",
-            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
-          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -76273,11 +73728,6 @@
           "region": {
             "type": "string",
             "description": "AWS region where to manage secrets."
-          },
-          "regional_kms_keys": {
-            "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
-            "format": "kvpairs"
           },
           "role_arn": {
             "type": "string",
@@ -76521,10 +73971,6 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
-          "kms_key_id": {
-            "type": "string",
-            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
-          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -76537,11 +73983,6 @@
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
-          },
-          "regional_kms_keys": {
-            "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
-            "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
@@ -78417,10 +75858,6 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
-          "kms_key_id": {
-            "type": "string",
-            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
-          },
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
@@ -78428,11 +75865,6 @@
           "region": {
             "type": "string",
             "description": "AWS region where to manage secrets."
-          },
-          "regional_kms_keys": {
-            "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
-            "format": "kvpairs"
           },
           "role_arn": {
             "type": "string",
@@ -78676,10 +76108,6 @@
             "description": "The time-to-live (TTL) for the WIF identity tokens. Optional.",
             "format": "duration"
           },
-          "kms_key_id": {
-            "type": "string",
-            "description": "KMS Key ID for the custom key to use for encryption. If absent, the default key will be used. Optional."
-          },
           "locational_kms_keys": {
             "type": "object",
             "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
@@ -78692,11 +76120,6 @@
           "purge": {
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
-          },
-          "regional_kms_keys": {
-            "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
-            "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
@@ -79715,139 +77138,6 @@
           "code": {
             "type": "string",
             "description": "TOTP code to be validated."
-          }
-        }
-      },
-      "TpmCreateRequest": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean",
-            "description": "Whether the TPM is disabled."
-          },
-          "id": {
-            "type": "string",
-            "description": "ID of the TPM record. If set, updates the corresponding existing TPM."
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPM record. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
-            "format": "kvpairs"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the TPM record."
-          },
-          "tpm_ek_public_key": {
-            "type": "string",
-            "description": "PEM-encoded TPM Endorsement Key (EK) public key."
-          }
-        }
-      },
-      "TpmUpdateByIdRequest": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean",
-            "description": "Whether the TPM is disabled."
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPM record. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
-            "format": "kvpairs"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the TPM record."
-          },
-          "tpm_ek_public_key": {
-            "type": "string",
-            "description": "PEM-encoded TPM Endorsement Key (EK) public key."
-          }
-        }
-      },
-      "TpmUpdateByNameRequest": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean",
-            "description": "Whether the TPM is disabled."
-          },
-          "id": {
-            "type": "string",
-            "description": "ID of the TPM record. If set, updates the corresponding existing TPM."
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPM record. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
-            "format": "kvpairs"
-          },
-          "tpm_ek_public_key": {
-            "type": "string",
-            "description": "PEM-encoded TPM Endorsement Key (EK) public key."
-          }
-        }
-      },
-      "TpmgroupCreateRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "ID of the TPMGroup. If set, updates the corresponding existing TPMGroup."
-          },
-          "member_tpm_ids": {
-            "type": "array",
-            "description": "TPM IDs to be assigned as group members.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPMGroup. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2",
-            "format": "kvpairs"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the TPMGroup."
-          }
-        }
-      },
-      "TpmgroupUpdateByIdRequest": {
-        "type": "object",
-        "properties": {
-          "member_tpm_ids": {
-            "type": "array",
-            "description": "TPM IDs to be assigned as group members.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPMGroup.",
-            "format": "kvpairs"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the TPMGroup."
-          }
-        }
-      },
-      "TpmgroupUpdateByNameRequest": {
-        "type": "object",
-        "properties": {
-          "member_tpm_ids": {
-            "type": "array",
-            "description": "TPM IDs to be assigned as group members.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "metadata": {
-            "type": "object",
-            "description": "Metadata to be associated with the TPMGroup.",
-            "format": "kvpairs"
           }
         }
       },
