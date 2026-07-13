@@ -90,6 +90,7 @@ import type {
   MountsReadTuningInformationResponse,
   MountsTuneConfigurationParametersRequest,
   OauthResourceServerListProfilesResponse,
+  OauthResourceServerReadProfileByIdResponse,
   OauthResourceServerReadProfileResponse,
   OauthResourceServerUpdateProfileRequest,
   PluginsCatalogListPluginsResponse,
@@ -440,6 +441,8 @@ import {
     MountsTuneConfigurationParametersRequestToJSON,
     OauthResourceServerListProfilesResponseFromJSON,
     OauthResourceServerListProfilesResponseToJSON,
+    OauthResourceServerReadProfileByIdResponseFromJSON,
+    OauthResourceServerReadProfileByIdResponseToJSON,
     OauthResourceServerReadProfileResponseFromJSON,
     OauthResourceServerReadProfileResponseToJSON,
     OauthResourceServerUpdateProfileRequestFromJSON,
@@ -1140,6 +1143,10 @@ export interface SystemApiOauthResourceServerListProfilesRequest {
 
 export interface SystemApiOauthResourceServerReadProfileRequest {
     name: string;
+}
+
+export interface SystemApiOauthResourceServerReadProfileByIdRequest {
+    config_id: string;
 }
 
 export interface SystemApiOauthResourceServerUpdateProfileOperationRequest {
@@ -5472,6 +5479,42 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async oauthResourceServerReadProfile(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerReadProfileResponse> {
         const response = await this.oauthResourceServerReadProfileRaw({ name: name }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns the configuration of an OAuth Resource Server Configuration profile identified by its stable config_id.
+     * Read an OAuth Resource Server Configuration profile by config ID.
+     */
+    async oauthResourceServerReadProfileByIdRaw(requestParameters: SystemApiOauthResourceServerReadProfileByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerReadProfileByIdResponse>> {
+        if (requestParameters['config_id'] == null) {
+            throw new runtime.RequiredError(
+                'config_id',
+                'Required parameter "config_id" was null or undefined when calling oauthResourceServerReadProfileById().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/config/oauth-resource-server/id/{config_id}`.replace(`{${"config_id"}}`, encodeURIComponent(String(requestParameters['config_id']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerReadProfileByIdResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns the configuration of an OAuth Resource Server Configuration profile identified by its stable config_id.
+     * Read an OAuth Resource Server Configuration profile by config ID.
+     */
+    async oauthResourceServerReadProfileById(config_id: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerReadProfileByIdResponse> {
+        const response = await this.oauthResourceServerReadProfileByIdRaw({ config_id: config_id }, initOverrides);
         return await response.value();
     }
 

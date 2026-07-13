@@ -289,6 +289,7 @@ src/models/NomadConfigureAccessRequest.ts
 src/models/NomadConfigureLeaseRequest.ts
 src/models/NomadWriteRoleRequest.ts
 src/models/OauthResourceServerListProfilesResponse.ts
+src/models/OauthResourceServerReadProfileByIdResponse.ts
 src/models/OauthResourceServerReadProfileResponse.ts
 src/models/OauthResourceServerUpdateProfileRequest.ts
 src/models/OciConfigureRequest.ts

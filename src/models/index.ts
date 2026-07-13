@@ -287,6 +287,7 @@ export * from './NomadConfigureAccessRequest';
 export * from './NomadConfigureLeaseRequest';
 export * from './NomadWriteRoleRequest';
 export * from './OauthResourceServerListProfilesResponse';
+export * from './OauthResourceServerReadProfileByIdResponse';
 export * from './OauthResourceServerReadProfileResponse';
 export * from './OauthResourceServerUpdateProfileRequest';
 export * from './OciConfigureRequest';
