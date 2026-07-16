@@ -66,9 +66,10 @@ export interface SystemWriteSyncDestinationsGcpSmNameRequest {
      */
     force_delete?: boolean;
     /**
-     * The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys.
+     * (DEPRECATED) Use kms_key_id instead. The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys.
      * @type {string}
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     * @deprecated
      */
     global_kms_key?: string;
     /**
@@ -102,9 +103,10 @@ export interface SystemWriteSyncDestinationsGcpSmNameRequest {
      */
     kms_key_id?: string;
     /**
-     * A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.
+     * (DEPRECATED) Use replica_regions instead. A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.
      * @type {object}
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     * @deprecated
      */
     locational_kms_keys?: object;
     /**
@@ -120,15 +122,16 @@ export interface SystemWriteSyncDestinationsGcpSmNameRequest {
      */
     purge?: boolean;
     /**
-     * A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.
+     * A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.
      * @type {object}
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
      */
-    regional_kms_keys?: object;
+    replica_regions?: object;
     /**
-     * The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.
+     * (DEPRECATED) Use replica_regions instead. The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.
      * @type {Array<string>}
      * @memberof SystemWriteSyncDestinationsGcpSmNameRequest
+     * @deprecated
      */
     replication_locations?: Array<string>;
     /**
@@ -184,7 +187,7 @@ export function SystemWriteSyncDestinationsGcpSmNameRequestFromJSONTyped(json: a
         'locational_kms_keys': json['locational_kms_keys'] == null ? undefined : json['locational_kms_keys'],
         'project_id': json['project_id'] == null ? undefined : json['project_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
-        'regional_kms_keys': json['regional_kms_keys'] == null ? undefined : json['regional_kms_keys'],
+        'replica_regions': json['replica_regions'] == null ? undefined : json['replica_regions'],
         'replication_locations': json['replication_locations'] == null ? undefined : json['replication_locations'],
         'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
         'service_account_email': json['service_account_email'] == null ? undefined : json['service_account_email'],
@@ -219,7 +222,7 @@ export function SystemWriteSyncDestinationsGcpSmNameRequestToJSONTyped(value?: S
         'locational_kms_keys': value['locational_kms_keys'],
         'project_id': value['project_id'],
         'purge': value['purge'],
-        'regional_kms_keys': value['regional_kms_keys'],
+        'replica_regions': value['replica_regions'],
         'replication_locations': value['replication_locations'],
         'secret_name_template': value['secret_name_template'],
         'service_account_email': value['service_account_email'],
