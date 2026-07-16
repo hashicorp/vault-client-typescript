@@ -915,6 +915,7 @@ export * from './UiHeadersListResponse';
 export * from './UiHeadersReadConfigurationResponse';
 export * from './UiLoginDefaultAuthConfigureRequest';
 export * from './UiLoginDefaultAuthListResponse';
+export * from './UiSettingsReadResponse';
 export * from './UnsealRequest';
 export * from './UnsealResponse';
 export * from './UnwrapRequest';

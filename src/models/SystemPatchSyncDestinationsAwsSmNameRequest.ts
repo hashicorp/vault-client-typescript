@@ -114,11 +114,11 @@ export interface SystemPatchSyncDestinationsAwsSmNameRequest {
      */
     region?: string;
     /**
-     * A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.
+     * A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.
      * @type {object}
      * @memberof SystemPatchSyncDestinationsAwsSmNameRequest
      */
-    regional_kms_keys?: object;
+    replica_regions?: object;
     /**
      * AWS IAM role identifier Vault will assume when connecting to the Secrets Manager. Optional. Supports cross-account access.
      * @type {string}
@@ -177,7 +177,7 @@ export function SystemPatchSyncDestinationsAwsSmNameRequestFromJSONTyped(json: a
         'kms_key_id': json['kms_key_id'] == null ? undefined : json['kms_key_id'],
         'purge': json['purge'] == null ? undefined : json['purge'],
         'region': json['region'] == null ? undefined : json['region'],
-        'regional_kms_keys': json['regional_kms_keys'] == null ? undefined : json['regional_kms_keys'],
+        'replica_regions': json['replica_regions'] == null ? undefined : json['replica_regions'],
         'role_arn': json['role_arn'] == null ? undefined : json['role_arn'],
         'secret_access_key': json['secret_access_key'] == null ? undefined : json['secret_access_key'],
         'secret_name_template': json['secret_name_template'] == null ? undefined : json['secret_name_template'],
@@ -211,7 +211,7 @@ export function SystemPatchSyncDestinationsAwsSmNameRequestToJSONTyped(value?: S
         'kms_key_id': value['kms_key_id'],
         'purge': value['purge'],
         'region': value['region'],
-        'regional_kms_keys': value['regional_kms_keys'],
+        'replica_regions': value['replica_regions'],
         'role_arn': value['role_arn'],
         'secret_access_key': value['secret_access_key'],
         'secret_name_template': value['secret_name_template'],

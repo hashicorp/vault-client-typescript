@@ -14796,6 +14796,26 @@
         }
       }
     },
+    "/sys/internal/ui/settings": {
+      "get": {
+        "operationId": "ui-settings-read",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UiSettingsReadResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sys/internal/ui/unauthenticated-messages": {
       "x-vault-unauthenticated": true,
       "get": {
@@ -76535,9 +76555,9 @@
             "type": "string",
             "description": "AWS region where to manage secrets."
           },
-          "regional_kms_keys": {
+          "replica_regions": {
             "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
             "format": "kvpairs"
           },
           "role_arn": {
@@ -76763,7 +76783,8 @@
           },
           "global_kms_key": {
             "type": "string",
-            "description": "The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys."
+            "description": "(DEPRECATED) Use kms_key_id instead. The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys.",
+            "deprecated": true
           },
           "granularity": {
             "type": "string",
@@ -76788,8 +76809,9 @@
           },
           "locational_kms_keys": {
             "type": "object",
-            "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
-            "format": "kvpairs"
+            "description": "(DEPRECATED) Use replica_regions instead. A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
+            "format": "kvpairs",
+            "deprecated": true
           },
           "project_id": {
             "type": "string",
@@ -76799,17 +76821,18 @@
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
           },
-          "regional_kms_keys": {
+          "replica_regions": {
             "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
             "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
-            "description": "The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.",
+            "description": "(DEPRECATED) Use replica_regions instead. The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.",
             "items": {
               "type": "string"
-            }
+            },
+            "deprecated": true
           },
           "secret_name_template": {
             "type": "string",
@@ -78690,9 +78713,9 @@
             "type": "string",
             "description": "AWS region where to manage secrets."
           },
-          "regional_kms_keys": {
+          "replica_regions": {
             "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
             "format": "kvpairs"
           },
           "role_arn": {
@@ -78918,7 +78941,8 @@
           },
           "global_kms_key": {
             "type": "string",
-            "description": "The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys."
+            "description": "(DEPRECATED) Use kms_key_id instead. The encryption key resource name when using global, automatic replications. Mutually exclusive with locational_kms_keys.",
+            "deprecated": true
           },
           "granularity": {
             "type": "string",
@@ -78943,8 +78967,9 @@
           },
           "locational_kms_keys": {
             "type": "object",
-            "description": "A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
-            "format": "kvpairs"
+            "description": "(DEPRECATED) Use replica_regions instead. A list of pairs of replication locations and user-managed encryption keys. For each pair, the key is the location name and the value is the encryption key resource name. When specifying 'replication_locations', the encryption key resource must be located within the same region. When using multiple 'replication_locations', a key name is required for each one.",
+            "format": "kvpairs",
+            "deprecated": true
           },
           "project_id": {
             "type": "string",
@@ -78954,17 +78979,18 @@
             "type": "boolean",
             "description": "Asynchronously unsyncs all associated secrets with the destination then deletes the destination config."
           },
-          "regional_kms_keys": {
+          "replica_regions": {
             "type": "object",
-            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'regional_kms_keys', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
+            "description": "A list of pairs of replication regions/locations and user-managed encryption keys. For each pair, the key is the region/location name and the value is the encryption key id. When specifying 'replica_regions', the encryption key resource must be located within the same region/location. When using multiple regions, a key name is required for each one. Optional, default key will be used if not specified.",
             "format": "kvpairs"
           },
           "replication_locations": {
             "type": "array",
-            "description": "The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.",
+            "description": "(DEPRECATED) Use replica_regions instead. The names of the allowed locations for secrets to be replicated into. Secrets are still globally accessible regardless of their selected locations.",
             "items": {
               "type": "string"
-            }
+            },
+            "deprecated": true
           },
           "secret_name_template": {
             "type": "string",
@@ -82075,6 +82101,14 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "UiSettingsReadResponse": {
+        "type": "object",
+        "properties": {
+          "ui_telemetry_enabled": {
+            "type": "boolean"
           }
         }
       },
