@@ -917,7 +917,6 @@ src/models/UiHeadersListResponse.ts
 src/models/UiHeadersReadConfigurationResponse.ts
 src/models/UiLoginDefaultAuthConfigureRequest.ts
 src/models/UiLoginDefaultAuthListResponse.ts
-src/models/UiSettingsReadResponse.ts
 src/models/UnsealRequest.ts
 src/models/UnsealResponse.ts
 src/models/UnwrapRequest.ts
