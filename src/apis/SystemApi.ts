@@ -150,7 +150,7 @@ import type {
   RekeyVerificationReadProgressResponse,
   RekeyVerificationUpdateRequest,
   RekeyVerificationUpdateResponse,
-  ReleaseInfoReadReadResponse,
+  ReleaseInfoReadReleaseInfoResponse,
   ReloadPluginsRequest,
   ReloadPluginsResponse,
   RemountRequest,
@@ -294,6 +294,7 @@ import type {
   UnsealRequest,
   UnsealResponse,
   UnwrapRequest,
+  VaultVersionsReadReadResponse,
   VersionHistoryResponse,
   WellKnownListLabels2Response,
   WellKnownListLabelsResponse,
@@ -562,8 +563,8 @@ import {
     RekeyVerificationUpdateRequestToJSON,
     RekeyVerificationUpdateResponseFromJSON,
     RekeyVerificationUpdateResponseToJSON,
-    ReleaseInfoReadReadResponseFromJSON,
-    ReleaseInfoReadReadResponseToJSON,
+    ReleaseInfoReadReleaseInfoResponseFromJSON,
+    ReleaseInfoReadReleaseInfoResponseToJSON,
     ReloadPluginsRequestFromJSON,
     ReloadPluginsRequestToJSON,
     ReloadPluginsResponseFromJSON,
@@ -850,6 +851,8 @@ import {
     UnsealResponseToJSON,
     UnwrapRequestFromJSON,
     UnwrapRequestToJSON,
+    VaultVersionsReadReadResponseFromJSON,
+    VaultVersionsReadReadResponseToJSON,
     VersionHistoryResponseFromJSON,
     VersionHistoryResponseToJSON,
     WellKnownListLabels2ResponseFromJSON,
@@ -2050,6 +2053,10 @@ export interface SystemApiUnsealOperationRequest {
 
 export interface SystemApiUnwrapOperationRequest {
     UnwrapRequest: UnwrapRequest;
+}
+
+export interface SystemApiVaultVersionsReadReadRequest {
+    edition?: string;
 }
 
 export interface SystemApiVersionHistoryRequest {
@@ -8463,7 +8470,7 @@ export class SystemApi extends runtime.BaseAPI {
      * Returns parsed release information including breaking changes, new behavior, and known issues for each version.
      * Fetch release information from GitHub
      */
-    async releaseInfoReadReadRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReleaseInfoReadReadResponse>> {
+    async releaseInfoReadReleaseInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReleaseInfoReadReleaseInfoResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -8476,15 +8483,15 @@ export class SystemApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ReleaseInfoReadReadResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => ReleaseInfoReadReleaseInfoResponseFromJSON(jsonValue));
     }
 
     /**
      * Returns parsed release information including breaking changes, new behavior, and known issues for each version.
      * Fetch release information from GitHub
      */
-    async releaseInfoReadRead(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReleaseInfoReadReadResponse> {
-        const response = await this.releaseInfoReadReadRaw(initOverrides);
+    async releaseInfoReadReleaseInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReleaseInfoReadReleaseInfoResponse> {
+        const response = await this.releaseInfoReadReleaseInfoRaw(initOverrides);
         return await response.value();
     }
 
@@ -15380,6 +15387,39 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async unwrap(UnwrapRequest: UnwrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.unwrapRaw({ UnwrapRequest: UnwrapRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns deduplicated MAJOR.MINOR.PATCH version strings filtered by edition.
+     * Fetch available Vault versions from releases.hashicorp.com
+     */
+    async vaultVersionsReadReadRaw(requestParameters: SystemApiVaultVersionsReadReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VaultVersionsReadReadResponse>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['edition'] != null) {
+            queryParameters['edition'] = requestParameters['edition'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/vault-versions`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => VaultVersionsReadReadResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns deduplicated MAJOR.MINOR.PATCH version strings filtered by edition.
+     * Fetch available Vault versions from releases.hashicorp.com
+     */
+    async vaultVersionsReadRead(edition?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VaultVersionsReadReadResponse> {
+        const response = await this.vaultVersionsReadReadRaw({ edition: edition }, initOverrides);
         return await response.value();
     }
 

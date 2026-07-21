@@ -672,7 +672,7 @@ src/models/RekeyVerificationCancelResponse.ts
 src/models/RekeyVerificationReadProgressResponse.ts
 src/models/RekeyVerificationUpdateRequest.ts
 src/models/RekeyVerificationUpdateResponse.ts
-src/models/ReleaseInfoReadReadResponse.ts
+src/models/ReleaseInfoReadReleaseInfoResponse.ts
 src/models/ReloadPluginsRequest.ts
 src/models/ReloadPluginsResponse.ts
 src/models/RemountRequest.ts
@@ -925,6 +925,7 @@ src/models/UserpassLoginRequest.ts
 src/models/UserpassResetPasswordRequest.ts
 src/models/UserpassUpdatePoliciesRequest.ts
 src/models/UserpassWriteUserRequest.ts
+src/models/VaultVersionsReadReadResponse.ts
 src/models/VersionHistoryResponse.ts
 src/models/WellKnownListLabels2Response.ts
 src/models/WellKnownListLabelsResponse.ts
