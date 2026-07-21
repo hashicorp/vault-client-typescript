@@ -291,7 +291,6 @@ import type {
   UiHeadersReadConfigurationResponse,
   UiLoginDefaultAuthConfigureRequest,
   UiLoginDefaultAuthListResponse,
-  UiSettingsReadResponse,
   UnsealRequest,
   UnsealResponse,
   UnwrapRequest,
@@ -845,8 +844,6 @@ import {
     UiLoginDefaultAuthConfigureRequestToJSON,
     UiLoginDefaultAuthListResponseFromJSON,
     UiLoginDefaultAuthListResponseToJSON,
-    UiSettingsReadResponseFromJSON,
-    UiSettingsReadResponseToJSON,
     UnsealRequestFromJSON,
     UnsealRequestToJSON,
     UnsealResponseFromJSON,
@@ -15311,31 +15308,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async uiLoginDefaultAuthReadConfiguration(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.uiLoginDefaultAuthReadConfigurationRaw({ name: name }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async uiSettingsReadRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UiSettingsReadResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/internal/ui/settings`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => UiSettingsReadResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async uiSettingsRead(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiSettingsReadResponse> {
-        const response = await this.uiSettingsReadRaw(initOverrides);
         return await response.value();
     }
 
