@@ -14796,26 +14796,6 @@
         }
       }
     },
-    "/sys/internal/ui/settings": {
-      "get": {
-        "operationId": "ui-settings-read",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UiSettingsReadResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/sys/internal/ui/unauthenticated-messages": {
       "x-vault-unauthenticated": true,
       "get": {
@@ -82101,14 +82081,6 @@
             "items": {
               "type": "string"
             }
-          }
-        }
-      },
-      "UiSettingsReadResponse": {
-        "type": "object",
-        "properties": {
-          "ui_telemetry_enabled": {
-            "type": "boolean"
           }
         }
       },
