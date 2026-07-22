@@ -288,6 +288,9 @@ src/models/MountsTuneConfigurationParametersRequest.ts
 src/models/NomadConfigureAccessRequest.ts
 src/models/NomadConfigureLeaseRequest.ts
 src/models/NomadWriteRoleRequest.ts
+src/models/OauthResourceServerAuthorizationDetailsTypesListResponse.ts
+src/models/OauthResourceServerAuthorizationDetailsTypesReadResponse.ts
+src/models/OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse.ts
 src/models/OauthResourceServerListProfilesResponse.ts
 src/models/OauthResourceServerReadProfileByIdResponse.ts
 src/models/OauthResourceServerReadProfileResponse.ts

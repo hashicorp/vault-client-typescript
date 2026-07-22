@@ -35,6 +35,12 @@ export interface ScimUpdateClientRequest {
      * @memberof ScimUpdateClientRequest
      */
     alias_mount_accessor?: string;
+    /**
+     * Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'.
+     * @type {string}
+     * @memberof ScimUpdateClientRequest
+     */
+    default_schema_version?: string;
 }
 
 /**
@@ -56,6 +62,7 @@ export function ScimUpdateClientRequestFromJSONTyped(json: any, ignoreDiscrimina
         
         'access_grant_principal': json['access_grant_principal'] == null ? undefined : json['access_grant_principal'],
         'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
+        'default_schema_version': json['default_schema_version'] == null ? undefined : json['default_schema_version'],
     };
 }
 
@@ -72,6 +79,7 @@ export function ScimUpdateClientRequestToJSONTyped(value?: ScimUpdateClientReque
         
         'access_grant_principal': value['access_grant_principal'],
         'alias_mount_accessor': value['alias_mount_accessor'],
+        'default_schema_version': value['default_schema_version'],
     };
 }
 

@@ -16366,6 +16366,138 @@
         }
       }
     },
+    "/sys/oauth-resource-server/authorization-details-types": {
+      "description": "This path responds to the following HTTP methods. LIST / Returns all supported authorization_details type IDs. GET / Returns a catalog of supported authorization_details types and metadata.",
+      "x-vault-unauthenticated": true,
+      "get": {
+        "summary": "Read catalog metadata for supported OAuth Resource Server authorization_details types.",
+        "description": "Returns publication metadata for all supported authorization_details types.",
+        "operationId": "oauth-resource-server-authorization-details-types-read",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerAuthorizationDetailsTypesReadResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/oauth-resource-server/authorization-details-types/": {
+      "description": "This path responds to the following HTTP methods. LIST / Returns all supported authorization_details type IDs. GET / Returns a catalog of supported authorization_details types and metadata.",
+      "x-vault-unauthenticated": true,
+      "get": {
+        "summary": "List all supported OAuth Resource Server authorization_details type IDs.",
+        "description": "Returns all supported authorization_details type identifiers.",
+        "operationId": "oauth-resource-server-authorization-details-types-list",
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerAuthorizationDetailsTypesListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/oauth-resource-server/authorization-details-types/{type}": {
+      "description": "This path responds to the following HTTP methods. GET /<type> Returns detailed metadata for the specified authorization_details type. GET /<type>/schema Returns the machine-readable JSON Schema for the specified authorization_details type.",
+      "parameters": [
+        {
+          "name": "type",
+          "description": "authorization_details type identifier.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "get": {
+        "summary": "Read detailed metadata for a supported OAuth Resource Server authorization_details type.",
+        "description": "Returns metadata, semantics, and examples for one authorization_details type.",
+        "operationId": "oauth-resource-server-authorization-details-types-read",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerAuthorizationDetailsTypesReadResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/oauth-resource-server/authorization-details-types/{type}/schema": {
+      "description": "This path responds to the following HTTP methods. GET /<type> Returns detailed metadata for the specified authorization_details type. GET /<type>/schema Returns the machine-readable JSON Schema for the specified authorization_details type.",
+      "parameters": [
+        {
+          "name": "type",
+          "description": "authorization_details type identifier.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "get": {
+        "summary": "Read JSON Schema for a supported OAuth Resource Server authorization_details type.",
+        "description": "Returns machine-readable JSON Schema for one authorization_details type.",
+        "operationId": "oauth-resource-server-authorization-details-types-read-schema",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sys/plugins/catalog": {
       "description": "Lists all the plugins known to Vault",
       "get": {
@@ -58722,6 +58854,74 @@
           }
         }
       },
+      "OauthResourceServerAuthorizationDetailsTypesListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OauthResourceServerAuthorizationDetailsTypesReadResponse": {
+        "type": "object",
+        "properties": {
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "matching_semantics": {
+            "type": "object",
+            "format": "map"
+          },
+          "optional_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "required_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "schema_path": {
+            "type": "string"
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse": {
+        "type": "object",
+        "properties": {
+          "json_schema_draft": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "object",
+            "format": "map"
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
       "OauthResourceServerListProfilesResponse": {
         "type": "object",
         "properties": {
@@ -75628,6 +75828,10 @@
           "alias_mount_accessor": {
             "type": "string",
             "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user."
+          },
+          "default_schema_version": {
+            "type": "string",
+            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
           }
         }
       },

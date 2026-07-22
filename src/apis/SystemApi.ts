@@ -89,6 +89,9 @@ import type {
   MountsReadConfigurationResponse,
   MountsReadTuningInformationResponse,
   MountsTuneConfigurationParametersRequest,
+  OauthResourceServerAuthorizationDetailsTypesListResponse,
+  OauthResourceServerAuthorizationDetailsTypesReadResponse,
+  OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse,
   OauthResourceServerListProfilesResponse,
   OauthResourceServerReadProfileByIdResponse,
   OauthResourceServerReadProfileResponse,
@@ -441,6 +444,12 @@ import {
     MountsReadTuningInformationResponseToJSON,
     MountsTuneConfigurationParametersRequestFromJSON,
     MountsTuneConfigurationParametersRequestToJSON,
+    OauthResourceServerAuthorizationDetailsTypesListResponseFromJSON,
+    OauthResourceServerAuthorizationDetailsTypesListResponseToJSON,
+    OauthResourceServerAuthorizationDetailsTypesReadResponseFromJSON,
+    OauthResourceServerAuthorizationDetailsTypesReadResponseToJSON,
+    OauthResourceServerAuthorizationDetailsTypesReadSchemaResponseFromJSON,
+    OauthResourceServerAuthorizationDetailsTypesReadSchemaResponseToJSON,
     OauthResourceServerListProfilesResponseFromJSON,
     OauthResourceServerListProfilesResponseToJSON,
     OauthResourceServerReadProfileByIdResponseFromJSON,
@@ -1137,6 +1146,18 @@ export interface SystemApiMountsReadTuningInformationRequest {
 export interface SystemApiMountsTuneConfigurationParametersOperationRequest {
     path: string;
     MountsTuneConfigurationParametersRequest: MountsTuneConfigurationParametersRequest;
+}
+
+export interface SystemApiOauthResourceServerAuthorizationDetailsTypesListRequest {
+    list: SystemApiOauthResourceServerAuthorizationDetailsTypesListListEnum;
+}
+
+export interface SystemApiOauthResourceServerAuthorizationDetailsTypesReadSchemaRequest {
+    type: string;
+}
+
+export interface SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request {
+    type: string;
 }
 
 export interface SystemApiOauthResourceServerDeleteProfileRequest {
@@ -5381,6 +5402,147 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
+     * Returns all supported authorization_details type identifiers.
+     * List all supported OAuth Resource Server authorization_details type IDs.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesListRaw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesListResponse>> {
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesList().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/oauth-resource-server/authorization-details-types/`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerAuthorizationDetailsTypesListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns all supported authorization_details type identifiers.
+     * List all supported OAuth Resource Server authorization_details type IDs.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesList(list: SystemApiOauthResourceServerAuthorizationDetailsTypesListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesListResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesListRaw({ list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns publication metadata for all supported authorization_details types.
+     * Read catalog metadata for supported OAuth Resource Server authorization_details types.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesReadRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/oauth-resource-server/authorization-details-types`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerAuthorizationDetailsTypesReadResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns publication metadata for all supported authorization_details types.
+     * Read catalog metadata for supported OAuth Resource Server authorization_details types.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesRead(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesReadRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns machine-readable JSON Schema for one authorization_details type.
+     * Read JSON Schema for a supported OAuth Resource Server authorization_details type.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesReadSchemaRaw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesReadSchemaRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse>> {
+        if (requestParameters['type'] == null) {
+            throw new runtime.RequiredError(
+                'type',
+                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesReadSchema().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/oauth-resource-server/authorization-details-types/{type}/schema`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerAuthorizationDetailsTypesReadSchemaResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns machine-readable JSON Schema for one authorization_details type.
+     * Read JSON Schema for a supported OAuth Resource Server authorization_details type.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesReadSchema(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesReadSchemaRaw({ type: type }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns metadata, semantics, and examples for one authorization_details type.
+     * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesRead_6Raw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
+        if (requestParameters['type'] == null) {
+            throw new runtime.RequiredError(
+                'type',
+                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesRead_6().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/oauth-resource-server/authorization-details-types/{type}`.replace(`{${"type"}}`, encodeURIComponent(String(requestParameters['type']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerAuthorizationDetailsTypesReadResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns metadata, semantics, and examples for one authorization_details type.
+     * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
+     */
+    async oauthResourceServerAuthorizationDetailsTypesRead_6(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesRead_6Raw({ type: type }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Deletes an existing OAuth Resource Server Configuration profile.
      * Delete a OAuth Resource Server Configuration profile.
      */
@@ -6113,11 +6275,11 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_6Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
+    async pluginsRuntimesCatalogListPluginsRuntimes_7Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
-                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_6().'
+                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_7().'
             );
         }
 
@@ -6142,8 +6304,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_6(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
-        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_6Raw({ list: list }, initOverrides);
+    async pluginsRuntimesCatalogListPluginsRuntimes_7(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
+        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_7Raw({ list: list }, initOverrides);
         return await response.value();
     }
 
@@ -7820,7 +7982,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_7Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async readVerbosityLevelFor_8Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -7839,8 +8001,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_7(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.readVerbosityLevelFor_7Raw(initOverrides);
+    async readVerbosityLevelFor_8(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.readVerbosityLevelFor_8Raw(initOverrides);
         return await response.value();
     }
 
@@ -9203,18 +9365,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_8Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async subscriptionsCreate_9Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError(
                 'id',
-                'Required parameter "id" was null or undefined when calling subscriptionsCreate_8().'
+                'Required parameter "id" was null or undefined when calling subscriptionsCreate_9().'
             );
         }
 
         if (requestParameters['plugin'] == null) {
             throw new runtime.RequiredError(
                 'plugin',
-                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_8().'
+                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_9().'
             );
         }
 
@@ -9236,8 +9398,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_8(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.subscriptionsCreate_8Raw({ id: id, plugin: plugin }, initOverrides);
+    async subscriptionsCreate_9(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.subscriptionsCreate_9Raw({ id: id, plugin: plugin }, initOverrides);
         return await response.value();
     }
 
@@ -15598,6 +15760,13 @@ export class SystemApi extends runtime.BaseAPI {
   * @enum {string}
   */
 export enum SystemApiLeasesLookUpListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SystemApiOauthResourceServerAuthorizationDetailsTypesListListEnum {
     TRUE = 'true'
 }
 /**
