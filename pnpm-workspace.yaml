@@ -1,0 +1,6 @@
+# Copyright IBM Corp. 2025, 2026
+
+overrides:
+  form-data: ">=4.0.6"
+  brace-expansion: ">=5.0.7"
+  shell-quote: ">=1.9.0"
