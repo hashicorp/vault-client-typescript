@@ -63,6 +63,7 @@ import type {
   InternalUiReadAuthenticatedActiveCustomMessagesResponse,
   InternalUiReadMountInformationResponse,
   InternalUiReadResultantAclResponse,
+  InternalUiReadSettingsResponse,
   InternalUiReadUnauthenticatedActiveCustomMessagesResponse,
   LeaderStatusResponse,
   LeasesCountResponse,
@@ -392,6 +393,8 @@ import {
     InternalUiReadMountInformationResponseToJSON,
     InternalUiReadResultantAclResponseFromJSON,
     InternalUiReadResultantAclResponseToJSON,
+    InternalUiReadSettingsResponseFromJSON,
+    InternalUiReadSettingsResponseToJSON,
     InternalUiReadUnauthenticatedActiveCustomMessagesResponseFromJSON,
     InternalUiReadUnauthenticatedActiveCustomMessagesResponseToJSON,
     LeaderStatusResponseFromJSON,
@@ -4018,6 +4021,33 @@ export class SystemApi extends runtime.BaseAPI {
             default:
                 return await response.value();
         }
+    }
+
+    /**
+     * Return UI-related settings for the current cluster.
+     */
+    async internalUiReadSettingsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<InternalUiReadSettingsResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/internal/ui/settings`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => InternalUiReadSettingsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Return UI-related settings for the current cluster.
+     */
+    async internalUiReadSettings(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<InternalUiReadSettingsResponse> {
+        const response = await this.internalUiReadSettingsRaw(initOverrides);
+        return await response.value();
     }
 
     /**
