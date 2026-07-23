@@ -184,6 +184,7 @@ export * from './InternalUiListNamespacesResponse';
 export * from './InternalUiReadAuthenticatedActiveCustomMessagesResponse';
 export * from './InternalUiReadMountInformationResponse';
 export * from './InternalUiReadResultantAclResponse';
+export * from './InternalUiReadSettingsResponse';
 export * from './InternalUiReadUnauthenticatedActiveCustomMessagesResponse';
 export * from './JwtConfigureRequest';
 export * from './JwtLoginRequest';

@@ -186,6 +186,7 @@ src/models/InternalUiListNamespacesResponse.ts
 src/models/InternalUiReadAuthenticatedActiveCustomMessagesResponse.ts
 src/models/InternalUiReadMountInformationResponse.ts
 src/models/InternalUiReadResultantAclResponse.ts
+src/models/InternalUiReadSettingsResponse.ts
 src/models/InternalUiReadUnauthenticatedActiveCustomMessagesResponse.ts
 src/models/JwtConfigureRequest.ts
 src/models/JwtLoginRequest.ts
