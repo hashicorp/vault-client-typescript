@@ -14796,6 +14796,28 @@
         }
       }
     },
+    "/sys/internal/ui/settings": {
+      "description": "UI-related settings for the current cluster, such as whether UI telemetry is enabled. Internal API; its location, inputs, and outputs may change.",
+      "get": {
+        "summary": "Return UI-related settings for the current cluster.",
+        "operationId": "internal-ui-read-settings",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalUiReadSettingsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sys/internal/ui/unauthenticated-messages": {
       "x-vault-unauthenticated": true,
       "get": {
@@ -54417,6 +54439,14 @@
             "format": "map"
           },
           "root": {
+            "type": "boolean"
+          }
+        }
+      },
+      "InternalUiReadSettingsResponse": {
+        "type": "object",
+        "properties": {
+          "ui_telemetry_enabled": {
             "type": "boolean"
           }
         }
