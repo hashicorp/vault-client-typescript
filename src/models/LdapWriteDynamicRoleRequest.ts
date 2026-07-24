@@ -48,6 +48,12 @@ export interface LdapWriteDynamicRoleRequest {
      */
     max_ttl?: string;
     /**
+     * Password policy to use for this role. Overrides mount-level policy.
+     * @type {string}
+     * @memberof LdapWriteDynamicRoleRequest
+     */
+    password_policy?: string;
+    /**
      * LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated.
      * @type {string}
      * @memberof LdapWriteDynamicRoleRequest
@@ -84,6 +90,7 @@ export function LdapWriteDynamicRoleRequestFromJSONTyped(json: any, ignoreDiscri
         'default_ttl': json['default_ttl'] == null ? undefined : json['default_ttl'],
         'deletion_ldif': json['deletion_ldif'],
         'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
         'rollback_ldif': json['rollback_ldif'] == null ? undefined : json['rollback_ldif'],
         'username_template': json['username_template'] == null ? undefined : json['username_template'],
     };
@@ -104,6 +111,7 @@ export function LdapWriteDynamicRoleRequestToJSONTyped(value?: LdapWriteDynamicR
         'default_ttl': value['default_ttl'],
         'deletion_ldif': value['deletion_ldif'],
         'max_ttl': value['max_ttl'],
+        'password_policy': value['password_policy'],
         'rollback_ldif': value['rollback_ldif'],
         'username_template': value['username_template'],
     };

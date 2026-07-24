@@ -164,6 +164,18 @@ export interface LdapConfigureRequest {
      */
     request_timeout?: string;
     /**
+     * If true, credentials will be rotated on read rather than on a schedule. Default: false
+     * @type {boolean}
+     * @memberof LdapConfigureRequest
+     */
+    rotate_on_read?: boolean;
+    /**
+     * Minimum time between rotate-on-read rotations. Default: 1m
+     * @type {string}
+     * @memberof LdapConfigureRequest
+     */
+    rotate_on_read_cooldown?: string;
+    /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof LdapConfigureRequest
@@ -351,6 +363,8 @@ export function LdapConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
         'max_ttl': json['max_ttl'] == null ? undefined : json['max_ttl'],
         'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
         'request_timeout': json['request_timeout'] == null ? undefined : json['request_timeout'],
+        'rotate_on_read': json['rotate_on_read'] == null ? undefined : json['rotate_on_read'],
+        'rotate_on_read_cooldown': json['rotate_on_read_cooldown'] == null ? undefined : json['rotate_on_read_cooldown'],
         'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
         'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
@@ -407,6 +421,8 @@ export function LdapConfigureRequestToJSONTyped(value?: LdapConfigureRequest | n
         'max_ttl': value['max_ttl'],
         'password_policy': value['password_policy'],
         'request_timeout': value['request_timeout'],
+        'rotate_on_read': value['rotate_on_read'],
+        'rotate_on_read_cooldown': value['rotate_on_read_cooldown'],
         'rotation_period': value['rotation_period'],
         'rotation_policy': value['rotation_policy'],
         'rotation_schedule': value['rotation_schedule'],
