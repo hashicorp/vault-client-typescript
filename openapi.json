@@ -57202,6 +57202,17 @@
             "format": "duration",
             "default": "90s"
           },
+          "rotate_on_read": {
+            "type": "boolean",
+            "description": "If true, credentials will be rotated on read rather than on a schedule. Default: false",
+            "default": false
+          },
+          "rotate_on_read_cooldown": {
+            "type": "string",
+            "description": "Minimum time between rotate-on-read rotations. Default: 1m",
+            "format": "duration",
+            "default": 60
+          },
           "rotation_period": {
             "type": "string",
             "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
@@ -57467,6 +57478,10 @@
             "description": "Max TTL a dynamic credential can be extended to",
             "format": "duration"
           },
+          "password_policy": {
+            "type": "string",
+            "description": "Password policy to use for this role. Overrides mount-level policy."
+          },
           "rollback_ldif": {
             "type": "string",
             "description": "LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated."
@@ -57516,6 +57531,19 @@
             "x-vault-displayAttrs": {
               "sensitive": true
             }
+          },
+          "password_policy": {
+            "type": "string",
+            "description": "Password policy to use for this role. Overrides mount-level policy."
+          },
+          "rotate_on_read": {
+            "type": "boolean",
+            "description": "If true, credentials will be rotated on read. If not set, inherits from engine configuration. Default: inherits from engine"
+          },
+          "rotate_on_read_cooldown": {
+            "type": "string",
+            "description": "Minimum time between rotate-on-read rotations. If not set, inherits from engine configuration.",
+            "format": "duration"
           },
           "rotation_period": {
             "type": "string",
