@@ -42,6 +42,24 @@ export interface LdapWriteStaticRoleRequest {
      */
     password?: string;
     /**
+     * Password policy to use for this role. Overrides mount-level policy.
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    password_policy?: string;
+    /**
+     * If true, credentials will be rotated on read. If not set, inherits from engine configuration. Default: inherits from engine
+     * @type {boolean}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    rotate_on_read?: boolean;
+    /**
+     * Minimum time between rotate-on-read rotations. If not set, inherits from engine configuration.
+     * @type {string}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    rotate_on_read_cooldown?: string;
+    /**
      * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
      * @type {string}
      * @memberof LdapWriteStaticRoleRequest
@@ -99,6 +117,9 @@ export function LdapWriteStaticRoleRequestFromJSONTyped(json: any, ignoreDiscrim
         'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'dn': json['dn'] == null ? undefined : json['dn'],
         'password': json['password'] == null ? undefined : json['password'],
+        'password_policy': json['password_policy'] == null ? undefined : json['password_policy'],
+        'rotate_on_read': json['rotate_on_read'] == null ? undefined : json['rotate_on_read'],
+        'rotate_on_read_cooldown': json['rotate_on_read_cooldown'] == null ? undefined : json['rotate_on_read_cooldown'],
         'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
         'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
@@ -122,6 +143,9 @@ export function LdapWriteStaticRoleRequestToJSONTyped(value?: LdapWriteStaticRol
         'disable_automated_rotation': value['disable_automated_rotation'],
         'dn': value['dn'],
         'password': value['password'],
+        'password_policy': value['password_policy'],
+        'rotate_on_read': value['rotate_on_read'],
+        'rotate_on_read_cooldown': value['rotate_on_read_cooldown'],
         'rotation_period': value['rotation_period'],
         'rotation_policy': value['rotation_policy'],
         'rotation_schedule': value['rotation_schedule'],
