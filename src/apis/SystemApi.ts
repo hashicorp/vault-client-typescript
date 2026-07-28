@@ -7046,7 +7046,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Create a new or update an existing rotation policy.
+     * Update an existing rotation policy.
      */
     async policiesWriteRotationPolicyRaw(requestParameters: SystemApiPoliciesWriteRotationPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -7082,7 +7082,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Create a new or update an existing rotation policy.
+     * Update an existing rotation policy.
      */
     async policiesWriteRotationPolicy(name: string, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.policiesWriteRotationPolicyRaw({ name: name, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest }, initOverrides);

@@ -17528,6 +17528,7 @@
           "required": true
         }
       ],
+      "x-vault-createSupported": true,
       "get": {
         "summary": "Retrieve an existing rotation policy.",
         "operationId": "policies-read-rotation-policy",
@@ -17548,7 +17549,7 @@
         }
       },
       "post": {
-        "summary": "Create a new or update an existing rotation policy.",
+        "summary": "Update an existing rotation policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
