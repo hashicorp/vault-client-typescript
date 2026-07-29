@@ -145,6 +145,11 @@ import type {
   TokenRevokeOrphanRequest,
   TokenRevokeRequest,
   TokenWriteRoleRequest,
+  TpmConfigureRequest,
+  TpmConfigureResponse,
+  TpmLoginRequest,
+  TpmWriteRoleRequest,
+  TpmWriteTpmCertificateRequest,
   UserpassLoginRequest,
   UserpassResetPasswordRequest,
   UserpassUpdatePoliciesRequest,
@@ -403,6 +408,16 @@ import {
     TokenRevokeRequestToJSON,
     TokenWriteRoleRequestFromJSON,
     TokenWriteRoleRequestToJSON,
+    TpmConfigureRequestFromJSON,
+    TpmConfigureRequestToJSON,
+    TpmConfigureResponseFromJSON,
+    TpmConfigureResponseToJSON,
+    TpmLoginRequestFromJSON,
+    TpmLoginRequestToJSON,
+    TpmWriteRoleRequestFromJSON,
+    TpmWriteRoleRequestToJSON,
+    TpmWriteTpmCertificateRequestFromJSON,
+    TpmWriteTpmCertificateRequestToJSON,
     UserpassLoginRequestFromJSON,
     UserpassLoginRequestToJSON,
     UserpassResetPasswordRequestFromJSON,
@@ -1742,6 +1757,53 @@ export interface AuthApiTokenRevokeOrphanOperationRequest {
 export interface AuthApiTokenWriteRoleOperationRequest {
     role_name: string;
     TokenWriteRoleRequest: TokenWriteRoleRequest;
+}
+
+export interface AuthApiTpmConfigureRequest {
+    tpm_mount_path: string;
+}
+
+export interface AuthApiTpmConfigure0Request {
+    tpm_mount_path: string;
+    TpmConfigureRequest: TpmConfigureRequest;
+}
+
+export interface AuthApiTpmDeleteRoleRequest {
+    name: string;
+    tpm_mount_path: string;
+}
+
+export interface AuthApiTpmListRolesRequest {
+    tpm_mount_path: string;
+    list: AuthApiTpmListRolesListEnum;
+}
+
+export interface AuthApiTpmLoginOperationRequest {
+    tpm_mount_path: string;
+    TpmLoginRequest: TpmLoginRequest;
+}
+
+export interface AuthApiTpmReadRoleRequest {
+    name: string;
+    tpm_mount_path: string;
+}
+
+export interface AuthApiTpmWriteRoleOperationRequest {
+    name: string;
+    tpm_mount_path: string;
+    TpmWriteRoleRequest: TpmWriteRoleRequest;
+}
+
+export interface AuthApiTpmWriteTpmCertificateOperationRequest {
+    role_name: string;
+    tpm_mount_path: string;
+    TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest;
+}
+
+export interface AuthApiTpmWriteTpmCertificate0Request {
+    role_name: string;
+    tpm_mount_path: string;
+    TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest;
 }
 
 export interface AuthApiUserpassDeleteUserRequest {
@@ -12881,6 +12943,396 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     */
+    async tpmConfigureRaw(requestParameters: AuthApiTpmConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TpmConfigureResponse>> {
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmConfigure().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/auth/{tpm_mount_path}/config`.replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TpmConfigureResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async tpmConfigure(tpm_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TpmConfigureResponse> {
+        const response = await this.tpmConfigureRaw({ tpm_mount_path: tpm_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmConfigure_2Raw(requestParameters: AuthApiTpmConfigure0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TpmConfigureResponse>> {
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmConfigure_2().'
+            );
+        }
+
+        if (requestParameters['TpmConfigureRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmConfigureRequest',
+                'Required parameter "TpmConfigureRequest" was null or undefined when calling tpmConfigure_2().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/{tpm_mount_path}/config`.replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmConfigureRequestToJSON(requestParameters['TpmConfigureRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TpmConfigureResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async tpmConfigure_2(tpm_mount_path: string, TpmConfigureRequest: TpmConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TpmConfigureResponse> {
+        const response = await this.tpmConfigure_2Raw({ tpm_mount_path: tpm_mount_path, TpmConfigureRequest: TpmConfigureRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmDeleteRoleRaw(requestParameters: AuthApiTpmDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmDeleteRole().'
+            );
+        }
+
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmDeleteRole().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/auth/{tpm_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmDeleteRole(name: string, tpm_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmDeleteRoleRaw({ name: name, tpm_mount_path: tpm_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmListRolesRaw(requestParameters: AuthApiTpmListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmListRoles().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling tpmListRoles().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/auth/{tpm_mount_path}/role/`.replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async tpmListRoles(tpm_mount_path: string, list: AuthApiTpmListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+        const response = await this.tpmListRolesRaw({ tpm_mount_path: tpm_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmLoginRaw(requestParameters: AuthApiTpmLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmLogin().'
+            );
+        }
+
+        if (requestParameters['TpmLoginRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmLoginRequest',
+                'Required parameter "TpmLoginRequest" was null or undefined when calling tpmLogin().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/{tpm_mount_path}/login`.replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmLoginRequestToJSON(requestParameters['TpmLoginRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmLogin(tpm_mount_path: string, TpmLoginRequest: TpmLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmLoginRaw({ tpm_mount_path: tpm_mount_path, TpmLoginRequest: TpmLoginRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmReadRoleRaw(requestParameters: AuthApiTpmReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmReadRole().'
+            );
+        }
+
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmReadRole().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/auth/{tpm_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmReadRole(name: string, tpm_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmReadRoleRaw({ name: name, tpm_mount_path: tpm_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmWriteRoleRaw(requestParameters: AuthApiTpmWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling tpmWriteRole().'
+            );
+        }
+
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmWriteRole().'
+            );
+        }
+
+        if (requestParameters['TpmWriteRoleRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmWriteRoleRequest',
+                'Required parameter "TpmWriteRoleRequest" was null or undefined when calling tpmWriteRole().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/{tpm_mount_path}/role/{name}`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmWriteRoleRequestToJSON(requestParameters['TpmWriteRoleRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Manage TPM authentication roles.
+     */
+    async tpmWriteRole(name: string, tpm_mount_path: string, TpmWriteRoleRequest: TpmWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmWriteRoleRaw({ name: name, tpm_mount_path: tpm_mount_path, TpmWriteRoleRequest: TpmWriteRoleRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmWriteTpmCertificateRaw(requestParameters: AuthApiTpmWriteTpmCertificateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['role_name'] == null) {
+            throw new runtime.RequiredError(
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tpmWriteTpmCertificate().'
+            );
+        }
+
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmWriteTpmCertificate().'
+            );
+        }
+
+        if (requestParameters['TpmWriteTpmCertificateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmWriteTpmCertificateRequest',
+                'Required parameter "TpmWriteTpmCertificateRequest" was null or undefined when calling tpmWriteTpmCertificate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/{tpm_mount_path}/role/{role_name}/gentpmcert/begin`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmWriteTpmCertificateRequestToJSON(requestParameters['TpmWriteTpmCertificateRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmWriteTpmCertificate(role_name: string, tpm_mount_path: string, TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmWriteTpmCertificateRaw({ role_name: role_name, tpm_mount_path: tpm_mount_path, TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tpmWriteTpmCertificate_3Raw(requestParameters: AuthApiTpmWriteTpmCertificate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['role_name'] == null) {
+            throw new runtime.RequiredError(
+                'role_name',
+                'Required parameter "role_name" was null or undefined when calling tpmWriteTpmCertificate_3().'
+            );
+        }
+
+        if (requestParameters['tpm_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'tpm_mount_path',
+                'Required parameter "tpm_mount_path" was null or undefined when calling tpmWriteTpmCertificate_3().'
+            );
+        }
+
+        if (requestParameters['TpmWriteTpmCertificateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TpmWriteTpmCertificateRequest',
+                'Required parameter "TpmWriteTpmCertificateRequest" was null or undefined when calling tpmWriteTpmCertificate_3().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/{tpm_mount_path}/role/{role_name}/gentpmcert/finish`.replace(`{${"role_name"}}`, encodeURIComponent(String(requestParameters['role_name']).replace(/\/+$/, ''))).replace(`{${"tpm_mount_path"}}`, encodeURIComponent(String(requestParameters['tpm_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TpmWriteTpmCertificateRequestToJSON(requestParameters['TpmWriteTpmCertificateRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tpmWriteTpmCertificate_3(role_name: string, tpm_mount_path: string, TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tpmWriteTpmCertificate_3Raw({ role_name: role_name, tpm_mount_path: tpm_mount_path, TpmWriteTpmCertificateRequest: TpmWriteTpmCertificateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Manage users allowed to authenticate.
      */
     async userpassDeleteUserRaw(requestParameters: AuthApiUserpassDeleteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
@@ -13449,6 +13901,13 @@ export enum AuthApiTokenListAccessorsListEnum {
   * @enum {string}
   */
 export enum AuthApiTokenListRolesListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum AuthApiTpmListRolesListEnum {
     TRUE = 'true'
 }
 /**

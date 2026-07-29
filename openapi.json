@@ -7797,6 +7797,321 @@
         }
       }
     },
+    "/auth/{tpm_mount_path}/config": {
+      "description": "Configure the TPM auth backend CA settings.",
+      "parameters": [
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "tpm-configure",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TpmConfigureResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "tpm-configure",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmConfigureRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TpmConfigureResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/{tpm_mount_path}/login": {
+      "description": "Authenticate using a TPM-backed client certificate.",
+      "parameters": [
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "post": {
+        "operationId": "tpm-login",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmLoginRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{tpm_mount_path}/role/": {
+      "description": "Manage TPM authentication roles.",
+      "parameters": [
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-displayAttrs": {
+        "navigation": true,
+        "itemType": "Role"
+      },
+      "get": {
+        "operationId": "tpm-list-roles",
+        "tags": [
+          "auth"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/{tpm_mount_path}/role/{name}": {
+      "description": "Manage TPM authentication roles.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-displayAttrs": {
+        "itemType": "Role",
+        "action": "Create"
+      },
+      "get": {
+        "summary": "Manage TPM authentication roles.",
+        "operationId": "tpm-read-role",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Manage TPM authentication roles.",
+        "operationId": "tpm-write-role",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmWriteRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Manage TPM authentication roles.",
+        "operationId": "tpm-delete-role",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/auth/{tpm_mount_path}/role/{role_name}/gentpmcert/begin": {
+      "description": "Generate a TPM-backed client certificate.",
+      "parameters": [
+        {
+          "name": "role_name",
+          "description": "Name of the role to issue a certificate for.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "post": {
+        "operationId": "tpm-write-tpm-certificate",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmWriteTpmCertificateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/{tpm_mount_path}/role/{role_name}/gentpmcert/finish": {
+      "description": "Generate a TPM-backed client certificate.",
+      "parameters": [
+        {
+          "name": "role_name",
+          "description": "Name of the role to issue a certificate for.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "tpm_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "tpm"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "post": {
+        "operationId": "tpm-write-tpm-certificate",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TpmWriteTpmCertificateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auth/{userpass_mount_path}/login/{username}": {
       "description": "Log in with a username and password.",
       "parameters": [
@@ -80282,6 +80597,50 @@
           }
         }
       },
+      "TpmConfigureRequest": {
+        "type": "object",
+        "properties": {
+          "ca_lifetime": {
+            "type": "string",
+            "description": "How long each CA is valid once it becomes active.",
+            "format": "duration",
+            "default": "8760h"
+          },
+          "ca_soft_expiry": {
+            "type": "string",
+            "description": "How long before its hard expiry the Active CA stops signing new certificates (the soft-expiry window). Must be less than ca_lifetime / 2.",
+            "format": "duration",
+            "default": "720h"
+          },
+          "default_cert_ttl": {
+            "type": "string",
+            "description": "Default lifetime for issued client certificates. Applied when a role does not set cert_ttl. Zero means use ca_soft_expiry.",
+            "format": "duration"
+          }
+        }
+      },
+      "TpmConfigureResponse": {
+        "type": "object",
+        "properties": {
+          "ca_lifetime": {
+            "type": "string",
+            "description": "How long each CA is valid once it becomes active.",
+            "format": "duration",
+            "default": "8760h"
+          },
+          "ca_soft_expiry": {
+            "type": "string",
+            "description": "How long before its hard expiry the Active CA stops signing new certificates (the soft-expiry window). Must be less than ca_lifetime / 2.",
+            "format": "duration",
+            "default": "720h"
+          },
+          "default_cert_ttl": {
+            "type": "string",
+            "description": "Default lifetime for issued client certificates. Applied when a role does not set cert_ttl. Zero means use ca_soft_expiry.",
+            "format": "duration"
+          }
+        }
+      },
       "TpmCreateRequest": {
         "type": "object",
         "properties": {
@@ -80305,6 +80664,15 @@
           "tpm_ek_public_key": {
             "type": "string",
             "description": "PEM-encoded TPM Endorsement Key (EK) public key."
+          }
+        }
+      },
+      "TpmLoginRequest": {
+        "type": "object",
+        "properties": {
+          "role_name": {
+            "type": "string",
+            "description": "The name of the role to authenticate against"
           }
         }
       },
@@ -80351,6 +80719,156 @@
             "description": "PEM-encoded TPM Endorsement Key (EK) public key."
           }
         }
+      },
+      "TpmWriteRoleRequest": {
+        "type": "object",
+        "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "The metadata to be tied to generated entity alias. This should be a list or map containing the metadata in key value pairs",
+            "format": "kvpairs",
+            "x-vault-displayAttrs": {
+              "name": "Token Alias Metadata",
+              "group": "Tokens"
+            }
+          },
+          "cert_ttl": {
+            "type": "string",
+            "description": "Duration of issued client certificates. Zero means use the global default_cert_ttl from config, falling back to ca_soft_expiry.",
+            "format": "duration"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "The display name to use for clients using this role"
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Bound CIDRs",
+              "description": "A list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.",
+              "group": "Tokens"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "string",
+            "description": "If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Explicit Maximum TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_max_ttl": {
+            "type": "string",
+            "description": "The maximum lifetime of the generated token",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Maximum TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "If true, the 'default' policy will not automatically be added to generated tokens",
+            "x-vault-displayAttrs": {
+              "name": "Do Not Attach 'default' Policy To Generated Tokens",
+              "group": "Tokens"
+            }
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "The maximum number of times a token may be used, a value of zero means unlimited",
+            "x-vault-displayAttrs": {
+              "name": "Maximum Uses of Generated Tokens",
+              "group": "Tokens"
+            }
+          },
+          "token_period": {
+            "type": "string",
+            "description": "If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Period",
+              "group": "Tokens"
+            }
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "Comma-separated list of policies",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Policies",
+              "description": "A list of policies that will apply to the generated token for this user.",
+              "group": "Tokens"
+            }
+          },
+          "token_ttl": {
+            "type": "string",
+            "description": "The initial ttl of the token to generate",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Initial TTL",
+              "group": "Tokens"
+            }
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token to generate, service or batch",
+            "default": "default-service",
+            "x-vault-displayAttrs": {
+              "name": "Generated Token's Type",
+              "group": "Tokens"
+            }
+          },
+          "tpm_ids": {
+            "type": "array",
+            "description": "A comma-separated list of allowed TPM record IDs",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tpmgroup_ids": {
+            "type": "array",
+            "description": "A comma-separated list of allowed TPM group IDs",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TpmWriteTpmCertificateRequest": {
+        "type": "object",
+        "properties": {
+          "challenge_id": {
+            "type": "string",
+            "description": "Challenge identifier from the begin phase."
+          },
+          "challenge_response": {
+            "type": "string",
+            "description": "Challenge response from TPM ActivateCredential."
+          },
+          "csr": {
+            "type": "string",
+            "description": "PEM-encoded certificate signing request for the application key."
+          },
+          "ek_public_key": {
+            "type": "string",
+            "description": "PEM-encoded TPM Endorsement Key public key."
+          },
+          "key_certification": {
+            "type": "string",
+            "description": "Base64-encoded JSON-marshaled attest.CertificationParameters for the application key."
+          }
+        },
+        "required": [
+          "ek_public_key"
+        ]
       },
       "TpmgroupCreateRequest": {
         "type": "object",
