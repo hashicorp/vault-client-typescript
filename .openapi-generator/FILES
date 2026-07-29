@@ -849,9 +849,14 @@ src/models/TokenRevokeRequest.ts
 src/models/TokenWriteRoleRequest.ts
 src/models/TotpCreateKeyRequest.ts
 src/models/TotpValidateCodeRequest.ts
+src/models/TpmConfigureRequest.ts
+src/models/TpmConfigureResponse.ts
 src/models/TpmCreateRequest.ts
+src/models/TpmLoginRequest.ts
 src/models/TpmUpdateByIdRequest.ts
 src/models/TpmUpdateByNameRequest.ts
+src/models/TpmWriteRoleRequest.ts
+src/models/TpmWriteTpmCertificateRequest.ts
 src/models/TpmgroupCreateRequest.ts
 src/models/TpmgroupUpdateByIdRequest.ts
 src/models/TpmgroupUpdateByNameRequest.ts
