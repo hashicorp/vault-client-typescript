@@ -80919,6 +80919,10 @@
       "TpmgroupUpdateByNameRequest": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the TPMGroup. If set, updates the corresponding existing TPMGroup."
+          },
           "member_tpm_ids": {
             "type": "array",
             "description": "TPM IDs to be assigned as group members.",
