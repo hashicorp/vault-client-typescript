@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface TpmgroupUpdateByNameRequest {
     /**
+     * ID of the TPMGroup. If set, updates the corresponding existing TPMGroup.
+     * @type {string}
+     * @memberof TpmgroupUpdateByNameRequest
+     */
+    id?: string;
+    /**
      * TPM IDs to be assigned as group members.
      * @type {Array<string>}
      * @memberof TpmgroupUpdateByNameRequest
@@ -54,6 +60,7 @@ export function TpmgroupUpdateByNameRequestFromJSONTyped(json: any, ignoreDiscri
     }
     return {
         
+        'id': json['id'] == null ? undefined : json['id'],
         'member_tpm_ids': json['member_tpm_ids'] == null ? undefined : json['member_tpm_ids'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
     };
@@ -70,6 +77,7 @@ export function TpmgroupUpdateByNameRequestToJSONTyped(value?: TpmgroupUpdateByN
 
     return {
         
+        'id': value['id'],
         'member_tpm_ids': value['member_tpm_ids'],
         'metadata': value['metadata'],
     };
