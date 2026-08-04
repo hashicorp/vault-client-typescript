@@ -81579,6 +81579,13 @@
             "type": "boolean",
             "description": "Enables export of the key. Once set, this cannot be disabled."
           },
+          "key_usages": {
+            "type": "array",
+            "description": "List of cryptographic operations the key facilitates, derived from the key type. Possible values are: aead-encryption, symmetric-encryption, asymmetric-encryption, digital-signature, message-authentication.",
+            "items": {
+              "type": "string"
+            }
+          },
           "min_decryption_version": {
             "type": "integer",
             "description": "If set, the minimum version of the key allowed to be decrypted. For signing keys, the minimum version allowed to be used for verification."
