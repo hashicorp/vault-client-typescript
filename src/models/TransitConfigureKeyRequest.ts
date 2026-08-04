@@ -48,6 +48,12 @@ export interface TransitConfigureKeyRequest {
      */
     exportable?: boolean;
     /**
+     * List of cryptographic operations the key facilitates, derived from the key type. Possible values are: aead-encryption, symmetric-encryption, asymmetric-encryption, digital-signature, message-authentication.
+     * @type {Array<string>}
+     * @memberof TransitConfigureKeyRequest
+     */
+    key_usages?: Array<string>;
+    /**
      * If set, the minimum version of the key allowed to be decrypted. For signing keys, the minimum version allowed to be used for verification.
      * @type {number}
      * @memberof TransitConfigureKeyRequest
@@ -82,6 +88,7 @@ export function TransitConfigureKeyRequestFromJSONTyped(json: any, ignoreDiscrim
         'auto_rotate_period': json['auto_rotate_period'] == null ? undefined : json['auto_rotate_period'],
         'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
         'exportable': json['exportable'] == null ? undefined : json['exportable'],
+        'key_usages': json['key_usages'] == null ? undefined : json['key_usages'],
         'min_decryption_version': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
         'min_encryption_version': json['min_encryption_version'] == null ? undefined : json['min_encryption_version'],
     };
@@ -102,6 +109,7 @@ export function TransitConfigureKeyRequestToJSONTyped(value?: TransitConfigureKe
         'auto_rotate_period': value['auto_rotate_period'],
         'deletion_allowed': value['deletion_allowed'],
         'exportable': value['exportable'],
+        'key_usages': value['key_usages'],
         'min_decryption_version': value['min_decryption_version'],
         'min_encryption_version': value['min_encryption_version'],
     };
