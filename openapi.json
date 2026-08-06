@@ -14021,6 +14021,46 @@
         }
       }
     },
+    "/sys/control-hub/de-register": {
+      "description": "Manage control hub enrollment and registration.",
+      "post": {
+        "summary": "De-register this Vault instance from the control hub.",
+        "operationId": "control-hub-de-register",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/control-hub/enroll": {
+      "description": "Manage control hub enrollment and registration.",
+      "post": {
+        "summary": "Enroll this Vault instance with the control hub.",
+        "operationId": "control-hub-enroll",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ControlHubEnrollRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/decode-token": {
       "x-vault-unauthenticated": true,
       "post": {
@@ -14407,6 +14447,30 @@
           },
           "503": {
             "description": "sealed"
+          }
+        }
+      }
+    },
+    "/sys/health-check/exec/{path}": {
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "system-read-health-check-exec-path",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -16828,6 +16892,30 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sys/oauth-resource-server/protected-resource-metadata": {
+      "description": "This path responds to the following HTTP methods. GET / Returns OAuth Protected Resource Metadata including authorization server and RAR type discovery fields.",
+      "x-vault-unauthenticated": true,
+      "get": {
+        "summary": "Read OAuth Protected Resource Metadata for OAuth Resource Server discovery.",
+        "description": "Returns standards-aligned metadata for authorization server and supported authorization_details type discovery.",
+        "operationId": "oauth-resource-server-protected-resource-metadata-read",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerProtectedResourceMetadataReadResponse"
                 }
               }
             }
@@ -52279,6 +52367,18 @@
           }
         }
       },
+      "ControlHubEnrollRequest": {
+        "type": "object",
+        "properties": {
+          "activation_token": {
+            "type": "string",
+            "description": "The activation token for enrolling with the control hub."
+          }
+        },
+        "required": [
+          "activation_token"
+        ]
+      },
       "CorsConfigureRequest": {
         "type": "object",
         "properties": {
@@ -59304,6 +59404,35 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "OauthResourceServerProtectedResourceMetadataReadResponse": {
+        "type": "object",
+        "properties": {
+          "authorization_details_types_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorization_servers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bearer_methods_supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rar_types_metadata_endpoint": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
           }
         }
       },
