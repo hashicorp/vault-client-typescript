@@ -101,6 +101,7 @@ src/models/CloudFoundryWriteRoleRequest.ts
 src/models/CollectHostInformationResponse.ts
 src/models/ConsulConfigureAccessRequest.ts
 src/models/ConsulWriteRoleRequest.ts
+src/models/ControlHubEnrollRequest.ts
 src/models/CorsConfigureRequest.ts
 src/models/CorsReadConfigurationResponse.ts
 src/models/CreateCustomMessageRequest.ts
@@ -293,6 +294,7 @@ src/models/OauthResourceServerAuthorizationDetailsTypesListResponse.ts
 src/models/OauthResourceServerAuthorizationDetailsTypesReadResponse.ts
 src/models/OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse.ts
 src/models/OauthResourceServerListProfilesResponse.ts
+src/models/OauthResourceServerProtectedResourceMetadataReadResponse.ts
 src/models/OauthResourceServerReadProfileByIdResponse.ts
 src/models/OauthResourceServerReadProfileResponse.ts
 src/models/OauthResourceServerUpdateProfileRequest.ts

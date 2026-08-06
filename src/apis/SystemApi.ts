@@ -29,6 +29,7 @@ import type {
   AuthReadTuningInformationResponse,
   AuthTuneConfigurationParametersRequest,
   CollectHostInformationResponse,
+  ControlHubEnrollRequest,
   CorsConfigureRequest,
   CorsReadConfigurationResponse,
   CreateCustomMessageRequest,
@@ -94,6 +95,7 @@ import type {
   OauthResourceServerAuthorizationDetailsTypesReadResponse,
   OauthResourceServerAuthorizationDetailsTypesReadSchemaResponse,
   OauthResourceServerListProfilesResponse,
+  OauthResourceServerProtectedResourceMetadataReadResponse,
   OauthResourceServerReadProfileByIdResponse,
   OauthResourceServerReadProfileResponse,
   OauthResourceServerUpdateProfileRequest,
@@ -325,6 +327,8 @@ import {
     AuthTuneConfigurationParametersRequestToJSON,
     CollectHostInformationResponseFromJSON,
     CollectHostInformationResponseToJSON,
+    ControlHubEnrollRequestFromJSON,
+    ControlHubEnrollRequestToJSON,
     CorsConfigureRequestFromJSON,
     CorsConfigureRequestToJSON,
     CorsReadConfigurationResponseFromJSON,
@@ -455,6 +459,8 @@ import {
     OauthResourceServerAuthorizationDetailsTypesReadSchemaResponseToJSON,
     OauthResourceServerListProfilesResponseFromJSON,
     OauthResourceServerListProfilesResponseToJSON,
+    OauthResourceServerProtectedResourceMetadataReadResponseFromJSON,
+    OauthResourceServerProtectedResourceMetadataReadResponseToJSON,
     OauthResourceServerReadProfileByIdResponseFromJSON,
     OauthResourceServerReadProfileByIdResponseToJSON,
     OauthResourceServerReadProfileResponseFromJSON,
@@ -922,6 +928,10 @@ export interface SystemApiAuthReadTuningInformationRequest {
 export interface SystemApiAuthTuneConfigurationParametersOperationRequest {
     path: string;
     AuthTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest;
+}
+
+export interface SystemApiControlHubEnrollOperationRequest {
+    ControlHubEnrollRequest: ControlHubEnrollRequest;
 }
 
 export interface SystemApiCorsConfigureOperationRequest {
@@ -1643,6 +1653,10 @@ export interface SystemApiSystemReadBillingOverviewRequest {
     end_month?: string;
     refresh_data?: boolean;
     start_month?: string;
+}
+
+export interface SystemApiSystemReadHealthCheckExecPathRequest {
+    path: string;
 }
 
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
@@ -2828,6 +2842,70 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async collectInFlightRequestInformation(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.collectInFlightRequestInformationRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * De-register this Vault instance from the control hub.
+     */
+    async controlHubDeRegisterRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/control-hub/de-register`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * De-register this Vault instance from the control hub.
+     */
+    async controlHubDeRegister(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.controlHubDeRegisterRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Enroll this Vault instance with the control hub.
+     */
+    async controlHubEnrollRaw(requestParameters: SystemApiControlHubEnrollOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['ControlHubEnrollRequest'] == null) {
+            throw new runtime.RequiredError(
+                'ControlHubEnrollRequest',
+                'Required parameter "ControlHubEnrollRequest" was null or undefined when calling controlHubEnroll().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/control-hub/enroll`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ControlHubEnrollRequestToJSON(requestParameters['ControlHubEnrollRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Enroll this Vault instance with the control hub.
+     */
+    async controlHubEnroll(ControlHubEnrollRequest: ControlHubEnrollRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.controlHubEnrollRaw({ ControlHubEnrollRequest: ControlHubEnrollRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5645,6 +5723,35 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async oauthResourceServerListProfiles(list: SystemApiOauthResourceServerListProfilesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerListProfilesResponse> {
         const response = await this.oauthResourceServerListProfilesRaw({ list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Returns standards-aligned metadata for authorization server and supported authorization_details type discovery.
+     * Read OAuth Protected Resource Metadata for OAuth Resource Server discovery.
+     */
+    async oauthResourceServerProtectedResourceMetadataReadRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerProtectedResourceMetadataReadResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/oauth-resource-server/protected-resource-metadata`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerProtectedResourceMetadataReadResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns standards-aligned metadata for authorization server and supported authorization_details type discovery.
+     * Read OAuth Protected Resource Metadata for OAuth Resource Server discovery.
+     */
+    async oauthResourceServerProtectedResourceMetadataRead(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerProtectedResourceMetadataReadResponse> {
+        const response = await this.oauthResourceServerProtectedResourceMetadataReadRaw(initOverrides);
         return await response.value();
     }
 
@@ -11170,6 +11277,38 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadConfigGroupPolicyApplication(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadConfigGroupPolicyApplicationResponse> {
         const response = await this.systemReadConfigGroupPolicyApplicationRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async systemReadHealthCheckExecPathRaw(requestParameters: SystemApiSystemReadHealthCheckExecPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['path'] == null) {
+            throw new runtime.RequiredError(
+                'path',
+                'Required parameter "path" was null or undefined when calling systemReadHealthCheckExecPath().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/health-check/exec/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async systemReadHealthCheckExecPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemReadHealthCheckExecPathRaw({ path: path }, initOverrides);
         return await response.value();
     }
 
