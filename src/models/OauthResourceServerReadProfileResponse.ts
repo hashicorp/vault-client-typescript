@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface OauthResourceServerReadProfileResponse {
     /**
+     * Optional claim to use as the actor identifier.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    actor_claim?: string;
+    /**
      * List of allowed audiences (aud claim).
      * @type {Array<string>}
      * @memberof OauthResourceServerReadProfileResponse
@@ -96,6 +102,12 @@ export interface OauthResourceServerReadProfileResponse {
      */
     supported_algorithms?: Array<string>;
     /**
+     * Optional claim to use as the unique identifier for the JWT claim.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    unique_id_claim?: string;
+    /**
      * If true, use JWKS URI for key validation profile names.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
@@ -126,6 +138,7 @@ export function OauthResourceServerReadProfileResponseFromJSONTyped(json: any, i
     }
     return {
         
+        'actor_claim': json['actor_claim'] == null ? undefined : json['actor_claim'],
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
         'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
         'config_id': json['config_id'] == null ? undefined : json['config_id'],
@@ -138,6 +151,7 @@ export function OauthResourceServerReadProfileResponseFromJSONTyped(json: any, i
         'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
         'supported_algorithms': json['supported_algorithms'] == null ? undefined : json['supported_algorithms'],
+        'unique_id_claim': json['unique_id_claim'] == null ? undefined : json['unique_id_claim'],
         'use_jwks': json['use_jwks'] == null ? undefined : json['use_jwks'],
         'user_claim': json['user_claim'] == null ? undefined : json['user_claim'],
     };
@@ -154,6 +168,7 @@ export function OauthResourceServerReadProfileResponseToJSONTyped(value?: OauthR
 
     return {
         
+        'actor_claim': value['actor_claim'],
         'audiences': value['audiences'],
         'clock_skew_leeway': value['clock_skew_leeway'],
         'config_id': value['config_id'],
@@ -166,6 +181,7 @@ export function OauthResourceServerReadProfileResponseToJSONTyped(value?: OauthR
         'profile_name': value['profile_name'],
         'public_keys': value['public_keys'],
         'supported_algorithms': value['supported_algorithms'],
+        'unique_id_claim': value['unique_id_claim'],
         'use_jwks': value['use_jwks'],
         'user_claim': value['user_claim'],
     };

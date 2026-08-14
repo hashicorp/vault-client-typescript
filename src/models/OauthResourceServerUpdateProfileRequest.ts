@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface OauthResourceServerUpdateProfileRequest {
     /**
+     * Optional claim to use as the actor identifier.
+     * @type {string}
+     * @memberof OauthResourceServerUpdateProfileRequest
+     */
+    actor_claim?: string;
+    /**
      * List of allowed audiences (aud claim).
      * @type {Array<string>}
      * @memberof OauthResourceServerUpdateProfileRequest
@@ -90,6 +96,12 @@ export interface OauthResourceServerUpdateProfileRequest {
      */
     supported_algorithms?: Array<string>;
     /**
+     * Optional unique identifier for the JWT claim.
+     * @type {string}
+     * @memberof OauthResourceServerUpdateProfileRequest
+     */
+    unique_id_claim?: string;
+    /**
      * If true, use JWKS URI for key validation; if false, use static public keys.
      * @type {boolean}
      * @memberof OauthResourceServerUpdateProfileRequest
@@ -121,6 +133,7 @@ export function OauthResourceServerUpdateProfileRequestFromJSONTyped(json: any, 
     }
     return {
         
+        'actor_claim': json['actor_claim'] == null ? undefined : json['actor_claim'],
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
         'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
@@ -132,6 +145,7 @@ export function OauthResourceServerUpdateProfileRequestFromJSONTyped(json: any, 
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
         'supported_algorithms': json['supported_algorithms'] == null ? undefined : json['supported_algorithms'],
+        'unique_id_claim': json['unique_id_claim'] == null ? undefined : json['unique_id_claim'],
         'use_jwks': json['use_jwks'] == null ? undefined : json['use_jwks'],
         'user_claim': json['user_claim'] == null ? undefined : json['user_claim'],
     };
@@ -148,6 +162,7 @@ export function OauthResourceServerUpdateProfileRequestToJSONTyped(value?: Oauth
 
     return {
         
+        'actor_claim': value['actor_claim'],
         'audiences': value['audiences'],
         'clock_skew_leeway': value['clock_skew_leeway'],
         'enabled': value['enabled'],
@@ -159,6 +174,7 @@ export function OauthResourceServerUpdateProfileRequestToJSONTyped(value?: Oauth
         'optional_authorization_details': value['optional_authorization_details'],
         'public_keys': value['public_keys'],
         'supported_algorithms': value['supported_algorithms'],
+        'unique_id_claim': value['unique_id_claim'],
         'use_jwks': value['use_jwks'],
         'user_claim': value['user_claim'],
     };
