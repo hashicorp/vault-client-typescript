@@ -59514,6 +59514,10 @@
       "OauthResourceServerReadProfileResponse": {
         "type": "object",
         "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier."
+          },
           "audiences": {
             "type": "array",
             "description": "List of allowed audiences (aud claim).",
@@ -59572,6 +59576,10 @@
               "type": "string"
             }
           },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the unique identifier for the JWT claim."
+          },
           "use_jwks": {
             "type": "boolean",
             "description": "If true, use JWKS URI for key validation profile names."
@@ -59585,6 +59593,11 @@
       "OauthResourceServerUpdateProfileRequest": {
         "type": "object",
         "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier.",
+            "default": "act"
+          },
           "audiences": {
             "type": "array",
             "description": "List of allowed audiences (aud claim).",
@@ -59640,6 +59653,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional unique identifier for the JWT claim.",
+            "default": "jti"
           },
           "use_jwks": {
             "type": "boolean",
