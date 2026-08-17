@@ -75,7 +75,9 @@ import type {
   PatchRequest,
   PersonaCreateRequest,
   PersonaUpdateByIdRequest,
+  ScimUpdateClientLinkGroupRequest,
   ScimUpdateClientRequest,
+  ScimUpdateClientUnlinkGroupRequest,
   StandardListResponse,
   TpmCreateRequest,
   TpmUpdateByIdRequest,
@@ -198,8 +200,12 @@ import {
     PersonaCreateRequestToJSON,
     PersonaUpdateByIdRequestFromJSON,
     PersonaUpdateByIdRequestToJSON,
+    ScimUpdateClientLinkGroupRequestFromJSON,
+    ScimUpdateClientLinkGroupRequestToJSON,
     ScimUpdateClientRequestFromJSON,
     ScimUpdateClientRequestToJSON,
+    ScimUpdateClientUnlinkGroupRequestFromJSON,
+    ScimUpdateClientUnlinkGroupRequestToJSON,
     StandardListResponseFromJSON,
     StandardListResponseToJSON,
     TpmCreateRequestFromJSON,
@@ -807,6 +813,16 @@ export interface IdentityApiScimReadClientRequest {
 export interface IdentityApiScimUpdateClientOperationRequest {
     client_name: string;
     ScimUpdateClientRequest: ScimUpdateClientRequest;
+}
+
+export interface IdentityApiScimUpdateClientLinkGroupOperationRequest {
+    client_name: string;
+    ScimUpdateClientLinkGroupRequest: ScimUpdateClientLinkGroupRequest;
+}
+
+export interface IdentityApiScimUpdateClientUnlinkGroupOperationRequest {
+    client_name: string;
+    ScimUpdateClientUnlinkGroupRequest: ScimUpdateClientUnlinkGroupRequest;
 }
 
 export interface IdentityApiTpmCreateOperationRequest {
@@ -6120,6 +6136,90 @@ export class IdentityApi extends runtime.BaseAPI {
      */
     async scimUpdateClient(client_name: string, ScimUpdateClientRequest: ScimUpdateClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.scimUpdateClientRaw({ client_name: client_name, ScimUpdateClientRequest: ScimUpdateClientRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async scimUpdateClientLinkGroupRaw(requestParameters: IdentityApiScimUpdateClientLinkGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['client_name'] == null) {
+            throw new runtime.RequiredError(
+                'client_name',
+                'Required parameter "client_name" was null or undefined when calling scimUpdateClientLinkGroup().'
+            );
+        }
+
+        if (requestParameters['ScimUpdateClientLinkGroupRequest'] == null) {
+            throw new runtime.RequiredError(
+                'ScimUpdateClientLinkGroupRequest',
+                'Required parameter "ScimUpdateClientLinkGroupRequest" was null or undefined when calling scimUpdateClientLinkGroup().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/identity/scim/client/{client_name}/link-group`.replace(`{${"client_name"}}`, encodeURIComponent(String(requestParameters['client_name']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ScimUpdateClientLinkGroupRequestToJSON(requestParameters['ScimUpdateClientLinkGroupRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async scimUpdateClientLinkGroup(client_name: string, ScimUpdateClientLinkGroupRequest: ScimUpdateClientLinkGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scimUpdateClientLinkGroupRaw({ client_name: client_name, ScimUpdateClientLinkGroupRequest: ScimUpdateClientLinkGroupRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async scimUpdateClientUnlinkGroupRaw(requestParameters: IdentityApiScimUpdateClientUnlinkGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['client_name'] == null) {
+            throw new runtime.RequiredError(
+                'client_name',
+                'Required parameter "client_name" was null or undefined when calling scimUpdateClientUnlinkGroup().'
+            );
+        }
+
+        if (requestParameters['ScimUpdateClientUnlinkGroupRequest'] == null) {
+            throw new runtime.RequiredError(
+                'ScimUpdateClientUnlinkGroupRequest',
+                'Required parameter "ScimUpdateClientUnlinkGroupRequest" was null or undefined when calling scimUpdateClientUnlinkGroup().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/identity/scim/client/{client_name}/unlink-group`.replace(`{${"client_name"}}`, encodeURIComponent(String(requestParameters['client_name']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ScimUpdateClientUnlinkGroupRequestToJSON(requestParameters['ScimUpdateClientUnlinkGroupRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async scimUpdateClientUnlinkGroup(client_name: string, ScimUpdateClientUnlinkGroupRequest: ScimUpdateClientUnlinkGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.scimUpdateClientUnlinkGroupRaw({ client_name: client_name, ScimUpdateClientUnlinkGroupRequest: ScimUpdateClientUnlinkGroupRequest }, initOverrides);
         return await response.value();
     }
 
