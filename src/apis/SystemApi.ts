@@ -156,7 +156,6 @@ import type {
   RekeyVerificationReadProgressResponse,
   RekeyVerificationUpdateRequest,
   RekeyVerificationUpdateResponse,
-  ReleaseInfoReadReleaseInfoResponse,
   ReloadPluginsRequest,
   ReloadPluginsResponse,
   RemountRequest,
@@ -300,7 +299,6 @@ import type {
   UnsealRequest,
   UnsealResponse,
   UnwrapRequest,
-  VaultVersionsReadReadResponse,
   VersionHistoryResponse,
   WellKnownListLabels2Response,
   WellKnownListLabelsResponse,
@@ -581,8 +579,6 @@ import {
     RekeyVerificationUpdateRequestToJSON,
     RekeyVerificationUpdateResponseFromJSON,
     RekeyVerificationUpdateResponseToJSON,
-    ReleaseInfoReadReleaseInfoResponseFromJSON,
-    ReleaseInfoReadReleaseInfoResponseToJSON,
     ReloadPluginsRequestFromJSON,
     ReloadPluginsRequestToJSON,
     ReloadPluginsResponseFromJSON,
@@ -869,8 +865,6 @@ import {
     UnsealResponseToJSON,
     UnwrapRequestFromJSON,
     UnwrapRequestToJSON,
-    VaultVersionsReadReadResponseFromJSON,
-    VaultVersionsReadReadResponseToJSON,
     VersionHistoryResponseFromJSON,
     VersionHistoryResponseToJSON,
     WellKnownListLabels2ResponseFromJSON,
@@ -1659,6 +1653,10 @@ export interface SystemApiSystemReadHealthCheckExecPathRequest {
     path: string;
 }
 
+export interface SystemApiSystemReadHealthCheckLastPathRequest {
+    path: string;
+}
+
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
     name: string;
     type: string;
@@ -2091,10 +2089,6 @@ export interface SystemApiUnsealOperationRequest {
 
 export interface SystemApiUnwrapOperationRequest {
     UnwrapRequest: UnwrapRequest;
-}
-
-export interface SystemApiVaultVersionsReadReadRequest {
-    edition?: string;
 }
 
 export interface SystemApiVersionHistoryRequest {
@@ -8766,35 +8760,6 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Returns parsed release information including breaking changes, new behavior, and known issues for each version.
-     * Fetch release information from GitHub
-     */
-    async releaseInfoReadReleaseInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReleaseInfoReadReleaseInfoResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/release-info`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ReleaseInfoReadReleaseInfoResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Returns parsed release information including breaking changes, new behavior, and known issues for each version.
-     * Fetch release information from GitHub
-     */
-    async releaseInfoReadReleaseInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReleaseInfoReadReleaseInfoResponse> {
-        const response = await this.releaseInfoReadReleaseInfoRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Reload all plugins of a specific name and type across all namespaces. If \"scope\" is provided and is \"global\", the plugin is reloaded across all nodes and clusters. If a new plugin version has been pinned, this will ensure all instances start using the new version.
      * Reload all instances of a specific plugin.
      */
@@ -11309,6 +11274,38 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadHealthCheckExecPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.systemReadHealthCheckExecPathRaw({ path: path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async systemReadHealthCheckLastPathRaw(requestParameters: SystemApiSystemReadHealthCheckLastPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['path'] == null) {
+            throw new runtime.RequiredError(
+                'path',
+                'Required parameter "path" was null or undefined when calling systemReadHealthCheckLastPath().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/health-check/last/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async systemReadHealthCheckLastPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemReadHealthCheckLastPathRaw({ path: path }, initOverrides);
         return await response.value();
     }
 
@@ -15718,39 +15715,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async unwrap(UnwrapRequest: UnwrapRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.unwrapRaw({ UnwrapRequest: UnwrapRequest }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Returns deduplicated MAJOR.MINOR.PATCH version strings filtered by edition.
-     * Fetch available Vault versions from releases.hashicorp.com
-     */
-    async vaultVersionsReadReadRaw(requestParameters: SystemApiVaultVersionsReadReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VaultVersionsReadReadResponse>> {
-        const queryParameters: any = {};
-
-        if (requestParameters['edition'] != null) {
-            queryParameters['edition'] = requestParameters['edition'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/vault-versions`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => VaultVersionsReadReadResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Returns deduplicated MAJOR.MINOR.PATCH version strings filtered by edition.
-     * Fetch available Vault versions from releases.hashicorp.com
-     */
-    async vaultVersionsReadRead(edition?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VaultVersionsReadReadResponse> {
-        const response = await this.vaultVersionsReadReadRaw({ edition: edition }, initOverrides);
         return await response.value();
     }
 

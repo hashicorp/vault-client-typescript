@@ -66,7 +66,7 @@ export interface TransitCreateKeyRequest {
      */
     hybrid_key_type_ec?: TransitCreateKeyRequestHybridKeyTypeEcEnum;
     /**
-     * The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.
+     * The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.
      * @type {string}
      * @memberof TransitCreateKeyRequest
      */
@@ -118,7 +118,8 @@ export enum TransitCreateKeyRequestHybridKeyTypeEcEnum {
 * @enum {string}
 */
 export enum TransitCreateKeyRequestHybridKeyTypePqcEnum {
-    ML_DSA = 'ml-dsa'
+    ML_DSA = 'ml-dsa',
+    SLH_DSA = 'slh-dsa'
 }
 /**
 * @export
