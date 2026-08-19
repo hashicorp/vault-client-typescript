@@ -11516,6 +11516,108 @@
         }
       }
     },
+    "/identity/scim/client/{client_name}/link-group": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-link-group",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientLinkGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/scim/client/{client_name}/unlink-entity": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-unlink-entity",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientUnlinkEntityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/identity/scim/client/{client_name}/unlink-group": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-unlink-group",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientUnlinkGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/scim/v2/Groups": {
       "x-vault-createSupported": true,
       "get": {
@@ -14465,6 +14567,30 @@
       ],
       "get": {
         "operationId": "system-read-health-check-exec-path",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/health-check/last/{path}": {
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "system-read-health-check-last-path",
         "tags": [
           "system"
         ],
@@ -19011,29 +19137,6 @@
         }
       }
     },
-    "/sys/release-info": {
-      "description": "Fetch release information",
-      "get": {
-        "summary": "Fetch release information from GitHub",
-        "description": "Returns parsed release information including breaking changes, new behavior, and known issues for each version.",
-        "operationId": "release-info-read-release-info",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReleaseInfoReadReleaseInfoResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/sys/remount": {
       "description": "Move the mount point of an already-mounted backend, within or across namespaces",
       "x-vault-sudo": true,
@@ -22168,40 +22271,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GenerateUtilizationReportResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sys/vault-versions": {
-      "description": "Fetch available Vault versions",
-      "get": {
-        "summary": "Fetch available Vault versions from releases.hashicorp.com",
-        "description": "Returns deduplicated MAJOR.MINOR.PATCH version strings filtered by edition.",
-        "operationId": "vault-versions-read-read",
-        "tags": [
-          "system"
-        ],
-        "parameters": [
-          {
-            "name": "edition",
-            "description": "Edition to filter by. \"enterprise\" returns only \"+ent\" versions; \"community\" (default) returns only versions with no build metadata.",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "community"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VaultVersionsReadReadResponse"
                 }
               }
             }
@@ -52373,10 +52442,15 @@
           "activation_token": {
             "type": "string",
             "description": "The activation token for enrolling with the control hub."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The control hub hostname for enrolling this Vault instance."
           }
         },
         "required": [
-          "activation_token"
+          "activation_token",
+          "hostname"
         ]
       },
       "CorsConfigureRequest": {
@@ -59514,6 +59588,10 @@
       "OauthResourceServerReadProfileResponse": {
         "type": "object",
         "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier."
+          },
           "audiences": {
             "type": "array",
             "description": "List of allowed audiences (aud claim).",
@@ -59572,6 +59650,10 @@
               "type": "string"
             }
           },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the unique identifier for the JWT claim."
+          },
           "use_jwks": {
             "type": "boolean",
             "description": "If true, use JWKS URI for key validation profile names."
@@ -59585,6 +59667,11 @@
       "OauthResourceServerUpdateProfileRequest": {
         "type": "object",
         "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier.",
+            "default": "act"
+          },
           "audiences": {
             "type": "array",
             "description": "List of allowed audiences (aud claim).",
@@ -59640,6 +59727,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional unique identifier for the JWT claim.",
+            "default": "jti"
           },
           "use_jwks": {
             "type": "boolean",
@@ -75621,18 +75713,6 @@
           }
         }
       },
-      "ReleaseInfoReadReleaseInfoResponse": {
-        "type": "object",
-        "properties": {
-          "versions": {
-            "type": "array",
-            "description": "Array of version information objects containing breaking changes, new behavior, known issues, and rollback steps",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
       "ReloadPluginsRequest": {
         "type": "object",
         "properties": {
@@ -76321,6 +76401,15 @@
           }
         }
       },
+      "ScimUpdateClientLinkGroupRequest": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "description": "Vault group ID to link to the SCIM client."
+          }
+        }
+      },
       "ScimUpdateClientRequest": {
         "type": "object",
         "properties": {
@@ -76335,6 +76424,40 @@
           "default_schema_version": {
             "type": "string",
             "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+          },
+          "delete-linked-resources": {
+            "type": "boolean",
+            "description": "If set to true, deletes all SCIM-managed resources (groups, entities, aliases) owned by the client before removing the client itself."
+          },
+          "unlink-resources": {
+            "type": "boolean",
+            "description": "If set to true, removes the SCIM client association from all owned resources without deleting them, then removes the client."
+          }
+        }
+      },
+      "ScimUpdateClientUnlinkEntityRequest": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "ID of the Vault entity to unlink from this SCIM client."
+          },
+          "remove_memberships": {
+            "type": "boolean",
+            "description": "Required when the entity is a member of SCIM-managed groups. Consent to removing those group memberships."
+          },
+          "unlink_aliases": {
+            "type": "boolean",
+            "description": "Required when the entity has SCIM-managed aliases. Consent to making all managed aliases unmanaged."
+          }
+        }
+      },
+      "ScimUpdateClientUnlinkGroupRequest": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "description": "Vault group ID to unlink from the SCIM client."
           }
         }
       },
@@ -81775,9 +81898,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "key_size": {
@@ -82338,9 +82462,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "imported_key": {
@@ -83331,18 +83456,6 @@
             "description": "Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.",
             "format": "duration",
             "deprecated": true
-          }
-        }
-      },
-      "VaultVersionsReadReadResponse": {
-        "type": "object",
-        "properties": {
-          "versions": {
-            "type": "array",
-            "description": "Sorted array of Vault version strings matching the requested edition",
-            "items": {
-              "type": "object"
-            }
           }
         }
       },
