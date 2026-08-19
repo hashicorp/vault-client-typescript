@@ -41,6 +41,18 @@ export interface ScimUpdateClientRequest {
      * @memberof ScimUpdateClientRequest
      */
     default_schema_version?: string;
+    /**
+     * If set to true, deletes all SCIM-managed resources (groups, entities, aliases) owned by the client before removing the client itself.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    delete_linked_resources?: boolean;
+    /**
+     * If set to true, removes the SCIM client association from all owned resources without deleting them, then removes the client.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    unlink_resources?: boolean;
 }
 
 /**
@@ -63,6 +75,8 @@ export function ScimUpdateClientRequestFromJSONTyped(json: any, ignoreDiscrimina
         'access_grant_principal': json['access_grant_principal'] == null ? undefined : json['access_grant_principal'],
         'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
         'default_schema_version': json['default_schema_version'] == null ? undefined : json['default_schema_version'],
+        'delete_linked_resources': json['delete-linked-resources'] == null ? undefined : json['delete-linked-resources'],
+        'unlink_resources': json['unlink-resources'] == null ? undefined : json['unlink-resources'],
     };
 }
 
@@ -80,6 +94,8 @@ export function ScimUpdateClientRequestToJSONTyped(value?: ScimUpdateClientReque
         'access_grant_principal': value['access_grant_principal'],
         'alias_mount_accessor': value['alias_mount_accessor'],
         'default_schema_version': value['default_schema_version'],
+        'delete-linked-resources': value['delete_linked_resources'],
+        'unlink-resources': value['unlink_resources'],
     };
 }
 
