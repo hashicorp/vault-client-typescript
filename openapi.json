@@ -11550,6 +11550,40 @@
         }
       }
     },
+    "/identity/scim/client/{client_name}/unlink-entity": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-unlink-entity",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientUnlinkEntityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/scim/client/{client_name}/unlink-group": {
       "parameters": [
         {
@@ -14533,6 +14567,30 @@
       ],
       "get": {
         "operationId": "system-read-health-check-exec-path",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/health-check/last/{path}": {
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "system-read-health-check-last-path",
         "tags": [
           "system"
         ],
@@ -50957,6 +51015,10 @@
       "AzureConfigureAuthRequest": {
         "type": "object",
         "properties": {
+          "auth_type": {
+            "type": "string",
+            "description": "Specifies how Vault authenticates to Azure for resource metadata lookups. Valid values: root_creds, plugin_wif, aks_wi, msi. If not specified, defaults to existing discovery logic for backward compatibility."
+          },
           "client_id": {
             "type": "string",
             "description": "The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.",
@@ -52384,10 +52446,15 @@
           "activation_token": {
             "type": "string",
             "description": "The activation token for enrolling with the control hub."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The control hub hostname for enrolling this Vault instance."
           }
         },
         "required": [
-          "activation_token"
+          "activation_token",
+          "hostname"
         ]
       },
       "CorsConfigureRequest": {
@@ -76361,6 +76428,31 @@
           "default_schema_version": {
             "type": "string",
             "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+          },
+          "delete-linked-resources": {
+            "type": "boolean",
+            "description": "If set to true, deletes all SCIM-managed resources (groups, entities, aliases) owned by the client before removing the client itself."
+          },
+          "unlink-resources": {
+            "type": "boolean",
+            "description": "If set to true, removes the SCIM client association from all owned resources without deleting them, then removes the client."
+          }
+        }
+      },
+      "ScimUpdateClientUnlinkEntityRequest": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "ID of the Vault entity to unlink from this SCIM client."
+          },
+          "remove_memberships": {
+            "type": "boolean",
+            "description": "Required when the entity is a member of SCIM-managed groups. Consent to removing those group memberships."
+          },
+          "unlink_aliases": {
+            "type": "boolean",
+            "description": "Required when the entity has SCIM-managed aliases. Consent to making all managed aliases unmanaged."
           }
         }
       },
@@ -78403,6 +78495,10 @@
           "curve": {
             "type": "string",
             "description": "For ECDSA keys, the desired elliptic curve if the key is to be generated, either P256, P384, or P521."
+          },
+          "encryption_mode": {
+            "type": "string",
+            "description": "Encryption mode for the key: \"envelope\" (default) for AES-GCM envelope encryption, or \"raw\" to encrypt directly with the KMS key."
           },
           "endpoint": {
             "type": "string",
@@ -81810,9 +81906,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "key_size": {
@@ -82373,9 +82470,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "imported_key": {
