@@ -702,6 +702,7 @@ export * from './ScepLoginRequest';
 export * from './ScepWriteRoleRoleRequest';
 export * from './ScimUpdateClientLinkGroupRequest';
 export * from './ScimUpdateClientRequest';
+export * from './ScimUpdateClientUnlinkEntityRequest';
 export * from './ScimUpdateClientUnlinkGroupRequest';
 export * from './SealStatusResponse';
 export * from './SpiffeConfigureRequest';

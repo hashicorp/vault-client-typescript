@@ -704,6 +704,7 @@ src/models/ScepLoginRequest.ts
 src/models/ScepWriteRoleRoleRequest.ts
 src/models/ScimUpdateClientLinkGroupRequest.ts
 src/models/ScimUpdateClientRequest.ts
+src/models/ScimUpdateClientUnlinkEntityRequest.ts
 src/models/ScimUpdateClientUnlinkGroupRequest.ts
 src/models/SealStatusResponse.ts
 src/models/SpiffeConfigureRequest.ts
