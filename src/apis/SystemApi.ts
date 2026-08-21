@@ -287,6 +287,7 @@ import type {
   SystemWriteSyncGithubAppsNameResponse,
   SystemWriteUtilizationRequest,
   SystemWriteUtilizationResponse,
+  UiConfigConfigureChecklistStateRequest,
   UiConfigListCustomMessagesResponse,
   UiConfigReadCustomMessageResponse,
   UiConfigUpdateCustomMessageRequest,
@@ -841,6 +842,8 @@ import {
     SystemWriteUtilizationRequestToJSON,
     SystemWriteUtilizationResponseFromJSON,
     SystemWriteUtilizationResponseToJSON,
+    UiConfigConfigureChecklistStateRequestFromJSON,
+    UiConfigConfigureChecklistStateRequestToJSON,
     UiConfigListCustomMessagesResponseFromJSON,
     UiConfigListCustomMessagesResponseToJSON,
     UiConfigReadCustomMessageResponseFromJSON,
@@ -1653,6 +1656,10 @@ export interface SystemApiSystemReadHealthCheckExecPathRequest {
     path: string;
 }
 
+export interface SystemApiSystemReadHealthCheckLastPathRequest {
+    path: string;
+}
+
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
     name: string;
     type: string;
@@ -2025,6 +2032,10 @@ export interface SystemApiSystemWriteUtilizationOperationRequest {
     SystemWriteUtilizationRequest: SystemWriteUtilizationRequest;
 }
 
+export interface SystemApiUiConfigConfigureChecklistStateOperationRequest {
+    UiConfigConfigureChecklistStateRequest: UiConfigConfigureChecklistStateRequest;
+}
+
 export interface SystemApiUiConfigDeleteCustomMessageRequest {
     id: string;
 }
@@ -2197,7 +2208,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/activation-flags/oauth-resource-server/activate`;
+        const builtPath = `/sys/activation-flags/secrets-import/activate`;
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2224,7 +2235,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/activation-flags/secrets-import/activate`;
+        const builtPath = `/sys/activation-flags/secrets-sync/activate`;
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2240,33 +2251,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async activationFlagsActivate_4(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.activationFlagsActivate_4Raw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Activate a flagged feature.
-     */
-    async activationFlagsActivate_5Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/activation-flags/secrets-sync/activate`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Activate a flagged feature.
-     */
-    async activationFlagsActivate_5(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.activationFlagsActivate_5Raw(initOverrides);
         return await response.value();
     }
 
@@ -5608,11 +5592,11 @@ export class SystemApi extends runtime.BaseAPI {
      * Returns metadata, semantics, and examples for one authorization_details type.
      * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
      */
-    async oauthResourceServerAuthorizationDetailsTypesRead_6Raw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
+    async oauthResourceServerAuthorizationDetailsTypesRead_5Raw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
         if (requestParameters['type'] == null) {
             throw new runtime.RequiredError(
                 'type',
-                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesRead_6().'
+                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesRead_5().'
             );
         }
 
@@ -5635,8 +5619,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Returns metadata, semantics, and examples for one authorization_details type.
      * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
      */
-    async oauthResourceServerAuthorizationDetailsTypesRead_6(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
-        const response = await this.oauthResourceServerAuthorizationDetailsTypesRead_6Raw({ type: type }, initOverrides);
+    async oauthResourceServerAuthorizationDetailsTypesRead_5(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesRead_5Raw({ type: type }, initOverrides);
         return await response.value();
     }
 
@@ -6402,11 +6386,11 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_7Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
+    async pluginsRuntimesCatalogListPluginsRuntimes_6Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
-                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_7().'
+                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_6().'
             );
         }
 
@@ -6431,8 +6415,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_7(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
-        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_7Raw({ list: list }, initOverrides);
+    async pluginsRuntimesCatalogListPluginsRuntimes_6(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
+        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_6Raw({ list: list }, initOverrides);
         return await response.value();
     }
 
@@ -8109,7 +8093,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_8Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async readVerbosityLevelFor_7Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -8128,8 +8112,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_8(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.readVerbosityLevelFor_8Raw(initOverrides);
+    async readVerbosityLevelFor_7(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.readVerbosityLevelFor_7Raw(initOverrides);
         return await response.value();
     }
 
@@ -9463,18 +9447,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_9Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async subscriptionsCreate_8Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError(
                 'id',
-                'Required parameter "id" was null or undefined when calling subscriptionsCreate_9().'
+                'Required parameter "id" was null or undefined when calling subscriptionsCreate_8().'
             );
         }
 
         if (requestParameters['plugin'] == null) {
             throw new runtime.RequiredError(
                 'plugin',
-                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_9().'
+                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_8().'
             );
         }
 
@@ -9496,8 +9480,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_9(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.subscriptionsCreate_9Raw({ id: id, plugin: plugin }, initOverrides);
+    async subscriptionsCreate_8(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.subscriptionsCreate_8Raw({ id: id, plugin: plugin }, initOverrides);
         return await response.value();
     }
 
@@ -11274,6 +11258,38 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
+     */
+    async systemReadHealthCheckLastPathRaw(requestParameters: SystemApiSystemReadHealthCheckLastPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['path'] == null) {
+            throw new runtime.RequiredError(
+                'path',
+                'Required parameter "path" was null or undefined when calling systemReadHealthCheckLastPath().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/health-check/last/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async systemReadHealthCheckLastPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.systemReadHealthCheckLastPathRaw({ path: path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * The path responds to the following HTTP methods.      GET /         Returns information on the installed license      POST         Sets the license for the server
      */
     async systemReadLicenseStatusRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
@@ -12371,31 +12387,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadSyncGithubAppsName(name: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadSyncGithubAppsNameResponse> {
         const response = await this.systemReadSyncGithubAppsNameRaw({ name: name }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async systemWriteActivationFlagsOauthResourceServerDeactivateRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/activation-flags/oauth-resource-server/deactivate`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async systemWriteActivationFlagsOauthResourceServerDeactivate(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemWriteActivationFlagsOauthResourceServerDeactivateRaw(initOverrides);
         return await response.value();
     }
 
@@ -15124,6 +15115,43 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
+     * Merge checklist state updates.
+     */
+    async uiConfigConfigureChecklistStateRaw(requestParameters: SystemApiUiConfigConfigureChecklistStateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['UiConfigConfigureChecklistStateRequest'] == null) {
+            throw new runtime.RequiredError(
+                'UiConfigConfigureChecklistStateRequest',
+                'Required parameter "UiConfigConfigureChecklistStateRequest" was null or undefined when calling uiConfigConfigureChecklistState().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/config/ui/checklist-state`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UiConfigConfigureChecklistStateRequestToJSON(requestParameters['UiConfigConfigureChecklistStateRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Merge checklist state updates.
+     */
+    async uiConfigConfigureChecklistState(UiConfigConfigureChecklistStateRequest: UiConfigConfigureChecklistStateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.uiConfigConfigureChecklistStateRaw({ UiConfigConfigureChecklistStateRequest: UiConfigConfigureChecklistStateRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Delete custom message
      */
     async uiConfigDeleteCustomMessageRaw(requestParameters: SystemApiUiConfigDeleteCustomMessageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
@@ -15204,6 +15232,33 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async uiConfigListCustomMessages(list: SystemApiUiConfigListCustomMessagesListEnum, active?: boolean, authenticated?: boolean, type?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UiConfigListCustomMessagesResponse> {
         const response = await this.uiConfigListCustomMessagesRaw({ list: list, active: active, authenticated: authenticated, type: type }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Return the checklist state document.
+     */
+    async uiConfigReadChecklistStateRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/config/ui/checklist-state`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Return the checklist state document.
+     */
+    async uiConfigReadChecklistState(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.uiConfigReadChecklistStateRaw(initOverrides);
         return await response.value();
     }
 

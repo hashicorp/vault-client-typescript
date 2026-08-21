@@ -704,6 +704,7 @@ src/models/ScepLoginRequest.ts
 src/models/ScepWriteRoleRoleRequest.ts
 src/models/ScimUpdateClientLinkGroupRequest.ts
 src/models/ScimUpdateClientRequest.ts
+src/models/ScimUpdateClientUnlinkEntityRequest.ts
 src/models/ScimUpdateClientUnlinkGroupRequest.ts
 src/models/SealStatusResponse.ts
 src/models/SpiffeConfigureRequest.ts
@@ -920,6 +921,7 @@ src/models/TransitSignWithAlgorithmRequest.ts
 src/models/TransitTrimKeyRequest.ts
 src/models/TransitVerifyRequest.ts
 src/models/TransitVerifyWithAlgorithmRequest.ts
+src/models/UiConfigConfigureChecklistStateRequest.ts
 src/models/UiConfigListCustomMessagesResponse.ts
 src/models/UiConfigReadCustomMessageResponse.ts
 src/models/UiConfigUpdateCustomMessageRequest.ts
