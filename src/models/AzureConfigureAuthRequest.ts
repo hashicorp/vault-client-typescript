@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface AzureConfigureAuthRequest {
     /**
+     * Specifies how Vault authenticates to Azure for resource metadata lookups. Valid values: root_creds, plugin_wif, aks_wi, msi. If not specified, defaults to existing discovery logic for backward compatibility.
+     * @type {string}
+     * @memberof AzureConfigureAuthRequest
+     */
+    auth_type?: string;
+    /**
      * The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.
      * @type {string}
      * @memberof AzureConfigureAuthRequest
@@ -138,6 +144,7 @@ export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimi
     }
     return {
         
+        'auth_type': json['auth_type'] == null ? undefined : json['auth_type'],
         'client_id': json['client_id'] == null ? undefined : json['client_id'],
         'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
@@ -168,6 +175,7 @@ export function AzureConfigureAuthRequestToJSONTyped(value?: AzureConfigureAuthR
 
     return {
         
+        'auth_type': value['auth_type'],
         'client_id': value['client_id'],
         'client_secret': value['client_secret'],
         'disable_automated_rotation': value['disable_automated_rotation'],

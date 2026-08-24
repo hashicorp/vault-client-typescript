@@ -78,7 +78,7 @@ export interface TransitReadKeyResponse {
      */
     hybrid_key_type_ec?: TransitReadKeyResponseHybridKeyTypeEcEnum;
     /**
-     * The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.
+     * The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.
      * @type {string}
      * @memberof TransitReadKeyResponse
      */
@@ -208,7 +208,8 @@ export enum TransitReadKeyResponseHybridKeyTypeEcEnum {
 * @enum {string}
 */
 export enum TransitReadKeyResponseHybridKeyTypePqcEnum {
-    ML_DSA = 'ml-dsa'
+    ML_DSA = 'ml-dsa',
+    SLH_DSA = 'slh-dsa'
 }
 /**
 * @export

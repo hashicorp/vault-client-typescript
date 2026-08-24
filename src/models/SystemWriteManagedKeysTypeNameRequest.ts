@@ -96,6 +96,12 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      */
     curve?: string;
     /**
+     * Encryption mode for the key: "envelope" (default) for AES-GCM envelope encryption, or "raw" to encrypt directly with the KMS key.
+     * @type {string}
+     * @memberof SystemWriteManagedKeysTypeNameRequest
+     */
+    encryption_mode?: string;
+    /**
      * The AWS endpoint to use
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
@@ -270,6 +276,7 @@ export function SystemWriteManagedKeysTypeNameRequestFromJSONTyped(json: any, ig
         'crypto_key': json['crypto_key'] == null ? undefined : json['crypto_key'],
         'crypto_key_version': json['crypto_key_version'] == null ? undefined : json['crypto_key_version'],
         'curve': json['curve'] == null ? undefined : json['curve'],
+        'encryption_mode': json['encryption_mode'] == null ? undefined : json['encryption_mode'],
         'endpoint': json['endpoint'] == null ? undefined : json['endpoint'],
         'environment': json['environment'] == null ? undefined : json['environment'],
         'force_rw_session': json['force_rw_session'] == null ? undefined : json['force_rw_session'],
@@ -320,6 +327,7 @@ export function SystemWriteManagedKeysTypeNameRequestToJSONTyped(value?: SystemW
         'crypto_key': value['crypto_key'],
         'crypto_key_version': value['crypto_key_version'],
         'curve': value['curve'],
+        'encryption_mode': value['encryption_mode'],
         'endpoint': value['endpoint'],
         'environment': value['environment'],
         'force_rw_session': value['force_rw_session'],

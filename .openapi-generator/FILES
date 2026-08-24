@@ -316,6 +316,11 @@ src/models/OidcWriteRoleRequest.ts
 src/models/OidcWriteScopeRequest.ts
 src/models/OktaConfigureRequest.ts
 src/models/OktaLoginRequest.ts
+src/models/OktaLoginResponse.ts
+src/models/OktaReadConfigurationResponse.ts
+src/models/OktaReadGroupResponse.ts
+src/models/OktaReadUserResponse.ts
+src/models/OktaVerifyResponse.ts
 src/models/OktaWriteGroupRequest.ts
 src/models/OktaWriteUserRequest.ts
 src/models/PatchRequest.ts
@@ -704,6 +709,7 @@ src/models/ScepLoginRequest.ts
 src/models/ScepWriteRoleRoleRequest.ts
 src/models/ScimUpdateClientLinkGroupRequest.ts
 src/models/ScimUpdateClientRequest.ts
+src/models/ScimUpdateClientUnlinkEntityRequest.ts
 src/models/ScimUpdateClientUnlinkGroupRequest.ts
 src/models/SealStatusResponse.ts
 src/models/SpiffeConfigureRequest.ts
@@ -920,6 +926,7 @@ src/models/TransitSignWithAlgorithmRequest.ts
 src/models/TransitTrimKeyRequest.ts
 src/models/TransitVerifyRequest.ts
 src/models/TransitVerifyWithAlgorithmRequest.ts
+src/models/UiConfigConfigureChecklistStateRequest.ts
 src/models/UiConfigListCustomMessagesResponse.ts
 src/models/UiConfigReadCustomMessageResponse.ts
 src/models/UiConfigUpdateCustomMessageRequest.ts
