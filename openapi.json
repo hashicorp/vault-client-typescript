@@ -6529,17 +6529,26 @@
         "action": "Configure"
       },
       "get": {
+        "summary": "Return the current Okta configuration.",
         "operationId": "okta-read-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OktaReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the Okta auth method.",
         "operationId": "okta-configure",
         "tags": [
           "auth"
@@ -6555,14 +6564,14 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
     },
     "/auth/{okta_mount_path}/groups/": {
-      "description": "Manage users allowed to authenticate.",
+      "description": "Manage groups allowed to authenticate.",
       "parameters": [
         {
           "name": "okta_mount_path",
@@ -6580,7 +6589,7 @@
         "itemType": "Group"
       },
       "get": {
-        "summary": "Manage users allowed to authenticate.",
+        "summary": "List groups configured in the Okta auth method.",
         "operationId": "okta-list-groups",
         "tags": [
           "auth"
@@ -6614,7 +6623,7 @@
       }
     },
     "/auth/{okta_mount_path}/groups/{name}": {
-      "description": "Manage users allowed to authenticate.",
+      "description": "Manage groups allowed to authenticate.",
       "parameters": [
         {
           "name": "name",
@@ -6641,19 +6650,26 @@
         "action": "Create"
       },
       "get": {
-        "summary": "Manage users allowed to authenticate.",
+        "summary": "Return the properties of an Okta auth method group.",
         "operationId": "okta-read-group",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OktaReadGroupResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Manage users allowed to authenticate.",
+        "summary": "Create or update an Okta auth method group.",
         "operationId": "okta-write-group",
         "tags": [
           "auth"
@@ -6669,20 +6685,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Manage users allowed to authenticate.",
+        "summary": "Delete an Okta auth method group.",
         "operationId": "okta-delete-group",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -6712,7 +6728,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "summary": "Log in with a username and password.",
+        "summary": "Authenticate with Okta credentials.",
         "operationId": "okta-login",
         "tags": [
           "auth"
@@ -6729,7 +6745,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OktaLoginResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -6753,7 +6776,7 @@
         "itemType": "User"
       },
       "get": {
-        "summary": "Manage additional groups for users allowed to authenticate.",
+        "summary": "List users configured in the Okta auth method.",
         "operationId": "okta-list-users",
         "tags": [
           "auth"
@@ -6814,19 +6837,26 @@
         "action": "Create"
       },
       "get": {
-        "summary": "Manage additional groups for users allowed to authenticate.",
+        "summary": "Return the properties of an Okta auth method user.",
         "operationId": "okta-read-user",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OktaReadUserResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Manage additional groups for users allowed to authenticate.",
+        "summary": "Create or update an Okta auth method user.",
         "operationId": "okta-write-user",
         "tags": [
           "auth"
@@ -6842,20 +6872,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Manage additional groups for users allowed to authenticate.",
+        "summary": "Delete an Okta auth method user.",
         "operationId": "okta-delete-user",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -6884,13 +6914,21 @@
       ],
       "x-vault-unauthenticated": true,
       "get": {
+        "summary": "Return the number verification challenge for a pending Okta login.",
         "operationId": "okta-verify",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OktaVerifyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -11550,6 +11588,40 @@
         }
       }
     },
+    "/identity/scim/client/{client_name}/unlink-entity": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-unlink-entity",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientUnlinkEntityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/scim/client/{client_name}/unlink-group": {
       "parameters": [
         {
@@ -12738,36 +12810,6 @@
         }
       }
     },
-    "/sys/activation-flags/oauth-resource-server/activate": {
-      "description": "Returns information about Vault's features that require a one-time activation step.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Activate a flagged feature.",
-        "operationId": "activation-flags-activate",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/activation-flags/oauth-resource-server/deactivate": {
-      "x-vault-sudo": true,
-      "post": {
-        "operationId": "system-write-activation-flags-oauth-resource-server-deactivate",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/sys/activation-flags/secrets-import/activate": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "post": {
@@ -13685,6 +13727,42 @@
         }
       }
     },
+    "/sys/config/ui/checklist-state": {
+      "get": {
+        "summary": "Return the checklist state document.",
+        "operationId": "ui-config-read-checklist-state",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Merge checklist state updates.",
+        "operationId": "ui-config-configure-checklist-state",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UiConfigConfigureChecklistStateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/config/ui/custom-messages": {
       "x-vault-createSupported": true,
       "post": {
@@ -14533,6 +14611,30 @@
       ],
       "get": {
         "operationId": "system-read-health-check-exec-path",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/health-check/last/{path}": {
+      "parameters": [
+        {
+          "name": "path",
+          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "system-read-health-check-last-path",
         "tags": [
           "system"
         ],
@@ -50957,6 +51059,10 @@
       "AzureConfigureAuthRequest": {
         "type": "object",
         "properties": {
+          "auth_type": {
+            "type": "string",
+            "description": "Specifies how Vault authenticates to Azure for resource metadata lookups. Valid values: root_creds, plugin_wif, aks_wi, msi. If not specified, defaults to existing discovery logic for backward compatibility."
+          },
           "client_id": {
             "type": "string",
             "description": "The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.",
@@ -52384,10 +52490,15 @@
           "activation_token": {
             "type": "string",
             "description": "The activation token for enrolling with the control hub."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The control hub hostname for enrolling this Vault instance."
           }
         },
         "required": [
-          "activation_token"
+          "activation_token",
+          "hostname"
         ]
       },
       "CorsConfigureRequest": {
@@ -60280,6 +60391,198 @@
           "totp": {
             "type": "string",
             "description": "TOTP passcode."
+          }
+        }
+      },
+      "OktaLoginResponse": {
+        "type": "object",
+        "properties": {
+          "accessor": {
+            "type": "string",
+            "description": "Accessor for the client token."
+          },
+          "client_token": {
+            "type": "string",
+            "description": "Token issued by Vault for the authenticated client."
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID associated with the token."
+          },
+          "lease_duration": {
+            "type": "integer",
+            "description": "Lease duration in seconds.",
+            "format": "int64"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the token.",
+            "format": "map"
+          },
+          "mfa_requirement": {
+            "type": "object",
+            "description": "MFA requirement information.",
+            "format": "map"
+          },
+          "num_uses": {
+            "type": "integer",
+            "description": "Number of uses remaining for the token."
+          },
+          "orphan": {
+            "type": "boolean",
+            "description": "Whether the token is an orphan."
+          },
+          "policies": {
+            "type": "array",
+            "description": "List of policies associated with the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "renewable": {
+            "type": "boolean",
+            "description": "Whether the token is renewable."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of token policies.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of the token."
+          }
+        }
+      },
+      "OktaReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "Metadata to be set on the token alias.",
+            "format": "map"
+          },
+          "base_url": {
+            "type": "string",
+            "description": "The base domain used for the Okta API."
+          },
+          "bypass_okta_mfa": {
+            "type": "boolean",
+            "description": "When true, Okta MFA requests are bypassed."
+          },
+          "max_ttl": {
+            "type": "integer",
+            "description": "Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.",
+            "format": "int64",
+            "deprecated": true
+          },
+          "org_name": {
+            "type": "string",
+            "description": "Name of the Okta organization."
+          },
+          "organization": {
+            "type": "string",
+            "description": "Use \"org_name\" instead. If this and \"org_name\" are both specified, only \"org_name\" will be used.",
+            "deprecated": true
+          },
+          "production": {
+            "type": "boolean",
+            "description": "Use \"base_url\" instead. If this and \"base_url\" are both specified, only \"base_url\" will be used.",
+            "deprecated": true
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "List of CIDRs valid for the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "integer",
+            "description": "Hard cap on the token TTL.",
+            "format": "int64"
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "Maximum token TTL.",
+            "format": "int64"
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "When true, the default policy is not added to the token."
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "Number of uses the token is allowed."
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "Period of the token.",
+            "format": "int64"
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of policies applied to the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Token TTL in seconds.",
+            "format": "int64"
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of the token."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.",
+            "format": "int64",
+            "deprecated": true
+          }
+        }
+      },
+      "OktaReadGroupResponse": {
+        "type": "object",
+        "properties": {
+          "policies": {
+            "type": "array",
+            "description": "List of policies associated with the group.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OktaReadUserResponse": {
+        "type": "object",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "description": "List of groups associated with the user.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "policies": {
+            "type": "array",
+            "description": "List of policies associated with the user.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "OktaVerifyResponse": {
+        "type": "object",
+        "properties": {
+          "correct_answer": {
+            "type": "integer",
+            "description": "The correct answer for the number verification challenge."
           }
         }
       },
@@ -76358,9 +76661,41 @@
             "type": "string",
             "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user."
           },
+          "allowed_extra_alias_mount_accessors": {
+            "type": "array",
+            "description": "Optional. Allowlist of mount accessors on which this SCIM client may create or update secondary (non-primary) aliases. When empty or omitted the client may use any non-local mount (current unrestricted behaviour). alias_mount_accessor is always implicitly allowed and must not appear in this list. On update, omitting the field preserves the existing value; supplying an explicit empty list clears the allowlist.",
+            "items": {
+              "type": "string"
+            }
+          },
           "default_schema_version": {
             "type": "string",
             "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+          },
+          "delete-linked-resources": {
+            "type": "boolean",
+            "description": "If set to true, deletes all SCIM-managed resources (groups, entities, aliases) owned by the client before removing the client itself."
+          },
+          "unlink-resources": {
+            "type": "boolean",
+            "description": "If set to true, removes the SCIM client association from all owned resources without deleting them, then removes the client."
+          }
+        }
+      },
+      "ScimUpdateClientUnlinkEntityRequest": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "ID of the Vault entity to unlink from this SCIM client."
+          },
+          "remove_memberships": {
+            "type": "boolean",
+            "description": "Required when the entity is a member of SCIM-managed groups. Consent to removing those group memberships."
+          },
+          "unlink_aliases": {
+            "type": "boolean",
+            "description": "Required when the entity has SCIM-managed aliases. Consent to making all managed aliases unmanaged."
           }
         }
       },
@@ -78403,6 +78738,10 @@
           "curve": {
             "type": "string",
             "description": "For ECDSA keys, the desired elliptic curve if the key is to be generated, either P256, P384, or P521."
+          },
+          "encryption_mode": {
+            "type": "string",
+            "description": "Encryption mode for the key: \"envelope\" (default) for AES-GCM envelope encryption, or \"raw\" to encrypt directly with the KMS key."
           },
           "endpoint": {
             "type": "string",
@@ -81810,9 +82149,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "key_size": {
@@ -82373,9 +82713,10 @@
           },
           "hybrid_key_type_pqc": {
             "type": "string",
-            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa.",
+            "description": "The post-quantum key type to use for hybrid signature schemes. Supported types are: ml-dsa and slh-dsa.",
             "enum": [
-              "ml-dsa"
+              "ml-dsa",
+              "slh-dsa"
             ]
           },
           "imported_key": {
@@ -82849,6 +83190,16 @@
           "signature_context": {
             "type": "string",
             "description": "Base64 encoded context for Ed25519ph and Ed25519ctx signatures. Currently only available with Ed25519 keys. (Enterprise Only)"
+          }
+        }
+      },
+      "UiConfigConfigureChecklistStateRequest": {
+        "type": "object",
+        "properties": {
+          "checklist_state": {
+            "type": "object",
+            "description": "The checklist state document to merge into UI config.",
+            "format": "map"
           }
         }
       },
