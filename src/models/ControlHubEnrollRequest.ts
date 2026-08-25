@@ -29,6 +29,12 @@ export interface ControlHubEnrollRequest {
      * @memberof ControlHubEnrollRequest
      */
     activation_token: string;
+    /**
+     * The control hub hostname for enrolling this Vault instance.
+     * @type {string}
+     * @memberof ControlHubEnrollRequest
+     */
+    hostname: string;
 }
 
 /**
@@ -36,6 +42,7 @@ export interface ControlHubEnrollRequest {
  */
 export function instanceOfControlHubEnrollRequest(value: object): value is ControlHubEnrollRequest {
     if (!('activation_token' in value) || value['activation_token'] === undefined) return false;
+    if (!('hostname' in value) || value['hostname'] === undefined) return false;
     return true;
 }
 
@@ -50,6 +57,7 @@ export function ControlHubEnrollRequestFromJSONTyped(json: any, ignoreDiscrimina
     return {
         
         'activation_token': json['activation_token'],
+        'hostname': json['hostname'],
     };
 }
 
@@ -65,6 +73,7 @@ export function ControlHubEnrollRequestToJSONTyped(value?: ControlHubEnrollReque
     return {
         
         'activation_token': value['activation_token'],
+        'hostname': value['hostname'],
     };
 }
 
