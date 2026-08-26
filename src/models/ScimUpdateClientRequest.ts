@@ -36,11 +36,47 @@ export interface ScimUpdateClientRequest {
      */
     alias_mount_accessor?: string;
     /**
+     * Optional. When true, allows this client to adopt pre-existing unmanaged entities when a POST /Users userName matches an existing login alias. Defaults to false.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    allow_user_adoption?: boolean;
+    /**
+     * Optional. Allowlist of mount accessors on which this SCIM client may create or update secondary (non-primary) aliases. When empty or omitted the client may use any non-local mount (current unrestricted behaviour). alias_mount_accessor is always implicitly allowed and must not appear in this list. On update, omitting the field preserves the existing value; supplying an explicit empty list clears the allowlist.
+     * @type {Array<string>}
+     * @memberof ScimUpdateClientRequest
+     */
+    allowed_extra_alias_mount_accessors?: Array<string>;
+    /**
      * Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'.
      * @type {string}
      * @memberof ScimUpdateClientRequest
      */
     default_schema_version?: string;
+    /**
+     * If set to true, deletes all SCIM-managed resources (groups, entities, aliases) owned by the client before removing the client itself.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    delete_linked_resources?: boolean;
+    /**
+     * Maximum number of active tokens per SCIM client. Must be a positive non-zero value; defaults to 2.
+     * @type {number}
+     * @memberof ScimUpdateClientRequest
+     */
+    max_active_tokens?: number;
+    /**
+     * Maximum TTL for tokens issued by this SCIM client. Accepts a duration string (e.g. '1h', '30m') or an integer number of seconds. Zero means the cluster default is used.
+     * @type {string}
+     * @memberof ScimUpdateClientRequest
+     */
+    max_token_ttl?: string;
+    /**
+     * If set to true, removes the SCIM client association from all owned resources without deleting them, then removes the client.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    unlink_resources?: boolean;
 }
 
 /**
@@ -62,7 +98,13 @@ export function ScimUpdateClientRequestFromJSONTyped(json: any, ignoreDiscrimina
         
         'access_grant_principal': json['access_grant_principal'] == null ? undefined : json['access_grant_principal'],
         'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
+        'allow_user_adoption': json['allow_user_adoption'] == null ? undefined : json['allow_user_adoption'],
+        'allowed_extra_alias_mount_accessors': json['allowed_extra_alias_mount_accessors'] == null ? undefined : json['allowed_extra_alias_mount_accessors'],
         'default_schema_version': json['default_schema_version'] == null ? undefined : json['default_schema_version'],
+        'delete_linked_resources': json['delete-linked-resources'] == null ? undefined : json['delete-linked-resources'],
+        'max_active_tokens': json['max_active_tokens'] == null ? undefined : json['max_active_tokens'],
+        'max_token_ttl': json['max_token_ttl'] == null ? undefined : json['max_token_ttl'],
+        'unlink_resources': json['unlink-resources'] == null ? undefined : json['unlink-resources'],
     };
 }
 
@@ -79,7 +121,13 @@ export function ScimUpdateClientRequestToJSONTyped(value?: ScimUpdateClientReque
         
         'access_grant_principal': value['access_grant_principal'],
         'alias_mount_accessor': value['alias_mount_accessor'],
+        'allow_user_adoption': value['allow_user_adoption'],
+        'allowed_extra_alias_mount_accessors': value['allowed_extra_alias_mount_accessors'],
         'default_schema_version': value['default_schema_version'],
+        'delete-linked-resources': value['delete_linked_resources'],
+        'max_active_tokens': value['max_active_tokens'],
+        'max_token_ttl': value['max_token_ttl'],
+        'unlink-resources': value['unlink_resources'],
     };
 }
 

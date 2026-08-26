@@ -114,6 +114,11 @@ import type {
   OciWriteRoleRequest,
   OktaConfigureRequest,
   OktaLoginRequest,
+  OktaLoginResponse,
+  OktaReadConfigurationResponse,
+  OktaReadGroupResponse,
+  OktaReadUserResponse,
+  OktaVerifyResponse,
   OktaWriteGroupRequest,
   OktaWriteUserRequest,
   RadiusConfigureRequest,
@@ -346,6 +351,16 @@ import {
     OktaConfigureRequestToJSON,
     OktaLoginRequestFromJSON,
     OktaLoginRequestToJSON,
+    OktaLoginResponseFromJSON,
+    OktaLoginResponseToJSON,
+    OktaReadConfigurationResponseFromJSON,
+    OktaReadConfigurationResponseToJSON,
+    OktaReadGroupResponseFromJSON,
+    OktaReadGroupResponseToJSON,
+    OktaReadUserResponseFromJSON,
+    OktaReadUserResponseToJSON,
+    OktaVerifyResponseFromJSON,
+    OktaVerifyResponseToJSON,
     OktaWriteGroupRequestFromJSON,
     OktaWriteGroupRequestToJSON,
     OktaWriteUserRequestFromJSON,
@@ -10453,6 +10468,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the Okta auth method.
      */
     async oktaConfigureRaw(requestParameters: AuthApiOktaConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['okta_mount_path'] == null) {
@@ -10488,6 +10504,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the Okta auth method.
      */
     async oktaConfigure(okta_mount_path: string, OktaConfigureRequest: OktaConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.oktaConfigureRaw({ okta_mount_path: okta_mount_path, OktaConfigureRequest: OktaConfigureRequest }, initOverrides);
@@ -10495,7 +10512,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Delete an Okta auth method group.
      */
     async oktaDeleteGroupRaw(requestParameters: AuthApiOktaDeleteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -10528,7 +10545,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Delete an Okta auth method group.
      */
     async oktaDeleteGroup(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.oktaDeleteGroupRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
@@ -10536,7 +10553,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Delete an Okta auth method user.
      */
     async oktaDeleteUserRaw(requestParameters: AuthApiOktaDeleteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -10569,7 +10586,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Delete an Okta auth method user.
      */
     async oktaDeleteUser(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.oktaDeleteUserRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
@@ -10577,7 +10594,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * List groups configured in the Okta auth method.
      */
     async oktaListGroupsRaw(requestParameters: AuthApiOktaListGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['okta_mount_path'] == null) {
@@ -10614,7 +10631,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * List groups configured in the Okta auth method.
      */
     async oktaListGroups(okta_mount_path: string, list: AuthApiOktaListGroupsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oktaListGroupsRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
@@ -10622,7 +10639,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * List users configured in the Okta auth method.
      */
     async oktaListUsersRaw(requestParameters: AuthApiOktaListUsersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['okta_mount_path'] == null) {
@@ -10659,7 +10676,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * List users configured in the Okta auth method.
      */
     async oktaListUsers(okta_mount_path: string, list: AuthApiOktaListUsersListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.oktaListUsersRaw({ okta_mount_path: okta_mount_path, list: list }, initOverrides);
@@ -10667,9 +10684,9 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Log in with a username and password.
+     * Authenticate with Okta credentials.
      */
-    async oktaLoginRaw(requestParameters: AuthApiOktaLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oktaLoginRaw(requestParameters: AuthApiOktaLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OktaLoginResponse>> {
         if (requestParameters['username'] == null) {
             throw new runtime.RequiredError(
                 'username',
@@ -10706,20 +10723,21 @@ export class AuthApi extends runtime.BaseAPI {
             body: OktaLoginRequestToJSON(requestParameters['OktaLoginRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OktaLoginResponseFromJSON(jsonValue));
     }
 
     /**
-     * Log in with a username and password.
+     * Authenticate with Okta credentials.
      */
-    async oktaLogin(username: string, okta_mount_path: string, OktaLoginRequest: OktaLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oktaLogin(username: string, okta_mount_path: string, OktaLoginRequest: OktaLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OktaLoginResponse> {
         const response = await this.oktaLoginRaw({ username: username, okta_mount_path: okta_mount_path, OktaLoginRequest: OktaLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the current Okta configuration.
      */
-    async oktaReadConfigurationRaw(requestParameters: AuthApiOktaReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oktaReadConfigurationRaw(requestParameters: AuthApiOktaReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OktaReadConfigurationResponse>> {
         if (requestParameters['okta_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'okta_mount_path',
@@ -10739,20 +10757,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OktaReadConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the current Okta configuration.
      */
-    async oktaReadConfiguration(okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oktaReadConfiguration(okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OktaReadConfigurationResponse> {
         const response = await this.oktaReadConfigurationRaw({ okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Return the properties of an Okta auth method group.
      */
-    async oktaReadGroupRaw(requestParameters: AuthApiOktaReadGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oktaReadGroupRaw(requestParameters: AuthApiOktaReadGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OktaReadGroupResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -10779,21 +10798,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OktaReadGroupResponseFromJSON(jsonValue));
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Return the properties of an Okta auth method group.
      */
-    async oktaReadGroup(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oktaReadGroup(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OktaReadGroupResponse> {
         const response = await this.oktaReadGroupRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Return the properties of an Okta auth method user.
      */
-    async oktaReadUserRaw(requestParameters: AuthApiOktaReadUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oktaReadUserRaw(requestParameters: AuthApiOktaReadUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OktaReadUserResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -10820,20 +10839,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OktaReadUserResponseFromJSON(jsonValue));
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Return the properties of an Okta auth method user.
      */
-    async oktaReadUser(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oktaReadUser(name: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OktaReadUserResponse> {
         const response = await this.oktaReadUserRaw({ name: name, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the number verification challenge for a pending Okta login.
      */
-    async oktaVerifyRaw(requestParameters: AuthApiOktaVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oktaVerifyRaw(requestParameters: AuthApiOktaVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OktaVerifyResponse>> {
         if (requestParameters['nonce'] == null) {
             throw new runtime.RequiredError(
                 'nonce',
@@ -10860,18 +10880,19 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OktaVerifyResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the number verification challenge for a pending Okta login.
      */
-    async oktaVerify(nonce: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oktaVerify(nonce: string, okta_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OktaVerifyResponse> {
         const response = await this.oktaVerifyRaw({ nonce: nonce, okta_mount_path: okta_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Create or update an Okta auth method group.
      */
     async oktaWriteGroupRaw(requestParameters: AuthApiOktaWriteGroupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -10914,7 +10935,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage users allowed to authenticate.
+     * Create or update an Okta auth method group.
      */
     async oktaWriteGroup(name: string, okta_mount_path: string, OktaWriteGroupRequest: OktaWriteGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.oktaWriteGroupRaw({ name: name, okta_mount_path: okta_mount_path, OktaWriteGroupRequest: OktaWriteGroupRequest }, initOverrides);
@@ -10922,7 +10943,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Create or update an Okta auth method user.
      */
     async oktaWriteUserRaw(requestParameters: AuthApiOktaWriteUserOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -10965,7 +10986,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Manage additional groups for users allowed to authenticate.
+     * Create or update an Okta auth method user.
      */
     async oktaWriteUser(name: string, okta_mount_path: string, OktaWriteUserRequest: OktaWriteUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.oktaWriteUserRaw({ name: name, okta_mount_path: okta_mount_path, OktaWriteUserRequest: OktaWriteUserRequest }, initOverrides);

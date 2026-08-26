@@ -72,6 +72,12 @@ export interface OauthResourceServerUpdateProfileRequest {
      */
     jwt_type?: string;
     /**
+     * If true, this profile is cluster-scoped and never replicated to performance secondaries. If false (default), the profile is written to replicated storage and propagated to all secondaries. This field is immutable after creation; delete and recreate the profile to change locality.
+     * @type {boolean}
+     * @memberof OauthResourceServerUpdateProfileRequest
+     */
+    local?: boolean;
+    /**
      * If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere.
      * @type {boolean}
      * @memberof OauthResourceServerUpdateProfileRequest
@@ -141,6 +147,7 @@ export function OauthResourceServerUpdateProfileRequestFromJSONTyped(json: any, 
         'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
         'jwks_uri': json['jwks_uri'] == null ? undefined : json['jwks_uri'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
+        'local': json['local'] == null ? undefined : json['local'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
@@ -170,6 +177,7 @@ export function OauthResourceServerUpdateProfileRequestToJSONTyped(value?: Oauth
         'jwks_ca_pem': value['jwks_ca_pem'],
         'jwks_uri': value['jwks_uri'],
         'jwt_type': value['jwt_type'],
+        'local': value['local'],
         'no_default_policy': value['no_default_policy'],
         'optional_authorization_details': value['optional_authorization_details'],
         'public_keys': value['public_keys'],
