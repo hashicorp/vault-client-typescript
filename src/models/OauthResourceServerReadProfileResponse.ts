@@ -72,6 +72,12 @@ export interface OauthResourceServerReadProfileResponse {
      */
     jwt_type?: string;
     /**
+     * Whether this profile is cluster-scoped (true) or globally replicated (false).
+     * @type {boolean}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    local?: boolean;
+    /**
      * If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
@@ -146,6 +152,7 @@ export function OauthResourceServerReadProfileResponseFromJSONTyped(json: any, i
         'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
         'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
+        'local': json['local'] == null ? undefined : json['local'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
@@ -176,6 +183,7 @@ export function OauthResourceServerReadProfileResponseToJSONTyped(value?: OauthR
         'issuer_id': value['issuer_id'],
         'jwks_ca_pem': value['jwks_ca_pem'],
         'jwt_type': value['jwt_type'],
+        'local': value['local'],
         'no_default_policy': value['no_default_policy'],
         'optional_authorization_details': value['optional_authorization_details'],
         'profile_name': value['profile_name'],
