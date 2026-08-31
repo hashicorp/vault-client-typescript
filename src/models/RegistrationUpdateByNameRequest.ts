@@ -48,6 +48,12 @@ export interface RegistrationUpdateByNameRequest {
      */
     id?: string;
     /**
+     * Whether the agent registration should not be replicated globally and should be local to the current cluster.
+     * @type {boolean}
+     * @memberof RegistrationUpdateByNameRequest
+     */
+    local?: boolean;
+    /**
      * Opt out of automatically adding the default ceiling policies to this agent registration.
      * @type {boolean}
      * @memberof RegistrationUpdateByNameRequest
@@ -89,6 +95,7 @@ export function RegistrationUpdateByNameRequestFromJSONTyped(json: any, ignoreDi
         'description': json['description'] == null ? undefined : json['description'],
         'entity_id': json['entity_id'],
         'id': json['id'] == null ? undefined : json['id'],
+        'local': json['local'] == null ? undefined : json['local'],
         'no_default_ceiling_policy': json['no_default_ceiling_policy'] == null ? undefined : json['no_default_ceiling_policy'],
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'owner': json['owner'] == null ? undefined : json['owner'],
@@ -110,6 +117,7 @@ export function RegistrationUpdateByNameRequestToJSONTyped(value?: RegistrationU
         'description': value['description'],
         'entity_id': value['entity_id'],
         'id': value['id'],
+        'local': value['local'],
         'no_default_ceiling_policy': value['no_default_ceiling_policy'],
         'optional_authorization_details': value['optional_authorization_details'],
         'owner': value['owner'],

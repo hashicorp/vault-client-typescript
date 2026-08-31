@@ -108,6 +108,12 @@ export interface MountsTuneConfigurationParametersRequest {
      */
     plugin_version?: string;
     /**
+     * Whether to turn on seal wrapping for the mount.
+     * @type {boolean}
+     * @memberof MountsTuneConfigurationParametersRequest
+     */
+    seal_wrap?: boolean;
+    /**
      * The type of token to issue (service or batch).
      * @type {string}
      * @memberof MountsTuneConfigurationParametersRequest
@@ -158,6 +164,7 @@ export function MountsTuneConfigurationParametersRequestFromJSONTyped(json: any,
         'override_pinned_version': json['override_pinned_version'] == null ? undefined : json['override_pinned_version'],
         'passthrough_request_headers': json['passthrough_request_headers'] == null ? undefined : json['passthrough_request_headers'],
         'plugin_version': json['plugin_version'] == null ? undefined : json['plugin_version'],
+        'seal_wrap': json['seal_wrap'] == null ? undefined : json['seal_wrap'],
         'token_type': json['token_type'] == null ? undefined : json['token_type'],
         'trim_request_trailing_slashes': json['trim_request_trailing_slashes'] == null ? undefined : json['trim_request_trailing_slashes'],
         'user_lockout_config': json['user_lockout_config'] == null ? undefined : json['user_lockout_config'],
@@ -189,6 +196,7 @@ export function MountsTuneConfigurationParametersRequestToJSONTyped(value?: Moun
         'override_pinned_version': value['override_pinned_version'],
         'passthrough_request_headers': value['passthrough_request_headers'],
         'plugin_version': value['plugin_version'],
+        'seal_wrap': value['seal_wrap'],
         'token_type': value['token_type'],
         'trim_request_trailing_slashes': value['trim_request_trailing_slashes'],
         'user_lockout_config': value['user_lockout_config'],
