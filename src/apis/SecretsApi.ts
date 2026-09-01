@@ -23,10 +23,18 @@ import type {
   AliCloudWriteRoleRequest,
   AwsConfigureLeaseRequest,
   AwsConfigureRootIamCredentialsRequest,
+  AwsGenerateCredentialsResponse,
   AwsGenerateCredentialsWithParametersRequest,
+  AwsGenerateCredentialsWithParametersResponse,
+  AwsGenerateStsCredentialsResponse,
   AwsGenerateStsCredentialsWithParametersRequest,
+  AwsGenerateStsCredentialsWithParametersResponse,
+  AwsReadLeaseConfigurationResponse,
+  AwsReadRoleResponse,
+  AwsReadRootIamCredentialsConfigurationResponse,
   AwsReadStaticCredsNameResponse,
   AwsReadStaticRolesNameResponse,
+  AwsRotateRootIamCredentialsResponse,
   AwsWriteRoleRequest,
   AwsWriteStaticRolesNameRequest,
   AwsWriteStaticRolesNameResponse,
@@ -440,6 +448,7 @@ import type {
   TransformWriteTemplateRequest,
   TransformWriteTokenizationTransformationRequest,
   TransformWriteTransformationRequest,
+  TransitChangeKeyAlgorithmRequest,
   TransitConfigureCacheRequest,
   TransitConfigureKeyRequest,
   TransitConfigureKeysRequest,
@@ -482,14 +491,30 @@ import {
     AwsConfigureLeaseRequestToJSON,
     AwsConfigureRootIamCredentialsRequestFromJSON,
     AwsConfigureRootIamCredentialsRequestToJSON,
+    AwsGenerateCredentialsResponseFromJSON,
+    AwsGenerateCredentialsResponseToJSON,
     AwsGenerateCredentialsWithParametersRequestFromJSON,
     AwsGenerateCredentialsWithParametersRequestToJSON,
+    AwsGenerateCredentialsWithParametersResponseFromJSON,
+    AwsGenerateCredentialsWithParametersResponseToJSON,
+    AwsGenerateStsCredentialsResponseFromJSON,
+    AwsGenerateStsCredentialsResponseToJSON,
     AwsGenerateStsCredentialsWithParametersRequestFromJSON,
     AwsGenerateStsCredentialsWithParametersRequestToJSON,
+    AwsGenerateStsCredentialsWithParametersResponseFromJSON,
+    AwsGenerateStsCredentialsWithParametersResponseToJSON,
+    AwsReadLeaseConfigurationResponseFromJSON,
+    AwsReadLeaseConfigurationResponseToJSON,
+    AwsReadRoleResponseFromJSON,
+    AwsReadRoleResponseToJSON,
+    AwsReadRootIamCredentialsConfigurationResponseFromJSON,
+    AwsReadRootIamCredentialsConfigurationResponseToJSON,
     AwsReadStaticCredsNameResponseFromJSON,
     AwsReadStaticCredsNameResponseToJSON,
     AwsReadStaticRolesNameResponseFromJSON,
     AwsReadStaticRolesNameResponseToJSON,
+    AwsRotateRootIamCredentialsResponseFromJSON,
+    AwsRotateRootIamCredentialsResponseToJSON,
     AwsWriteRoleRequestFromJSON,
     AwsWriteRoleRequestToJSON,
     AwsWriteStaticRolesNameRequestFromJSON,
@@ -1316,6 +1341,8 @@ import {
     TransformWriteTokenizationTransformationRequestToJSON,
     TransformWriteTransformationRequestFromJSON,
     TransformWriteTransformationRequestToJSON,
+    TransitChangeKeyAlgorithmRequestFromJSON,
+    TransitChangeKeyAlgorithmRequestToJSON,
     TransitConfigureCacheRequestFromJSON,
     TransitConfigureCacheRequestToJSON,
     TransitConfigureKeyRequestFromJSON,
@@ -4987,6 +5014,12 @@ export interface SecretsApiTransitByokKeyVersionRequest {
     transit_mount_path: string;
 }
 
+export interface SecretsApiTransitChangeKeyAlgorithmOperationRequest {
+    name: string;
+    transit_mount_path: string;
+    TransitChangeKeyAlgorithmRequest: TransitChangeKeyAlgorithmRequest;
+}
+
 export interface SecretsApiTransitConfigureCacheOperationRequest {
     transit_mount_path: string;
     TransitConfigureCacheRequest: TransitConfigureCacheRequest;
@@ -5553,6 +5586,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the default lease for generated credentials.
      */
     async awsConfigureLeaseRaw(requestParameters: SecretsApiAwsConfigureLeaseOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5588,6 +5622,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the default lease for generated credentials.
      */
     async awsConfigureLease(aws_mount_path: string, AwsConfigureLeaseRequest: AwsConfigureLeaseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureLeaseRaw({ aws_mount_path: aws_mount_path, AwsConfigureLeaseRequest: AwsConfigureLeaseRequest }, initOverrides);
@@ -5595,6 +5630,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the root IAM credentials.
      */
     async awsConfigureRootIamCredentialsRaw(requestParameters: SecretsApiAwsConfigureRootIamCredentialsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5630,6 +5666,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the root IAM credentials.
      */
     async awsConfigureRootIamCredentials(aws_mount_path: string, AwsConfigureRootIamCredentialsRequest: AwsConfigureRootIamCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureRootIamCredentialsRaw({ aws_mount_path: aws_mount_path, AwsConfigureRootIamCredentialsRequest: AwsConfigureRootIamCredentialsRequest }, initOverrides);
@@ -5637,7 +5674,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Delete a named IAM role.
      */
     async awsDeleteRoleRaw(requestParameters: SecretsApiAwsDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -5670,7 +5707,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Delete a named IAM role.
      */
     async awsDeleteRole(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteRoleRaw({ name: name, aws_mount_path: aws_mount_path }, initOverrides);
@@ -5678,6 +5715,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named static IAM role.
      */
     async awsDeleteStaticRolesNameRaw(requestParameters: SecretsApiAwsDeleteStaticRolesNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -5710,6 +5748,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named static IAM role.
      */
     async awsDeleteStaticRolesName(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteStaticRolesNameRaw({ name: name, aws_mount_path: aws_mount_path }, initOverrides);
@@ -5717,8 +5756,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateCredentialsRaw(requestParameters: SecretsApiAwsGenerateCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsGenerateCredentialsRaw(requestParameters: SecretsApiAwsGenerateCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsGenerateCredentialsResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -5757,19 +5797,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsGenerateCredentialsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateCredentials(name: string, aws_mount_path: string, role_arn?: string, role_session_name?: string, ttl?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsGenerateCredentials(name: string, aws_mount_path: string, role_arn?: string, role_session_name?: string, ttl?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsGenerateCredentialsResponse> {
         const response = await this.awsGenerateCredentialsRaw({ name: name, aws_mount_path: aws_mount_path, role_arn: role_arn, role_session_name: role_session_name, ttl: ttl }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateCredentialsWithParametersRaw(requestParameters: SecretsApiAwsGenerateCredentialsWithParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsGenerateCredentialsWithParametersRaw(requestParameters: SecretsApiAwsGenerateCredentialsWithParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsGenerateCredentialsWithParametersResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -5806,19 +5848,21 @@ export class SecretsApi extends runtime.BaseAPI {
             body: AwsGenerateCredentialsWithParametersRequestToJSON(requestParameters['AwsGenerateCredentialsWithParametersRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsGenerateCredentialsWithParametersResponseFromJSON(jsonValue));
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateCredentialsWithParameters(name: string, aws_mount_path: string, AwsGenerateCredentialsWithParametersRequest: AwsGenerateCredentialsWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsGenerateCredentialsWithParameters(name: string, aws_mount_path: string, AwsGenerateCredentialsWithParametersRequest: AwsGenerateCredentialsWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsGenerateCredentialsWithParametersResponse> {
         const response = await this.awsGenerateCredentialsWithParametersRaw({ name: name, aws_mount_path: aws_mount_path, AwsGenerateCredentialsWithParametersRequest: AwsGenerateCredentialsWithParametersRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateStsCredentialsRaw(requestParameters: SecretsApiAwsGenerateStsCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsGenerateStsCredentialsRaw(requestParameters: SecretsApiAwsGenerateStsCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsGenerateStsCredentialsResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -5857,19 +5901,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsGenerateStsCredentialsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateStsCredentials(name: string, aws_mount_path: string, role_arn?: string, role_session_name?: string, ttl?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsGenerateStsCredentials(name: string, aws_mount_path: string, role_arn?: string, role_session_name?: string, ttl?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsGenerateStsCredentialsResponse> {
         const response = await this.awsGenerateStsCredentialsRaw({ name: name, aws_mount_path: aws_mount_path, role_arn: role_arn, role_session_name: role_session_name, ttl: ttl }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateStsCredentialsWithParametersRaw(requestParameters: SecretsApiAwsGenerateStsCredentialsWithParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsGenerateStsCredentialsWithParametersRaw(requestParameters: SecretsApiAwsGenerateStsCredentialsWithParametersOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsGenerateStsCredentialsWithParametersResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -5906,12 +5952,13 @@ export class SecretsApi extends runtime.BaseAPI {
             body: AwsGenerateStsCredentialsWithParametersRequestToJSON(requestParameters['AwsGenerateStsCredentialsWithParametersRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsGenerateStsCredentialsWithParametersResponseFromJSON(jsonValue));
     }
 
     /**
+     * Generate AWS credentials for a given role.
      */
-    async awsGenerateStsCredentialsWithParameters(name: string, aws_mount_path: string, AwsGenerateStsCredentialsWithParametersRequest: AwsGenerateStsCredentialsWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsGenerateStsCredentialsWithParameters(name: string, aws_mount_path: string, AwsGenerateStsCredentialsWithParametersRequest: AwsGenerateStsCredentialsWithParametersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsGenerateStsCredentialsWithParametersResponse> {
         const response = await this.awsGenerateStsCredentialsWithParametersRaw({ name: name, aws_mount_path: aws_mount_path, AwsGenerateStsCredentialsWithParametersRequest: AwsGenerateStsCredentialsWithParametersRequest }, initOverrides);
         return await response.value();
     }
@@ -5962,6 +6009,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured static IAM roles.
      */
     async awsListStaticRolesRaw(requestParameters: SecretsApiAwsListStaticRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5998,6 +6046,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured static IAM roles.
      */
     async awsListStaticRoles(aws_mount_path: string, list: SecretsApiAwsListStaticRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListStaticRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -6005,8 +6054,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Return the default lease configuration for generated credentials.
      */
-    async awsReadLeaseConfigurationRaw(requestParameters: SecretsApiAwsReadLeaseConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadLeaseConfigurationRaw(requestParameters: SecretsApiAwsReadLeaseConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadLeaseConfigurationResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -6026,20 +6076,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadLeaseConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the default lease configuration for generated credentials.
      */
-    async awsReadLeaseConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadLeaseConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadLeaseConfigurationResponse> {
         const response = await this.awsReadLeaseConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Return the configuration for a named IAM role.
      */
-    async awsReadRoleRaw(requestParameters: SecretsApiAwsReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRoleRaw(requestParameters: SecretsApiAwsReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRoleResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -6066,20 +6117,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRoleResponseFromJSON(jsonValue));
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Return the configuration for a named IAM role.
      */
-    async awsReadRole(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRole(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRoleResponse> {
         const response = await this.awsReadRoleRaw({ name: name, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the root IAM credentials configuration.
      */
-    async awsReadRootIamCredentialsConfigurationRaw(requestParameters: SecretsApiAwsReadRootIamCredentialsConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRootIamCredentialsConfigurationRaw(requestParameters: SecretsApiAwsReadRootIamCredentialsConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRootIamCredentialsConfigurationResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -6099,17 +6151,19 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRootIamCredentialsConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the root IAM credentials configuration.
      */
-    async awsReadRootIamCredentialsConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRootIamCredentialsConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRootIamCredentialsConfigurationResponse> {
         const response = await this.awsReadRootIamCredentialsConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Retrieve the current credentials for a named static IAM role.
      */
     async awsReadStaticCredsNameRaw(requestParameters: SecretsApiAwsReadStaticCredsNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadStaticCredsNameResponse>> {
         if (requestParameters['name'] == null) {
@@ -6142,6 +6196,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Retrieve the current credentials for a named static IAM role.
      */
     async awsReadStaticCredsName(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadStaticCredsNameResponse> {
         const response = await this.awsReadStaticCredsNameRaw({ name: name, aws_mount_path: aws_mount_path }, initOverrides);
@@ -6149,6 +6204,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Return the configuration for a named static IAM role.
      */
     async awsReadStaticRolesNameRaw(requestParameters: SecretsApiAwsReadStaticRolesNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadStaticRolesNameResponse>> {
         if (requestParameters['name'] == null) {
@@ -6181,6 +6237,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Return the configuration for a named static IAM role.
      */
     async awsReadStaticRolesName(name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadStaticRolesNameResponse> {
         const response = await this.awsReadStaticRolesNameRaw({ name: name, aws_mount_path: aws_mount_path }, initOverrides);
@@ -6188,8 +6245,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Rotate the root IAM credentials used by Vault for this secrets mount.
      */
-    async awsRotateRootIamCredentialsRaw(requestParameters: SecretsApiAwsRotateRootIamCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsRotateRootIamCredentialsRaw(requestParameters: SecretsApiAwsRotateRootIamCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsRotateRootIamCredentialsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -6209,18 +6267,19 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsRotateRootIamCredentialsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Rotate the root IAM credentials used by Vault for this secrets mount.
      */
-    async awsRotateRootIamCredentials(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsRotateRootIamCredentials(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsRotateRootIamCredentialsResponse> {
         const response = await this.awsRotateRootIamCredentialsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Create or update a named IAM role.
      */
     async awsWriteRoleRaw(requestParameters: SecretsApiAwsWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -6263,7 +6322,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Read, write and reference IAM policies that access keys can be made for.
+     * Create or update a named IAM role.
      */
     async awsWriteRole(name: string, aws_mount_path: string, AwsWriteRoleRequest: AwsWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsWriteRoleRaw({ name: name, aws_mount_path: aws_mount_path, AwsWriteRoleRequest: AwsWriteRoleRequest }, initOverrides);
@@ -6271,6 +6330,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Create or update a named static IAM role.
      */
     async awsWriteStaticRolesNameRaw(requestParameters: SecretsApiAwsWriteStaticRolesNameOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsWriteStaticRolesNameResponse>> {
         if (requestParameters['name'] == null) {
@@ -6313,6 +6373,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Create or update a named static IAM role.
      */
     async awsWriteStaticRolesName(name: string, aws_mount_path: string, AwsWriteStaticRolesNameRequest: AwsWriteStaticRolesNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsWriteStaticRolesNameResponse> {
         const response = await this.awsWriteStaticRolesNameRaw({ name: name, aws_mount_path: aws_mount_path, AwsWriteStaticRolesNameRequest: AwsWriteStaticRolesNameRequest }, initOverrides);
@@ -34353,6 +34414,57 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Change the algorithm of a named encryption key
+     */
+    async transitChangeKeyAlgorithmRaw(requestParameters: SecretsApiTransitChangeKeyAlgorithmOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError(
+                'name',
+                'Required parameter "name" was null or undefined when calling transitChangeKeyAlgorithm().'
+            );
+        }
+
+        if (requestParameters['transit_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'transit_mount_path',
+                'Required parameter "transit_mount_path" was null or undefined when calling transitChangeKeyAlgorithm().'
+            );
+        }
+
+        if (requestParameters['TransitChangeKeyAlgorithmRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TransitChangeKeyAlgorithmRequest',
+                'Required parameter "TransitChangeKeyAlgorithmRequest" was null or undefined when calling transitChangeKeyAlgorithm().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{transit_mount_path}/keys/{name}/algorithm`.replace(`{${"name"}}`, encodeURIComponent(String(requestParameters['name']).replace(/\/+$/, ''))).replace(`{${"transit_mount_path"}}`, encodeURIComponent(String(requestParameters['transit_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TransitChangeKeyAlgorithmRequestToJSON(requestParameters['TransitChangeKeyAlgorithmRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Change the algorithm of a named encryption key
+     */
+    async transitChangeKeyAlgorithm(name: string, transit_mount_path: string, TransitChangeKeyAlgorithmRequest: TransitChangeKeyAlgorithmRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.transitChangeKeyAlgorithmRaw({ name: name, transit_mount_path: transit_mount_path, TransitChangeKeyAlgorithmRequest: TransitChangeKeyAlgorithmRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Configures a new cache of the specified size
      */
     async transitConfigureCacheRaw(requestParameters: SecretsApiTransitConfigureCacheOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
@@ -35951,7 +36063,6 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Rotate named encryption key
      */
     async transitRotateKeyRaw(requestParameters: SecretsApiTransitRotateKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -35994,7 +36105,6 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Rotate named encryption key
      */
     async transitRotateKey(name: string, transit_mount_path: string, TransitRotateKeyRequest: TransitRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.transitRotateKeyRaw({ name: name, transit_mount_path: transit_mount_path, TransitRotateKeyRequest: TransitRotateKeyRequest }, initOverrides);

@@ -67,12 +67,28 @@ import type {
   AwsConfigureRoleTagBlacklistTidyOperationRequest,
   AwsConfigureRoleTagDenyListTidyOperationRequest,
   AwsLoginRequest,
+  AwsLoginResponse,
+  AwsReadAuthRoleResponse,
+  AwsReadCertificateConfigurationResponse,
+  AwsReadClientConfigurationResponse,
+  AwsReadIdentityAccessListResponse,
+  AwsReadIdentityAccessListTidySettingsResponse,
+  AwsReadIdentityIntegrationConfigurationResponse,
+  AwsReadIdentityWhitelistResponse,
+  AwsReadIdentityWhitelistTidySettingsResponse,
+  AwsReadRoleTagBlacklistResponse,
+  AwsReadRoleTagBlacklistTidySettingsResponse,
+  AwsReadRoleTagDenyListResponse,
+  AwsReadRoleTagDenyListTidySettingsResponse,
+  AwsReadStsRoleResponse,
+  AwsRotateRootCredentialsResponse,
   AwsTidyIdentityAccessListRequest,
   AwsTidyIdentityWhitelistRequest,
   AwsTidyRoleTagBlacklistRequest,
   AwsTidyRoleTagDenyListRequest,
   AwsWriteAuthRoleRequest,
   AwsWriteRoleTagRequest,
+  AwsWriteRoleTagResponse,
   AwsWriteStsRoleRequest,
   AzureConfigureAuthRequest,
   AzureLoginRequest,
@@ -257,6 +273,36 @@ import {
     AwsConfigureRoleTagDenyListTidyOperationRequestToJSON,
     AwsLoginRequestFromJSON,
     AwsLoginRequestToJSON,
+    AwsLoginResponseFromJSON,
+    AwsLoginResponseToJSON,
+    AwsReadAuthRoleResponseFromJSON,
+    AwsReadAuthRoleResponseToJSON,
+    AwsReadCertificateConfigurationResponseFromJSON,
+    AwsReadCertificateConfigurationResponseToJSON,
+    AwsReadClientConfigurationResponseFromJSON,
+    AwsReadClientConfigurationResponseToJSON,
+    AwsReadIdentityAccessListResponseFromJSON,
+    AwsReadIdentityAccessListResponseToJSON,
+    AwsReadIdentityAccessListTidySettingsResponseFromJSON,
+    AwsReadIdentityAccessListTidySettingsResponseToJSON,
+    AwsReadIdentityIntegrationConfigurationResponseFromJSON,
+    AwsReadIdentityIntegrationConfigurationResponseToJSON,
+    AwsReadIdentityWhitelistResponseFromJSON,
+    AwsReadIdentityWhitelistResponseToJSON,
+    AwsReadIdentityWhitelistTidySettingsResponseFromJSON,
+    AwsReadIdentityWhitelistTidySettingsResponseToJSON,
+    AwsReadRoleTagBlacklistResponseFromJSON,
+    AwsReadRoleTagBlacklistResponseToJSON,
+    AwsReadRoleTagBlacklistTidySettingsResponseFromJSON,
+    AwsReadRoleTagBlacklistTidySettingsResponseToJSON,
+    AwsReadRoleTagDenyListResponseFromJSON,
+    AwsReadRoleTagDenyListResponseToJSON,
+    AwsReadRoleTagDenyListTidySettingsResponseFromJSON,
+    AwsReadRoleTagDenyListTidySettingsResponseToJSON,
+    AwsReadStsRoleResponseFromJSON,
+    AwsReadStsRoleResponseToJSON,
+    AwsRotateRootCredentialsResponseFromJSON,
+    AwsRotateRootCredentialsResponseToJSON,
     AwsTidyIdentityAccessListRequestFromJSON,
     AwsTidyIdentityAccessListRequestToJSON,
     AwsTidyIdentityWhitelistRequestFromJSON,
@@ -269,6 +315,8 @@ import {
     AwsWriteAuthRoleRequestToJSON,
     AwsWriteRoleTagRequestFromJSON,
     AwsWriteRoleTagRequestToJSON,
+    AwsWriteRoleTagResponseFromJSON,
+    AwsWriteRoleTagResponseToJSON,
     AwsWriteStsRoleRequestFromJSON,
     AwsWriteStsRoleRequestToJSON,
     AzureConfigureAuthRequestFromJSON,
@@ -4331,6 +4379,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure an AWS public key for PKCS7 or identity-document verification.
      */
     async awsConfigureCertificateRaw(requestParameters: AuthApiAwsConfigureCertificateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['cert_name'] == null) {
@@ -4373,6 +4422,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure an AWS public key for PKCS7 or identity-document verification.
      */
     async awsConfigureCertificate(cert_name: string, aws_mount_path: string, AwsConfigureCertificateRequest: AwsConfigureCertificateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureCertificateRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path, AwsConfigureCertificateRequest: AwsConfigureCertificateRequest }, initOverrides);
@@ -4380,6 +4430,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure AWS IAM credentials used to query instance and role details.
      */
     async awsConfigureClientRaw(requestParameters: AuthApiAwsConfigureClientOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4415,6 +4466,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure AWS IAM credentials used to query instance and role details.
      */
     async awsConfigureClient(aws_mount_path: string, AwsConfigureClientRequest: AwsConfigureClientRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureClientRaw({ aws_mount_path: aws_mount_path, AwsConfigureClientRequest: AwsConfigureClientRequest }, initOverrides);
@@ -4422,6 +4474,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the identity access-list tidy operation.
      */
     async awsConfigureIdentityAccessListTidyOperationRaw(requestParameters: AuthApiAwsConfigureIdentityAccessListTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4457,6 +4510,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the identity access-list tidy operation.
      */
     async awsConfigureIdentityAccessListTidyOperation(aws_mount_path: string, AwsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureIdentityAccessListTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityAccessListTidyOperationRequest: AwsConfigureIdentityAccessListTidyOperationRequest }, initOverrides);
@@ -4464,6 +4518,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the AWS identity integration settings.
      */
     async awsConfigureIdentityIntegrationRaw(requestParameters: AuthApiAwsConfigureIdentityIntegrationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4499,6 +4554,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the AWS identity integration settings.
      */
     async awsConfigureIdentityIntegration(aws_mount_path: string, AwsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureIdentityIntegrationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityIntegrationRequest: AwsConfigureIdentityIntegrationRequest }, initOverrides);
@@ -4506,6 +4562,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the identity access-list tidy operation.
      */
     async awsConfigureIdentityWhitelistTidyOperationRaw(requestParameters: AuthApiAwsConfigureIdentityWhitelistTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4541,6 +4598,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the identity access-list tidy operation.
      */
     async awsConfigureIdentityWhitelistTidyOperation(aws_mount_path: string, AwsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureIdentityWhitelistTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureIdentityWhitelistTidyOperationRequest: AwsConfigureIdentityWhitelistTidyOperationRequest }, initOverrides);
@@ -4548,6 +4606,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the role-tag deny-list tidy operation.
      */
     async awsConfigureRoleTagBlacklistTidyOperationRaw(requestParameters: AuthApiAwsConfigureRoleTagBlacklistTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4583,6 +4642,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the role-tag deny-list tidy operation.
      */
     async awsConfigureRoleTagBlacklistTidyOperation(aws_mount_path: string, AwsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureRoleTagBlacklistTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureRoleTagBlacklistTidyOperationRequest: AwsConfigureRoleTagBlacklistTidyOperationRequest }, initOverrides);
@@ -4590,6 +4650,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the role-tag deny-list tidy operation.
      */
     async awsConfigureRoleTagDenyListTidyOperationRaw(requestParameters: AuthApiAwsConfigureRoleTagDenyListTidyOperationOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4625,6 +4686,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the role-tag deny-list tidy operation.
      */
     async awsConfigureRoleTagDenyListTidyOperation(aws_mount_path: string, AwsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsConfigureRoleTagDenyListTidyOperationRaw({ aws_mount_path: aws_mount_path, AwsConfigureRoleTagDenyListTidyOperationRequest: AwsConfigureRoleTagDenyListTidyOperationRequest }, initOverrides);
@@ -4632,6 +4694,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named AWS auth role.
      */
     async awsDeleteAuthRoleRaw(requestParameters: AuthApiAwsDeleteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -4664,6 +4727,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named AWS auth role.
      */
     async awsDeleteAuthRole(role: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4671,6 +4735,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the configured AWS public certificate.
      */
     async awsDeleteCertificateConfigurationRaw(requestParameters: AuthApiAwsDeleteCertificateConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['cert_name'] == null) {
@@ -4703,6 +4768,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the configured AWS public certificate.
      */
     async awsDeleteCertificateConfiguration(cert_name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteCertificateConfigurationRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4710,6 +4776,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the AWS client configuration.
      */
     async awsDeleteClientConfigurationRaw(requestParameters: AuthApiAwsDeleteClientConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4735,6 +4802,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the AWS client configuration.
      */
     async awsDeleteClientConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteClientConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
@@ -4742,6 +4810,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the access-list entry for the given EC2 instance ID.
      */
     async awsDeleteIdentityAccessListRaw(requestParameters: AuthApiAwsDeleteIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['instance_id'] == null) {
@@ -4774,6 +4843,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the access-list entry for the given EC2 instance ID.
      */
     async awsDeleteIdentityAccessList(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteIdentityAccessListRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4781,6 +4851,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the identity access-list tidy configuration.
      */
     async awsDeleteIdentityAccessListTidySettingsRaw(requestParameters: AuthApiAwsDeleteIdentityAccessListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4806,6 +4877,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the identity access-list tidy configuration.
      */
     async awsDeleteIdentityAccessListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteIdentityAccessListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
@@ -4813,6 +4885,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the access-list entry for the given EC2 instance ID.
      */
     async awsDeleteIdentityWhitelistRaw(requestParameters: AuthApiAwsDeleteIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['instance_id'] == null) {
@@ -4845,6 +4918,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the access-list entry for the given EC2 instance ID.
      */
     async awsDeleteIdentityWhitelist(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteIdentityWhitelistRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4852,6 +4926,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the identity access-list tidy configuration.
      */
     async awsDeleteIdentityWhitelistTidySettingsRaw(requestParameters: AuthApiAwsDeleteIdentityWhitelistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4877,6 +4952,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the identity access-list tidy configuration.
      */
     async awsDeleteIdentityWhitelistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteIdentityWhitelistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
@@ -4884,6 +4960,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the deny-list entry for the given role tag.
      */
     async awsDeleteRoleTagBlacklistRaw(requestParameters: AuthApiAwsDeleteRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role_tag'] == null) {
@@ -4916,6 +4993,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the deny-list entry for the given role tag.
      */
     async awsDeleteRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4923,6 +5001,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the role-tag deny-list tidy configuration.
      */
     async awsDeleteRoleTagBlacklistTidySettingsRaw(requestParameters: AuthApiAwsDeleteRoleTagBlacklistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -4948,6 +5027,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the role-tag deny-list tidy configuration.
      */
     async awsDeleteRoleTagBlacklistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteRoleTagBlacklistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
@@ -4955,6 +5035,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the deny-list entry for the given role tag.
      */
     async awsDeleteRoleTagDenyListRaw(requestParameters: AuthApiAwsDeleteRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role_tag'] == null) {
@@ -4987,6 +5068,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the deny-list entry for the given role tag.
      */
     async awsDeleteRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
@@ -4994,6 +5076,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the role-tag deny-list tidy configuration.
      */
     async awsDeleteRoleTagDenyListTidySettingsRaw(requestParameters: AuthApiAwsDeleteRoleTagDenyListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5019,6 +5102,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the role-tag deny-list tidy configuration.
      */
     async awsDeleteRoleTagDenyListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteRoleTagDenyListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
@@ -5026,6 +5110,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the configured STS role for a given AWS account.
      */
     async awsDeleteStsRoleRaw(requestParameters: AuthApiAwsDeleteStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['account_id'] == null) {
@@ -5058,6 +5143,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the configured STS role for a given AWS account.
      */
     async awsDeleteStsRole(account_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsDeleteStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path }, initOverrides);
@@ -5065,6 +5151,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS auth roles.
      */
     async awsListAuthRolesRaw(requestParameters: AuthApiAwsListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5101,6 +5188,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS auth roles.
      */
     async awsListAuthRoles(aws_mount_path: string, list: AuthApiAwsListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListAuthRolesRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5108,6 +5196,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS auth roles.
      */
     async awsListAuthRoles2Raw(requestParameters: AuthApiAwsListAuthRoles2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5144,6 +5233,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS auth roles.
      */
     async awsListAuthRoles2(aws_mount_path: string, list: AuthApiAwsListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListAuthRoles2Raw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5151,6 +5241,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS public certificates.
      */
     async awsListCertificateConfigurationsRaw(requestParameters: AuthApiAwsListCertificateConfigurationsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5187,6 +5278,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured AWS public certificates.
      */
     async awsListCertificateConfigurations(aws_mount_path: string, list: AuthApiAwsListCertificateConfigurationsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListCertificateConfigurationsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5194,6 +5286,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the EC2 instance IDs in the identity access list.
      */
     async awsListIdentityAccessListRaw(requestParameters: AuthApiAwsListIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5230,6 +5323,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the EC2 instance IDs in the identity access list.
      */
     async awsListIdentityAccessList(aws_mount_path: string, list: AuthApiAwsListIdentityAccessListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListIdentityAccessListRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5237,6 +5331,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the EC2 instance IDs in the identity access list.
      */
     async awsListIdentityWhitelistRaw(requestParameters: AuthApiAwsListIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5273,6 +5368,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the EC2 instance IDs in the identity access list.
      */
     async awsListIdentityWhitelist(aws_mount_path: string, list: AuthApiAwsListIdentityWhitelistListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListIdentityWhitelistRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5280,6 +5376,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the deny-listed role tags.
      */
     async awsListRoleTagBlacklistsRaw(requestParameters: AuthApiAwsListRoleTagBlacklistsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5316,6 +5413,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the deny-listed role tags.
      */
     async awsListRoleTagBlacklists(aws_mount_path: string, list: AuthApiAwsListRoleTagBlacklistsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListRoleTagBlacklistsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5323,6 +5421,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the deny-listed role tags.
      */
     async awsListRoleTagDenyListsRaw(requestParameters: AuthApiAwsListRoleTagDenyListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5359,6 +5458,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the deny-listed role tags.
      */
     async awsListRoleTagDenyLists(aws_mount_path: string, list: AuthApiAwsListRoleTagDenyListsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListRoleTagDenyListsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5366,6 +5466,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured STS roles for all AWS accounts.
      */
     async awsListStsRoleRelationshipsRaw(requestParameters: AuthApiAwsListStsRoleRelationshipsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5402,6 +5503,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the configured STS roles for all AWS accounts.
      */
     async awsListStsRoleRelationships(aws_mount_path: string, list: AuthApiAwsListStsRoleRelationshipsListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.awsListStsRoleRelationshipsRaw({ aws_mount_path: aws_mount_path, list: list }, initOverrides);
@@ -5409,8 +5511,9 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Authenticate to Vault using AWS credentials.
      */
-    async awsLoginRaw(requestParameters: AuthApiAwsLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsLoginRaw(requestParameters: AuthApiAwsLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsLoginResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5440,19 +5543,21 @@ export class AuthApi extends runtime.BaseAPI {
             body: AwsLoginRequestToJSON(requestParameters['AwsLoginRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsLoginResponseFromJSON(jsonValue));
     }
 
     /**
+     * Authenticate to Vault using AWS credentials.
      */
-    async awsLogin(aws_mount_path: string, AwsLoginRequest: AwsLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsLogin(aws_mount_path: string, AwsLoginRequest: AwsLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsLoginResponse> {
         const response = await this.awsLoginRaw({ aws_mount_path: aws_mount_path, AwsLoginRequest: AwsLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the configuration for a named AWS auth role.
      */
-    async awsReadAuthRoleRaw(requestParameters: AuthApiAwsReadAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadAuthRoleRaw(requestParameters: AuthApiAwsReadAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadAuthRoleResponse>> {
         if (requestParameters['role'] == null) {
             throw new runtime.RequiredError(
                 'role',
@@ -5479,19 +5584,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadAuthRoleResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the configuration for a named AWS auth role.
      */
-    async awsReadAuthRole(role: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadAuthRole(role: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadAuthRoleResponse> {
         const response = await this.awsReadAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the configured AWS public certificate.
      */
-    async awsReadCertificateConfigurationRaw(requestParameters: AuthApiAwsReadCertificateConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadCertificateConfigurationRaw(requestParameters: AuthApiAwsReadCertificateConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadCertificateConfigurationResponse>> {
         if (requestParameters['cert_name'] == null) {
             throw new runtime.RequiredError(
                 'cert_name',
@@ -5518,19 +5625,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadCertificateConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the configured AWS public certificate.
      */
-    async awsReadCertificateConfiguration(cert_name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadCertificateConfiguration(cert_name: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadCertificateConfigurationResponse> {
         const response = await this.awsReadCertificateConfigurationRaw({ cert_name: cert_name, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the configured AWS client credentials.
      */
-    async awsReadClientConfigurationRaw(requestParameters: AuthApiAwsReadClientConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadClientConfigurationRaw(requestParameters: AuthApiAwsReadClientConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadClientConfigurationResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5550,19 +5659,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadClientConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the configured AWS client credentials.
      */
-    async awsReadClientConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadClientConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadClientConfigurationResponse> {
         const response = await this.awsReadClientConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the access-list entry for the given EC2 instance ID.
      */
-    async awsReadIdentityAccessListRaw(requestParameters: AuthApiAwsReadIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadIdentityAccessListRaw(requestParameters: AuthApiAwsReadIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadIdentityAccessListResponse>> {
         if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
                 'instance_id',
@@ -5589,19 +5700,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadIdentityAccessListResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the access-list entry for the given EC2 instance ID.
      */
-    async awsReadIdentityAccessList(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadIdentityAccessList(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadIdentityAccessListResponse> {
         const response = await this.awsReadIdentityAccessListRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the identity access-list tidy configuration.
      */
-    async awsReadIdentityAccessListTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityAccessListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadIdentityAccessListTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityAccessListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadIdentityAccessListTidySettingsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5621,19 +5734,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadIdentityAccessListTidySettingsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the identity access-list tidy configuration.
      */
-    async awsReadIdentityAccessListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadIdentityAccessListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadIdentityAccessListTidySettingsResponse> {
         const response = await this.awsReadIdentityAccessListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the AWS identity integration configuration.
      */
-    async awsReadIdentityIntegrationConfigurationRaw(requestParameters: AuthApiAwsReadIdentityIntegrationConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadIdentityIntegrationConfigurationRaw(requestParameters: AuthApiAwsReadIdentityIntegrationConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadIdentityIntegrationConfigurationResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5653,19 +5768,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadIdentityIntegrationConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the AWS identity integration configuration.
      */
-    async awsReadIdentityIntegrationConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadIdentityIntegrationConfiguration(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadIdentityIntegrationConfigurationResponse> {
         const response = await this.awsReadIdentityIntegrationConfigurationRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the access-list entry for the given EC2 instance ID.
      */
-    async awsReadIdentityWhitelistRaw(requestParameters: AuthApiAwsReadIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadIdentityWhitelistRaw(requestParameters: AuthApiAwsReadIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadIdentityWhitelistResponse>> {
         if (requestParameters['instance_id'] == null) {
             throw new runtime.RequiredError(
                 'instance_id',
@@ -5692,19 +5809,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadIdentityWhitelistResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the access-list entry for the given EC2 instance ID.
      */
-    async awsReadIdentityWhitelist(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadIdentityWhitelist(instance_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadIdentityWhitelistResponse> {
         const response = await this.awsReadIdentityWhitelistRaw({ instance_id: instance_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the identity access-list tidy configuration.
      */
-    async awsReadIdentityWhitelistTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityWhitelistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadIdentityWhitelistTidySettingsRaw(requestParameters: AuthApiAwsReadIdentityWhitelistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadIdentityWhitelistTidySettingsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5724,19 +5843,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadIdentityWhitelistTidySettingsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the identity access-list tidy configuration.
      */
-    async awsReadIdentityWhitelistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadIdentityWhitelistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadIdentityWhitelistTidySettingsResponse> {
         const response = await this.awsReadIdentityWhitelistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the deny-list entry for the given role tag.
      */
-    async awsReadRoleTagBlacklistRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRoleTagBlacklistRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRoleTagBlacklistResponse>> {
         if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
                 'role_tag',
@@ -5763,19 +5884,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRoleTagBlacklistResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the deny-list entry for the given role tag.
      */
-    async awsReadRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRoleTagBlacklistResponse> {
         const response = await this.awsReadRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the role-tag deny-list tidy configuration.
      */
-    async awsReadRoleTagBlacklistTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRoleTagBlacklistTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagBlacklistTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRoleTagBlacklistTidySettingsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5795,19 +5918,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRoleTagBlacklistTidySettingsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the role-tag deny-list tidy configuration.
      */
-    async awsReadRoleTagBlacklistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRoleTagBlacklistTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRoleTagBlacklistTidySettingsResponse> {
         const response = await this.awsReadRoleTagBlacklistTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the deny-list entry for the given role tag.
      */
-    async awsReadRoleTagDenyListRaw(requestParameters: AuthApiAwsReadRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRoleTagDenyListRaw(requestParameters: AuthApiAwsReadRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRoleTagDenyListResponse>> {
         if (requestParameters['role_tag'] == null) {
             throw new runtime.RequiredError(
                 'role_tag',
@@ -5834,19 +5959,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRoleTagDenyListResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the deny-list entry for the given role tag.
      */
-    async awsReadRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRoleTagDenyListResponse> {
         const response = await this.awsReadRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the role-tag deny-list tidy configuration.
      */
-    async awsReadRoleTagDenyListTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagDenyListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadRoleTagDenyListTidySettingsRaw(requestParameters: AuthApiAwsReadRoleTagDenyListTidySettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadRoleTagDenyListTidySettingsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5866,19 +5993,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadRoleTagDenyListTidySettingsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the role-tag deny-list tidy configuration.
      */
-    async awsReadRoleTagDenyListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadRoleTagDenyListTidySettings(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadRoleTagDenyListTidySettingsResponse> {
         const response = await this.awsReadRoleTagDenyListTidySettingsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the configured STS role for a given AWS account.
      */
-    async awsReadStsRoleRaw(requestParameters: AuthApiAwsReadStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsReadStsRoleRaw(requestParameters: AuthApiAwsReadStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsReadStsRoleResponse>> {
         if (requestParameters['account_id'] == null) {
             throw new runtime.RequiredError(
                 'account_id',
@@ -5905,19 +6034,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsReadStsRoleResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the configured STS role for a given AWS account.
      */
-    async awsReadStsRole(account_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsReadStsRole(account_id: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsReadStsRoleResponse> {
         const response = await this.awsReadStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Rotate the AWS credentials used by Vault for this auth mount.
      */
-    async awsRotateRootCredentialsRaw(requestParameters: AuthApiAwsRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsRotateRootCredentialsRaw(requestParameters: AuthApiAwsRotateRootCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsRotateRootCredentialsResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'aws_mount_path',
@@ -5937,17 +6068,19 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsRotateRootCredentialsResponseFromJSON(jsonValue));
     }
 
     /**
+     * Rotate the AWS credentials used by Vault for this auth mount.
      */
-    async awsRotateRootCredentials(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsRotateRootCredentials(aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsRotateRootCredentialsResponse> {
         const response = await this.awsRotateRootCredentialsRaw({ aws_mount_path: aws_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Tidy expired entries from the identity access list.
      */
     async awsTidyIdentityAccessListRaw(requestParameters: AuthApiAwsTidyIdentityAccessListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -5983,6 +6116,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the identity access list.
      */
     async awsTidyIdentityAccessList(aws_mount_path: string, AwsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsTidyIdentityAccessListRaw({ aws_mount_path: aws_mount_path, AwsTidyIdentityAccessListRequest: AwsTidyIdentityAccessListRequest }, initOverrides);
@@ -5990,6 +6124,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the identity access list.
      */
     async awsTidyIdentityWhitelistRaw(requestParameters: AuthApiAwsTidyIdentityWhitelistOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -6025,6 +6160,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the identity access list.
      */
     async awsTidyIdentityWhitelist(aws_mount_path: string, AwsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsTidyIdentityWhitelistRaw({ aws_mount_path: aws_mount_path, AwsTidyIdentityWhitelistRequest: AwsTidyIdentityWhitelistRequest }, initOverrides);
@@ -6032,6 +6168,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the role-tag deny list.
      */
     async awsTidyRoleTagBlacklistRaw(requestParameters: AuthApiAwsTidyRoleTagBlacklistOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -6067,6 +6204,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the role-tag deny list.
      */
     async awsTidyRoleTagBlacklist(aws_mount_path: string, AwsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsTidyRoleTagBlacklistRaw({ aws_mount_path: aws_mount_path, AwsTidyRoleTagBlacklistRequest: AwsTidyRoleTagBlacklistRequest }, initOverrides);
@@ -6074,6 +6212,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the role-tag deny list.
      */
     async awsTidyRoleTagDenyListRaw(requestParameters: AuthApiAwsTidyRoleTagDenyListOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['aws_mount_path'] == null) {
@@ -6109,6 +6248,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Tidy expired entries from the role-tag deny list.
      */
     async awsTidyRoleTagDenyList(aws_mount_path: string, AwsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsTidyRoleTagDenyListRaw({ aws_mount_path: aws_mount_path, AwsTidyRoleTagDenyListRequest: AwsTidyRoleTagDenyListRequest }, initOverrides);
@@ -6116,6 +6256,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Create or update an AWS auth role.
      */
     async awsWriteAuthRoleRaw(requestParameters: AuthApiAwsWriteAuthRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -6158,6 +6299,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Create or update an AWS auth role.
      */
     async awsWriteAuthRole(role: string, aws_mount_path: string, AwsWriteAuthRoleRequest: AwsWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsWriteAuthRoleRaw({ role: role, aws_mount_path: aws_mount_path, AwsWriteAuthRoleRequest: AwsWriteAuthRoleRequest }, initOverrides);
@@ -6165,8 +6307,9 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Generate a role tag for an EC2 instance.
      */
-    async awsWriteRoleTagRaw(requestParameters: AuthApiAwsWriteRoleTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async awsWriteRoleTagRaw(requestParameters: AuthApiAwsWriteRoleTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AwsWriteRoleTagResponse>> {
         if (requestParameters['role'] == null) {
             throw new runtime.RequiredError(
                 'role',
@@ -6203,17 +6346,19 @@ export class AuthApi extends runtime.BaseAPI {
             body: AwsWriteRoleTagRequestToJSON(requestParameters['AwsWriteRoleTagRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AwsWriteRoleTagResponseFromJSON(jsonValue));
     }
 
     /**
+     * Generate a role tag for an EC2 instance.
      */
-    async awsWriteRoleTag(role: string, aws_mount_path: string, AwsWriteRoleTagRequest: AwsWriteRoleTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async awsWriteRoleTag(role: string, aws_mount_path: string, AwsWriteRoleTagRequest: AwsWriteRoleTagRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AwsWriteRoleTagResponse> {
         const response = await this.awsWriteRoleTagRaw({ role: role, aws_mount_path: aws_mount_path, AwsWriteRoleTagRequest: AwsWriteRoleTagRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Add a role tag to the deny list.
      */
     async awsWriteRoleTagBlacklistRaw(requestParameters: AuthApiAwsWriteRoleTagBlacklistRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role_tag'] == null) {
@@ -6246,6 +6391,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Add a role tag to the deny list.
      */
     async awsWriteRoleTagBlacklist(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsWriteRoleTagBlacklistRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
@@ -6253,6 +6399,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Add a role tag to the deny list.
      */
     async awsWriteRoleTagDenyListRaw(requestParameters: AuthApiAwsWriteRoleTagDenyListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role_tag'] == null) {
@@ -6285,6 +6432,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Add a role tag to the deny list.
      */
     async awsWriteRoleTagDenyList(role_tag: string, aws_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsWriteRoleTagDenyListRaw({ role_tag: role_tag, aws_mount_path: aws_mount_path }, initOverrides);
@@ -6292,6 +6440,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure an STS role for a given AWS account.
      */
     async awsWriteStsRoleRaw(requestParameters: AuthApiAwsWriteStsRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['account_id'] == null) {
@@ -6334,6 +6483,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure an STS role for a given AWS account.
      */
     async awsWriteStsRole(account_id: string, aws_mount_path: string, AwsWriteStsRoleRequest: AwsWriteStsRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.awsWriteStsRoleRaw({ account_id: account_id, aws_mount_path: aws_mount_path, AwsWriteStsRoleRequest: AwsWriteStsRoleRequest }, initOverrides);
