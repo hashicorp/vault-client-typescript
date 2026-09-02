@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface LdapWriteStaticRoleRequest {
     /**
+     * If true, Vault will automatically unlock the account after a successful rotation. Overrides the mount-level auto_unlock setting for this role. If not set, the role inherits the mount-level setting.
+     * @type {boolean}
+     * @memberof LdapWriteStaticRoleRequest
+     */
+    auto_unlock?: boolean;
+    /**
      * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
      * @type {boolean}
      * @memberof LdapWriteStaticRoleRequest
@@ -114,6 +120,7 @@ export function LdapWriteStaticRoleRequestFromJSONTyped(json: any, ignoreDiscrim
     }
     return {
         
+        'auto_unlock': json['auto_unlock'] == null ? undefined : json['auto_unlock'],
         'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'dn': json['dn'] == null ? undefined : json['dn'],
         'password': json['password'] == null ? undefined : json['password'],
@@ -140,6 +147,7 @@ export function LdapWriteStaticRoleRequestToJSONTyped(value?: LdapWriteStaticRol
 
     return {
         
+        'auto_unlock': value['auto_unlock'],
         'disable_automated_rotation': value['disable_automated_rotation'],
         'dn': value['dn'],
         'password': value['password'],
