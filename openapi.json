@@ -2240,17 +2240,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configured AWS public certificate.",
         "operationId": "aws-read-certificate-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadCertificateConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure an AWS public key for PKCS7 or identity-document verification.",
         "operationId": "aws-configure-certificate",
         "tags": [
           "auth"
@@ -2266,19 +2275,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the configured AWS public certificate.",
         "operationId": "aws-delete-certificate-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2298,6 +2308,7 @@
         }
       ],
       "get": {
+        "summary": "List the configured AWS public certificates.",
         "operationId": "aws-list-certificate-configurations",
         "tags": [
           "auth"
@@ -2346,17 +2357,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configured AWS client credentials.",
         "operationId": "aws-read-client-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadClientConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure AWS IAM credentials used to query instance and role details.",
         "operationId": "aws-configure-client",
         "tags": [
           "auth"
@@ -2372,19 +2392,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the AWS client configuration.",
         "operationId": "aws-delete-client-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2404,17 +2425,26 @@
         }
       ],
       "get": {
+        "summary": "Return the AWS identity integration configuration.",
         "operationId": "aws-read-identity-integration-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadIdentityIntegrationConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the AWS identity integration settings.",
         "operationId": "aws-configure-identity-integration",
         "tags": [
           "auth"
@@ -2430,8 +2460,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -2451,13 +2481,21 @@
         }
       ],
       "post": {
+        "summary": "Rotate the AWS credentials used by Vault for this auth mount.",
         "operationId": "aws-rotate-root-credentials",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsRotateRootCredentialsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -2477,6 +2515,7 @@
         }
       ],
       "get": {
+        "summary": "List the configured STS roles for all AWS accounts.",
         "operationId": "aws-list-sts-role-relationships",
         "tags": [
           "auth"
@@ -2534,17 +2573,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configured STS role for a given AWS account.",
         "operationId": "aws-read-sts-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadStsRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure an STS role for a given AWS account.",
         "operationId": "aws-write-sts-role",
         "tags": [
           "auth"
@@ -2560,19 +2608,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the configured STS role for a given AWS account.",
         "operationId": "aws-delete-sts-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2593,17 +2642,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the identity access-list tidy configuration.",
         "operationId": "aws-read-identity-access-list-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadIdentityAccessListTidySettingsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the identity access-list tidy operation.",
         "operationId": "aws-configure-identity-access-list-tidy-operation",
         "tags": [
           "auth"
@@ -2619,19 +2677,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the identity access-list tidy configuration.",
         "operationId": "aws-delete-identity-access-list-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2652,17 +2711,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the identity access-list tidy configuration.",
         "operationId": "aws-read-identity-whitelist-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadIdentityWhitelistTidySettingsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the identity access-list tidy operation.",
         "operationId": "aws-configure-identity-whitelist-tidy-operation",
         "tags": [
           "auth"
@@ -2678,19 +2746,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the identity access-list tidy configuration.",
         "operationId": "aws-delete-identity-whitelist-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2711,17 +2780,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the role-tag deny-list tidy configuration.",
         "operationId": "aws-read-role-tag-blacklist-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRoleTagBlacklistTidySettingsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the role-tag deny-list tidy operation.",
         "operationId": "aws-configure-role-tag-blacklist-tidy-operation",
         "tags": [
           "auth"
@@ -2737,19 +2815,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the role-tag deny-list tidy configuration.",
         "operationId": "aws-delete-role-tag-blacklist-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2770,17 +2849,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the role-tag deny-list tidy configuration.",
         "operationId": "aws-read-role-tag-deny-list-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRoleTagDenyListTidySettingsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the role-tag deny-list tidy operation.",
         "operationId": "aws-configure-role-tag-deny-list-tidy-operation",
         "tags": [
           "auth"
@@ -2796,19 +2884,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the role-tag deny-list tidy configuration.",
         "operationId": "aws-delete-role-tag-deny-list-tidy-settings",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2828,6 +2917,7 @@
         }
       ],
       "get": {
+        "summary": "List the EC2 instance IDs in the identity access list.",
         "operationId": "aws-list-identity-access-list",
         "tags": [
           "auth"
@@ -2884,24 +2974,33 @@
         }
       ],
       "get": {
+        "summary": "Return the access-list entry for the given EC2 instance ID.",
         "operationId": "aws-read-identity-access-list",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadIdentityAccessListResponse"
+                }
+              }
+            }
           }
         }
       },
       "delete": {
+        "summary": "Delete the access-list entry for the given EC2 instance ID.",
         "operationId": "aws-delete-identity-access-list",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -2921,6 +3020,7 @@
         }
       ],
       "get": {
+        "summary": "List the EC2 instance IDs in the identity access list.",
         "operationId": "aws-list-identity-whitelist",
         "tags": [
           "auth"
@@ -2977,24 +3077,33 @@
         }
       ],
       "get": {
+        "summary": "Return the access-list entry for the given EC2 instance ID.",
         "operationId": "aws-read-identity-whitelist",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadIdentityWhitelistResponse"
+                }
+              }
+            }
           }
         }
       },
       "delete": {
+        "summary": "Delete the access-list entry for the given EC2 instance ID.",
         "operationId": "aws-delete-identity-whitelist",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -3015,6 +3124,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
+        "summary": "Authenticate to Vault using AWS credentials.",
         "operationId": "aws-login",
         "tags": [
           "auth"
@@ -3031,7 +3141,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsLoginResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3051,6 +3168,7 @@
         }
       ],
       "get": {
+        "summary": "List the configured AWS auth roles.",
         "operationId": "aws-list-auth-roles",
         "tags": [
           "auth"
@@ -3108,17 +3226,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configuration for a named AWS auth role.",
         "operationId": "aws-read-auth-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadAuthRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Create or update an AWS auth role.",
         "operationId": "aws-write-auth-role",
         "tags": [
           "auth"
@@ -3134,19 +3261,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete a named AWS auth role.",
         "operationId": "aws-delete-auth-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -3175,6 +3303,7 @@
         }
       ],
       "post": {
+        "summary": "Generate a role tag for an EC2 instance.",
         "operationId": "aws-write-role-tag",
         "tags": [
           "auth"
@@ -3191,7 +3320,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsWriteRoleTagResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -3211,6 +3347,7 @@
         }
       ],
       "get": {
+        "summary": "List the configured AWS auth roles.",
         "operationId": "aws-list-auth-roles2",
         "tags": [
           "auth"
@@ -3258,6 +3395,7 @@
         }
       ],
       "get": {
+        "summary": "List the deny-listed role tags.",
         "operationId": "aws-list-role-tag-blacklists",
         "tags": [
           "auth"
@@ -3314,35 +3452,45 @@
         }
       ],
       "get": {
+        "summary": "Return the deny-list entry for the given role tag.",
         "operationId": "aws-read-role-tag-blacklist",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRoleTagBlacklistResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Add a role tag to the deny list.",
         "operationId": "aws-write-role-tag-blacklist",
         "tags": [
           "auth"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the deny-list entry for the given role tag.",
         "operationId": "aws-delete-role-tag-blacklist",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -3362,6 +3510,7 @@
         }
       ],
       "get": {
+        "summary": "List the deny-listed role tags.",
         "operationId": "aws-list-role-tag-deny-lists",
         "tags": [
           "auth"
@@ -3418,35 +3567,45 @@
         }
       ],
       "get": {
+        "summary": "Return the deny-list entry for the given role tag.",
         "operationId": "aws-read-role-tag-deny-list",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRoleTagDenyListResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Add a role tag to the deny list.",
         "operationId": "aws-write-role-tag-deny-list",
         "tags": [
           "auth"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the deny-list entry for the given role tag.",
         "operationId": "aws-delete-role-tag-deny-list",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -3466,6 +3625,7 @@
         }
       ],
       "post": {
+        "summary": "Tidy expired entries from the identity access list.",
         "operationId": "aws-tidy-identity-access-list",
         "tags": [
           "auth"
@@ -3481,8 +3641,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
           }
         }
       }
@@ -3502,6 +3662,7 @@
         }
       ],
       "post": {
+        "summary": "Tidy expired entries from the identity access list.",
         "operationId": "aws-tidy-identity-whitelist",
         "tags": [
           "auth"
@@ -3517,8 +3678,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
           }
         }
       }
@@ -3538,6 +3699,7 @@
         }
       ],
       "post": {
+        "summary": "Tidy expired entries from the role-tag deny list.",
         "operationId": "aws-tidy-role-tag-blacklist",
         "tags": [
           "auth"
@@ -3553,8 +3715,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
           }
         }
       }
@@ -3574,6 +3736,7 @@
         }
       ],
       "post": {
+        "summary": "Tidy expired entries from the role-tag deny list.",
         "operationId": "aws-tidy-role-tag-deny-list",
         "tags": [
           "auth"
@@ -3589,8 +3752,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "202": {
+            "description": "Accepted"
           }
         }
       }
@@ -6891,6 +7054,7 @@
       }
     },
     "/auth/{okta_mount_path}/verify/{nonce}": {
+      "description": "Retrieve the number verification challenge for a pending Okta login request.",
       "parameters": [
         {
           "name": "nonce",
@@ -11554,6 +11718,40 @@
         }
       }
     },
+    "/identity/scim/client/{client_name}/link-entity": {
+      "parameters": [
+        {
+          "name": "client_name",
+          "description": "Name of the SCIM client.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "scim-update-client-link-entity",
+        "tags": [
+          "identity"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimUpdateClientLinkEntityRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/scim/client/{client_name}/link-group": {
       "parameters": [
         {
@@ -12766,21 +12964,6 @@
       }
     },
     "/sys/activation-flags/activation-test/activate": {
-      "description": "Returns information about Vault's features that require a one-time activation step.",
-      "post": {
-        "summary": "Activate a flagged feature.",
-        "operationId": "activation-flags-activate",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/activation-flags/enable-scim/activate": {
       "description": "Returns information about Vault's features that require a one-time activation step.",
       "post": {
         "summary": "Activate a flagged feature.",
@@ -14156,46 +14339,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SystemWriteControlGroupRequestRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/control-hub/de-register": {
-      "description": "Manage control hub enrollment and registration.",
-      "post": {
-        "summary": "De-register this Vault instance from the control hub.",
-        "operationId": "control-hub-de-register",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/control-hub/enroll": {
-      "description": "Manage control hub enrollment and registration.",
-      "post": {
-        "summary": "Enroll this Vault instance with the control hub.",
-        "operationId": "control-hub-enroll",
-        "tags": [
-          "system"
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ControlHubEnrollRequest"
               }
             }
           }
@@ -20610,6 +20753,46 @@
         }
       }
     },
+    "/sys/secure-hub/de-register": {
+      "description": "Manage secure hub enrollment and registration.",
+      "post": {
+        "summary": "De-register this Vault instance from the secure hub.",
+        "operationId": "secure-hub-de-register",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/secure-hub/enroll": {
+      "description": "Manage secure hub enrollment and registration.",
+      "post": {
+        "summary": "Enroll this Vault instance with the secure hub.",
+        "operationId": "secure-hub-enroll",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecureHubEnrollRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/step-down": {
       "x-vault-sudo": true,
       "post": {
@@ -23106,17 +23289,26 @@
         }
       ],
       "get": {
+        "summary": "Return the default lease configuration for generated credentials.",
         "operationId": "aws-read-lease-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadLeaseConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the default lease for generated credentials.",
         "operationId": "aws-configure-lease",
         "tags": [
           "secrets"
@@ -23132,8 +23324,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -23154,17 +23346,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the root IAM credentials configuration.",
         "operationId": "aws-read-root-iam-credentials-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRootIamCredentialsConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the root IAM credentials.",
         "operationId": "aws-configure-root-iam-credentials",
         "tags": [
           "secrets"
@@ -23180,8 +23381,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -23201,13 +23402,21 @@
         }
       ],
       "post": {
+        "summary": "Rotate the root IAM credentials used by Vault for this secrets mount.",
         "operationId": "aws-rotate-root-iam-credentials",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsRotateRootIamCredentialsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -23236,6 +23445,7 @@
         }
       ],
       "get": {
+        "summary": "Generate AWS credentials for a given role.",
         "operationId": "aws-generate-credentials",
         "tags": [
           "secrets"
@@ -23269,11 +23479,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsGenerateCredentialsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate AWS credentials for a given role.",
         "operationId": "aws-generate-credentials-with-parameters",
         "tags": [
           "secrets"
@@ -23290,7 +23508,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsGenerateCredentialsWithParametersResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -23370,19 +23595,26 @@
         }
       ],
       "get": {
-        "summary": "Read, write and reference IAM policies that access keys can be made for.",
+        "summary": "Return the configuration for a named IAM role.",
         "operationId": "aws-read-role",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsReadRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Read, write and reference IAM policies that access keys can be made for.",
+        "summary": "Create or update a named IAM role.",
         "operationId": "aws-write-role",
         "tags": [
           "secrets"
@@ -23398,20 +23630,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Read, write and reference IAM policies that access keys can be made for.",
+        "summary": "Delete a named IAM role.",
         "operationId": "aws-delete-role",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -23440,6 +23672,7 @@
         }
       ],
       "get": {
+        "summary": "Retrieve the current credentials for a named static IAM role.",
         "operationId": "aws-read-static-creds-name",
         "tags": [
           "secrets"
@@ -23473,6 +23706,7 @@
         }
       ],
       "get": {
+        "summary": "List the configured static IAM roles.",
         "operationId": "aws-list-static-roles",
         "tags": [
           "secrets"
@@ -23529,6 +23763,7 @@
         }
       ],
       "get": {
+        "summary": "Return the configuration for a named static IAM role.",
         "operationId": "aws-read-static-roles-name",
         "tags": [
           "secrets"
@@ -23547,6 +23782,7 @@
         }
       },
       "post": {
+        "summary": "Create or update a named static IAM role.",
         "operationId": "aws-write-static-roles-name",
         "tags": [
           "secrets"
@@ -23575,6 +23811,7 @@
         }
       },
       "delete": {
+        "summary": "Delete a named static IAM role.",
         "operationId": "aws-delete-static-roles-name",
         "tags": [
           "secrets"
@@ -23610,6 +23847,7 @@
         }
       ],
       "get": {
+        "summary": "Generate AWS credentials for a given role.",
         "operationId": "aws-generate-sts-credentials",
         "tags": [
           "secrets"
@@ -23643,11 +23881,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsGenerateStsCredentialsResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate AWS credentials for a given role.",
         "operationId": "aws-generate-sts-credentials-with-parameters",
         "tags": [
           "secrets"
@@ -23664,7 +23910,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AwsGenerateStsCredentialsWithParametersResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -30250,6 +30503,43 @@
         "responses": {
           "204": {
             "description": "empty body"
+          }
+        }
+      }
+    },
+    "/{ldap_mount_path}/static-role/{name}/unlock": {
+      "description": "Unlock a locked account associated with a static role.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the static role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "ldap_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "ldap"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Unlock a locked account associated with a static role",
+        "description": "This endpoint performs an administrative unlock operation on the account\nassociated with the specified static role. It uses the privileged binddn\ncredentials to clear lockout flags in the directory.\n\nFor Active Directory, this clears the lockoutTime attribute.\n\nIMPORTANT: This endpoint only works for accounts managed by Vault using the\nconfigured Bind DN (admin-managed accounts). Self-managed accounts, where\nthe account authenticates using its own credentials via the LDAP Password\nModify extended operation, cannot be unlocked through this endpoint. The\nadmin Bind DN does not have authority to clear lockout flags on self-managed\naccounts. Unlock self-managed accounts directly in the LDAP directory.\n\nThis is a privileged operation and should be restricted via Vault policies.",
+        "operationId": "ldap-write-static-role-name-unlock",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -47801,6 +48091,52 @@
         }
       }
     },
+    "/{transit_mount_path}/keys/{name}/algorithm": {
+      "description": "Change the algorithm of a named encryption key",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transit_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transit"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Change the algorithm of a named encryption key",
+        "operationId": "transit-change-key-algorithm",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitChangeKeyAlgorithmRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{transit_mount_path}/keys/{name}/config": {
       "description": "Configure a named encryption key",
       "parameters": [
@@ -48008,7 +48344,6 @@
         }
       ],
       "post": {
-        "summary": "Rotate named encryption key",
         "operationId": "transit-rotate-key",
         "tags": [
           "secrets"
@@ -50064,6 +50399,10 @@
             "type": "string",
             "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
+          "seal_wrap": {
+            "type": "boolean",
+            "description": "Whether to turn on seal wrapping for the mount."
+          },
           "token_type": {
             "type": "string",
             "description": "The type of token to issue (service or batch)."
@@ -50440,6 +50779,35 @@
           }
         }
       },
+      "AwsGenerateCredentialsResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "arn": {
+            "type": "string",
+            "description": "ARN of the assumed role (only set for assumed_role credential type)."
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "AWS secret access key."
+          },
+          "security_token": {
+            "type": "string",
+            "description": "AWS security token for STS credentials. Deprecated; use session_token."
+          },
+          "session_token": {
+            "type": "string",
+            "description": "AWS session token for STS credentials."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "TTL of the credentials in seconds (only set for STS credential types)."
+          }
+        }
+      },
       "AwsGenerateCredentialsWithParametersRequest": {
         "type": "object",
         "properties": {
@@ -50463,6 +50831,64 @@
           }
         }
       },
+      "AwsGenerateCredentialsWithParametersResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "arn": {
+            "type": "string",
+            "description": "ARN of the assumed role (only set for assumed_role credential type)."
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "AWS secret access key."
+          },
+          "security_token": {
+            "type": "string",
+            "description": "AWS security token for STS credentials. Deprecated; use session_token."
+          },
+          "session_token": {
+            "type": "string",
+            "description": "AWS session token for STS credentials."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "TTL of the credentials in seconds (only set for STS credential types)."
+          }
+        }
+      },
+      "AwsGenerateStsCredentialsResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "arn": {
+            "type": "string",
+            "description": "ARN of the assumed role (only set for assumed_role credential type)."
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "AWS secret access key."
+          },
+          "security_token": {
+            "type": "string",
+            "description": "AWS security token for STS credentials. Deprecated; use session_token."
+          },
+          "session_token": {
+            "type": "string",
+            "description": "AWS session token for STS credentials."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "TTL of the credentials in seconds (only set for STS credential types)."
+          }
+        }
+      },
       "AwsGenerateStsCredentialsWithParametersRequest": {
         "type": "object",
         "properties": {
@@ -50483,6 +50909,35 @@
             "description": "Lifetime of the returned credentials in seconds",
             "format": "duration",
             "default": 3600
+          }
+        }
+      },
+      "AwsGenerateStsCredentialsWithParametersResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "arn": {
+            "type": "string",
+            "description": "ARN of the assumed role (only set for assumed_role credential type)."
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "AWS secret access key."
+          },
+          "security_token": {
+            "type": "string",
+            "description": "AWS security token for STS credentials. Deprecated; use session_token."
+          },
+          "session_token": {
+            "type": "string",
+            "description": "AWS session token for STS credentials."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "TTL of the credentials in seconds (only set for STS credential types)."
           }
         }
       },
@@ -50527,6 +50982,649 @@
           }
         }
       },
+      "AwsLoginResponse": {
+        "type": "object",
+        "properties": {
+          "accessor": {
+            "type": "string",
+            "description": "Accessor for the client token."
+          },
+          "client_token": {
+            "type": "string",
+            "description": "Token issued by Vault for the authenticated client."
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID associated with the token."
+          },
+          "lease_duration": {
+            "type": "integer",
+            "description": "Lease duration in seconds.",
+            "format": "int64"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the token.",
+            "format": "map"
+          },
+          "mfa_requirement": {
+            "type": "object",
+            "description": "MFA requirement information.",
+            "format": "map"
+          },
+          "num_uses": {
+            "type": "integer",
+            "description": "Number of uses remaining for the token."
+          },
+          "orphan": {
+            "type": "boolean",
+            "description": "Whether the token is an orphan."
+          },
+          "policies": {
+            "type": "array",
+            "description": "List of policies associated with the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "renewable": {
+            "type": "boolean",
+            "description": "Whether the token is renewable."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of token policies.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of the token."
+          }
+        }
+      },
+      "AwsReadAuthRoleResponse": {
+        "type": "object",
+        "properties": {
+          "allow_instance_migration": {
+            "type": "boolean",
+            "description": "Whether instance migration is allowed."
+          },
+          "auth_type": {
+            "type": "string",
+            "description": "Auth type permitted to authenticate to this role."
+          },
+          "bound_account_id": {
+            "type": "array",
+            "description": "AWS account IDs that instances must belong to.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_ami_id": {
+            "type": "array",
+            "description": "AMI IDs that instances must use to authenticate.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_ec2_instance_id": {
+            "type": "array",
+            "description": "EC2 instance IDs that are allowed to authenticate.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_iam_instance_profile_arn": {
+            "type": "array",
+            "description": "IAM instance profile ARN prefixes that instances must match.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_iam_principal_arn": {
+            "type": "array",
+            "description": "IAM principal ARNs bound to this role.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_iam_principal_id": {
+            "type": "array",
+            "description": "Resolved unique IDs for IAM principal ARNs.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_iam_role_arn": {
+            "type": "array",
+            "description": "IAM role ARNs that instances must match.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_region": {
+            "type": "array",
+            "description": "AWS regions that instances must be in.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_subnet_id": {
+            "type": "array",
+            "description": "VPC subnet IDs that instances must be in.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "bound_vpc_id": {
+            "type": "array",
+            "description": "VPC IDs that instances must be in.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "disallow_reauthentication": {
+            "type": "boolean",
+            "description": "Whether reauthentication is disallowed."
+          },
+          "inferred_aws_region": {
+            "type": "string",
+            "description": "AWS region used when inferring the entity type."
+          },
+          "inferred_entity_type": {
+            "type": "string",
+            "description": "Entity type inferred from the authenticated principal."
+          },
+          "resolve_aws_unique_ids": {
+            "type": "boolean",
+            "description": "Whether IAM ARNs are resolved to unique IDs."
+          },
+          "role_id": {
+            "type": "string",
+            "description": "Unique ID of the role."
+          },
+          "role_tag": {
+            "type": "string",
+            "description": "EC2 instance tag key for role tags."
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "CIDR blocks that tokens are restricted to.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "integer",
+            "description": "Explicit maximum TTL for tokens."
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "Maximum TTL for tokens."
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "Whether the default policy is not added to tokens."
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "Maximum number of token uses."
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "Renewal period for tokens."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "Policies applied to tokens.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "TTL for tokens."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of tokens generated."
+          }
+        }
+      },
+      "AwsReadCertificateConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "aws_public_cert": {
+            "type": "string",
+            "description": "Base64-encoded AWS public certificate used to verify PKCS7 signatures."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of document the certificate verifies, either pkcs7 or identity."
+          }
+        }
+      },
+      "AwsReadClientConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "allowed_sts_header_values": {
+            "type": "array",
+            "description": "Allowed additional headers in AWS STS request headers.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "Whether automated rotation is disabled."
+          },
+          "endpoint": {
+            "type": "string",
+            "description": "Custom endpoint URL for AWS EC2 API calls."
+          },
+          "iam_endpoint": {
+            "type": "string",
+            "description": "Custom endpoint URL for AWS IAM API calls."
+          },
+          "iam_server_id_header_value": {
+            "type": "string",
+            "description": "Required value for the X-Vault-AWS-IAM-Server-ID request header."
+          },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience for plugin identity tokens."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "Time-to-live for plugin identity tokens in seconds.",
+            "format": "duration"
+          },
+          "max_retries": {
+            "type": "integer",
+            "description": "Maximum number of retries for AWS API calls."
+          },
+          "role_arn": {
+            "type": "string",
+            "description": "Role ARN for plugin identity token federation."
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "Period in seconds between automated credential rotations.",
+            "format": "duration"
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Name of the rotation policy to use."
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "Automated rotation schedule in cron format."
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Window in seconds during which automated rotation may occur.",
+            "format": "duration"
+          },
+          "sts_endpoint": {
+            "type": "string",
+            "description": "Custom endpoint URL for AWS STS API calls."
+          },
+          "sts_region": {
+            "type": "string",
+            "description": "Region for the STS endpoint."
+          },
+          "use_sts_region_from_client": {
+            "type": "boolean",
+            "description": "Whether to use the STS region from client requests."
+          }
+        }
+      },
+      "AwsReadIdentityAccessListResponse": {
+        "type": "object",
+        "properties": {
+          "client_nonce": {
+            "type": "string",
+            "description": "Client nonce used during the login."
+          },
+          "creation_time": {
+            "type": "string",
+            "description": "Time the access-list entry was created, in RFC3339 format."
+          },
+          "disallow_reauthentication": {
+            "type": "boolean",
+            "description": "Whether reauthentication is disallowed for this instance."
+          },
+          "expiration_time": {
+            "type": "string",
+            "description": "Time the access-list entry expires, in RFC3339 format."
+          },
+          "last_updated_time": {
+            "type": "string",
+            "description": "Time the access-list entry was last updated, in RFC3339 format."
+          },
+          "pending_time": {
+            "type": "string",
+            "description": "The pendingTime field from the instance identity document."
+          },
+          "role": {
+            "type": "string",
+            "description": "Name of the role used during the last successful login."
+          }
+        }
+      },
+      "AwsReadIdentityAccessListTidySettingsResponse": {
+        "type": "object",
+        "properties": {
+          "disable_periodic_tidy": {
+            "type": "boolean",
+            "description": "Whether periodic tidying of identity access-list entries is disabled."
+          },
+          "safety_buffer": {
+            "type": "string",
+            "description": "Duration past expiration before identities are removed from storage.",
+            "format": "duration"
+          }
+        }
+      },
+      "AwsReadIdentityIntegrationConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "ec2_alias": {
+            "type": "string",
+            "description": "How EC2 instances are mapped to identity aliases."
+          },
+          "ec2_metadata": {
+            "type": "array",
+            "description": "Metadata fields to include on EC2 auth tokens.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "iam_alias": {
+            "type": "string",
+            "description": "How IAM principals are mapped to identity aliases."
+          },
+          "iam_metadata": {
+            "type": "array",
+            "description": "Metadata fields to include on IAM auth tokens.",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "AwsReadIdentityWhitelistResponse": {
+        "type": "object",
+        "properties": {
+          "client_nonce": {
+            "type": "string",
+            "description": "Client nonce used during the login."
+          },
+          "creation_time": {
+            "type": "string",
+            "description": "Time the access-list entry was created, in RFC3339 format."
+          },
+          "disallow_reauthentication": {
+            "type": "boolean",
+            "description": "Whether reauthentication is disallowed for this instance."
+          },
+          "expiration_time": {
+            "type": "string",
+            "description": "Time the access-list entry expires, in RFC3339 format."
+          },
+          "last_updated_time": {
+            "type": "string",
+            "description": "Time the access-list entry was last updated, in RFC3339 format."
+          },
+          "pending_time": {
+            "type": "string",
+            "description": "The pendingTime field from the instance identity document."
+          },
+          "role": {
+            "type": "string",
+            "description": "Name of the role used during the last successful login."
+          }
+        }
+      },
+      "AwsReadIdentityWhitelistTidySettingsResponse": {
+        "type": "object",
+        "properties": {
+          "disable_periodic_tidy": {
+            "type": "boolean",
+            "description": "Whether periodic tidying of identity access-list entries is disabled."
+          },
+          "safety_buffer": {
+            "type": "string",
+            "description": "Duration past expiration before identities are removed from storage.",
+            "format": "duration"
+          }
+        }
+      },
+      "AwsReadLeaseConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "lease": {
+            "type": "string",
+            "description": "Default lease duration for credentials."
+          },
+          "lease_max": {
+            "type": "string",
+            "description": "Maximum lease duration for credentials."
+          }
+        }
+      },
+      "AwsReadRoleResponse": {
+        "type": "object",
+        "properties": {
+          "credential_type": {
+            "type": "string",
+            "description": "Type of credentials generated by this role."
+          },
+          "default_sts_ttl": {
+            "type": "string",
+            "description": "Default TTL for STS credentials in seconds.",
+            "format": "duration"
+          },
+          "external_id": {
+            "type": "string",
+            "description": "External ID used when assuming a role."
+          },
+          "iam_groups": {
+            "type": "array",
+            "description": "IAM groups that generated users are added to.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "iam_tags": {
+            "type": "object",
+            "description": "IAM tags applied to generated users.",
+            "format": "map"
+          },
+          "max_sts_ttl": {
+            "type": "string",
+            "description": "Maximum allowed TTL for STS credentials in seconds.",
+            "format": "duration"
+          },
+          "mfa_serial_number": {
+            "type": "string",
+            "description": "Serial number or ARN of the MFA device."
+          },
+          "permissions_boundary_arn": {
+            "type": "string",
+            "description": "ARN of the permissions boundary policy attached to generated IAM users."
+          },
+          "policy_arns": {
+            "type": "array",
+            "description": "ARNs of AWS managed policies attached to the role.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "policy_document": {
+            "type": "string",
+            "description": "JSON-encoded inline IAM policy document."
+          },
+          "role_arns": {
+            "type": "array",
+            "description": "ARNs of AWS roles that can be assumed.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "session_tags": {
+            "type": "object",
+            "description": "Session tags applied to assumed-role credentials.",
+            "format": "map"
+          },
+          "user_path": {
+            "type": "string",
+            "description": "Path for generated IAM users."
+          }
+        }
+      },
+      "AwsReadRoleTagBlacklistResponse": {
+        "type": "object",
+        "properties": {
+          "creation_time": {
+            "type": "string",
+            "description": "Time the deny-list entry was created, in RFC3339 format."
+          },
+          "expiration_time": {
+            "type": "string",
+            "description": "Time the deny-list entry expires, in RFC3339 format."
+          }
+        }
+      },
+      "AwsReadRoleTagBlacklistTidySettingsResponse": {
+        "type": "object",
+        "properties": {
+          "disable_periodic_tidy": {
+            "type": "boolean",
+            "description": "Whether periodic tidying of deny-listed role tag entries is disabled."
+          },
+          "safety_buffer": {
+            "type": "string",
+            "description": "Duration past expiration before role tags are removed from storage.",
+            "format": "duration"
+          }
+        }
+      },
+      "AwsReadRoleTagDenyListResponse": {
+        "type": "object",
+        "properties": {
+          "creation_time": {
+            "type": "string",
+            "description": "Time the deny-list entry was created, in RFC3339 format."
+          },
+          "expiration_time": {
+            "type": "string",
+            "description": "Time the deny-list entry expires, in RFC3339 format."
+          }
+        }
+      },
+      "AwsReadRoleTagDenyListTidySettingsResponse": {
+        "type": "object",
+        "properties": {
+          "disable_periodic_tidy": {
+            "type": "boolean",
+            "description": "Whether periodic tidying of deny-listed role tag entries is disabled."
+          },
+          "safety_buffer": {
+            "type": "string",
+            "description": "Duration past expiration before role tags are removed from storage.",
+            "format": "duration"
+          }
+        }
+      },
+      "AwsReadRootIamCredentialsConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "AWS access key ID."
+          },
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "Whether automated rotation is disabled."
+          },
+          "iam_endpoint": {
+            "type": "string",
+            "description": "Custom endpoint for AWS IAM API calls."
+          },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience for plugin identity tokens."
+          },
+          "identity_token_ttl": {
+            "type": "string",
+            "description": "Time-to-live for plugin identity tokens in seconds.",
+            "format": "duration"
+          },
+          "max_retries": {
+            "type": "integer",
+            "description": "Maximum number of retries for AWS API calls."
+          },
+          "region": {
+            "type": "string",
+            "description": "AWS region for API calls."
+          },
+          "role_arn": {
+            "type": "string",
+            "description": "Role ARN for plugin identity token federation."
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "Period in seconds between automated credential rotations.",
+            "format": "duration"
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Name of the rotation policy to use."
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "Automated rotation schedule in cron format."
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Window in seconds during which automated rotation may occur.",
+            "format": "duration"
+          },
+          "sts_endpoint": {
+            "type": "string",
+            "description": "Custom endpoint for AWS STS API calls."
+          },
+          "sts_fallback_endpoints": {
+            "type": "array",
+            "description": "Fallback endpoints if sts_endpoint is unreachable.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "sts_fallback_regions": {
+            "type": "array",
+            "description": "Fallback regions if sts_region is unreachable.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "sts_region": {
+            "type": "string",
+            "description": "Specific region for STS API calls."
+          },
+          "username_template": {
+            "type": "string",
+            "description": "Template used to generate IAM usernames."
+          }
+        }
+      },
       "AwsReadStaticCredsNameResponse": {
         "type": "object",
         "properties": {
@@ -50567,6 +51665,37 @@
           "username": {
             "type": "string",
             "description": "The IAM user to adopt as a static role."
+          }
+        }
+      },
+      "AwsReadStsRoleResponse": {
+        "type": "object",
+        "properties": {
+          "external_id": {
+            "type": "string",
+            "description": "External ID used when assuming the STS role."
+          },
+          "sts_role": {
+            "type": "string",
+            "description": "AWS ARN of the STS role to assume for the account."
+          }
+        }
+      },
+      "AwsRotateRootCredentialsResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "New access key ID of the rotated root IAM credential."
+          }
+        }
+      },
+      "AwsRotateRootIamCredentialsResponse": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string",
+            "description": "New access key ID of the rotated root IAM credential."
           }
         }
       },
@@ -50984,6 +52113,19 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "AwsWriteRoleTagResponse": {
+        "type": "object",
+        "properties": {
+          "tag_key": {
+            "type": "string",
+            "description": "The key to use for the role tag on the EC2 instance."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "The value to use for the role tag on the EC2 instance."
           }
         }
       },
@@ -52483,23 +53625,6 @@
             "format": "duration"
           }
         }
-      },
-      "ControlHubEnrollRequest": {
-        "type": "object",
-        "properties": {
-          "activation_token": {
-            "type": "string",
-            "description": "The activation token for enrolling with the control hub."
-          },
-          "hostname": {
-            "type": "string",
-            "description": "The control hub hostname for enrolling this Vault instance."
-          }
-        },
-        "required": [
-          "activation_token",
-          "hostname"
-        ]
       },
       "CorsConfigureRequest": {
         "type": "object",
@@ -57582,6 +58707,11 @@
               "group": "LDAP Options"
             }
           },
+          "auto_unlock": {
+            "type": "boolean",
+            "description": "If true, Vault will automatically unlock the account after a successful rotation. This applies to all root-managed static roles on this mount, unless overridden at the role level. Requires the Active Directory schema. Defaults to false.",
+            "default": false
+          },
           "binddn": {
             "type": "string",
             "description": "LDAP DN for searching for the user DN (optional)",
@@ -58052,6 +59182,10 @@
       "LdapWriteStaticRoleRequest": {
         "type": "object",
         "properties": {
+          "auto_unlock": {
+            "type": "boolean",
+            "description": "If true, Vault will automatically unlock the account after a successful rotation. Overrides the mount-level auto_unlock setting for this role. If not set, the role inherits the mount-level setting."
+          },
           "disable_automated_rotation": {
             "type": "boolean",
             "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
@@ -59075,6 +60209,10 @@
             "type": "string",
             "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
           },
+          "seal_wrap": {
+            "type": "boolean",
+            "description": "Whether to turn on seal wrapping for the mount."
+          },
           "token_type": {
             "type": "string",
             "description": "The type of token to issue (service or batch)."
@@ -59369,6 +60507,10 @@
           "plugin_version": {
             "type": "string",
             "description": "The semantic version of the plugin to use, or image tag if oci_image is provided."
+          },
+          "seal_wrap": {
+            "type": "boolean",
+            "description": "Whether to turn on seal wrapping for the mount."
           },
           "token_type": {
             "type": "string",
@@ -75371,6 +76513,10 @@
             "type": "string",
             "description": "ID of the registration. If set, updates the corresponding existing registration."
           },
+          "local": {
+            "type": "boolean",
+            "description": "Whether the agent registration should not be replicated globally and should be local to the current cluster."
+          },
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
@@ -75428,6 +76574,10 @@
             "type": "string",
             "description": "Entity ID representing this agent."
           },
+          "local": {
+            "type": "boolean",
+            "description": "Whether the agent registration should not be replicated globally and should be local to the current cluster."
+          },
           "no_default_ceiling_policy": {
             "type": "boolean",
             "description": "Opt out of automatically adding the default ceiling policies to this agent registration."
@@ -75467,6 +76617,10 @@
           "id": {
             "type": "string",
             "description": "ID of the registration. If set, updates the corresponding existing registration."
+          },
+          "local": {
+            "type": "boolean",
+            "description": "Whether the agent registration should not be replicated globally and should be local to the current cluster."
           },
           "no_default_ceiling_policy": {
             "type": "boolean",
@@ -76650,6 +77804,29 @@
           }
         }
       },
+      "ScimUpdateClientLinkEntityRequest": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "ID of the Vault entity to link to this SCIM client."
+          },
+          "group_memberships": {
+            "type": "array",
+            "description": "Optional list of group IDs (owned by this SCIM client) to add the entity to as a member.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scim_managed_aliases": {
+            "type": "array",
+            "description": "Optional list of alias IDs to mark as SCIM-managed. The primary alias (on alias_mount_accessor) is re-managed automatically and must not be included here.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ScimUpdateClientLinkGroupRequest": {
         "type": "object",
         "properties": {
@@ -76783,6 +77960,23 @@
             "type": "string"
           }
         }
+      },
+      "SecureHubEnrollRequest": {
+        "type": "object",
+        "properties": {
+          "activation_token": {
+            "type": "string",
+            "description": "The activation token for enrolling with the secure hub."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "The secure hub hostname for enrolling this Vault instance."
+          }
+        },
+        "required": [
+          "activation_token",
+          "hostname"
+        ]
       },
       "SpiffeConfigureRequest": {
         "type": "object",
@@ -81130,13 +82324,13 @@
             "type": "string",
             "description": "How long each CA is valid once it becomes active.",
             "format": "duration",
-            "default": "8760h"
+            "default": 31536000000000000
           },
           "ca_soft_expiry": {
             "type": "string",
             "description": "How long before its hard expiry the Active CA stops signing new certificates (the soft-expiry window). Must be less than ca_lifetime / 2.",
             "format": "duration",
-            "default": "720h"
+            "default": 2592000000000000
           },
           "default_cert_ttl": {
             "type": "string",
@@ -81152,13 +82346,13 @@
             "type": "string",
             "description": "How long each CA is valid once it becomes active.",
             "format": "duration",
-            "default": "8760h"
+            "default": 31536000000000000
           },
           "ca_soft_expiry": {
             "type": "string",
             "description": "How long before its hard expiry the Active CA stops signing new certificates (the soft-expiry window). Must be less than ca_lifetime / 2.",
             "format": "duration",
-            "default": "720h"
+            "default": 2592000000000000
           },
           "default_cert_ttl": {
             "type": "string",
@@ -81445,10 +82639,6 @@
       "TpmgroupUpdateByNameRequest": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "ID of the TPMGroup. If set, updates the corresponding existing TPMGroup."
-          },
           "member_tpm_ids": {
             "type": "array",
             "description": "TPM IDs to be assigned as group members.",
@@ -82072,6 +83262,41 @@
           "type": {
             "type": "string",
             "description": "The type of transformation to perform."
+          }
+        }
+      },
+      "TransitChangeKeyAlgorithmRequest": {
+        "type": "object",
+        "properties": {
+          "hybrid_key_type_ec": {
+            "type": "string",
+            "description": "The elliptic curve algorithm to use for hybrid signatures. Supported values: ecdsa-p256, ecdsa-p384, ecdsa-p521, ed25519."
+          },
+          "hybrid_key_type_pqc": {
+            "type": "string",
+            "description": "The post-quantum algorithm to use for hybrid signatures. Currently only ml-dsa is supported."
+          },
+          "key_size": {
+            "type": "integer",
+            "description": "The key size in bytes for algorithms with variable key sizes. Currently only applicable to HMAC; must be between 32 and 512 bytes.",
+            "default": 0
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The UUID of the managed key to use for this transit key."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use for this transit key."
+          },
+          "parameter_set": {
+            "type": "string",
+            "description": "The parameter set to use for ML-DSA or SLH-DSA. Required for ML-DSA, SLH-DSA, and hybrid keys."
+          },
+          "type": {
+            "type": "string",
+            "description": "The new key type to use for future key versions. The currently-supported types are: aes128-gcm96, aes256-gcm96, chacha20-poly1305, ed25519, ecdsa-p256, ecdsa-p384, ecdsa-p521, rsa-2048, rsa-3072, rsa-4096, hmac, managed_key, aes128-cmac, aes192-cmac, aes256-cmac, ml-dsa, hybrid, slh-dsa, aes128-cbc, aes256-cbc.",
+            "default": "aes256-gcm96"
           }
         }
       },
@@ -82778,6 +84003,10 @@
           "latest_version": {
             "type": "integer",
             "description": "The latest (current) version of the key."
+          },
+          "latest_version_type": {
+            "type": "string",
+            "description": "The key type of the most recent key version."
           },
           "min_available_version": {
             "type": "integer",
