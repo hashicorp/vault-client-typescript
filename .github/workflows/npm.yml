@@ -1,0 +1,28 @@
+name: Publish Package to npmjs on tag
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+      - run: npm i
+      - run: npm run build
+      - run: node -e 'const json=require("./package.json");fs.writeFileSync("./package.json",JSON.stringify({...json, version:process.env.GITHUB_REF?.replace("refs/tags/", "")}, undefined, 2), "utf-8")' 
+      - run: cat package.json 
+      - run: yarn set version stable
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
