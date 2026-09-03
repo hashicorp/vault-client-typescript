@@ -36,11 +36,11 @@ export interface ScimUpdateClientUnlinkEntityRequest {
      */
     remove_memberships?: boolean;
     /**
-     * Required when the entity has SCIM-managed aliases. Consent to making all managed aliases unmanaged.
+     * Required when the entity has secondary SCIM-managed aliases. Consent to making secondary managed aliases unmanaged. The main alias is always unmanaged automatically without consent.
      * @type {boolean}
      * @memberof ScimUpdateClientUnlinkEntityRequest
      */
-    unlink_aliases?: boolean;
+    unlink_secondary_aliases?: boolean;
 }
 
 /**
@@ -62,7 +62,7 @@ export function ScimUpdateClientUnlinkEntityRequestFromJSONTyped(json: any, igno
         
         'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'remove_memberships': json['remove_memberships'] == null ? undefined : json['remove_memberships'],
-        'unlink_aliases': json['unlink_aliases'] == null ? undefined : json['unlink_aliases'],
+        'unlink_secondary_aliases': json['unlink_secondary_aliases'] == null ? undefined : json['unlink_secondary_aliases'],
     };
 }
 
@@ -79,7 +79,7 @@ export function ScimUpdateClientUnlinkEntityRequestToJSONTyped(value?: ScimUpdat
         
         'entity_id': value['entity_id'],
         'remove_memberships': value['remove_memberships'],
-        'unlink_aliases': value['unlink_aliases'],
+        'unlink_secondary_aliases': value['unlink_secondary_aliases'],
     };
 }
 

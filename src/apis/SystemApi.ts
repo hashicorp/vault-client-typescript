@@ -29,7 +29,6 @@ import type {
   AuthReadTuningInformationResponse,
   AuthTuneConfigurationParametersRequest,
   CollectHostInformationResponse,
-  ControlHubEnrollRequest,
   CorsConfigureRequest,
   CorsReadConfigurationResponse,
   CreateCustomMessageRequest,
@@ -174,6 +173,7 @@ import type {
   RootTokenGenerationUpdateResponse,
   ScanReportRequest,
   SealStatusResponse,
+  SecureHubEnrollRequest,
   StandardListResponse,
   SubscriptionsCreateResponse,
   SubscriptionsListEventsSubscriptionsResponse,
@@ -326,8 +326,6 @@ import {
     AuthTuneConfigurationParametersRequestToJSON,
     CollectHostInformationResponseFromJSON,
     CollectHostInformationResponseToJSON,
-    ControlHubEnrollRequestFromJSON,
-    ControlHubEnrollRequestToJSON,
     CorsConfigureRequestFromJSON,
     CorsConfigureRequestToJSON,
     CorsReadConfigurationResponseFromJSON,
@@ -616,6 +614,8 @@ import {
     ScanReportRequestToJSON,
     SealStatusResponseFromJSON,
     SealStatusResponseToJSON,
+    SecureHubEnrollRequestFromJSON,
+    SecureHubEnrollRequestToJSON,
     StandardListResponseFromJSON,
     StandardListResponseToJSON,
     SubscriptionsCreateResponseFromJSON,
@@ -925,10 +925,6 @@ export interface SystemApiAuthReadTuningInformationRequest {
 export interface SystemApiAuthTuneConfigurationParametersOperationRequest {
     path: string;
     AuthTuneConfigurationParametersRequest: AuthTuneConfigurationParametersRequest;
-}
-
-export interface SystemApiControlHubEnrollOperationRequest {
-    ControlHubEnrollRequest: ControlHubEnrollRequest;
 }
 
 export interface SystemApiCorsConfigureOperationRequest {
@@ -1460,6 +1456,10 @@ export interface SystemApiRootTokenGenerationUpdateOperationRequest {
 
 export interface SystemApiScanReportOperationRequest {
     ScanReportRequest: ScanReportRequest;
+}
+
+export interface SystemApiSecureHubEnrollOperationRequest {
+    SecureHubEnrollRequest: SecureHubEnrollRequest;
 }
 
 export interface SystemApiSubscriptionsCreateRequest {
@@ -2154,7 +2154,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/activation-flags/enable-scim/activate`;
+        const builtPath = `/sys/activation-flags/force-identity-deduplication/activate`;
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2181,7 +2181,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/activation-flags/force-identity-deduplication/activate`;
+        const builtPath = `/sys/activation-flags/secrets-import/activate`;
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2208,7 +2208,7 @@ export class SystemApi extends runtime.BaseAPI {
 
         const headerParameters: runtime.HTTPHeaders = {};
 
-        const builtPath = `/sys/activation-flags/secrets-import/activate`;
+        const builtPath = `/sys/activation-flags/secrets-sync/activate`;
         const response = await this.request({
             path: builtPath.replace(/\/\/+/g, '/'),
             method: 'POST',
@@ -2224,33 +2224,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async activationFlagsActivate_3(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.activationFlagsActivate_3Raw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Activate a flagged feature.
-     */
-    async activationFlagsActivate_4Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/activation-flags/secrets-sync/activate`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Activate a flagged feature.
-     */
-    async activationFlagsActivate_4(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.activationFlagsActivate_4Raw(initOverrides);
         return await response.value();
     }
 
@@ -2816,70 +2789,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async collectInFlightRequestInformation(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.collectInFlightRequestInformationRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * De-register this Vault instance from the control hub.
-     */
-    async controlHubDeRegisterRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/control-hub/de-register`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * De-register this Vault instance from the control hub.
-     */
-    async controlHubDeRegister(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.controlHubDeRegisterRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Enroll this Vault instance with the control hub.
-     */
-    async controlHubEnrollRaw(requestParameters: SystemApiControlHubEnrollOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['ControlHubEnrollRequest'] == null) {
-            throw new runtime.RequiredError(
-                'ControlHubEnrollRequest',
-                'Required parameter "ControlHubEnrollRequest" was null or undefined when calling controlHubEnroll().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const builtPath = `/sys/control-hub/enroll`;
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ControlHubEnrollRequestToJSON(requestParameters['ControlHubEnrollRequest']),
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Enroll this Vault instance with the control hub.
-     */
-    async controlHubEnroll(ControlHubEnrollRequest: ControlHubEnrollRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.controlHubEnrollRaw({ ControlHubEnrollRequest: ControlHubEnrollRequest }, initOverrides);
         return await response.value();
     }
 
@@ -5592,11 +5501,11 @@ export class SystemApi extends runtime.BaseAPI {
      * Returns metadata, semantics, and examples for one authorization_details type.
      * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
      */
-    async oauthResourceServerAuthorizationDetailsTypesRead_5Raw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
+    async oauthResourceServerAuthorizationDetailsTypesRead_4Raw(requestParameters: SystemApiOauthResourceServerAuthorizationDetailsTypesRead0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerAuthorizationDetailsTypesReadResponse>> {
         if (requestParameters['type'] == null) {
             throw new runtime.RequiredError(
                 'type',
-                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesRead_5().'
+                'Required parameter "type" was null or undefined when calling oauthResourceServerAuthorizationDetailsTypesRead_4().'
             );
         }
 
@@ -5619,8 +5528,8 @@ export class SystemApi extends runtime.BaseAPI {
      * Returns metadata, semantics, and examples for one authorization_details type.
      * Read detailed metadata for a supported OAuth Resource Server authorization_details type.
      */
-    async oauthResourceServerAuthorizationDetailsTypesRead_5(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
-        const response = await this.oauthResourceServerAuthorizationDetailsTypesRead_5Raw({ type: type }, initOverrides);
+    async oauthResourceServerAuthorizationDetailsTypesRead_4(type: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerAuthorizationDetailsTypesReadResponse> {
+        const response = await this.oauthResourceServerAuthorizationDetailsTypesRead_4Raw({ type: type }, initOverrides);
         return await response.value();
     }
 
@@ -6386,11 +6295,11 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_6Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
+    async pluginsRuntimesCatalogListPluginsRuntimes_5Raw(requestParameters: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PluginsRuntimesCatalogListPluginsRuntimesResponse>> {
         if (requestParameters['list'] == null) {
             throw new runtime.RequiredError(
                 'list',
-                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_6().'
+                'Required parameter "list" was null or undefined when calling pluginsRuntimesCatalogListPluginsRuntimes_5().'
             );
         }
 
@@ -6415,8 +6324,8 @@ export class SystemApi extends runtime.BaseAPI {
 
     /**
      */
-    async pluginsRuntimesCatalogListPluginsRuntimes_6(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
-        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_6Raw({ list: list }, initOverrides);
+    async pluginsRuntimesCatalogListPluginsRuntimes_5(list: SystemApiPluginsRuntimesCatalogListPluginsRuntimes0ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PluginsRuntimesCatalogListPluginsRuntimesResponse> {
+        const response = await this.pluginsRuntimesCatalogListPluginsRuntimes_5Raw({ list: list }, initOverrides);
         return await response.value();
     }
 
@@ -8093,7 +8002,7 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_7Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async readVerbosityLevelFor_6Raw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -8112,8 +8021,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Read the current status of the request limiter.
      */
-    async readVerbosityLevelFor_7(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.readVerbosityLevelFor_7Raw(initOverrides);
+    async readVerbosityLevelFor_6(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.readVerbosityLevelFor_6Raw(initOverrides);
         return await response.value();
     }
 
@@ -9375,6 +9284,70 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
+     * De-register this Vault instance from the secure hub.
+     */
+    async secureHubDeRegisterRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/sys/secure-hub/de-register`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * De-register this Vault instance from the secure hub.
+     */
+    async secureHubDeRegister(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.secureHubDeRegisterRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Enroll this Vault instance with the secure hub.
+     */
+    async secureHubEnrollRaw(requestParameters: SystemApiSecureHubEnrollOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['SecureHubEnrollRequest'] == null) {
+            throw new runtime.RequiredError(
+                'SecureHubEnrollRequest',
+                'Required parameter "SecureHubEnrollRequest" was null or undefined when calling secureHubEnroll().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/sys/secure-hub/enroll`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SecureHubEnrollRequestToJSON(requestParameters['SecureHubEnrollRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * Enroll this Vault instance with the secure hub.
+     */
+    async secureHubEnroll(SecureHubEnrollRequest: SecureHubEnrollRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.secureHubEnrollRaw({ SecureHubEnrollRequest: SecureHubEnrollRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
      * Cause the node to give up active status.
      */
@@ -9447,18 +9420,18 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_8Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async subscriptionsCreate_7Raw(requestParameters: SystemApiSubscriptionsCreate0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError(
                 'id',
-                'Required parameter "id" was null or undefined when calling subscriptionsCreate_8().'
+                'Required parameter "id" was null or undefined when calling subscriptionsCreate_7().'
             );
         }
 
         if (requestParameters['plugin'] == null) {
             throw new runtime.RequiredError(
                 'plugin',
-                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_8().'
+                'Required parameter "plugin" was null or undefined when calling subscriptionsCreate_7().'
             );
         }
 
@@ -9480,8 +9453,8 @@ export class SystemApi extends runtime.BaseAPI {
     /**
      * Deletes the specified event notification subscription and stops sending event notifications to it.
      */
-    async subscriptionsCreate_8(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.subscriptionsCreate_8Raw({ id: id, plugin: plugin }, initOverrides);
+    async subscriptionsCreate_7(id: string, plugin: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.subscriptionsCreate_7Raw({ id: id, plugin: plugin }, initOverrides);
         return await response.value();
     }
 
