@@ -30,6 +30,12 @@ export interface LdapConfigureRequest {
      */
     anonymous_group_search?: boolean;
     /**
+     * If true, Vault will automatically unlock the account after a successful rotation. This applies to all root-managed static roles on this mount, unless overridden at the role level. Requires the Active Directory schema. Defaults to false.
+     * @type {boolean}
+     * @memberof LdapConfigureRequest
+     */
+    auto_unlock?: boolean;
+    /**
      * LDAP DN for searching for the user DN (optional)
      * @type {string}
      * @memberof LdapConfigureRequest
@@ -341,6 +347,7 @@ export function LdapConfigureRequestFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'anonymous_group_search': json['anonymous_group_search'] == null ? undefined : json['anonymous_group_search'],
+        'auto_unlock': json['auto_unlock'] == null ? undefined : json['auto_unlock'],
         'binddn': json['binddn'] == null ? undefined : json['binddn'],
         'bindpass': json['bindpass'] == null ? undefined : json['bindpass'],
         'case_sensitive_names': json['case_sensitive_names'] == null ? undefined : json['case_sensitive_names'],
@@ -399,6 +406,7 @@ export function LdapConfigureRequestToJSONTyped(value?: LdapConfigureRequest | n
     return {
         
         'anonymous_group_search': value['anonymous_group_search'],
+        'auto_unlock': value['auto_unlock'],
         'binddn': value['binddn'],
         'bindpass': value['bindpass'],
         'case_sensitive_names': value['case_sensitive_names'],

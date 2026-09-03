@@ -20,125 +20,125 @@ import { mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface AzureConfigureAuthRequest
+ * @interface AzureReadAuthConfigurationResponse
  */
-export interface AzureConfigureAuthRequest {
+export interface AzureReadAuthConfigurationResponse {
     /**
-     * Specifies how Vault authenticates to Azure for resource metadata lookups. Valid values: root_creds, plugin_wif, aks_wif, msi. If not specified, defaults to existing discovery logic for backward compatibility.
+     * The authentication type used to connect to Azure.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     auth_type?: string;
     /**
-     * The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.
+     * The OAuth2 client id to connection to Azure.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     client_id?: string;
     /**
-     * The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable.
-     * @type {string}
-     * @memberof AzureConfigureAuthRequest
-     */
-    client_secret?: string;
-    /**
-     * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
+     * Whether automated rotation is disabled.
      * @type {boolean}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     disable_automated_rotation?: boolean;
     /**
-     * The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable.
+     * The Azure environment name.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     environment?: string;
     /**
-     * Audience of plugin identity tokens
+     * Audience of plugin identity tokens.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     identity_token_audience?: string;
     /**
-     * Time-to-live of plugin identity tokens
-     * @type {string}
-     * @memberof AzureConfigureAuthRequest
-     */
-    identity_token_ttl?: string;
-    /**
-     * The maximum number of attempts a failed operation will be retried before producing an error.
+     * Time-to-live of plugin identity tokens.
      * @type {number}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
+     */
+    identity_token_ttl?: number;
+    /**
+     * The maximum number of attempts a failed operation will be retried.
+     * @type {number}
+     * @memberof AzureReadAuthConfigurationResponse
      */
     max_retries?: number;
     /**
      * The maximum delay allowed before retrying an operation.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     max_retry_delay?: string;
     /**
-     * The resource URL for the vault application in Azure Active Directory. This value can also be provided with the AZURE_AD_RESOURCE environment variable.
+     * The resource URL for the vault application in Azure Active Directory.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     resource?: string;
     /**
-     * The initial amount of delay to use before retrying an operation, increasing exponentially.
+     * The initial amount of delay to use before retrying an operation.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     retry_delay?: string;
     /**
-     * The TTL of the root password in Azure. This can be either a number of seconds or a time formatted duration (ex: 24h, 48ds)
+     * The expiration date of the root password.
+     * @type {Date}
+     * @memberof AzureReadAuthConfigurationResponse
+     */
+    root_password_expiration_date?: Date;
+    /**
+     * The TTL of the root password in Azure.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     root_password_ttl?: string;
     /**
-     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
+     * The period for automated root credential rotation.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     rotation_period?: string;
     /**
-     * Defines the rotation policy to use when performing automated rotations.
+     * The rotation policy name.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     rotation_policy?: string;
     /**
-     * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
+     * The schedule for automated root credential rotation.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     rotation_schedule?: string;
     /**
-     * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
+     * The maximum time allowed for a rotation to complete.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     rotation_window?: string;
     /**
-     * The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable.
+     * The tenant id for the Azure Active Directory.
      * @type {string}
-     * @memberof AzureConfigureAuthRequest
+     * @memberof AzureReadAuthConfigurationResponse
      */
     tenant_id?: string;
 }
 
 /**
- * Check if a given object implements the AzureConfigureAuthRequest interface.
+ * Check if a given object implements the AzureReadAuthConfigurationResponse interface.
  */
-export function instanceOfAzureConfigureAuthRequest(value: object): value is AzureConfigureAuthRequest {
+export function instanceOfAzureReadAuthConfigurationResponse(value: object): value is AzureReadAuthConfigurationResponse {
     return true;
 }
 
-export function AzureConfigureAuthRequestFromJSON(json: any): AzureConfigureAuthRequest {
-    return AzureConfigureAuthRequestFromJSONTyped(json, false);
+export function AzureReadAuthConfigurationResponseFromJSON(json: any): AzureReadAuthConfigurationResponse {
+    return AzureReadAuthConfigurationResponseFromJSONTyped(json, false);
 }
 
-export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): AzureConfigureAuthRequest {
+export function AzureReadAuthConfigurationResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): AzureReadAuthConfigurationResponse {
     if (json == null) {
         return json;
     }
@@ -146,7 +146,6 @@ export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimi
         
         'auth_type': json['auth_type'] == null ? undefined : json['auth_type'],
         'client_id': json['client_id'] == null ? undefined : json['client_id'],
-        'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
         'environment': json['environment'] == null ? undefined : json['environment'],
         'identity_token_audience': json['identity_token_audience'] == null ? undefined : json['identity_token_audience'],
@@ -155,6 +154,7 @@ export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimi
         'max_retry_delay': json['max_retry_delay'] == null ? undefined : json['max_retry_delay'],
         'resource': json['resource'] == null ? undefined : json['resource'],
         'retry_delay': json['retry_delay'] == null ? undefined : json['retry_delay'],
+        'root_password_expiration_date': json['root_password_expiration_date'] == null ? undefined : (new Date(json['root_password_expiration_date'])),
         'root_password_ttl': json['root_password_ttl'] == null ? undefined : json['root_password_ttl'],
         'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
         'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
@@ -164,11 +164,11 @@ export function AzureConfigureAuthRequestFromJSONTyped(json: any, ignoreDiscrimi
     };
 }
 
-export function AzureConfigureAuthRequestToJSON(json: any): AzureConfigureAuthRequest {
-    return AzureConfigureAuthRequestToJSONTyped(json, false);
+export function AzureReadAuthConfigurationResponseToJSON(json: any): AzureReadAuthConfigurationResponse {
+    return AzureReadAuthConfigurationResponseToJSONTyped(json, false);
 }
 
-export function AzureConfigureAuthRequestToJSONTyped(value?: AzureConfigureAuthRequest | null, ignoreDiscriminator: boolean = false): any {
+export function AzureReadAuthConfigurationResponseToJSONTyped(value?: AzureReadAuthConfigurationResponse | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
@@ -177,7 +177,6 @@ export function AzureConfigureAuthRequestToJSONTyped(value?: AzureConfigureAuthR
         
         'auth_type': value['auth_type'],
         'client_id': value['client_id'],
-        'client_secret': value['client_secret'],
         'disable_automated_rotation': value['disable_automated_rotation'],
         'environment': value['environment'],
         'identity_token_audience': value['identity_token_audience'],
@@ -186,6 +185,7 @@ export function AzureConfigureAuthRequestToJSONTyped(value?: AzureConfigureAuthR
         'max_retry_delay': value['max_retry_delay'],
         'resource': value['resource'],
         'retry_delay': value['retry_delay'],
+        'root_password_expiration_date': value['root_password_expiration_date'] == null ? undefined : ((value['root_password_expiration_date']).toISOString()),
         'root_password_ttl': value['root_password_ttl'],
         'rotation_period': value['rotation_period'],
         'rotation_policy': value['rotation_policy'],
