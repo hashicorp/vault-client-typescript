@@ -126,6 +126,12 @@ export interface TransitReadKeyResponse {
      */
     latest_version?: number;
     /**
+     * The key type of the most recent key version.
+     * @type {string}
+     * @memberof TransitReadKeyResponse
+     */
+    latest_version_type?: string;
+    /**
      * The minimum version of the key available for use. Versions below this have been permanently deleted.
      * @type {number}
      * @memberof TransitReadKeyResponse
@@ -309,6 +315,7 @@ export function TransitReadKeyResponseFromJSONTyped(json: any, ignoreDiscriminat
         'key_size': json['key_size'] == null ? undefined : json['key_size'],
         'keys': json['keys'] == null ? undefined : json['keys'],
         'latest_version': json['latest_version'] == null ? undefined : json['latest_version'],
+        'latest_version_type': json['latest_version_type'] == null ? undefined : json['latest_version_type'],
         'min_available_version': json['min_available_version'] == null ? undefined : json['min_available_version'],
         'min_decryption_version': json['min_decryption_version'] == null ? undefined : json['min_decryption_version'],
         'min_encryption_version': json['min_encryption_version'] == null ? undefined : json['min_encryption_version'],
@@ -351,6 +358,7 @@ export function TransitReadKeyResponseToJSONTyped(value?: TransitReadKeyResponse
         'key_size': value['key_size'],
         'keys': value['keys'],
         'latest_version': value['latest_version'],
+        'latest_version_type': value['latest_version_type'],
         'min_available_version': value['min_available_version'],
         'min_decryption_version': value['min_decryption_version'],
         'min_encryption_version': value['min_encryption_version'],
