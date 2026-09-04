@@ -78274,7 +78274,7 @@
           },
           "default_schema_version": {
             "type": "string",
-            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'."
           },
           "delete-linked-resources": {
             "type": "boolean",
@@ -79928,6 +79928,10 @@
       "SystemReadBillingConfigResponse": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months of attribution data to retain. 0 means attribution storage is disabled."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months of billing data to retain."
@@ -80267,6 +80271,10 @@
       "SystemWriteBillingConfigRequest": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months to retain mount attribution data for billing metrics. Must be between 0 and 72 months. Defaults to 37 months. Setting to 0 disables attribution storage and wipes all existing attribution data."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months."
