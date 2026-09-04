@@ -48,7 +48,7 @@ export interface ScimUpdateClientRequest {
      */
     allowed_extra_alias_mount_accessors?: Array<string>;
     /**
-     * Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'.
+     * Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'.
      * @type {string}
      * @memberof ScimUpdateClientRequest
      */
