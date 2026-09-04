@@ -428,7 +428,8 @@ export class JSONApiResponse<T> {
 
     async value(): Promise<T> {
         const response = await this.raw.json();
-        return this.transformer(response.data);
+        const data = response.data || response.auth;
+        return this.transformer(data);
     }
 }
 
