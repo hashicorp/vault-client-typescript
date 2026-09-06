@@ -17,6 +17,20 @@ Module system
 
 It can be used in both TypeScript and JavaScript. In TypeScript, the definition will be automatically resolved via `package.json`. ([Reference](https://www.typescriptlang.org/docs/handbook/declaration-files/consumption.html))
 
+### Basic Example
+```
+import * as vault from '@hashicorp/vault-client-typescript'
+const vaultClientConfig = new vault.Configuration({
+  basePath:process.env.VAULT_URL, // http://localhost:1234/v1
+  headers:{
+    'X-Vault-Token':process.env.VAULT_TOKEN
+  }
+})
+
+const secretsClient = new vault.SecretsApi(vaultClientConfig)
+secretsClient.kvV2Write('test_secret', 'secret', {data:{mysecretdata:"12345"}})
+```
+
 ### Building
 
 To build and compile the typescript sources to javascript use:
