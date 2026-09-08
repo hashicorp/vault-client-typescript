@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface SystemWriteBillingConfigRequest {
     /**
+     * Number of months to retain mount attribution data for billing metrics. Must be between 0 and 72 months. Defaults to 37 months. Setting to 0 disables attribution storage and wipes all existing attribution data.
+     * @type {number}
+     * @memberof SystemWriteBillingConfigRequest
+     */
+    attribution_retention_months?: number;
+    /**
      * Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months.
      * @type {number}
      * @memberof SystemWriteBillingConfigRequest
@@ -48,6 +54,7 @@ export function SystemWriteBillingConfigRequestFromJSONTyped(json: any, ignoreDi
     }
     return {
         
+        'attribution_retention_months': json['attribution_retention_months'] == null ? undefined : json['attribution_retention_months'],
         'retention_months': json['retention_months'] == null ? undefined : json['retention_months'],
     };
 }
@@ -63,6 +70,7 @@ export function SystemWriteBillingConfigRequestToJSONTyped(value?: SystemWriteBi
 
     return {
         
+        'attribution_retention_months': value['attribution_retention_months'],
         'retention_months': value['retention_months'],
     };
 }
