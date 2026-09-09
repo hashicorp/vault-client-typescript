@@ -18274,7 +18274,6 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true,
       "get": {
         "summary": "Retrieve an existing rotation policy.",
         "operationId": "policies-read-rotation-policy",
@@ -18295,7 +18294,7 @@
         }
       },
       "post": {
-        "summary": "Update an existing rotation policy.",
+        "summary": "Create a new or update an existing rotation policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
@@ -69146,6 +69145,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69175,6 +69178,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69206,6 +69213,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69235,6 +69246,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69266,6 +69281,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69295,6 +69314,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69351,6 +69374,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69380,6 +69407,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69411,6 +69442,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69441,6 +69476,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69470,6 +69509,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69574,6 +69617,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69603,6 +69650,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69634,6 +69685,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69663,6 +69718,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -70354,6 +70413,10 @@
             "type": "string",
             "description": "Certificate to revoke in PEM format; must be signed by an issuer in this mount."
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
+          },
           "serial_number": {
             "type": "string",
             "description": "Certificate serial number, in colon- or hyphen-separated octal"
@@ -70389,6 +70452,10 @@
           "private_key": {
             "type": "string",
             "description": "Key to use to verify revocation permission; must be in PEM format."
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
           },
           "serial_number": {
             "type": "string",
@@ -76241,10 +76308,6 @@
       "PoliciesReadRotationPolicyResponse": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76252,20 +76315,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         }
       },
@@ -76308,10 +76357,6 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76319,20 +76364,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         },
         "required": [
@@ -78274,7 +78305,7 @@
           },
           "default_schema_version": {
             "type": "string",
-            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'."
           },
           "delete-linked-resources": {
             "type": "boolean",
@@ -79928,6 +79959,10 @@
       "SystemReadBillingConfigResponse": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months of attribution data to retain. 0 means attribution storage is disabled."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months of billing data to retain."
@@ -80267,6 +80302,10 @@
       "SystemWriteBillingConfigRequest": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months to retain mount attribution data for billing metrics. Must be between 0 and 72 months. Defaults to 37 months. Setting to 0 disables attribution storage and wipes all existing attribution data."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months."
