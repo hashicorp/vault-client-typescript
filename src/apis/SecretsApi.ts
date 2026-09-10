@@ -220,6 +220,7 @@ import type {
   PkiIssuersImportCertRequest,
   PkiIssuersImportCertResponse,
   PkiListEabKeysResponse,
+  PkiListExportKeysResponse,
   PkiListIssuersResponse,
   PkiListKeysResponse,
   PkiListUnifiedRevokedCertsResponse,
@@ -246,6 +247,7 @@ import type {
   PkiReadCrlDeltaResponse,
   PkiReadCrlDerResponse,
   PkiReadCrlPemResponse,
+  PkiReadExportKeyResponse,
   PkiReadIssuerDerResponse,
   PkiReadIssuerJsonResponse,
   PkiReadIssuerPemResponse,
@@ -294,6 +296,8 @@ import type {
   PkiWriteAcmeRevokeCertRequest,
   PkiWriteBatchCertsRequest,
   PkiWriteBatchCertsResponse,
+  PkiWriteExportKeysRequest,
+  PkiWriteExportKeysResponse,
   PkiWriteExternalPolicyAcmeAccountKidRequest,
   PkiWriteExternalPolicyAcmeAuthorizationAuthIdRequest,
   PkiWriteExternalPolicyAcmeChallengeAuthIdChallengeTypeRequest,
@@ -886,6 +890,8 @@ import {
     PkiIssuersImportCertResponseToJSON,
     PkiListEabKeysResponseFromJSON,
     PkiListEabKeysResponseToJSON,
+    PkiListExportKeysResponseFromJSON,
+    PkiListExportKeysResponseToJSON,
     PkiListIssuersResponseFromJSON,
     PkiListIssuersResponseToJSON,
     PkiListKeysResponseFromJSON,
@@ -938,6 +944,8 @@ import {
     PkiReadCrlDerResponseToJSON,
     PkiReadCrlPemResponseFromJSON,
     PkiReadCrlPemResponseToJSON,
+    PkiReadExportKeyResponseFromJSON,
+    PkiReadExportKeyResponseToJSON,
     PkiReadIssuerDerResponseFromJSON,
     PkiReadIssuerDerResponseToJSON,
     PkiReadIssuerJsonResponseFromJSON,
@@ -1034,6 +1042,10 @@ import {
     PkiWriteBatchCertsRequestToJSON,
     PkiWriteBatchCertsResponseFromJSON,
     PkiWriteBatchCertsResponseToJSON,
+    PkiWriteExportKeysRequestFromJSON,
+    PkiWriteExportKeysRequestToJSON,
+    PkiWriteExportKeysResponseFromJSON,
+    PkiWriteExportKeysResponseToJSON,
     PkiWriteExternalPolicyAcmeAccountKidRequestFromJSON,
     PkiWriteExternalPolicyAcmeAccountKidRequestToJSON,
     PkiWriteExternalPolicyAcmeAuthorizationAuthIdRequestFromJSON,
@@ -2828,6 +2840,11 @@ export interface SecretsApiPkiDeleteEabKeyRequest {
     pki_mount_path: string;
 }
 
+export interface SecretsApiPkiDeleteExportKeyRequest {
+    export_key_uuid: string;
+    pki_mount_path: string;
+}
+
 export interface SecretsApiPkiDeleteIssuerRequest {
     issuer_ref: string;
     pki_mount_path: string;
@@ -3300,6 +3317,11 @@ export interface SecretsApiPkiListEabKeysRequest {
     list: SecretsApiPkiListEabKeysListEnum;
 }
 
+export interface SecretsApiPkiListExportKeysRequest {
+    pki_mount_path: string;
+    list: SecretsApiPkiListExportKeysListEnum;
+}
+
 export interface SecretsApiPkiListIssuersRequest {
     pki_mount_path: string;
     list: SecretsApiPkiListIssuersListEnum;
@@ -3461,6 +3483,11 @@ export interface SecretsApiPkiReadEstCacertsRequest {
 }
 
 export interface SecretsApiPkiReadEstConfigurationRequest {
+    pki_mount_path: string;
+}
+
+export interface SecretsApiPkiReadExportKeyRequest {
+    export_key_uuid: string;
     pki_mount_path: string;
 }
 
@@ -3782,6 +3809,11 @@ export interface SecretsApiPkiWriteEstSimpleenrollRequest {
 
 export interface SecretsApiPkiWriteEstSimplereenrollRequest {
     pki_mount_path: string;
+}
+
+export interface SecretsApiPkiWriteExportKeysOperationRequest {
+    pki_mount_path: string;
+    PkiWriteExportKeysRequest: PkiWriteExportKeysRequest;
 }
 
 export interface SecretsApiPkiWriteExternalPolicyAcmeAccountKidOperationRequest {
@@ -16743,6 +16775,45 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiDeleteExportKeyRaw(requestParameters: SecretsApiPkiDeleteExportKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['export_key_uuid'] == null) {
+            throw new runtime.RequiredError(
+                'export_key_uuid',
+                'Required parameter "export_key_uuid" was null or undefined when calling pkiDeleteExportKey().'
+            );
+        }
+
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiDeleteExportKey().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/{export_key_uuid}`.replace(`{${"export_key_uuid"}}`, encodeURIComponent(String(requestParameters['export_key_uuid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiDeleteExportKey(export_key_uuid: string, pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiDeleteExportKeyRaw({ export_key_uuid: export_key_uuid, pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiDeleteIssuerRaw(requestParameters: SecretsApiPkiDeleteIssuerRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['issuer_ref'] == null) {
             throw new runtime.RequiredError(
@@ -20552,6 +20623,49 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiListExportKeysRaw(requestParameters: SecretsApiPkiListExportKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiListExportKeysResponse>> {
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiListExportKeys().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiListExportKeys().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiListExportKeysResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiListExportKeys(pki_mount_path: string, list: SecretsApiPkiListExportKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListExportKeysResponse> {
+        const response = await this.pkiListExportKeysRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiListIssuersRaw(requestParameters: SecretsApiPkiListIssuersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiListIssuersResponse>> {
         if (requestParameters['pki_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -21869,6 +21983,45 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiReadEstConfiguration(pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiReadEstConfigurationRaw({ pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiReadExportKeyRaw(requestParameters: SecretsApiPkiReadExportKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiReadExportKeyResponse>> {
+        if (requestParameters['export_key_uuid'] == null) {
+            throw new runtime.RequiredError(
+                'export_key_uuid',
+                'Required parameter "export_key_uuid" was null or undefined when calling pkiReadExportKey().'
+            );
+        }
+
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiReadExportKey().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/{export_key_uuid}`.replace(`{${"export_key_uuid"}}`, encodeURIComponent(String(requestParameters['export_key_uuid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiReadExportKeyResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiReadExportKey(export_key_uuid: string, pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiReadExportKeyResponse> {
+        const response = await this.pkiReadExportKeyRaw({ export_key_uuid: export_key_uuid, pki_mount_path: pki_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -24438,6 +24591,48 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiWriteEstSimplereenroll(pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiWriteEstSimplereenrollRaw({ pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiWriteExportKeysRaw(requestParameters: SecretsApiPkiWriteExportKeysOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiWriteExportKeysResponse>> {
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiWriteExportKeys().'
+            );
+        }
+
+        if (requestParameters['PkiWriteExportKeysRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiWriteExportKeysRequest',
+                'Required parameter "PkiWriteExportKeysRequest" was null or undefined when calling pkiWriteExportKeys().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_mount_path}/export`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiWriteExportKeysRequestToJSON(requestParameters['PkiWriteExportKeysRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiWriteExportKeysResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiWriteExportKeys(pki_mount_path: string, PkiWriteExportKeysRequest: PkiWriteExportKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiWriteExportKeysResponse> {
+        const response = await this.pkiWriteExportKeysRaw({ pki_mount_path: pki_mount_path, PkiWriteExportKeysRequest: PkiWriteExportKeysRequest }, initOverrides);
         return await response.value();
     }
 
@@ -36953,6 +37148,13 @@ export enum SecretsApiPkiListCertsRevocationQueueListEnum {
   * @enum {string}
   */
 export enum SecretsApiPkiListEabKeysListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiListExportKeysListEnum {
     TRUE = 'true'
 }
 /**
