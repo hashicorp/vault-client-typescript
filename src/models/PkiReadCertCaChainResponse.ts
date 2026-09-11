@@ -48,6 +48,12 @@ export interface PkiReadCertCaChainResponse {
      */
     issuer_id?: string;
     /**
+     * Revocation reason code: RFC 5280 formatted
+     * @type {number}
+     * @memberof PkiReadCertCaChainResponse
+     */
+    revocation_reason?: number;
+    /**
      * Revocation time
      * @type {number}
      * @memberof PkiReadCertCaChainResponse
@@ -82,6 +88,7 @@ export function PkiReadCertCaChainResponseFromJSONTyped(json: any, ignoreDiscrim
         'ca_chain': json['ca_chain'] == null ? undefined : json['ca_chain'],
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
         'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
+        'revocation_reason': json['revocation_reason'] == null ? undefined : json['revocation_reason'],
         'revocation_time': json['revocation_time'] == null ? undefined : json['revocation_time'],
         'revocation_time_rfc3339': json['revocation_time_rfc3339'] == null ? undefined : json['revocation_time_rfc3339'],
     };
@@ -102,6 +109,7 @@ export function PkiReadCertCaChainResponseToJSONTyped(value?: PkiReadCertCaChain
         'ca_chain': value['ca_chain'],
         'certificate': value['certificate'],
         'issuer_id': value['issuer_id'],
+        'revocation_reason': value['revocation_reason'],
         'revocation_time': value['revocation_time'],
         'revocation_time_rfc3339': value['revocation_time_rfc3339'],
     };
