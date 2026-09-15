@@ -144,6 +144,12 @@ export interface PkiPatchRoleRequest {
      */
     country?: Array<string>;
     /**
+     * If set, a list of OID strings in dotted-decimal notation (e.g. "0.9.2342.19200300.100.1.1") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.
+     * @type {Array<string>}
+     * @memberof PkiPatchRoleRequest
+     */
+    csr_extra_names_oids?: Array<string>;
+    /**
      * If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12.
      * @type {boolean}
      * @memberof PkiPatchRoleRequest
@@ -368,6 +374,7 @@ export function PkiPatchRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'cn_validations': json['cn_validations'] == null ? undefined : json['cn_validations'],
         'code_signing_flag': json['code_signing_flag'] == null ? undefined : json['code_signing_flag'],
         'country': json['country'] == null ? undefined : json['country'],
+        'csr_extra_names_oids': json['csr_extra_names_oids'] == null ? undefined : json['csr_extra_names_oids'],
         'email_protection_flag': json['email_protection_flag'] == null ? undefined : json['email_protection_flag'],
         'enforce_hostnames': json['enforce_hostnames'] == null ? undefined : json['enforce_hostnames'],
         'ext_key_usage': json['ext_key_usage'] == null ? undefined : json['ext_key_usage'],
@@ -431,6 +438,7 @@ export function PkiPatchRoleRequestToJSONTyped(value?: PkiPatchRoleRequest | nul
         'cn_validations': value['cn_validations'],
         'code_signing_flag': value['code_signing_flag'],
         'country': value['country'],
+        'csr_extra_names_oids': value['csr_extra_names_oids'],
         'email_protection_flag': value['email_protection_flag'],
         'enforce_hostnames': value['enforce_hostnames'],
         'ext_key_usage': value['ext_key_usage'],
