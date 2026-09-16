@@ -4351,7 +4351,7 @@
       }
     },
     "/auth/{cf_mount_path}/config": {
-      "description": "Provide Vault with the CA certificate used to issue all client certificates.",
+      "description": "Configure the CA certificate used to verify Cloud Foundry instance certificates.",
       "parameters": [
         {
           "name": "cf_mount_path",
@@ -4365,17 +4365,26 @@
         }
       ],
       "get": {
+        "summary": "Return the current Cloud Foundry auth method configuration.",
         "operationId": "cloud-foundry-read-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the Cloud Foundry auth method.",
         "operationId": "cloud-foundry-configure",
         "tags": [
           "auth"
@@ -4391,25 +4400,26 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the Cloud Foundry auth method configuration.",
         "operationId": "cloud-foundry-delete-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
     },
     "/auth/{cf_mount_path}/login": {
-      "description": "Authenticates an entity with Vault.",
+      "description": "Authenticate Cloud Foundry entities with Vault.",
       "parameters": [
         {
           "name": "cf_mount_path",
@@ -4424,6 +4434,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
+        "summary": "Authenticate a Cloud Foundry instance with Vault.",
         "operationId": "cloud-foundry-login",
         "tags": [
           "auth"
@@ -4440,7 +4451,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryLoginResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4460,6 +4478,7 @@
         }
       ],
       "get": {
+        "summary": "List the existing Cloud Foundry auth roles.",
         "operationId": "cloud-foundry-list-roles",
         "tags": [
           "auth"
@@ -4484,7 +4503,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/CloudFoundryListRolesResponse"
                 }
               }
             }
@@ -4493,7 +4512,7 @@
       }
     },
     "/auth/{cf_mount_path}/roles/{role}": {
-      "description": "Read, write and reference policies and roles that tokens can be made for.",
+      "description": "Manage roles used for authenticating Cloud Foundry instances.",
       "parameters": [
         {
           "name": "role",
@@ -4517,17 +4536,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configuration for a named Cloud Foundry auth role.",
         "operationId": "cloud-foundry-read-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryReadRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Update an existing Cloud Foundry auth role.",
         "operationId": "cloud-foundry-write-role",
         "tags": [
           "auth"
@@ -4543,19 +4571,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete a named Cloud Foundry auth role.",
         "operationId": "cloud-foundry-delete-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -18274,7 +18303,6 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true,
       "get": {
         "summary": "Retrieve an existing rotation policy.",
         "operationId": "policies-read-rotation-policy",
@@ -18295,7 +18323,7 @@
         }
       },
       "post": {
-        "summary": "Update an existing rotation policy.",
+        "summary": "Create a new or update an existing rotation policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
@@ -26410,17 +26438,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the GCP KMS secrets engine configuration.",
         "operationId": "google-cloud-kms-read-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the GCP KMS secrets engine.",
         "operationId": "google-cloud-kms-configure",
         "tags": [
           "secrets"
@@ -26436,19 +26473,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the GCP KMS secrets engine configuration.",
         "operationId": "google-cloud-kms-delete-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26477,7 +26515,7 @@
         }
       ],
       "post": {
-        "summary": "Decrypt a ciphertext value using a named key",
+        "summary": "Decrypt a ciphertext value using a named key.",
         "operationId": "google-cloud-kms-decrypt",
         "tags": [
           "secrets"
@@ -26494,7 +26532,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsDecryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26523,7 +26568,7 @@
         }
       ],
       "post": {
-        "summary": "Encrypt a plaintext value using a named key",
+        "summary": "Encrypt a plaintext value using a named key.",
         "operationId": "google-cloud-kms-encrypt",
         "tags": [
           "secrets"
@@ -26540,7 +26585,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsEncryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26560,7 +26612,7 @@
         }
       ],
       "get": {
-        "summary": "List named keys",
+        "summary": "List all named keys.",
         "operationId": "google-cloud-kms-list-keys",
         "tags": [
           "secrets"
@@ -26618,17 +26670,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the Vault configuration for a named key.",
         "operationId": "google-cloud-kms-read-key-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadKeyConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure a named key in Vault.",
         "operationId": "google-cloud-kms-configure-key",
         "tags": [
           "secrets"
@@ -26644,8 +26705,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -26674,24 +26735,26 @@
         }
       ],
       "post": {
+        "summary": "Deregister a key from Vault.",
         "operationId": "google-cloud-kms-deregister-key",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Deregister a key from Vault.",
         "operationId": "google-cloud-kms-deregister-key2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26720,7 +26783,7 @@
         }
       ],
       "post": {
-        "summary": "Register an existing crypto key in Google Cloud KMS",
+        "summary": "Register an existing crypto key in Google Cloud KMS.",
         "operationId": "google-cloud-kms-register-key",
         "tags": [
           "secrets"
@@ -26736,8 +26799,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -26766,14 +26829,21 @@
         }
       ],
       "post": {
-        "summary": "Rotate a crypto key to a new primary version",
+        "summary": "Rotate a crypto key to a new primary version.",
         "operationId": "google-cloud-kms-rotate-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsRotateKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26803,24 +26873,26 @@
       ],
       "x-vault-createSupported": true,
       "post": {
+        "summary": "Trim old crypto key versions from Google Cloud KMS.",
         "operationId": "google-cloud-kms-trim-key-versions",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Trim old crypto key versions from Google Cloud KMS.",
         "operationId": "google-cloud-kms-trim-key-versions2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26850,19 +26922,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Return information about a named key.",
         "operationId": "google-cloud-kms-read-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadKeyResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Create or update a named key.",
         "operationId": "google-cloud-kms-write-key",
         "tags": [
           "secrets"
@@ -26878,20 +26957,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Delete a named key.",
         "operationId": "google-cloud-kms-delete-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26920,14 +26999,21 @@
         }
       ],
       "get": {
-        "summary": "Retrieve the public key associated with the named key",
+        "summary": "Retrieve the public key associated with a named key.",
         "operationId": "google-cloud-kms-retrieve-public-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsRetrievePublicKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26956,7 +27042,7 @@
         }
       ],
       "post": {
-        "summary": "Re-encrypt existing ciphertext data to a new version",
+        "summary": "Re-encrypt existing ciphertext data to a new version.",
         "operationId": "google-cloud-kms-reencrypt",
         "tags": [
           "secrets"
@@ -26973,7 +27059,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReencryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27002,7 +27095,7 @@
         }
       ],
       "post": {
-        "summary": "Signs a message or digest using a named key",
+        "summary": "Sign a message or digest using a named key.",
         "operationId": "google-cloud-kms-sign",
         "tags": [
           "secrets"
@@ -27019,7 +27112,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsSignResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27048,7 +27148,7 @@
         }
       ],
       "post": {
-        "summary": "Verify a signature using a named key",
+        "summary": "Verify a signature using a named key.",
         "operationId": "google-cloud-kms-verify",
         "tags": [
           "secrets"
@@ -27065,7 +27165,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsVerifyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -35148,6 +35255,149 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export": {
+      "description": "Create or list export keys used to securely wrap CA private key material for migration.",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-write-export-keys",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiWriteExportKeysRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiWriteExportKeysResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export/": {
+      "description": "Create or list export keys used to securely wrap CA private key material for migration.",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-list-export-keys",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiListExportKeysResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export/{export_key_uuid}": {
+      "description": "Read or delete a specific export key by UUID.",
+      "parameters": [
+        {
+          "name": "export_key_uuid",
+          "description": "UUID of the export key to read or delete.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-read-export-key",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiReadExportKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-delete-export-key",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -45145,6 +45395,32 @@
         }
       }
     },
+    "/{terraform_mount_path}/rotate-root": {
+      "description": "Request to rotate the root token used by Vault to access Terraform Cloud or Enterprise.",
+      "parameters": [
+        {
+          "name": "terraform_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "terraform"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "terraform-cloud-rotate-root",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{totp_mount_path}/code/{name}": {
       "description": "Request time-based one-time use password or validate a password for a certain key .",
       "parameters": [
@@ -53656,6 +53932,18 @@
           }
         }
       },
+      "CloudFoundryListRolesResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "description": "List of role names.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "CloudFoundryLoginRequest": {
         "type": "object",
         "properties": {
@@ -53696,6 +53984,169 @@
           "signature",
           "signing_time"
         ]
+      },
+      "CloudFoundryLoginResponse": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Display name of the authenticated entity."
+          },
+          "lease_duration": {
+            "type": "integer",
+            "description": "Duration of the token lease in seconds."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the token.",
+            "format": "map"
+          },
+          "policies": {
+            "type": "array",
+            "description": "Policies assigned to the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "renewable": {
+            "type": "boolean",
+            "description": "Whether the token is renewable."
+          }
+        }
+      },
+      "CloudFoundryReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "cf_api_addr": {
+            "type": "string",
+            "description": "Address of the CF API."
+          },
+          "cf_api_mutual_tls_certificate": {
+            "type": "string",
+            "description": "PEM-format certificate used for mutual TLS with the CF API."
+          },
+          "cf_api_trusted_certificates": {
+            "type": "array",
+            "description": "PEM-format CA certificates trusted for the CF API.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cf_client_id": {
+            "type": "string",
+            "description": "Client ID for the CF API."
+          },
+          "cf_timeout": {
+            "type": "integer",
+            "description": "Timeout in seconds for CF API calls."
+          },
+          "cf_username": {
+            "type": "string",
+            "description": "Username for the CF API."
+          },
+          "force_new_client": {
+            "type": "boolean",
+            "description": "Whether a new CF client is created for every login request."
+          },
+          "identity_ca_certificates": {
+            "type": "array",
+            "description": "PEM-format CA certificates used to verify instance certificates.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "login_max_seconds_not_after": {
+            "type": "integer",
+            "description": "Maximum acceptable future offset of a signing_time in seconds."
+          },
+          "login_max_seconds_not_before": {
+            "type": "integer",
+            "description": "Maximum acceptable age of a signing_time in seconds."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Configuration schema version."
+          }
+        }
+      },
+      "CloudFoundryReadRoleResponse": {
+        "type": "object",
+        "properties": {
+          "bound_application_ids": {
+            "type": "array",
+            "description": "Bound CF application IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_instance_ids": {
+            "type": "array",
+            "description": "Bound CF instance IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_organization_ids": {
+            "type": "array",
+            "description": "Bound CF organization IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_space_ids": {
+            "type": "array",
+            "description": "Bound CF space IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disable_ip_matching": {
+            "type": "boolean",
+            "description": "Whether IP address matching is disabled."
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "List of token-bound CIDR blocks.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds of the explicit maximum TTL."
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "Maximum TTL of the token in seconds."
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "Whether the default policy is excluded from the token."
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "Maximum number of uses for the token."
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "Renewal period of the token in seconds."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of policies on the token.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Lifetime of the token in seconds."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of token to generate."
+          }
+        }
       },
       "CloudFoundryWriteRoleRequest": {
         "type": "object",
@@ -55472,6 +55923,15 @@
           }
         }
       },
+      "GoogleCloudKmsDecryptResponse": {
+        "type": "object",
+        "properties": {
+          "plaintext": {
+            "type": "string",
+            "description": "Decrypted plaintext value."
+          }
+        }
+      },
       "GoogleCloudKmsEncryptRequest": {
         "type": "object",
         "properties": {
@@ -55486,6 +55946,96 @@
           "plaintext": {
             "type": "string",
             "description": "Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types."
+          }
+        }
+      },
+      "GoogleCloudKmsEncryptResponse": {
+        "type": "object",
+        "properties": {
+          "ciphertext": {
+            "type": "string",
+            "description": "Base64-encoded encrypted ciphertext."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Key version used for encryption."
+          }
+        }
+      },
+      "GoogleCloudKmsReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "scopes": {
+            "type": "array",
+            "description": "List of OAuth2 scopes requested when authenticating.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GoogleCloudKmsReadKeyConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "crypto_key": {
+            "type": "string",
+            "description": "Full Google Cloud KMS resource ID of the crypto key."
+          },
+          "max_version": {
+            "type": "integer",
+            "description": "Maximum allowed crypto key version."
+          },
+          "min_version": {
+            "type": "integer",
+            "description": "Minimum allowed crypto key version."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the key in Vault."
+          }
+        }
+      },
+      "GoogleCloudKmsReadKeyResponse": {
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "description": "Algorithm of the key version template."
+          },
+          "id": {
+            "type": "string",
+            "description": "Full Google Cloud KMS resource ID of the key."
+          },
+          "labels": {
+            "type": "object",
+            "description": "Labels applied to the crypto key.",
+            "format": "map"
+          },
+          "next_rotation_time_seconds": {
+            "type": "integer",
+            "description": "Unix epoch timestamp of the next scheduled rotation.",
+            "format": "int64"
+          },
+          "primary_version": {
+            "type": "string",
+            "description": "Primary crypto key version."
+          },
+          "protection_level": {
+            "type": "string",
+            "description": "Protection level of the key."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Purpose of the crypto key."
+          },
+          "rotation_schedule_seconds": {
+            "type": "integer",
+            "description": "Rotation period in seconds.",
+            "format": "int64"
+          },
+          "state": {
+            "type": "string",
+            "description": "State of the primary crypto key version."
           }
         }
       },
@@ -55506,6 +56056,19 @@
           }
         }
       },
+      "GoogleCloudKmsReencryptResponse": {
+        "type": "object",
+        "properties": {
+          "ciphertext": {
+            "type": "string",
+            "description": "Base64-encoded re-encrypted ciphertext."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Key version used for re-encryption."
+          }
+        }
+      },
       "GoogleCloudKmsRegisterKeyRequest": {
         "type": "object",
         "properties": {
@@ -55520,6 +56083,28 @@
           }
         }
       },
+      "GoogleCloudKmsRetrievePublicKeyResponse": {
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "description": "Algorithm of the public key."
+          },
+          "pem": {
+            "type": "string",
+            "description": "PEM-encoded public key."
+          }
+        }
+      },
+      "GoogleCloudKmsRotateKeyResponse": {
+        "type": "object",
+        "properties": {
+          "key_version": {
+            "type": "integer",
+            "description": "New primary crypto key version."
+          }
+        }
+      },
       "GoogleCloudKmsSignRequest": {
         "type": "object",
         "properties": {
@@ -55530,6 +56115,15 @@
           "key_version": {
             "type": "integer",
             "description": "Integer version of the crypto key version to use for signing. This field is required."
+          }
+        }
+      },
+      "GoogleCloudKmsSignResponse": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string",
+            "description": "Base64-encoded signature."
           }
         }
       },
@@ -55547,6 +56141,15 @@
           "signature": {
             "type": "string",
             "description": "Base64-encoded signature to use for verification. This field is required."
+          }
+        }
+      },
+      "GoogleCloudKmsVerifyResponse": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean",
+            "description": "Whether the signature is valid."
           }
         }
       },
@@ -62598,7 +63201,7 @@
         "properties": {
           "audit_fields": {
             "type": "array",
-            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints]",
+            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints user_ids]",
             "items": {
               "type": "string"
             },
@@ -62762,7 +63365,7 @@
         "properties": {
           "audit_fields": {
             "type": "array",
-            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints]",
+            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints user_ids]",
             "items": {
               "type": "string"
             },
@@ -68164,6 +68767,23 @@
           }
         }
       },
+      "PkiListExportKeysResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Map of UUID to metadata (name, key_type, export_key_hmac).",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "List of export key UUIDs on this mount.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "PkiListIssuersResponse": {
         "type": "object",
         "properties": {
@@ -68563,6 +69183,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -68891,6 +69519,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -69146,6 +69782,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69175,6 +69815,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69206,6 +69850,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69235,6 +69883,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69266,6 +69918,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69295,6 +69951,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69351,6 +70011,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69380,6 +70044,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69411,6 +70079,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69441,6 +70113,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69470,6 +70146,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69574,6 +70254,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69603,6 +70287,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69634,6 +70322,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69664,6 +70356,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69672,6 +70368,29 @@
           "revocation_time_rfc3339": {
             "type": "string",
             "description": "Revocation time RFC 3339 formatted"
+          }
+        }
+      },
+      "PkiReadExportKeyResponse": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "export_key_hmac": {
+            "type": "string"
+          },
+          "export_key_uuid": {
+            "type": "string"
+          },
+          "key_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "public_key": {
+            "type": "string"
           }
         }
       },
@@ -70019,6 +70738,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -70354,6 +71081,10 @@
             "type": "string",
             "description": "Certificate to revoke in PEM format; must be signed by an issuer in this mount."
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
+          },
           "serial_number": {
             "type": "string",
             "description": "Certificate serial number, in colon- or hyphen-separated octal"
@@ -70389,6 +71120,10 @@
           "private_key": {
             "type": "string",
             "description": "Key to use to verify revocation permission; must be in PEM format."
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
           },
           "serial_number": {
             "type": "string",
@@ -72505,6 +73240,36 @@
             "type": "object",
             "description": "Map of serial numbers requested to certificate found in storage on this node",
             "format": "map"
+          }
+        }
+      },
+      "PkiWriteExportKeysRequest": {
+        "type": "object",
+        "properties": {
+          "key_type": {
+            "type": "string",
+            "description": "Algorithm for this export key. Supported: \"rsa-2048\", \"rsa-3072\", \"rsa-4096\", \"ec-p256\", \"ec-p384\", \"ec-p521\", \"ml-kem-768\", \"ml-kem-1024\"."
+          },
+          "name": {
+            "type": "string",
+            "description": "Optional human-readable name for this export key."
+          }
+        }
+      },
+      "PkiWriteExportKeysResponse": {
+        "type": "object",
+        "properties": {
+          "export_key_hmac": {
+            "type": "string",
+            "description": "HMAC of the public key. Pass this alongside wrapped_key to the import endpoint."
+          },
+          "export_key_uuid": {
+            "type": "string",
+            "description": "UUID of the newly created export key."
+          },
+          "public_key": {
+            "type": "string",
+            "description": "PEM-encoded public key. Pass this to the source Vault export endpoint."
           }
         }
       },
@@ -75166,6 +75931,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -75493,6 +76266,14 @@
             "items": {
               "type": "string"
             }
+          },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
           },
           "email_protection_flag": {
             "type": "boolean",
@@ -76241,10 +77022,6 @@
       "PoliciesReadRotationPolicyResponse": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76252,20 +77029,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         }
       },
@@ -76308,10 +77071,6 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76319,20 +77078,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         },
         "required": [
@@ -78225,6 +78970,10 @@
             "type": "string",
             "description": "ID of the Vault entity to link to this SCIM client."
           },
+          "externalId": {
+            "type": "string",
+            "description": "Optional external ID for the SCIM-managed entity."
+          },
           "group_memberships": {
             "type": "array",
             "description": "Optional list of group IDs (owned by this SCIM client) to add the entity to as a member.",
@@ -78261,6 +79010,10 @@
             "type": "string",
             "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user."
           },
+          "allow_group_adoption": {
+            "type": "boolean",
+            "description": "Optional. When true, allows this client to adopt groups, forbidden when this is set to false. Defaults to false."
+          },
           "allow_user_adoption": {
             "type": "boolean",
             "description": "Optional. When true, allows this client to adopt pre-existing unmanaged entities when a POST /Users userName matches an existing login alias. Defaults to false."
@@ -78274,7 +79027,7 @@
           },
           "default_schema_version": {
             "type": "string",
-            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'."
           },
           "delete-linked-resources": {
             "type": "boolean",
@@ -79928,6 +80681,10 @@
       "SystemReadBillingConfigResponse": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months of attribution data to retain. 0 means attribution storage is disabled."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months of billing data to retain."
@@ -80267,6 +81024,10 @@
       "SystemWriteBillingConfigRequest": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months to retain mount attribution data for billing metrics. Must be between 0 and 72 months. Defaults to 37 months. Setting to 0 disables attribution storage and wipes all existing attribution data."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months."
@@ -81265,6 +82026,10 @@
             "type": "string",
             "description": "Azure blob storage endpoint"
           },
+          "dr_operation_token": {
+            "type": "string",
+            "description": "DR operation token used to authorize this request (if a DR secondary node)."
+          },
           "file_prefix": {
             "type": "string",
             "description": "file/object prefix prepended to snapshot ID",
@@ -82183,6 +82948,49 @@
             "type": "string",
             "description": "The base path for the Terraform Cloud or Enterprise API. Default is \"/api/v2/\".",
             "default": "/api/v2/"
+          },
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "explicit_max_ttl": {
+            "type": "string",
+            "description": "The maximum lifetime (expiration) set on the root token in Terraform Cloud or Enterprise. Acts as an upper-bound safety net; Vault manages the root token lifecycle. The default (0) omits the expiration so Terraform applies its default token expiry (2 years). The same value is used for both manual and automatic rotation.",
+            "format": "duration",
+            "default": 0
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Defines the rotation policy to use when performing automated rotations.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
           },
           "token": {
             "type": "string",
