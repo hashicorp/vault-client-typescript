@@ -30,6 +30,12 @@ export interface PkiExternalCaCreateConfigAcmeAccountImportRequest {
      */
     account_key: string;
     /**
+     * Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.
+     * @type {string}
+     * @memberof PkiExternalCaCreateConfigAcmeAccountImportRequest
+     */
+    default_nameserver?: string;
+    /**
      * The ACME directory URL where you registered the account.
      * @type {string}
      * @memberof PkiExternalCaCreateConfigAcmeAccountImportRequest
@@ -63,6 +69,7 @@ export function PkiExternalCaCreateConfigAcmeAccountImportRequestFromJSONTyped(j
     return {
         
         'account_key': json['account_key'],
+        'default_nameserver': json['default_nameserver'] == null ? undefined : json['default_nameserver'],
         'directory_url': json['directory_url'],
         'trusted_ca': json['trusted_ca'] == null ? undefined : json['trusted_ca'],
     };
@@ -80,6 +87,7 @@ export function PkiExternalCaCreateConfigAcmeAccountImportRequestToJSONTyped(val
     return {
         
         'account_key': value['account_key'],
+        'default_nameserver': value['default_nameserver'],
         'directory_url': value['directory_url'],
         'trusted_ca': value['trusted_ca'],
     };

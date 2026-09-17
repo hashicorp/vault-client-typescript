@@ -48,6 +48,12 @@ export interface TransitEncryptRequest {
      */
     convergent_encryption?: boolean;
     /**
+     * The hash algorithm to use for encryption. Currently only applies to RSA key types. Options are 'sha1', 'sha2-224', 'sha2-256', 'sha2-384', 'sha2-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512'. Defaults to 'sha2-256'.
+     * @type {string}
+     * @memberof TransitEncryptRequest
+     */
+    hash_algorithm?: string;
+    /**
      * Specifies a base64-encoded IV to use with AES-CBC. The length of the IV must be 16 bytes (128 bits).'
      * @type {string}
      * @memberof TransitEncryptRequest
@@ -66,7 +72,7 @@ export interface TransitEncryptRequest {
      */
     nonce?: string;
     /**
-     * The padding scheme to use for decrypt. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'
+     * The padding scheme to use for encryption. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'
      * @type {string}
      * @memberof TransitEncryptRequest
      */
@@ -112,6 +118,7 @@ export function TransitEncryptRequestFromJSONTyped(json: any, ignoreDiscriminato
         'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'context': json['context'] == null ? undefined : json['context'],
         'convergent_encryption': json['convergent_encryption'] == null ? undefined : json['convergent_encryption'],
+        'hash_algorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
         'iv': json['iv'] == null ? undefined : json['iv'],
         'key_version': json['key_version'] == null ? undefined : json['key_version'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
@@ -137,6 +144,7 @@ export function TransitEncryptRequestToJSONTyped(value?: TransitEncryptRequest |
         'batch_input': value['batch_input'],
         'context': value['context'],
         'convergent_encryption': value['convergent_encryption'],
+        'hash_algorithm': value['hash_algorithm'],
         'iv': value['iv'],
         'key_version': value['key_version'],
         'nonce': value['nonce'],
