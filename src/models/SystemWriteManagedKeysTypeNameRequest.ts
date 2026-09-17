@@ -210,6 +210,12 @@ export interface SystemWriteManagedKeysTypeNameRequest {
      */
     resource?: string;
     /**
+     * The hash algorithm to use for RSA-OAEP encryption with CKM_RSA_PKCS_OAEP. Requires mechanism CKM_RSA_PKCS_OAEP (0x9). Options are 'sha1', 'sha224', 'sha256', 'sha384', 'sha512'.
+     * @type {string}
+     * @memberof SystemWriteManagedKeysTypeNameRequest
+     */
+    rsa_oaep_hash?: string;
+    /**
      * Secret key ID for authenticating to AWS
      * @type {string}
      * @memberof SystemWriteManagedKeysTypeNameRequest
@@ -295,6 +301,7 @@ export function SystemWriteManagedKeysTypeNameRequestFromJSONTyped(json: any, ig
         'project': json['project'] == null ? undefined : json['project'],
         'region': json['region'] == null ? undefined : json['region'],
         'resource': json['resource'] == null ? undefined : json['resource'],
+        'rsa_oaep_hash': json['rsa_oaep_hash'] == null ? undefined : json['rsa_oaep_hash'],
         'secret_key': json['secret_key'] == null ? undefined : json['secret_key'],
         'slot': json['slot'] == null ? undefined : json['slot'],
         'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
@@ -346,6 +353,7 @@ export function SystemWriteManagedKeysTypeNameRequestToJSONTyped(value?: SystemW
         'project': value['project'],
         'region': value['region'],
         'resource': value['resource'],
+        'rsa_oaep_hash': value['rsa_oaep_hash'],
         'secret_key': value['secret_key'],
         'slot': value['slot'],
         'tenant_id': value['tenant_id'],

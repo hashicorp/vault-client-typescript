@@ -1658,14 +1658,6 @@ export interface SystemApiSystemReadBillingOverviewRequest {
     start_month?: string;
 }
 
-export interface SystemApiSystemReadHealthCheckExecPathRequest {
-    path: string;
-}
-
-export interface SystemApiSystemReadHealthCheckLastPathRequest {
-    path: string;
-}
-
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
     name: string;
     type: string;
@@ -7046,7 +7038,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Update an existing rotation policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicyRaw(requestParameters: SystemApiPoliciesWriteRotationPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -7082,7 +7074,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Update an existing rotation policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicy(name: string, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.policiesWriteRotationPolicyRaw({ name: name, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest }, initOverrides);
@@ -11234,70 +11226,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadConfigGroupPolicyApplication(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadConfigGroupPolicyApplicationResponse> {
         const response = await this.systemReadConfigGroupPolicyApplicationRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async systemReadHealthCheckExecPathRaw(requestParameters: SystemApiSystemReadHealthCheckExecPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['path'] == null) {
-            throw new runtime.RequiredError(
-                'path',
-                'Required parameter "path" was null or undefined when calling systemReadHealthCheckExecPath().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/health-check/exec/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async systemReadHealthCheckExecPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemReadHealthCheckExecPathRaw({ path: path }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async systemReadHealthCheckLastPathRaw(requestParameters: SystemApiSystemReadHealthCheckLastPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['path'] == null) {
-            throw new runtime.RequiredError(
-                'path',
-                'Required parameter "path" was null or undefined when calling systemReadHealthCheckLastPath().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/health-check/last/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async systemReadHealthCheckLastPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemReadHealthCheckLastPathRaw({ path: path }, initOverrides);
         return await response.value();
     }
 

@@ -72,6 +72,12 @@ export interface PkiExternalCaReadConfigDnsAwsRoute53Response {
      */
     name?: string;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaReadConfigDnsAwsRoute53Response
+     */
+    nameserver?: string;
+    /**
      * AWS region for Route53 operations
      * @type {string}
      * @memberof PkiExternalCaReadConfigDnsAwsRoute53Response
@@ -110,6 +116,7 @@ export function PkiExternalCaReadConfigDnsAwsRoute53ResponseFromJSONTyped(json: 
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
         'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'region': json['region'] == null ? undefined : json['region'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
     };
@@ -134,6 +141,7 @@ export function PkiExternalCaReadConfigDnsAwsRoute53ResponseToJSONTyped(value?: 
         'identifiers': value['identifiers'],
         'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
+        'nameserver': value['nameserver'],
         'region': value['region'],
         'ttl': value['ttl'],
     };
