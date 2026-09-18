@@ -24,7 +24,7 @@ import { mapValues } from '../runtime';
  */
 export interface PkiConfigureEstRequest {
     /**
-     * Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints]
+     * Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints user_ids]
      * @type {Array<string>}
      * @memberof PkiConfigureEstRequest
      */
