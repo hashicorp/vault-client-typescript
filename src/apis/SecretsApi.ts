@@ -54,11 +54,21 @@ import type {
   GoogleCloudKmsConfigureKeyRequest,
   GoogleCloudKmsConfigureRequest,
   GoogleCloudKmsDecryptRequest,
+  GoogleCloudKmsDecryptResponse,
   GoogleCloudKmsEncryptRequest,
+  GoogleCloudKmsEncryptResponse,
+  GoogleCloudKmsReadConfigurationResponse,
+  GoogleCloudKmsReadKeyConfigurationResponse,
+  GoogleCloudKmsReadKeyResponse,
   GoogleCloudKmsReencryptRequest,
+  GoogleCloudKmsReencryptResponse,
   GoogleCloudKmsRegisterKeyRequest,
+  GoogleCloudKmsRetrievePublicKeyResponse,
+  GoogleCloudKmsRotateKeyResponse,
   GoogleCloudKmsSignRequest,
+  GoogleCloudKmsSignResponse,
   GoogleCloudKmsVerifyRequest,
+  GoogleCloudKmsVerifyResponse,
   GoogleCloudKmsWriteKeyRequest,
   GoogleCloudWriteImpersonatedAccountRequest,
   GoogleCloudWriteRolesetRequest,
@@ -80,9 +90,11 @@ import type {
   KubernetesConfigureRequest,
   KubernetesGenerateCredentialsRequest,
   KubernetesWriteRoleRequest,
+  KvV1ListResponse,
   KvV2ConfigureRequest,
   KvV2DeleteVersionsRequest,
   KvV2DestroyVersionsRequest,
+  KvV2ListResponse,
   KvV2PatchMetadataPathRequest,
   KvV2PatchRequest,
   KvV2PatchResponse,
@@ -220,6 +232,7 @@ import type {
   PkiIssuersImportCertRequest,
   PkiIssuersImportCertResponse,
   PkiListEabKeysResponse,
+  PkiListExportKeysResponse,
   PkiListIssuersResponse,
   PkiListKeysResponse,
   PkiListUnifiedRevokedCertsResponse,
@@ -246,6 +259,7 @@ import type {
   PkiReadCrlDeltaResponse,
   PkiReadCrlDerResponse,
   PkiReadCrlPemResponse,
+  PkiReadExportKeyResponse,
   PkiReadIssuerDerResponse,
   PkiReadIssuerJsonResponse,
   PkiReadIssuerPemResponse,
@@ -294,6 +308,8 @@ import type {
   PkiWriteAcmeRevokeCertRequest,
   PkiWriteBatchCertsRequest,
   PkiWriteBatchCertsResponse,
+  PkiWriteExportKeysRequest,
+  PkiWriteExportKeysResponse,
   PkiWriteExternalPolicyAcmeAccountKidRequest,
   PkiWriteExternalPolicyAcmeAuthorizationAuthIdRequest,
   PkiWriteExternalPolicyAcmeChallengeAuthIdChallengeTypeRequest,
@@ -554,16 +570,36 @@ import {
     GoogleCloudKmsConfigureRequestToJSON,
     GoogleCloudKmsDecryptRequestFromJSON,
     GoogleCloudKmsDecryptRequestToJSON,
+    GoogleCloudKmsDecryptResponseFromJSON,
+    GoogleCloudKmsDecryptResponseToJSON,
     GoogleCloudKmsEncryptRequestFromJSON,
     GoogleCloudKmsEncryptRequestToJSON,
+    GoogleCloudKmsEncryptResponseFromJSON,
+    GoogleCloudKmsEncryptResponseToJSON,
+    GoogleCloudKmsReadConfigurationResponseFromJSON,
+    GoogleCloudKmsReadConfigurationResponseToJSON,
+    GoogleCloudKmsReadKeyConfigurationResponseFromJSON,
+    GoogleCloudKmsReadKeyConfigurationResponseToJSON,
+    GoogleCloudKmsReadKeyResponseFromJSON,
+    GoogleCloudKmsReadKeyResponseToJSON,
     GoogleCloudKmsReencryptRequestFromJSON,
     GoogleCloudKmsReencryptRequestToJSON,
+    GoogleCloudKmsReencryptResponseFromJSON,
+    GoogleCloudKmsReencryptResponseToJSON,
     GoogleCloudKmsRegisterKeyRequestFromJSON,
     GoogleCloudKmsRegisterKeyRequestToJSON,
+    GoogleCloudKmsRetrievePublicKeyResponseFromJSON,
+    GoogleCloudKmsRetrievePublicKeyResponseToJSON,
+    GoogleCloudKmsRotateKeyResponseFromJSON,
+    GoogleCloudKmsRotateKeyResponseToJSON,
     GoogleCloudKmsSignRequestFromJSON,
     GoogleCloudKmsSignRequestToJSON,
+    GoogleCloudKmsSignResponseFromJSON,
+    GoogleCloudKmsSignResponseToJSON,
     GoogleCloudKmsVerifyRequestFromJSON,
     GoogleCloudKmsVerifyRequestToJSON,
+    GoogleCloudKmsVerifyResponseFromJSON,
+    GoogleCloudKmsVerifyResponseToJSON,
     GoogleCloudKmsWriteKeyRequestFromJSON,
     GoogleCloudKmsWriteKeyRequestToJSON,
     GoogleCloudWriteImpersonatedAccountRequestFromJSON,
@@ -606,12 +642,16 @@ import {
     KubernetesGenerateCredentialsRequestToJSON,
     KubernetesWriteRoleRequestFromJSON,
     KubernetesWriteRoleRequestToJSON,
+    KvV1ListResponseFromJSON,
+    KvV1ListResponseToJSON,
     KvV2ConfigureRequestFromJSON,
     KvV2ConfigureRequestToJSON,
     KvV2DeleteVersionsRequestFromJSON,
     KvV2DeleteVersionsRequestToJSON,
     KvV2DestroyVersionsRequestFromJSON,
     KvV2DestroyVersionsRequestToJSON,
+    KvV2ListResponseFromJSON,
+    KvV2ListResponseToJSON,
     KvV2PatchMetadataPathRequestFromJSON,
     KvV2PatchMetadataPathRequestToJSON,
     KvV2PatchRequestFromJSON,
@@ -886,6 +926,8 @@ import {
     PkiIssuersImportCertResponseToJSON,
     PkiListEabKeysResponseFromJSON,
     PkiListEabKeysResponseToJSON,
+    PkiListExportKeysResponseFromJSON,
+    PkiListExportKeysResponseToJSON,
     PkiListIssuersResponseFromJSON,
     PkiListIssuersResponseToJSON,
     PkiListKeysResponseFromJSON,
@@ -938,6 +980,8 @@ import {
     PkiReadCrlDerResponseToJSON,
     PkiReadCrlPemResponseFromJSON,
     PkiReadCrlPemResponseToJSON,
+    PkiReadExportKeyResponseFromJSON,
+    PkiReadExportKeyResponseToJSON,
     PkiReadIssuerDerResponseFromJSON,
     PkiReadIssuerDerResponseToJSON,
     PkiReadIssuerJsonResponseFromJSON,
@@ -1034,6 +1078,10 @@ import {
     PkiWriteBatchCertsRequestToJSON,
     PkiWriteBatchCertsResponseFromJSON,
     PkiWriteBatchCertsResponseToJSON,
+    PkiWriteExportKeysRequestFromJSON,
+    PkiWriteExportKeysRequestToJSON,
+    PkiWriteExportKeysResponseFromJSON,
+    PkiWriteExportKeysResponseToJSON,
     PkiWriteExternalPolicyAcmeAccountKidRequestFromJSON,
     PkiWriteExternalPolicyAcmeAccountKidRequestToJSON,
     PkiWriteExternalPolicyAcmeAuthorizationAuthIdRequestFromJSON,
@@ -2828,6 +2876,11 @@ export interface SecretsApiPkiDeleteEabKeyRequest {
     pki_mount_path: string;
 }
 
+export interface SecretsApiPkiDeleteExportKeyRequest {
+    export_key_uuid: string;
+    pki_mount_path: string;
+}
+
 export interface SecretsApiPkiDeleteIssuerRequest {
     issuer_ref: string;
     pki_mount_path: string;
@@ -3300,6 +3353,11 @@ export interface SecretsApiPkiListEabKeysRequest {
     list: SecretsApiPkiListEabKeysListEnum;
 }
 
+export interface SecretsApiPkiListExportKeysRequest {
+    pki_mount_path: string;
+    list: SecretsApiPkiListExportKeysListEnum;
+}
+
 export interface SecretsApiPkiListIssuersRequest {
     pki_mount_path: string;
     list: SecretsApiPkiListIssuersListEnum;
@@ -3461,6 +3519,11 @@ export interface SecretsApiPkiReadEstCacertsRequest {
 }
 
 export interface SecretsApiPkiReadEstConfigurationRequest {
+    pki_mount_path: string;
+}
+
+export interface SecretsApiPkiReadExportKeyRequest {
+    export_key_uuid: string;
     pki_mount_path: string;
 }
 
@@ -3782,6 +3845,11 @@ export interface SecretsApiPkiWriteEstSimpleenrollRequest {
 
 export interface SecretsApiPkiWriteEstSimplereenrollRequest {
     pki_mount_path: string;
+}
+
+export interface SecretsApiPkiWriteExportKeysOperationRequest {
+    pki_mount_path: string;
+    PkiWriteExportKeysRequest: PkiWriteExportKeysRequest;
 }
 
 export interface SecretsApiPkiWriteExternalPolicyAcmeAccountKidOperationRequest {
@@ -4660,6 +4728,10 @@ export interface SecretsApiTerraformCloudReadRoleRequest {
 
 export interface SecretsApiTerraformCloudRotateRoleRequest {
     name: string;
+    terraform_mount_path: string;
+}
+
+export interface SecretsApiTerraformCloudRotateRootRequest {
     terraform_mount_path: string;
 }
 
@@ -9074,6 +9146,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the GCP KMS secrets engine.
      */
     async googleCloudKmsConfigureRaw(requestParameters: SecretsApiGoogleCloudKmsConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['gcpkms_mount_path'] == null) {
@@ -9109,6 +9182,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the GCP KMS secrets engine.
      */
     async googleCloudKmsConfigure(gcpkms_mount_path: string, GoogleCloudKmsConfigureRequest: GoogleCloudKmsConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsConfigureRaw({ gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsConfigureRequest: GoogleCloudKmsConfigureRequest }, initOverrides);
@@ -9116,6 +9190,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure a named key in Vault.
      */
     async googleCloudKmsConfigureKeyRaw(requestParameters: SecretsApiGoogleCloudKmsConfigureKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9158,6 +9233,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure a named key in Vault.
      */
     async googleCloudKmsConfigureKey(key: string, gcpkms_mount_path: string, GoogleCloudKmsConfigureKeyRequest: GoogleCloudKmsConfigureKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsConfigureKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsConfigureKeyRequest: GoogleCloudKmsConfigureKeyRequest }, initOverrides);
@@ -9165,9 +9241,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Decrypt a ciphertext value using a named key
+     * Decrypt a ciphertext value using a named key.
      */
-    async googleCloudKmsDecryptRaw(requestParameters: SecretsApiGoogleCloudKmsDecryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsDecryptRaw(requestParameters: SecretsApiGoogleCloudKmsDecryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsDecryptResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9204,18 +9280,19 @@ export class SecretsApi extends runtime.BaseAPI {
             body: GoogleCloudKmsDecryptRequestToJSON(requestParameters['GoogleCloudKmsDecryptRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsDecryptResponseFromJSON(jsonValue));
     }
 
     /**
-     * Decrypt a ciphertext value using a named key
+     * Decrypt a ciphertext value using a named key.
      */
-    async googleCloudKmsDecrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsDecryptRequest: GoogleCloudKmsDecryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsDecrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsDecryptRequest: GoogleCloudKmsDecryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsDecryptResponse> {
         const response = await this.googleCloudKmsDecryptRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsDecryptRequest: GoogleCloudKmsDecryptRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Delete the GCP KMS secrets engine configuration.
      */
     async googleCloudKmsDeleteConfigurationRaw(requestParameters: SecretsApiGoogleCloudKmsDeleteConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['gcpkms_mount_path'] == null) {
@@ -9241,6 +9318,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the GCP KMS secrets engine configuration.
      */
     async googleCloudKmsDeleteConfiguration(gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsDeleteConfigurationRaw({ gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9248,7 +9326,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Delete a named key.
      */
     async googleCloudKmsDeleteKeyRaw(requestParameters: SecretsApiGoogleCloudKmsDeleteKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9281,7 +9359,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Delete a named key.
      */
     async googleCloudKmsDeleteKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsDeleteKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9289,6 +9367,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Deregister a key from Vault.
      */
     async googleCloudKmsDeregisterKeyRaw(requestParameters: SecretsApiGoogleCloudKmsDeregisterKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9321,6 +9400,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Deregister a key from Vault.
      */
     async googleCloudKmsDeregisterKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsDeregisterKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9328,6 +9408,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Deregister a key from Vault.
      */
     async googleCloudKmsDeregisterKey2Raw(requestParameters: SecretsApiGoogleCloudKmsDeregisterKey2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9360,6 +9441,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Deregister a key from Vault.
      */
     async googleCloudKmsDeregisterKey2(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsDeregisterKey2Raw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9367,9 +9449,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Encrypt a plaintext value using a named key
+     * Encrypt a plaintext value using a named key.
      */
-    async googleCloudKmsEncryptRaw(requestParameters: SecretsApiGoogleCloudKmsEncryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsEncryptRaw(requestParameters: SecretsApiGoogleCloudKmsEncryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsEncryptResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9406,19 +9488,19 @@ export class SecretsApi extends runtime.BaseAPI {
             body: GoogleCloudKmsEncryptRequestToJSON(requestParameters['GoogleCloudKmsEncryptRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsEncryptResponseFromJSON(jsonValue));
     }
 
     /**
-     * Encrypt a plaintext value using a named key
+     * Encrypt a plaintext value using a named key.
      */
-    async googleCloudKmsEncrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsEncryptRequest: GoogleCloudKmsEncryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsEncrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsEncryptRequest: GoogleCloudKmsEncryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsEncryptResponse> {
         const response = await this.googleCloudKmsEncryptRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsEncryptRequest: GoogleCloudKmsEncryptRequest }, initOverrides);
         return await response.value();
     }
 
     /**
-     * List named keys
+     * List all named keys.
      */
     async googleCloudKmsListKeysRaw(requestParameters: SecretsApiGoogleCloudKmsListKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['gcpkms_mount_path'] == null) {
@@ -9455,7 +9537,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * List named keys
+     * List all named keys.
      */
     async googleCloudKmsListKeys(gcpkms_mount_path: string, list: SecretsApiGoogleCloudKmsListKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.googleCloudKmsListKeysRaw({ gcpkms_mount_path: gcpkms_mount_path, list: list }, initOverrides);
@@ -9463,8 +9545,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Return the GCP KMS secrets engine configuration.
      */
-    async googleCloudKmsReadConfigurationRaw(requestParameters: SecretsApiGoogleCloudKmsReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsReadConfigurationRaw(requestParameters: SecretsApiGoogleCloudKmsReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsReadConfigurationResponse>> {
         if (requestParameters['gcpkms_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'gcpkms_mount_path',
@@ -9484,20 +9567,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsReadConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the GCP KMS secrets engine configuration.
      */
-    async googleCloudKmsReadConfiguration(gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsReadConfiguration(gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsReadConfigurationResponse> {
         const response = await this.googleCloudKmsReadConfigurationRaw({ gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Return information about a named key.
      */
-    async googleCloudKmsReadKeyRaw(requestParameters: SecretsApiGoogleCloudKmsReadKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsReadKeyRaw(requestParameters: SecretsApiGoogleCloudKmsReadKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsReadKeyResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9524,20 +9608,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsReadKeyResponseFromJSON(jsonValue));
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Return information about a named key.
      */
-    async googleCloudKmsReadKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsReadKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsReadKeyResponse> {
         const response = await this.googleCloudKmsReadKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the Vault configuration for a named key.
      */
-    async googleCloudKmsReadKeyConfigurationRaw(requestParameters: SecretsApiGoogleCloudKmsReadKeyConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsReadKeyConfigurationRaw(requestParameters: SecretsApiGoogleCloudKmsReadKeyConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsReadKeyConfigurationResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9564,20 +9649,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsReadKeyConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the Vault configuration for a named key.
      */
-    async googleCloudKmsReadKeyConfiguration(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsReadKeyConfiguration(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsReadKeyConfigurationResponse> {
         const response = await this.googleCloudKmsReadKeyConfigurationRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Re-encrypt existing ciphertext data to a new version
+     * Re-encrypt existing ciphertext data to a new version.
      */
-    async googleCloudKmsReencryptRaw(requestParameters: SecretsApiGoogleCloudKmsReencryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsReencryptRaw(requestParameters: SecretsApiGoogleCloudKmsReencryptOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsReencryptResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9614,19 +9700,19 @@ export class SecretsApi extends runtime.BaseAPI {
             body: GoogleCloudKmsReencryptRequestToJSON(requestParameters['GoogleCloudKmsReencryptRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsReencryptResponseFromJSON(jsonValue));
     }
 
     /**
-     * Re-encrypt existing ciphertext data to a new version
+     * Re-encrypt existing ciphertext data to a new version.
      */
-    async googleCloudKmsReencrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsReencryptRequest: GoogleCloudKmsReencryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsReencrypt(key: string, gcpkms_mount_path: string, GoogleCloudKmsReencryptRequest: GoogleCloudKmsReencryptRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsReencryptResponse> {
         const response = await this.googleCloudKmsReencryptRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsReencryptRequest: GoogleCloudKmsReencryptRequest }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Register an existing crypto key in Google Cloud KMS
+     * Register an existing crypto key in Google Cloud KMS.
      */
     async googleCloudKmsRegisterKeyRaw(requestParameters: SecretsApiGoogleCloudKmsRegisterKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9669,7 +9755,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Register an existing crypto key in Google Cloud KMS
+     * Register an existing crypto key in Google Cloud KMS.
      */
     async googleCloudKmsRegisterKey(key: string, gcpkms_mount_path: string, GoogleCloudKmsRegisterKeyRequest: GoogleCloudKmsRegisterKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsRegisterKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsRegisterKeyRequest: GoogleCloudKmsRegisterKeyRequest }, initOverrides);
@@ -9677,9 +9763,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Retrieve the public key associated with the named key
+     * Retrieve the public key associated with a named key.
      */
-    async googleCloudKmsRetrievePublicKeyRaw(requestParameters: SecretsApiGoogleCloudKmsRetrievePublicKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsRetrievePublicKeyRaw(requestParameters: SecretsApiGoogleCloudKmsRetrievePublicKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsRetrievePublicKeyResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9706,21 +9792,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsRetrievePublicKeyResponseFromJSON(jsonValue));
     }
 
     /**
-     * Retrieve the public key associated with the named key
+     * Retrieve the public key associated with a named key.
      */
-    async googleCloudKmsRetrievePublicKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsRetrievePublicKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsRetrievePublicKeyResponse> {
         const response = await this.googleCloudKmsRetrievePublicKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Rotate a crypto key to a new primary version
+     * Rotate a crypto key to a new primary version.
      */
-    async googleCloudKmsRotateKeyRaw(requestParameters: SecretsApiGoogleCloudKmsRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsRotateKeyRaw(requestParameters: SecretsApiGoogleCloudKmsRotateKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsRotateKeyResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9747,21 +9833,21 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsRotateKeyResponseFromJSON(jsonValue));
     }
 
     /**
-     * Rotate a crypto key to a new primary version
+     * Rotate a crypto key to a new primary version.
      */
-    async googleCloudKmsRotateKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsRotateKey(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsRotateKeyResponse> {
         const response = await this.googleCloudKmsRotateKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Signs a message or digest using a named key
+     * Sign a message or digest using a named key.
      */
-    async googleCloudKmsSignRaw(requestParameters: SecretsApiGoogleCloudKmsSignOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsSignRaw(requestParameters: SecretsApiGoogleCloudKmsSignOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsSignResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9798,18 +9884,19 @@ export class SecretsApi extends runtime.BaseAPI {
             body: GoogleCloudKmsSignRequestToJSON(requestParameters['GoogleCloudKmsSignRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsSignResponseFromJSON(jsonValue));
     }
 
     /**
-     * Signs a message or digest using a named key
+     * Sign a message or digest using a named key.
      */
-    async googleCloudKmsSign(key: string, gcpkms_mount_path: string, GoogleCloudKmsSignRequest: GoogleCloudKmsSignRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsSign(key: string, gcpkms_mount_path: string, GoogleCloudKmsSignRequest: GoogleCloudKmsSignRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsSignResponse> {
         const response = await this.googleCloudKmsSignRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsSignRequest: GoogleCloudKmsSignRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Trim old crypto key versions from Google Cloud KMS.
      */
     async googleCloudKmsTrimKeyVersionsRaw(requestParameters: SecretsApiGoogleCloudKmsTrimKeyVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9842,6 +9929,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Trim old crypto key versions from Google Cloud KMS.
      */
     async googleCloudKmsTrimKeyVersions(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsTrimKeyVersionsRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9849,6 +9937,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Trim old crypto key versions from Google Cloud KMS.
      */
     async googleCloudKmsTrimKeyVersions2Raw(requestParameters: SecretsApiGoogleCloudKmsTrimKeyVersions2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9881,6 +9970,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Trim old crypto key versions from Google Cloud KMS.
      */
     async googleCloudKmsTrimKeyVersions2(key: string, gcpkms_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsTrimKeyVersions2Raw({ key: key, gcpkms_mount_path: gcpkms_mount_path }, initOverrides);
@@ -9888,9 +9978,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Verify a signature using a named key
+     * Verify a signature using a named key.
      */
-    async googleCloudKmsVerifyRaw(requestParameters: SecretsApiGoogleCloudKmsVerifyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async googleCloudKmsVerifyRaw(requestParameters: SecretsApiGoogleCloudKmsVerifyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GoogleCloudKmsVerifyResponse>> {
         if (requestParameters['key'] == null) {
             throw new runtime.RequiredError(
                 'key',
@@ -9927,19 +10017,19 @@ export class SecretsApi extends runtime.BaseAPI {
             body: GoogleCloudKmsVerifyRequestToJSON(requestParameters['GoogleCloudKmsVerifyRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GoogleCloudKmsVerifyResponseFromJSON(jsonValue));
     }
 
     /**
-     * Verify a signature using a named key
+     * Verify a signature using a named key.
      */
-    async googleCloudKmsVerify(key: string, gcpkms_mount_path: string, GoogleCloudKmsVerifyRequest: GoogleCloudKmsVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async googleCloudKmsVerify(key: string, gcpkms_mount_path: string, GoogleCloudKmsVerifyRequest: GoogleCloudKmsVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GoogleCloudKmsVerifyResponse> {
         const response = await this.googleCloudKmsVerifyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsVerifyRequest: GoogleCloudKmsVerifyRequest }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Create or update a named key.
      */
     async googleCloudKmsWriteKeyRaw(requestParameters: SecretsApiGoogleCloudKmsWriteKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['key'] == null) {
@@ -9982,7 +10072,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
-     * Interact with crypto keys in Vault and Google Cloud KMS
+     * Create or update a named key.
      */
     async googleCloudKmsWriteKey(key: string, gcpkms_mount_path: string, GoogleCloudKmsWriteKeyRequest: GoogleCloudKmsWriteKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.googleCloudKmsWriteKeyRaw({ key: key, gcpkms_mount_path: gcpkms_mount_path, GoogleCloudKmsWriteKeyRequest: GoogleCloudKmsWriteKeyRequest }, initOverrides);
@@ -12963,6 +13053,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the secret at the specified location.
      */
     async kvV1DeleteRaw(requestParameters: SecretsApiKvV1DeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -12995,6 +13086,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the secret at the specified location.
      */
     async kvV1Delete(path: string, kv_v1_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV1DeleteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path }, initOverrides);
@@ -13002,8 +13094,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * List secret entries at the specified location.
      */
-    async kvV1ListRaw(requestParameters: SecretsApiKvV1ListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async kvV1ListRaw(requestParameters: SecretsApiKvV1ListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV1ListResponse>> {
         if (requestParameters['path'] == null) {
             throw new runtime.RequiredError(
                 'path',
@@ -13045,17 +13138,19 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => KvV1ListResponseFromJSON(jsonValue));
     }
 
     /**
+     * List secret entries at the specified location.
      */
-    async kvV1List(path: string, kv_v1_mount_path: string, list: SecretsApiKvV1ListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kvV1List(path: string, kv_v1_mount_path: string, list: SecretsApiKvV1ListListEnum, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV1ListResponse> {
         const response = await this.kvV1ListRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, list: list, read_snapshot_id: read_snapshot_id }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Read the secret at the specified location.
      */
     async kvV1ReadRaw(requestParameters: SecretsApiKvV1ReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13092,6 +13187,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the secret at the specified location.
      */
     async kvV1Read(path: string, kv_v1_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV1ReadRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
@@ -13099,6 +13195,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write a secret at the specified location.
      */
     async kvV1WriteRaw(requestParameters: SecretsApiKvV1WriteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13153,6 +13250,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write a secret at the specified location.
      */
     async kvV1Write(path: string, kv_v1_mount_path: string, request_body: { [key: string]: any; }, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV1WriteRaw({ path: path, kv_v1_mount_path: kv_v1_mount_path, request_body: request_body, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
@@ -13204,6 +13302,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the latest version of the secret at the specified location.
      */
     async kvV2DeleteRaw(requestParameters: SecretsApiKvV2DeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13236,6 +13335,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the latest version of the secret at the specified location.
      */
     async kvV2Delete(path: string, kv_v2_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2DeleteRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path }, initOverrides);
@@ -13243,6 +13343,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete all versions and metadata for a secret at the specified location.
      */
     async kvV2DeleteMetadataAndAllVersionsRaw(requestParameters: SecretsApiKvV2DeleteMetadataAndAllVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13275,6 +13376,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete all versions and metadata for a secret at the specified location.
      */
     async kvV2DeleteMetadataAndAllVersions(path: string, kv_v2_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2DeleteMetadataAndAllVersionsRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path }, initOverrides);
@@ -13282,6 +13384,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Marks one or more versions as deleted in the KV store.
      */
     async kvV2DeleteVersionsRaw(requestParameters: SecretsApiKvV2DeleteVersionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13324,6 +13427,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Marks one or more versions as deleted in the KV store.
      */
     async kvV2DeleteVersions(path: string, kv_v2_mount_path: string, KvV2DeleteVersionsRequest: KvV2DeleteVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2DeleteVersionsRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2DeleteVersionsRequest: KvV2DeleteVersionsRequest }, initOverrides);
@@ -13331,6 +13435,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Permanently removes one or more versions in the KV store.
      */
     async kvV2DestroyVersionsRaw(requestParameters: SecretsApiKvV2DestroyVersionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13373,6 +13478,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Permanently removes one or more versions in the KV store.
      */
     async kvV2DestroyVersions(path: string, kv_v2_mount_path: string, KvV2DestroyVersionsRequest: KvV2DestroyVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2DestroyVersionsRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2DestroyVersionsRequest: KvV2DestroyVersionsRequest }, initOverrides);
@@ -13380,8 +13486,9 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * List secret entries at the specified location.
      */
-    async kvV2ListRaw(requestParameters: SecretsApiKvV2ListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async kvV2ListRaw(requestParameters: SecretsApiKvV2ListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2ListResponse>> {
         if (requestParameters['path'] == null) {
             throw new runtime.RequiredError(
                 'path',
@@ -13419,17 +13526,19 @@ export class SecretsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => KvV2ListResponseFromJSON(jsonValue));
     }
 
     /**
+     * List secret entries at the specified location.
      */
-    async kvV2List(path: string, kv_v2_mount_path: string, list: SecretsApiKvV2ListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async kvV2List(path: string, kv_v2_mount_path: string, list: SecretsApiKvV2ListListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ListResponse> {
         const response = await this.kvV2ListRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Patch an existing secret at the specified location.
      */
     async kvV2PatchRaw(requestParameters: SecretsApiKvV2PatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2PatchResponse>> {
         if (requestParameters['path'] == null) {
@@ -13472,6 +13581,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Patch an existing secret at the specified location.
      */
     async kvV2Patch(path: string, kv_v2_mount_path: string, KvV2PatchRequest: KvV2PatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2PatchResponse> {
         const response = await this.kvV2PatchRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2PatchRequest: KvV2PatchRequest }, initOverrides);
@@ -13479,6 +13589,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Patch metadata for a secret at the specified location.
      */
     async kvV2PatchMetadataPathRaw(requestParameters: SecretsApiKvV2PatchMetadataPathOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13521,6 +13632,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Patch metadata for a secret at the specified location.
      */
     async kvV2PatchMetadataPath(path: string, kv_v2_mount_path: string, KvV2PatchMetadataPathRequest: KvV2PatchMetadataPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2PatchMetadataPathRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2PatchMetadataPathRequest: KvV2PatchMetadataPathRequest }, initOverrides);
@@ -13528,6 +13640,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the secret at the specified location.
      */
     async kvV2ReadRaw(requestParameters: SecretsApiKvV2ReadRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2ReadResponse>> {
         if (requestParameters['path'] == null) {
@@ -13564,6 +13677,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the secret at the specified location.
      */
     async kvV2Read(path: string, kv_v2_mount_path: string, read_snapshot_id?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ReadResponse> {
         const response = await this.kvV2ReadRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, read_snapshot_id: read_snapshot_id }, initOverrides);
@@ -13605,6 +13719,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read metadata for a secret at the specified location.
      */
     async kvV2ReadMetadataRaw(requestParameters: SecretsApiKvV2ReadMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2ReadMetadataResponse>> {
         if (requestParameters['path'] == null) {
@@ -13637,6 +13752,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read metadata for a secret at the specified location.
      */
     async kvV2ReadMetadata(path: string, kv_v2_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ReadMetadataResponse> {
         const response = await this.kvV2ReadMetadataRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path }, initOverrides);
@@ -13644,6 +13760,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the structure of a secret entry from the KV store with the values removed.
      */
     async kvV2ReadSubkeysRaw(requestParameters: SecretsApiKvV2ReadSubkeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2ReadSubkeysResponse>> {
         if (requestParameters['path'] == null) {
@@ -13676,6 +13793,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Read the structure of a secret entry from the KV store with the values removed.
      */
     async kvV2ReadSubkeys(path: string, kv_v2_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2ReadSubkeysResponse> {
         const response = await this.kvV2ReadSubkeysRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path }, initOverrides);
@@ -13683,6 +13801,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Undeletes one or more versions from the KV store.
      */
     async kvV2UndeleteVersionsRaw(requestParameters: SecretsApiKvV2UndeleteVersionsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13725,6 +13844,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Undeletes one or more versions from the KV store.
      */
     async kvV2UndeleteVersions(path: string, kv_v2_mount_path: string, KvV2UndeleteVersionsRequest: KvV2UndeleteVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2UndeleteVersionsRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2UndeleteVersionsRequest: KvV2UndeleteVersionsRequest }, initOverrides);
@@ -13732,6 +13852,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write a secret at the specified location.
      */
     async kvV2WriteRaw(requestParameters: SecretsApiKvV2WriteOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<KvV2WriteResponse>> {
         if (requestParameters['path'] == null) {
@@ -13786,6 +13907,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write a secret at the specified location.
      */
     async kvV2Write(path: string, kv_v2_mount_path: string, KvV2WriteRequest: KvV2WriteRequest, recover_snapshot_id?: string, X_Vault_Recover_Snapshot_Id?: string, X_Vault_Recover_Source_Path?: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<KvV2WriteResponse> {
         const response = await this.kvV2WriteRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2WriteRequest: KvV2WriteRequest, recover_snapshot_id: recover_snapshot_id, X_Vault_Recover_Snapshot_Id: X_Vault_Recover_Snapshot_Id, X_Vault_Recover_Source_Path: X_Vault_Recover_Source_Path }, initOverrides);
@@ -13793,6 +13915,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write metadata for a secret at the specified location.
      */
     async kvV2WriteMetadataRaw(requestParameters: SecretsApiKvV2WriteMetadataOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['path'] == null) {
@@ -13835,6 +13958,7 @@ export class SecretsApi extends runtime.BaseAPI {
     }
 
     /**
+     * Write metadata for a secret at the specified location.
      */
     async kvV2WriteMetadata(path: string, kv_v2_mount_path: string, KvV2WriteMetadataRequest: KvV2WriteMetadataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.kvV2WriteMetadataRaw({ path: path, kv_v2_mount_path: kv_v2_mount_path, KvV2WriteMetadataRequest: KvV2WriteMetadataRequest }, initOverrides);
@@ -16738,6 +16862,45 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiDeleteEabKey(key_id: string, pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiDeleteEabKeyRaw({ key_id: key_id, pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiDeleteExportKeyRaw(requestParameters: SecretsApiPkiDeleteExportKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['export_key_uuid'] == null) {
+            throw new runtime.RequiredError(
+                'export_key_uuid',
+                'Required parameter "export_key_uuid" was null or undefined when calling pkiDeleteExportKey().'
+            );
+        }
+
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiDeleteExportKey().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/{export_key_uuid}`.replace(`{${"export_key_uuid"}}`, encodeURIComponent(String(requestParameters['export_key_uuid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async pkiDeleteExportKey(export_key_uuid: string, pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.pkiDeleteExportKeyRaw({ export_key_uuid: export_key_uuid, pki_mount_path: pki_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -20552,6 +20715,49 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async pkiListExportKeysRaw(requestParameters: SecretsApiPkiListExportKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiListExportKeysResponse>> {
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiListExportKeys().'
+            );
+        }
+
+        if (requestParameters['list'] == null) {
+            throw new runtime.RequiredError(
+                'list',
+                'Required parameter "list" was null or undefined when calling pkiListExportKeys().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['list'] != null) {
+            queryParameters['list'] = requestParameters['list'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiListExportKeysResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiListExportKeys(pki_mount_path: string, list: SecretsApiPkiListExportKeysListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiListExportKeysResponse> {
+        const response = await this.pkiListExportKeysRaw({ pki_mount_path: pki_mount_path, list: list }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async pkiListIssuersRaw(requestParameters: SecretsApiPkiListIssuersRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiListIssuersResponse>> {
         if (requestParameters['pki_mount_path'] == null) {
             throw new runtime.RequiredError(
@@ -21869,6 +22075,45 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiReadEstConfiguration(pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiReadEstConfigurationRaw({ pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiReadExportKeyRaw(requestParameters: SecretsApiPkiReadExportKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiReadExportKeyResponse>> {
+        if (requestParameters['export_key_uuid'] == null) {
+            throw new runtime.RequiredError(
+                'export_key_uuid',
+                'Required parameter "export_key_uuid" was null or undefined when calling pkiReadExportKey().'
+            );
+        }
+
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiReadExportKey().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{pki_mount_path}/export/{export_key_uuid}`.replace(`{${"export_key_uuid"}}`, encodeURIComponent(String(requestParameters['export_key_uuid']).replace(/\/+$/, ''))).replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiReadExportKeyResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiReadExportKey(export_key_uuid: string, pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiReadExportKeyResponse> {
+        const response = await this.pkiReadExportKeyRaw({ export_key_uuid: export_key_uuid, pki_mount_path: pki_mount_path }, initOverrides);
         return await response.value();
     }
 
@@ -24438,6 +24683,48 @@ export class SecretsApi extends runtime.BaseAPI {
      */
     async pkiWriteEstSimplereenroll(pki_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.pkiWriteEstSimplereenrollRaw({ pki_mount_path: pki_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async pkiWriteExportKeysRaw(requestParameters: SecretsApiPkiWriteExportKeysOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PkiWriteExportKeysResponse>> {
+        if (requestParameters['pki_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'pki_mount_path',
+                'Required parameter "pki_mount_path" was null or undefined when calling pkiWriteExportKeys().'
+            );
+        }
+
+        if (requestParameters['PkiWriteExportKeysRequest'] == null) {
+            throw new runtime.RequiredError(
+                'PkiWriteExportKeysRequest',
+                'Required parameter "PkiWriteExportKeysRequest" was null or undefined when calling pkiWriteExportKeys().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/{pki_mount_path}/export`.replace(`{${"pki_mount_path"}}`, encodeURIComponent(String(requestParameters['pki_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PkiWriteExportKeysRequestToJSON(requestParameters['PkiWriteExportKeysRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PkiWriteExportKeysResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async pkiWriteExportKeys(pki_mount_path: string, PkiWriteExportKeysRequest: PkiWriteExportKeysRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PkiWriteExportKeysResponse> {
+        const response = await this.pkiWriteExportKeysRaw({ pki_mount_path: pki_mount_path, PkiWriteExportKeysRequest: PkiWriteExportKeysRequest }, initOverrides);
         return await response.value();
     }
 
@@ -31547,6 +31834,38 @@ export class SecretsApi extends runtime.BaseAPI {
 
     /**
      */
+    async terraformCloudRotateRootRaw(requestParameters: SecretsApiTerraformCloudRotateRootRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['terraform_mount_path'] == null) {
+            throw new runtime.RequiredError(
+                'terraform_mount_path',
+                'Required parameter "terraform_mount_path" was null or undefined when calling terraformCloudRotateRoot().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const builtPath = `/{terraform_mount_path}/rotate-root`.replace(`{${"terraform_mount_path"}}`, encodeURIComponent(String(requestParameters['terraform_mount_path']).replace(/\/+$/, '')));
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async terraformCloudRotateRoot(terraform_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.terraformCloudRotateRootRaw({ terraform_mount_path: terraform_mount_path }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
     async terraformCloudWriteRoleRaw(requestParameters: SecretsApiTerraformCloudWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
@@ -36953,6 +37272,13 @@ export enum SecretsApiPkiListCertsRevocationQueueListEnum {
   * @enum {string}
   */
 export enum SecretsApiPkiListEabKeysListEnum {
+    TRUE = 'true'
+}
+/**
+  * @export
+  * @enum {string}
+  */
+export enum SecretsApiPkiListExportKeysListEnum {
     TRUE = 'true'
 }
 /**

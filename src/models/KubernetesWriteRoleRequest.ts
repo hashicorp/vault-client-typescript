@@ -60,6 +60,12 @@ export interface KubernetesWriteRoleRequest {
      */
     kubernetes_role_name?: string;
     /**
+     * Specifies whether the Kubernetes role used as the RoleRef in the RoleBinding or ClusterRoleBinding is a Role or ClusterRole. Accepted values: 'Role', 'ClusterRole' (case-insensitive). If omitted, defaults to the value of kubernetes_role_type. Only relevant when kubernetes_role_name is set; has no effect when service_account_name or generated_role_rules is used. Note: setting this to 'Role' while requesting credentials with cluster_role_binding=true is invalid and will be rejected at credential-generation time.
+     * @type {string}
+     * @memberof KubernetesWriteRoleRequest
+     */
+    kubernetes_role_ref_type?: string;
+    /**
      * Specifies whether the Kubernetes role is a Role or ClusterRole.
      * @type {string}
      * @memberof KubernetesWriteRoleRequest
@@ -120,6 +126,7 @@ export function KubernetesWriteRoleRequestFromJSONTyped(json: any, ignoreDiscrim
         'extra_labels': json['extra_labels'] == null ? undefined : json['extra_labels'],
         'generated_role_rules': json['generated_role_rules'] == null ? undefined : json['generated_role_rules'],
         'kubernetes_role_name': json['kubernetes_role_name'] == null ? undefined : json['kubernetes_role_name'],
+        'kubernetes_role_ref_type': json['kubernetes_role_ref_type'] == null ? undefined : json['kubernetes_role_ref_type'],
         'kubernetes_role_type': json['kubernetes_role_type'] == null ? undefined : json['kubernetes_role_type'],
         'name_template': json['name_template'] == null ? undefined : json['name_template'],
         'service_account_name': json['service_account_name'] == null ? undefined : json['service_account_name'],
@@ -146,6 +153,7 @@ export function KubernetesWriteRoleRequestToJSONTyped(value?: KubernetesWriteRol
         'extra_labels': value['extra_labels'],
         'generated_role_rules': value['generated_role_rules'],
         'kubernetes_role_name': value['kubernetes_role_name'],
+        'kubernetes_role_ref_type': value['kubernetes_role_ref_type'],
         'kubernetes_role_type': value['kubernetes_role_type'],
         'name_template': value['name_template'],
         'service_account_name': value['service_account_name'],
