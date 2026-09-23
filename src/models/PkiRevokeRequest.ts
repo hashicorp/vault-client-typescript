@@ -30,6 +30,12 @@ export interface PkiRevokeRequest {
      */
     certificate?: string;
     /**
+     * Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with "unspecified"
+     * @type {number}
+     * @memberof PkiRevokeRequest
+     */
+    revocation_reason?: number;
+    /**
      * Certificate serial number, in colon- or hyphen-separated octal
      * @type {string}
      * @memberof PkiRevokeRequest
@@ -55,6 +61,7 @@ export function PkiRevokeRequestFromJSONTyped(json: any, ignoreDiscriminator: bo
     return {
         
         'certificate': json['certificate'] == null ? undefined : json['certificate'],
+        'revocation_reason': json['revocation_reason'] == null ? undefined : json['revocation_reason'],
         'serial_number': json['serial_number'] == null ? undefined : json['serial_number'],
     };
 }
@@ -71,6 +78,7 @@ export function PkiRevokeRequestToJSONTyped(value?: PkiRevokeRequest | null, ign
     return {
         
         'certificate': value['certificate'],
+        'revocation_reason': value['revocation_reason'],
         'serial_number': value['serial_number'],
     };
 }

@@ -30,6 +30,12 @@ export interface EntityCreateAliasRequest {
      */
     canonical_id?: string;
     /**
+     * Config ID of an OAuth Resource Server profile. When provided with external_id and without mount_accessor, Vault resolves the profile to its mount accessor automatically. Mutually exclusive with profile_name.
+     * @type {string}
+     * @memberof EntityCreateAliasRequest
+     */
+    config_id?: string;
+    /**
      * User provided key-value pairs
      * @type {object}
      * @memberof EntityCreateAliasRequest
@@ -71,6 +77,12 @@ export interface EntityCreateAliasRequest {
      * @memberof EntityCreateAliasRequest
      */
     name?: string;
+    /**
+     * Name of an OAuth Resource Server profile. When provided with external_id and without mount_accessor, Vault resolves the profile to its mount accessor automatically. Mutually exclusive with config_id.
+     * @type {string}
+     * @memberof EntityCreateAliasRequest
+     */
+    profile_name?: string;
 }
 
 /**
@@ -91,6 +103,7 @@ export function EntityCreateAliasRequestFromJSONTyped(json: any, ignoreDiscrimin
     return {
         
         'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'config_id': json['config_id'] == null ? undefined : json['config_id'],
         'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
         'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'external_id': json['external_id'] == null ? undefined : json['external_id'],
@@ -98,6 +111,7 @@ export function EntityCreateAliasRequestFromJSONTyped(json: any, ignoreDiscrimin
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
         'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
+        'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
     };
 }
 
@@ -113,6 +127,7 @@ export function EntityCreateAliasRequestToJSONTyped(value?: EntityCreateAliasReq
     return {
         
         'canonical_id': value['canonical_id'],
+        'config_id': value['config_id'],
         'custom_metadata': value['custom_metadata'],
         'entity_id': value['entity_id'],
         'external_id': value['external_id'],
@@ -120,6 +135,7 @@ export function EntityCreateAliasRequestToJSONTyped(value?: EntityCreateAliasReq
         'issuer': value['issuer'],
         'mount_accessor': value['mount_accessor'],
         'name': value['name'],
+        'profile_name': value['profile_name'],
     };
 }
 
