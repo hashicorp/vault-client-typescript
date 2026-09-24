@@ -42,6 +42,12 @@ export interface PkiExternalCaWriteConfigAcmeAccountResponse {
      */
     creation_date?: Date;
     /**
+     * Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigAcmeAccountResponse
+     */
+    default_nameserver?: string;
+    /**
      * The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)
      * @type {string}
      * @memberof PkiExternalCaWriteConfigAcmeAccountResponse
@@ -93,6 +99,7 @@ export function PkiExternalCaWriteConfigAcmeAccountResponseFromJSONTyped(json: a
         'account_keys': json['account_keys'] == null ? undefined : json['account_keys'],
         'active_key_version': json['active_key_version'] == null ? undefined : json['active_key_version'],
         'creation_date': json['creation_date'] == null ? undefined : (new Date(json['creation_date'])),
+        'default_nameserver': json['default_nameserver'] == null ? undefined : json['default_nameserver'],
         'directory_url': json['directory_url'] == null ? undefined : json['directory_url'],
         'email_contacts': json['email_contacts'] == null ? undefined : json['email_contacts'],
         'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
@@ -115,6 +122,7 @@ export function PkiExternalCaWriteConfigAcmeAccountResponseToJSONTyped(value?: P
         'account_keys': value['account_keys'],
         'active_key_version': value['active_key_version'],
         'creation_date': value['creation_date'] == null ? undefined : ((value['creation_date']).toISOString()),
+        'default_nameserver': value['default_nameserver'],
         'directory_url': value['directory_url'],
         'email_contacts': value['email_contacts'],
         'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
