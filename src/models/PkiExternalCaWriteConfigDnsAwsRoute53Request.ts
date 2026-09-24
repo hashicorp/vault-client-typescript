@@ -54,6 +54,12 @@ export interface PkiExternalCaWriteConfigDnsAwsRoute53Request {
      */
     identifiers?: Array<string>;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigDnsAwsRoute53Request
+     */
+    nameserver?: string;
+    /**
      * AWS region for Route53 operations
      * @type {string}
      * @memberof PkiExternalCaWriteConfigDnsAwsRoute53Request
@@ -95,6 +101,7 @@ export function PkiExternalCaWriteConfigDnsAwsRoute53RequestFromJSONTyped(json: 
         'external_id': json['external_id'] == null ? undefined : json['external_id'],
         'hosted_zone_id': json['hosted_zone_id'] == null ? undefined : json['hosted_zone_id'],
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'region': json['region'] == null ? undefined : json['region'],
         'secret_access_key': json['secret_access_key'] == null ? undefined : json['secret_access_key'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -117,6 +124,7 @@ export function PkiExternalCaWriteConfigDnsAwsRoute53RequestToJSONTyped(value?: 
         'external_id': value['external_id'],
         'hosted_zone_id': value['hosted_zone_id'],
         'identifiers': value['identifiers'],
+        'nameserver': value['nameserver'],
         'region': value['region'],
         'secret_access_key': value['secret_access_key'],
         'ttl': value['ttl'],

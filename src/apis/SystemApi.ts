@@ -98,6 +98,7 @@ import type {
   OauthResourceServerReadProfileByIdResponse,
   OauthResourceServerReadProfileResponse,
   OauthResourceServerUpdateProfileRequest,
+  OauthResourceServerUpdateProfileResponse,
   PluginsCatalogListPluginsResponse,
   PluginsCatalogListPluginsWithTypeResponse,
   PluginsCatalogPinsCreatePinnedVersionRequest,
@@ -466,6 +467,8 @@ import {
     OauthResourceServerReadProfileResponseToJSON,
     OauthResourceServerUpdateProfileRequestFromJSON,
     OauthResourceServerUpdateProfileRequestToJSON,
+    OauthResourceServerUpdateProfileResponseFromJSON,
+    OauthResourceServerUpdateProfileResponseToJSON,
     PluginsCatalogListPluginsResponseFromJSON,
     PluginsCatalogListPluginsResponseToJSON,
     PluginsCatalogListPluginsWithTypeResponseFromJSON,
@@ -1656,14 +1659,6 @@ export interface SystemApiSystemReadBillingOverviewRequest {
     end_month?: string;
     refresh_data?: boolean;
     start_month?: string;
-}
-
-export interface SystemApiSystemReadHealthCheckExecPathRequest {
-    path: string;
-}
-
-export interface SystemApiSystemReadHealthCheckLastPathRequest {
-    path: string;
 }
 
 export interface SystemApiSystemReadManagedKeysTypeNameRequest {
@@ -5580,7 +5575,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Returns a list of all configured OAuth Resource Server Configuration profile names.
+     * Returns a list of all configured OAuth Resource Server Configuration profile names, along with a key_info map carrying the config_id and mount_accessor of each profile.
      * List all OAuth Resource Server validation profiles.
      */
     async oauthResourceServerListProfilesRaw(requestParameters: SystemApiOauthResourceServerListProfilesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerListProfilesResponse>> {
@@ -5611,7 +5606,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Returns a list of all configured OAuth Resource Server Configuration profile names.
+     * Returns a list of all configured OAuth Resource Server Configuration profile names, along with a key_info map carrying the config_id and mount_accessor of each profile.
      * List all OAuth Resource Server validation profiles.
      */
     async oauthResourceServerListProfiles(list: SystemApiOauthResourceServerListProfilesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerListProfilesResponse> {
@@ -5724,7 +5719,7 @@ export class SystemApi extends runtime.BaseAPI {
      * Updates an existing OAuth Resource Server Configuration profile with the specified configuration.
      * Update an existing OAuth Resource Server Configuration profile.
      */
-    async oauthResourceServerUpdateProfileRaw(requestParameters: SystemApiOauthResourceServerUpdateProfileOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async oauthResourceServerUpdateProfileRaw(requestParameters: SystemApiOauthResourceServerUpdateProfileOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OauthResourceServerUpdateProfileResponse>> {
         if (requestParameters['name'] == null) {
             throw new runtime.RequiredError(
                 'name',
@@ -5754,14 +5749,14 @@ export class SystemApi extends runtime.BaseAPI {
             body: OauthResourceServerUpdateProfileRequestToJSON(requestParameters['OauthResourceServerUpdateProfileRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => OauthResourceServerUpdateProfileResponseFromJSON(jsonValue));
     }
 
     /**
      * Updates an existing OAuth Resource Server Configuration profile with the specified configuration.
      * Update an existing OAuth Resource Server Configuration profile.
      */
-    async oauthResourceServerUpdateProfile(name: string, OauthResourceServerUpdateProfileRequest: OauthResourceServerUpdateProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async oauthResourceServerUpdateProfile(name: string, OauthResourceServerUpdateProfileRequest: OauthResourceServerUpdateProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OauthResourceServerUpdateProfileResponse> {
         const response = await this.oauthResourceServerUpdateProfileRaw({ name: name, OauthResourceServerUpdateProfileRequest: OauthResourceServerUpdateProfileRequest }, initOverrides);
         return await response.value();
     }
@@ -7046,7 +7041,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Update an existing rotation policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicyRaw(requestParameters: SystemApiPoliciesWriteRotationPolicyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['name'] == null) {
@@ -7082,7 +7077,7 @@ export class SystemApi extends runtime.BaseAPI {
     }
 
     /**
-     * Update an existing rotation policy.
+     * Create a new or update an existing rotation policy.
      */
     async policiesWriteRotationPolicy(name: string, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.policiesWriteRotationPolicyRaw({ name: name, PoliciesWriteRotationPolicyRequest: PoliciesWriteRotationPolicyRequest }, initOverrides);
@@ -11234,70 +11229,6 @@ export class SystemApi extends runtime.BaseAPI {
      */
     async systemReadConfigGroupPolicyApplication(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SystemReadConfigGroupPolicyApplicationResponse> {
         const response = await this.systemReadConfigGroupPolicyApplicationRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async systemReadHealthCheckExecPathRaw(requestParameters: SystemApiSystemReadHealthCheckExecPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['path'] == null) {
-            throw new runtime.RequiredError(
-                'path',
-                'Required parameter "path" was null or undefined when calling systemReadHealthCheckExecPath().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/health-check/exec/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async systemReadHealthCheckExecPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemReadHealthCheckExecPathRaw({ path: path }, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async systemReadHealthCheckLastPathRaw(requestParameters: SystemApiSystemReadHealthCheckLastPathRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
-        if (requestParameters['path'] == null) {
-            throw new runtime.RequiredError(
-                'path',
-                'Required parameter "path" was null or undefined when calling systemReadHealthCheckLastPath().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        const builtPath = `/sys/health-check/last/{path}`.replace(`{${"path"}}`, encodeURIComponent(String(requestParameters['path']).replace(/\/+$/, '')));
-        const response = await this.request({
-            path: builtPath.replace(/\/\/+/g, '/'),
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     */
-    async systemReadHealthCheckLastPath(path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
-        const response = await this.systemReadHealthCheckLastPathRaw({ path: path }, initOverrides);
         return await response.value();
     }
 
