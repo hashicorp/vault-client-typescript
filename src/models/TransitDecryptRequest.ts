@@ -48,13 +48,19 @@ export interface TransitDecryptRequest {
      */
     context?: string;
     /**
+     * The hash algorithm to use for decryption. Currently only applies to RSA key types. Options are 'sha1', 'sha2-224', 'sha2-256', 'sha2-384', 'sha2-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512'. Defaults to 'sha2-256'.
+     * @type {string}
+     * @memberof TransitDecryptRequest
+     */
+    hash_algorithm?: string;
+    /**
      * Base64 encoded nonce value used during encryption. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+.
      * @type {string}
      * @memberof TransitDecryptRequest
      */
     nonce?: string;
     /**
-     * The padding scheme to use for decrypt. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'
+     * The padding scheme to use for decryption. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'
      * @type {string}
      * @memberof TransitDecryptRequest
      */
@@ -88,6 +94,7 @@ export function TransitDecryptRequestFromJSONTyped(json: any, ignoreDiscriminato
         'batch_input': json['batch_input'] == null ? undefined : json['batch_input'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'context': json['context'] == null ? undefined : json['context'],
+        'hash_algorithm': json['hash_algorithm'] == null ? undefined : json['hash_algorithm'],
         'nonce': json['nonce'] == null ? undefined : json['nonce'],
         'padding_scheme': json['padding_scheme'] == null ? undefined : json['padding_scheme'],
         'partial_failure_response_code': json['partial_failure_response_code'] == null ? undefined : json['partial_failure_response_code'],
@@ -109,6 +116,7 @@ export function TransitDecryptRequestToJSONTyped(value?: TransitDecryptRequest |
         'batch_input': value['batch_input'],
         'ciphertext': value['ciphertext'],
         'context': value['context'],
+        'hash_algorithm': value['hash_algorithm'],
         'nonce': value['nonce'],
         'padding_scheme': value['padding_scheme'],
         'partial_failure_response_code': value['partial_failure_response_code'],
