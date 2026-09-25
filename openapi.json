@@ -363,6 +363,30 @@
         }
       }
     },
+    "/auth/token/revoke-oauth": {
+      "description": "This endpoint revokes an external OAuth token identified by its issuer and unique ID.",
+      "post": {
+        "operationId": "token-revoke-oauth",
+        "tags": [
+          "auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRevokeOauthRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auth/token/revoke-orphan": {
       "description": "This endpoint will delete the token and orphan its child tokens.",
       "x-vault-sudo": true,
@@ -513,7 +537,7 @@
       }
     },
     "/auth/{alicloud_mount_path}/login": {
-      "description": "Authenticates an RAM entity with Vault.",
+      "description": "Authenticate an AliCloud RAM entity with Vault.",
       "parameters": [
         {
           "name": "alicloud_mount_path",
@@ -528,7 +552,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
-        "summary": "Authenticates an RAM entity with Vault.",
+        "summary": "Authenticate with AliCloud.",
         "operationId": "ali-cloud-login",
         "tags": [
           "auth"
@@ -545,13 +569,20 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AliCloudLoginResponse"
+                }
+              }
+            }
           }
         }
       }
     },
     "/auth/{alicloud_mount_path}/role/": {
-      "description": "Lists all the roles that are registered with Vault.",
+      "description": "List all AliCloud auth roles registered with Vault.",
       "parameters": [
         {
           "name": "alicloud_mount_path",
@@ -565,7 +596,7 @@
         }
       ],
       "get": {
-        "summary": "Lists all the roles that are registered with Vault.",
+        "summary": "List all AliCloud auth roles.",
         "operationId": "ali-cloud-list-auth-roles",
         "tags": [
           "auth"
@@ -599,7 +630,7 @@
       }
     },
     "/auth/{alicloud_mount_path}/role/{role}": {
-      "description": "Create a role and associate policies to it.",
+      "description": "Create an AliCloud auth role and associate policies to it.",
       "parameters": [
         {
           "name": "role",
@@ -623,19 +654,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "summary": "Create a role and associate policies to it.",
+        "summary": "Read an AliCloud auth role.",
         "operationId": "ali-cloud-read-auth-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AliCloudReadAuthRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Create a role and associate policies to it.",
+        "summary": "Update an AliCloud auth role.",
         "operationId": "ali-cloud-write-auth-role",
         "tags": [
           "auth"
@@ -653,24 +691,27 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "No content."
           }
         }
       },
       "delete": {
-        "summary": "Create a role and associate policies to it.",
+        "summary": "Delete an AliCloud auth role.",
         "operationId": "ali-cloud-delete-auth-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No content."
           }
         }
       }
     },
     "/auth/{alicloud_mount_path}/roles/": {
-      "description": "Lists all the roles that are registered with Vault.",
+      "description": "List all AliCloud auth roles registered with Vault.",
       "parameters": [
         {
           "name": "alicloud_mount_path",
@@ -684,7 +725,7 @@
         }
       ],
       "get": {
-        "summary": "Lists all the roles that are registered with Vault.",
+        "summary": "List all AliCloud auth roles.",
         "operationId": "ali-cloud-list-auth-roles2",
         "tags": [
           "auth"
@@ -4351,7 +4392,7 @@
       }
     },
     "/auth/{cf_mount_path}/config": {
-      "description": "Provide Vault with the CA certificate used to issue all client certificates.",
+      "description": "Configure the CA certificate used to verify Cloud Foundry instance certificates.",
       "parameters": [
         {
           "name": "cf_mount_path",
@@ -4365,17 +4406,26 @@
         }
       ],
       "get": {
+        "summary": "Return the current Cloud Foundry auth method configuration.",
         "operationId": "cloud-foundry-read-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the Cloud Foundry auth method.",
         "operationId": "cloud-foundry-configure",
         "tags": [
           "auth"
@@ -4391,25 +4441,26 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the Cloud Foundry auth method configuration.",
         "operationId": "cloud-foundry-delete-configuration",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
     },
     "/auth/{cf_mount_path}/login": {
-      "description": "Authenticates an entity with Vault.",
+      "description": "Authenticate Cloud Foundry entities with Vault.",
       "parameters": [
         {
           "name": "cf_mount_path",
@@ -4424,6 +4475,7 @@
       ],
       "x-vault-unauthenticated": true,
       "post": {
+        "summary": "Authenticate a Cloud Foundry instance with Vault.",
         "operationId": "cloud-foundry-login",
         "tags": [
           "auth"
@@ -4440,7 +4492,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryLoginResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -4460,6 +4519,7 @@
         }
       ],
       "get": {
+        "summary": "List the existing Cloud Foundry auth roles.",
         "operationId": "cloud-foundry-list-roles",
         "tags": [
           "auth"
@@ -4484,7 +4544,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/CloudFoundryListRolesResponse"
                 }
               }
             }
@@ -4493,7 +4553,7 @@
       }
     },
     "/auth/{cf_mount_path}/roles/{role}": {
-      "description": "Read, write and reference policies and roles that tokens can be made for.",
+      "description": "Manage roles used for authenticating Cloud Foundry instances.",
       "parameters": [
         {
           "name": "role",
@@ -4517,17 +4577,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the configuration for a named Cloud Foundry auth role.",
         "operationId": "cloud-foundry-read-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CloudFoundryReadRoleResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Update an existing Cloud Foundry auth role.",
         "operationId": "cloud-foundry-write-role",
         "tags": [
           "auth"
@@ -4543,19 +4612,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete a named Cloud Foundry auth role.",
         "operationId": "cloud-foundry-delete-role",
         "tags": [
           "auth"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -13761,7 +13831,7 @@
       "x-vault-sudo": true,
       "get": {
         "summary": "List all OAuth Resource Server validation profiles.",
-        "description": "Returns a list of all configured OAuth Resource Server Configuration profile names.",
+        "description": "Returns a list of all configured OAuth Resource Server Configuration profile names, along with a key_info map carrying the config_id and mount_accessor of each profile.",
         "operationId": "oauth-resource-server-list-profiles",
         "tags": [
           "system"
@@ -13882,8 +13952,15 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "OK"
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OauthResourceServerUpdateProfileResponse"
+                }
+              }
+            }
           }
         }
       },
@@ -14766,54 +14843,6 @@
           },
           "503": {
             "description": "sealed"
-          }
-        }
-      }
-    },
-    "/sys/health-check/exec/{path}": {
-      "parameters": [
-        {
-          "name": "path",
-          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "system-read-health-check-exec-path",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/sys/health-check/last/{path}": {
-      "parameters": [
-        {
-          "name": "path",
-          "description": "Full resource path (e.g., ldap/config or ldap/static-role/alice)",
-          "in": "path",
-          "schema": {
-            "type": "string"
-          },
-          "required": true
-        }
-      ],
-      "get": {
-        "operationId": "system-read-health-check-last-path",
-        "tags": [
-          "system"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -18274,7 +18303,6 @@
           "required": true
         }
       ],
-      "x-vault-createSupported": true,
       "get": {
         "summary": "Retrieve an existing rotation policy.",
         "operationId": "policies-read-rotation-policy",
@@ -18295,7 +18323,7 @@
         }
       },
       "post": {
-        "summary": "Update an existing rotation policy.",
+        "summary": "Create a new or update an existing rotation policy.",
         "operationId": "policies-write-rotation-policy",
         "tags": [
           "system"
@@ -24318,6 +24346,52 @@
         }
       }
     },
+    "/{azure_mount_path}/static-creds/{name}/token": {
+      "description": "Generate an OAuth2 access token for a static role.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the static role to generate an access token for.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "azure_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "azure"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "azure-request-access-token",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AzureRequestAccessTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{azure_mount_path}/static-roles/": {
       "description": "List existing roles for Azure Secrets.",
       "parameters": [
@@ -25295,7 +25369,7 @@
       }
     },
     "/{gcp_mount_path}/config": {
-      "description": "Configure the GCP backend.",
+      "description": "Configure the GCP secrets engine.",
       "parameters": [
         {
           "name": "gcp_mount_path",
@@ -25309,17 +25383,26 @@
         }
       ],
       "get": {
+        "summary": "Return the GCP secrets engine configuration.",
         "operationId": "google-cloud-read-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the GCP secrets engine.",
         "operationId": "google-cloud-configure",
         "tags": [
           "secrets"
@@ -25335,14 +25418,14 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
     },
     "/{gcp_mount_path}/config/rotate-root": {
-      "description": "Request to rotate the GCP credentials used by Vault",
+      "description": "Request to rotate the GCP credentials used by Vault.",
       "parameters": [
         {
           "name": "gcp_mount_path",
@@ -25356,13 +25439,21 @@
         }
       ],
       "post": {
+        "summary": "Rotate the root credentials for the GCP secrets engine.",
         "operationId": "google-cloud-rotate-root-credentials",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudRotateRootCredentialsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -25382,6 +25473,7 @@
         }
       ],
       "get": {
+        "summary": "List all impersonated accounts.",
         "operationId": "google-cloud-list-impersonated-accounts",
         "tags": [
           "secrets"
@@ -25439,17 +25531,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return an impersonated account.",
         "operationId": "google-cloud-read-impersonated-account",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudReadImpersonatedAccountResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Update an impersonated account.",
         "operationId": "google-cloud-write-impersonated-account",
         "tags": [
           "secrets"
@@ -25465,19 +25566,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete an impersonated account.",
         "operationId": "google-cloud-delete-impersonated-account",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -25506,24 +25608,40 @@
         }
       ],
       "get": {
+        "summary": "Generate an access token for an impersonated account.",
         "operationId": "google-cloud-generate-impersonated-account-access-token",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateImpersonatedAccountAccessTokenResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate an access token for an impersonated account.",
         "operationId": "google-cloud-generate-impersonated-account-access-token2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateImpersonatedAccountAccessToken2Response"
+                }
+              }
+            }
           }
         }
       }
@@ -25543,6 +25661,7 @@
         }
       ],
       "get": {
+        "summary": "List all impersonated accounts.",
         "operationId": "google-cloud-list-impersonated-accounts2",
         "tags": [
           "secrets"
@@ -25599,6 +25718,7 @@
         }
       ],
       "get": {
+        "summary": "Generate a service account key for a roleset.",
         "operationId": "google-cloud-generate-roleset-key4",
         "tags": [
           "secrets"
@@ -25633,11 +25753,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKey4Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate a service account key for a roleset.",
         "operationId": "google-cloud-generate-roleset-key3",
         "tags": [
           "secrets"
@@ -25654,7 +25782,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKey3Response"
+                }
+              }
+            }
           }
         }
       }
@@ -25674,6 +25809,7 @@
         }
       ],
       "get": {
+        "summary": "List all rolesets.",
         "operationId": "google-cloud-list-rolesets",
         "tags": [
           "secrets"
@@ -25731,17 +25867,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return a roleset.",
         "operationId": "google-cloud-read-roleset",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudReadRolesetResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Update a roleset.",
         "operationId": "google-cloud-write-roleset",
         "tags": [
           "secrets"
@@ -25757,19 +25902,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete a roleset.",
         "operationId": "google-cloud-delete-roleset",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -25798,13 +25944,14 @@
         }
       ],
       "post": {
+        "summary": "Rotate the service account for a roleset.",
         "operationId": "google-cloud-rotate-roleset",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -25833,13 +25980,14 @@
         }
       ],
       "post": {
+        "summary": "Rotate the service account key for a roleset.",
         "operationId": "google-cloud-rotate-roleset-key",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -25868,6 +26016,7 @@
         }
       ],
       "get": {
+        "summary": "Generate a service account key for a roleset.",
         "operationId": "google-cloud-generate-roleset-key2",
         "tags": [
           "secrets"
@@ -25902,11 +26051,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKey2Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate a service account key for a roleset.",
         "operationId": "google-cloud-generate-roleset-key",
         "tags": [
           "secrets"
@@ -25923,7 +26080,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -25952,24 +26116,40 @@
         }
       ],
       "get": {
+        "summary": "Generate an access token for a roleset.",
         "operationId": "google-cloud-generate-roleset-access-token2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetAccessToken2Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate an access token for a roleset.",
         "operationId": "google-cloud-generate-roleset-access-token",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetAccessTokenResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -25989,6 +26169,7 @@
         }
       ],
       "get": {
+        "summary": "List all rolesets.",
         "operationId": "google-cloud-list-rolesets2",
         "tags": [
           "secrets"
@@ -26036,6 +26217,7 @@
         }
       ],
       "get": {
+        "summary": "List all static accounts.",
         "operationId": "google-cloud-list-static-accounts",
         "tags": [
           "secrets"
@@ -26093,17 +26275,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return a static account.",
         "operationId": "google-cloud-read-static-account",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudReadStaticAccountResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Update a static account.",
         "operationId": "google-cloud-write-static-account",
         "tags": [
           "secrets"
@@ -26119,19 +26310,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete a static account.",
         "operationId": "google-cloud-delete-static-account",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26160,6 +26352,7 @@
         }
       ],
       "get": {
+        "summary": "Generate a service account key for a static account.",
         "operationId": "google-cloud-generate-static-account-key2",
         "tags": [
           "secrets"
@@ -26194,11 +26387,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKey2Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate a service account key for a static account.",
         "operationId": "google-cloud-generate-static-account-key",
         "tags": [
           "secrets"
@@ -26215,7 +26416,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26244,13 +26452,14 @@
         }
       ],
       "post": {
+        "summary": "Rotate the service account key for a static account.",
         "operationId": "google-cloud-rotate-static-account-key",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -26279,24 +26488,40 @@
         }
       ],
       "get": {
+        "summary": "Generate an access token for a static account.",
         "operationId": "google-cloud-generate-static-account-access-token2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountAccessToken2Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate an access token for a static account.",
         "operationId": "google-cloud-generate-static-account-access-token",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateStaticAccountAccessTokenResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26316,6 +26541,7 @@
         }
       ],
       "get": {
+        "summary": "List all static accounts.",
         "operationId": "google-cloud-list-static-accounts2",
         "tags": [
           "secrets"
@@ -26372,24 +26598,40 @@
         }
       ],
       "get": {
+        "summary": "Generate an access token for a roleset.",
         "operationId": "google-cloud-generate-roleset-access-token4",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetAccessToken4Response"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Generate an access token for a roleset.",
         "operationId": "google-cloud-generate-roleset-access-token3",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudGenerateRolesetAccessToken3Response"
+                }
+              }
+            }
           }
         }
       }
@@ -26410,17 +26652,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the GCP KMS secrets engine configuration.",
         "operationId": "google-cloud-kms-read-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure the GCP KMS secrets engine.",
         "operationId": "google-cloud-kms-configure",
         "tags": [
           "secrets"
@@ -26436,19 +26687,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Delete the GCP KMS secrets engine configuration.",
         "operationId": "google-cloud-kms-delete-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26477,7 +26729,7 @@
         }
       ],
       "post": {
-        "summary": "Decrypt a ciphertext value using a named key",
+        "summary": "Decrypt a ciphertext value using a named key.",
         "operationId": "google-cloud-kms-decrypt",
         "tags": [
           "secrets"
@@ -26494,7 +26746,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsDecryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26523,7 +26782,7 @@
         }
       ],
       "post": {
-        "summary": "Encrypt a plaintext value using a named key",
+        "summary": "Encrypt a plaintext value using a named key.",
         "operationId": "google-cloud-kms-encrypt",
         "tags": [
           "secrets"
@@ -26540,7 +26799,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsEncryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26560,7 +26826,7 @@
         }
       ],
       "get": {
-        "summary": "List named keys",
+        "summary": "List all named keys.",
         "operationId": "google-cloud-kms-list-keys",
         "tags": [
           "secrets"
@@ -26618,17 +26884,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Return the Vault configuration for a named key.",
         "operationId": "google-cloud-kms-read-key-configuration",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadKeyConfigurationResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
+        "summary": "Configure a named key in Vault.",
         "operationId": "google-cloud-kms-configure-key",
         "tags": [
           "secrets"
@@ -26644,8 +26919,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -26674,24 +26949,26 @@
         }
       ],
       "post": {
+        "summary": "Deregister a key from Vault.",
         "operationId": "google-cloud-kms-deregister-key",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Deregister a key from Vault.",
         "operationId": "google-cloud-kms-deregister-key2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26720,7 +26997,7 @@
         }
       ],
       "post": {
-        "summary": "Register an existing crypto key in Google Cloud KMS",
+        "summary": "Register an existing crypto key in Google Cloud KMS.",
         "operationId": "google-cloud-kms-register-key",
         "tags": [
           "secrets"
@@ -26736,8 +27013,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -26766,14 +27043,21 @@
         }
       ],
       "post": {
-        "summary": "Rotate a crypto key to a new primary version",
+        "summary": "Rotate a crypto key to a new primary version.",
         "operationId": "google-cloud-kms-rotate-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsRotateKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26803,24 +27087,26 @@
       ],
       "x-vault-createSupported": true,
       "post": {
+        "summary": "Trim old crypto key versions from Google Cloud KMS.",
         "operationId": "google-cloud-kms-trim-key-versions",
         "tags": [
           "secrets"
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
+        "summary": "Trim old crypto key versions from Google Cloud KMS.",
         "operationId": "google-cloud-kms-trim-key-versions2",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26850,19 +27136,26 @@
       ],
       "x-vault-createSupported": true,
       "get": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Return information about a named key.",
         "operationId": "google-cloud-kms-read-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReadKeyResponse"
+                }
+              }
+            }
           }
         }
       },
       "post": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Create or update a named key.",
         "operationId": "google-cloud-kms-write-key",
         "tags": [
           "secrets"
@@ -26878,20 +27171,20 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           }
         }
       },
       "delete": {
-        "summary": "Interact with crypto keys in Vault and Google Cloud KMS",
+        "summary": "Delete a named key.",
         "operationId": "google-cloud-kms-delete-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "204": {
-            "description": "empty body"
+            "description": "No Content"
           }
         }
       }
@@ -26920,14 +27213,21 @@
         }
       ],
       "get": {
-        "summary": "Retrieve the public key associated with the named key",
+        "summary": "Retrieve the public key associated with a named key.",
         "operationId": "google-cloud-kms-retrieve-public-key",
         "tags": [
           "secrets"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsRetrievePublicKeyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -26956,7 +27256,7 @@
         }
       ],
       "post": {
-        "summary": "Re-encrypt existing ciphertext data to a new version",
+        "summary": "Re-encrypt existing ciphertext data to a new version.",
         "operationId": "google-cloud-kms-reencrypt",
         "tags": [
           "secrets"
@@ -26973,7 +27273,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsReencryptResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27002,7 +27309,7 @@
         }
       ],
       "post": {
-        "summary": "Signs a message or digest using a named key",
+        "summary": "Sign a message or digest using a named key.",
         "operationId": "google-cloud-kms-sign",
         "tags": [
           "secrets"
@@ -27019,7 +27326,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsSignResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -27048,7 +27362,7 @@
         }
       ],
       "post": {
-        "summary": "Verify a signature using a named key",
+        "summary": "Verify a signature using a named key.",
         "operationId": "google-cloud-kms-verify",
         "tags": [
           "secrets"
@@ -27065,7 +27379,14 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleCloudKmsVerifyResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -28798,6 +29119,7 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Read the secret at the specified location.",
         "operationId": "kv-v1-read",
         "tags": [
           "secrets"
@@ -28819,6 +29141,7 @@
         }
       },
       "post": {
+        "summary": "Write a secret at the specified location.",
         "operationId": "kv-v1-write",
         "tags": [
           "secrets"
@@ -28868,6 +29191,7 @@
         }
       },
       "delete": {
+        "summary": "Delete the secret at the specified location.",
         "operationId": "kv-v1-delete",
         "tags": [
           "secrets"
@@ -28903,6 +29227,7 @@
         }
       ],
       "get": {
+        "summary": "List secret entries at the specified location.",
         "operationId": "kv-v1-list",
         "tags": [
           "secrets"
@@ -28935,7 +29260,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/KvV1ListResponse"
                 }
               }
             }
@@ -29038,6 +29363,7 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Read the secret at the specified location.",
         "operationId": "kv-v2-read",
         "tags": [
           "secrets"
@@ -29066,6 +29392,7 @@
         }
       },
       "post": {
+        "summary": "Write a secret at the specified location.",
         "operationId": "kv-v2-write",
         "tags": [
           "secrets"
@@ -29121,6 +29448,7 @@
         }
       },
       "patch": {
+        "summary": "Patch an existing secret at the specified location.",
         "operationId": "kv-v2-patch",
         "tags": [
           "secrets"
@@ -29149,6 +29477,7 @@
         }
       },
       "delete": {
+        "summary": "Delete the latest version of the secret at the specified location.",
         "operationId": "kv-v2-delete",
         "tags": [
           "secrets"
@@ -29184,6 +29513,7 @@
         }
       ],
       "post": {
+        "summary": "Marks one or more versions as deleted in the KV store.",
         "operationId": "kv-v2-delete-versions",
         "tags": [
           "secrets"
@@ -29229,6 +29559,7 @@
         }
       ],
       "post": {
+        "summary": "Permanently removes one or more versions in the KV store.",
         "operationId": "kv-v2-destroy-versions",
         "tags": [
           "secrets"
@@ -29251,7 +29582,7 @@
       }
     },
     "/{kv_v2_mount_path}/metadata/{path}": {
-      "description": "Configures settings for the KV store",
+      "description": "Allows interaction with key metadata and settings in the KV store.",
       "parameters": [
         {
           "name": "path",
@@ -29275,6 +29606,7 @@
       ],
       "x-vault-createSupported": true,
       "get": {
+        "summary": "Read metadata for a secret at the specified location.",
         "operationId": "kv-v2-read-metadata",
         "tags": [
           "secrets"
@@ -29293,6 +29625,7 @@
         }
       },
       "post": {
+        "summary": "Write metadata for a secret at the specified location.",
         "operationId": "kv-v2-write-metadata",
         "tags": [
           "secrets"
@@ -29314,6 +29647,7 @@
         }
       },
       "patch": {
+        "summary": "Patch metadata for a secret at the specified location.",
         "operationId": "kv-v2-patch-metadata-path",
         "tags": [
           "secrets"
@@ -29335,6 +29669,7 @@
         }
       },
       "delete": {
+        "summary": "Delete all versions and metadata for a secret at the specified location.",
         "operationId": "kv-v2-delete-metadata-and-all-versions",
         "tags": [
           "secrets"
@@ -29347,7 +29682,7 @@
       }
     },
     "/{kv_v2_mount_path}/metadata/{path}/": {
-      "description": "Configures settings for the KV store",
+      "description": "Allows interaction with key metadata and settings in the KV store.",
       "parameters": [
         {
           "name": "path",
@@ -29370,6 +29705,7 @@
         }
       ],
       "get": {
+        "summary": "List secret entries at the specified location.",
         "operationId": "kv-v2-list",
         "tags": [
           "secrets"
@@ -29394,7 +29730,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StandardListResponse"
+                  "$ref": "#/components/schemas/KvV2ListResponse"
                 }
               }
             }
@@ -29426,6 +29762,7 @@
         }
       ],
       "get": {
+        "summary": "Read the structure of a secret entry from the KV store with the values removed.",
         "operationId": "kv-v2-read-subkeys",
         "tags": [
           "secrets"
@@ -29468,6 +29805,7 @@
         }
       ],
       "post": {
+        "summary": "Undeletes one or more versions from the KV store.",
         "operationId": "kv-v2-undelete-versions",
         "tags": [
           "secrets"
@@ -35148,6 +35486,149 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export": {
+      "description": "Create or list export keys used to securely wrap CA private key material for migration.",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "pki-write-export-keys",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiWriteExportKeysRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiWriteExportKeysResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export/": {
+      "description": "Create or list export keys used to securely wrap CA private key material for migration.",
+      "parameters": [
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-list-export-keys",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiListExportKeysResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{pki_mount_path}/export/{export_key_uuid}": {
+      "description": "Read or delete a specific export key by UUID.",
+      "parameters": [
+        {
+          "name": "export_key_uuid",
+          "description": "UUID of the export key to read or delete.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "pki_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "pki"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "pki-read-export-key",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PkiReadExportKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "pki-delete-export-key",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -45145,6 +45626,32 @@
         }
       }
     },
+    "/{terraform_mount_path}/rotate-root": {
+      "description": "Request to rotate the root token used by Vault to access Terraform Cloud or Enterprise.",
+      "parameters": [
+        {
+          "name": "terraform_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "terraform"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "terraform-cloud-rotate-root",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/{totp_mount_path}/code/{name}": {
       "description": "Request time-based one-time use password or validate a password for a certain key .",
       "parameters": [
@@ -45661,6 +46168,52 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TransformRetrieveTokenMetadataRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{transform_mount_path}/rewrap/{role_name}": {
+      "description": "Rewrap a provided value from one FPE transformation to another.",
+      "parameters": [
+        {
+          "name": "role_name",
+          "description": "The name of the role.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "transform_mount_path",
+          "description": "Path that the backend was mounted at",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "transform"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "post": {
+        "operationId": "transform-rewrap",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransformRewrapRequest"
               }
             }
           }
@@ -49174,6 +49727,155 @@
           "role"
         ]
       },
+      "AliCloudLoginResponse": {
+        "type": "object",
+        "properties": {
+          "accessor": {
+            "type": "string",
+            "description": "Accessor for the client token."
+          },
+          "client_token": {
+            "type": "string",
+            "description": "Token issued by Vault for the authenticated client."
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Entity ID associated with the token."
+          },
+          "lease_duration": {
+            "type": "integer",
+            "description": "Lease duration in seconds.",
+            "format": "int64"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the token.",
+            "format": "map"
+          },
+          "mfa_requirement": {
+            "type": "object",
+            "description": "MFA requirement information.",
+            "format": "map"
+          },
+          "num_uses": {
+            "type": "integer",
+            "description": "Number of uses remaining for the token."
+          },
+          "orphan": {
+            "type": "boolean",
+            "description": "Whether the token is an orphan."
+          },
+          "policies": {
+            "type": "array",
+            "description": "List of policies associated with the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "renewable": {
+            "type": "boolean",
+            "description": "Whether the token is renewable."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of token policies.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of the token."
+          }
+        }
+      },
+      "AliCloudReadAuthRoleResponse": {
+        "type": "object",
+        "properties": {
+          "alias_metadata": {
+            "type": "object",
+            "description": "Alias metadata associated with tokens issued by this role.",
+            "format": "kvpairs"
+          },
+          "arn": {
+            "type": "string",
+            "description": "ARN of the RAM role bound to this role."
+          },
+          "bound_cidrs": {
+            "type": "array",
+            "description": "Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.",
+            "items": {
+              "type": "object"
+            },
+            "deprecated": true
+          },
+          "max_ttl": {
+            "type": "integer",
+            "description": "Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.",
+            "deprecated": true
+          },
+          "period": {
+            "type": "integer",
+            "description": "Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.",
+            "deprecated": true
+          },
+          "policies": {
+            "type": "array",
+            "description": "Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.",
+            "items": {
+              "type": "object"
+            },
+            "deprecated": true
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "CIDR blocks bound to tokens issued by this role.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "integer",
+            "description": "Explicit maximum token TTL in seconds associated with this role."
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "Maximum token TTL in seconds associated with this role."
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "Whether tokens issued by this role omit the default policy."
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "Number of permitted uses for tokens issued by this role."
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "Token period in seconds associated with this role."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "Token policies associated with this role.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Token TTL in seconds associated with this role."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Token type issued by this role."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.",
+            "deprecated": true
+          }
+        }
+      },
       "AliCloudWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
@@ -52529,6 +53231,10 @@
               "group": "default"
             }
           },
+          "seamless_rotation": {
+            "type": "boolean",
+            "description": "Enable or disable seamless rotation for static roles. Existing roles are not affected when changing this setting."
+          },
           "subscription_id": {
             "type": "string",
             "description": "The subscription id for the Azure Active Directory. This value can also be provided with the AZURE_SUBSCRIPTION_ID environment variable."
@@ -52836,6 +53542,18 @@
           }
         }
       },
+      "AzureRequestAccessTokenRequest": {
+        "type": "object",
+        "properties": {
+          "scope": {
+            "type": "string",
+            "description": "The full Azure scope to request a token for (e.g., https://graph.microsoft.com/.default)."
+          }
+        },
+        "required": [
+          "scope"
+        ]
+      },
       "AzureWriteAuthRoleRequest": {
         "type": "object",
         "properties": {
@@ -53085,6 +53803,23 @@
             "description": "A map of string key-value pairs to associate with the role.",
             "format": "map"
           },
+          "rotation_grace_period": {
+            "type": "string",
+            "description": "When seamless_rotation is enabled, ensure the lifetimes of the credentials overlap by the specified time. Must not exceed (rotation_period - 3600) / 2. Set to -1 to disable overlap. Defaults to 5m0s if unspecified (or 0).",
+            "format": "duration"
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "seamless_rotation": {
+            "type": "boolean",
+            "description": "If true, enable seamless rotation to help mitigate availability issues that may arise during rotation due to propagation delay."
+          },
           "secret_id": {
             "type": "string",
             "description": "Secret ID of the existing credential to import."
@@ -53133,6 +53868,23 @@
             "type": "object",
             "description": "A map of string key-value pairs to associate with the role.",
             "format": "map"
+          },
+          "rotation_grace_period": {
+            "type": "string",
+            "description": "When seamless_rotation is enabled, ensure the lifetimes of the credentials overlap by the specified time. Must not exceed (rotation_period - 3600) / 2. Set to -1 to disable overlap. Defaults to 5m0s if unspecified (or 0).",
+            "format": "duration"
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "seamless_rotation": {
+            "type": "boolean",
+            "description": "If true, enable seamless rotation to help mitigate availability issues that may arise during rotation due to propagation delay."
           },
           "secret_id": {
             "type": "string",
@@ -53656,6 +54408,18 @@
           }
         }
       },
+      "CloudFoundryListRolesResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "description": "List of role names.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "CloudFoundryLoginRequest": {
         "type": "object",
         "properties": {
@@ -53696,6 +54460,169 @@
           "signature",
           "signing_time"
         ]
+      },
+      "CloudFoundryLoginResponse": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "description": "Display name of the authenticated entity."
+          },
+          "lease_duration": {
+            "type": "integer",
+            "description": "Duration of the token lease in seconds."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Metadata associated with the token.",
+            "format": "map"
+          },
+          "policies": {
+            "type": "array",
+            "description": "Policies assigned to the token.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "renewable": {
+            "type": "boolean",
+            "description": "Whether the token is renewable."
+          }
+        }
+      },
+      "CloudFoundryReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "cf_api_addr": {
+            "type": "string",
+            "description": "Address of the CF API."
+          },
+          "cf_api_mutual_tls_certificate": {
+            "type": "string",
+            "description": "PEM-format certificate used for mutual TLS with the CF API."
+          },
+          "cf_api_trusted_certificates": {
+            "type": "array",
+            "description": "PEM-format CA certificates trusted for the CF API.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cf_client_id": {
+            "type": "string",
+            "description": "Client ID for the CF API."
+          },
+          "cf_timeout": {
+            "type": "integer",
+            "description": "Timeout in seconds for CF API calls."
+          },
+          "cf_username": {
+            "type": "string",
+            "description": "Username for the CF API."
+          },
+          "force_new_client": {
+            "type": "boolean",
+            "description": "Whether a new CF client is created for every login request."
+          },
+          "identity_ca_certificates": {
+            "type": "array",
+            "description": "PEM-format CA certificates used to verify instance certificates.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "login_max_seconds_not_after": {
+            "type": "integer",
+            "description": "Maximum acceptable future offset of a signing_time in seconds."
+          },
+          "login_max_seconds_not_before": {
+            "type": "integer",
+            "description": "Maximum acceptable age of a signing_time in seconds."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Configuration schema version."
+          }
+        }
+      },
+      "CloudFoundryReadRoleResponse": {
+        "type": "object",
+        "properties": {
+          "bound_application_ids": {
+            "type": "array",
+            "description": "Bound CF application IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_instance_ids": {
+            "type": "array",
+            "description": "Bound CF instance IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_organization_ids": {
+            "type": "array",
+            "description": "Bound CF organization IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bound_space_ids": {
+            "type": "array",
+            "description": "Bound CF space IDs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disable_ip_matching": {
+            "type": "boolean",
+            "description": "Whether IP address matching is disabled."
+          },
+          "token_bound_cidrs": {
+            "type": "array",
+            "description": "List of token-bound CIDR blocks.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_explicit_max_ttl": {
+            "type": "integer",
+            "description": "Duration in seconds of the explicit maximum TTL."
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "Maximum TTL of the token in seconds."
+          },
+          "token_no_default_policy": {
+            "type": "boolean",
+            "description": "Whether the default policy is excluded from the token."
+          },
+          "token_num_uses": {
+            "type": "integer",
+            "description": "Maximum number of uses for the token."
+          },
+          "token_period": {
+            "type": "integer",
+            "description": "Renewal period of the token in seconds."
+          },
+          "token_policies": {
+            "type": "array",
+            "description": "List of policies on the token.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Lifetime of the token in seconds."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "Type of token to generate."
+          }
+        }
       },
       "CloudFoundryWriteRoleRequest": {
         "type": "object",
@@ -54501,6 +55428,10 @@
             "type": "string",
             "description": "Entity ID to which this alias belongs"
           },
+          "config_id": {
+            "type": "string",
+            "description": "Config ID of an OAuth Resource Server profile. When provided with external_id and without mount_accessor, Vault resolves the profile to its mount accessor automatically. Mutually exclusive with profile_name."
+          },
           "custom_metadata": {
             "type": "object",
             "description": "User provided key-value pairs",
@@ -54529,6 +55460,10 @@
           "name": {
             "type": "string",
             "description": "Name of the alias; unused for a modify"
+          },
+          "profile_name": {
+            "type": "string",
+            "description": "Name of an OAuth Resource Server profile. When provided with external_id and without mount_accessor, Vault resolves the profile to its mount accessor automatically. Mutually exclusive with config_id."
           }
         }
       },
@@ -54662,6 +55597,10 @@
             "type": "string",
             "description": "Entity ID to which this alias should be tied to"
           },
+          "config_id": {
+            "type": "string",
+            "description": "(Rejected) Valid only when creating an alias, not when updating one by ID."
+          },
           "custom_metadata": {
             "type": "object",
             "description": "User provided key-value pairs",
@@ -54686,6 +55625,10 @@
           "name": {
             "type": "string",
             "description": "(Unused)"
+          },
+          "profile_name": {
+            "type": "string",
+            "description": "(Rejected) Valid only when creating an alias, not when updating one by ID."
           }
         }
       },
@@ -55366,6 +56309,137 @@
           }
         }
       },
+      "GoogleCloudGenerateImpersonatedAccountAccessToken2Response": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateImpersonatedAccountAccessTokenResponse": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetAccessToken2Response": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetAccessToken3Response": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetAccessToken4Response": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetAccessTokenResponse": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetKey2Response": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
+          }
+        }
+      },
       "GoogleCloudGenerateRolesetKey3Request": {
         "type": "object",
         "properties": {
@@ -55383,6 +56457,40 @@
             "type": "string",
             "description": "Lifetime of the service account key",
             "format": "duration"
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetKey3Response": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
+          }
+        }
+      },
+      "GoogleCloudGenerateRolesetKey4Response": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
           }
         }
       },
@@ -55406,6 +56514,78 @@
           }
         }
       },
+      "GoogleCloudGenerateRolesetKeyResponse": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
+          }
+        }
+      },
+      "GoogleCloudGenerateStaticAccountAccessToken2Response": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateStaticAccountAccessTokenResponse": {
+        "type": "object",
+        "properties": {
+          "expires_at_seconds": {
+            "type": "integer",
+            "description": "Unix timestamp at which the token expires.",
+            "format": "int64"
+          },
+          "token": {
+            "type": "string",
+            "description": "OAuth2 access token."
+          },
+          "token_ttl": {
+            "type": "integer",
+            "description": "Remaining lifetime of the token in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudGenerateStaticAccountKey2Response": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
+          }
+        }
+      },
       "GoogleCloudGenerateStaticAccountKeyRequest": {
         "type": "object",
         "properties": {
@@ -55423,6 +56603,23 @@
             "type": "string",
             "description": "Lifetime of the service account key",
             "format": "duration"
+          }
+        }
+      },
+      "GoogleCloudGenerateStaticAccountKeyResponse": {
+        "type": "object",
+        "properties": {
+          "key_algorithm": {
+            "type": "string",
+            "description": "Algorithm used to generate the service account key."
+          },
+          "key_type": {
+            "type": "string",
+            "description": "Private key type of the service account key."
+          },
+          "private_key_data": {
+            "type": "string",
+            "description": "Base64-encoded private key data for the service account key."
           }
         }
       },
@@ -55472,6 +56669,15 @@
           }
         }
       },
+      "GoogleCloudKmsDecryptResponse": {
+        "type": "object",
+        "properties": {
+          "plaintext": {
+            "type": "string",
+            "description": "Decrypted plaintext value."
+          }
+        }
+      },
       "GoogleCloudKmsEncryptRequest": {
         "type": "object",
         "properties": {
@@ -55486,6 +56692,96 @@
           "plaintext": {
             "type": "string",
             "description": "Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types."
+          }
+        }
+      },
+      "GoogleCloudKmsEncryptResponse": {
+        "type": "object",
+        "properties": {
+          "ciphertext": {
+            "type": "string",
+            "description": "Base64-encoded encrypted ciphertext."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Key version used for encryption."
+          }
+        }
+      },
+      "GoogleCloudKmsReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "scopes": {
+            "type": "array",
+            "description": "List of OAuth2 scopes requested when authenticating.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GoogleCloudKmsReadKeyConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "crypto_key": {
+            "type": "string",
+            "description": "Full Google Cloud KMS resource ID of the crypto key."
+          },
+          "max_version": {
+            "type": "integer",
+            "description": "Maximum allowed crypto key version."
+          },
+          "min_version": {
+            "type": "integer",
+            "description": "Minimum allowed crypto key version."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the key in Vault."
+          }
+        }
+      },
+      "GoogleCloudKmsReadKeyResponse": {
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "description": "Algorithm of the key version template."
+          },
+          "id": {
+            "type": "string",
+            "description": "Full Google Cloud KMS resource ID of the key."
+          },
+          "labels": {
+            "type": "object",
+            "description": "Labels applied to the crypto key.",
+            "format": "map"
+          },
+          "next_rotation_time_seconds": {
+            "type": "integer",
+            "description": "Unix epoch timestamp of the next scheduled rotation.",
+            "format": "int64"
+          },
+          "primary_version": {
+            "type": "string",
+            "description": "Primary crypto key version."
+          },
+          "protection_level": {
+            "type": "string",
+            "description": "Protection level of the key."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Purpose of the crypto key."
+          },
+          "rotation_schedule_seconds": {
+            "type": "integer",
+            "description": "Rotation period in seconds.",
+            "format": "int64"
+          },
+          "state": {
+            "type": "string",
+            "description": "State of the primary crypto key version."
           }
         }
       },
@@ -55506,6 +56802,19 @@
           }
         }
       },
+      "GoogleCloudKmsReencryptResponse": {
+        "type": "object",
+        "properties": {
+          "ciphertext": {
+            "type": "string",
+            "description": "Base64-encoded re-encrypted ciphertext."
+          },
+          "key_version": {
+            "type": "integer",
+            "description": "Key version used for re-encryption."
+          }
+        }
+      },
       "GoogleCloudKmsRegisterKeyRequest": {
         "type": "object",
         "properties": {
@@ -55520,6 +56829,28 @@
           }
         }
       },
+      "GoogleCloudKmsRetrievePublicKeyResponse": {
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "description": "Algorithm of the public key."
+          },
+          "pem": {
+            "type": "string",
+            "description": "PEM-encoded public key."
+          }
+        }
+      },
+      "GoogleCloudKmsRotateKeyResponse": {
+        "type": "object",
+        "properties": {
+          "key_version": {
+            "type": "integer",
+            "description": "New primary crypto key version."
+          }
+        }
+      },
       "GoogleCloudKmsSignRequest": {
         "type": "object",
         "properties": {
@@ -55530,6 +56861,15 @@
           "key_version": {
             "type": "integer",
             "description": "Integer version of the crypto key version to use for signing. This field is required."
+          }
+        }
+      },
+      "GoogleCloudKmsSignResponse": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string",
+            "description": "Base64-encoded signature."
           }
         }
       },
@@ -55547,6 +56887,15 @@
           "signature": {
             "type": "string",
             "description": "Base64-encoded signature to use for verification. This field is required."
+          }
+        }
+      },
+      "GoogleCloudKmsVerifyResponse": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean",
+            "description": "Whether the signature is valid."
           }
         }
       },
@@ -55595,6 +56944,145 @@
           "role": {
             "type": "string",
             "description": "Name of the role against which the login is being attempted. Required."
+          }
+        }
+      },
+      "GoogleCloudReadConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "Whether automated rotation is disabled."
+          },
+          "identity_token_audience": {
+            "type": "string",
+            "description": "Audience of plugin identity tokens."
+          },
+          "identity_token_ttl": {
+            "type": "integer",
+            "description": "Time-to-live of plugin identity tokens, in seconds.",
+            "format": "int64"
+          },
+          "max_ttl": {
+            "type": "integer",
+            "description": "Maximum lifetime of generated keys, in seconds.",
+            "format": "int64"
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "Period in seconds between automated root credential rotations.",
+            "format": "duration"
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Name of the rotation policy for automated root credential rotation."
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style schedule for automated root credential rotation."
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Time window in seconds for automated rotation to complete.",
+            "format": "duration"
+          },
+          "service_account_email": {
+            "type": "string",
+            "description": "Email ID of the service account used for Workload Identity Federation."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Default lease for generated keys, in seconds.",
+            "format": "int64"
+          }
+        }
+      },
+      "GoogleCloudReadImpersonatedAccountResponse": {
+        "type": "object",
+        "properties": {
+          "service_account_email": {
+            "type": "string",
+            "description": "Email of the impersonated GCP service account."
+          },
+          "service_account_project": {
+            "type": "string",
+            "description": "GCP project of the impersonated service account."
+          },
+          "token_scopes": {
+            "type": "array",
+            "description": "List of OAuth scopes assigned to access tokens.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "Lifetime of the token in seconds."
+          }
+        }
+      },
+      "GoogleCloudReadRolesetResponse": {
+        "type": "object",
+        "properties": {
+          "bindings": {
+            "type": "string",
+            "description": "Bindings configuration for the roleset."
+          },
+          "project": {
+            "type": "string",
+            "description": "GCP project of the roleset service account."
+          },
+          "secret_type": {
+            "type": "string",
+            "description": "Type of secret generated for this roleset."
+          },
+          "service_account_email": {
+            "type": "string",
+            "description": "Email of the GCP service account for this roleset."
+          },
+          "token_scopes": {
+            "type": "array",
+            "description": "OAuth scopes for access tokens generated under this roleset.",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "GoogleCloudReadStaticAccountResponse": {
+        "type": "object",
+        "properties": {
+          "bindings": {
+            "type": "string",
+            "description": "Bindings configuration for the static account."
+          },
+          "secret_type": {
+            "type": "string",
+            "description": "Type of secret generated for this static account."
+          },
+          "service_account_email": {
+            "type": "string",
+            "description": "Email of the static GCP service account."
+          },
+          "service_account_project": {
+            "type": "string",
+            "description": "GCP project of the static service account."
+          },
+          "token_scopes": {
+            "type": "array",
+            "description": "OAuth scopes for access tokens generated under this static account.",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "GoogleCloudRotateRootCredentialsResponse": {
+        "type": "object",
+        "properties": {
+          "private_key_id": {
+            "type": "string",
+            "description": "ID of the new GCP service account key."
           }
         }
       },
@@ -58389,6 +59877,10 @@
             "type": "string",
             "description": "The pre-existing Role or ClusterRole to bind a generated service account to. If set, Kubernetes token, service account, and role binding objects will be created."
           },
+          "kubernetes_role_ref_type": {
+            "type": "string",
+            "description": "Specifies whether the Kubernetes role used as the RoleRef in the RoleBinding or ClusterRoleBinding is a Role or ClusterRole. Accepted values: 'Role', 'ClusterRole' (case-insensitive). If omitted, defaults to the value of kubernetes_role_type. Only relevant when kubernetes_role_name is set; has no effect when service_account_name or generated_role_rules is used. Note: setting this to 'Role' while requesting credentials with cluster_role_binding=true is invalid and will be rejected at credential-generation time."
+          },
           "kubernetes_role_type": {
             "type": "string",
             "description": "Specifies whether the Kubernetes role is a Role or ClusterRole.",
@@ -58418,6 +59910,18 @@
             "type": "string",
             "description": "The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.",
             "format": "duration"
+          }
+        }
+      },
+      "KvV1ListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "description": "List of keys at the requested path.",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -58459,6 +59963,18 @@
             "description": "The versions to destroy. Their data will be permanently deleted.",
             "items": {
               "type": "integer"
+            }
+          }
+        }
+      },
+      "KvV2ListResponse": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "description": "List of keys at the requested path.",
+            "items": {
+              "type": "string"
             }
           }
         }
@@ -61065,6 +62581,11 @@
       "OauthResourceServerListProfilesResponse": {
         "type": "object",
         "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Map keyed by profile name. Each entry carries the profile's config_id and mount_accessor. Always present on a successful response, but empty when no listed profile could be read.",
+            "format": "map"
+          },
           "keys": {
             "type": "array",
             "items": {
@@ -61105,12 +62626,20 @@
       "OauthResourceServerReadProfileByIdResponse": {
         "type": "object",
         "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier."
+          },
           "audiences": {
             "type": "array",
             "description": "List of allowed audiences (aud claim).",
             "items": {
               "type": "string"
             }
+          },
+          "authorization_details_claim": {
+            "type": "string",
+            "description": "The claim containing authorization details (default: authorization_details)."
           },
           "clock_skew_leeway": {
             "type": "string",
@@ -61141,6 +62670,14 @@
             "type": "string",
             "description": "The JWT type: 'access_token' or 'transaction_token'."
           },
+          "local": {
+            "type": "boolean",
+            "description": "Whether this profile is cluster-scoped (true) or globally replicated (false)."
+          },
+          "mount_accessor": {
+            "type": "string",
+            "description": "Synthetic mount accessor for this profile, in the format oauth-resource-server_<namespace_id>_<config_id>. This is the accessor reported for aliases backed by this profile in identity read, list, and audit output, and is the value used to select those aliases in templated policies. To create an identity/entity-alias, prefer identifying the profile by profile_name, config_id, or issuer rather than passing this accessor explicitly."
+          },
           "no_default_policy": {
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
@@ -61167,6 +62704,10 @@
               "type": "string"
             }
           },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the unique identifier for the JWT claim."
+          },
           "use_jwks": {
             "type": "boolean",
             "description": "If true, use JWKS URI for key validation."
@@ -61191,6 +62732,10 @@
               "type": "string"
             }
           },
+          "authorization_details_claim": {
+            "type": "string",
+            "description": "The claim containing authorization details (default: authorization_details)."
+          },
           "clock_skew_leeway": {
             "type": "string",
             "description": "Leeway for clock skew in seconds.",
@@ -61202,7 +62747,7 @@
           },
           "enabled": {
             "type": "boolean",
-            "description": "Whether this profile is enabled for JWT validation. Disabled profiles are ignored"
+            "description": "Whether this profile is enabled for JWT validation."
           },
           "issuer_id": {
             "type": "string",
@@ -61212,6 +62757,10 @@
             "type": "string",
             "description": "Optional CA certificate for JWKS URI TLS validation."
           },
+          "jwks_uri": {
+            "type": "string",
+            "description": "The JWKS URI to fetch public keys from."
+          },
           "jwt_type": {
             "type": "string",
             "description": "The JWT type: 'access_token' or 'transaction_token'."
@@ -61220,13 +62769,17 @@
             "type": "boolean",
             "description": "Whether this profile is cluster-scoped (true) or globally replicated (false)."
           },
+          "mount_accessor": {
+            "type": "string",
+            "description": "Synthetic mount accessor for this profile, in the format oauth-resource-server_<namespace_id>_<config_id>. This is the accessor reported for aliases backed by this profile in identity read, list, and audit output, and is the value used to select those aliases in templated policies. To create an identity/entity-alias, prefer identifying the profile by profile_name, config_id, or issuer rather than passing this accessor explicitly."
+          },
           "no_default_policy": {
             "type": "boolean",
             "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
           },
           "optional_authorization_details": {
             "type": "boolean",
-            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory."
+            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server."
           },
           "profile_name": {
             "type": "string",
@@ -61234,7 +62787,7 @@
           },
           "public_keys": {
             "type": "array",
-            "description": "List of static public keys with key_id and pem fields",
+            "description": "List of static public keys with key_id and pem fields.",
             "items": {
               "type": "object"
             }
@@ -61252,11 +62805,11 @@
           },
           "use_jwks": {
             "type": "boolean",
-            "description": "If true, use JWKS URI for key validation profile names."
+            "description": "If true, use JWKS URI for key validation."
           },
           "user_claim": {
             "type": "string",
-            "description": "The claim to use as the user identifier (default: sub)."
+            "description": "The claim to use as the user identifier."
           }
         }
       },
@@ -61274,6 +62827,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "authorization_details_claim": {
+            "type": "string",
+            "description": "The claim containing authorization details (default: authorization_details).",
+            "default": "authorization_details"
           },
           "clock_skew_leeway": {
             "type": "string",
@@ -61348,6 +62906,101 @@
         "required": [
           "issuer_id"
         ]
+      },
+      "OauthResourceServerUpdateProfileResponse": {
+        "type": "object",
+        "properties": {
+          "actor_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the actor identifier."
+          },
+          "audiences": {
+            "type": "array",
+            "description": "List of allowed audiences (aud claim).",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorization_details_claim": {
+            "type": "string",
+            "description": "The claim containing authorization details (default: authorization_details)."
+          },
+          "clock_skew_leeway": {
+            "type": "string",
+            "description": "Leeway for clock skew in seconds.",
+            "format": "duration"
+          },
+          "config_id": {
+            "type": "string",
+            "description": "Stable unique identifier for this OAuth Resource Server Configuration profile."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this profile is enabled for JWT validation."
+          },
+          "issuer_id": {
+            "type": "string",
+            "description": "The issuer ID (iss claim) to validate against."
+          },
+          "jwks_ca_pem": {
+            "type": "string",
+            "description": "Optional CA certificate for JWKS URI TLS validation."
+          },
+          "jwks_uri": {
+            "type": "string",
+            "description": "The JWKS URI to fetch public keys from."
+          },
+          "jwt_type": {
+            "type": "string",
+            "description": "The JWT type: 'access_token' or 'transaction_token'."
+          },
+          "local": {
+            "type": "boolean",
+            "description": "Whether this profile is cluster-scoped (true) or globally replicated (false)."
+          },
+          "mount_accessor": {
+            "type": "string",
+            "description": "Synthetic mount accessor for this profile, in the format oauth-resource-server_<namespace_id>_<config_id>. This is the accessor reported for aliases backed by this profile in identity read, list, and audit output, and is the value used to select those aliases in templated policies. To create an identity/entity-alias, prefer identifying the profile by profile_name, config_id, or issuer rather than passing this accessor explicitly."
+          },
+          "no_default_policy": {
+            "type": "boolean",
+            "description": "If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere."
+          },
+          "optional_authorization_details": {
+            "type": "boolean",
+            "description": "If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server."
+          },
+          "profile_name": {
+            "type": "string",
+            "description": "The name of the OAuth Resource Server Configuration profile."
+          },
+          "public_keys": {
+            "type": "array",
+            "description": "List of static public keys with key_id and pem fields.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "supported_algorithms": {
+            "type": "array",
+            "description": "List of supported signing algorithms.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unique_id_claim": {
+            "type": "string",
+            "description": "Optional claim to use as the unique identifier for the JWT claim."
+          },
+          "use_jwks": {
+            "type": "boolean",
+            "description": "If true, use JWKS URI for key validation."
+          },
+          "user_claim": {
+            "type": "string",
+            "description": "The claim to use as the user identifier."
+          }
+        }
       },
       "OciConfigureRequest": {
         "type": "object",
@@ -62598,7 +64251,7 @@
         "properties": {
           "audit_fields": {
             "type": "array",
-            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints]",
+            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints user_ids]",
             "items": {
               "type": "string"
             },
@@ -62762,7 +64415,7 @@
         "properties": {
           "audit_fields": {
             "type": "array",
-            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints]",
+            "description": "Fields parsed from the CSR that appear in the audit and can be used by sentinel policies. Options are: [csr common_name alt_names ip_sans uri_sans other_sans signature_bits exclude_cn_from_sans ou organization country locality province street_address postal_code serial_number use_pss key_type key_bits add_basic_constraints user_ids]",
             "items": {
               "type": "string"
             },
@@ -63355,6 +65008,13 @@
             "type": "string",
             "description": "PEM-encoded private key for the existing ACME account."
           },
+          "default_nameserver": {
+            "type": "string",
+            "description": "Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.",
+            "x-vault-displayAttrs": {
+              "name": "Default Nameserver"
+            }
+          },
           "directory_url": {
             "type": "string",
             "description": "The ACME directory URL where you registered the account.",
@@ -63391,6 +65051,13 @@
             "type": "string",
             "description": "Configuration creation timestamp",
             "format": "date-time"
+          },
+          "default_nameserver": {
+            "type": "string",
+            "description": "Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.",
+            "x-vault-displayAttrs": {
+              "name": "Default Nameserver"
+            }
           },
           "directory_url": {
             "type": "string",
@@ -63468,6 +65135,13 @@
             "description": "Configuration creation timestamp",
             "format": "date-time"
           },
+          "default_nameserver": {
+            "type": "string",
+            "description": "Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.",
+            "x-vault-displayAttrs": {
+              "name": "Default Nameserver"
+            }
+          },
           "directory_url": {
             "type": "string",
             "description": "The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)"
@@ -63537,6 +65211,10 @@
             "type": "string",
             "description": "Name of the aws-route53 DNS configuration"
           },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
           "region": {
             "type": "string",
             "description": "AWS region for Route53 operations"
@@ -63580,6 +65258,10 @@
           "name": {
             "type": "string",
             "description": "Name of the azure-dns DNS configuration"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
           },
           "resource_group_name": {
             "type": "string",
@@ -63632,6 +65314,10 @@
           "name": {
             "type": "string",
             "description": "Name of the google-cloud-dns DNS configuration"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
           },
           "project": {
             "type": "string",
@@ -64044,6 +65730,13 @@
       "PkiExternalCaWriteConfigAcmeAccountRequest": {
         "type": "object",
         "properties": {
+          "default_nameserver": {
+            "type": "string",
+            "description": "Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.",
+            "x-vault-displayAttrs": {
+              "name": "Default Nameserver"
+            }
+          },
           "directory_url": {
             "type": "string",
             "description": "The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)"
@@ -64111,6 +65804,13 @@
             "type": "string",
             "description": "Configuration creation timestamp",
             "format": "date-time"
+          },
+          "default_nameserver": {
+            "type": "string",
+            "description": "Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.",
+            "x-vault-displayAttrs": {
+              "name": "Default Nameserver"
+            }
           },
           "directory_url": {
             "type": "string",
@@ -64189,6 +65889,10 @@
               "type": "string"
             }
           },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
           "region": {
             "type": "string",
             "description": "AWS region for Route53 operations"
@@ -64245,6 +65949,10 @@
             "type": "string",
             "description": "Name of the aws-route53 DNS configuration"
           },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
           "region": {
             "type": "string",
             "description": "AWS region for Route53 operations"
@@ -64278,6 +65986,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
           },
           "resource_group_name": {
             "type": "string",
@@ -64335,6 +66047,10 @@
             "type": "string",
             "description": "Name of the azure-dns DNS configuration"
           },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
+          },
           "resource_group_name": {
             "type": "string",
             "description": "Azure resource group name containing the DNS zone"
@@ -64376,6 +66092,10 @@
           "impersonate_service_account": {
             "type": "string",
             "description": "Service account email to impersonate"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
           },
           "project": {
             "type": "string",
@@ -64420,6 +66140,10 @@
           "name": {
             "type": "string",
             "description": "Name of the google-cloud-dns DNS configuration"
+          },
+          "nameserver": {
+            "type": "string",
+            "description": "DNS server address (IP:port format, e.g., 192.168.1.1:53)"
           },
           "project": {
             "type": "string",
@@ -68164,6 +69888,23 @@
           }
         }
       },
+      "PkiListExportKeysResponse": {
+        "type": "object",
+        "properties": {
+          "key_info": {
+            "type": "object",
+            "description": "Map of UUID to metadata (name, key_type, export_key_hmac).",
+            "format": "map"
+          },
+          "keys": {
+            "type": "array",
+            "description": "List of export key UUIDs on this mount.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "PkiListIssuersResponse": {
         "type": "object",
         "properties": {
@@ -68563,6 +70304,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -68891,6 +70640,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -69146,6 +70903,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69175,6 +70936,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69206,6 +70971,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69235,6 +71004,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69266,6 +71039,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69295,6 +71072,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69351,6 +71132,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69380,6 +71165,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69411,6 +71200,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69441,6 +71234,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69470,6 +71267,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69574,6 +71375,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69603,6 +71408,10 @@
           "issuer_id": {
             "type": "string",
             "description": "ID of the issuer"
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
           },
           "revocation_time": {
             "type": "integer",
@@ -69634,6 +71443,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69664,6 +71477,10 @@
             "type": "string",
             "description": "ID of the issuer"
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Revocation reason code: RFC 5280 formatted"
+          },
           "revocation_time": {
             "type": "integer",
             "description": "Revocation time",
@@ -69672,6 +71489,29 @@
           "revocation_time_rfc3339": {
             "type": "string",
             "description": "Revocation time RFC 3339 formatted"
+          }
+        }
+      },
+      "PkiReadExportKeyResponse": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "export_key_hmac": {
+            "type": "string"
+          },
+          "export_key_uuid": {
+            "type": "string"
+          },
+          "key_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "public_key": {
+            "type": "string"
           }
         }
       },
@@ -70019,6 +71859,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -70354,6 +72202,10 @@
             "type": "string",
             "description": "Certificate to revoke in PEM format; must be signed by an issuer in this mount."
           },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
+          },
           "serial_number": {
             "type": "string",
             "description": "Certificate serial number, in colon- or hyphen-separated octal"
@@ -70389,6 +72241,10 @@
           "private_key": {
             "type": "string",
             "description": "Key to use to verify revocation permission; must be in PEM format."
+          },
+          "revocation_reason": {
+            "type": "integer",
+            "description": "Reason code identifying the reason for certificate revocation. A set of reason codes are specified in RFC 5280: https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1. Omitting this field sets a reason code of 0 corresponding with \"unspecified\""
           },
           "serial_number": {
             "type": "string",
@@ -72505,6 +74361,36 @@
             "type": "object",
             "description": "Map of serial numbers requested to certificate found in storage on this node",
             "format": "map"
+          }
+        }
+      },
+      "PkiWriteExportKeysRequest": {
+        "type": "object",
+        "properties": {
+          "key_type": {
+            "type": "string",
+            "description": "Algorithm for this export key. Supported: \"rsa-2048\", \"rsa-3072\", \"rsa-4096\", \"ec-p256\", \"ec-p384\", \"ec-p521\", \"ml-kem-768\", \"ml-kem-1024\"."
+          },
+          "name": {
+            "type": "string",
+            "description": "Optional human-readable name for this export key."
+          }
+        }
+      },
+      "PkiWriteExportKeysResponse": {
+        "type": "object",
+        "properties": {
+          "export_key_hmac": {
+            "type": "string",
+            "description": "HMAC of the public key. Pass this alongside wrapped_key to the import endpoint."
+          },
+          "export_key_uuid": {
+            "type": "string",
+            "description": "UUID of the newly created export key."
+          },
+          "public_key": {
+            "type": "string",
+            "description": "PEM-encoded public key. Pass this to the source Vault export endpoint."
           }
         }
       },
@@ -75166,6 +77052,14 @@
               "type": "string"
             }
           },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
           "email_protection_flag": {
             "type": "boolean",
             "description": "If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12."
@@ -75493,6 +77387,14 @@
             "items": {
               "type": "string"
             }
+          },
+          "csr_extra_names_oids": {
+            "type": "array",
+            "description": "If set, a list of OID strings in dotted-decimal notation (e.g. \"0.9.2342.19200300.100.1.1\") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
           },
           "email_protection_flag": {
             "type": "boolean",
@@ -76241,10 +78143,6 @@
       "PoliciesReadRotationPolicyResponse": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76252,20 +78150,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         }
       },
@@ -76308,10 +78192,6 @@
       "PoliciesWriteRotationPolicyRequest": {
         "type": "object",
         "properties": {
-          "disable_automated_rotation": {
-            "type": "boolean",
-            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin."
-          },
           "max_retries_per_cycle": {
             "type": "integer",
             "description": "The maximum number of retries per cycle allowed for rotation."
@@ -76319,20 +78199,6 @@
           "max_retry_cycles": {
             "type": "integer",
             "description": "The maximum number of retry cycles allowed for rotation."
-          },
-          "rotation_period": {
-            "type": "string",
-            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
-            "format": "duration"
-          },
-          "rotation_schedule": {
-            "type": "string",
-            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period"
-          },
-          "rotation_window": {
-            "type": "string",
-            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
-            "format": "duration"
           }
         },
         "required": [
@@ -78225,6 +80091,10 @@
             "type": "string",
             "description": "ID of the Vault entity to link to this SCIM client."
           },
+          "externalId": {
+            "type": "string",
+            "description": "Optional external ID for the SCIM-managed entity."
+          },
           "group_memberships": {
             "type": "array",
             "description": "Optional list of group IDs (owned by this SCIM client) to add the entity to as a member.",
@@ -78261,6 +80131,10 @@
             "type": "string",
             "description": "Optional. The mount accessor of an auth method where login aliases should be created for provisioned users. When set, the SCIM client will create both a Vault entity and an alias on the specified auth mount for each provisioned user."
           },
+          "allow_group_adoption": {
+            "type": "boolean",
+            "description": "Optional. When true, allows this client to adopt groups, forbidden when this is set to false. Defaults to false."
+          },
           "allow_user_adoption": {
             "type": "boolean",
             "description": "Optional. When true, allows this client to adopt pre-existing unmanaged entities when a POST /Users userName matches an existing login alias. Defaults to false."
@@ -78274,7 +80148,7 @@
           },
           "default_schema_version": {
             "type": "string",
-            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'."
+            "description": "Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'."
           },
           "delete-linked-resources": {
             "type": "boolean",
@@ -79928,6 +81802,10 @@
       "SystemReadBillingConfigResponse": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months of attribution data to retain. 0 means attribution storage is disabled."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months of billing data to retain."
@@ -80267,6 +82145,10 @@
       "SystemWriteBillingConfigRequest": {
         "type": "object",
         "properties": {
+          "attribution_retention_months": {
+            "type": "integer",
+            "description": "Number of months to retain mount attribution data for billing metrics. Must be between 0 and 72 months. Defaults to 37 months. Setting to 0 disables attribution storage and wipes all existing attribution data."
+          },
           "retention_months": {
             "type": "integer",
             "description": "Number of months to retain billing data. Must be between 13 and 72 months. Defaults to 37 months."
@@ -80446,6 +82328,10 @@
           "resource": {
             "type": "string",
             "description": "The Azure Key Vault resource's DNS Suffix to connect to. Needs to be changed to connect to Azure's Managed HSM KeyVault instance type."
+          },
+          "rsa_oaep_hash": {
+            "type": "string",
+            "description": "The hash algorithm to use for RSA-OAEP encryption with CKM_RSA_PKCS_OAEP. Requires mechanism CKM_RSA_PKCS_OAEP (0x9). Options are 'sha1', 'sha224', 'sha256', 'sha384', 'sha512'."
           },
           "secret_key": {
             "type": "string",
@@ -81264,6 +83150,10 @@
           "azure_endpoint": {
             "type": "string",
             "description": "Azure blob storage endpoint"
+          },
+          "dr_operation_token": {
+            "type": "string",
+            "description": "DR operation token used to authorize this request (if a DR secondary node)."
           },
           "file_prefix": {
             "type": "string",
@@ -82184,6 +84074,49 @@
             "description": "The base path for the Terraform Cloud or Enterprise API. Default is \"/api/v2/\".",
             "default": "/api/v2/"
           },
+          "disable_automated_rotation": {
+            "type": "boolean",
+            "description": "If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "explicit_max_ttl": {
+            "type": "string",
+            "description": "The maximum lifetime (expiration) set on the root token in Terraform Cloud or Enterprise. Acts as an upper-bound safety net; Vault manages the root token lifecycle. The default (0) omits the expiration so Terraform applies its default token expiry (2 years). The same value is used for both manual and automatic rotation.",
+            "format": "duration",
+            "default": 0
+          },
+          "rotation_period": {
+            "type": "string",
+            "description": "TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_policy": {
+            "type": "string",
+            "description": "Defines the rotation policy to use when performing automated rotations.",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_schedule": {
+            "type": "string",
+            "description": "CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
+          "rotation_window": {
+            "type": "string",
+            "description": "Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule",
+            "format": "duration",
+            "x-vault-displayAttrs": {
+              "group": "default"
+            }
+          },
           "token": {
             "type": "string",
             "description": "The token to access Terraform Cloud",
@@ -82513,6 +84446,29 @@
             "description": "Accessor of the token (request body)"
           }
         }
+      },
+      "TokenRevokeOauthRequest": {
+        "type": "object",
+        "properties": {
+          "exp": {
+            "type": "string",
+            "description": "Duration from now after which the denylist entry expires. Replaced with token's exp when oauth token has been persisted to storage",
+            "format": "duration"
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuer of the OAuth token"
+          },
+          "unique_id": {
+            "type": "string",
+            "description": "Value of the issuer profile's configured unique_id_claim"
+          }
+        },
+        "required": [
+          "exp",
+          "issuer",
+          "unique_id"
+        ]
       },
       "TokenRevokeOrphanRequest": {
         "type": "object",
@@ -83164,6 +85120,11 @@
             "description": "The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"",
             "default": "SHA256"
           },
+          "max_tweak_len": {
+            "type": "integer",
+            "description": "The maximum tweak length allowed with this transformation. Only valid for FPE transformations.",
+            "default": 0
+          },
           "template": {
             "type": "string",
             "description": "The name of the template to use."
@@ -83404,6 +85365,38 @@
           }
         }
       },
+      "TransformRewrapRequest": {
+        "type": "object",
+        "properties": {
+          "batch_input": {
+            "type": "array",
+            "description": "Specifies a list of items to be rewrapped in a single batch. If this parameter is set, the parameters 'value', 'transformation', 'decode_transformation', 'tweak', and 'decode_tweak' will be ignored. Each batch item within the list can specify these parameters instead.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "decode_transformation": {
+            "type": "string",
+            "description": "The FPE transformation to use to decode the value."
+          },
+          "decode_tweak": {
+            "type": "string",
+            "description": "The tweak value to use for decoding."
+          },
+          "transformation": {
+            "type": "string",
+            "description": "The FPE transformation to use for re-encrypting the value."
+          },
+          "tweak": {
+            "type": "string",
+            "description": "The tweak value to use for re-encrypting."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value to be rewrapped."
+          }
+        }
+      },
       "TransformSnapshotTokenizationStateRequest": {
         "type": "object",
         "properties": {
@@ -83470,6 +85463,11 @@
           "deletion_allowed": {
             "type": "boolean",
             "description": "If false, deletion of this transform is prevented."
+          },
+          "max_tweak_len": {
+            "type": "integer",
+            "description": "The maximum tweak length allowed with this transformation. Only valid for FPE transformations.",
+            "default": 0
           },
           "template": {
             "type": "string",
@@ -83656,6 +85654,11 @@
           "masking_character": {
             "type": "string",
             "description": "The character used to replace data when in masking mode"
+          },
+          "max_tweak_len": {
+            "type": "integer",
+            "description": "The maximum tweak length allowed with this transformation. Only valid for FPE transformations.",
+            "default": 0
           },
           "stores": {
             "type": "array",
@@ -83902,13 +85905,17 @@
             "type": "string",
             "description": "Base64 encoded context for key derivation. Required if key derivation is enabled."
           },
+          "hash_algorithm": {
+            "type": "string",
+            "description": "The hash algorithm to use for decryption. Currently only applies to RSA key types. Options are 'sha1', 'sha2-224', 'sha2-256', 'sha2-384', 'sha2-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512'. Defaults to 'sha2-256'."
+          },
           "nonce": {
             "type": "string",
             "description": "Base64 encoded nonce value used during encryption. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+."
           },
           "padding_scheme": {
             "type": "string",
-            "description": "The padding scheme to use for decrypt. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'"
+            "description": "The padding scheme to use for decryption. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'"
           },
           "partial_failure_response_code": {
             "type": "integer",
@@ -83938,6 +85945,10 @@
             "type": "boolean",
             "description": "This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security."
           },
+          "hash_algorithm": {
+            "type": "string",
+            "description": "The hash algorithm to use for encryption. Currently only applies to RSA key types. Options are 'sha1', 'sha2-224', 'sha2-256', 'sha2-384', 'sha2-512', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512'. Defaults to 'sha2-256'."
+          },
           "iv": {
             "type": "string",
             "description": "Specifies a base64-encoded IV to use with AES-CBC. The length of the IV must be 16 bytes (128 bits).'"
@@ -83952,7 +85963,7 @@
           },
           "padding_scheme": {
             "type": "string",
-            "description": "The padding scheme to use for decrypt. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'"
+            "description": "The padding scheme to use for encryption. Currently only applies to RSA key types. Options are 'oaep' or 'pkcs1v15'. Defaults to 'oaep'"
           },
           "partial_failure_response_code": {
             "type": "integer",
@@ -84318,6 +86329,10 @@
           "public_key": {
             "type": "string",
             "description": "The plaintext public key to be imported. If \"ciphertext\" is set, this field is ignored."
+          },
+          "type": {
+            "type": "string",
+            "description": "Enterprise only. If specified, allows choosing a new key type for the new version. Otherwise, it assumes latest existing version."
           },
           "version": {
             "type": "integer",
