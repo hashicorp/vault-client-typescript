@@ -36,6 +36,12 @@ export interface OauthResourceServerUpdateProfileRequest {
      */
     audiences?: Array<string>;
     /**
+     * The claim containing authorization details (default: authorization_details).
+     * @type {string}
+     * @memberof OauthResourceServerUpdateProfileRequest
+     */
+    authorization_details_claim?: string;
+    /**
      * Leeway for clock skew in seconds.
      * @type {string}
      * @memberof OauthResourceServerUpdateProfileRequest
@@ -141,6 +147,7 @@ export function OauthResourceServerUpdateProfileRequestFromJSONTyped(json: any, 
         
         'actor_claim': json['actor_claim'] == null ? undefined : json['actor_claim'],
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
+        'authorization_details_claim': json['authorization_details_claim'] == null ? undefined : json['authorization_details_claim'],
         'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
         'issuer_id': json['issuer_id'],
@@ -171,6 +178,7 @@ export function OauthResourceServerUpdateProfileRequestToJSONTyped(value?: Oauth
         
         'actor_claim': value['actor_claim'],
         'audiences': value['audiences'],
+        'authorization_details_claim': value['authorization_details_claim'],
         'clock_skew_leeway': value['clock_skew_leeway'],
         'enabled': value['enabled'],
         'issuer_id': value['issuer_id'],

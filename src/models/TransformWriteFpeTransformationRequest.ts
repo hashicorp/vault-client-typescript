@@ -36,6 +36,12 @@ export interface TransformWriteFpeTransformationRequest {
      */
     deletion_allowed?: boolean;
     /**
+     * The maximum tweak length allowed with this transformation. Only valid for FPE transformations.
+     * @type {number}
+     * @memberof TransformWriteFpeTransformationRequest
+     */
+    max_tweak_len?: number;
+    /**
      * The name of the template to use.
      * @type {string}
      * @memberof TransformWriteFpeTransformationRequest
@@ -68,6 +74,7 @@ export function TransformWriteFpeTransformationRequestFromJSONTyped(json: any, i
         
         'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
+        'max_tweak_len': json['max_tweak_len'] == null ? undefined : json['max_tweak_len'],
         'template': json['template'] == null ? undefined : json['template'],
         'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
     };
@@ -86,6 +93,7 @@ export function TransformWriteFpeTransformationRequestToJSONTyped(value?: Transf
         
         'allowed_roles': value['allowed_roles'],
         'deletion_allowed': value['deletion_allowed'],
+        'max_tweak_len': value['max_tweak_len'],
         'template': value['template'],
         'tweak_source': value['tweak_source'],
     };

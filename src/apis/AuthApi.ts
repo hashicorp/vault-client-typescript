@@ -20,6 +20,8 @@
 import * as runtime from '../runtime';
 import type {
   AliCloudLoginRequest,
+  AliCloudLoginResponse,
+  AliCloudReadAuthRoleResponse,
   AliCloudWriteAuthRoleRequest,
   AppRoleDestroySecretIdByAccessorRequest,
   AppRoleDestroySecretIdRequest,
@@ -101,7 +103,11 @@ import type {
   CertWriteCertificateRequest,
   CertWriteCrlRequest,
   CloudFoundryConfigureRequest,
+  CloudFoundryListRolesResponse,
   CloudFoundryLoginRequest,
+  CloudFoundryLoginResponse,
+  CloudFoundryReadConfigurationResponse,
+  CloudFoundryReadRoleResponse,
   CloudFoundryWriteRoleRequest,
   GithubConfigureRequest,
   GithubLoginRequest,
@@ -166,6 +172,7 @@ import type {
   TokenRenewRequest,
   TokenRenewSelfRequest,
   TokenRevokeAccessorRequest,
+  TokenRevokeOauthRequest,
   TokenRevokeOrphanRequest,
   TokenRevokeRequest,
   TokenWriteRoleRequest,
@@ -182,6 +189,10 @@ import type {
 import {
     AliCloudLoginRequestFromJSON,
     AliCloudLoginRequestToJSON,
+    AliCloudLoginResponseFromJSON,
+    AliCloudLoginResponseToJSON,
+    AliCloudReadAuthRoleResponseFromJSON,
+    AliCloudReadAuthRoleResponseToJSON,
     AliCloudWriteAuthRoleRequestFromJSON,
     AliCloudWriteAuthRoleRequestToJSON,
     AppRoleDestroySecretIdByAccessorRequestFromJSON,
@@ -344,8 +355,16 @@ import {
     CertWriteCrlRequestToJSON,
     CloudFoundryConfigureRequestFromJSON,
     CloudFoundryConfigureRequestToJSON,
+    CloudFoundryListRolesResponseFromJSON,
+    CloudFoundryListRolesResponseToJSON,
     CloudFoundryLoginRequestFromJSON,
     CloudFoundryLoginRequestToJSON,
+    CloudFoundryLoginResponseFromJSON,
+    CloudFoundryLoginResponseToJSON,
+    CloudFoundryReadConfigurationResponseFromJSON,
+    CloudFoundryReadConfigurationResponseToJSON,
+    CloudFoundryReadRoleResponseFromJSON,
+    CloudFoundryReadRoleResponseToJSON,
     CloudFoundryWriteRoleRequestFromJSON,
     CloudFoundryWriteRoleRequestToJSON,
     GithubConfigureRequestFromJSON,
@@ -474,6 +493,8 @@ import {
     TokenRenewSelfRequestToJSON,
     TokenRevokeAccessorRequestFromJSON,
     TokenRevokeAccessorRequestToJSON,
+    TokenRevokeOauthRequestFromJSON,
+    TokenRevokeOauthRequestToJSON,
     TokenRevokeOrphanRequestFromJSON,
     TokenRevokeOrphanRequestToJSON,
     TokenRevokeRequestFromJSON,
@@ -1822,6 +1843,10 @@ export interface AuthApiTokenRevokeAccessorOperationRequest {
     TokenRevokeAccessorRequest: TokenRevokeAccessorRequest;
 }
 
+export interface AuthApiTokenRevokeOauthOperationRequest {
+    TokenRevokeOauthRequest: TokenRevokeOauthRequest;
+}
+
 export interface AuthApiTokenRevokeOrphanOperationRequest {
     TokenRevokeOrphanRequest: TokenRevokeOrphanRequest;
 }
@@ -1923,7 +1948,7 @@ export interface AuthApiUserpassWriteUserOperationRequest {
 export class AuthApi extends runtime.BaseAPI {
 
     /**
-     * Create a role and associate policies to it.
+     * Delete an AliCloud auth role.
      */
     async aliCloudDeleteAuthRoleRaw(requestParameters: AuthApiAliCloudDeleteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -1956,7 +1981,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Create a role and associate policies to it.
+     * Delete an AliCloud auth role.
      */
     async aliCloudDeleteAuthRole(role: string, alicloud_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.aliCloudDeleteAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path }, initOverrides);
@@ -1964,7 +1989,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Lists all the roles that are registered with Vault.
+     * List all AliCloud auth roles.
      */
     async aliCloudListAuthRolesRaw(requestParameters: AuthApiAliCloudListAuthRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['alicloud_mount_path'] == null) {
@@ -2001,7 +2026,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Lists all the roles that are registered with Vault.
+     * List all AliCloud auth roles.
      */
     async aliCloudListAuthRoles(alicloud_mount_path: string, list: AuthApiAliCloudListAuthRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliCloudListAuthRolesRaw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
@@ -2009,7 +2034,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Lists all the roles that are registered with Vault.
+     * List all AliCloud auth roles.
      */
     async aliCloudListAuthRoles2Raw(requestParameters: AuthApiAliCloudListAuthRoles2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
         if (requestParameters['alicloud_mount_path'] == null) {
@@ -2046,7 +2071,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Lists all the roles that are registered with Vault.
+     * List all AliCloud auth roles.
      */
     async aliCloudListAuthRoles2(alicloud_mount_path: string, list: AuthApiAliCloudListAuthRoles2ListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
         const response = await this.aliCloudListAuthRoles2Raw({ alicloud_mount_path: alicloud_mount_path, list: list }, initOverrides);
@@ -2054,9 +2079,9 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Authenticates an RAM entity with Vault.
+     * Authenticate with AliCloud.
      */
-    async aliCloudLoginRaw(requestParameters: AuthApiAliCloudLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async aliCloudLoginRaw(requestParameters: AuthApiAliCloudLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliCloudLoginResponse>> {
         if (requestParameters['alicloud_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'alicloud_mount_path',
@@ -2086,21 +2111,21 @@ export class AuthApi extends runtime.BaseAPI {
             body: AliCloudLoginRequestToJSON(requestParameters['AliCloudLoginRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AliCloudLoginResponseFromJSON(jsonValue));
     }
 
     /**
-     * Authenticates an RAM entity with Vault.
+     * Authenticate with AliCloud.
      */
-    async aliCloudLogin(alicloud_mount_path: string, AliCloudLoginRequest: AliCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async aliCloudLogin(alicloud_mount_path: string, AliCloudLoginRequest: AliCloudLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliCloudLoginResponse> {
         const response = await this.aliCloudLoginRaw({ alicloud_mount_path: alicloud_mount_path, AliCloudLoginRequest: AliCloudLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Create a role and associate policies to it.
+     * Read an AliCloud auth role.
      */
-    async aliCloudReadAuthRoleRaw(requestParameters: AuthApiAliCloudReadAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async aliCloudReadAuthRoleRaw(requestParameters: AuthApiAliCloudReadAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AliCloudReadAuthRoleResponse>> {
         if (requestParameters['role'] == null) {
             throw new runtime.RequiredError(
                 'role',
@@ -2127,19 +2152,19 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => AliCloudReadAuthRoleResponseFromJSON(jsonValue));
     }
 
     /**
-     * Create a role and associate policies to it.
+     * Read an AliCloud auth role.
      */
-    async aliCloudReadAuthRole(role: string, alicloud_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async aliCloudReadAuthRole(role: string, alicloud_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AliCloudReadAuthRoleResponse> {
         const response = await this.aliCloudReadAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
-     * Create a role and associate policies to it.
+     * Update an AliCloud auth role.
      */
     async aliCloudWriteAuthRoleRaw(requestParameters: AuthApiAliCloudWriteAuthRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -2182,7 +2207,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
-     * Create a role and associate policies to it.
+     * Update an AliCloud auth role.
      */
     async aliCloudWriteAuthRole(role: string, alicloud_mount_path: string, AliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.aliCloudWriteAuthRoleRaw({ role: role, alicloud_mount_path: alicloud_mount_path, AliCloudWriteAuthRoleRequest: AliCloudWriteAuthRoleRequest }, initOverrides);
@@ -7338,6 +7363,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the Cloud Foundry auth method.
      */
     async cloudFoundryConfigureRaw(requestParameters: AuthApiCloudFoundryConfigureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['cf_mount_path'] == null) {
@@ -7373,6 +7399,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Configure the Cloud Foundry auth method.
      */
     async cloudFoundryConfigure(cf_mount_path: string, CloudFoundryConfigureRequest: CloudFoundryConfigureRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.cloudFoundryConfigureRaw({ cf_mount_path: cf_mount_path, CloudFoundryConfigureRequest: CloudFoundryConfigureRequest }, initOverrides);
@@ -7380,6 +7407,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the Cloud Foundry auth method configuration.
      */
     async cloudFoundryDeleteConfigurationRaw(requestParameters: AuthApiCloudFoundryDeleteConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['cf_mount_path'] == null) {
@@ -7405,6 +7433,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete the Cloud Foundry auth method configuration.
      */
     async cloudFoundryDeleteConfiguration(cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.cloudFoundryDeleteConfigurationRaw({ cf_mount_path: cf_mount_path }, initOverrides);
@@ -7412,6 +7441,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named Cloud Foundry auth role.
      */
     async cloudFoundryDeleteRoleRaw(requestParameters: AuthApiCloudFoundryDeleteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -7444,6 +7474,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Delete a named Cloud Foundry auth role.
      */
     async cloudFoundryDeleteRole(role: string, cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.cloudFoundryDeleteRoleRaw({ role: role, cf_mount_path: cf_mount_path }, initOverrides);
@@ -7451,8 +7482,9 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * List the existing Cloud Foundry auth roles.
      */
-    async cloudFoundryListRolesRaw(requestParameters: AuthApiCloudFoundryListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StandardListResponse>> {
+    async cloudFoundryListRolesRaw(requestParameters: AuthApiCloudFoundryListRolesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CloudFoundryListRolesResponse>> {
         if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'cf_mount_path',
@@ -7483,19 +7515,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => StandardListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CloudFoundryListRolesResponseFromJSON(jsonValue));
     }
 
     /**
+     * List the existing Cloud Foundry auth roles.
      */
-    async cloudFoundryListRoles(cf_mount_path: string, list: AuthApiCloudFoundryListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StandardListResponse> {
+    async cloudFoundryListRoles(cf_mount_path: string, list: AuthApiCloudFoundryListRolesListEnum, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CloudFoundryListRolesResponse> {
         const response = await this.cloudFoundryListRolesRaw({ cf_mount_path: cf_mount_path, list: list }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Authenticate a Cloud Foundry instance with Vault.
      */
-    async cloudFoundryLoginRaw(requestParameters: AuthApiCloudFoundryLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async cloudFoundryLoginRaw(requestParameters: AuthApiCloudFoundryLoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CloudFoundryLoginResponse>> {
         if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'cf_mount_path',
@@ -7525,19 +7559,21 @@ export class AuthApi extends runtime.BaseAPI {
             body: CloudFoundryLoginRequestToJSON(requestParameters['CloudFoundryLoginRequest']),
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CloudFoundryLoginResponseFromJSON(jsonValue));
     }
 
     /**
+     * Authenticate a Cloud Foundry instance with Vault.
      */
-    async cloudFoundryLogin(cf_mount_path: string, CloudFoundryLoginRequest: CloudFoundryLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async cloudFoundryLogin(cf_mount_path: string, CloudFoundryLoginRequest: CloudFoundryLoginRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CloudFoundryLoginResponse> {
         const response = await this.cloudFoundryLoginRaw({ cf_mount_path: cf_mount_path, CloudFoundryLoginRequest: CloudFoundryLoginRequest }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the current Cloud Foundry auth method configuration.
      */
-    async cloudFoundryReadConfigurationRaw(requestParameters: AuthApiCloudFoundryReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async cloudFoundryReadConfigurationRaw(requestParameters: AuthApiCloudFoundryReadConfigurationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CloudFoundryReadConfigurationResponse>> {
         if (requestParameters['cf_mount_path'] == null) {
             throw new runtime.RequiredError(
                 'cf_mount_path',
@@ -7557,19 +7593,21 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CloudFoundryReadConfigurationResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the current Cloud Foundry auth method configuration.
      */
-    async cloudFoundryReadConfiguration(cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async cloudFoundryReadConfiguration(cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CloudFoundryReadConfigurationResponse> {
         const response = await this.cloudFoundryReadConfigurationRaw({ cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Return the configuration for a named Cloud Foundry auth role.
      */
-    async cloudFoundryReadRoleRaw(requestParameters: AuthApiCloudFoundryReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+    async cloudFoundryReadRoleRaw(requestParameters: AuthApiCloudFoundryReadRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CloudFoundryReadRoleResponse>> {
         if (requestParameters['role'] == null) {
             throw new runtime.RequiredError(
                 'role',
@@ -7596,17 +7634,19 @@ export class AuthApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => CloudFoundryReadRoleResponseFromJSON(jsonValue));
     }
 
     /**
+     * Return the configuration for a named Cloud Foundry auth role.
      */
-    async cloudFoundryReadRole(role: string, cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+    async cloudFoundryReadRole(role: string, cf_mount_path: string, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CloudFoundryReadRoleResponse> {
         const response = await this.cloudFoundryReadRoleRaw({ role: role, cf_mount_path: cf_mount_path }, initOverrides);
         return await response.value();
     }
 
     /**
+     * Update an existing Cloud Foundry auth role.
      */
     async cloudFoundryWriteRoleRaw(requestParameters: AuthApiCloudFoundryWriteRoleOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
         if (requestParameters['role'] == null) {
@@ -7649,6 +7689,7 @@ export class AuthApi extends runtime.BaseAPI {
     }
 
     /**
+     * Update an existing Cloud Foundry auth role.
      */
     async cloudFoundryWriteRole(role: string, cf_mount_path: string, CloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.cloudFoundryWriteRoleRaw({ role: role, cf_mount_path: cf_mount_path, CloudFoundryWriteRoleRequest: CloudFoundryWriteRoleRequest }, initOverrides);
@@ -13004,6 +13045,41 @@ export class AuthApi extends runtime.BaseAPI {
      */
     async tokenRevokeAccessor(TokenRevokeAccessorRequest: TokenRevokeAccessorRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
         const response = await this.tokenRevokeAccessorRaw({ TokenRevokeAccessorRequest: TokenRevokeAccessorRequest }, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async tokenRevokeOauthRaw(requestParameters: AuthApiTokenRevokeOauthOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<runtime.VoidResponse>> {
+        if (requestParameters['TokenRevokeOauthRequest'] == null) {
+            throw new runtime.RequiredError(
+                'TokenRevokeOauthRequest',
+                'Required parameter "TokenRevokeOauthRequest" was null or undefined when calling tokenRevokeOauth().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const builtPath = `/auth/token/revoke-oauth`;
+        const response = await this.request({
+            path: builtPath.replace(/\/\/+/g, '/'),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: TokenRevokeOauthRequestToJSON(requestParameters['TokenRevokeOauthRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async tokenRevokeOauth(TokenRevokeOauthRequest: TokenRevokeOauthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.VoidResponse> {
+        const response = await this.tokenRevokeOauthRaw({ TokenRevokeOauthRequest: TokenRevokeOauthRequest }, initOverrides);
         return await response.value();
     }
 
