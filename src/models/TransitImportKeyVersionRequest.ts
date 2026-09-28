@@ -42,6 +42,12 @@ export interface TransitImportKeyVersionRequest {
      */
     public_key?: string;
     /**
+     * Enterprise only. If specified, allows choosing a new key type for the new version. Otherwise, it assumes latest existing version.
+     * @type {string}
+     * @memberof TransitImportKeyVersionRequest
+     */
+    type?: string;
+    /**
      * Key version to be updated, if left empty, a new version will be created unless a private key is specified and the 'Latest' key is missing a private key.
      * @type {number}
      * @memberof TransitImportKeyVersionRequest
@@ -69,6 +75,7 @@ export function TransitImportKeyVersionRequestFromJSONTyped(json: any, ignoreDis
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
         'public_key': json['public_key'] == null ? undefined : json['public_key'],
+        'type': json['type'] == null ? undefined : json['type'],
         'version': json['version'] == null ? undefined : json['version'],
     };
 }
@@ -87,6 +94,7 @@ export function TransitImportKeyVersionRequestToJSONTyped(value?: TransitImportK
         'ciphertext': value['ciphertext'],
         'hash_function': value['hash_function'],
         'public_key': value['public_key'],
+        'type': value['type'],
         'version': value['version'],
     };
 }

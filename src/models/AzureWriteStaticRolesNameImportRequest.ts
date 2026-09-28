@@ -42,6 +42,24 @@ export interface AzureWriteStaticRolesNameImportRequest {
      */
     metadata?: object;
     /**
+     * When seamless_rotation is enabled, ensure the lifetimes of the credentials overlap by the specified time. Must not exceed (rotation_period - 3600) / 2. Set to -1 to disable overlap. Defaults to 5m0s if unspecified (or 0).
+     * @type {string}
+     * @memberof AzureWriteStaticRolesNameImportRequest
+     */
+    rotation_grace_period?: string;
+    /**
+     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
+     * @type {string}
+     * @memberof AzureWriteStaticRolesNameImportRequest
+     */
+    rotation_period?: string;
+    /**
+     * If true, enable seamless rotation to help mitigate availability issues that may arise during rotation due to propagation delay.
+     * @type {boolean}
+     * @memberof AzureWriteStaticRolesNameImportRequest
+     */
+    seamless_rotation?: boolean;
+    /**
      * Secret ID of the existing credential to import.
      * @type {string}
      * @memberof AzureWriteStaticRolesNameImportRequest
@@ -83,6 +101,9 @@ export function AzureWriteStaticRolesNameImportRequestFromJSONTyped(json: any, i
         'application_object_id': json['application_object_id'],
         'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
+        'rotation_grace_period': json['rotation_grace_period'] == null ? undefined : json['rotation_grace_period'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'seamless_rotation': json['seamless_rotation'] == null ? undefined : json['seamless_rotation'],
         'secret_id': json['secret_id'],
         'skip_import_rotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -103,6 +124,9 @@ export function AzureWriteStaticRolesNameImportRequestToJSONTyped(value?: AzureW
         'application_object_id': value['application_object_id'],
         'client_secret': value['client_secret'],
         'metadata': value['metadata'],
+        'rotation_grace_period': value['rotation_grace_period'],
+        'rotation_period': value['rotation_period'],
+        'seamless_rotation': value['seamless_rotation'],
         'secret_id': value['secret_id'],
         'skip_import_rotation': value['skip_import_rotation'],
         'ttl': value['ttl'],

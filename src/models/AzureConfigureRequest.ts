@@ -90,6 +90,12 @@ export interface AzureConfigureRequest {
      */
     rotation_window?: string;
     /**
+     * Enable or disable seamless rotation for static roles. Existing roles are not affected when changing this setting.
+     * @type {boolean}
+     * @memberof AzureConfigureRequest
+     */
+    seamless_rotation?: boolean;
+    /**
      * The subscription id for the Azure Active Directory. This value can also be provided with the AZURE_SUBSCRIPTION_ID environment variable.
      * @type {string}
      * @memberof AzureConfigureRequest
@@ -131,6 +137,7 @@ export function AzureConfigureRequestFromJSONTyped(json: any, ignoreDiscriminato
         'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
         'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
         'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
+        'seamless_rotation': json['seamless_rotation'] == null ? undefined : json['seamless_rotation'],
         'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
         'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
     };
@@ -158,6 +165,7 @@ export function AzureConfigureRequestToJSONTyped(value?: AzureConfigureRequest |
         'rotation_policy': value['rotation_policy'],
         'rotation_schedule': value['rotation_schedule'],
         'rotation_window': value['rotation_window'],
+        'seamless_rotation': value['seamless_rotation'],
         'subscription_id': value['subscription_id'],
         'tenant_id': value['tenant_id'],
     };

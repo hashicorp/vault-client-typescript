@@ -36,6 +36,12 @@ export interface OauthResourceServerReadProfileResponse {
      */
     audiences?: Array<string>;
     /**
+     * The claim containing authorization details (default: authorization_details).
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    authorization_details_claim?: string;
+    /**
      * Leeway for clock skew in seconds.
      * @type {string}
      * @memberof OauthResourceServerReadProfileResponse
@@ -48,7 +54,7 @@ export interface OauthResourceServerReadProfileResponse {
      */
     config_id?: string;
     /**
-     * Whether this profile is enabled for JWT validation. Disabled profiles are ignored
+     * Whether this profile is enabled for JWT validation.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
      */
@@ -66,6 +72,12 @@ export interface OauthResourceServerReadProfileResponse {
      */
     jwks_ca_pem?: string;
     /**
+     * The JWKS URI to fetch public keys from.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    jwks_uri?: string;
+    /**
      * The JWT type: 'access_token' or 'transaction_token'.
      * @type {string}
      * @memberof OauthResourceServerReadProfileResponse
@@ -78,13 +90,19 @@ export interface OauthResourceServerReadProfileResponse {
      */
     local?: boolean;
     /**
+     * Synthetic mount accessor for this profile, in the format oauth-resource-server_<namespace_id>_<config_id>. This is the accessor reported for aliases backed by this profile in identity read, list, and audit output, and is the value used to select those aliases in templated policies. To create an identity/entity-alias, prefer identifying the profile by profile_name, config_id, or issuer rather than passing this accessor explicitly.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileResponse
+     */
+    mount_accessor?: string;
+    /**
      * If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
      */
     no_default_policy?: boolean;
     /**
-     * If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server. By default (false), authorization_details is mandatory.
+     * If true, authorization_details claim is optional for OAuth 2.0 JWTs using this OAuth resource server.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
      */
@@ -96,7 +114,7 @@ export interface OauthResourceServerReadProfileResponse {
      */
     profile_name?: string;
     /**
-     * List of static public keys with key_id and pem fields
+     * List of static public keys with key_id and pem fields.
      * @type {Array<object>}
      * @memberof OauthResourceServerReadProfileResponse
      */
@@ -114,13 +132,13 @@ export interface OauthResourceServerReadProfileResponse {
      */
     unique_id_claim?: string;
     /**
-     * If true, use JWKS URI for key validation profile names.
+     * If true, use JWKS URI for key validation.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileResponse
      */
     use_jwks?: boolean;
     /**
-     * The claim to use as the user identifier (default: sub).
+     * The claim to use as the user identifier.
      * @type {string}
      * @memberof OauthResourceServerReadProfileResponse
      */
@@ -146,13 +164,16 @@ export function OauthResourceServerReadProfileResponseFromJSONTyped(json: any, i
         
         'actor_claim': json['actor_claim'] == null ? undefined : json['actor_claim'],
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
+        'authorization_details_claim': json['authorization_details_claim'] == null ? undefined : json['authorization_details_claim'],
         'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
         'config_id': json['config_id'] == null ? undefined : json['config_id'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
         'issuer_id': json['issuer_id'] == null ? undefined : json['issuer_id'],
         'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
+        'jwks_uri': json['jwks_uri'] == null ? undefined : json['jwks_uri'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
         'local': json['local'] == null ? undefined : json['local'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
@@ -177,13 +198,16 @@ export function OauthResourceServerReadProfileResponseToJSONTyped(value?: OauthR
         
         'actor_claim': value['actor_claim'],
         'audiences': value['audiences'],
+        'authorization_details_claim': value['authorization_details_claim'],
         'clock_skew_leeway': value['clock_skew_leeway'],
         'config_id': value['config_id'],
         'enabled': value['enabled'],
         'issuer_id': value['issuer_id'],
         'jwks_ca_pem': value['jwks_ca_pem'],
+        'jwks_uri': value['jwks_uri'],
         'jwt_type': value['jwt_type'],
         'local': value['local'],
+        'mount_accessor': value['mount_accessor'],
         'no_default_policy': value['no_default_policy'],
         'optional_authorization_details': value['optional_authorization_details'],
         'profile_name': value['profile_name'],

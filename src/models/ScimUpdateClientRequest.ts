@@ -36,6 +36,12 @@ export interface ScimUpdateClientRequest {
      */
     alias_mount_accessor?: string;
     /**
+     * Optional. When true, allows this client to adopt groups, forbidden when this is set to false. Defaults to false.
+     * @type {boolean}
+     * @memberof ScimUpdateClientRequest
+     */
+    allow_group_adoption?: boolean;
+    /**
      * Optional. When true, allows this client to adopt pre-existing unmanaged entities when a POST /Users userName matches an existing login alias. Defaults to false.
      * @type {boolean}
      * @memberof ScimUpdateClientRequest
@@ -48,7 +54,7 @@ export interface ScimUpdateClientRequest {
      */
     allowed_extra_alias_mount_accessors?: Array<string>;
     /**
-     * Optional. The Vault SCIM extension schema version ('2.0' or '2.1') used for responses when a request does not specify an extension schema. Defaults to '2.1' for newly created clients; clients created before this field existed behave as '2.0'.
+     * Optional. The Vault SCIM extension schema version ('2.0' or '2.2') used for responses when a request does not specify an extension schema. Defaults to '2.2' for newly created clients; clients created before this field existed behave as '2.0'.
      * @type {string}
      * @memberof ScimUpdateClientRequest
      */
@@ -98,6 +104,7 @@ export function ScimUpdateClientRequestFromJSONTyped(json: any, ignoreDiscrimina
         
         'access_grant_principal': json['access_grant_principal'] == null ? undefined : json['access_grant_principal'],
         'alias_mount_accessor': json['alias_mount_accessor'] == null ? undefined : json['alias_mount_accessor'],
+        'allow_group_adoption': json['allow_group_adoption'] == null ? undefined : json['allow_group_adoption'],
         'allow_user_adoption': json['allow_user_adoption'] == null ? undefined : json['allow_user_adoption'],
         'allowed_extra_alias_mount_accessors': json['allowed_extra_alias_mount_accessors'] == null ? undefined : json['allowed_extra_alias_mount_accessors'],
         'default_schema_version': json['default_schema_version'] == null ? undefined : json['default_schema_version'],
@@ -121,6 +128,7 @@ export function ScimUpdateClientRequestToJSONTyped(value?: ScimUpdateClientReque
         
         'access_grant_principal': value['access_grant_principal'],
         'alias_mount_accessor': value['alias_mount_accessor'],
+        'allow_group_adoption': value['allow_group_adoption'],
         'allow_user_adoption': value['allow_user_adoption'],
         'allowed_extra_alias_mount_accessors': value['allowed_extra_alias_mount_accessors'],
         'default_schema_version': value['default_schema_version'],

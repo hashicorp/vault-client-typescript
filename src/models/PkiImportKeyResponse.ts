@@ -36,11 +36,17 @@ export interface PkiImportKeyResponse {
      */
     key_name?: string;
     /**
-     * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
+     * The type of key to use; defaults to RSA. "rsa" "ec", "ed25519", and "ml-dsa" are the only valid values.
      * @type {string}
      * @memberof PkiImportKeyResponse
      */
     key_type?: string;
+    /**
+     * The parameter set for ML-DSA keys.
+     * @type {string}
+     * @memberof PkiImportKeyResponse
+     */
+    parameter_set?: string;
 }
 
 /**
@@ -63,6 +69,7 @@ export function PkiImportKeyResponseFromJSONTyped(json: any, ignoreDiscriminator
         'key_id': json['key_id'] == null ? undefined : json['key_id'],
         'key_name': json['key_name'] == null ? undefined : json['key_name'],
         'key_type': json['key_type'] == null ? undefined : json['key_type'],
+        'parameter_set': json['parameter_set'] == null ? undefined : json['parameter_set'],
     };
 }
 
@@ -80,6 +87,7 @@ export function PkiImportKeyResponseToJSONTyped(value?: PkiImportKeyResponse | n
         'key_id': value['key_id'],
         'key_name': value['key_name'],
         'key_type': value['key_type'],
+        'parameter_set': value['parameter_set'],
     };
 }
 

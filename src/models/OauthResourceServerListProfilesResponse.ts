@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface OauthResourceServerListProfilesResponse {
     /**
+     * Map keyed by profile name. Each entry carries the profile's config_id and mount_accessor. Always present on a successful response, but empty when no listed profile could be read.
+     * @type {object}
+     * @memberof OauthResourceServerListProfilesResponse
+     */
+    key_info?: object;
+    /**
      * 
      * @type {Array<string>}
      * @memberof OauthResourceServerListProfilesResponse
@@ -48,6 +54,7 @@ export function OauthResourceServerListProfilesResponseFromJSONTyped(json: any, 
     }
     return {
         
+        'key_info': json['key_info'] == null ? undefined : json['key_info'],
         'keys': json['keys'] == null ? undefined : json['keys'],
     };
 }
@@ -63,6 +70,7 @@ export function OauthResourceServerListProfilesResponseToJSONTyped(value?: Oauth
 
     return {
         
+        'key_info': value['key_info'],
         'keys': value['keys'],
     };
 }

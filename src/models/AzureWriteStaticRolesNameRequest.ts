@@ -56,6 +56,24 @@ export interface AzureWriteStaticRolesNameRequest {
      */
     metadata?: object;
     /**
+     * When seamless_rotation is enabled, ensure the lifetimes of the credentials overlap by the specified time. Must not exceed (rotation_period - 3600) / 2. Set to -1 to disable overlap. Defaults to 5m0s if unspecified (or 0).
+     * @type {string}
+     * @memberof AzureWriteStaticRolesNameRequest
+     */
+    rotation_grace_period?: string;
+    /**
+     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
+     * @type {string}
+     * @memberof AzureWriteStaticRolesNameRequest
+     */
+    rotation_period?: string;
+    /**
+     * If true, enable seamless rotation to help mitigate availability issues that may arise during rotation due to propagation delay.
+     * @type {boolean}
+     * @memberof AzureWriteStaticRolesNameRequest
+     */
+    seamless_rotation?: boolean;
+    /**
      * Secret ID of the existing credential to import.
      * @type {string}
      * @memberof AzureWriteStaticRolesNameRequest
@@ -100,6 +118,9 @@ export function AzureWriteStaticRolesNameRequestFromJSONTyped(json: any, ignoreD
         'defer_initial_creds': json['defer_initial_creds'] == null ? undefined : json['defer_initial_creds'],
         'expiration': json['expiration'] == null ? undefined : (new Date(json['expiration'])),
         'metadata': json['metadata'] == null ? undefined : json['metadata'],
+        'rotation_grace_period': json['rotation_grace_period'] == null ? undefined : json['rotation_grace_period'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'seamless_rotation': json['seamless_rotation'] == null ? undefined : json['seamless_rotation'],
         'secret_id': json['secret_id'] == null ? undefined : json['secret_id'],
         'skip_import_rotation': json['skip_import_rotation'] == null ? undefined : json['skip_import_rotation'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
@@ -122,6 +143,9 @@ export function AzureWriteStaticRolesNameRequestToJSONTyped(value?: AzureWriteSt
         'defer_initial_creds': value['defer_initial_creds'],
         'expiration': value['expiration'] == null ? undefined : ((value['expiration']).toISOString()),
         'metadata': value['metadata'],
+        'rotation_grace_period': value['rotation_grace_period'],
+        'rotation_period': value['rotation_period'],
+        'seamless_rotation': value['seamless_rotation'],
         'secret_id': value['secret_id'],
         'skip_import_rotation': value['skip_import_rotation'],
         'ttl': value['ttl'],

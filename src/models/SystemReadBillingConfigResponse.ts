@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface SystemReadBillingConfigResponse {
     /**
+     * Number of months of attribution data to retain. 0 means attribution storage is disabled.
+     * @type {number}
+     * @memberof SystemReadBillingConfigResponse
+     */
+    attribution_retention_months?: number;
+    /**
      * Number of months of billing data to retain.
      * @type {number}
      * @memberof SystemReadBillingConfigResponse
@@ -48,6 +54,7 @@ export function SystemReadBillingConfigResponseFromJSONTyped(json: any, ignoreDi
     }
     return {
         
+        'attribution_retention_months': json['attribution_retention_months'] == null ? undefined : json['attribution_retention_months'],
         'retention_months': json['retention_months'] == null ? undefined : json['retention_months'],
     };
 }
@@ -63,6 +70,7 @@ export function SystemReadBillingConfigResponseToJSONTyped(value?: SystemReadBil
 
     return {
         
+        'attribution_retention_months': value['attribution_retention_months'],
         'retention_months': value['retention_months'],
     };
 }

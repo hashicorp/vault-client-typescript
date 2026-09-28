@@ -42,6 +42,12 @@ export interface PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest {
      */
     impersonate_service_account?: string;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest
+     */
+    nameserver?: string;
+    /**
      * GCP project name
      * @type {string}
      * @memberof PkiExternalCaWriteConfigDnsGoogleCloudDnsRequest
@@ -81,6 +87,7 @@ export function PkiExternalCaWriteConfigDnsGoogleCloudDnsRequestFromJSONTyped(js
         'credentials': json['credentials'] == null ? undefined : json['credentials'],
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
         'impersonate_service_account': json['impersonate_service_account'] == null ? undefined : json['impersonate_service_account'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'project': json['project'] == null ? undefined : json['project'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
         'zone_name': json['zone_name'] == null ? undefined : json['zone_name'],
@@ -101,6 +108,7 @@ export function PkiExternalCaWriteConfigDnsGoogleCloudDnsRequestToJSONTyped(valu
         'credentials': value['credentials'],
         'identifiers': value['identifiers'],
         'impersonate_service_account': value['impersonate_service_account'],
+        'nameserver': value['nameserver'],
         'project': value['project'],
         'ttl': value['ttl'],
         'zone_name': value['zone_name'],

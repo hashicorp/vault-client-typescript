@@ -54,6 +54,12 @@ export interface TransformWriteTransformationRequest {
      */
     masking_character?: string;
     /**
+     * The maximum tweak length allowed with this transformation. Only valid for FPE transformations.
+     * @type {number}
+     * @memberof TransformWriteTransformationRequest
+     */
+    max_tweak_len?: number;
+    /**
      * The store or stores which will contain tokenized state.
      * @type {Array<string>}
      * @memberof TransformWriteTransformationRequest
@@ -101,6 +107,7 @@ export function TransformWriteTransformationRequestFromJSONTyped(json: any, igno
         'deletion_allowed': json['deletion_allowed'] == null ? undefined : json['deletion_allowed'],
         'mapping_mode': json['mapping_mode'] == null ? undefined : json['mapping_mode'],
         'masking_character': json['masking_character'] == null ? undefined : json['masking_character'],
+        'max_tweak_len': json['max_tweak_len'] == null ? undefined : json['max_tweak_len'],
         'stores': json['stores'] == null ? undefined : json['stores'],
         'template': json['template'] == null ? undefined : json['template'],
         'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
@@ -124,6 +131,7 @@ export function TransformWriteTransformationRequestToJSONTyped(value?: Transform
         'deletion_allowed': value['deletion_allowed'],
         'mapping_mode': value['mapping_mode'],
         'masking_character': value['masking_character'],
+        'max_tweak_len': value['max_tweak_len'],
         'stores': value['stores'],
         'template': value['template'],
         'tweak_source': value['tweak_source'],

@@ -24,6 +24,12 @@ import { mapValues } from '../runtime';
  */
 export interface PkiExternalCaWriteConfigAcmeAccountRequest {
     /**
+     * Address of a DNS nameserver (host or host:port) to use when verifying DNS-01 challenge propagation for providers that do not specify a nameserver.
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigAcmeAccountRequest
+     */
+    default_nameserver?: string;
+    /**
      * The ACME directory URL (e.g., https://acme-v02.api.letsencrypt.org/directory for Let's Encrypt production)
      * @type {string}
      * @memberof PkiExternalCaWriteConfigAcmeAccountRequest
@@ -94,6 +100,7 @@ export function PkiExternalCaWriteConfigAcmeAccountRequestFromJSONTyped(json: an
     }
     return {
         
+        'default_nameserver': json['default_nameserver'] == null ? undefined : json['default_nameserver'],
         'directory_url': json['directory_url'],
         'eab_key': json['eab_key'] == null ? undefined : json['eab_key'],
         'eab_kid': json['eab_kid'] == null ? undefined : json['eab_kid'],
@@ -114,6 +121,7 @@ export function PkiExternalCaWriteConfigAcmeAccountRequestToJSONTyped(value?: Pk
 
     return {
         
+        'default_nameserver': value['default_nameserver'],
         'directory_url': value['directory_url'],
         'eab_key': value['eab_key'],
         'eab_kid': value['eab_kid'],

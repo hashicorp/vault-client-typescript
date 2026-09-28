@@ -138,6 +138,12 @@ export interface SystemWriteStorageRaftSnapshotAutoConfigNameRequest {
      */
     azure_endpoint?: string;
     /**
+     * DR operation token used to authorize this request (if a DR secondary node).
+     * @type {string}
+     * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
+     */
+    dr_operation_token?: string;
+    /**
      * file/object prefix prepended to snapshot ID
      * @type {string}
      * @memberof SystemWriteStorageRaftSnapshotAutoConfigNameRequest
@@ -247,6 +253,7 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestFromJSONTyped
         'azure_client_id': json['azure_client_id'] == null ? undefined : json['azure_client_id'],
         'azure_container_name': json['azure_container_name'] == null ? undefined : json['azure_container_name'],
         'azure_endpoint': json['azure_endpoint'] == null ? undefined : json['azure_endpoint'],
+        'dr_operation_token': json['dr_operation_token'] == null ? undefined : json['dr_operation_token'],
         'file_prefix': json['file_prefix'] == null ? undefined : json['file_prefix'],
         'google_disable_tls': json['google_disable_tls'] == null ? undefined : json['google_disable_tls'],
         'google_endpoint': json['google_endpoint'] == null ? undefined : json['google_endpoint'],
@@ -290,6 +297,7 @@ export function SystemWriteStorageRaftSnapshotAutoConfigNameRequestToJSONTyped(v
         'azure_client_id': value['azure_client_id'],
         'azure_container_name': value['azure_container_name'],
         'azure_endpoint': value['azure_endpoint'],
+        'dr_operation_token': value['dr_operation_token'],
         'file_prefix': value['file_prefix'],
         'google_disable_tls': value['google_disable_tls'],
         'google_endpoint': value['google_endpoint'],

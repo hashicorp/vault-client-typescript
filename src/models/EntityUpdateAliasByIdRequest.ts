@@ -30,6 +30,12 @@ export interface EntityUpdateAliasByIdRequest {
      */
     canonical_id?: string;
     /**
+     * (Rejected) Valid only when creating an alias, not when updating one by ID.
+     * @type {string}
+     * @memberof EntityUpdateAliasByIdRequest
+     */
+    config_id?: string;
+    /**
      * User provided key-value pairs
      * @type {object}
      * @memberof EntityUpdateAliasByIdRequest
@@ -65,6 +71,12 @@ export interface EntityUpdateAliasByIdRequest {
      * @memberof EntityUpdateAliasByIdRequest
      */
     name?: string;
+    /**
+     * (Rejected) Valid only when creating an alias, not when updating one by ID.
+     * @type {string}
+     * @memberof EntityUpdateAliasByIdRequest
+     */
+    profile_name?: string;
 }
 
 /**
@@ -85,12 +97,14 @@ export function EntityUpdateAliasByIdRequestFromJSONTyped(json: any, ignoreDiscr
     return {
         
         'canonical_id': json['canonical_id'] == null ? undefined : json['canonical_id'],
+        'config_id': json['config_id'] == null ? undefined : json['config_id'],
         'custom_metadata': json['custom_metadata'] == null ? undefined : json['custom_metadata'],
         'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
         'external_id': json['external_id'] == null ? undefined : json['external_id'],
         'issuer': json['issuer'] == null ? undefined : json['issuer'],
         'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'name': json['name'] == null ? undefined : json['name'],
+        'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
     };
 }
 
@@ -106,12 +120,14 @@ export function EntityUpdateAliasByIdRequestToJSONTyped(value?: EntityUpdateAlia
     return {
         
         'canonical_id': value['canonical_id'],
+        'config_id': value['config_id'],
         'custom_metadata': value['custom_metadata'],
         'entity_id': value['entity_id'],
         'external_id': value['external_id'],
         'issuer': value['issuer'],
         'mount_accessor': value['mount_accessor'],
         'name': value['name'],
+        'profile_name': value['profile_name'],
     };
 }
 

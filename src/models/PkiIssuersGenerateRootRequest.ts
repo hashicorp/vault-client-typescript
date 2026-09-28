@@ -186,6 +186,12 @@ export interface PkiIssuersGenerateRootRequest {
      */
     ou?: Array<string>;
     /**
+     * The parameter set to use for ML-DSA keys; defaults to 44. Valid values are 44, 65, and 87
+     * @type {string}
+     * @memberof PkiIssuersGenerateRootRequest
+     */
+    parameter_set?: PkiIssuersGenerateRootRequestParameterSetEnum;
+    /**
      * Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
      * @type {Array<string>}
      * @memberof PkiIssuersGenerateRootRequest
@@ -295,7 +301,17 @@ export enum PkiIssuersGenerateRootRequestFormatEnum {
 export enum PkiIssuersGenerateRootRequestKeyTypeEnum {
     RSA = 'rsa',
     EC = 'ec',
-    ED25519 = 'ed25519'
+    ED25519 = 'ed25519',
+    ML_DSA = 'ml-dsa'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum PkiIssuersGenerateRootRequestParameterSetEnum {
+    _44 = '44',
+    _65 = '65',
+    _87 = '87'
 }
 /**
 * @export
@@ -361,6 +377,7 @@ export function PkiIssuersGenerateRootRequestFromJSONTyped(json: any, ignoreDisc
         'organization': json['organization'] == null ? undefined : json['organization'],
         'other_sans': json['other_sans'] == null ? undefined : json['other_sans'],
         'ou': json['ou'] == null ? undefined : json['ou'],
+        'parameter_set': json['parameter_set'] == null ? undefined : json['parameter_set'],
         'permitted_dns_domains': json['permitted_dns_domains'] == null ? undefined : json['permitted_dns_domains'],
         'permitted_email_addresses': json['permitted_email_addresses'] == null ? undefined : json['permitted_email_addresses'],
         'permitted_ip_ranges': json['permitted_ip_ranges'] == null ? undefined : json['permitted_ip_ranges'],
@@ -417,6 +434,7 @@ export function PkiIssuersGenerateRootRequestToJSONTyped(value?: PkiIssuersGener
         'organization': value['organization'],
         'other_sans': value['other_sans'],
         'ou': value['ou'],
+        'parameter_set': value['parameter_set'],
         'permitted_dns_domains': value['permitted_dns_domains'],
         'permitted_email_addresses': value['permitted_email_addresses'],
         'permitted_ip_ranges': value['permitted_ip_ranges'],

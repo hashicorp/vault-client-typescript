@@ -36,7 +36,7 @@ export interface PkiGenerateExportedKeyRequest {
      */
     key_name?: string;
     /**
-     * The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519" are the only valid values.
+     * The type of key to use; defaults to RSA. "rsa" "ec", "ed25519", and "ml-dsa" are the only valid values.
      * @type {string}
      * @memberof PkiGenerateExportedKeyRequest
      */
@@ -53,6 +53,12 @@ export interface PkiGenerateExportedKeyRequest {
      * @memberof PkiGenerateExportedKeyRequest
      */
     managed_key_name?: string;
+    /**
+     * The parameter set to use for ML-DSA keys; defaults to 44. Valid values are 44, 65, and 87.
+     * @type {string}
+     * @memberof PkiGenerateExportedKeyRequest
+     */
+    parameter_set?: PkiGenerateExportedKeyRequestParameterSetEnum;
 }
 
 /**
@@ -62,7 +68,17 @@ export interface PkiGenerateExportedKeyRequest {
 export enum PkiGenerateExportedKeyRequestKeyTypeEnum {
     RSA = 'rsa',
     EC = 'ec',
-    ED25519 = 'ed25519'
+    ED25519 = 'ed25519',
+    ML_DSA = 'ml-dsa'
+}
+/**
+* @export
+* @enum {string}
+*/
+export enum PkiGenerateExportedKeyRequestParameterSetEnum {
+    _44 = '44',
+    _65 = '65',
+    _87 = '87'
 }
 
 
@@ -88,6 +104,7 @@ export function PkiGenerateExportedKeyRequestFromJSONTyped(json: any, ignoreDisc
         'key_type': json['key_type'] == null ? undefined : json['key_type'],
         'managed_key_id': json['managed_key_id'] == null ? undefined : json['managed_key_id'],
         'managed_key_name': json['managed_key_name'] == null ? undefined : json['managed_key_name'],
+        'parameter_set': json['parameter_set'] == null ? undefined : json['parameter_set'],
     };
 }
 
@@ -107,6 +124,7 @@ export function PkiGenerateExportedKeyRequestToJSONTyped(value?: PkiGenerateExpo
         'key_type': value['key_type'],
         'managed_key_id': value['managed_key_id'],
         'managed_key_name': value['managed_key_name'],
+        'parameter_set': value['parameter_set'],
     };
 }
 

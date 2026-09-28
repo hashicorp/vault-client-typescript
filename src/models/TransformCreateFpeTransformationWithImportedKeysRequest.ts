@@ -42,6 +42,12 @@ export interface TransformCreateFpeTransformationWithImportedKeysRequest {
      */
     hash_function?: string;
     /**
+     * The maximum tweak length allowed with this transformation. Only valid for FPE transformations.
+     * @type {number}
+     * @memberof TransformCreateFpeTransformationWithImportedKeysRequest
+     */
+    max_tweak_len?: number;
+    /**
      * The name of the template to use.
      * @type {string}
      * @memberof TransformCreateFpeTransformationWithImportedKeysRequest
@@ -75,6 +81,7 @@ export function TransformCreateFpeTransformationWithImportedKeysRequestFromJSONT
         'allowed_roles': json['allowed_roles'] == null ? undefined : json['allowed_roles'],
         'ciphertext': json['ciphertext'] == null ? undefined : json['ciphertext'],
         'hash_function': json['hash_function'] == null ? undefined : json['hash_function'],
+        'max_tweak_len': json['max_tweak_len'] == null ? undefined : json['max_tweak_len'],
         'template': json['template'] == null ? undefined : json['template'],
         'tweak_source': json['tweak_source'] == null ? undefined : json['tweak_source'],
     };
@@ -94,6 +101,7 @@ export function TransformCreateFpeTransformationWithImportedKeysRequestToJSONTyp
         'allowed_roles': value['allowed_roles'],
         'ciphertext': value['ciphertext'],
         'hash_function': value['hash_function'],
+        'max_tweak_len': value['max_tweak_len'],
         'template': value['template'],
         'tweak_source': value['tweak_source'],
     };

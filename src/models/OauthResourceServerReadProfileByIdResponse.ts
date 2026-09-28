@@ -24,11 +24,23 @@ import { mapValues } from '../runtime';
  */
 export interface OauthResourceServerReadProfileByIdResponse {
     /**
+     * Optional claim to use as the actor identifier.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileByIdResponse
+     */
+    actor_claim?: string;
+    /**
      * List of allowed audiences (aud claim).
      * @type {Array<string>}
      * @memberof OauthResourceServerReadProfileByIdResponse
      */
     audiences?: Array<string>;
+    /**
+     * The claim containing authorization details (default: authorization_details).
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileByIdResponse
+     */
+    authorization_details_claim?: string;
     /**
      * Leeway for clock skew in seconds.
      * @type {string}
@@ -72,6 +84,18 @@ export interface OauthResourceServerReadProfileByIdResponse {
      */
     jwt_type?: string;
     /**
+     * Whether this profile is cluster-scoped (true) or globally replicated (false).
+     * @type {boolean}
+     * @memberof OauthResourceServerReadProfileByIdResponse
+     */
+    local?: boolean;
+    /**
+     * Synthetic mount accessor for this profile, in the format oauth-resource-server_<namespace_id>_<config_id>. This is the accessor reported for aliases backed by this profile in identity read, list, and audit output, and is the value used to select those aliases in templated policies. To create an identity/entity-alias, prefer identifying the profile by profile_name, config_id, or issuer rather than passing this accessor explicitly.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileByIdResponse
+     */
+    mount_accessor?: string;
+    /**
      * If true, JWT-authenticated tokens omit the default policy unless it is applied elsewhere.
      * @type {boolean}
      * @memberof OauthResourceServerReadProfileByIdResponse
@@ -101,6 +125,12 @@ export interface OauthResourceServerReadProfileByIdResponse {
      * @memberof OauthResourceServerReadProfileByIdResponse
      */
     supported_algorithms?: Array<string>;
+    /**
+     * Optional claim to use as the unique identifier for the JWT claim.
+     * @type {string}
+     * @memberof OauthResourceServerReadProfileByIdResponse
+     */
+    unique_id_claim?: string;
     /**
      * If true, use JWKS URI for key validation.
      * @type {boolean}
@@ -132,7 +162,9 @@ export function OauthResourceServerReadProfileByIdResponseFromJSONTyped(json: an
     }
     return {
         
+        'actor_claim': json['actor_claim'] == null ? undefined : json['actor_claim'],
         'audiences': json['audiences'] == null ? undefined : json['audiences'],
+        'authorization_details_claim': json['authorization_details_claim'] == null ? undefined : json['authorization_details_claim'],
         'clock_skew_leeway': json['clock_skew_leeway'] == null ? undefined : json['clock_skew_leeway'],
         'config_id': json['config_id'] == null ? undefined : json['config_id'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
@@ -140,11 +172,14 @@ export function OauthResourceServerReadProfileByIdResponseFromJSONTyped(json: an
         'jwks_ca_pem': json['jwks_ca_pem'] == null ? undefined : json['jwks_ca_pem'],
         'jwks_uri': json['jwks_uri'] == null ? undefined : json['jwks_uri'],
         'jwt_type': json['jwt_type'] == null ? undefined : json['jwt_type'],
+        'local': json['local'] == null ? undefined : json['local'],
+        'mount_accessor': json['mount_accessor'] == null ? undefined : json['mount_accessor'],
         'no_default_policy': json['no_default_policy'] == null ? undefined : json['no_default_policy'],
         'optional_authorization_details': json['optional_authorization_details'] == null ? undefined : json['optional_authorization_details'],
         'profile_name': json['profile_name'] == null ? undefined : json['profile_name'],
         'public_keys': json['public_keys'] == null ? undefined : json['public_keys'],
         'supported_algorithms': json['supported_algorithms'] == null ? undefined : json['supported_algorithms'],
+        'unique_id_claim': json['unique_id_claim'] == null ? undefined : json['unique_id_claim'],
         'use_jwks': json['use_jwks'] == null ? undefined : json['use_jwks'],
         'user_claim': json['user_claim'] == null ? undefined : json['user_claim'],
     };
@@ -161,7 +196,9 @@ export function OauthResourceServerReadProfileByIdResponseToJSONTyped(value?: Oa
 
     return {
         
+        'actor_claim': value['actor_claim'],
         'audiences': value['audiences'],
+        'authorization_details_claim': value['authorization_details_claim'],
         'clock_skew_leeway': value['clock_skew_leeway'],
         'config_id': value['config_id'],
         'enabled': value['enabled'],
@@ -169,11 +206,14 @@ export function OauthResourceServerReadProfileByIdResponseToJSONTyped(value?: Oa
         'jwks_ca_pem': value['jwks_ca_pem'],
         'jwks_uri': value['jwks_uri'],
         'jwt_type': value['jwt_type'],
+        'local': value['local'],
+        'mount_accessor': value['mount_accessor'],
         'no_default_policy': value['no_default_policy'],
         'optional_authorization_details': value['optional_authorization_details'],
         'profile_name': value['profile_name'],
         'public_keys': value['public_keys'],
         'supported_algorithms': value['supported_algorithms'],
+        'unique_id_claim': value['unique_id_claim'],
         'use_jwks': value['use_jwks'],
         'user_claim': value['user_claim'],
     };

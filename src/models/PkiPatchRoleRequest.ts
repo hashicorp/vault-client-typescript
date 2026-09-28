@@ -144,6 +144,12 @@ export interface PkiPatchRoleRequest {
      */
     country?: Array<string>;
     /**
+     * If set, a list of OID strings in dotted-decimal notation (e.g. "0.9.2342.19200300.100.1.1") whose values are read from the CSR subject during signing operations — both the REST sign/:role endpoint and binary enrollment protocols (CMPv2, EST, SCEP). Values for listed OIDs are carried through to the issued certificate and validated against any applicable role constraints (e.g. allowed_user_ids for the userID OID). OIDs not in this list are silently dropped from the CSR subject.
+     * @type {Array<string>}
+     * @memberof PkiPatchRoleRequest
+     */
+    csr_extra_names_oids?: Array<string>;
+    /**
      * If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12.
      * @type {boolean}
      * @memberof PkiPatchRoleRequest
@@ -180,13 +186,13 @@ export interface PkiPatchRoleRequest {
      */
     issuer_ref?: string;
     /**
-     * The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
+     * The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519 and ml-dsa.
      * @type {number}
      * @memberof PkiPatchRoleRequest
      */
     key_bits?: number;
     /**
-     * The type of key to use; defaults to RSA. "rsa" "ec", "ed25519" and "any" are the only valid values.
+     * The type of key to use; defaults to RSA. "rsa" "ec", "ed25519", "ml-dsa", and "any" are the only valid values.
      * @type {string}
      * @memberof PkiPatchRoleRequest
      */
@@ -245,6 +251,12 @@ export interface PkiPatchRoleRequest {
      * @memberof PkiPatchRoleRequest
      */
     ou?: Array<string>;
+    /**
+     * The parameter set to use with ML-DSA keys; defaults to 44. Valid values are 44, 65, and 87.
+     * @type {string}
+     * @memberof PkiPatchRoleRequest
+     */
+    parameter_set?: string;
     /**
      * A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{"oid"="1.3.6.1.4.1.7.8","notice"="I am a user Notice"}, {"oid"="1.3.6.1.4.1.32473.1.2.4","cps"="https://example.com"}].
      * @type {Array<string>}
@@ -327,7 +339,8 @@ export enum PkiPatchRoleRequestKeyTypeEnum {
     RSA = 'rsa',
     EC = 'ec',
     ED25519 = 'ed25519',
-    ANY = 'any'
+    ANY = 'any',
+    ML_DSA = 'ml-dsa'
 }
 
 
@@ -368,6 +381,7 @@ export function PkiPatchRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'cn_validations': json['cn_validations'] == null ? undefined : json['cn_validations'],
         'code_signing_flag': json['code_signing_flag'] == null ? undefined : json['code_signing_flag'],
         'country': json['country'] == null ? undefined : json['country'],
+        'csr_extra_names_oids': json['csr_extra_names_oids'] == null ? undefined : json['csr_extra_names_oids'],
         'email_protection_flag': json['email_protection_flag'] == null ? undefined : json['email_protection_flag'],
         'enforce_hostnames': json['enforce_hostnames'] == null ? undefined : json['enforce_hostnames'],
         'ext_key_usage': json['ext_key_usage'] == null ? undefined : json['ext_key_usage'],
@@ -385,6 +399,7 @@ export function PkiPatchRoleRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'not_before_duration': json['not_before_duration'] == null ? undefined : json['not_before_duration'],
         'organization': json['organization'] == null ? undefined : json['organization'],
         'ou': json['ou'] == null ? undefined : json['ou'],
+        'parameter_set': json['parameter_set'] == null ? undefined : json['parameter_set'],
         'policy_identifiers': json['policy_identifiers'] == null ? undefined : json['policy_identifiers'],
         'postal_code': json['postal_code'] == null ? undefined : json['postal_code'],
         'province': json['province'] == null ? undefined : json['province'],
@@ -431,6 +446,7 @@ export function PkiPatchRoleRequestToJSONTyped(value?: PkiPatchRoleRequest | nul
         'cn_validations': value['cn_validations'],
         'code_signing_flag': value['code_signing_flag'],
         'country': value['country'],
+        'csr_extra_names_oids': value['csr_extra_names_oids'],
         'email_protection_flag': value['email_protection_flag'],
         'enforce_hostnames': value['enforce_hostnames'],
         'ext_key_usage': value['ext_key_usage'],
@@ -448,6 +464,7 @@ export function PkiPatchRoleRequestToJSONTyped(value?: PkiPatchRoleRequest | nul
         'not_before_duration': value['not_before_duration'],
         'organization': value['organization'],
         'ou': value['ou'],
+        'parameter_set': value['parameter_set'],
         'policy_identifiers': value['policy_identifiers'],
         'postal_code': value['postal_code'],
         'province': value['province'],

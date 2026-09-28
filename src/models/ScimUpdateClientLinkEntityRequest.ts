@@ -30,6 +30,12 @@ export interface ScimUpdateClientLinkEntityRequest {
      */
     entity_id?: string;
     /**
+     * Optional external ID for the SCIM-managed entity.
+     * @type {string}
+     * @memberof ScimUpdateClientLinkEntityRequest
+     */
+    externalId?: string;
+    /**
      * Optional list of group IDs (owned by this SCIM client) to add the entity to as a member.
      * @type {Array<string>}
      * @memberof ScimUpdateClientLinkEntityRequest
@@ -61,6 +67,7 @@ export function ScimUpdateClientLinkEntityRequestFromJSONTyped(json: any, ignore
     return {
         
         'entity_id': json['entity_id'] == null ? undefined : json['entity_id'],
+        'externalId': json['externalId'] == null ? undefined : json['externalId'],
         'group_memberships': json['group_memberships'] == null ? undefined : json['group_memberships'],
         'scim_managed_aliases': json['scim_managed_aliases'] == null ? undefined : json['scim_managed_aliases'],
     };
@@ -78,6 +85,7 @@ export function ScimUpdateClientLinkEntityRequestToJSONTyped(value?: ScimUpdateC
     return {
         
         'entity_id': value['entity_id'],
+        'externalId': value['externalId'],
         'group_memberships': value['group_memberships'],
         'scim_managed_aliases': value['scim_managed_aliases'],
     };

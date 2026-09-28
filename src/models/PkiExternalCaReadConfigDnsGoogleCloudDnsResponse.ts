@@ -54,6 +54,12 @@ export interface PkiExternalCaReadConfigDnsGoogleCloudDnsResponse {
      */
     name?: string;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaReadConfigDnsGoogleCloudDnsResponse
+     */
+    nameserver?: string;
+    /**
      * GCP project name
      * @type {string}
      * @memberof PkiExternalCaReadConfigDnsGoogleCloudDnsResponse
@@ -95,6 +101,7 @@ export function PkiExternalCaReadConfigDnsGoogleCloudDnsResponseFromJSONTyped(js
         'impersonate_service_account': json['impersonate_service_account'] == null ? undefined : json['impersonate_service_account'],
         'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'project': json['project'] == null ? undefined : json['project'],
         'ttl': json['ttl'] == null ? undefined : json['ttl'],
         'zone_name': json['zone_name'] == null ? undefined : json['zone_name'],
@@ -117,6 +124,7 @@ export function PkiExternalCaReadConfigDnsGoogleCloudDnsResponseToJSONTyped(valu
         'impersonate_service_account': value['impersonate_service_account'],
         'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
+        'nameserver': value['nameserver'],
         'project': value['project'],
         'ttl': value['ttl'],
         'zone_name': value['zone_name'],

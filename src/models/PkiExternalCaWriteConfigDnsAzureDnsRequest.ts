@@ -48,6 +48,12 @@ export interface PkiExternalCaWriteConfigDnsAzureDnsRequest {
      */
     identifiers?: Array<string>;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigDnsAzureDnsRequest
+     */
+    nameserver?: string;
+    /**
      * Azure resource group name containing the DNS zone
      * @type {string}
      * @memberof PkiExternalCaWriteConfigDnsAzureDnsRequest
@@ -100,6 +106,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsRequestFromJSONTyped(json: an
         'client_secret': json['client_secret'] == null ? undefined : json['client_secret'],
         'environment': json['environment'] == null ? undefined : json['environment'],
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'resource_group_name': json['resource_group_name'] == null ? undefined : json['resource_group_name'],
         'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
         'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
@@ -123,6 +130,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsRequestToJSONTyped(value?: Pk
         'client_secret': value['client_secret'],
         'environment': value['environment'],
         'identifiers': value['identifiers'],
+        'nameserver': value['nameserver'],
         'resource_group_name': value['resource_group_name'],
         'subscription_id': value['subscription_id'],
         'tenant_id': value['tenant_id'],

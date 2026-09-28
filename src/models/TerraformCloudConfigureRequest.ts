@@ -36,6 +36,42 @@ export interface TerraformCloudConfigureRequest {
      */
     base_path?: string;
     /**
+     * If set to true, will deregister all registered rotation jobs from the RotationManager for the plugin.
+     * @type {boolean}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    disable_automated_rotation?: boolean;
+    /**
+     * The maximum lifetime (expiration) set on the root token in Terraform Cloud or Enterprise. Acts as an upper-bound safety net; Vault manages the root token lifecycle. The default (0) omits the expiration so Terraform applies its default token expiry (2 years). The same value is used for both manual and automatic rotation.
+     * @type {string}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    explicit_max_ttl?: string;
+    /**
+     * TTL for automatic credential rotation of the given username. Mutually exclusive with rotation_schedule
+     * @type {string}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    rotation_period?: string;
+    /**
+     * Defines the rotation policy to use when performing automated rotations.
+     * @type {string}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    rotation_policy?: string;
+    /**
+     * CRON-style string that will define the schedule on which rotations should occur. Mutually exclusive with rotation_period
+     * @type {string}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    rotation_schedule?: string;
+    /**
+     * Specifies the amount of time in which the rotation is allowed to occur starting from a given rotation_schedule
+     * @type {string}
+     * @memberof TerraformCloudConfigureRequest
+     */
+    rotation_window?: string;
+    /**
      * The token to access Terraform Cloud
      * @type {string}
      * @memberof TerraformCloudConfigureRequest
@@ -63,6 +99,12 @@ export function TerraformCloudConfigureRequestFromJSONTyped(json: any, ignoreDis
         
         'address': json['address'] == null ? undefined : json['address'],
         'base_path': json['base_path'] == null ? undefined : json['base_path'],
+        'disable_automated_rotation': json['disable_automated_rotation'] == null ? undefined : json['disable_automated_rotation'],
+        'explicit_max_ttl': json['explicit_max_ttl'] == null ? undefined : json['explicit_max_ttl'],
+        'rotation_period': json['rotation_period'] == null ? undefined : json['rotation_period'],
+        'rotation_policy': json['rotation_policy'] == null ? undefined : json['rotation_policy'],
+        'rotation_schedule': json['rotation_schedule'] == null ? undefined : json['rotation_schedule'],
+        'rotation_window': json['rotation_window'] == null ? undefined : json['rotation_window'],
         'token': json['token'],
     };
 }
@@ -80,6 +122,12 @@ export function TerraformCloudConfigureRequestToJSONTyped(value?: TerraformCloud
         
         'address': value['address'],
         'base_path': value['base_path'],
+        'disable_automated_rotation': value['disable_automated_rotation'],
+        'explicit_max_ttl': value['explicit_max_ttl'],
+        'rotation_period': value['rotation_period'],
+        'rotation_policy': value['rotation_policy'],
+        'rotation_schedule': value['rotation_schedule'],
+        'rotation_window': value['rotation_window'],
         'token': value['token'],
     };
 }

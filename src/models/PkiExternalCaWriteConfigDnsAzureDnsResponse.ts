@@ -60,6 +60,12 @@ export interface PkiExternalCaWriteConfigDnsAzureDnsResponse {
      */
     name?: string;
     /**
+     * DNS server address (IP:port format, e.g., 192.168.1.1:53)
+     * @type {string}
+     * @memberof PkiExternalCaWriteConfigDnsAzureDnsResponse
+     */
+    nameserver?: string;
+    /**
      * Azure resource group name containing the DNS zone
      * @type {string}
      * @memberof PkiExternalCaWriteConfigDnsAzureDnsResponse
@@ -114,6 +120,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsResponseFromJSONTyped(json: a
         'identifiers': json['identifiers'] == null ? undefined : json['identifiers'],
         'last_updated_date': json['last_updated_date'] == null ? undefined : (new Date(json['last_updated_date'])),
         'name': json['name'] == null ? undefined : json['name'],
+        'nameserver': json['nameserver'] == null ? undefined : json['nameserver'],
         'resource_group_name': json['resource_group_name'] == null ? undefined : json['resource_group_name'],
         'subscription_id': json['subscription_id'] == null ? undefined : json['subscription_id'],
         'tenant_id': json['tenant_id'] == null ? undefined : json['tenant_id'],
@@ -139,6 +146,7 @@ export function PkiExternalCaWriteConfigDnsAzureDnsResponseToJSONTyped(value?: P
         'identifiers': value['identifiers'],
         'last_updated_date': value['last_updated_date'] == null ? undefined : ((value['last_updated_date']).toISOString()),
         'name': value['name'],
+        'nameserver': value['nameserver'],
         'resource_group_name': value['resource_group_name'],
         'subscription_id': value['subscription_id'],
         'tenant_id': value['tenant_id'],
