@@ -25,6 +25,24 @@ npm install
 npm run build
 ```
 
+### Generator dependency compatibility
+
+The scoped `get-uri>basic-ftp` override in `pnpm-workspace.yaml` upgrades the
+generator's FTP transport to 6.2.5 because get-uri 8.0.1 still requests the
+vulnerable 5.x line. The generator CLI remains pinned to 2.40.1.
+
+Run `pnpm test:basic-ftp` after changing this override. The checks resolve through
+the generator's installed dependency chain and use an ephemeral loopback FTP
+server for downloads, caching, missing files, MLSD fallback, and Unix listings
+over EPSV/PASV. They also check the lockfile for older copies and bound malformed
+Unix listing parsing in a subprocess.
+
+Basic-ftp 6 rejects PASV responses pointing to a different host by default; this
+safer behavior is retained. FTP servers relying on separate data hosts are not
+compatible with this default. Unix-only listings without MDTM still lack the
+unambiguous modification date get-uri requires, preserving its existing
+`ENOTFOUND` behavior. These checks cover plain FTP; they do not exercise FTPS.
+
 ### Publishing
 
 First build the package then run `npm publish`
