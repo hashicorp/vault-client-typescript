@@ -1,4 +1,4 @@
-// Copyright IBM Corp. 2026
+// Copyright IBM Corp. 2025, 2026
 
 const assert = require("node:assert/strict");
 const { spawnSync } = require("node:child_process");
