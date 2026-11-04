@@ -2,5 +2,6 @@
 
 overrides:
   form-data: ">=4.0.6"
-  brace-expansion: ">=5.0.9"
+  brace-expansion: ">=5.0.12"
   shell-quote: ">=1.11.0"
+  "@openapitools/openapi-generator-cli>glob": "14.0.3"
